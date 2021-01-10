@@ -119,7 +119,7 @@ public:
 
 private:
   //The actual data for the font
-  uint8_t *[][] data;
+  uint8_t * data[][];
 };
 
 //Describes the character color for text mode video

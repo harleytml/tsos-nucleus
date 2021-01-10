@@ -2,3 +2,4 @@ build/**
 ./rename.sh
 ./token
 filesystem/**
+.vscode/**

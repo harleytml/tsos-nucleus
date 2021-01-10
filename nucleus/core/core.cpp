@@ -75,13 +75,13 @@ Tsos::~Tsos(void)
 {
 
     //Deconstruct the subclasses
-    delete video;
-    delete input;
-    delete filesystem;
-    delete serial;
-    delete process;
-    delete disk;
-    delete sound;
+    delete &video;
+    delete &input;
+    delete &filesystem;
+    delete &serial;
+    delete &process;
+    delete &disk;
+    delete &sound;
 
     //The boot module will destroy tsos itself, and who knows what would happen if it was destroyed
     //I mean, probably nothing, but who knows
@@ -109,7 +109,7 @@ void Module::attachdriver(T d) const
 {
 
     //The driver has to be the right machine and run on that machines configuration
-    if (driver.detectsystem())
+    if (driver->detectsystem())
     {
         driver = &d;
     }

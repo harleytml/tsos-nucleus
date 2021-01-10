@@ -13,9 +13,14 @@ public:
   //Destructor
   ~GBA_BOOT_driver(void);
 
+  //Detect the system its running on
+  BOOLEAN detectsystem(void);
+
   //Reboot the system
   void reboot(void);
 
   //Shutdown system
   void shutdown(void);
 };
+
+#endif
