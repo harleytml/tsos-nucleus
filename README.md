@@ -27,3 +27,5 @@ The naming of TS/OS is the floor of the TS/OS version, as the atomic number of a
 The TS/OS kernel is called the Nucleus. Many other chemistry analagues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
 
 In the (/documents)[./documents] directory, you can find more documents concerning TS/OS.
+
+https://app.codacy.com/gh/tsuki-superior/ts-os/dashboard
