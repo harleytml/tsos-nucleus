@@ -9,10 +9,10 @@ LIBRARY_DIR=$(PWD)/../libraries
 TOOLCHAIN_DIR=$(PWD)/../toolchain
 
 CC=$(where )
-CC_FLAGS=-Wall -ffreestanding
+CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 CPP=$(where )
-CPP_FLAGS=-Wall -ffreestanding
+CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
 
 AS=$(where )
 AS_FLAGS=
