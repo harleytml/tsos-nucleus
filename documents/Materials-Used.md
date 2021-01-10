@@ -1,0 +1,1 @@
+http://read.pudn.com/downloads12/sourcecode/others/50974/linux/os4/doc/Understanding_FAT12.pdf
