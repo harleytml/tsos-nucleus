@@ -126,15 +126,14 @@ public:
 };
 
 //The base class of TS/OS modules
-templete<class T>
-class Module
+templete<class T> class Module
 {
 public:
   //Constructor
-  Module();
+  Module(void);
 
   //Destructor
-  ~Module();
+  ~Module(void);
 
   //The full name of the modules's target
   const char *name;
@@ -143,7 +142,7 @@ public:
   void attachdriver(T d);
 
 private:
-  T driver;
+  T *driver;
 };
 
 //The machine that this is

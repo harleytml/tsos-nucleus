@@ -47,8 +47,8 @@ if [ ! -f "./token" ]; then
     mv -v gcc-$GCC_VERSION/ gcc/
     tar -xf binutils-$BINUTILS_VERSION.tar.xz
     mv -v binutils-$BINUTILS_VERSION/ binutils/
-    tar -xf $DEVKITARM_VERSION.tar.gz
-    mv -v $DEVKITARM__VERSION/ devkitarm
+    tar -xf devkitARM_$DEVKITARM_VERSION.tar.gz
+    mv -v devkitARM_$DEVKITARM__VERSION/ devkitarm
     tar -xf $GBDK_VERSION.tar.gz
     mv -v $GBDK_VERSION/ gbdk
     
@@ -108,7 +108,7 @@ cd applications
 SYSTEM_APPLICATIONS=(cd cpy ctl date del echo info kill lstd lstp lstv math mov osi pi tsh)
 for i in "${SYSTEM_APPLICATIONS[@]}"
 do
-   cd $i
-   make -f Makefile.$1.mk
-   cd ..
+    cd $i
+    make -f Makefile.$1.mk
+    cd ..
 done

@@ -104,7 +104,8 @@ Module::~Module(void)
     delete name;
 }
 
-templete<class T> void Module::attachdriver(T d) const
+templete<class T> 
+void Module::attachdriver(T d) const
 {
 
     //The driver has to be the right machine and run on that machines configuration
