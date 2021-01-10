@@ -1,4 +1,4 @@
 build/**
-rename.sh
-token
+./rename.sh
+./token
 filesystem/**
