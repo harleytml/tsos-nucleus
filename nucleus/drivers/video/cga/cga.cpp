@@ -15,7 +15,7 @@ BOOLEAN CGA_driver::detectsystem(void)
   {
 
     //Check if display is monochrome, or MDA
-    if (*((uint8_t)0x400010) & 0x30 != 0x30)
+    if ((*((uint8_t)0x400010) & 0x30) != 0x30)
     {
 
       //Display is probably CGA, or a card in CGA emulation mode
@@ -74,10 +74,10 @@ void CGA_driver::putchar(char c, Color bc, Color fc)
     text_buffer[text_cursor] = c;
 
     //Move that cursor forward a little
-    seektextcursor(gettextcursor() + 1)
+    seektextcursor(gettextcursor() + 1);
 
-        //Put the attribute byte
-        text_buffer[text_cursor] = (char)a;
+    //Put the attribute byte
+    text_buffer[text_cursor] = (char)a;
     return;
   case GRAPHIC:
     return;
@@ -107,7 +107,7 @@ uint8_t CGA_driver::getscreenwidth(void)
 
 uint8_t CGA_driver::getscreenheight(void)
 {
-  switch (type)
+  switch (video_mode)
   {
   case TEXT:
 
@@ -129,7 +129,7 @@ uint16_t CGA_driver::gettextbufferlength(void)
 {
 
   //Read the length from the BIOS
-  return (*((uint16_t)0x40044c));
+  return (*((uint16_t *)0x40044c));
 }
 
 void CGA_driver::setfont(Font f)

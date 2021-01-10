@@ -2,7 +2,7 @@
 
 CODE_DIR=$(pwd)
 
-if [ ! -f "./token" ]; then    
+if [ ! -f "./token" ]; then
     
     #The version of gcc that will be used here
     GCC_VERSION=10.2.0
@@ -58,12 +58,12 @@ if [ ! -f "./token" ]; then
     cd build
     ../configure --prefix=$INSTALL_DIR \
     --enable-gold \
-	--enable-interwork \
-	--target=1686-elf \
-	--enable-multilib \
-	--disable-nls \
-	--disable-werror 
-
+    --enable-interwork \
+    --target=1686-elf \
+    --enable-multilib \
+    --disable-nls \
+    --disable-werror
+    
     make
     make install
     
@@ -74,11 +74,11 @@ if [ ! -f "./token" ]; then
     cd build
     ../configure --prefix=$INSTALL_DIR \
     --enable-languages=c,c++ \
-	--disable-libssp \
-	--disable-nls \
-	--disable-libssp \
-    --disable-werror 
-	
+    --disable-libssp \
+    --disable-nls \
+    --disable-libssp \
+    --disable-werror
+    
     make
     make install
     
@@ -88,7 +88,7 @@ if [ ! -f "./token" ]; then
     echo "export PATH=$PATH" >> ~/.bashrc
     
     cd $CODE_DIR
-
+    
     touch ./token
 fi
 
