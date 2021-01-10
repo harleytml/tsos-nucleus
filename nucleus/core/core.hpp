@@ -128,6 +128,9 @@ public:
 
   //A function called to determine if a driver should be used.
   virtual BOOLEAN detectsystem(void){};
+
+  //The name of said module
+  char * name;
 };
 
 //The base class of TS/OS modules

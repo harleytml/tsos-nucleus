@@ -3,9 +3,9 @@
 
 Video::Video(void)
 {
-  backgroundcolor = new Color(0x00, 0x00, 0x00);
-  foregroundcolor = new Color(0xff, 0xff, 0xff);
-  clear()
+  backgroundcolor = Color(0x00, 0x00, 0x00);
+  foregroundcolor = Color(0xff, 0xff, 0xff);
+  clear();
 }
 
 Video::~Video(void)
@@ -20,7 +20,7 @@ void Video::reset(void)
   driver->reset();
 }
 
-void Video::putchar(char c);
+void Video::putchar(char c)
 {
   driver->putchar(c, bcolor, fcolor);
 }
@@ -38,7 +38,7 @@ void Video::putstring(char *str)
       rseektextcursor(getscreenwidth());
       break;
     case '\b':
-      reseektextcursor(-1);
+      rseektextcursor(-1);
       break;
     case '\t':
       for (int y = 0; y < 4; y++)
@@ -104,7 +104,7 @@ void Video::clear(void)
   uint32_t len = getscreenheight() * getscreenwidth();
   for (uint32_t x = 0; x < len; x++)
   {
-    putchar(" ");
+    putchar(' ');
   }
 }
 
@@ -117,18 +117,18 @@ void Video::scroll(uint8_t lines)
 void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
   delete backgroundcolor;
-  backgroundcolor = new Color(red, green, blue, alpha);
+  backgroundcolor = Color(red, green, blue, alpha);
 }
 
 void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
   delete foregroundcolor;
-  foregroundcolor = new Color(red, green, blue, alpha);
+  foregroundcolor = Color(red, green, blue, alpha);
 }
 
-Font(uint8_t[][] data)
+Font(uint8_t *d[][])
 {
-  this.data = data
+  data = d;
 }
 
 ~Font(void)

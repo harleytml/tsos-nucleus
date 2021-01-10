@@ -106,7 +106,7 @@ class Font
 {
 public:
   //Constructor
-  Font(uint8_t *data[][]);
+  Font(uint8_t *d[][]);
 
   //Destructor
   ~Font(void);
@@ -135,7 +135,7 @@ public:
   ~Color(void);
 
   //To copy a color
-  Color(Color color);
+  Color(const Color& color);
 
   //Red part
   uint8_t red;
