@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "api.hpp"
+#include "core.hpp"
 
 Tsos::Tsos(void)
 {
@@ -11,13 +11,13 @@ Tsos::Tsos(void)
 
     //This may be the dumbest init system known to man...
     //But how else do I do this?
-    video = new Tsos_video();
-    input = new Tsos_input();
-    filesystem = new Tsos_filesystem();
-    boot = new Tsos_boot();
-    serial = new Tsos_serial();
-    process = new Tsos_process();
-    disk = new Tsos_disk();
+    video = new Video();
+    input = new Input();
+    filesystem = new Filesystem();
+    boot = new Boot();
+    serial = new Serial();
+    process = new Process();
+    disk = new Disk();
 
     //All these define based constants are in a generated header file (see core.hpp)
     Driver video_drivers[] = VIDEO_DRIVERS;
@@ -104,7 +104,8 @@ Module::~Module(void)
     delete name;
 }
 
-BOOLEAN Module::attachdriver(Driver d) const
+templete<class T>
+void Module::attachdriver(T d) const
 {
 
     //The driver has to be the right machine and run on that machines configuration
@@ -120,13 +121,3 @@ BOOLEAN Module::attachdriver(Driver d) const
     }
 }
 
-//Boolean type
-typedef uint8_t BOOLEAN;
-
-//True
-BOOLEAN TRUE = 1;
-
-//False
-BOOLEAN FALSE = 0;
-
-Tsos tsos;

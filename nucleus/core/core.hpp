@@ -2,6 +2,19 @@
 #ifndef __TSOS_NUCLEUS_CORE__
 #define __TSOS_NUCLEUS_CORE__
 
+#include <cstdint>
+
+//Boolean type
+typedef uint8_t BOOLEAN;
+
+//True
+BOOLEAN TRUE = 1;
+
+//False
+BOOLEAN FALSE = 0;
+
+Tsos tsos;
+
 //This is the default value for a value contained normally in current_config.hpp
 //I'm just going to put these here so my IDE doesn't throw a fit
 #define MACHINE UNKNOWN
@@ -38,11 +51,6 @@
 #define PROCESS_DRIVER_COUNT 0
 #define DISK_DRIVER_COUNT 0
 #define SOUND_DRIVER_COUNT 0
-
-//Includes TS/OS's internal data structures
-//Allows better interaction with the kernel
-//Statically linked to the kernel
-#include "libtsos.hpp"
 
 #include "boot.hpp"
 #include "disk.hpp"
@@ -92,7 +100,7 @@ public:
 
 protected:
   //The version of TS/OS being used here
-  unsigned float version;
+  float version;
 
   //The code name to TS/OS being used here
   char *code_name;
@@ -118,20 +126,24 @@ public:
 };
 
 //The base class of TS/OS modules
+templete<class T>
 class Module
 {
 public:
   //Constructor
-  Module(void);
+  Module();
 
   //Destructor
-  ~Module(void);
+  ~Module();
 
   //The full name of the modules's target
   const char *name;
 
   //Attach a driver
-  BOOLEAN attachdriver(Driver d);
+  void attachdriver(T d);
+
+private:
+  T driver;
 };
 
 //The machine that this is
@@ -142,6 +154,6 @@ enum machine_type
   GAMEBOY_ADVANCE,
   GENERIC,
   UNKNOWN
-}
+};
 
 #endif

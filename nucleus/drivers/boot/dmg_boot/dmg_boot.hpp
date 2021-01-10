@@ -13,6 +13,7 @@ public:
   //Destructor
   ~DMG_BOOT_driver(void);
 
+  BOOLEAN detectsystem(void);
   //Reboot the system
   void reboot(void);
 
