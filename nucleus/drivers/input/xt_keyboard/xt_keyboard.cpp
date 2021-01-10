@@ -19,7 +19,7 @@ BOOLEAN XT_KEYBOARD_driver::detectsystem(void)
     }
 }
 
-//So detecting keys in PC is a little sketchy
+//So detecting keys in PC is a little tricky
 //The keyboard buffer is a cyclic queue
 //So you have to read characters before it is filled and starts to overwrite itself
 //If this starts to happen, your BIOS will beep at you

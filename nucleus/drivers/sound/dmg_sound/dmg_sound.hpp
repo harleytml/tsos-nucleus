@@ -4,11 +4,11 @@
 
 #include "sound.hpp"
 
-class DMG_SOUND_driver: public Sound_driver
+class DMG_SOUND_driver : public Sound_driver
 {
- DMG_SOUND_driver(void);
- BOOLEAN detectsystem(void);
- void playtone(Tone tone);
+    DMG_SOUND_driver(void);
+    BOOLEAN detectsystem(void);
+    void playtone(Tone tone);
 };
 
 #endif

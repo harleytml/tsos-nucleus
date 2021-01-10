@@ -14,7 +14,7 @@ public:
     BOOLEAN detectsystem(void);
 
     //Get te key currently pressed
-    Key getkey(void);
+    key_identifier getkey(void);
 
 private:
 };

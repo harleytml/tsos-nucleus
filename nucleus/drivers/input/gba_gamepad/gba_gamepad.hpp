@@ -1,15 +1,15 @@
 //By Tsuki Superior
-#ifndef __TSOS_DMG_GAMEPAD_DRIVER__
-#define __TSOS_DMG_GAMEPAD_DRIVER__
+#ifndef __TSOS_GBA_GAMEPAD_DRIVER__
+#define __TSOS_GBA_GAMEPAD_DRIVER__
 
 #include "input.hpp"
 
-class DMG_GAMEPAD_driver: public Input_driver
+class GBA_GAMEPAD_driver: public Input_driver
 {
  public:
 
   //Constructor
-  DMG_GAMEPAD_driver(void);   
+  GBA_GAMEPAD_driver(void);   
 
   //Detects if the module should be used
   BOOLEAN detectsystem(void);

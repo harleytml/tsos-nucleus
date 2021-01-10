@@ -14,8 +14,8 @@ class EGA_driver: public Video_driver
   void seektextcursor(uint16_t pos); 
   char * gettextbuffer(void);
   uint16_t gettextbufferlength(void);
-  uint8_t getscreenwidth(void);
-  uint8_t getscreenheight(void);
+  uint16_t getscreenwidth(void);
+  uint16_t getscreenheight(void);
   void setfont(Font f);
 
   machine_type machine=PERSONAL_COMPUTER;

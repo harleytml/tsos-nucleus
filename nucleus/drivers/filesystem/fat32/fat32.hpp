@@ -4,7 +4,7 @@
 
 #include "filesystem.hpp"
 
-class FAT32_driver : public Filesystem_module
+class FAT32_driver : public Filesystem_driver
 {
 public:
   FAT32_driver(void);
