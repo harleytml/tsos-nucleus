@@ -80,7 +80,7 @@ public:
   Video_driver(void);
 
   //A very long way to describe the way to draw a character
-  virtual putchar(char c, Color bc, Color fc){};
+  virtual void putchar(char c, Color bc, Color fc){};
 
   //Get the text cursor
   virtual uint16_t gettextcursor(void){};

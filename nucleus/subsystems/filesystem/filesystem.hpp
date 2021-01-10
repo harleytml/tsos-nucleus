@@ -7,10 +7,9 @@
 #include "core.hpp"
 
 //The main class controlling the filesystem
-class Filesystem: public Module
+class Filesystem : public Module
 {
- public:
-
+public:
   //Constructor
   Filesystem(void);
 
@@ -18,62 +17,59 @@ class Filesystem: public Module
   ~Filesystem(void);
 
   //Read the contents of a directory
-  char * [] readdir(char * path);
+  char *[] readdir(char *path);
 
   //Rename a file or folder
-  void rename(char * path, char * newPath);
+  void rename(char *path, char *newPath);
 
   //Open a file
-  Tsos_file open(char * path);
+  Tsos_file open(char *path);
 
   //Close a file
   void close(Tsos_file file);
 
   //Read from a file
-  uint8_t [] read(Tsos_file file, uint32_t length);
+  uint8_t[] read(Tsos_file file, uint32_t length);
 
   //Write to a file
-  void write(Tsos_file file, uint8_t [] data);
+  void write(Tsos_file file, uint8_t data[]);
 
   //Read all from a file
-  char * readfile(char * path);
+  char *readfile(char *path);
 
   //Write all to a file
-  void writefile(char * path, uint8_t [] data);
+  void writefile(char *path, uint8_t data[]);
 
   //Append to a file
-  void appendfile(char * path, uint8_t [] data);
+  void appendfile(char *path, uint8_t data[]);
 
   //Detect if a file or folder exists
-  BOOLEAN exists(char * path);
+  BOOLEAN exists(char *path);
 
   //Create a directory
-  void mkdir(char * path, File_permissions f);
+  void mkdir(char *path, File_permissions f);
 
   //Remove a directory
-  void rmdir(char * path);
+  void rmdir(char *path);
 
   //Checks if the user has permissions for the file
-  void access(char * path);
+  void access(char *path);
 
- private:
-
+private:
   //The current directory
-  char * current_directory;
+  char *current_directory;
 
   //The files currently opened
   Tsos_file open_files[MAX_FILES_OPEN];
 
-  private:
-
-   //Filesystem driver
-   Filesystem_driver driver; 
+private:
+  //Filesystem driver
+  Filesystem_driver driver;
 };
 
-class Filesystem_driver: public Driver
+class Filesystem_driver : public Driver
 {
- public:
-
+public:
   //Constructor
   Filesystem_driver(void);
 
@@ -81,33 +77,32 @@ class Filesystem_driver: public Driver
   ~Filesystem_driver(void);
 
   //Read the directory
-  virtual char * readdir(char * path){};
+  virtual char *readdir(char *path){};
 
   //Rename a target
-  virtual char * rename(char * path, char * newPath){};
+  virtual char *rename(char *path, char *newPath){};
 };
 
 //A file in Tsos
 class Tsos_file
 {
- public:
+public:
   //Constructor of a null file
   Tsos_file(void);
 
   //Constructor
-  Tsos_file(char * pa, File_permissions per);
-  
+  Tsos_file(char *pa, File_permissions per);
+
   //The path of the file
-  char * path;
-  
+  char *path;
+
   //The permissions the file was opened in
   File_permissions permissions;
 };
 
 class File_permissions
 {
- public:
-
+public:
   //Constructor
   File_permissions(BOOLEAN r, BOOLEAN w, BOOLEAN e);
 

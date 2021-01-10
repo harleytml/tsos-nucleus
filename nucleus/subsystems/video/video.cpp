@@ -31,7 +31,8 @@ void Video::putstring(char *str)
   char c;
   while (str[x] != 0)
   {
-    c = str[x] switch (c)
+    c = str[x];
+    switch (c)
     {
     case '\n':
       rseektextcursor(getscreenwidth());

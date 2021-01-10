@@ -43,7 +43,7 @@ public:
   Tone(uint16_t f, uint16_t l);
 
   //Constructor to copy a tone
-  Tone(Tone tone);
+  Tone(const Tone& tone);
 
   //The frequency of the tone
   uint16_t frequency;

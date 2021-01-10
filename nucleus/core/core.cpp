@@ -35,37 +35,37 @@ Tsos::Tsos(void)
     }
 
     //Attach input drivers
-    for (x = 0; x < INPUT_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < INPUT_DRIVER_COUNT; x++)
     {
         input.attachdriver(input_drivers[x]);
     }
 
     //Attach filesystem drivers
-    for (x = 0; x < FILESYSTEM_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < FILESYSTEM_DRIVER_COUNT; x++)
     {
         filesystem.attachdriver(filesystem_drivers[x]);
     }
 
     //Attach boot drivers
-    for (x = 0; x < BOOT_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < BOOT_DRIVER_COUNT; x++)
     {
         boot.attachdriver(boot_drivers[x]);
     }
 
     //Attach serial drivers
-    for (x = 0; x < SERIAL_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < SERIAL_DRIVER_COUNT; x++)
     {
         serial.attachdriver(serial_drivers[x]);
     }
 
     //Attach process drivers
-    for (x = 0; x < PROCESS_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < PROCESS_DRIVER_COUNT; x++)
     {
         process.attachdriver(process_drivers[x]);
     }
 
     //Attach disk drivers
-    for (x = 0; x < DISK_DRIVER_COUNT; x++)
+    for (uint8_t x = 0; x < DISK_DRIVER_COUNT; x++)
     {
         disk.attachdriver(disk_drivers[x]);
     }
