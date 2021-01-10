@@ -4,11 +4,11 @@
 
 #include "serial.hpp"
 
-class GBA_IO_PORT_driver: public Serial_driver
+class GBA_IO_PORT_driver : public Serial_driver
 {
- GBA_IO_PORT_driver(void);
- BOOLEAN detectsystem(void);
- uint8_t exchangebyte(uint8_t b)
+    GBA_IO_PORT_driver(void);
+    BOOLEAN detectsystem(void);
+    uint8_t exchangebyte(uint8_t b)
 };
 
 #endif

@@ -4,12 +4,12 @@
 
 #include "serial.hpp"
 
-class DMG_IO_PORT_driver: public Serial_driver
+class DMG_IO_PORT_driver : public Serial_driver
 {
- DMG_IO_PORT_driver(void);
- BOOLEAN detectsystem(void);
- uint8_t exchangebyte(uint8_t b);
- BOOLEAN isdevicethere(void);
+    DMG_IO_PORT_driver(void);
+    BOOLEAN detectsystem(void);
+    uint8_t exchangebyte(uint8_t b);
+    BOOLEAN isdevicethere(void);
 };
 
 #endif

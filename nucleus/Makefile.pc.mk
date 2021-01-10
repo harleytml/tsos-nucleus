@@ -36,14 +36,14 @@ $(BUILD_DIR)/bootloader.o:
 #Here is the irregular part:
 $(BUILD_DIR)/current_config.hpp:
 :echo "#define MACHINE PERSONAL_COMPUTER" >> $@
-:echo "#define VIDEO_DRIVERS {new MDA_driver, new CGA_driver, new EGA_driver, new VGA_driver}" >> $@
-:echo "#define INPUT_DRIVERS {new XT_KEYBOARD_driver, new AT_KEYBOARD_driver}" >> $@
-:echo "#define DISK_DRIVERS {new CD_driver}" >> $@
-:echo "#define SERIAL_DRIVERS {new RS232_driver}" >> $@
-:echo "#define BOOT_DRIVERS {new GRUB2_driver}" >> $@
-:echo "#define FILESYSTEM_DRIVERS {new FAT12_driver, new FAT16_driver, new FAT32_driver, new CDFS_driver}" >> $@
+:echo "#define VIDEO_DRIVERS { MDA_driver(),  CGA_driver(),  EGA_driver(),  VGA_driver()}" >> $@
+:echo "#define INPUT_DRIVERS { XT_KEYBOARD_driver(),  AT_KEYBOARD_driver()}" >> $@
+:echo "#define DISK_DRIVERS { CD_driver()}" >> $@
+:echo "#define SERIAL_DRIVERS { RS232_driver()}" >> $@
+:echo "#define BOOT_DRIVERS { GRUB2_driver()}" >> $@
+:echo "#define FILESYSTEM_DRIVERS { FAT12_driver(),  FAT16_driver(),  FAT32_driver(),  CDFS_driver()}" >> $@
 :echo "#define SOUND_DRIVERS {}" >> $@
-:echo "#define PROCESS_DRIVERS {new ELF_driver, new ZEHN_driver}" >> $@
+:echo "#define PROCESS_DRIVERS { ELF_driver(),  ZEHN_driver()}" >> $@
 :echo "#define VIDEO_DRIVER_COUNT 4" >> $@
 :echo "#define INPUT_DRIVER_COUNT 2" >> $@
 :echo "#define DISK_DRIVER_COUNT 1" >> $@

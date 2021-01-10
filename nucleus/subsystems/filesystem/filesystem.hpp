@@ -15,7 +15,7 @@ class Filesystem: public Module
   Filesystem(void);
 
   //Destructor
-  ~Filesystem(void)
+  ~Filesystem(void);
 
   //Read the contents of a directory
   char * [] readdir(char * path);
@@ -70,7 +70,7 @@ class Filesystem: public Module
    Filesystem_driver driver; 
 };
 
-class Filesystem_driver: public Driver:
+class Filesystem_driver: public Driver
 {
  public:
 
@@ -85,7 +85,7 @@ class Filesystem_driver: public Driver:
 
   //Rename a target
   virtual char * rename(char * path, char * newPath){};
-}
+};
 
 //A file in Tsos
 class Tsos_file

@@ -9,29 +9,26 @@
 //Well, guess I better learn...
 
 //The main class controlling sound
-class Sound: public Module
+class Sound : public Module
 {
- public:
-
+public:
   //Constructor
   Sound(void);
 
   //Destructor
-  ~Sound(void)
+  ~Sound(void);
 
   //Play a tone
   void playtone(Tone tone);
 
- private:
-
+private:
   //Sound driver
   Sound_driver driver;
 };
 
-class Sound_driver: public Driver
+class Sound_driver : public Driver
 {
- public:
-
+public:
   //Constructor
   Sound_driver(void);
 
@@ -41,8 +38,7 @@ class Sound_driver: public Driver
 
 class Tone
 {
- public:
-
+public:
   //Constructor
   Tone(uint16_t f, uint16_t l);
 

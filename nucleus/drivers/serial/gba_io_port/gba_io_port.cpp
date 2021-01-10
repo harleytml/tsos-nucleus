@@ -3,7 +3,6 @@
 
 GBA_IO_PORT_driver::GBA_IO_PORT_driver(void)
 {
-
 }
 
 BOOLEAN GBA_IO_PORT_driver::detectsystem(void)
@@ -14,10 +13,9 @@ BOOLEAN GBA_IO_PORT_driver::detectsystem(void)
 uint8_t GBA_IO_PORT_driver::exchangebyte(uint8_t b)
 {
 
- //Lets make sure that a reciving DMG is actually there
+    //Lets make sure that a reciving DMG is actually there
 
- //
- uint8_t * SB = (uint8_t *)0xff01;
- *SB=0x00
-   
+    //
+    uint8_t *SB = (uint8_t *)0xff01;
+    *SB = 0x00
 }

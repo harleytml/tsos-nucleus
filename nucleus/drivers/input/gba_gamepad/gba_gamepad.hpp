@@ -4,7 +4,7 @@
 
 #include "input.hpp"
 
-class DMG_GAMEPAD_driver: public Input_module
+class DMG_GAMEPAD_driver: public Input_driver
 {
  public:
 

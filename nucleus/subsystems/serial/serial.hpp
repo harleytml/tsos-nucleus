@@ -5,15 +5,14 @@
 #include "core.hpp"
 
 //The main class controlling serial
-class Serial: public Module
+class Serial : public Module
 {
- public:
-
+public:
   //Constructor
-  Serial(void);  
+  Serial(void);
 
   //Destructor
-  ~Serial(void);  
+  ~Serial(void);
 
   //Exchange a byte
   uint8_t exchangebyte(uint8_t b);
@@ -21,16 +20,14 @@ class Serial: public Module
   //Is device there
   BOOLEAN isdevicethere(void);
 
- private:
-
+private:
   //Serial driver
   Serial_driver driver;
 };
 
-class Serial_driver: public Driver
+class Serial_driver : public Driver
 {
- public:
-
+public:
   //Constructor
   Serial_driver(void);
 

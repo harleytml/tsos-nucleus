@@ -5,10 +5,9 @@
 #include "core.hpp"
 
 //The main class controlling video
-class Video: public Module
+class Video : public Module
 {
- public:
-
+public:
   //Constructor
   Video(void);
 
@@ -22,7 +21,7 @@ class Video: public Module
   void putchar(char c);
 
   //Put a string on the screen
-  void putstring(char * str);
+  void putstring(char *str);
 
   //Get the current location of the text cursor
   uint16_t gettextcursor(void);
@@ -34,7 +33,7 @@ class Video: public Module
   void rseektextcursor(int16_t pos);
 
   //Get a reference to the text buffer
-  char * gettextbuffer(void);
+  char *gettextbuffer(void);
 
   //Get the length of the text buffer
   uint16_t gettextbufferlength(void);
@@ -49,8 +48,8 @@ class Video: public Module
   void setfont(Font f);
 
   //Clear the screen
-  void clear(void)
- 
+  void clear(void);
+
   //Scroll the screen
   void scroll(uint8_t lines);
 
@@ -59,8 +58,8 @@ class Video: public Module
 
   //Set text foreground color
   void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
- private:
 
+private:
   //Video driver
   Video_driver driver;
 
@@ -74,10 +73,9 @@ class Video: public Module
   Color foregroundcolor;
 };
 
-class Video_driver: public Driver
+class Video_driver : public Driver
 {
- public:
-
+public:
   //Constructor
   Video_driver(void);
 
@@ -91,7 +89,7 @@ class Video_driver: public Driver
   virtual void seektextcursor(uint16_t pos){};
 
   //Get the text buffer
-  virtual char * gettextbuffer(void){};
+  virtual char *gettextbuffer(void){};
 
   //Get the length of the text buffer
   virtual uint16_t gettextbufferlength(void){};
@@ -106,10 +104,9 @@ class Video_driver: public Driver
 //The class defining fonts
 class Font
 {
- public:
-   
+public:
   //Constructor
-  Font(uint8_t * data[][]);
+  Font(uint8_t *data[][]);
 
   //Destructor
   ~Font(void);
@@ -120,17 +117,15 @@ class Font
   //The character height
   uint8_t height;
 
- private:
-
+private:
   //The actual data for the font
-  uint8_t * [][] data;
+  uint8_t *[][] data;
 };
 
 //Describes the character color for text mode video
 class Color
 {
- public:
-
+public:
   //Constructors
   Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a, uint8_t i);
   Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
@@ -160,7 +155,7 @@ class Color
 
 enum video_mode
 {
- TEXT,
- GRAPHIC
-}
+  TEXT,
+  GRAPHIC
+};
 #endif

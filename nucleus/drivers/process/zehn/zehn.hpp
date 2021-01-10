@@ -4,13 +4,13 @@
 
 #include "process.hpp"
 
-class ZEHN_driver: public Process_driver
+class ZEHN_driver : public Process_driver
 {
- public:
+public:
   ZEHN_driver(void);
   BOOLEAN detectsystem(void);
-  BOOLEAN isvalidexecutable(char * path);
-  machine_type machine=GENERIC;
+  BOOLEAN isvalidexecutable(char *path);
+  machine_type machine = GENERIC;
 };
 
 #endif

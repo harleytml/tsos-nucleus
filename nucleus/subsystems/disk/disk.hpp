@@ -5,9 +5,9 @@
 #include "core.hpp"
 
 //The main class controlling the disks
-class Disk: public Module
+class Disk : public Module
 {
- public:
+public:
   //Constructor
   Disk(void);
 
@@ -15,7 +15,7 @@ class Disk: public Module
   ~Disk(void);
 
   //Get a amount of bytes from the disk
-  uint8_t [] getbytes(uint16_t offset, uint8_t len);
+  uint8_t[] getbytes(uint16_t offset, uint8_t len);
 
   //Get the sector size
   uint16_t getsectorsize(void);
@@ -23,21 +23,19 @@ class Disk: public Module
   //Do not return till the disk is idle (for when you need to shutdown, reboot, or remove the disk)
   void commitall(void);
 
- private:
-
+private:
   //Disk driver
   Disk_driver driver;
 };
 
-class Disk_driver: public Driver:
+class Disk_driver : public Driver:
 {
- public:
-
+public:
   //Constructor
- Disk_driver(void);
+  Disk_driver(void);
 
   //Destructor
- ~Disk_driver(void);
+  ~Disk_driver(void);
 
   //Get bytes from the disk
   virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len){};

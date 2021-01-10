@@ -4,20 +4,19 @@
 
 #include "input.hpp"
 
-class AT_KEYBOARD_driver: public Input_module
+class AT_KEYBOARD_driver : public Input_driver
 {
- public:
+public:
+    //Constructor
+    AT_KEYBOARD_driver(void);
 
-  //Constructor
-  AT_KEYBOARD_driver(void);   
+    //Detects if the module should be used
+    BOOLEAN detectsystem(void);
 
-  //Detects if the module should be used
-  BOOLEAN detectsystem(void);
+    //Get te key currently pressed
+    Key getkey(void);
 
-  //Get te key currently pressed
-  Key getkey(void);
-
- private:  
+private:
 };
 
 #endif

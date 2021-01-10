@@ -4,11 +4,11 @@
 
 #include "serial.hpp"
 
-class RS232_driver: public Serial_driver
+class RS232_driver : public Serial_driver
 {
- RS232_driver(void);
- BOOLEAN detectsystem(void);
- uint8_t exchangebyte(uint8_t b)
+    RS232_driver(void);
+    BOOLEAN detectsystem(void);
+    uint8_t exchangebyte(uint8_t b)
 };
 
 #endif

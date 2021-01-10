@@ -36,14 +36,14 @@ $(BUILD_DIR)/bootloader.o:
 #Here is the irregular part:
 $(BUILD_DIR)/current_config.hpp:
 :echo "#define MACHINE GAMEBOY_ADVANCED" >> $@
-:echo "#define VIDEO_DRIVERS {new GBA_SCREEN_driver}" >> $@
-:echo "#define INPUT_DRIVERS {new GBA_GAMEPAD_driver}" >> $@
-:echo "#define DISK_DRIVERS {new GBA_CARTRIDGE_driver}" >> $@
-:echo "#define SERIAL_DRIVERS {new GBA_IO_PORT_driver}" >> $@
-:echo "#define BOOT_DRIVERS {new GBA_BOOT_driver}" >> $@
-:echo "#define FILESYSTEM_DRIVERS {new FAT12_driver, new FAT16_driver, new FAT32_driver, new CDFS_driver}" >> $@
+:echo "#define VIDEO_DRIVERS { GBA_SCREEN_driver()}" >> $@
+:echo "#define INPUT_DRIVERS { GBA_GAMEPAD_driver()}" >> $@
+:echo "#define DISK_DRIVERS { GBA_CARTRIDGE_driver()}" >> $@
+:echo "#define SERIAL_DRIVERS { GBA_IO_PORT_driver()}" >> $@
+:echo "#define BOOT_DRIVERS { GBA_BOOT_driver()}" >> $@
+:echo "#define FILESYSTEM_DRIVERS { FAT12_driver(),  FAT16_driver(),  FAT32_driver(),  CDFS_driver()}" >> $@
 :echo "#define SOUND_DRIVERS {}" >> $@
-:echo "#define PROCESS_DRIVERS {new ELF_driver, new ZEHN_driver}" >> $@
+:echo "#define PROCESS_DRIVERS { ELF_driver(),  ZEHN_driver()}" >> $@
 :echo "#define VIDEO_DRIVER_COUNT 1" >> $@
 :echo "#define INPUT_DRIVER_COUNT 1" >> $@
 :echo "#define DISK_DRIVER_COUNT 1" >> $@

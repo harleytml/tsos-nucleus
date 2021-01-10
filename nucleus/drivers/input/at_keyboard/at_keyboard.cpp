@@ -3,20 +3,20 @@
 
 AT_KEYBOARD_driver::AT_KEYBOARD_driver(void)
 {
- name="AT Keyboard";
+    name = "AT Keyboard";
 }
 
 BOOLEAN AT_KEYBOARD_driver::detectsystem(void)
 {
 
- //Check the first keyboard flag bitmap
- //Bit 4 equaling 1 means a AT keyboard
- if((*((uint8_t *)0x400096)&0x10)==1)
- {
+    //Check the first keyboard flag bitmap
+    //Bit 4 equaling 1 means a AT keyboard
+    if ((*((uint8_t *)0x400096) & 0x10) == 1)
+    {
 
-  //This keyboard is AT, or a emulator
-  return TRUE;
- }
+        //This keyboard is AT, or a emulator
+        return TRUE;
+    }
 }
 
 //So detecting keys in PC is a little sketchy
@@ -26,8 +26,8 @@ BOOLEAN AT_KEYBOARD_driver::detectsystem(void)
 //If you are testing TS/OS, please watch for this
 key_identifier AT_KEYBOARD_driver::getkey(void)
 {
- switch(*((uint8_t *)0x400096))
- {
-  case:
- }
+    switch (*((uint8_t *)0x400096))
+    {
+    case:
+    }
 }
