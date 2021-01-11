@@ -8,6 +8,7 @@ class CGA_driver : public Video_driver
 {
 public:
   CGA_driver(void);
+  BOOLEAN detectsystem(void);
   void reset(void);
   void putchar(char c, Color bc, Color fc);
   uint16_t gettextcursor(void);

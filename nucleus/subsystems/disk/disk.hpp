@@ -28,14 +28,14 @@ private:
   Disk_driver driver;
 };
 
-class Disk_driver : public Driver:
+class Disk_driver : public Driver
 {
 public:
   //Constructor
-  Disk_driver(void);
+  Disk_driver(void);
 
   //Destructor
-  ~Disk_driver(void);
+  ~Disk_driver(void);
 
   //Get bytes from the disk
   virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len){};

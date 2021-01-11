@@ -6,7 +6,7 @@
 
 class GBA_SOUND_driver: public Sound_driver
 {
- DMG_SOUND_driver(void);
+ GBA_SOUND_driver(void);
  BOOLEAN detectsystem(void);
  void playtone(Tone tone);
 };

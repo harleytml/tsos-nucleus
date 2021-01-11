@@ -5,7 +5,7 @@ GRUB2_driver::GRUB2_driver(void)
 {
 
     //Start a instance of the TS/OS api
-    tsos = new Tsos();
+    tsos = Tsos();
 }
 
 GRUB2_driver::~GRUB2_driver(void)
@@ -22,7 +22,7 @@ BOOLEAN GRUB2_driver::detectsystem(void)
 //This is a rather old and crusty reboot method....
 void GRUB2_driver::reboot(void)
 {
-    uint16_t * post_reset_flag = (uint16_t *)0x400072;
+    uint16_t *post_reset_flag = (uint16_t *)0x400072;
 
     //Tell the BIOS we want a warm boot
     *post_reset_flag = 0x1234;

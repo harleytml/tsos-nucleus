@@ -17,7 +17,7 @@ public:
   ~Filesystem(void);
 
   //Read the contents of a directory
-  char *[] readdir(char *path);
+  char ** readdir(char *path);
 
   //Rename a file or folder
   void rename(char *path, char *newPath);
@@ -29,7 +29,7 @@ public:
   void close(Tsos_file file);
 
   //Read from a file
-  uint8_t[] read(Tsos_file file, uint32_t length);
+  uint8_t ** read(Tsos_file file, uint32_t length);
 
   //Write to a file
   void write(Tsos_file file, uint8_t data[]);

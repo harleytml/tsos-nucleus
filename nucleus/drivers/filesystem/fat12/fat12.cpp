@@ -20,7 +20,7 @@ BOOLEAN FAT12_driver::detectsystem(void)
     return TRUE;
 }
 
-char *[] FAT12_driver::readdir(char *path) {
+char ** FAT12_driver::readdir(char *path) {
 }
 
 void FAT12_driver::rename(char *path, char *newPath)
