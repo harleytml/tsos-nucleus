@@ -22,7 +22,7 @@ public:
 
 private:
   //Serial driver
-  Serial_driver driver;
+  Serial_driver *driver;
 };
 
 class Serial_driver : public Driver

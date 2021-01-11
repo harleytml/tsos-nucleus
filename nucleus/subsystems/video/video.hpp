@@ -61,7 +61,7 @@ public:
 
 private:
   //Video driver
-  Video_driver driver;
+  Video_driver *driver;
 
   //Current font
   Font font;
@@ -119,7 +119,7 @@ public:
 
 private:
   //The actual data for the font
-  uint8_t * data[][];
+  uint8_t *data[][];
 };
 
 //Describes the character color for text mode video
@@ -135,7 +135,7 @@ public:
   ~Color(void);
 
   //To copy a color
-  Color(const Color& color);
+  Color(const Color &color);
 
   //Red part
   uint8_t red;

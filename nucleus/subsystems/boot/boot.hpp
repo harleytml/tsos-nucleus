@@ -25,7 +25,7 @@ public:
 
 private:
   //The boot driver being used
-  Boot_driver driver;
+  Boot_driver *driver;
 };
 
 class Boot_driver : public Driver

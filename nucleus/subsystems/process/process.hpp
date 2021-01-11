@@ -30,7 +30,7 @@ public:
 
 private:
   //Process driver
-  Process_driver driver;
+  Process_driver *driver;
 
   //The table of processes
   Process processes[PROCESS_COUNT];

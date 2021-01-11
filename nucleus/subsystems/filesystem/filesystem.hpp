@@ -62,9 +62,8 @@ private:
   //The files currently opened
   Tsos_file open_files[MAX_FILES_OPEN];
 
-private:
   //Filesystem driver
-  Filesystem_driver driver;
+  Filesystem_driver *driver;
 };
 
 class Filesystem_driver : public Driver

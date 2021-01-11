@@ -22,7 +22,7 @@ public:
 
 private:
   //Input driver
-  Input_driver driver;
+  Input_driver *driver;
 };
 
 class Input_driver : public Driver

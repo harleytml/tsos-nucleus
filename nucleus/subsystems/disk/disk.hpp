@@ -25,7 +25,7 @@ public:
 
 private:
   //Disk driver
-  Disk_driver driver;
+  Disk_driver *driver;
 };
 
 class Disk_driver : public Driver
