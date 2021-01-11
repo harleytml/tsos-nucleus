@@ -26,14 +26,14 @@ public:
   void killall(void);
 
   //Allocate memory
-  uint8_t[] allocatememory(uint32_t len);
+  uint8_t *allocatememory(uint32_t len);
 
 private:
   //Process driver
   Process_driver *driver;
 
   //The table of processes
-  Process processes[PROCESS_COUNT];
+  Process_info processes[PROCESS_COUNT];
 };
 
 class Process_driver : public Driver
@@ -47,10 +47,10 @@ class Process_info
 {
 public:
   //Constructor
-  Process();
+  Process_info();
 
   //Constructor
-  Process(uint8_t p, process_state s);
+  Process_info(uint8_t p, process_state s);
 
   //The PID of a process
   uint8_t pid;

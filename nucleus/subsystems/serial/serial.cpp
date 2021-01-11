@@ -21,7 +21,7 @@ uint8_t Serial::exchangebyte(uint8_t b)
     }
 }
 
-BOOLEAN isdevicethere(void)
+BOOLEAN Serial::isdevicethere(void)
 {
     return driver->isdevicethere();
 }

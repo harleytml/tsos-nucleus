@@ -117,6 +117,6 @@ void Module::attachdriver(T d) const
     {
 
         //Lets not overfill the heap
-        delete d;
+        delete &d;
     }
 }

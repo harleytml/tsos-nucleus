@@ -21,3 +21,7 @@ void Process::kill(uint8_t pid)
 void Process::killall(void)
 {
 }
+
+uint8_t *Process::allocatememory(uint32_t len)
+{
+}
