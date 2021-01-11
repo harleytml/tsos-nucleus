@@ -10,9 +10,9 @@ Video::Video(void)
 
 Video::~Video(void)
 {
-  delete font;
-  delete backgroundcolor;
-  delete foregroundcolor;
+  delete &font;
+  delete &backgroundcolor;
+  delete &foregroundcolor;
 }
 
 void Video::reset(void)
@@ -22,7 +22,7 @@ void Video::reset(void)
 
 void Video::putchar(char c)
 {
-  driver->putchar(c, bcolor, fcolor);
+  driver->putchar(c, backgroundcolor, foregroundcolor);
 }
 
 void Video::putstring(char *str)
@@ -116,13 +116,13 @@ void Video::scroll(uint8_t lines)
 
 void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
-  delete backgroundcolor;
+  delete &backgroundcolor;
   backgroundcolor = Color(red, green, blue, alpha);
 }
 
 void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
-  delete foregroundcolor;
+  delete &foregroundcolor;
   foregroundcolor = Color(red, green, blue, alpha);
 }
 
