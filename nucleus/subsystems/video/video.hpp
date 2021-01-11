@@ -99,6 +99,9 @@ public:
 
   //Get the height of the screen
   virtual uint16_t getscreenheight(void){};
+
+  //Reset the system
+  virtual void reset(void){};
 };
 
 //The class defining fonts

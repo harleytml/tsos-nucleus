@@ -35,7 +35,7 @@ public:
   void write(Tsos_file file, uint8_t data[]);
 
   //Read all from a file
-  uint8_t []readfile(char *path);
+  uint8_t *readfile(char *path);
 
   //Write all to a file
   void writefile(char *path, uint8_t data[]);

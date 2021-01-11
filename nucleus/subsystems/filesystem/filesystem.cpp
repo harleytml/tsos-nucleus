@@ -9,7 +9,8 @@ Filesystem::~Filesystem(void)
 {
 }
 
-char ** Filesystem::readdir(char *path) {
+char **Filesystem::readdir(char *path)
+{
     if (exists(path))
     {
         return driver->readdir(path);
@@ -39,7 +40,7 @@ void Filesystem::close(Tsos_file file)
     }
 }
 
-uint8_t[] Filesystem::read(Tsos_file file, uint32_t length);
+uint8_t *Filesystem::read(Tsos_file file, uint32_t length);
 {
 }
 
@@ -47,7 +48,7 @@ void Filesystem::write(Tsos_file file, uint8_t[] data)
 {
 }
 
-uint8_t[] Filesystem::readfile(char *path)
+uint8_t *Filesystem::readfile(char *path)
 {
     if (exists(path))
     {

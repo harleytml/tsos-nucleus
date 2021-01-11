@@ -15,7 +15,7 @@ public:
   ~Disk(void);
 
   //Get a amount of bytes from the disk
-  uint8_t[] getbytes(uint16_t offset, uint8_t len);
+  uint8_t *getbytes(uint16_t offset, uint8_t len);
 
   //Get the sector size
   uint16_t getsectorsize(void);

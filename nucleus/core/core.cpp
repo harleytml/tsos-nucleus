@@ -20,13 +20,13 @@ Tsos::Tsos(void)
     disk = Disk();
 
     //All these define based constants are in a generated header file (see core.hpp)
-    Driver video_drivers[] = VIDEO_DRIVERS;
-    Driver input_drivers[] = INPUT_DRIVERS;
-    Driver filesystem_drivers[] = FILESYSTEM_DRIVERS;
-    Driver boot_drivers[] = BOOT_DRIVERS;
-    Driver serial_drivers[] = SERIAL_DRIVERS;
-    Driver process_drivers[] = PROCESS_DRIVERS;
-    Driver disk_drivers[] = DISK_DRIVERS;
+    Video_driver video_drivers[] = VIDEO_DRIVERS;
+    Input_driver input_drivers[] = INPUT_DRIVERS;
+    Filesystem_driver filesystem_drivers[] = FILESYSTEM_DRIVERS;
+    Boot_driver boot_drivers[] = BOOT_DRIVERS;
+    Serial serial_drivers[] = SERIAL_DRIVERS;
+    Process_driver process_drivers[] = PROCESS_DRIVERS;
+    Disk_driver disk_drivers[] = DISK_DRIVERS;
 
     //Attach video drivers
     for (uint8_t x = 0; x < VIDEO_DRIVER_COUNT; x++)

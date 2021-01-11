@@ -37,8 +37,8 @@ void CGA_driver::putchar(char c, Color bc, Color fc)
   switch (mode)
   {
   case TEXT:
-    uint8_t a=0;
-    uint8_t olda = text_buffer[text_cursor + 2];
+    uint8_t a = 0;
+    uint8_t o = text_buffer[text_cursor + 2];
 
     //Inefficient, I know, but this is a early driver
     //Each attribute has 1 bit per color, plus intensity
