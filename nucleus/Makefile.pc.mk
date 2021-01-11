@@ -12,7 +12,7 @@ CC=$(where i686-elf-gcc)
 CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 CPP=$(where i686-elf-g++)
-CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
+CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
 
 AS=$(where i686-elf-as)
 AS_FLAGS=
@@ -25,7 +25,7 @@ CORE=$(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/su
 DRIVER=$(NUCLEUS_DIR)/drivers/video/mda/mda.cpp $(NUCLEUS_DIR)/drivers/video/mda/mda.hpp $(NUCLEUS_DIR)/drivers/video/cga/cga.cpp $(NUCLEUS_DIR)/drivers/video/cga/cga.hpp $(NUCLEUS_DIR)/drivers/video/ega/ega.cpp $(NUCLEUS_DIR)/drivers/video/ega/ega.hpp $(NUCLEUS_DIR)/drivers/video/vga/vga.cpp $(NUCLEUS_DIR)/drivers/video/vga/vga.hpp $(NUCLEUS_DIR)/drivers/filesystem/fat12/fat12.cpp $(NUCLEUS_DIR)/drivers/filesystem/fat12/fat12.hpp $(NUCLEUS_DIR)/drivers/filesystem/fat16/fat16.cpp $(NUCLEUS_DIR)/drivers/filesystem/fat16/fat16.hpp $(NUCLEUS_DIR)/drivers/filesystem/fat32/fat32.cpp $(NUCLEUS_DIR)/drivers/filesystem/fat32/fat32.hpp $(NUCLEUS_DIR)/drivers/filesystem/cdfs/cdfs.cpp $(NUCLEUS_DIR)/drivers/filesystem/cdfs/cdfs.hpp $(NUCLEUS_DIR)/drivers/serial/rs232/rs232.cpp $(NUCLEUS_DIR)/drivers/serial/rs232/rs232.hpp $(NUCLEUS_DIR)/drivers/input/xt_keyboard/xt_keyboard.cpp $(NUCLEUS_DIR)/drivers/input/xt_keyboard/xt_keyboard.hpp $(NUCLEUS_DIR)/drivers/input/at_keyboard/at_keyboard.cpp $(NUCLEUS_DIR)/drivers/input/at_keyboard/at_keyboard.hpp $(NUCLEUS_DIR)/drivers/disk/cd/cd.cpp $(NUCLEUS_DIR)/drivers/disk/cd/cd.hpp $(NUCLEUS_DIR)/drivers/boot/grub2/grub2.cpp $(NUCLEUS_DIR)/drivers/boot/grub2/grub2.hpp $(NUCLEUS_DIR)/drivers/process/elf/elf.cpp $(NUCLEUS_DIR)/drivers/process/elf/elf.hpp $(NUCLEUS_DIR)/drivers/process/zehn/zehn.cpp $(NUCLEUS_DIR)/drivers/process/zehn/zehn.hpp
 
 $(OUTPUT_DIR)/nucleus.img: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o
-:$(LD) $(LD_FLAGS) -o $@ $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o
+:$(CC) $(CPP_FLAGS) -T elf-linker.ld -o $@ $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/nucleus.o
 
 $(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/current_config.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $(BUILD_DIR)/current_config.hpp $(CORE)
