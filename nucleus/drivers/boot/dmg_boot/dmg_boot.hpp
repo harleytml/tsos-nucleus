@@ -20,3 +20,4 @@ public:
   //Shutdown system
   void shutdown(void);
 };
+#endif

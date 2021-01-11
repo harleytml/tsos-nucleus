@@ -101,7 +101,7 @@ Module::Module(void)
 
 Module::~Module(void)
 {
-    delete name;
+    delete [] name;
 }
 
 templete<class T> 

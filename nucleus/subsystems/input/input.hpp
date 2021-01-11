@@ -15,7 +15,7 @@ public:
   ~Input(void);
 
   //Get the key pressed
-  void getkey(void);
+  key_identifier getkey(void);
 
   //Wait for a key to be pressed
   void waitkey(void);

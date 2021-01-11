@@ -42,6 +42,6 @@ public:
 
   //Shutdown system
   virtual void shutdown(void){};
-}
+};
 
 #endif

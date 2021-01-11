@@ -22,6 +22,6 @@ private:
 enum DMG_CARTRIDGE_type
 {
     MBC1
-}
+};
 
 #endif

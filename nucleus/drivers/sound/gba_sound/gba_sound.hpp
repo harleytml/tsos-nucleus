@@ -4,11 +4,11 @@
 
 #include "sound.hpp"
 
-class GBA_SOUND_driver: public Sound_driver
+class GBA_SOUND_driver : public Sound_driver
 {
- GBA_SOUND_driver(void);
- BOOLEAN detectsystem(void);
- void playtone(Tone tone);
+    GBA_SOUND_driver(void);
+    BOOLEAN detectsystem(void);
+    void playtone(Tone tone);
 };
 
 #endif
