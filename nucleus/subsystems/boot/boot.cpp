@@ -32,7 +32,7 @@ void Boot::shutdown(void)
     tsos.disk.commitall();
 
     //Destroy tsos, to trigger the kernel destruction
-    delete tsos;
+    delete &tsos;
     driver->shutdown();
 }
 

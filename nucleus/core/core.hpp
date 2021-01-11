@@ -44,7 +44,7 @@ Tsos tsos;
   {                     \
   }
 #define DISK_DRIVERS \
-  {                  \s
+  {                  \
   }
 #define SOUND_DRIVERS \
   {                   \
