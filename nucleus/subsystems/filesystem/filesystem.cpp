@@ -9,7 +9,7 @@ Filesystem::~Filesystem(void)
 {
 }
 
-char *[] Filesystem::readdir(char *path) {
+char ** Filesystem::readdir(char *path) {
     if (exists(path))
     {
         return driver->readdir(path);

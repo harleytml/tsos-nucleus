@@ -8,7 +8,7 @@ CDFS_driver::CDFS_driver(void)
 
 BOOLEAN CDFS_driver::detectsystem(void)
 {
-    uint8_t diskfsname[] = tsos.disk.getbytes(0x4f, 0x05);
+    uint8_t diskfsname[5] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "";
     for (uint8_t x = 0; x < 0x5; x++)
     {

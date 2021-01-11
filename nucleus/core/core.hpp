@@ -2,21 +2,23 @@
 #ifndef __TSOS_NUCLEUS_CORE__
 #define __TSOS_NUCLEUS_CORE__
 
-typedef __UINT8_TYPE__  uint8_t;
-typedef __UINT16_TYPE__  uint16_t;
-typedef __UINT32_TYPE__  uint32_t;
-typedef __INT8_TYPE__  int8_t;
-typedef __INT16_TYPE__  int16_t;
-typedef __INT32_TYPE__  int32_t;
+typedef __UINT8_TYPE__ uint8_t;
+typedef __UINT16_TYPE__ uint16_t;
+typedef __UINT32_TYPE__ uint32_t;
+typedef __INT8_TYPE__ int8_t;
+typedef __INT16_TYPE__ int16_t;
+typedef __INT32_TYPE__ int32_t;
 
 //Boolean type
 typedef uint8_t BOOLEAN;
 
 //True
-BOOLEAN TRUE = 1;
+const BOOLEAN TRUE = 1;
 
 //False
-BOOLEAN FALSE = 0;
+const BOOLEAN FALSE = 0;
+
+const uint8_t NULL = '\0';
 
 Tsos tsos;
 
@@ -42,7 +44,7 @@ Tsos tsos;
   {                     \
   }
 #define DISK_DRIVERS \
-  {                  \
+  {                  \s
   }
 #define SOUND_DRIVERS \
   {                   \
@@ -130,7 +132,7 @@ public:
   virtual BOOLEAN detectsystem(void){};
 
   //The name of said module
-  char * name;
+  char *name;
 };
 
 //The base class of TS/OS modules

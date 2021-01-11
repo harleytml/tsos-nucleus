@@ -41,7 +41,7 @@ $(BUILD_DIR)/current_config.hpp:
 :echo "#define DISK_DRIVERS { DMG_CARTRIDGE_driver()}" >> $@
 :echo "#define SERIAL_DRIVERS { DMG_IO_PORT_driver()}" >> $@
 :echo "#define BOOT_DRIVERS { DMG_BOOT_driver()}" >> $@
-:echo "#define FILESYSTEM_DRIVERS { FAT12_driver(),  FAT16_driver(),  FAT32_driver(),  CDFS_driver}()" >> $@
+:echo "#define FILESYSTEM_DRIVERS { FAT12_driver(),  FAT16_driver(),  FAT32_driver(),  CDFS_driver()}" >> $@
 :echo "#define SOUND_DRIVERS {}" >> $@
 :echo "#define PROCESS_DRIVERS { ELF_driver(),  ZEHN_driver()}" >> $@
 :echo "#define VIDEO_DRIVER_COUNT 1" >> $@

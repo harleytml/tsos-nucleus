@@ -4,7 +4,7 @@
 
 #include "input.hpp"
 
-class XT_KEYBOARD_driver : public Input_module
+class XT_KEYBOARD_driver : public Input_driver
 {
 public:
     //Constructor
