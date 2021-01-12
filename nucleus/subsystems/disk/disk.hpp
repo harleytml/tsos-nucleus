@@ -39,6 +39,9 @@ public:
 
   //Get bytes from the disk
   virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len){};
+
+  //Get the sector size
+  virtual uint16_t getsectorsize(void){};
 };
 
 #endif

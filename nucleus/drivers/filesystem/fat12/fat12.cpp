@@ -8,7 +8,7 @@ FAT12_driver::FAT12_driver(void)
 
 BOOLEAN FAT12_driver::detectsystem(void)
 {
-    uint8_t diskfsname[] = tsos.disk.getbytes(0x4f, 0x05);
+    uint8_t * diskfsname = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "FAT12";
     for (uint8_t x = 0; x < 0x5; x++)
     {

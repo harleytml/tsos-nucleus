@@ -40,7 +40,7 @@ class Process_driver : public Driver
 {
 public:
   virtual BOOLEAN isvalidexecutable(char *path){};
-}
+};
 
 //The class holding the information of a process
 class Process_info

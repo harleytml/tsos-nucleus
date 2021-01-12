@@ -142,7 +142,7 @@ enum key_identifier
   KEY_PERCENT,
   KEY_CARET,
   KEY_AMPERSAND,
-}
+};
 
 enum key_position
 {

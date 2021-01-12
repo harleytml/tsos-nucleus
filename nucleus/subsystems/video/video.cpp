@@ -96,7 +96,6 @@ uint16_t Video::getscreenheight(void)
 
 void Video::setfont(Font f)
 {
-  driver->setfont(f);
 }
 
 void Video::clear(void)

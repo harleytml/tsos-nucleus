@@ -80,6 +80,9 @@ public:
 
   //Rename a target
   virtual char *rename(char *path, char *newPath){};
+
+  //Make sure a file actually exists
+  virtual BOOLEAN exists(char * path){};
 };
 
 //A file in Tsos
