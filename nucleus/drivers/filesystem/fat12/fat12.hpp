@@ -4,12 +4,12 @@
 
 #include "filesystem.hpp"
 
-class FAT12_driver : public Filesystem_module
+class FAT12_driver : public Filesystem_driver
 {
 public:
   FAT12_driver(void);
   BOOLEAN detectsystem(void);
-  char *[] readdir(char *path);
+  char ** readdir(char *path);
   void rename(char *path, char *newPath);
   Tsos_file open(char *path);
   void close(Tsos_file file);
