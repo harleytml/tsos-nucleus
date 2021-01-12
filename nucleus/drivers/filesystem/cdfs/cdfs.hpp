@@ -9,7 +9,7 @@ class CDFS_driver: public Filesystem_driver
  public:
   CDFS_driver(void);
   BOOLEAN detectsystem(void);
-  char * [] readdir(char * path);
+  char ** readdir(char * path);
   void rename(char * path, char * newPath);
   Tsos_file open(char * path);
   void close(Tsos_file file);

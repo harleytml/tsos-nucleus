@@ -18,7 +18,7 @@ BOOLEAN CGA_driver::detectsystem(void)
     if ((*((uint8_t)0x400010) & 0x30) != 0x30)
     {
 
-      //Display is probably CGA, or a card in CGA emulation mode
+      //Display is probably CGA, or a card in CGA emulation mode, doesn't matter to us
       return TRUE;
     }
   }

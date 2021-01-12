@@ -148,13 +148,14 @@ enum key_identifier
   KEY_DASH,
   KEY_PLUS,
   KEY_TAB
-  
+
 };
 
 enum key_position
 {
   RIGHT,
-  LEFT
+  LEFT,
+  MIDDLE
 };
 
 #endif

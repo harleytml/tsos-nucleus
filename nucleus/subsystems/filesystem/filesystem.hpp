@@ -79,7 +79,7 @@ public:
   virtual char **readdir(char *path){};
 
   //Rename a target
-  virtual char *rename(char *path, char *newPath){};
+  virtual void rename(char *path, char *newPath){};
 
   //Make sure a file actually exists
   virtual BOOLEAN exists(char * path){};

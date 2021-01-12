@@ -9,6 +9,7 @@ class DMG_CARTRIDGE_driver : public Disk_driver
 public:
     //Constructor
     DMG_CARTRIDGE_driver(void);
+    BOOLEAN detectsystem(void);
 
     //Get a amount of bytes from the disk
     char *getbytes(uint16_t offset, uint8_t len);
