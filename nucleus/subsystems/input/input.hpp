@@ -142,6 +142,13 @@ enum key_identifier
   KEY_PERCENT,
   KEY_CARET,
   KEY_AMPERSAND,
+  KEY_APOSTROPHE,
+  KEY_OPEN_BRACKET,
+  KEY_CLOSE_BRACKET,
+  KEY_DASH,
+  KEY_PLUS,
+  KEY_TAB
+  
 };
 
 enum key_position

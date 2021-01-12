@@ -16,7 +16,7 @@ FUTURE PORTS:
 
 psp
 
-This is the Sony Playstation Portable.
+This is the Sony Playstation Portable, with MIPS32 processors.
 
 nspire
 
