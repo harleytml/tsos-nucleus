@@ -84,10 +84,10 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
       text_buffer[text_cursor] = c;
 
       //Move that cursor forward a little
-      seektextcursor(gettextcursor() + 1)
+      seektextcursor(gettextcursor() + 1);
 
-          //Put the attribute byte
-          text_buffer[text_cursor] = (char)a;
+      //Put the attribute byte
+      text_buffer[text_cursor] = (char)a;
       return;
     default:
 
