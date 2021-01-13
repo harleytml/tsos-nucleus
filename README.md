@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/ts-os/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tsuki-superior/ts-os&amp;utm_campaign=Badge_Grade)
 
+[![Codeship Status for tsuki-superior/ts-os](https://app.codeship.com/projects/040e37cb-70b8-4563-ae3b-127791069237/status?branch=master)](https://app.codeship.com/projects/423903)
+
 TS/OS
 
 Current Version: Hydrogen (1.0)
