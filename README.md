@@ -1,6 +1,6 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/ts-os)
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/ts-os)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/ts-os/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tsuki-superior/ts-os&amp;utm_campaign=Badge_Grade)
 
 TS/OS
 
@@ -31,5 +31,3 @@ The naming of TS/OS is the floor of the TS/OS version, as the atomic number of a
 The TS/OS kernel is called the Nucleus. Many other chemistry analagues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
 
 In the documents directory, you can find more documents concerning TS/OS.
-
-https://app.codacy.com/gh/tsuki-superior/ts-os/dashboard
