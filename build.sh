@@ -17,7 +17,7 @@ if [ ! -f "./token" ]; then
     GBDK_VERSION=4.0.1
     
     #The url for gcc`s tarball
-    GCC_DOWNLOAD_URL=https://ftp.gnu.org/gnu/gcc/gcc-$GCC_VERSION.tar.xz
+    GCC_DOWNLOAD_URL=https://ftp.gnu.org/gnu/gcc/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz
     
     #The url for binutils`s tarball
     BINUTILS_DOWNLOAD_URL=https://ftp.gnu.org/gnu/binutils/binutils-$BINUTILS_VERSION.tar.xz
@@ -48,7 +48,7 @@ if [ ! -f "./token" ]; then
     tar -xf binutils-$BINUTILS_VERSION.tar.xz
     mv -v binutils-$BINUTILS_VERSION/ binutils/
     tar -xf devkitARM_$DEVKITARM_VERSION.tar.gz
-    mv -v devkitARM_$DEVKITARM__VERSION/ devkitarm
+    mv -v devkitARM_$DEVKITARM_VERSION/ devkitarm
     tar -xf $GBDK_VERSION.tar.gz
     mv -v $GBDK_VERSION/ gbdk
     
