@@ -1,0 +1,4 @@
+- type: parallel
+  steps:
+    - service: foo
+      command: ./build.sh pc

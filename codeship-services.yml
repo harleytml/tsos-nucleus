@@ -1,0 +1,3 @@
+TS-OS:
+  build:
+    image: tsukisuperior/debian-ci-cd
