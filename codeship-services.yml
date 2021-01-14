@@ -1,7 +1,6 @@
 app:
-  build: .
   links:
     - ts-os
 
 ts-os:
- image: tsukisuperior/debian-ci-cd
+  image: tsukisuperior/debian-ci-cd
