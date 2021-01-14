@@ -1,5 +1,5 @@
-- name: ts-os
+- name: main-build
   type: parallel
   steps:
-    - service: foo
+    - service: app
       command: ./build.sh pc
