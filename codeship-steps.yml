@@ -1,5 +1,0 @@
-- name: main-build
-  type: parallel
-  steps:
-    - service: app
-      command: ./build.sh pc
