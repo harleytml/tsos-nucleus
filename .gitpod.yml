@@ -1,4 +1,4 @@
-image: tsukisuperior/debian-ci-cd
+image: debian
 
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
