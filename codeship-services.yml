@@ -1,3 +1,7 @@
 app:
-  build:
-    image: tsukisuperior/debian-ci-cd
+  build: .
+  links:
+    - postgres
+
+ts-os:
+ image: tsukisuperior/debian-ci-cd
