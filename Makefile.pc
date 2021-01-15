@@ -3,10 +3,8 @@
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build
-NUCLEUS_DIR=$(PWD)/../nucleus
-FILESYSTEM_DIR=$(PWD)/../filesystem
-LIBRARY_DIR=$(PWD)/../libraries
-TOOLCHAIN_DIR=$(PWD)/../toolchain
+KERNEL_DIR=$(PWD)/../kernel
+CONFIG_DIR=$(PWD)/../config
 
 CC=$(where i686-elf-gcc)
 CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
@@ -33,22 +31,6 @@ $(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/current_config.hpp
 $(BUILD_DIR)/bootloader.o:
 :$(AS) $(NUCLEUS_DIR)/drivers/boot/grub2/grub.asm $(AS_FLAGS) -o $@
 
-#Here is the irregular part:
 $(BUILD_DIR)/current_config.hpp:
-:echo "#define MACHINE PERSONAL_COMPUTER" >> $@
-:echo "#define VIDEO_DRIVERS { MDA_driver(),  CGA_driver(),  EGA_driver(),  VGA_driver()}" >> $@
-:echo "#define INPUT_DRIVERS { XT_KEYBOARD_driver(),  AT_KEYBOARD_driver()}" >> $@
-:echo "#define DISK_DRIVERS { CD_driver()}" >> $@
-:echo "#define SERIAL_DRIVERS { RS232_driver()}" >> $@
-:echo "#define BOOT_DRIVERS { GRUB2_driver()}" >> $@
-:echo "#define FILESYSTEM_DRIVERS { FAT12_driver(),  FAT16_driver(),  FAT32_driver(),  CDFS_driver()}" >> $@
-:echo "#define SOUND_DRIVERS {}" >> $@
-:echo "#define PROCESS_DRIVERS { ELF_driver(),  ZEHN_driver()}" >> $@
-:echo "#define VIDEO_DRIVER_COUNT 4" >> $@
-:echo "#define INPUT_DRIVER_COUNT 2" >> $@
-:echo "#define DISK_DRIVER_COUNT 1" >> $@
-:echo "#define SERIAL_DRIVER_COUNT 1" >> $@
-:echo "#define BOOT_DRIVER_COUNT 1" >> $@
-:echo "#define FILESYSTEM_DRIVER_COUNT 4" >> $@
-:echo "#define SOUND_DRIVER_COUNT 0" >> $@
-:echo "#define PROCESS_DRIVER_COUNT 2" >> $@
+:cp $(CONFIG_DIR)/pc.hpp $@
+
