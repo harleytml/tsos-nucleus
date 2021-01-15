@@ -35,13 +35,13 @@ public:
   virtual key_identifier getkey(void){};
 
   //Is shift pressed
-  virtual BOOLEAN isshiftpressed(void){};
+  virtual bool isshiftpressed(void){};
 
   //Is alt pressed
-  virtual BOOLEAN isaltpressed(void){};
+  virtual bool isaltpressed(void){};
 
   //Is ctrl pressed
-  virtual BOOLEAN isctrlpressed(void){};
+  virtual bool isctrlpressed(void){};
 };
 
 enum key_identifier

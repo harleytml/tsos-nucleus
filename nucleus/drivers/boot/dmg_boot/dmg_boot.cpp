@@ -12,11 +12,11 @@ DMG_BOOT_driver::~DMG_BOOT_driver(void)
 {
 }
 
-BOOLEAN DMG_BOOT_driver::detectsystem(void)
+bool DMG_BOOT_driver::detectsystem(void)
 {
 
     //Well, if we made it this far, I think we can assume the module is good
-    return TRUE;
+    return true;
 }
 
 void DMG_BOOT_driver::reboot(void)

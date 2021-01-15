@@ -44,7 +44,7 @@ public:
   void appendfile(char *path, uint8_t data[]);
 
   //Detect if a file or folder exists
-  BOOLEAN exists(char *path);
+  bool exists(char *path);
 
   //Create a directory
   void mkdir(char *path, File_permissions f);
@@ -82,7 +82,7 @@ public:
   virtual void rename(char *path, char *newPath){};
 
   //Make sure a file actually exists
-  virtual BOOLEAN exists(char * path){};
+  virtual bool exists(char * path){};
 };
 
 //A file in Tsos
@@ -106,16 +106,16 @@ class File_permissions
 {
 public:
   //Constructor
-  File_permissions(BOOLEAN r, BOOLEAN w, BOOLEAN e);
+  File_permissions(bool r, bool w, bool e);
 
   //Read permission
-  BOOLEAN read;
+  bool read;
 
   //Write permission
-  BOOLEAN write;
+  bool write;
 
   //Execute permission
-  BOOLEAN execute;
+  bool execute;
 };
 
 #endif

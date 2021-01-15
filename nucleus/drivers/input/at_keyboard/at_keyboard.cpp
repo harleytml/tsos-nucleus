@@ -6,7 +6,7 @@ AT_KEYBOARD_driver::AT_KEYBOARD_driver(void)
     name = "AT Keyboard";
 }
 
-BOOLEAN AT_KEYBOARD_driver::detectsystem(void)
+bool AT_KEYBOARD_driver::detectsystem(void)
 {
 
     //Check the first keyboard flag bitmap
@@ -15,7 +15,7 @@ BOOLEAN AT_KEYBOARD_driver::detectsystem(void)
     {
 
         //This keyboard is AT, or a emulator
-        return TRUE;
+        return true;
     }
 }
 

@@ -8,7 +8,7 @@ class GBA_SCREEN_driver : public Video_driver
 {
 public:
   GBA_SCREEN_driver(void);
-  BOOLEAN detectsystem(void);
+  bool detectsystem(void);
   void reset(void);
   void putchar(char c, Color bc, Color fc);
   uint16_t gettextcursor(void);

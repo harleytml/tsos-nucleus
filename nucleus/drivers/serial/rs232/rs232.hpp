@@ -7,7 +7,7 @@
 class RS232_driver : public Serial_driver
 {
     RS232_driver(void);
-    BOOLEAN detectsystem(void);
+    bool detectsystem(void);
     uint8_t exchangebyte(uint8_t b)
 };
 

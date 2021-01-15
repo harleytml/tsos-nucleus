@@ -7,7 +7,7 @@ MDA_driver::MDA_driver(void)
     reset();
 }
 
-BOOLEAN MDA_driver::detectsystem(void)
+bool MDA_driver::detectsystem(void)
 {
 
     //Check to make sure EGA and VGA is not installed
@@ -19,10 +19,10 @@ BOOLEAN MDA_driver::detectsystem(void)
         {
 
             //Display is MDA, or a card in MDA emulation mode
-            return TRUE;
+            return true;
         }
     }
-    return FALSE;
+    return false;
 }
 
 void MDA_driver::init(void)

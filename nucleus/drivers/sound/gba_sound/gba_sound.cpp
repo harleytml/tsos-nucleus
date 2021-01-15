@@ -6,7 +6,7 @@ GBA_SOUND_driver::GBA_SOUND_driver(void)
  name="Gameboy Advanced Sound";
 }
 
-BOOLEAN GBA_SOUND_driver::detectsystem(void)
+bool GBA_SOUND_driver::detectsystem(void)
 {
 
 }

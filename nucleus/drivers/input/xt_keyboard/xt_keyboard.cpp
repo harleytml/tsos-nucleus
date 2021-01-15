@@ -6,7 +6,7 @@ XT_KEYBOARD_driver::XT_KEYBOARD_driver(void)
     name = "XT Keyboard";
 }
 
-BOOLEAN XT_KEYBOARD_driver::detectsystem(void)
+bool XT_KEYBOARD_driver::detectsystem(void)
 {
 
     //Check the first keyboard flag bitmap
@@ -15,7 +15,7 @@ BOOLEAN XT_KEYBOARD_driver::detectsystem(void)
     {
 
         //This keyboard is XT, or a emulator
-        return TRUE;
+        return true;
     }
 }
 

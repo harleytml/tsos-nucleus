@@ -6,7 +6,7 @@ CDFS_driver::CDFS_driver(void)
     name = "Compact Disk Filesystem";
 }
 
-BOOLEAN CDFS_driver::detectsystem(void)
+bool CDFS_driver::detectsystem(void)
 {
     uint8_t diskfsname[5] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "";
@@ -14,10 +14,10 @@ BOOLEAN CDFS_driver::detectsystem(void)
     {
         if ((uint8_t)fsname[x] != diskfsname[x])
         {
-            return FALSE;
+            return false;
         }
     }
-    return TRUE;
+    return true;
 }
 
 char ** CDFS_driver::readdir(char *path) {
@@ -55,6 +55,6 @@ void CDFS_driver::appendfile(char *path, char *data)
 {
 }
 
-BOOLEAN CDFS_driver::exists(char *path)
+bool CDFS_driver::exists(char *path)
 {
 }

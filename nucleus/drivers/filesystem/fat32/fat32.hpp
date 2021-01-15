@@ -17,7 +17,7 @@ public:
   char *readfile(char *path);
   void writefile(char *path, char *data);
   void appendfile(char *path, char *data);
-  BOOLEAN exists(char *path);
+  bool exists(char *path);
 
 private:
   char *currentdirectory;

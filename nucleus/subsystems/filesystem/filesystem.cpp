@@ -69,7 +69,7 @@ void Filesystem::appendfile(char *path, uint8_t[] data)
     }
 }
 
-BOOLEAN Filesystem::exists(char *path)
+bool Filesystem::exists(char *path)
 {
     return driver->exists(path);
 }
@@ -94,7 +94,7 @@ Filesystem_driver::~Filesystem_driver(void)
 {
 }
 
-File_permissions::File_permissions(BOOLEAN r, BOOLEAN w, BOOLEAN e)
+File_permissions::File_permissions(bool r, bool w, bool e)
 {
     read = r;
     write = w;

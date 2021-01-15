@@ -5,7 +5,7 @@ GBA_IO_PORT_driver::GBA_IO_PORT_driver(void)
 {
 }
 
-BOOLEAN GBA_IO_PORT_driver::detectsystem(void)
+bool GBA_IO_PORT_driver::detectsystem(void)
 {
 }
 

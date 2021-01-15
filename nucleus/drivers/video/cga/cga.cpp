@@ -7,7 +7,7 @@ CGA_driver::CGA_driver(void)
   reset();
 }
 
-BOOLEAN CGA_driver::detectsystem(void)
+bool CGA_driver::detectsystem(void)
 {
 
   //Check to make sure EGA and VGA is not installed
@@ -19,10 +19,10 @@ BOOLEAN CGA_driver::detectsystem(void)
     {
 
       //Display is probably CGA, or a card in CGA emulation mode, doesn't matter to us
-      return TRUE;
+      return true;
     }
   }
-  return FALSE;
+  return false;
 }
 
 void CGA_driver::reset(void)

@@ -6,7 +6,7 @@ FAT32_driver::FAT32_driver(void)
     name = "File Allocation Table 32";
 }
 
-BOOLEAN FAT32_driver::detectsystem(void)
+bool FAT32_driver::detectsystem(void)
 {
     uint8_t diskfsname[] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "FAT32";
@@ -14,10 +14,10 @@ BOOLEAN FAT32_driver::detectsystem(void)
     {
         if ((uint8_t)fsname[x] != diskfsname[x])
         {
-            return FALSE;
+            return false;
         }
     }
-    return TRUE;
+    return true;
 }
 
 char ** FAT32_driver::readdir(char *path) {
@@ -55,6 +55,6 @@ void FAT32_driver::appendfile(char *path, char *data)
 {
 }
 
-BOOLEAN FAT32_driver::exists(char *path)
+bool FAT32_driver::exists(char *path)
 {
 }

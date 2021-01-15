@@ -8,7 +8,7 @@ class FAT12_driver : public Filesystem_driver
 {
 public:
   FAT12_driver(void);
-  BOOLEAN detectsystem(void);
+  bool detectsystem(void);
   char ** readdir(char *path);
   void rename(char *path, char *newPath);
   Tsos_file open(char *path);
@@ -18,7 +18,7 @@ public:
   char *readfile(char *path);
   void writefile(char *path, char *data);
   void appendfile(char *path, char *data);
-  BOOLEAN exists(char *path);
+  bool exists(char *path);
 
 private:
   char *currentdirectory;

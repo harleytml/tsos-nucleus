@@ -7,15 +7,15 @@ EGA_driver::EGA_driver(void)
  init();
 }
 
-BOOLEAN EGA_driver::detectsystem(void)
+bool EGA_driver::detectsystem(void)
 {
  //Check to see if VGA or EGA is installed
  if(*((uint8_t)0x400087)!=0)
  {
   //WARNING: This also passes for VGA
-  return TRUE;
+  return true;
  }
- return FALSE;
+ return false;
 }
 
 void EGA_driver::reset(void)

@@ -9,15 +9,6 @@ typedef __INT8_TYPE__ int8_t;
 typedef __INT16_TYPE__ int16_t;
 typedef __INT32_TYPE__ int32_t;
 
-//Boolean type
-typedef uint8_t BOOLEAN;
-
-//True
-const BOOLEAN TRUE = 1;
-
-//False
-const BOOLEAN FALSE = 0;
-
 const uint8_t NULL = '\0';
 
 Tsos tsos;
@@ -129,7 +120,7 @@ public:
   ~Driver(void);
 
   //A function called to determine if a driver should be used.
-  virtual BOOLEAN detectsystem(void){};
+  virtual bool detectsystem(void){};
 
   //The name of said module
   char *name;

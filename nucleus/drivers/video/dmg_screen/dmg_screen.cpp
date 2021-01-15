@@ -10,7 +10,7 @@ DMG_SCREEN_driver::DMG_SCREEN_driver(void)
 }
 
 //This check is not needed, since the difference between a GBC and a DMG is a read only byte in the rom header, but I'll include it anyway
-BOOLEAN DMG_SCREEN_driver::detectsystem(void)
+bool DMG_SCREEN_driver::detectsystem(void)
 {
 
   //Check to make sure this isn't a Gameboy Color
@@ -18,7 +18,7 @@ BOOLEAN DMG_SCREEN_driver::detectsystem(void)
   {
 
     //This system is a Gameboy, or a Gameboy Pocket
-    return TRUE;
+    return true;
   }
 
   //This was compiled wrong if the code reaches here
@@ -27,7 +27,7 @@ BOOLEAN DMG_SCREEN_driver::detectsystem(void)
   tsos.boot.fission("NUCLEUS DETECTED HARDWARE FAULT");
 
   //So the compiler doesn't complain
-  return FALSE;
+  return false;
 }
 
 void DMG_SCREEN_driver::reset(void)

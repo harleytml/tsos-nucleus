@@ -6,7 +6,7 @@ FAT16_driver::FAT16_driver(void)
     name = "File Allocation Table 16";
 }
 
-BOOLEAN FAT16_driver::detectsystem(void)
+bool FAT16_driver::detectsystem(void)
 {
     uint8_t diskfsname[] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "FAT16";
@@ -14,10 +14,10 @@ BOOLEAN FAT16_driver::detectsystem(void)
     {
         if ((uint8_t)fsname[x] != diskfsname[x])
         {
-            return FALSE;
+            return false;
         }
     }
-    return TRUE;
+    return true;
 }
 
 char ** FAT16_driver::readdir(char *path) {
@@ -55,6 +55,6 @@ void FAT16_driver::appendfile(char *path, char *data)
 {
 }
 
-BOOLEAN FAT16_driver::exists(char *path)
+bool FAT16_driver::exists(char *path)
 {
 }

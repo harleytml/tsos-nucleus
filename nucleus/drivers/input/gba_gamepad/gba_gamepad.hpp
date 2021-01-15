@@ -12,10 +12,10 @@ class GBA_GAMEPAD_driver: public Input_driver
   GBA_GAMEPAD_driver(void);   
 
   //Detects if the module should be used
-  BOOLEAN detectsystem(void);
+  bool detectsystem(void);
 
   //Get te key currently pressed
-  Key getkey(void);
+  key_identifier getkey(void);
 
  private:  
 };

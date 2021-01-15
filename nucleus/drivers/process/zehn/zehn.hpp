@@ -8,8 +8,8 @@ class ZEHN_driver : public Process_driver
 {
 public:
   ZEHN_driver(void);
-  BOOLEAN detectsystem(void);
-  BOOLEAN isvalidexecutable(char *path);
+  bool detectsystem(void);
+  bool isvalidexecutable(char *path);
   machine_type machine = GENERIC;
 };
 

@@ -12,11 +12,11 @@ GRUB2_driver::~GRUB2_driver(void)
 {
 }
 
-BOOLEAN GRUB2_driver::detectsystem(void)
+bool GRUB2_driver::detectsystem(void)
 {
 
     //Well, if we made it this far, I think we can assume the module is good
-    return TRUE;
+    return true;
 }
 
 //This is a rather old and crusty reboot method....

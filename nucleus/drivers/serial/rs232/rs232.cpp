@@ -5,7 +5,7 @@ RS232_driver::RS232_driver(void)
 {
 }
 
-BOOLEAN RS232_driver::detectsystem(void)
+bool RS232_driver::detectsystem(void)
 {
 }
 

@@ -7,10 +7,10 @@ GBA_SCREEN_driver::GBA_SCREEN_driver(void)
  reset();
 }
 
-BOOLEAN GBA_SCREEN_driver::detectsystem(void)
+bool GBA_SCREEN_driver::detectsystem(void)
 {
- //Well, there is no way that this GBA driver is running on anything but a GBA, so I'll force a TRUE here
- return TRUE;
+ //Well, there is no way that this GBA driver is running on anything but a GBA, so I'll force a true here
+ return true;
 }
 
 void GBA_SCREEN_driver::reset(void)

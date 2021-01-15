@@ -8,7 +8,7 @@ DMG_IO_PORT_driver::DMG_IO_PORT_driver(void)
 
 //Well... there really is only one way to do this for any DMG driver
 //This check is pointless to do, but I will do it anyway in the spirit of TS/OS
-BOOLEAN DMG_IO_PORT_driver::detectsystem(void)
+bool DMG_IO_PORT_driver::detectsystem(void)
 {
 
     //Check to make sure this isn't a Gameboy Color
@@ -16,7 +16,7 @@ BOOLEAN DMG_IO_PORT_driver::detectsystem(void)
     {
 
         //This system is a Gameboy, or a Gameboy Pocket
-        return TRUE;
+        return true;
     }
 
     //This was compiled wrong if the code reaches here
@@ -25,7 +25,7 @@ BOOLEAN DMG_IO_PORT_driver::detectsystem(void)
     tsos.boot.fission("KERNEL DETECTED HARDWARE FAULT");
 
     //So the compiler doesn't complain
-    return FALSE;
+    return false;
 }
 
 //Serial on the DMG is lovely and simple
@@ -34,7 +34,7 @@ uint8_t DMG_IO_PORT_driver::exchangebyte(uint8_t b)
 }
 
 //Check if the device is there
-BOOLEAN isdevicethere(void)
+bool isdevicethere(void)
 {
 
     //Get the serial data register

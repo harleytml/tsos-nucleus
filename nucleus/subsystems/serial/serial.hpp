@@ -18,7 +18,7 @@ public:
   uint8_t exchangebyte(uint8_t b);
 
   //Is device there
-  BOOLEAN isdevicethere(void);
+  bool isdevicethere(void);
 
 private:
   //Serial driver
@@ -35,7 +35,7 @@ public:
   virtual uint8_t exchangebyte(uint8_t b){};
 
   //Is device there
-  virtual BOOLEAN isdevicethere(void){};
+  virtual bool isdevicethere(void){};
 };
 
 #endif

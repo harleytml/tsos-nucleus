@@ -11,7 +11,7 @@ public:
     DMG_GAMEPAD_driver(void);
 
     //Detects if the module should be used
-    BOOLEAN detectsystem(void);
+    bool detectsystem(void);
 
     //Get te key currently pressed
     key_identifier getkey(void);

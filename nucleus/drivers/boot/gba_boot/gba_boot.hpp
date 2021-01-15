@@ -14,7 +14,7 @@ public:
   ~GBA_BOOT_driver(void);
 
   //Detect the system its running on
-  BOOLEAN detectsystem(void);
+  bool detectsystem(void);
 
   //Reboot the system
   void reboot(void);
