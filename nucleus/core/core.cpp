@@ -101,11 +101,10 @@ Module::Module(void)
 
 Module::~Module(void)
 {
-    delete [] name;
+    delete[] name;
 }
 
-templete<class T> 
-void Module::attachdriver(T d) const
+templete<class T> void Module::attachdriver(T d) const
 {
 
     //The driver has to be the right machine and run on that machines configuration
@@ -119,4 +118,10 @@ void Module::attachdriver(T d) const
         //Lets not overfill the heap
         delete &d;
     }
+}
+
+//Start the kernel
+void start(void)
+{
+    tsos=Tsos();
 }
