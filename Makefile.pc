@@ -3,19 +3,19 @@
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build
-KERNEL_DIR=$(PWD)/../kernel
+NUCLEUS_DIR=$(PWD)/../nucleus
 CONFIG_DIR=$(PWD)/../config
 
-CC=$(where i686-elf-gcc)
-CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
+CC=i686-elf-gcc
+CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-CPP=$(where i686-elf-g++)
-CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
+CPP=i686-elf-g++
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
 
-AS=$(where i686-elf-as)
+AS=i686-elf-as
 AS_FLAGS=
 
-LD=$(where i686-elf-ld.gold)
+LD=i686-elf-ld.gold
 LD_FLAGS=
 
 CORE=$(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/subsystems/video/video.cpp $(NUCLEUS_DIR)/subsystems/video/video.hpp $(NUCLEUS_DIR)/subsystems/input/input.cpp $(NUCLEUS_DIR)/subsystems/input/input.hpp $(NUCLEUS_DIR)/subsystems/disk/disk.cpp $(NUCLEUS_DIR)/subsystems/disk/disk.hpp $(NUCLEUS_DIR)/subsystems/serial/serial.cpp $(NUCLEUS_DIR)/subsystems/serial/serial.hpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.hpp $(NUCLEUS_DIR)/subsystems/boot/boot.cpp $(NUCLEUS_DIR)/subsystems/boot/boot.hpp $(NUCLEUS_DIR)/subsystems/sound/sound.cpp $(NUCLEUS_DIR)/subsystems/sound/sound.hpp $(NUCLEUS_DIR)/subsystems/process/process.cpp $(NUCLEUS_DIR)/subsystems/process/process.hpp 
@@ -29,7 +29,7 @@ $(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/current_config.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $(BUILD_DIR)/current_config.hpp $(CORE)
 
 $(BUILD_DIR)/bootloader.o:
-:$(AS) $(NUCLEUS_DIR)/drivers/boot/grub2/grub.asm $(AS_FLAGS) -o $@
+:$(AS) $(NUCLEUS_DIR)/drivers/boot/grub2/grub2.asm $(AS_FLAGS) -o $@
 
 $(BUILD_DIR)/current_config.hpp:
 :cp $(CONFIG_DIR)/pc.hpp $@

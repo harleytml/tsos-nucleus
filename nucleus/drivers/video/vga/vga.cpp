@@ -122,7 +122,7 @@ uint8_t VGA_driver::getscreenwidth(void)
 
 uint8_t VGA_driver::getscreenheight(void)
 {
-  switch (type)
+  switch (video_mode)
   {
   case TEXT:
 
