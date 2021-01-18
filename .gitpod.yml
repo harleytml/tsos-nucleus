@@ -1,4 +1,4 @@
-image: debian
+image: tsukisuperior/tsos-build:latest
 
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
