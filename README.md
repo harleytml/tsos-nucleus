@@ -22,7 +22,7 @@ TS/OS's existence is for it to be ported. With a fairly rigid and simple driver 
 
 I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, PSP and below. If I can get it to run on a DMG, surely I can run it on the others.
 
-The story behind TS/OS is a interesting one. TS/OS Hydrogen, the first edition, was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophmore year, and I always wanted to make a OS. So I did, with the GBCPUman.pdf, a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
+The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophmore year, and I always wanted to make a OS. So I did, with the GBCPUman.pdf, a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
 
 I had just learned C++, and wanted to reinvent the wheel. I had a little too much time on my hands.
 
