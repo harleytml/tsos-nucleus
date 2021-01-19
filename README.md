@@ -4,7 +4,7 @@
 
 TS/OS
 
-Current Version: Hydrogen (1.0)
+Current Version: Neutronium (0.0)
 
 TS/OS is a SysV ABI, *nix inspired (sorta), operating system with a focus on being as multiplatform as possible. 
 

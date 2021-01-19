@@ -6,8 +6,8 @@ Tsos::Tsos(void)
 
     //Set the versioning info of this OS
     version = 1.0;
-    code_name = "Hydrogen";
-    short_code_name = "H";
+    code_name = "Neutronium";
+    short_code_name = "n";
 
     //This may be the dumbest init system known to man...
     //But how else do I do this?
