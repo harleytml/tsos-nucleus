@@ -4,8 +4,6 @@
 GBA_BOOT_driver::GBA_BOOT_driver(void)
 {
 
-    //Start a instance of the TS/OS api
-    tsos = Tsos();
 }
 
 GBA_BOOT_driver::~GBA_BOOT_driver(void)

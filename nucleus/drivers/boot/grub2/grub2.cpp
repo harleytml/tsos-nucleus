@@ -4,8 +4,6 @@
 GRUB2_driver::GRUB2_driver(void)
 {
 
-    //Start a instance of the TS/OS api
-    tsos = Tsos();
 }
 
 GRUB2_driver::~GRUB2_driver(void)

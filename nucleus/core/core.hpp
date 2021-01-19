@@ -11,6 +11,8 @@ typedef __INT32_TYPE__ int32_t;
 
 const uint8_t NULL = '\0';
 
+void kernel_main(void);
+
 Tsos tsos;
 
 //This is the default value for a value contained normally in current_config.hpp

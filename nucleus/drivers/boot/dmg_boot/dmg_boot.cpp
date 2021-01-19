@@ -4,8 +4,6 @@
 DMG_BOOT_driver::DMG_BOOT_driver(void)
 {
 
-    //Start a instance of the TS/OS api
-    tsos = Tsos();
 }
 
 DMG_BOOT_driver::~DMG_BOOT_driver(void)
