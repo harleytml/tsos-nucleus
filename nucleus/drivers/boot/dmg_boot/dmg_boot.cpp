@@ -10,10 +10,9 @@ DMG_BOOT_driver::~DMG_BOOT_driver(void)
 {
 }
 
-bool DMG_BOOT_driver::detectsystem(void)
+bool DMG_BOOT_driver::detectSystem(void)
 {
 
-    //Well, if we made it this far, I think we can assume the module is good
     return true;
 }
 

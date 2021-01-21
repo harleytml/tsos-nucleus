@@ -4,13 +4,12 @@
 Tsos::Tsos(void)
 {
 
-    //Set the versioning info of this OS
+    // The version and related information of the OS
     version = 1.0;
     code_name = "Neutronium";
     short_code_name = "n";
 
-    //This may be the dumbest init system known to man...
-    //But how else do I do this?
+    // The Init system
     video = Video();
     input = Input();
     filesystem = Filesystem();
@@ -28,43 +27,43 @@ Tsos::Tsos(void)
     Process_driver process_drivers[] = PROCESS_DRIVERS;
     Disk_driver disk_drivers[] = DISK_DRIVERS;
 
-    //Attach video drivers
+    // Attaching video drivers
     for (uint8_t x = 0; x < VIDEO_DRIVER_COUNT; x++)
     {
         video.attachdriver(video_drivers[x]);
     }
 
-    //Attach input drivers
+    // Attach input drivers
     for (uint8_t x = 0; x < INPUT_DRIVER_COUNT; x++)
     {
         input.attachdriver(input_drivers[x]);
     }
 
-    //Attach filesystem drivers
+    // Attach filesystem drivers
     for (uint8_t x = 0; x < FILESYSTEM_DRIVER_COUNT; x++)
     {
         filesystem.attachdriver(filesystem_drivers[x]);
     }
 
-    //Attach boot drivers
+    // Attach boot drivers
     for (uint8_t x = 0; x < BOOT_DRIVER_COUNT; x++)
     {
         boot.attachdriver(boot_drivers[x]);
     }
 
-    //Attach serial drivers
+    // Attach serial drivers
     for (uint8_t x = 0; x < SERIAL_DRIVER_COUNT; x++)
     {
         serial.attachdriver(serial_drivers[x]);
     }
 
-    //Attach process drivers
+    // Attach process drivers
     for (uint8_t x = 0; x < PROCESS_DRIVER_COUNT; x++)
     {
         process.attachdriver(process_drivers[x]);
     }
 
-    //Attach disk drivers
+    // Attach disk drivers
     for (uint8_t x = 0; x < DISK_DRIVER_COUNT; x++)
     {
         disk.attachdriver(disk_drivers[x]);
@@ -74,7 +73,7 @@ Tsos::Tsos(void)
 Tsos::~Tsos(void)
 {
 
-    //Deconstruct the subclasses
+    // Defining the deconstructor
     delete &video;
     delete &input;
     delete &filesystem;
@@ -83,9 +82,9 @@ Tsos::~Tsos(void)
     delete &disk;
     delete &sound;
 
-    //The boot module will destroy tsos itself, and who knows what would happen if it was destroyed
-    //I mean, probably nothing, but who knows
-    //delete boot;
+    // The boot module will destroy tsos
+    
+    // delete boot;
 }
 
 Driver::Driver(void)
@@ -107,7 +106,7 @@ Module::~Module(void)
 templete<class T> void Module::attachdriver(T d) const
 {
 
-    //The driver has to be the right machine and run on that machines configuration
+    // The driver has to be for the right machine and run on that machine's configuration
     if (driver->detectsystem())
     {
         driver = &d;
@@ -115,12 +114,12 @@ templete<class T> void Module::attachdriver(T d) const
     else
     {
 
-        //Lets not overfill the heap
+        // Preventing overfill of the heap
         delete &d;
     }
 }
 
-//Start the kernel
+// Start the kernel
 void kernel_main(void)
 {
     tsos=Tsos();

@@ -4,37 +4,37 @@
 
 #include "core.hpp"
 
-//The main class controlling serial
+// The main class controlling serial
 class Serial : public Module
 {
 public:
-  //Constructor
+  // Constructor
   Serial(void);
 
-  //Destructor
+  // Destructor
   ~Serial(void);
 
-  //Exchange a byte
+  // Exchange a byte
   uint8_t exchangebyte(uint8_t b);
 
-  //Is device there
+  // Is device there
   bool isdevicethere(void);
 
 private:
-  //Serial driver
+  // Serial driver
   Serial_driver *driver;
 };
 
 class Serial_driver : public Driver
 {
 public:
-  //Constructor
+  // Constructor
   Serial_driver(void);
 
-  //Exchange a byte
+  // Exchange a byte
   virtual uint8_t exchangebyte(uint8_t b){};
 
-  //Is device there
+  // Is device there
   virtual bool isdevicethere(void){};
 };
 

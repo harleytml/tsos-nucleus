@@ -22,13 +22,13 @@ public:
   machine_type machine = PERSONAL_COMPUTER;
 
 private:
-  //The text cursor
+  // The text cursor
   uint16_t text_cursor;
 
-  //The length of the text buffer
+  // The length of the text buffer
   uint16_t text_buffer_length;
 
-  //The text buffer
+  // The text buffer
   char *text_buffer;
 
   video_mode mode;

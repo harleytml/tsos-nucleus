@@ -6,33 +6,33 @@
 
 #define PROCESS_COUNT 0xff
 
-//The main classes to control processes
+// The main classes to control processes
 class Process : public Module
 {
 public:
-  //Constructor
+  // Constructor
   Process(void);
 
-  //Destructor
+  // Destructor
   ~Process(void);
 
-  //Spawn a process
+  // Spawn a process
   uint8_t spawn(char *path);
 
-  //Kill a process
+  // Kill a process
   void kill(uint8_t pid);
 
-  //Kill all processes
+  // Kill all processes
   void killall(void);
 
-  //Allocate memory
+  // Allocate memory
   uint8_t *allocatememory(uint32_t len);
 
 private:
-  //Process driver
+  // Process driver
   Process_driver *driver;
 
-  //The table of processes
+  // The table of processes
   Process_info processes[PROCESS_COUNT];
 };
 
@@ -42,36 +42,33 @@ public:
   virtual bool isvalidexecutable(char *path){};
 };
 
-//The class holding the information of a process
+// The class holding the information of a process
 class Process_info
 {
 public:
-  //Constructor
-  Process_info();
-
-  //Constructor
+  // Constructor
   Process_info(uint8_t p, process_state s);
 
-  //The PID of a process
+  // The PID of a process
   uint8_t pid;
 
-  //The state of a process
+  // The state of a process
   process_state state;
 };
 
-//The possible state of processes
+// The possible state of processes
 enum process_state
 {
-  //A running process
+  // A running process
   RUNNING,
 
-  //A halted process
+  // A halted process
   HALTED,
 
-  //A hung process
+  // A hung process
   HUNG,
 
-  //A idle process
+  // An idle process
   IDLE
 };
 

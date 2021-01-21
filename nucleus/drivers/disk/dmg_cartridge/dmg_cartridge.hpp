@@ -7,14 +7,14 @@
 class DMG_CARTRIDGE_driver : public Disk_driver
 {
 public:
-    //Constructor
+    // Constructor
     DMG_CARTRIDGE_driver(void);
     bool detectsystem(void);
 
-    //Get a amount of bytes from the disk
+    // Get an amount of bytes from the disk
     char *getbytes(uint16_t offset, uint8_t len);
 
-    //Get the sector size
+    // Get the sector size
     uint16_t getsectorsize(void);
 
 private:

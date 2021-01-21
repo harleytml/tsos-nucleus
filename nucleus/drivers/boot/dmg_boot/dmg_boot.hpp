@@ -7,18 +7,18 @@
 class DMG_BOOT_driver : public Boot_driver
 {
 public:
-  //Constructor
+  // Constructor
   DMG_BOOT_driver(void);
 
-  //Destructor
+  // Destructor
   ~DMG_BOOT_driver(void);
 
-  bool detectsystem(void);
+  bool detectSystem(void);
   
-  //Reboot the system
+  // Reboot the system
   void reboot(void);
 
-  //Shutdown system
+  // Shutdown the system
   void shutdown(void);
 };
 #endif

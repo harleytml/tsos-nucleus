@@ -7,19 +7,19 @@
 class GBA_BOOT_driver : public Boot_driver
 {
 public:
-  //Constructor
+  // Constructor
   GBA_BOOT_driver(void);
 
-  //Destructor
+  // Destructor
   ~GBA_BOOT_driver(void);
 
-  //Detect the system its running on
-  bool detectsystem(void);
+  // Detect the type of system its running on
+  bool detectSystem(void);
 
-  //Reboot the system
+  // Reboot the system
   void reboot(void);
 
-  //Shutdown system
+  // Shutdown the system
   void shutdown(void);
 };
 
