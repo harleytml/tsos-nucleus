@@ -8,9 +8,9 @@ DMG_CARTRIDGE_driver::DMG_CARTRIDGE_driver(void)
 
 char *DMG_CARTRIDGE_driver::getbytes(uint16_t offset, uint8_t len)
 {
-    //Well, the DMG cartridge has several types actually, but they pretty much act as one.
-    //The difference lies in the synthax of the byte you write to the rom sector to retrive a new sector.
-    //Please reference the GBCPUman (found online)
+    // Well, the DMG cartridge has several types actually, but they pretty much act as one.
+    // The difference lies in the synthax of the byte you write to the rom sector to retrive a new sector.
+    // Please reference the GBCPUman (found online)
 }
 
 uint16_t DMG_CARTRIDGE_driver::getsectorsize(void)

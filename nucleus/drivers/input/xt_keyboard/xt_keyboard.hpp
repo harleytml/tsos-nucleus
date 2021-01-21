@@ -7,13 +7,13 @@
 class XT_KEYBOARD_driver : public Input_driver
 {
 public:
-    //Constructor
+    // Constructor
     XT_KEYBOARD_driver(void);
 
-    //Detects if the module should be used
+    // Detects if the module should be used
     bool detectsystem(void);
 
-    //Get te key currently pressed
+    // Get the key currently pressed
     key_identifier getkey(void);
 
 private:

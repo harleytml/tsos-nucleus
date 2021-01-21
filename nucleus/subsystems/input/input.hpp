@@ -4,43 +4,43 @@
 
 #include "core.hpp"
 
-//The main class controlling input
+// The main class controlling input
 class Input : public Module
 {
 public:
-  //Constructor
+  // Constructor
   Input(void);
 
-  //Destructor
+  // Destructor
   ~Input(void);
 
-  //Get the key pressed
+  // Get the key pressed
   key_identifier getkey(void);
 
-  //Wait for a key to be pressed
+  // Wait for a key to be pressed
   void waitkey(void);
 
 private:
-  //Input driver
+  // Input driver
   Input_driver *driver;
 };
 
 class Input_driver : public Driver
 {
 public:
-  //Constructor
+  // Constructor
   Input_driver(void);
 
-  //Read a key, and convert its scancode
+  // Read a key, and convert its scancode
   virtual key_identifier getkey(void){};
 
-  //Is shift pressed
+  // Is shift pressed
   virtual bool isshiftpressed(void){};
 
-  //Is alt pressed
+  // Is alt pressed
   virtual bool isaltpressed(void){};
 
-  //Is ctrl pressed
+  // Is ctrl pressed
   virtual bool isctrlpressed(void){};
 };
 

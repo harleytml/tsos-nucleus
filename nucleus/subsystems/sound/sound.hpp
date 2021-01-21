@@ -4,51 +4,47 @@
 
 #include "core.hpp"
 
-//Oh boy, this should be fun
-//I know very little about audio in electronics
-//Well, guess I better learn...
-
 //The main class controlling sound
 class Sound : public Module
 {
 public:
-  //Constructor
+  // Constructor
   Sound(void);
 
-  //Destructor
+  // Destructor
   ~Sound(void);
 
-  //Play a tone
+  // Play a tone
   void playtone(Tone tone);
 
 private:
-  //Sound driver
+  // Sound driver
   Sound_driver *driver;
 };
 
 class Sound_driver : public Driver
 {
 public:
-  //Constructor
+  // Constructor
   Sound_driver(void);
 
-  //Play a tone
+  // Play a tone
   void playtone(Tone tone);
 };
 
 class Tone
 {
 public:
-  //Constructor
+  // Constructor
   Tone(uint16_t f, uint16_t l);
 
-  //Constructor to copy a tone
+  // Constructor to copy a tone
   Tone(const Tone &tone);
 
-  //The frequency of the tone
+  // The frequency of the tone
   uint16_t frequency;
 
-  //The length of the tone
+  // The length of the tone
   uint16_t length;
 };
 

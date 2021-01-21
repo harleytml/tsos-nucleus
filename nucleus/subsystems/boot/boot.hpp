@@ -4,43 +4,43 @@
 
 #include "core.hpp"
 
-//The main class controlling the system runtime
+// The main class controlling the system runtime
 class Boot : public Module
 {
 public:
-  //Constructor
+  // Constructor
   Boot(void);
 
-  //Constructor
+  // Constructor
   ~Boot(void);
 
-  //Reboot the system
+  // Reboot the system
   void reboot(void);
 
-  //Shutdown the system
+  // Shutdown the system
   void shutdown(void);
 
-  //The equivelant kernel panic, or bsod,
+  // The equivelant kernel panic, or bsod,
   void fission(char *errormsg);
 
 private:
-  //The boot driver being used
+  // The boot driver being used
   Boot_driver *driver;
 };
 
 class Boot_driver : public Driver
 {
 public:
-  //Constructor
+  // Constructor
   Boot_driver(void);
 
-  //Destructor
+  // Destructor
   ~Boot_driver(void);
 
-  //Reboot the system
+  // Reboot the system
   virtual void reboot(void){};
 
-  //Shutdown system
+  // Shutdown the system
   virtual void shutdown(void){};
 };
 

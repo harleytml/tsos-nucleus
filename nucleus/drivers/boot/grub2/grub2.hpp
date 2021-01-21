@@ -13,13 +13,13 @@ public:
   //Destructor
   ~GRUB2_driver(void);
 
-  //Detect the system its running on
-  bool detectsystem(void);
+  //Detect the type of system its running on
+  bool detectSystem(void);
 
   //Reboot the system
   void reboot(void);
 
-  //Shutdown system
+  // Shutdown the system
   void shutdown(void);
 };
 #endif

@@ -13,7 +13,6 @@ GBA_BOOT_driver::~GBA_BOOT_driver(void)
 bool GBA_BOOT_driver::detectsystem(void)
 {
 
-    //Well, if we made it this far, I think we can assume the module is good
     return true;
 }
 

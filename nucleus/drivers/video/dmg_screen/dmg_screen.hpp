@@ -22,13 +22,13 @@ public:
   machine_type machine = DOT_MATRIX_GAME;
 
 private:
-  //The text cursor
+  // The text cursor
   uint16_t text_cursor;
 
-  //The length of the text buffer
+  // The length of the text buffer
   uint16_t text_buffer_length;
 
-  //The text buffer
+  // The text buffer
   char *text_buffer;
 };
 
