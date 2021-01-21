@@ -1,13 +1,13 @@
 //By Tsuki Superior
-#ifndef __TSOS_ZEHN_DRIVER__
-#define __TSOS_ZEHN_DRIVER__
+#ifndef __TSOS_ELF_DRIVER__
+#define __TSOS_ELF_DRIVER__
 
 #include "process.hpp"
 
-class ZEHN_driver : public Process_driver
+class ELF_driver : public Process_driver
 {
 public:
-  ZEHN_driver(void);
+  ELF_driver(void);
   bool detectsystem(void);
   bool isvalidexecutable(char *path);
   machine_type machine = GENERIC;

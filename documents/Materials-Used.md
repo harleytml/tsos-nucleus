@@ -3,3 +3,5 @@ http://read.pudn.com/downloads12/sourcecode/others/50974/linux/os4/doc/Understan
 https://realboyemulator.files.wordpress.com/2013/01/gbcpuman.pdf
 
 https://archive.org/download/isbn_9781874416128/
+
+https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
