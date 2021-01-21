@@ -28,6 +28,6 @@ I had just learned C++, and wanted to reinvent the wheel. I had a little too muc
 
 The naming of TS/OS is the floor of the TS/OS version, as the atomic number of a element. So TS/OS 1 is Hydrogen, TS/OS 2 is Helium etc (look up a periodic table).
 
-The TS/OS kernel is called the Nucleus. Many other chemistry analagues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
+The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
 
 In the documents directory, you can find more documents concerning TS/OS.
