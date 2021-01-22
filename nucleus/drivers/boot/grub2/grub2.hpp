@@ -14,7 +14,7 @@ public:
   ~GRUB2_driver(void);
 
   //Detect the type of system its running on
-  bool detectSystem(void);
+  bool detectsystem(void);
 
   //Reboot the system
   void reboot(void);

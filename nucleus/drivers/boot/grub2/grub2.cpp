@@ -10,7 +10,7 @@ GRUB2_driver::~GRUB2_driver(void)
 {
 }
 
-bool GRUB2_driver::detectSystem(void)
+bool GRUB2_driver::detectsystem(void)
 {
     return true;
 }

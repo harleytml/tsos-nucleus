@@ -10,7 +10,7 @@ DMG_BOOT_driver::~DMG_BOOT_driver(void)
 {
 }
 
-bool DMG_BOOT_driver::detectSystem(void)
+bool DMG_BOOT_driver::detectsystem(void)
 {
 
     return true;

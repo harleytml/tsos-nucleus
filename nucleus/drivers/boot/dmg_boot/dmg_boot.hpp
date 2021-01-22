@@ -13,7 +13,7 @@ public:
   // Destructor
   ~DMG_BOOT_driver(void);
 
-  bool detectSystem(void);
+  bool detectsystem(void);
   
   // Reboot the system
   void reboot(void);
