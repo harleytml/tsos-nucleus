@@ -11,3 +11,5 @@ https://gist.github.com/JShorthouse/bfe49cdfad126e9163d9cb30fd3bf3c2
 https://gcc.gnu.org/install/specific.html
 
 https://www.devrs.com/gba/ccode.php
+
+https://wiki.osdev.org/Bare_Bones

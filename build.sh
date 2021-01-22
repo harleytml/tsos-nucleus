@@ -17,7 +17,7 @@ dmg)
     NEEDED_COMMANDS=(make)
     ;;
 *)
-    echo "Choose a system...."
+    echo "Choose a valid system...."
     exit 1
     ;;
 esac
