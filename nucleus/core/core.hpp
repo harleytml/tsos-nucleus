@@ -11,7 +11,7 @@ typedef __INT32_TYPE__ int32_t;
 
 const uint8_t NULL = '\0';
 
-void kernel_main(void);
+extern void kernel_main(void);
 
 Tsos tsos;
 

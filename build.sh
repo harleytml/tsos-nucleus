@@ -41,5 +41,3 @@ mkdir -pv $CODE_DIR/build/
 cd $CODE_DIR/build/
 cp ../Makefile.$1 ./Makefile.$1
 make -f Makefile.$1
-
-
