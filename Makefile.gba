@@ -6,16 +6,16 @@ BUILD_DIR=$(PWD)/../build
 KERNEL_DIR=$(PWD)/../kernel
 CONFIG_DIR=$(PWD)/../config
 
-CC=$(where )
-CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
+CC=arm-none-eabi-gcc
+CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-CPP=$(where )
-CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
+CPP=arm-none-eabi-g++
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
 
-AS=$(where )
+AS=arm-none-eabi-as
 AS_FLAGS=
 
-LD=$(where )
+LD=arm-none-eabi-ld.gold
 LD_FLAGS=
 
 CORE=$(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/subsystems/video/video.cpp $(NUCLEUS_DIR)/subsystems/video/video.hpp $(NUCLEUS_DIR)/subsystems/input/input.cpp $(NUCLEUS_DIR)/subsystems/input/input.hpp $(NUCLEUS_DIR)/subsystems/disk/disk.cpp $(NUCLEUS_DIR)/subsystems/disk/disk.hpp $(NUCLEUS_DIR)/subsystems/serial/serial.cpp $(NUCLEUS_DIR)/subsystems/serial/serial.hpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.hpp $(NUCLEUS_DIR)/subsystems/boot/boot.cpp $(NUCLEUS_DIR)/subsystems/boot/boot.hpp $(NUCLEUS_DIR)/subsystems/sound/sound.cpp $(NUCLEUS_DIR)/subsystems/sound/sound.hpp 
