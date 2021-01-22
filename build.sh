@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
+#This simple function checks if a command exists
 exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
 CODE_DIR=$(pwd)
 
+#Make sure the required tools are here
 case $1 in
 pc)
     NEEDED_COMMANDS=(i686-elf-gcc i686-elf-g++ i686-elf-ld.gold make)
     ;;
 gba)
-    NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld make )
+    NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld make)
     ;;
 dmg)
     NEEDED_COMMANDS=(make)

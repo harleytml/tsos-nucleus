@@ -28,7 +28,7 @@
     }
 #define PROCESS_DRIVERS             \
     {                               \
-        ELF_driver(), ZEHN_driver() \
+        ELF_driver()                \
     }
 #define VIDEO_DRIVER_COUNT 1
 #define INPUT_DRIVER_COUNT 1
