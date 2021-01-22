@@ -3,7 +3,7 @@
 
 DMG_BOOT_driver::DMG_BOOT_driver(void)
 {
-
+    name="Dot Matrix Game Boot";
 }
 
 DMG_BOOT_driver::~DMG_BOOT_driver(void)

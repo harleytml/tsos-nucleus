@@ -35,12 +35,18 @@ void Video::putstring(char *str)
     switch (c)
     {
     case '\n':
+    
+      //We will seek the text cursor to a new line
       rseektextcursor(getscreenwidth());
       break;
     case '\b':
+
+      //The back symbol
       rseektextcursor(-1);
       break;
     case '\t':
+
+      //The screen will render a tab as 4 spaces
       for (int y = 0; y < 4; y++)
       {
         putchar(' ');

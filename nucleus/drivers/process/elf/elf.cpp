@@ -2,7 +2,7 @@
 
 ELF_driver::ELF_driver(void)
 {
-
+    name = "Executable and Linkable Format";
 }
 
 bool ELF_driver::detectsystem(void)

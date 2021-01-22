@@ -3,7 +3,7 @@
 
 AT_KEYBOARD_driver::AT_KEYBOARD_driver(void)
 {
-    name = "AT Keyboard";
+    name = "PC/AT Keyboard";
 }
 
 bool AT_KEYBOARD_driver::detectsystem(void)
