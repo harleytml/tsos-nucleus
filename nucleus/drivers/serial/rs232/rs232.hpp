@@ -6,6 +6,7 @@
 
 class RS232_driver : public Serial_driver
 {
+public:
     RS232_driver(void);
     bool detectsystem(void);
     uint8_t exchangebyte(uint8_t b)

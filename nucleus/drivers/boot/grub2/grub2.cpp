@@ -3,7 +3,7 @@
 
 GRUB2_driver::GRUB2_driver(void)
 {
-    name="Grand Unified Bootloader 2";
+    name = "Grand Unified Bootloader 2";
 }
 
 GRUB2_driver::~GRUB2_driver(void)

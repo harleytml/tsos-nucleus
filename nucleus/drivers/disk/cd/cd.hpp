@@ -21,7 +21,6 @@ public:
   uint16_t getsectorsize(void);
 
 private:
-  
 };
 
 #endif

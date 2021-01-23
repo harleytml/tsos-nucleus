@@ -83,7 +83,7 @@ Tsos::~Tsos(void)
     delete &sound;
 
     // The boot module will destroy tsos
-    
+
     // delete boot;
 }
 
@@ -122,5 +122,5 @@ templete<class T> void Module::attachdriver(T d) const
 // Start the kernel
 void kernel_main(void)
 {
-    tsos=Tsos();
+    tsos = Tsos();
 }

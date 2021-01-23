@@ -26,9 +26,9 @@
 #define SOUND_DRIVERS \
     {                 \
     }
-#define PROCESS_DRIVERS             \
-    {                               \
-        ELF_driver()                \
+#define PROCESS_DRIVERS \
+    {                   \
+        ELF_driver()    \
     }
 #define VIDEO_DRIVER_COUNT 1
 #define INPUT_DRIVER_COUNT 1
