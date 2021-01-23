@@ -29,7 +29,7 @@ public:
   Sound_driver(void);
 
   // Play a tone
-  void playtone(Tone tone);
+  virtual void playtone(Tone tone) = NULL;
 };
 
 class Tone

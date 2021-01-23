@@ -39,7 +39,7 @@ private:
 class Process_driver : public Driver
 {
 public:
-  virtual bool isvalidexecutable(char *path){};
+  virtual bool isvalidexecutable(char *path) = NULL;
 };
 
 // The class holding the information of a process

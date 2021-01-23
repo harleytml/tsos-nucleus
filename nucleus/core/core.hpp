@@ -124,7 +124,7 @@ public:
   ~Driver(void);
 
   // A function called to determine if a driver should be used.
-  virtual bool detectsystem(void){};
+  virtual bool detectsystem(void) = NULL;
 
   // The name of said module
   char *name;

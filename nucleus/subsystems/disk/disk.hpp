@@ -38,10 +38,10 @@ public:
   ~Disk_driver(void);
 
   // Get bytes from the disk
-  virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len){};
+  virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len) = NULL;
 
   // Get the sector size
-  virtual uint16_t getsectorsize(void){};
+  virtual uint16_t getsectorsize(void) = NULL;
 };
 
 #endif

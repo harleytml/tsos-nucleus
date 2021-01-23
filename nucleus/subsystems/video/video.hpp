@@ -80,28 +80,28 @@ public:
   Video_driver(void);
 
   // A very long way to describe the way to draw a character
-  virtual void putchar(char c, Color bc, Color fc){};
+  virtual void putchar(char c, Color bc, Color fc) = NULL;
 
   // Get the text cursor
-  virtual uint16_t gettextcursor(void){};
+  virtual uint16_t gettextcursor(void) = NULL;
 
   // Set the text cursor
-  virtual void seektextcursor(uint16_t pos){};
+  virtual void seektextcursor(uint16_t pos) = NULL;
 
   // Get the text buffer
-  virtual char *gettextbuffer(void){};
+  virtual char *gettextbuffer(void) = NULL;
 
   // Get the length of the text buffer
-  virtual uint16_t gettextbufferlength(void){};
+  virtual uint16_t gettextbufferlength(void) = NULL;
 
   // Get the width of the screen
-  virtual uint16_t getscreenwidth(void){};
+  virtual uint16_t getscreenwidth(void) = NULL;
 
   // Get the height of the screen
-  virtual uint16_t getscreenheight(void){};
+  virtual uint16_t getscreenheight(void) = NULL;
 
   // Reset the system
-  virtual void reset(void){};
+  virtual void reset(void) = NULL;
 };
 
 // The class defining fonts
@@ -140,10 +140,10 @@ public:
   // To copy a color
   Color(const Color &color);
 
-  // Red 
+  // Red
   uint8_t red;
 
-  // Green 
+  // Green
   uint8_t green;
 
   //Blue

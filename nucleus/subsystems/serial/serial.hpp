@@ -32,10 +32,10 @@ public:
   Serial_driver(void);
 
   // Exchange a byte
-  virtual uint8_t exchangebyte(uint8_t b){};
+  virtual uint8_t exchangebyte(uint8_t b) = NULL;
 
   // Is device there
-  virtual bool isdevicethere(void){};
+  virtual bool isdevicethere(void) = NULL;
 };
 
 #endif

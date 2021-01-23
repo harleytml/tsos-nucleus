@@ -32,16 +32,16 @@ public:
   Input_driver(void);
 
   // Read a key, and convert its scancode
-  virtual key_identifier getkey(void){};
+  virtual key_identifier getkey(void) = NULL;
 
   // Is shift pressed
-  virtual bool isshiftpressed(void){};
+  virtual bool isshiftpressed(void) = NULL;
 
   // Is alt pressed
-  virtual bool isaltpressed(void){};
+  virtual bool isaltpressed(void) = NULL;
 
   // Is ctrl pressed
-  virtual bool isctrlpressed(void){};
+  virtual bool isctrlpressed(void) = NULL;
 };
 
 enum key_identifier

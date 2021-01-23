@@ -76,13 +76,13 @@ public:
   ~Filesystem_driver(void);
 
   //Read the directory
-  virtual char **readdir(char *path){};
+  virtual char **readdir(char *path) = NULL;
 
   //Rename a target
-  virtual void rename(char *path, char *newPath){};
+  virtual void rename(char *path, char *newPath) = NULL;
 
   //Make sure a file actually exists
-  virtual bool exists(char * path){};
+  virtual bool exists(char *path) = NULL;
 };
 
 //A file in Tsos

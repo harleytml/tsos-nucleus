@@ -38,10 +38,9 @@ public:
   ~Boot_driver(void);
 
   // Reboot the system
-  virtual void reboot(void){};
+  virtual void reboot(void) = NULL;
 
   // Shutdown the system
-  virtual void shutdown(void){};
-};
+  virtual void shutdown(void) = NULL;
 
 #endif
