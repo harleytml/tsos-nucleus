@@ -5,7 +5,7 @@
 #define MAX_FILES_OPEN 0xff
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 //The main class controlling the filesystem
 class Filesystem : public Module

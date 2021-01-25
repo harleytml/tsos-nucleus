@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "sound.hpp"
+#include "./sound.hpp"
 
 Sound::Sound(void)
 {

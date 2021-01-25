@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_SOUND__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 //The main class controlling sound
 class Sound : public Module

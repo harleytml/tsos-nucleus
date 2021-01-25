@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_INPUT__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 // The main class controlling input
 class Input : public Module

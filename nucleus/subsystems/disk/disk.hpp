@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_DISK__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 // The main class controlling the disks
 class Disk : public Module

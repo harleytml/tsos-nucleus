@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_SERIAL__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 // The main class controlling serial
 class Serial : public Module

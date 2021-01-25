@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_VIDEO__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 // The main class controlling video
 class Video : public Module

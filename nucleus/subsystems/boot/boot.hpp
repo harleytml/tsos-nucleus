@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_BOOT__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 
 // The main class controlling the system runtime
@@ -44,5 +44,6 @@ public:
 
   // Shutdown the system
   virtual void shutdown(void) = 0;
+};
 
 #endif

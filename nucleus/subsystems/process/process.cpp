@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "process.hpp"
+#include "./process.hpp"
 
 Process::Process(void)
 {

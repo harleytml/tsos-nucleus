@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "disk.hpp"
+#include "./disk.hpp"
 
 Disk::Disk(void)
 {

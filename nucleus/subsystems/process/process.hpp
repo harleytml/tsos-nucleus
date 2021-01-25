@@ -3,7 +3,7 @@
 #define __TSOS_NUCLEUS_PROCESS__
 
 #include "../../core/core.hpp"
-extern tsos;
+extern Tsos tsos;
 
 #define PROCESS_COUNT 0xff
 
