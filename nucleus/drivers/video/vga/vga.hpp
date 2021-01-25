@@ -2,7 +2,7 @@
 #ifndef __TSOS_VGA_DRIVER__
 #define __TSOS_VGA_DRIVER__
 
-#include "video.hpp"
+#include "../../../subsystems/video.hpp"
 
 class VGA_driver : public Video_driver
 {

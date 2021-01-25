@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_boot.hpp"
+#include "./gba_boot.hpp"
 
 GBA_BOOT_driver::GBA_BOOT_driver(void)
 {

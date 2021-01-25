@@ -4,7 +4,8 @@
 
 #define MAX_FILES_OPEN 0xff
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 //The main class controlling the filesystem
 class Filesystem : public Module
@@ -76,20 +77,20 @@ public:
   ~Filesystem_driver(void);
 
   //Read the directory
-  virtual char **readdir(char *path) = NULL;
+  virtual char **readdir(char *path) = 0;
 
   //Rename a target
-  virtual void rename(char *path, char *newPath) = NULL;
+  virtual void rename(char *path, char *newPath) = 0;
 
   //Make sure a file actually exists
-  virtual bool exists(char *path) = NULL;
+  virtual bool exists(char *path) = 0;
 };
 
 //A file in Tsos
 class Tsos_file
 {
 public:
-  //Constructor of a null file
+  //Constructor of a 0 file
   Tsos_file(void);
 
   //Constructor

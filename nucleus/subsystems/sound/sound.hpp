@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_SOUND__
 #define __TSOS_NUCLEUS_SOUND__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 //The main class controlling sound
 class Sound : public Module
@@ -29,7 +30,7 @@ public:
   Sound_driver(void);
 
   // Play a tone
-  virtual void playtone(Tone tone) = NULL;
+  virtual void playtone(Tone tone) = 0;
 };
 
 class Tone

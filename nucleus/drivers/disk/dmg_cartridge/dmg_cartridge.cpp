@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "dmg_cartridge.hpp"
+#include "./dmg_cartridge.hpp"
 
 DMG_CARTRIDGE_driver::DMG_CARTRIDGE_driver(void)
 {

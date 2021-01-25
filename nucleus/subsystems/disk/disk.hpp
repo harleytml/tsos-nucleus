@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_DISK__
 #define __TSOS_NUCLEUS_DISK__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 // The main class controlling the disks
 class Disk : public Module
@@ -38,10 +39,10 @@ public:
   ~Disk_driver(void);
 
   // Get bytes from the disk
-  virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len) = NULL;
+  virtual void getbytes(uint8_t buffer, uint16_t offset, uint8_t len) = 0;
 
   // Get the sector size
-  virtual uint16_t getsectorsize(void) = NULL;
+  virtual uint16_t getsectorsize(void) = 0;
 };
 
 #endif

@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_SCREEN_DRIVER__
 #define __TSOS_DMG_SCREEN_DRIVER__
 
-#include "video.hpp"
+#include "../../../subsystems/video.hpp"
 
 class DMG_SCREEN_driver : public Video_driver
 {

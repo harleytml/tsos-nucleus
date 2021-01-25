@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_GAMEPAD_DRIVER__
 #define __TSOS_GBA_GAMEPAD_DRIVER__
 
-#include "input.hpp"
+#include "../../../subsystems/input.hpp"
 
 class GBA_GAMEPAD_driver: public Input_driver
 {

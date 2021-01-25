@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_PROCESS__
 #define __TSOS_NUCLEUS_PROCESS__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 #define PROCESS_COUNT 0xff
 
@@ -39,7 +40,7 @@ private:
 class Process_driver : public Driver
 {
 public:
-  virtual bool isvalidexecutable(char *path) = NULL;
+  virtual bool isvalidexecutable(char *path) = 0;
 };
 
 // The class holding the information of a process

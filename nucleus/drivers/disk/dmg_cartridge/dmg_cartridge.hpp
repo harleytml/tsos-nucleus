@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_CARTRIDGE_DRIVER__
 #define __TSOS_DMG_CARTRIDGE_DRIVER__
 
-#include "disk.hpp"
+#include "../../../subsystems/disk.hpp"
 
 class DMG_CARTRIDGE_driver : public Disk_driver
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "core.hpp"
+#include "./core.hpp"
 
 Tsos::Tsos(void)
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_BOOT_DRIVER__
 #define __TSOS_DMG_BOOT_DRIVER__
 
-#include "boot.hpp"
+#include "../../../subsystems/boot.hpp"
 
 class DMG_BOOT_driver : public Boot_driver
 {

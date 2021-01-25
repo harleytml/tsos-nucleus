@@ -2,7 +2,7 @@
 #ifndef __TSOS_RS232_DRIVER__
 #define __TSOS_RS232_DRIVER__
 
-#include "serial.hpp"
+#include "../../../subsystems/serial.hpp"
 
 class RS232_driver : public Serial_driver
 {

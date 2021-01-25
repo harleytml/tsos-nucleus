@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_VIDEO__
 #define __TSOS_NUCLEUS_VIDEO__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 // The main class controlling video
 class Video : public Module
@@ -80,28 +81,28 @@ public:
   Video_driver(void);
 
   // A very long way to describe the way to draw a character
-  virtual void putchar(char c, Color bc, Color fc) = NULL;
+  virtual void putchar(char c, Color bc, Color fc) = 0;
 
   // Get the text cursor
-  virtual uint16_t gettextcursor(void) = NULL;
+  virtual uint16_t gettextcursor(void) = 0;
 
   // Set the text cursor
-  virtual void seektextcursor(uint16_t pos) = NULL;
+  virtual void seektextcursor(uint16_t pos) = 0;
 
   // Get the text buffer
-  virtual char *gettextbuffer(void) = NULL;
+  virtual char *gettextbuffer(void) = 0;
 
   // Get the length of the text buffer
-  virtual uint16_t gettextbufferlength(void) = NULL;
+  virtual uint16_t gettextbufferlength(void) = 0;
 
   // Get the width of the screen
-  virtual uint16_t getscreenwidth(void) = NULL;
+  virtual uint16_t getscreenwidth(void) = 0;
 
   // Get the height of the screen
-  virtual uint16_t getscreenheight(void) = NULL;
+  virtual uint16_t getscreenheight(void) = 0;
 
   // Reset the system
-  virtual void reset(void) = NULL;
+  virtual void reset(void) = 0;
 };
 
 // The class defining fonts

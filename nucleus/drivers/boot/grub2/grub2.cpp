@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "grub2.hpp"
+#include "./grub2.hpp"
 
 GRUB2_driver::GRUB2_driver(void)
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "ega.hpp"
+#include "./ega.hpp"
 
 EGA_driver::EGA_driver(void)
 {

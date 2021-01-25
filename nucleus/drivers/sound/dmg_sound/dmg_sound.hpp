@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_SOUND_DRIVER__
 #define __TSOS_DMG_SOUND_DRIVER__
 
-#include "sound.hpp"
+#include "../../../subsystems/sound.hpp"
 
 class DMG_SOUND_driver : public Sound_driver
 {

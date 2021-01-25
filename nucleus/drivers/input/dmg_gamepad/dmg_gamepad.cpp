@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "dmg_gamepad.hpp"
+#include "./dmg_gamepad.hpp"
 
 DMG_GAMEPAD_driver::DMG_GAMEPAD_driver(void)
 {

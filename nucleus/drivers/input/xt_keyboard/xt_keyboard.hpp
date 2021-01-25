@@ -2,7 +2,7 @@
 #ifndef __TSOS_XT_KEYBOARD_DRIVER__
 #define __TSOS_XT_KEYBOARD_DRIVER__
 
-#include "input.hpp"
+#include "../../../subsystems/input.hpp"
 
 class XT_KEYBOARD_driver : public Input_driver
 {

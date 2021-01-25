@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "cga.hpp"
+#include "./cga.hpp"
 
 CGA_driver::CGA_driver(void)
 {

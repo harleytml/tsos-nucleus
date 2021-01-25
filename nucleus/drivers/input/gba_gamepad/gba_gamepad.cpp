@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_gamepad.hpp"
+#include "./gba_gamepad.hpp"
 
 GBA_GAMEPAD_driver::GBA_GAMEPAD_driver(void)
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_MDA_DRIVER__
 #define __TSOS_MDA_DRIVER__
 
-#include "video.hpp"
+#include "../../../subsystems/video.hpp"
 
 class MDA_driver : public Video_driver
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_SCREEN_DRIVER__
 #define __TSOS_GBA_SCREEN_DRIVER__
 
-#include "video.hpp"
+#include "../../../subsystems/video.hpp"
 
 class GBA_SCREEN_driver : public Video_driver
 {

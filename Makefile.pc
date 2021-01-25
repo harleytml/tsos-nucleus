@@ -10,7 +10,7 @@ CC=i686-elf-gcc
 CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 CPP=i686-elf-g++
-CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc $(addprefix -I, $(shell find ../ -type d -print))
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
 
 AS=i686-elf-as
 AS_FLAGS=

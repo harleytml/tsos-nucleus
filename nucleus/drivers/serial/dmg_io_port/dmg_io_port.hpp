@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_IO_PORT_DRIVER__
 #define __TSOS_DMG_IO_PORT_DRIVER__
 
-#include "serial.hpp"
+#include "../../../subsystems/serial.hpp"
 
 class DMG_IO_PORT_driver : public Serial_driver
 {

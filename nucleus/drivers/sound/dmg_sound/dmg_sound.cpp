@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "dmg_sound.hpp"
+#include "./dmg_sound.hpp"
 
 DMG_SOUND_driver::DMG_SOUND_driver(void)
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "dmg_screen.hpp"
+#include "./dmg_screen.hpp"
 
 DMG_SCREEN_driver::DMG_SCREEN_driver(void)
 {

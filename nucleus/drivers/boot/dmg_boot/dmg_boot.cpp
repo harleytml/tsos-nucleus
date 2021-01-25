@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "dmg_boot.hpp"
+#include "./dmg_boot.hpp"
 
 DMG_BOOT_driver::DMG_BOOT_driver(void)
 {

@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_SERIAL__
 #define __TSOS_NUCLEUS_SERIAL__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 // The main class controlling serial
 class Serial : public Module
@@ -32,10 +33,10 @@ public:
   Serial_driver(void);
 
   // Exchange a byte
-  virtual uint8_t exchangebyte(uint8_t b) = NULL;
+  virtual uint8_t exchangebyte(uint8_t b) = 0;
 
   // Is device there
-  virtual bool isdevicethere(void) = NULL;
+  virtual bool isdevicethere(void) = 0;
 };
 
 #endif

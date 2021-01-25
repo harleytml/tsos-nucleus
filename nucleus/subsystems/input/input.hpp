@@ -2,7 +2,8 @@
 #ifndef __TSOS_NUCLEUS_INPUT__
 #define __TSOS_NUCLEUS_INPUT__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
 
 // The main class controlling input
 class Input : public Module
@@ -32,21 +33,21 @@ public:
   Input_driver(void);
 
   // Read a key, and convert its scancode
-  virtual key_identifier getkey(void) = NULL;
+  virtual key_identifier getkey(void) = 0;
 
   // Is shift pressed
-  virtual bool isshiftpressed(void) = NULL;
+  virtual bool isshiftpressed(void) = 0;
 
   // Is alt pressed
-  virtual bool isaltpressed(void) = NULL;
+  virtual bool isaltpressed(void) = 0;
 
   // Is ctrl pressed
-  virtual bool isctrlpressed(void) = NULL;
+  virtual bool isctrlpressed(void) = 0;
 };
 
 enum key_identifier
 {
-  KEY_NULL,
+  KEY_0,
   KEY_0,
   KEY_1,
   KEY_2,

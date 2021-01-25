@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "cd.hpp"
+#include "./cd.hpp"
 
 CD_driver::CD_driver(void)
 {

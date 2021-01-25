@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_BOOT__
 #define __TSOS_NUCLEUS_BOOT__
 
-#include "core.hpp"
+#include "../../core/core.hpp"
+extern tsos;
+
 
 // The main class controlling the system runtime
 class Boot : public Module
@@ -38,9 +40,9 @@ public:
   ~Boot_driver(void);
 
   // Reboot the system
-  virtual void reboot(void) = NULL;
+  virtual void reboot(void) = 0;
 
   // Shutdown the system
-  virtual void shutdown(void) = NULL;
+  virtual void shutdown(void) = 0;
 
 #endif
