@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_SOUND_DRIVER__
 #define __TSOS_GBA_SOUND_DRIVER__
 
-#include "../../../subsystems/sound.hpp"
+#include "../../../subsystems/sound/sound.hpp"
 
 class GBA_SOUND_driver : public Sound_driver
 {

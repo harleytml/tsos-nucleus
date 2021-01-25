@@ -2,7 +2,7 @@
 #ifndef __TSOS_ELF_DRIVER__
 #define __TSOS_ELF_DRIVER__
 
-#include "../../../subsystems/process.hpp"
+#include "../../../subsystems/process/process.hpp"
 
 class ELF_driver : public Process_driver
 {

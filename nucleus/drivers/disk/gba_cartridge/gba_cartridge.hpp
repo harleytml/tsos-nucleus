@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_CARTRIDGE_DRIVER__
 #define __TSOS_GBA_CARTRIDGE_DRIVER__
 
-#include "../../../subsystems/disk.hpp"
+#include "../../../subsystems/disk/disk.hpp"
 
 class GBA_CARTRIDGE_driver : public Disk_driver
 {

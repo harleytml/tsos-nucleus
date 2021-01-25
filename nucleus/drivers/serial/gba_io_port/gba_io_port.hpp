@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_IO_PORT_DRIVER__
 #define __TSOS_GBA_IO_PORT_DRIVER__
 
-#include "../../../subsystems/serial.hpp"
+#include "../../../subsystems/serial/serial.hpp"
 
 class GBA_IO_PORT_driver : public Serial_driver
 {

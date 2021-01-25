@@ -2,7 +2,7 @@
 #ifndef __TSOS_EGA_DRIVER__
 #define __TSOS_EGA_DRIVER__
 
-#include "../../../subsystems/video.hpp"
+#include "../../../subsystems/video/video.hpp"
 
 class EGA_driver: public Video_driver
 {

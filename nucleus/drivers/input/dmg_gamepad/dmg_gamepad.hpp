@@ -2,7 +2,7 @@
 #ifndef __TSOS_DMG_GAMEPAD_DRIVER__
 #define __TSOS_DMG_GAMEPAD_DRIVER__
 
-#include "../../../subsystems/input.hpp"
+#include "../../../subsystems/input/input.hpp"
 
 class DMG_GAMEPAD_driver : public Input_driver
 {

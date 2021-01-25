@@ -4,7 +4,7 @@
 
 #define SECTOR_SIZE
 
-#include "../../../subsystems/disk.hpp"
+#include "../../../subsystems/disk/disk.hpp"
 
 class CD_driver : public Disk_driver
 {

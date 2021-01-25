@@ -2,7 +2,7 @@
 #ifndef __TSOS_CGA_DRIVER__
 #define __TSOS_CGA_DRIVER__
 
-#include "../../../subsystems/video.hpp"
+#include "../../../subsystems/video/video.hpp"
 
 class CGA_driver : public Video_driver
 {

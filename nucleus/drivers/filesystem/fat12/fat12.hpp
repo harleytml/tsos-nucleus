@@ -2,7 +2,7 @@
 #ifndef __TSOS_FAT12_DRIVER__
 #define __TSOS_FAT12_DRIVER__
 
-#include "../../../subsystems/filesystem.hpp"
+#include "../../../subsystems/filesystem/filesystem.hpp"
 
 class FAT12_driver : public Filesystem_driver
 {

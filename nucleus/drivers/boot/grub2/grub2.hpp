@@ -2,7 +2,7 @@
 #ifndef __TSOS_GRUB2_DRIVER__
 #define __TSOS_GRUB2_DRIVER__
 
-#include "boot.hpp"
+#include "../../../subsystems/boot/boot.hpp"
 
 class GRUB2_driver : public Boot_driver
 {

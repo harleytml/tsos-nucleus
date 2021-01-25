@@ -2,7 +2,7 @@
 #ifndef __TSOS_GBA_BOOT_DRIVER__
 #define __TSOS_GBA_BOOT_DRIVER__
 
-#include "../../../subsystems/boot.hpp"
+#include "../../../subsystems/boot/boot.hpp"
 
 class GBA_BOOT_driver : public Boot_driver
 {
