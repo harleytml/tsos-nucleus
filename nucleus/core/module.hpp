@@ -3,6 +3,7 @@
 #define __TSOS_MODULE_CORE__
 
 #include "./driver.hpp"
+#include "./types.hpp"
 
 // The base class of TS/OS modules
 templete<class T> class Module

@@ -4,6 +4,7 @@
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
+#include "../../core/types.hpp"
 
 extern Tsos tsos;
 

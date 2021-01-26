@@ -2,6 +2,8 @@
 #ifndef __TSOS_DRIVER_CORE__
 #define __TSOS_DRIVER_CORE__
 
+#include "./types.hpp"
+
 // The class for drivers
 class Driver
 {
