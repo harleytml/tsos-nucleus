@@ -121,6 +121,6 @@ private:
   T *driver;
 };
 
-Tsos tsos;
+static Tsos tsos;
 
 #endif

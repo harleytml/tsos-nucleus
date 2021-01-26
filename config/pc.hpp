@@ -1,4 +1,20 @@
 #define MACHINE PERSONAL_COMPUTER
+
+extern void MDA_driver();
+extern void CGA_driver();
+extern void EGA_driver();
+extern void VGA_driver();
+extern void XT_KEYBOARD_driver();
+extern void AT_KEYBOARD_driver();
+extern void CD_driver();
+extern void RS232_driver();
+extern void GRUB2_driver();
+extern void FAT12_driver();
+extern void FAT16_driver();
+extern void FAT32_driver();
+extern void CDFS_driver();
+extern void ELF_driver();
+
 #define VIDEO_DRIVERS                                          \
     {                                                          \
         MDA_driver(), CGA_driver(), EGA_driver(), VGA_driver() \

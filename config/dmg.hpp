@@ -1,4 +1,5 @@
 #define MACHINE DOT_MATRIX_GAME
+
 #define VIDEO_DRIVERS       \
     {                       \
         DMG_SCREEN_driver() \
