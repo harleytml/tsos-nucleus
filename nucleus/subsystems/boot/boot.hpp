@@ -12,7 +12,7 @@ public:
   Boot_driver(void);
 
   // Destructor
-  ~Boot_driver(void);
+  ~Boot_driver();
 
   // Reboot the system
   virtual void reboot(void) = 0;

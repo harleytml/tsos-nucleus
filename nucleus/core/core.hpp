@@ -95,7 +95,7 @@ public:
   ~Driver(void);
 
   // A function called to determine if a driver should be used.
-  virtual bool detectsystem(void) = NULL;
+  virtual bool detectsystem(void) = 0;
 
   // The name of said module
   char *name;
@@ -109,7 +109,7 @@ public:
   Module(void);
 
   // Destructor
-  ~Module(void);
+  ~Module();
 
   // The full name of the modules's target
   const char *name;
