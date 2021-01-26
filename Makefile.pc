@@ -19,8 +19,8 @@ AS_FLAGS=
 LD=i686-elf-ld.gold
 LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/pc-elf.ld
 
-
 $(OUTPUT_DIR)/nucleus.tse: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o
+:$(CC) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
@@ -29,7 +29,7 @@ $(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video.cpp $(NUCLEUS_DIR)/subsystems/video/video.hpp 
-:$(CC) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
+:$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/input.o: $(NUCLEUS_DIR)/subsystems/input/input.cpp $(NUCLEUS_DIR)/subsystems/input/input.hpp 
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
@@ -97,13 +97,7 @@ $(BUILD_DIR)/mda.o: $(NUCLEUS_DIR)/drivers/video/mda/mda.cpp $(NUCLEUS_DIR)/driv
 $(BUILD_DIR)/vga.o: $(NUCLEUS_DIR)/drivers/video/vga/vga.cpp $(NUCLEUS_DIR)/drivers/video/vga/vga.hpp 
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
-
-
-
-
-
-
-$(BUILD_DIR)/current_config.hpp:
-:cp $(CONFIG_DIR)/pc.hpp $@
+$(BUILD_DIR)/current_config.hpp: $(CONFIG_DIR)/pc.hpp
+:cp $^ $@
 
 
