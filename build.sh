@@ -32,12 +32,12 @@ for i in "${NEEDED_COMMANDS[@]}"; do
 done
 
 #Prepare the filesystem root for TS/OS
-FILESYSTEM_ROOT=$CODE_DIR/../filesystem
-rm -rfv $FILESYSTEM_ROOT
+FILESYSTEM_ROOT="$CODE_DIR/../filesystem"
+rm -rfv "$FILESYSTEM_ROOT"
 mkdir -pv $FILESYSTEM_ROOT/{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
 
 #Make the target nucleus
-mkdir -pv $CODE_DIR/build/
-cd $CODE_DIR/build/
-cp ../Makefile.$1 ./Makefile.$1
-make -f Makefile.$1
+mkdir -pv "$CODE_DIR/build/"
+cd "$CODE_DIR/build/"
+cp "../Makefile.$1" "./Makefile.$1"
+make -f "./Makefile.$1"
