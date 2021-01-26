@@ -3,20 +3,21 @@
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build
-KERNEL_DIR=$(PWD)/../kernel
+NUCLEUS_DIR=$(PWD)/../nucleus
 CONFIG_DIR=$(PWD)/../config
+LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=arm-none-eabi-gcc
-CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic  -mcpu=arm7tdmi
 
 CPP=arm-none-eabi-g++
-CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc $(addprefix -I, $(shell find ../ -type d -print))
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic  -mcpu=arm7tdmi
 
 AS=arm-none-eabi-as
 AS_FLAGS=
 
 LD=arm-none-eabi-ld.gold
-LD_FLAGS=
+LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles 
 
 CORE=$(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/subsystems/video/video.cpp $(NUCLEUS_DIR)/subsystems/video/video.hpp $(NUCLEUS_DIR)/subsystems/input/input.cpp $(NUCLEUS_DIR)/subsystems/input/input.hpp $(NUCLEUS_DIR)/subsystems/disk/disk.cpp $(NUCLEUS_DIR)/subsystems/disk/disk.hpp $(NUCLEUS_DIR)/subsystems/serial/serial.cpp $(NUCLEUS_DIR)/subsystems/serial/serial.hpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem.hpp $(NUCLEUS_DIR)/subsystems/boot/boot.cpp $(NUCLEUS_DIR)/subsystems/boot/boot.hpp $(NUCLEUS_DIR)/subsystems/sound/sound.cpp $(NUCLEUS_DIR)/subsystems/sound/sound.hpp $(NUCLEUS_DIR)/subsystems/process/process.cpp $(NUCLEUS_DIR)/subsystems/process/process.hpp 
 

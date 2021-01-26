@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_SOUND__
 #define __TSOS_NUCLEUS_SOUND__
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 class Tone

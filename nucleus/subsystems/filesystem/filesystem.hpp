@@ -4,7 +4,9 @@
 
 #define MAX_FILES_OPEN 0xff
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 class File_permissions

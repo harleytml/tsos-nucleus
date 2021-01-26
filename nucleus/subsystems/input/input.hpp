@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_INPUT__
 #define __TSOS_NUCLEUS_INPUT__
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 class Input_driver : public Driver

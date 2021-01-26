@@ -8,10 +8,10 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=i686-elf-gcc
-CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+CC_FLAGS= -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic
 
 CPP=i686-elf-g++
-CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic
 
 AS=i686-elf-as
 AS_FLAGS=

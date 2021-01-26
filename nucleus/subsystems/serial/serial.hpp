@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_SERIAL__
 #define __TSOS_NUCLEUS_SERIAL__
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 class Serial_driver : public Driver

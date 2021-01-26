@@ -17,6 +17,8 @@ gba)
     ;;
 dmg)
     NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
     ;;
 *)
     echo "Choose a valid system...."
@@ -25,16 +27,16 @@ dmg)
 esac
 
 for i in "${NEEDED_COMMANDS[@]}"; do
-    if ! exists $i; then
+    if ! exists "$i"; then
         echo "Error: $i is not installed."
         exit 1
     fi
 done
 
 #Prepare the filesystem root for TS/OS
-FILESYSTEM_ROOT="$CODE_DIR/../filesystem"
+FILESYSTEM_ROOT="$CODE_DIR/filesystem"
 rm -rfv "$FILESYSTEM_ROOT"
-mkdir -pv $FILESYSTEM_ROOT/{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
+mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
 
 #Make the target nucleus
 mkdir -pv "$CODE_DIR/build/"

@@ -3,8 +3,9 @@
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build
-KERNEL_DIR=$(PWD)/../kernel
+NUCLEUS_DIR=$(PWD)/../nucleus
 CONFIG_DIR=$(PWD)/../config
+LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=$(where )
 CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra

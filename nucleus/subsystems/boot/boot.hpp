@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_BOOT__
 #define __TSOS_NUCLEUS_BOOT__
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 class Boot_driver : public Driver

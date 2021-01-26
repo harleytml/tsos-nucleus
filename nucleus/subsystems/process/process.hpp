@@ -2,7 +2,9 @@
 #ifndef __TSOS_NUCLEUS_PROCESS__
 #define __TSOS_NUCLEUS_PROCESS__
 
-#include "../../core/core.hpp"
+#include "../../core/driver.hpp"
+#include "../../core/module.hpp"
+
 extern Tsos tsos;
 
 #define PROCESS_COUNT 0xff
