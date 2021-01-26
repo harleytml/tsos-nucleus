@@ -9,6 +9,7 @@ class DMG_CARTRIDGE_driver : public Disk_driver
 public:
     // Constructor
     DMG_CARTRIDGE_driver(void);
+    
     bool detectsystem(void);
 
     // Get an amount of bytes from the disk

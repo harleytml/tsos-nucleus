@@ -5,6 +5,97 @@
 #include "../../core/core.hpp"
 extern Tsos tsos;
 
+enum video_mode
+{
+  TEXT,
+  GRAPHIC
+};
+
+// Describes the character color for text mode video
+class Color
+{
+public:
+  // Constructors
+  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a, uint8_t i);
+  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+  Color(uint8_t r, uint8_t g, uint8_t b);
+
+  // Destructor
+  ~Color();
+
+  // To copy a color
+  Color(const Color &color);
+
+  // Red
+  uint8_t red;
+
+  // Green
+  uint8_t green;
+
+  //Blue
+  uint8_t blue;
+
+  //Alpha
+  uint8_t alpha;
+
+  // Intensity part
+  uint8_t intensity;
+};
+
+// The class defining fonts
+class Font
+{
+public:
+  // Constructor
+  Font(uint8_t *d[][]);
+
+  // Destructor
+  ~Font(void);
+
+  // The character width
+  uint8_t width;
+
+  // The character height
+  uint8_t height;
+
+private:
+  // The actual data for the font
+  uint8_t *data[][];
+};
+
+class Video_driver : public Driver
+{
+public:
+  // Constructor
+  Video_driver(void);
+
+  //Default constructor
+  ~Video_driver();
+
+  // A very long way to describe the way to draw a character
+  virtual void putchar(char c, Color bc, Color fc) = 0;
+
+  // Get the text cursor
+  virtual uint16_t gettextcursor(void) = 0;
+
+  // Set the text cursor
+  virtual void seektextcursor(uint16_t pos) = 0;
+
+  // Get the text buffer
+  virtual char *gettextbuffer(void) = 0;
+
+  // Get the length of the text buffer
+  virtual uint16_t gettextbufferlength(void) = 0;
+
+  // Get the width of the screen
+  virtual uint16_t getscreenwidth(void) = 0;
+
+  // Get the height of the screen
+  virtual uint16_t getscreenheight(void) = 0;
+
+  // Reset the system
+  virtual void reset(void) = 0;
+};
 // The main class controlling video
 class Video : public Module
 {
@@ -74,92 +165,4 @@ private:
   Color foregroundcolor;
 };
 
-class Video_driver : public Driver
-{
-public:
-  // Constructor
-  Video_driver(void);
-
-  // A very long way to describe the way to draw a character
-  virtual void putchar(char c, Color bc, Color fc) = 0;
-
-  // Get the text cursor
-  virtual uint16_t gettextcursor(void) = 0;
-
-  // Set the text cursor
-  virtual void seektextcursor(uint16_t pos) = 0;
-
-  // Get the text buffer
-  virtual char *gettextbuffer(void) = 0;
-
-  // Get the length of the text buffer
-  virtual uint16_t gettextbufferlength(void) = 0;
-
-  // Get the width of the screen
-  virtual uint16_t getscreenwidth(void) = 0;
-
-  // Get the height of the screen
-  virtual uint16_t getscreenheight(void) = 0;
-
-  // Reset the system
-  virtual void reset(void) = 0;
-};
-
-// The class defining fonts
-class Font
-{
-public:
-  // Constructor
-  Font(uint8_t *d[][]);
-
-  // Destructor
-  ~Font(void);
-
-  // The character width
-  uint8_t width;
-
-  // The character height
-  uint8_t height;
-
-private:
-  // The actual data for the font
-  uint8_t *data[][];
-};
-
-// Describes the character color for text mode video
-class Color
-{
-public:
-  // Constructors
-  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a, uint8_t i);
-  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
-  Color(uint8_t r, uint8_t g, uint8_t b);
-
-  // Destructor
-  ~Color(void);
-
-  // To copy a color
-  Color(const Color &color);
-
-  // Red
-  uint8_t red;
-
-  // Green
-  uint8_t green;
-
-  //Blue
-  uint8_t blue;
-
-  //Alpha
-  uint8_t alpha;
-
-  // Intensity part
-  uint8_t intensity;
-};
-
-enum video_mode
-{
-  TEXT,
-  GRAPHIC
-};
 #endif

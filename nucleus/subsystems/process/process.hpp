@@ -7,6 +7,42 @@ extern Tsos tsos;
 
 #define PROCESS_COUNT 0xff
 
+// The possible state of processes
+enum process_state
+{
+  // A running process
+  RUNNING,
+
+  // A halted process
+  HALTED,
+
+  // A hung process
+  HUNG,
+
+  // An idle process
+  IDLE
+};
+
+// The class holding the information of a process
+class Process_info
+{
+public:
+  // Constructor
+  Process_info(uint8_t p, process_state s);
+
+  // The PID of a process
+  uint8_t pid;
+
+  // The state of a process
+  process_state state;
+};
+
+class Process_driver : public Driver
+{
+public:
+  virtual bool isvalidexecutable(char *path) = 0;
+};
+
 // The main classes to control processes
 class Process : public Module
 {
@@ -35,42 +71,6 @@ private:
 
   // The table of processes
   Process_info processes[PROCESS_COUNT];
-};
-
-class Process_driver : public Driver
-{
-public:
-  virtual bool isvalidexecutable(char *path) = 0;
-};
-
-// The class holding the information of a process
-class Process_info
-{
-public:
-  // Constructor
-  Process_info(uint8_t p, process_state s);
-
-  // The PID of a process
-  uint8_t pid;
-
-  // The state of a process
-  process_state state;
-};
-
-// The possible state of processes
-enum process_state
-{
-  // A running process
-  RUNNING,
-
-  // A halted process
-  HALTED,
-
-  // A hung process
-  HUNG,
-
-  // An idle process
-  IDLE
 };
 
 #endif

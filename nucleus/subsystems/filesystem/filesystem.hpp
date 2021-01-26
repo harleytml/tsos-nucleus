@@ -7,6 +7,58 @@
 #include "../../core/core.hpp"
 extern Tsos tsos;
 
+class File_permissions
+{
+public:
+  //Constructor
+  File_permissions(bool r, bool w, bool e);
+
+  //Read permission
+  bool read;
+
+  //Write permission
+  bool write;
+
+  //Execute permission
+  bool execute;
+};
+
+//A file in Tsos
+class Tsos_file
+{
+public:
+  //Constructor of a 0 file
+  Tsos_file(void);
+
+  //Constructor
+  Tsos_file(char *pa, File_permissions per);
+
+  //The path of the file
+  char *path;
+
+  //The permissions the file was opened in
+  File_permissions permissions;
+};
+
+class Filesystem_driver : public Driver
+{
+public:
+  //Constructor
+  Filesystem_driver(void);
+
+  //Destructor
+  ~Filesystem_driver(void);
+
+  //Read the directory
+  virtual char **readdir(char *path) = 0;
+
+  //Rename a target
+  virtual void rename(char *path, char *newPath) = 0;
+
+  //Make sure a file actually exists
+  virtual bool exists(char *path) = 0;
+};
+
 //The main class controlling the filesystem
 class Filesystem : public Module
 {
@@ -65,58 +117,6 @@ private:
 
   //Filesystem driver
   Filesystem_driver *driver;
-};
-
-class Filesystem_driver : public Driver
-{
-public:
-  //Constructor
-  Filesystem_driver(void);
-
-  //Destructor
-  ~Filesystem_driver(void);
-
-  //Read the directory
-  virtual char **readdir(char *path) = 0;
-
-  //Rename a target
-  virtual void rename(char *path, char *newPath) = 0;
-
-  //Make sure a file actually exists
-  virtual bool exists(char *path) = 0;
-};
-
-//A file in Tsos
-class Tsos_file
-{
-public:
-  //Constructor of a 0 file
-  Tsos_file(void);
-
-  //Constructor
-  Tsos_file(char *pa, File_permissions per);
-
-  //The path of the file
-  char *path;
-
-  //The permissions the file was opened in
-  File_permissions permissions;
-};
-
-class File_permissions
-{
-public:
-  //Constructor
-  File_permissions(bool r, bool w, bool e);
-
-  //Read permission
-  bool read;
-
-  //Write permission
-  bool write;
-
-  //Execute permission
-  bool execute;
 };
 
 #endif

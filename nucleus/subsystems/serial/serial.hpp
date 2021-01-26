@@ -5,6 +5,19 @@
 #include "../../core/core.hpp"
 extern Tsos tsos;
 
+class Serial_driver : public Driver
+{
+public:
+  // Constructor
+  Serial_driver(void);
+
+  // Exchange a byte
+  virtual uint8_t exchangebyte(uint8_t b) = 0;
+
+  // Is device there
+  virtual bool isdevicethere(void) = 0;
+};
+
 // The main class controlling serial
 class Serial : public Module
 {
@@ -26,17 +39,5 @@ private:
   Serial_driver *driver;
 };
 
-class Serial_driver : public Driver
-{
-public:
-  // Constructor
-  Serial_driver(void);
-
-  // Exchange a byte
-  virtual uint8_t exchangebyte(uint8_t b) = 0;
-
-  // Is device there
-  virtual bool isdevicethere(void) = 0;
-};
 
 #endif

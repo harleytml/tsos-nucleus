@@ -25,9 +25,15 @@ const uint8_t NULL = '\0';
 
 extern void kernel_main(void);
 
-Tsos tsos;
-
-// These are the default values for the values contained normally in current_config.hpp
+// The machine's type
+enum machine_type
+{
+  PERSONAL_COMPUTER,
+  DOT_MATRIX_GAME,
+  GAMEBOY_ADVANCE,
+  GENERIC,
+  UNKNOWN
+};
 
 // The main class collecting the TS/OS nucleus api
 class Tsos
@@ -115,14 +121,6 @@ private:
   T *driver;
 };
 
-// The machine's type
-enum machine_type
-{
-  PERSONAL_COMPUTER,
-  DOT_MATRIX_GAME,
-  GAMEBOY_ADVANCE,
-  GENERIC,
-  UNKNOWN
-};
+Tsos tsos;
 
 #endif

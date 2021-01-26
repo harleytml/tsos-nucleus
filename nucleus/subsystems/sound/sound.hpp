@@ -5,34 +5,6 @@
 #include "../../core/core.hpp"
 extern Tsos tsos;
 
-//The main class controlling sound
-class Sound : public Module
-{
-public:
-  // Constructor
-  Sound(void);
-
-  // Destructor
-  ~Sound(void);
-
-  // Play a tone
-  void playtone(Tone tone);
-
-private:
-  // Sound driver
-  Sound_driver *driver;
-};
-
-class Sound_driver : public Driver
-{
-public:
-  // Constructor
-  Sound_driver(void);
-
-  // Play a tone
-  virtual void playtone(Tone tone) = 0;
-};
-
 class Tone
 {
 public:
@@ -47,6 +19,34 @@ public:
 
   // The length of the tone
   uint16_t length;
+};
+
+class Sound_driver : public Driver
+{
+public:
+  // Constructor
+  Sound_driver(void);
+
+  // Play a tone
+  virtual void playtone(Tone tone) = 0;
+};
+
+//The main class controlling sound
+class Sound : public Module
+{
+public:
+  // Constructor
+  Sound(void);
+
+  // Destructor
+  ~Sound();
+
+  // Play a tone
+  void playtone(Tone tone);
+
+private:
+  // Sound driver
+  Sound_driver *driver;
 };
 
 #endif

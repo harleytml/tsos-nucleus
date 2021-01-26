@@ -5,6 +5,21 @@
 #include "../../core/core.hpp"
 extern Tsos tsos;
 
+class Boot_driver : public Driver
+{
+public:
+  // Constructor
+  Boot_driver(void);
+
+  // Destructor
+  ~Boot_driver(void);
+
+  // Reboot the system
+  virtual void reboot(void) = 0;
+
+  // Shutdown the system
+  virtual void shutdown(void) = 0;
+};
 
 // The main class controlling the system runtime
 class Boot : public Module
@@ -30,20 +45,5 @@ private:
   Boot_driver *driver;
 };
 
-class Boot_driver : public Driver
-{
-public:
-  // Constructor
-  Boot_driver(void);
-
-  // Destructor
-  ~Boot_driver(void);
-
-  // Reboot the system
-  virtual void reboot(void) = 0;
-
-  // Shutdown the system
-  virtual void shutdown(void) = 0;
-};
 
 #endif
