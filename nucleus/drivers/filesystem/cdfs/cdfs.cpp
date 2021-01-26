@@ -20,7 +20,8 @@ bool CDFS_driver::detectsystem(void)
     return true;
 }
 
-char ** CDFS_driver::readdir(char *path) {
+char ** CDFS_driver::readdir(char *path)
+{
 }
 
 void CDFS_driver::rename(char *path, char *newPath)
