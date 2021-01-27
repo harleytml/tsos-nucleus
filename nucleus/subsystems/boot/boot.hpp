@@ -32,7 +32,7 @@ public:
   Boot(void);
 
   // Constructor
-  ~Boot(void);
+  ~Boot();
 
   // Reboot the system
   void reboot(void);

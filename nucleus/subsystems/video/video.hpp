@@ -108,7 +108,7 @@ public:
   Video(void);
 
   // Destructor
-  ~Video(void);
+  ~Video();
 
   // Initialize the video system
   void reset(void);

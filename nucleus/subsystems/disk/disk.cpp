@@ -25,6 +25,6 @@ Disk_driver::Disk_driver(void)
 {
 }
 
-Disk_driver::~Disk_driver(void)
+Disk_driver::~Disk_driver()
 {
 }
