@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 class Disk_driver : public Driver
 {
@@ -25,7 +25,7 @@ public:
 };
 
 // The main class controlling the disks
-class Disk : public Module
+class Disk : public Module<Disk_driver>
 {
 public:
   // Constructor

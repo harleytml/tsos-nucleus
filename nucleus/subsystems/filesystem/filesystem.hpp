@@ -8,7 +8,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 class File_permissions
 {
@@ -63,7 +63,7 @@ public:
 };
 
 //The main class controlling the filesystem
-class Filesystem : public Module
+class Filesystem : public Module<Filesystem_driver>
 {
 public:
   //Constructor

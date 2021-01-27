@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 class Boot_driver : public Driver
 {
@@ -25,7 +25,7 @@ public:
 };
 
 // The main class controlling the system runtime
-class Boot : public Module
+class Boot : public Module<Boot_driver>
 {
 public:
   // Constructor

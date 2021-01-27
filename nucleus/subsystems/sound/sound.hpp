@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 class Tone
 {
@@ -35,7 +35,7 @@ public:
 };
 
 //The main class controlling sound
-class Sound : public Module
+class Sound : public Module<Sound_driver>
 {
 public:
   // Constructor

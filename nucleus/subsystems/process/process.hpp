@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 #define PROCESS_COUNT 0xff
 
@@ -47,7 +47,7 @@ public:
 };
 
 // The main classes to control processes
-class Process : public Module
+class Process : public Module<Process_driver>
 {
 public:
   // Constructor

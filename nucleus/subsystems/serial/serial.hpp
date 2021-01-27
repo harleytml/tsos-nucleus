@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 class Serial_driver : public Driver
 {
@@ -22,7 +22,7 @@ public:
 };
 
 // The main class controlling serial
-class Serial : public Module
+class Serial : public Module<Serial_driver>
 {
 public:
   // Constructor

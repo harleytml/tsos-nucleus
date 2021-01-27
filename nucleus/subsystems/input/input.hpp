@@ -6,48 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
-
-class Input_driver : public Driver
-{
-public:
-  // Constructor
-  Input_driver(void);
-
-  // Read a key, and convert its scancode
-  virtual key_identifier getkey(void) = 0;
-
-  // Is shift pressed
-  virtual bool isshiftpressed(void) = 0;
-
-  // Is alt pressed
-  virtual bool isaltpressed(void) = 0;
-
-  // Is ctrl pressed
-  virtual bool isctrlpressed(void) = 0;
-};
-
-// The main class controlling input
-class Input : public Module
-{
-public:
-  // Constructor
-  Input(void);
-
-  // Destructor
-  ~Input(void);
-
-  // Get the key pressed
-  key_identifier getkey(void);
-
-  // Wait for a key to be pressed
-  void waitkey(void);
-
-private:
-  // Input driver
-  Input_driver *driver;
-};
-
+extern static Tsos tsos;
 
 enum key_identifier
 {
@@ -153,6 +112,46 @@ enum key_identifier
   KEY_PLUS,
   KEY_TAB
 
+};
+
+class Input_driver : public Driver
+{
+public:
+  // Constructor
+  Input_driver(void);
+
+  // Read a key, and convert its scancode
+  virtual key_identifier getkey(void) = 0;
+
+  // Is shift pressed
+  virtual bool isshiftpressed(void) = 0;
+
+  // Is alt pressed
+  virtual bool isaltpressed(void) = 0;
+
+  // Is ctrl pressed
+  virtual bool isctrlpressed(void) = 0;
+};
+
+// The main class controlling input
+class Input : public Module<Input_driver>
+{
+public:
+  // Constructor
+  Input(void);
+
+  // Destructor
+  ~Input(void);
+
+  // Get the key pressed
+  key_identifier getkey(void);
+
+  // Wait for a key to be pressed
+  void waitkey(void);
+
+private:
+  // Input driver
+  Input_driver *driver;
 };
 
 enum key_position

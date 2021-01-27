@@ -19,7 +19,7 @@ public:
   const char *name;
 
   // Attach a driver
-  void attachdriver(T d);
+  void attachdriver(T& d);
 
 private:
   T *driver;

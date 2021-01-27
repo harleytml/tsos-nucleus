@@ -25,7 +25,7 @@ $(OUTPUT_DIR)/nucleus.tse: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o
 $(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(BUILD_DIR)/current_config.hpp
+$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/core/driver.cpp $(NUCLEUS_DIR)/core/driver.hpp $(NUCLEUS_DIR)/core/module.cpp $(NUCLEUS_DIR)/core/module.hpp  $(BUILD_DIR)/current_config.hpp
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video.cpp $(NUCLEUS_DIR)/subsystems/video/video.hpp 

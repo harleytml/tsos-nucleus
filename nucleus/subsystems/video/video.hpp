@@ -6,7 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 
-extern Tsos tsos;
+extern static Tsos tsos;
 
 enum video_mode
 {
@@ -99,8 +99,9 @@ public:
   // Reset the system
   virtual void reset(void) = 0;
 };
+
 // The main class controlling video
-class Video : public Module
+class Video : public Module<Video_driver>
 {
 public:
   // Constructor

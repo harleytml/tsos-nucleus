@@ -1,15 +1,18 @@
 #include "./module.hpp"
 
-Module::Module(void)
+template <class T>
+Module<T>::Module(void)
 {
 }
 
-Module::~Module(void)
+template <class T>
+Module<T>::~Module(void)
 {
     delete[] name;
 }
 
-templete<class T> void Module::attachdriver(T d) const
+templete<class T>
+void Module<T>::attachdriver(T& d) const
 {
 
     // The driver has to be for the right machine and run on that machine's configuration

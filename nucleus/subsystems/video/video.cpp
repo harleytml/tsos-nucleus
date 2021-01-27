@@ -131,12 +131,12 @@ void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uin
   foregroundcolor = Color(red, green, blue, alpha);
 }
 
-Font(uint8_t *d[][])
+Font::Font(uint8_t *d[][])
 {
   data = d;
 }
 
-~Font(void)
+Font::~Font(void)
 {
   delete data;
 }
@@ -168,6 +168,6 @@ Color::Color(uint8_t r, uint8_t g, uint8_t b)
   intensity = 0xff;
 }
 
-~Color(void)
+Color::~Color(void)
 {
 }
