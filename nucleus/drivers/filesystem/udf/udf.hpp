@@ -1,13 +1,13 @@
 //By Tsuki Superior
-#ifndef __TSOS_CDFS_DRIVER__
-#define __TSOS_CDFS_DRIVER__
+#ifndef __TSOS_UDF_DRIVER__
+#define __TSOS_UDF_DRIVER__
 
 #include "../../../subsystems/filesystem/filesystem.hpp"
 
-class CDFS_driver: public Filesystem_driver
+class UDF_driver: public Filesystem_driver
 {
  public:
-  CDFS_driver(void);
+  UDF_driver(void);
   bool detectsystem(void);
   char ** readdir(char * path);
   void rename(char * path, char * newPath);

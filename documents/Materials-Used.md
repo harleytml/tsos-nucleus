@@ -13,3 +13,5 @@ https://gcc.gnu.org/install/specific.html
 https://www.devrs.com/gba/ccode.php
 
 https://wiki.osdev.org/Bare_Bones
+
+https://wiki.osdev.org/SFS
