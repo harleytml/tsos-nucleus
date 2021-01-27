@@ -29,7 +29,7 @@ public:
   Serial(void);
 
   // Destructor
-  ~Serial(void);
+  ~Serial();
 
   // Exchange a byte
   uint8_t exchangebyte(uint8_t b);

@@ -24,8 +24,8 @@ void GRUB2_driver::reboot(void)
     *post_reset_flag = 0x1234;
 
     //Lets actually reboot
-    asm ("push    0xffff"
-    : "push    0x0000"
+    asm ("push 0xffff"
+    : "push 0x0000"
     : "retf"
     );
 }

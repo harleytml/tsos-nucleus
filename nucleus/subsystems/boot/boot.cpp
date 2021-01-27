@@ -57,6 +57,6 @@ Boot_driver::Boot_driver(void)
 {
 }
 
-Boot_driver::~Boot_driver(void)
+Boot_driver::~Boot_driver()
 {
 }
