@@ -22,7 +22,7 @@ LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/pc-elf.ld
 $(OUTPUT_DIR)/nucleus.tse: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o
 :$(CC) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o
+$(BUILD_DIR)/nucleus.o: $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/core/driver.cpp $(NUCLEUS_DIR)/core/driver.hpp $(NUCLEUS_DIR)/core/module.cpp $(NUCLEUS_DIR)/core/module.hpp  $(BUILD_DIR)/current_config.hpp
@@ -61,7 +61,10 @@ $(BUILD_DIR)/grub2.o: $(NUCLEUS_DIR)/drivers/boot/grub2/grub2.cpp $(NUCLEUS_DIR)
 $(BUILD_DIR)/cd.o: $(NUCLEUS_DIR)/drivers/disk/cd/cd.cpp $(NUCLEUS_DIR)/drivers/disk/cd/cd.hpp 
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/cdfs.o: $(NUCLEUS_DIR)/drivers/filesystem/cdfs/cdfs.cpp $(NUCLEUS_DIR)/drivers/filesystem/cdfs/cdfs.hpp 
+$(BUILD_DIR)/udf.o: $(NUCLEUS_DIR)/drivers/filesystem/udf/udf.cpp $(NUCLEUS_DIR)/drivers/filesystem/udf/udf.hpp 
+:$(CC) $(CPP_FLAGS) -o $@ $^ 
+
+$(BUILD_DIR)/sfs.o: $(NUCLEUS_DIR)/drivers/filesystem/sfs/sfs.cpp $(NUCLEUS_DIR)/drivers/filesystem/sfs/sfs.hpp 
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/fat12.o: $(NUCLEUS_DIR)/drivers/filesystem/fat12/fat12.cpp $(NUCLEUS_DIR)/drivers/filesystem/fat12/fat12.hpp
@@ -98,6 +101,6 @@ $(BUILD_DIR)/vga.o: $(NUCLEUS_DIR)/drivers/video/vga/vga.cpp $(NUCLEUS_DIR)/driv
 :$(CC) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/current_config.hpp: $(CONFIG_DIR)/pc.hpp
-:cp $^ $@
+:cp -v $^ $@
 
 

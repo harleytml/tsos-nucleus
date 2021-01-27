@@ -12,8 +12,9 @@ extern void GRUB2_driver();
 extern void FAT12_driver();
 extern void FAT16_driver();
 extern void FAT32_driver();
-extern void CDFS_driver();
+extern void UDF_driver();
 extern void ELF_driver();
+extern void SFS_driver();
 
 #define VIDEO_DRIVERS                                          \
     {                                                          \
@@ -37,7 +38,7 @@ extern void ELF_driver();
     }
 #define FILESYSTEM_DRIVERS                                            \
     {                                                                 \
-        FAT12_driver(), FAT16_driver(), FAT32_driver(), CDFS_driver() \
+        FAT12_driver(), FAT16_driver(), FAT32_driver(), UDF_driver(), SFS_driver(); \
     }
 #define SOUND_DRIVERS \
     {                 \
