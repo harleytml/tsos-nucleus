@@ -1,5 +1,5 @@
 image: tsukisuperior/tsos-build:latest
 
 tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
-    command: 'echo "TODO: Replace with command to start project"'
+  - init: 'echo "Welcome to the TS/OS Docker Image"'
+    command: './build.sh pc'
