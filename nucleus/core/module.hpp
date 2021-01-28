@@ -10,10 +10,10 @@ templete<class T> class Module
 {
 public:
   // Constructor
-  Module(void);
+  Module<T>(void);
 
   // Destructor
-  ~Module();
+  ~Module<T>();
 
   // The full name of the modules's target
   const char *name;
@@ -22,7 +22,7 @@ public:
   void attachdriver(T& d);
 
 private:
-  T *driver;
+  T* driver;
 };
 
 #endif
