@@ -12,7 +12,7 @@ public:
   Driver(void);
 
   // Destructor
-  ~Driver(void);
+  ~Driver();
 
   // A function called to determine if a driver should be used.
   virtual bool detectsystem(void) = 0;

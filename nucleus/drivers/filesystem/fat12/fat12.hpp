@@ -25,4 +25,24 @@ private:
   Tsos_file openfiles[MAX_FILES_OPEN];
 };
 
+enum fattributes
+{
+    READ_ONLY=0x01, 
+    HIDDEN=0x02, 
+    SYSTEM=0x04, 
+    VOLUME_ID 
+    DIRECTORY=0x10, 
+    ARCHIVE=0x20
+}
+
+//Standard 8.3 file directory
+struct Directory
+{
+    public:
+        char directory_name[11];
+        uint8_t file_attributes;
+        uint8_t __reserved_1__;
+}
+
+
 #endif

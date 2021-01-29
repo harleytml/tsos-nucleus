@@ -37,7 +37,7 @@ public:
   Tsos(void);
 
   // Destructor
-  ~Tsos(void);
+  ~Tsos();
 
   // The module being used to control video
   Video video;

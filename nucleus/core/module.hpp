@@ -10,10 +10,10 @@ templete<class T> class Module
 {
 public:
   // Constructor
-  Module<T>(void);
+  Module(void);
 
   // Destructor
-  ~Module<T>();
+  ~Module();
 
   // The full name of the modules's target
   const char *name;

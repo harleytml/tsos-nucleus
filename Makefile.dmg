@@ -8,10 +8,10 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=$(where )
-CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra
+CC_FLAGS=-std=c9x -ffreestanding -O2 -Wall -Wextra -pedantic
 
 CPP=$(where )
-CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
+CPP_FLAGS=-std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic
 
 AS=$(where )
 AS_FLAGS=
