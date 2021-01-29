@@ -11,6 +11,7 @@ public:
   bool detectsystem(void);
   void reset(void);
   void putchar(char c, Color bc, Color fc);
+  void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
   uint16_t gettextcursor(void);
   void seektextcursor(uint16_t pos);
   char *gettextbuffer(void);
@@ -30,6 +31,12 @@ private:
 
   // The text buffer
   char *text_buffer;
+
+  // Screen resolution width
+  uint16_t screen_width;
+
+  // Screen resolution height
+  uint16_t screen_height;
 
   video_mode mode;
 };

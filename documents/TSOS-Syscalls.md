@@ -1,3 +1,5 @@
+# TS/OS Syscalls
+
 TOTAL SYSCALLS: 43
 
 BOOT SYSCALLS:

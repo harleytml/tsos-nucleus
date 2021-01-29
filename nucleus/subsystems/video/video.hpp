@@ -78,6 +78,9 @@ public:
   // A very long way to describe the way to draw a character
   virtual void putchar(char c, Color bc, Color fc) = 0;
 
+  // Draw pixel
+  virtual void drawpx(uint16_t pos_x, uint16_t pos_y, Color c) = 0;
+
   // Get the text cursor
   virtual uint16_t gettextcursor(void) = 0;
 

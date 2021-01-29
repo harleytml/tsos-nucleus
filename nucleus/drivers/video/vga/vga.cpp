@@ -94,8 +94,26 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
       return;
     }
   case GRAPHIC:
-    return;
-  }
+
+    //Lets draw a glyph
+	uint16_t cx,cy;
+	uint16_t mask[8]={1,2,4,8,16,32,64,128};
+	uint8_t *gylph=font + (uint8_t)c * 16;
+    uint8_t fgcolor
+    uint8_t bgcolor
+    for(cy=0; cy<16; cy++)
+    {
+	    for(cx=0; cx<8; cx++)
+        {
+	    	drawpx((glyph[cy] & mask[cx] )? fgcolor: bgcolor,x+cx,y+cy-12);
+	    }
+	}
+}
+
+void VGA_driver::drawpx(int pos_x, int pos_y, Color c)
+{
+    uint8_t* location = (unsigned char*)0xA0000 + screen_width * pos_y + pos_x;
+    *location = c;
 }
 
 uint16_t VGA_driver::gettextcursor(void)

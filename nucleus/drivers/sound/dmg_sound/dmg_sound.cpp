@@ -18,9 +18,11 @@ bool DMG_SOUND_driver::detectsystem(void)
         return true;
     }
 
-    /* This was compiled wrong if the code reaches here
-   	   The header has the wrong value, because it was compiled for the Gameboy Color
-   	   So we will induce a fission */
+    /* 
+    This was compiled wrong if the code reaches here
+   	The header has the wrong value, because it was compiled for the Gameboy Color
+   	So we will induce a fission
+    */
     tsos.boot.fission("NUCLEUS DETECTED HARDWARE FAULT");
 
     // So the compiler doesn't complain
