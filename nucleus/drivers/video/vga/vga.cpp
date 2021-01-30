@@ -96,84 +96,84 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
   case GRAPHIC:
 
     //Lets draw a glyph
-	uint16_t cx,cy;
-	uint16_t mask[8]={1,2,4,8,16,32,64,128};
-	uint8_t *gylph=font + (uint8_t)c * 16;
-    uint8_t fgcolor
-    uint8_t bgcolor
-    for(cy=0; cy<16; cy++)
+    uint16_t cx, cy;
+    uint16_t mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+    uint8_t *gylph = font + (uint8_t)c * 16;
+    uint8_t fgcolor;
+    uint8_t bgcolor;
+    for (cy = 0; cy < 16; cy++)
     {
-	    for(cx=0; cx<8; cx++)
-        {
-	    	drawpx((glyph[cy] & mask[cx] )? fgcolor: bgcolor,x+cx,y+cy-12);
-	    }
-	}
-}
+      for (cx = 0; cx < 8; cx++)
+      {
+        drawpx((glyph[cy] & mask[cx]) ? fgcolor : bgcolor, x + cx, y + cy - 12);
+      }
+    }
+  }
 
-void VGA_driver::drawpx(int pos_x, int pos_y, Color c)
-{
-    uint8_t* location = (unsigned char*)0xA0000 + screen_width * pos_y + pos_x;
+  void VGA_driver::drawpx(int pos_x, int pos_y, Color c)
+  {
+    uint8_t *location = (unsigned char *)0xA0000 + screen_width * pos_y + pos_x;
     *location = c;
-}
-
-uint16_t VGA_driver::gettextcursor(void)
-{
-  return text_cursor;
-}
-
-void VGA_driver::seektextcursor(uint16_t pos)
-{
-  text_cursor = pos;
-  while (text_cursor <= text_buffer_length)
-  {
-    text_cursor -= text_buffer_length;
   }
-}
 
-uint8_t VGA_driver::getscreenwidth(void)
-{
-
-  // Read the width from a BIOS field
-  return *((uint16_t *)0x40044a);
-}
-
-uint8_t VGA_driver::getscreenheight(void)
-{
-  switch (video_mode)
+  uint16_t VGA_driver::gettextcursor(void)
   {
-  case TEXT:
-
-    // The height of text modes is always 25
-    return 25;
-  case GRAPHIC:
-    return 0;
+    return text_cursor;
   }
-}
 
-char *VGA_driver::gettextbuffer(void)
-{
-
-  // Read the offset of the current video page from the BIOS
-  return (char *)(*((uint16_t)0x40044e));
-}
-
-uint16_t VGA_driver::gettextbufferlength(void)
-{
-
-  // Read the length from the BIOS
-  return (*((uint16_t)0x40044c));
-}
-
-void VGA_driver::setfont(Font f)
-{
-  switch (mode)
+  void VGA_driver::seektextcursor(uint16_t pos)
   {
-  case TEXT:
-
-    // I believe you have to go into real mode to do this
-    // The PC edition of TS/OS is intended for protected mode
-    return;
-  case GRAPHIC:
-    font = f;
+    text_cursor = pos;
+    while (text_cursor <= text_buffer_length)
+    {
+      text_cursor -= text_buffer_length;
+    }
   }
-}
+
+  uint8_t VGA_driver::getscreenwidth(void)
+  {
+
+    // Read the width from a BIOS field
+    return *((uint16_t *)0x40044a);
+  }
+
+  uint8_t VGA_driver::getscreenheight(void)
+  {
+    switch (video_mode)
+    {
+    case TEXT:
+
+      // The height of text modes is always 25
+      return 25;
+    case GRAPHIC:
+      return 0;
+    }
+  }
+
+  char *VGA_driver::gettextbuffer(void)
+  {
+
+    // Read the offset of the current video page from the BIOS
+    return (char *)(*((uint16_t)0x40044e));
+  }
+
+  uint16_t VGA_driver::gettextbufferlength(void)
+  {
+
+    // Read the length from the BIOS
+    return (*((uint16_t)0x40044c));
+  }
+
+  void VGA_driver::setfont(Font f)
+  {
+    switch (mode)
+    {
+    case TEXT:
+
+      // I believe you have to go into real mode to do this
+      // The PC edition of TS/OS is intended for protected mode
+      return;
+    case GRAPHIC:
+      font = f;
+    }
+  }

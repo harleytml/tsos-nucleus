@@ -20,7 +20,7 @@ bool UDF_driver::detectsystem(void)
     return true;
 }
 
-char ** UDF_driver::readdir(char *path)
+char **UDF_driver::readdir(char *path)
 {
 }
 

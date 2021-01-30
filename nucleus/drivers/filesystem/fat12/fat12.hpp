@@ -9,7 +9,7 @@ class FAT12_driver : public Filesystem_driver
 public:
   FAT12_driver(void);
   bool detectsystem(void);
-  char ** readdir(char *path);
+  char **readdir(char *path);
   void rename(char *path, char *newPath);
   Tsos_file open(char *path);
   void close(Tsos_file file);
@@ -27,22 +27,21 @@ private:
 
 enum fattributes
 {
-    READ_ONLY=0x01, 
-    HIDDEN=0x02, 
-    SYSTEM=0x04, 
-    VOLUME_ID 
-    DIRECTORY=0x10, 
-    ARCHIVE=0x20
+  READ_ONLY = 0x01,
+  HIDDEN = 0x02,
+  SYSTEM = 0x04,
+  VOLUME_ID
+      DIRECTORY = 0x10,
+  ARCHIVE = 0x20
 }
 
 //Standard 8.3 file directory
 struct Directory
 {
-    public:
-        char directory_name[11];
-        uint8_t file_attributes;
-        uint8_t __reserved_1__;
+public:
+  char directory_name[11];
+  uint8_t file_attributes;
+  uint8_t __reserved_1__;
 }
-
 
 #endif

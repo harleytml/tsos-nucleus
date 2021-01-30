@@ -42,5 +42,4 @@ private:
   Serial_driver *driver;
 };
 
-
 #endif

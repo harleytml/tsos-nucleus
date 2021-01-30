@@ -15,7 +15,7 @@ Tone::Tone(uint16_t f, uint16_t l)
     length = l;
 }
 
-Tone::Tone(const Tone& tone)
+Tone::Tone(const Tone &tone)
 {
     frequency = tone.frequency;
     length = tone.length;

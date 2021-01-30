@@ -20,7 +20,8 @@ bool FAT32_driver::detectsystem(void)
     return true;
 }
 
-char ** FAT32_driver::readdir(char *path) {
+char **FAT32_driver::readdir(char *path)
+{
 }
 
 void FAT32_driver::rename(char *path, char *newPath)

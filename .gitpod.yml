@@ -2,4 +2,4 @@ image: tsukisuperior/tsos-build:latest
 
 tasks:
   - init: 'echo "Welcome to the TS/OS Docker Image"'
-    command: './build.sh pc'
+    command: "./build.sh pc"

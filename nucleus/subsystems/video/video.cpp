@@ -35,7 +35,7 @@ void Video::putstring(char *str)
     switch (c)
     {
     case '\n':
-    
+
       //We will seek the text cursor to a new line
       rseektextcursor(getscreenwidth());
       break;

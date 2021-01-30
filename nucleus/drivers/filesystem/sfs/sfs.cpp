@@ -20,7 +20,8 @@ bool SFS_driver::detectsystem(void)
     return true;
 }
 
-char ** SFS_driver::readdir(char *path) {
+char **SFS_driver::readdir(char *path)
+{
 }
 
 void SFS_driver::rename(char *path, char *newPath)

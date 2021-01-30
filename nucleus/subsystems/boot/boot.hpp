@@ -48,5 +48,4 @@ private:
   Boot_driver *driver;
 };
 
-
 #endif

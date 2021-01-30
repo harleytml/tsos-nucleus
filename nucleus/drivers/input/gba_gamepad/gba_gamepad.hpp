@@ -4,20 +4,19 @@
 
 #include "../../../subsystems/input/input.hpp"
 
-class GBA_GAMEPAD_driver: public Input_driver
+class GBA_GAMEPAD_driver : public Input_driver
 {
- public:
+public:
+    // Constructor
+    GBA_GAMEPAD_driver(void);
 
-  // Constructor
-  GBA_GAMEPAD_driver(void);   
+    // Detects if the module should be used
+    bool detectsystem(void);
 
-  // Detects if the module should be used
-  bool detectsystem(void);
+    // Get the key currently pressed
+    key_identifier getkey(void);
 
-  // Get the key currently pressed
-  key_identifier getkey(void);
-
- private:  
+private:
 };
 
 #endif
