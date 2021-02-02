@@ -5,7 +5,7 @@ Tsos::Tsos(void)
 {
 
     // The version and related information of the OS
-    version = 1.0;
+    version = 0.0;
     code_name = "Neutronium";
     short_code_name = "n";
 
@@ -72,19 +72,6 @@ Tsos::Tsos(void)
 
 Tsos::~Tsos(void)
 {
-
-    // Defining the deconstructor
-    delete &video;
-    delete &input;
-    delete &filesystem;
-    delete &serial;
-    delete &process;
-    delete &disk;
-    delete &sound;
-
-    // The boot module will destroy tsos
-
-    // delete boot;
 }
 
 // Start the kernel

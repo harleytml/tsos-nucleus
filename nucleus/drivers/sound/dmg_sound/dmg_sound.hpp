@@ -7,7 +7,10 @@
 class DMG_SOUND_driver : public Sound_driver
 {
 public:
+
+    //Constructor
     DMG_SOUND_driver(void);
+
     bool detectsystem(void);
     void playtone(Tone tone);
 };
