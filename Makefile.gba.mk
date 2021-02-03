@@ -8,13 +8,13 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=arm-none-eabi-gcc
-CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi
+CC_FLAGS= -std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles 
 
 CPP=arm-none-eabi-g++
-CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic  -mcpu=arm7tdmi
+CPP_FLAGS= -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles
 
 AS=arm-none-eabi-as
-AS_FLAGS=
+AS_FLAGS= -mcpu=arm7tdmi -nostartfiles
 
 LD=arm-none-eabi-ld.gold
 LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles 

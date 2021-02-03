@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
+# https://github.com/tsuki-superior/tsos-nucleus/blob/master/documents/TSOS-Ports.md
 
-#This simple function checks if a command exists
+# This simple function checks if a command exists
 exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
 CODE_DIR=$(pwd)
 
-#Make sure the required tools are here
+# Make sure the required tools are here
 case $1 in
 pc)
     NEEDED_COMMANDS=(i686-elf-gcc i686-elf-g++ i686-elf-ld.gold make)
@@ -73,12 +74,12 @@ for i in "${NEEDED_COMMANDS[@]}"; do
     fi
 done
 
-#Prepare the filesystem root for TS/OS
+# Prepare the filesystem root for TS/OS
 FILESYSTEM_ROOT="$CODE_DIR/filesystem"
 rm -rfv "$FILESYSTEM_ROOT"
 mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
 
-#Make the target nucleus
+# Make the target nucleus
 mkdir -pv "$CODE_DIR/build/"
 cd "$CODE_DIR/build/"
 cp "../Makefile.$1.mk" "./Makefile.$1"
