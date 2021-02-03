@@ -1,3 +1,5 @@
+# Building TS/OS
+
 TS/OS is meant to be built on a standard Linux system, but other *nix enviroments will work.
 
 The base packages you need are ones that include make, gcc, and g++. Usually the most basic development tools can all be installed in one package, so consult the documentation for your system.

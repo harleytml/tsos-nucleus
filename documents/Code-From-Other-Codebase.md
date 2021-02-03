@@ -1,3 +1,5 @@
+# Code from other sites
+
 [/linker-scripts/gba-elf.ld](https://github.com/tsuki-superior/tsos-nucleus/blob/master/linker-scripts/gba-elf.ld)
 
 From the scripts and code by Jeff Frohwein from https://www.devrs.com/gba/ccode.php

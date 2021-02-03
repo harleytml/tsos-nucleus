@@ -20,6 +20,46 @@ dmg)
     echo "This system is not supported yet."
     exit 1
     ;;
+psp)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+nspire)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+rpi3)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+pc98)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+pcxt)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+pcat)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+nds)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+gbc)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
 *)
     echo "Choose a valid system...."
     exit 1

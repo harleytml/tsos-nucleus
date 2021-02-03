@@ -40,28 +40,28 @@ public:
   ~Tsos();
 
   // The module being used to control video
-  Video video;
+  Video * video;
 
   // The module being used to process input
-  Input input;
+  Input * input;
 
   // The module being used to control the filesystem
-  Filesystem filesystem;
+  Filesystem * filesystem;
 
   // The module being used to control boot
-  Boot boot;
+  Boot * boot;
 
   // The module being used to control serial
-  Serial serial;
+  Serial * serial;
 
   // The module being used to control process
-  Process process;
+  Process * process;
 
   // The module being used to control disks
-  Disk disk;
+  Disk * disk;
 
   // The module being used to control sound
-  Sound sound;
+  Sound * sound;
 
 protected:
   // The version of TS/OS being used here

@@ -1,3 +1,5 @@
+# Filesystem Structure
+
 /
 
 This is the root directory.
@@ -8,7 +10,7 @@ Despite its name, this operates like the /home directory in *nix systems. It has
 
 /tmp
 
-This is the usr tmp directory. 
+This is the usr tmp directory.
 
 /sys
 
