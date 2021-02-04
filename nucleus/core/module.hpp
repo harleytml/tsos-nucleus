@@ -6,7 +6,8 @@
 #include "./types.hpp"
 
 // The base class of TS/OS modules
-template<class T> class Module
+template<class T>
+class Module
 {
 public:
   // Constructor
@@ -19,7 +20,7 @@ public:
   const char *name;
 
   // Attach a driver
-  void attachdriver(T &d);
+  void attachdriver(T &d) const;
 
 private:
   T *driver;
