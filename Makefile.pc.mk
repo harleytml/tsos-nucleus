@@ -1,5 +1,5 @@
 #!/bin/make -f
-#By Tsuki Superior
+# By Tsuki Superior
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build

@@ -8,7 +8,7 @@ Video::Video(void)
   clear();
 }
 
-Video::~Video(void)
+Video::~Video()
 {
   delete &font;
   delete &backgroundcolor;

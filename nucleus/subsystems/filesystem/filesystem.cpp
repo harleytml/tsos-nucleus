@@ -1,4 +1,4 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #include "./filesystem.hpp"
 
 Filesystem::Filesystem(void)
