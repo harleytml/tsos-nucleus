@@ -5,8 +5,7 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-
-extern static Tsos tsos;
+#include "../../core/core.hpp"
 
 enum video_mode
 {
@@ -54,20 +53,19 @@ class Font
 {
 public:
   // Constructor
-  Font(uint8_t *d[][]);
+  Font(uint8_t *d[]);
 
   // Destructor
-  ~Font(void);
+  ~Font();
 
   // The character width
   uint8_t width;
 
   // The character height
   uint8_t height;
-
-private:
+  
   // The actual data for the font
-  uint8_t *data[][];
+  uint8_t *data[];
 };
 
 class Video_driver : public Driver

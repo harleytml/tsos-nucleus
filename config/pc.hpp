@@ -38,7 +38,7 @@ extern void SFS_driver();
     }
 #define FILESYSTEM_DRIVERS                                            \
     {                                                                 \
-        FAT12_driver(), FAT16_driver(), FAT32_driver(), UDF_driver(), SFS_driver(); \
+        FAT12_driver(), FAT16_driver(), FAT32_driver(), UDF_driver(), SFS_driver() \
     }
 #define SOUND_DRIVERS \
     {                 \

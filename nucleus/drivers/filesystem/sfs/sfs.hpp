@@ -9,7 +9,7 @@ class SFS_driver : public Filesystem_driver
 {
 public:
   SFS_driver(void);
-  char *[] readdir(char *path);
+  char ** readdir(char *path);
   void rename(char *path, char *newPath);
   Tsos_file open(char *path);
   void close(Tsos_file file);

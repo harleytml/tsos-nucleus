@@ -82,5 +82,5 @@ mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/t
 # Make the target nucleus
 mkdir -pv "$CODE_DIR/build/"
 cd "$CODE_DIR/build/"
-cp "../Makefile.$1.mk" "./Makefile.$1"
-make -f "./Makefile.$1"
+cp "../Makefile.$1.mk" "./Makefile"
+make -j$(nproc)

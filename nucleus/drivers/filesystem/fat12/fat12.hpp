@@ -30,7 +30,7 @@ enum fattributes
   READ_ONLY = 0x01,
   HIDDEN = 0x02,
   SYSTEM = 0x04,
-  VOLUME_ID
+  VOLUME_ID = 0
       DIRECTORY = 0x10,
   ARCHIVE = 0x20
 }

@@ -7,8 +7,7 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-
-extern static Tsos tsos;
+#include "../../core/core.hpp"
 
 class File_permissions
 {

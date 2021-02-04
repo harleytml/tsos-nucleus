@@ -5,7 +5,7 @@ Serial::Serial(void)
 {
 }
 
-Serial::~Serial(void)
+Serial::~Serial()
 {
 }
 
