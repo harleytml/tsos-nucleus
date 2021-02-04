@@ -4,3 +4,4 @@ build/**
 filesystem/**
 .vscode/**
 *.o
+*.tse
