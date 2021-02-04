@@ -55,3 +55,6 @@ extern void SFS_driver();
 #define FILESYSTEM_DRIVER_COUNT 4
 #define SOUND_DRIVER_COUNT 0
 #define PROCESS_DRIVER_COUNT 2
+
+#define FONT_WIDTH 8
+#define FONT_HEIGHT 8

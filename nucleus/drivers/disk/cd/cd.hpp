@@ -2,7 +2,7 @@
 #ifndef __TSOS_CD_DRIVER__
 #define __TSOS_CD_DRIVER__
 
-#define SECTOR_SIZE
+#define SECTOR_SIZE 2048
 
 #include "../../../subsystems/disk/disk.hpp"
 

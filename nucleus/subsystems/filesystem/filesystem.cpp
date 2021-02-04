@@ -44,7 +44,7 @@ uint8_t *Filesystem::read(Tsos_file file, uint32_t length);
 {
 }
 
-void Filesystem::write(Tsos_file file, uint8_t[] data)
+void Filesystem::write(Tsos_file file, uint8_t data[])
 {
 }
 
@@ -55,7 +55,7 @@ uint8_t *Filesystem::readfile(char *path)
     }
 }
 
-void Filesystem::writefile(char *path, uint8_t[] data)
+void Filesystem::writefile(char *path, uint8_t *data[])
 {
     if (exists(path))
     {

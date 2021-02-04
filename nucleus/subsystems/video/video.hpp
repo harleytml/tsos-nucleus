@@ -7,6 +7,9 @@
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
 
+// This file is customized by for the system
+#include "../../../build/current_config.hpp"
+
 enum video_mode
 {
   TEXT,
@@ -65,7 +68,7 @@ public:
   uint8_t height;
   
   // The actual data for the font
-  uint8_t *data[];
+  uint8_t *data[FONT_WIDTH * FONT_HEIGHT];
 };
 
 class Video_driver : public Driver
