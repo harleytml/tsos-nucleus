@@ -10,6 +10,14 @@ CODE_DIR=$(pwd)
 
 # Make sure the required tools are here
 case $1 in
+help)
+    echo "Please choose a system to compile the TS/OS nucleus for."
+    echo "Valid systems:"
+    echo ""
+    echo "pc  - i686 or higher IBM compatible Personal Computer"
+    echo "gba - Nintendo Gameboy Advanced"
+    exit 0
+    ;;
 pc)
     NEEDED_COMMANDS=(i686-elf-gcc i686-elf-g++ i686-elf-ld.gold make)
     ;;
@@ -57,6 +65,11 @@ nds)
     exit 1
     ;;
 gbc)
+    NEEDED_COMMANDS=(make)
+    echo "This system is not supported yet."
+    exit 1
+    ;;
+psx)
     NEEDED_COMMANDS=(make)
     echo "This system is not supported yet."
     exit 1

@@ -17,3 +17,5 @@ https://www.devrs.com/gba/ccode.php
 https://wiki.osdev.org/Bare_Bones
 
 https://wiki.osdev.org/SFS
+
+https://github.com/bztsrc/raspi3-tutorial

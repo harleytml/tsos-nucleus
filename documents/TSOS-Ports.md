@@ -1,18 +1,20 @@
 # CURRENTLY SUPPORTED PORTS
 
+[Trello](https://trello.com/b/tjOwxujy/ts-os-port-status)
+
 pc
 
 This is the standared 32-bit IBM-PC, with a i686 processor and above.
-
-dmg
-
-This is the Nintendo Gameboy, pocket or classic, with a GBZ80 processor. This will likely not be able to use a ELF executable format.
 
 gba
 
 This is the Nintendo Gameboy Advance, with a ARM processor, and a GBZ80 processor (That most likely will not be used).
 
 FUTURE PORTS:
+
+dmg
+
+This is the Nintendo Gameboy, pocket or classic, with a GBZ80 processor. This will likely not be able to use a ELF executable format.
 
 psp
 
@@ -45,3 +47,7 @@ This is the Nintendo Dual Screen, with dual ARM processors.
 gbc
 
 This is the Nintendo Gameboy Color, with a GBZ80 processor (Mostly compatible with the DMG).
+
+psx
+
+This is the Sony Playstation 1
