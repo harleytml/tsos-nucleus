@@ -1,6 +1,6 @@
 # TS/OS Nucleus
 
-[![Discord](https://discord.gg/UgXJwS5rup)](https://badgen.net/badge/Discord/join/purple)
+[![Discord](https://badgen.net/badge/Discord/join/purple)](https://discord.gg/UgXJwS5rup)
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/tsos-nucleus)
 
