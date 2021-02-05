@@ -1,21 +1,21 @@
 # Materials Used
 
-http://read.pudn.com/downloads12/sourcecode/others/50974/linux/os4/doc/Understanding_FAT12.pdf
+[Understanding FAT12](http://read.pudn.com/downloads12/sourcecode/others/50974/linux/os4/doc/Understanding_FAT12.pdf)
 
-https://realboyemulator.files.wordpress.com/2013/01/gbcpuman.pdf
+[Gameboy CPU Manual](https://realboyemulator.files.wordpress.com/2013/01/gbcpuman.pdf)
 
-https://archive.org/download/isbn_9781874416128/
+[The Revolutionary Guide To Assembly Language](https://archive.org/download/isbn_9781874416128/)
 
-https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+[Wikipedia on ELF Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
 
-https://gist.github.com/JShorthouse/bfe49cdfad126e9163d9cb30fd3bf3c2
+[Compiling GBA programs on Linux with GCC](https://gist.github.com/JShorthouse/bfe49cdfad126e9163d9cb30fd3bf3c2)
 
-https://gcc.gnu.org/install/specific.html
+[GCC Install Targets](https://gcc.gnu.org/install/specific.html)
 
-https://www.devrs.com/gba/ccode.php
+[C for the GBA](https://www.devrs.com/gba/ccode.php)
 
-https://wiki.osdev.org/Bare_Bones
+[OSDEV: Barebones](https://wiki.osdev.org/Bare_Bones)
 
-https://wiki.osdev.org/SFS
+[OSDEV: Simple Filesystem](https://wiki.osdev.org/SFS)
 
-https://github.com/bztsrc/raspi3-tutorial
+[RPI3 Baremetal Programming](https://github.com/bztsrc/raspi3-tutorial)
