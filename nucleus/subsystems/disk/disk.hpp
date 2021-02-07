@@ -31,7 +31,7 @@ public:
   Disk(void);
 
   // Destructor
-  ~Disk(void);
+  ~Disk();
 
   // Get an amount of bytes from the disk
   uint8_t *getbytes(uint16_t offset, uint8_t len);

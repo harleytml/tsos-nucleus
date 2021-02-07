@@ -11,7 +11,7 @@ Module<T>::~Module(void)
     delete[] name;
 }
 
-template<class T>
+template <class T>
 void Module<T>::attachdriver(T &d) const
 {
 

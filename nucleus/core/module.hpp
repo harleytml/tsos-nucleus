@@ -6,7 +6,7 @@
 #include "./types.hpp"
 
 // The base class of TS/OS modules
-template<class T>
+template <class T>
 class Module
 {
 public:

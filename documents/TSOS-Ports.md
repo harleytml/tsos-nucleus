@@ -12,10 +12,6 @@ This is the Nintendo Gameboy Advance, with a ARM processor, and a GBZ80 processo
 
 FUTURE PORTS:
 
-dmg
-
-This is the Nintendo Gameboy, pocket or classic, with a GBZ80 processor. This will likely not be able to use a ELF executable format.
-
 psp
 
 This is the Sony Playstation Portable, with MIPS32 processors.
@@ -43,10 +39,6 @@ This is the PC AT, with somewhat PC-Compatible hardware.
 nds
 
 This is the Nintendo Dual Screen, with dual ARM processors.
-
-gbc
-
-This is the Nintendo Gameboy Color, with a GBZ80 processor (Mostly compatible with the DMG).
 
 psx
 

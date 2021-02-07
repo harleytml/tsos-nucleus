@@ -24,11 +24,6 @@ pc)
 gba)
     NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld make)
     ;;
-dmg)
-    NEEDED_COMMANDS=(make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
 psp)
     NEEDED_COMMANDS=(make)
     echo "This system is not supported yet."
@@ -60,11 +55,6 @@ pcat)
     exit 1
     ;;
 nds)
-    NEEDED_COMMANDS=(make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
-gbc)
     NEEDED_COMMANDS=(make)
     echo "This system is not supported yet."
     exit 1
