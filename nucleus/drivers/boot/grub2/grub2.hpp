@@ -11,7 +11,7 @@ public:
   GRUB2_driver(void);
 
   //Destructor
-  ~GRUB2_driver(void);
+  ~GRUB2_driver();
 
   //Detect the type of system its running on
   bool detectsystem(void);

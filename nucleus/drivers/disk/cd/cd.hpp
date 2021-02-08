@@ -12,6 +12,8 @@ public:
   // Constructor
   CD_driver(void);
 
+  ~CD_driver(void)
+
   bool detectsystem(void);
 
   // Get an amount of bytes from the disk

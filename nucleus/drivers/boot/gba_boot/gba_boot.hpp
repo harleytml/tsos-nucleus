@@ -11,7 +11,7 @@ public:
   GBA_BOOT_driver(void);
 
   // Destructor
-  ~GBA_BOOT_driver(void);
+  ~GBA_BOOT_driver();
 
   // Detect the type of system its running on
   bool detectsystem(void);
