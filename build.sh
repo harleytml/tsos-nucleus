@@ -22,7 +22,7 @@ pc)
     NEEDED_COMMANDS=(i686-elf-gcc i686-elf-g++ i686-elf-ld.gold make)
     ;;
 gba)
-    NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld make)
+    NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld.gold make)
     ;;
 psp)
     NEEDED_COMMANDS=(make)
