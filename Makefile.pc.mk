@@ -14,7 +14,7 @@ CPP=i686-elf-g++
 CPP_FLAGS=-std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
 
 AS=i686-elf-as
-AS_FLAGS=-mtune=i686 -mfpmath=387 -m32
+AS_FLAGS=-mtune=i686
 
 LD=i686-elf-ld.gold
 LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32
