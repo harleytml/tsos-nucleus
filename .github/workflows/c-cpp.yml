@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  testbox:
+  PC Build Test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
