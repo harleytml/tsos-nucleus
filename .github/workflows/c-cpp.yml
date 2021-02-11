@@ -15,3 +15,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test PC Build
       run: ./build.sh pc
+  build-test-gba:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Test PC Build
+      run: ./build.sh pc
+
