@@ -22,5 +22,5 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Test PC Build
-      run: ./build.sh pc
+      run: ./build.sh gba
 
