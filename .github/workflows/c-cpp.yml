@@ -9,16 +9,14 @@ on:
 jobs:
   build-test-pc:
     runs-on: ubuntu-latest
-    container:
-      image: tsukisuperior/tsos-build:latest
+    container: tsukisuperior/tsos-build:latest
     steps:  
     - uses: actions/checkout@v2
     - name: Test Build
       run: ./build.sh pc
   build-test-gba:
     runs-on: ubuntu-latest
-    container:
-      image: tsukisuperior/tsos-build:latest
+    container: tsukisuperior/tsos-build:latest
     steps:  
     - uses: actions/checkout@v2
     - name: Test Build
