@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "./input.hpp"
+#include "./input_module.hpp"
 
 Input::Input(void)
 {

@@ -6,6 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
+#include "./input_driver.hpp"
 
 enum key_identifier
 {
@@ -111,25 +112,6 @@ enum key_identifier
   KEY_PLUS,
   KEY_TAB
 
-};
-
-class Input_driver : public Driver
-{
-public:
-  // Constructor
-  Input_driver(void);
-
-  // Read a key, and convert its scancode
-  virtual key_identifier getkey(void) = 0;
-
-  // Is shift pressed
-  virtual bool isshiftpressed(void) = 0;
-
-  // Is alt pressed
-  virtual bool isaltpressed(void) = 0;
-
-  // Is ctrl pressed
-  virtual bool isctrlpressed(void) = 0;
 };
 
 // The main class controlling input

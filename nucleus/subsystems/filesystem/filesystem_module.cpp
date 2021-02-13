@@ -1,11 +1,11 @@
 // By Tsuki Superior
-#include "./filesystem.hpp"
+#include "./filesystem_module.hpp"
 
 Filesystem::Filesystem(void)
 {
 }
 
-Filesystem::~Filesystem(void)
+Filesystem::~Filesystem()
 {
 }
 
@@ -83,14 +83,6 @@ void Filesystem::rmdir(char *path)
 }
 
 void Filesystem::access(char *path)
-{
-}
-
-Filesystem_driver::Filesystem_driver(void)
-{
-}
-
-Filesystem_driver::~Filesystem_driver(void)
 {
 }
 

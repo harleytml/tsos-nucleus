@@ -6,6 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
+#include "./process_driver.hpp"
 
 #define PROCESS_COUNT 0xff
 
@@ -37,12 +38,6 @@ public:
 
   // The state of a process
   process_state state;
-};
-
-class Process_driver : public Driver
-{
-public:
-  virtual bool isvalidexecutable(char *path) = 0;
 };
 
 // The main classes to control processes

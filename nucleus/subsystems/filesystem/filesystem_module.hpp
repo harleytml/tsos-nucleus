@@ -1,6 +1,6 @@
 // By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_FILESYSTEM__
-#define __TSOS_NUCLEUS_FILESYSTEM__
+#ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
+#define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 
 #define MAX_FILES_OPEN 0xff
 
@@ -8,6 +8,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
+#include "./filesystem_driver.hpp"
 
 class File_permissions
 {
@@ -40,25 +41,6 @@ public:
 
   //The permissions the file was opened in
   File_permissions permissions;
-};
-
-class Filesystem_driver : public Driver
-{
-public:
-  //Constructor
-  Filesystem_driver(void);
-
-  //Destructor
-  ~Filesystem_driver(void);
-
-  //Read the directory
-  virtual char **readdir(char *path) = 0;
-
-  //Rename a target
-  virtual void rename(char *path, char *newPath) = 0;
-
-  //Make sure a file actually exists
-  virtual bool exists(char *path) = 0;
 };
 
 //The main class controlling the filesystem

@@ -1,10 +1,9 @@
 # TS/OS Nucleus
 
 [![Discord](https://badgen.net/badge/Discord/join/purple?icon=discord)](https://discord.gg/UgXJwS5rup)
-
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/tsos-nucleus)
-
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/tsos-nucleus/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tsuki-superior/tsos-nucleus&amp;utm_campaign=Badge_Grade)
+![C/C++ CI](https://github.com/tsuki-superior/tsos-nucleus/workflows/C/C++%20CI/badge.svg)
 
 TS/OS
 

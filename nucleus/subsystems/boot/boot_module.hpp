@@ -1,27 +1,12 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_BOOT__
-#define __TSOS_NUCLEUS_BOOT__
+#ifndef __TSOS_NUCLEUS_BOOT_MODULE__
+#define __TSOS_NUCLEUS_BOOT_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
-
-class Boot_driver : public Driver
-{
-public:
-  // Constructor
-  Boot_driver(void);
-
-  // Destructor
-  ~Boot_driver();
-
-  // Reboot the system
-  virtual void reboot(void) = 0;
-
-  // Shutdown the system
-  virtual void shutdown(void) = 0;
-};
+#include "./boot_driver.hpp"
 
 // The main class controlling the system runtime
 class Boot : public Module<Boot_driver>

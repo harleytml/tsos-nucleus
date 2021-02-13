@@ -2,23 +2,22 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build-test-pc:
     runs-on: ubuntu-latest
     container: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Test Build
-      run: ./build.sh pc
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Build
+        run: ./build.sh pc
   build-test-gba:
     runs-on: ubuntu-latest
     container: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Test Build
-      run: ./build.sh gba
-
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Build
+        run: ./build.sh gba

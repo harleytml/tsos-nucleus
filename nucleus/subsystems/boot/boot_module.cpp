@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "./boot.hpp"
+#include "./boot_module.hpp"
 
 Boot::Boot(void)
 {
@@ -51,12 +51,4 @@ void Boot::fission(char *errormsg)
 
     tsos.input.waitkey();
     reboot();
-}
-
-Boot_driver::Boot_driver(void)
-{
-}
-
-Boot_driver::~Boot_driver()
-{
 }

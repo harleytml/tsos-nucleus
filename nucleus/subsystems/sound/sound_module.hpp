@@ -6,6 +6,7 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
+#include "./sound_driver.hpp"
 
 class Tone
 {
@@ -21,16 +22,6 @@ public:
 
   // The length of the tone
   uint16_t length;
-};
-
-class Sound_driver : public Driver
-{
-public:
-  // Constructor
-  Sound_driver(void);
-
-  // Play a tone
-  virtual void playtone(Tone tone) = 0;
 };
 
 //The main class controlling sound
