@@ -2,7 +2,6 @@
 #ifndef __TSOS_AT_KEYBOARD_DRIVER__
 #define __TSOS_AT_KEYBOARD_DRIVER__
 
-#include "../../../subsystems/input/input_module.hpp"
 #include "../../../subsystems/input/input_driver.hpp"
 
 class AT_KEYBOARD_driver : public Input_driver

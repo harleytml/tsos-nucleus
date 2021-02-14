@@ -2,7 +2,6 @@
 #ifndef __TSOS_FAT32_DRIVER__
 #define __TSOS_FAT32_DRIVER__
 
-#include "../../../subsystems/filesystem/filesystem_module.hpp"
 #include "../../../subsystems/filesystem/filesystem_driver.hpp"
 
 class FAT32_driver : public Filesystem_driver

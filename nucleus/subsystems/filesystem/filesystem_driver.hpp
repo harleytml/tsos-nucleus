@@ -3,9 +3,7 @@
 #define __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
 
 #include "../../core/driver.hpp"
-#include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 
 class Filesystem_driver : public Driver
 {

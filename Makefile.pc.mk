@@ -8,16 +8,16 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=i686-elf-gcc
-CC_FLAGS=-std=c9x -ffreestanding -O2 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
+CC_FLAGS=-g -std=c9x -ffreestanding -O2 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
 
 CPP=i686-elf-g++
-CPP_FLAGS=-std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
 
 AS=i686-elf-as
 AS_FLAGS=-mtune=i686
 
 LD=i686-elf-ld.gold
-LD_FLAGS=-T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32
+LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32
 
 $(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
 :$(CPP) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
@@ -43,7 +43,7 @@ $(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_modul
 $(BUILD_DIR)/boot.o: $(NUCLEUS_DIR)/subsystems/boot/boot_module.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_module.hpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/sound.o: $(NUCLEUS_DIR)/subsystems/sound/sound_module.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_module.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.hpp
+$(BUILD_DIR)/sound.o: $(NUCLEUS_DIR)/subsystems/sound/sound_module.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_module.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_tone.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_tone.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/process.o: $(NUCLEUS_DIR)/subsystems/process/process_module.cpp $(NUCLEUS_DIR)/subsystems/process/process_module.hpp $(NUCLEUS_DIR)/subsystems/process/process_driver.cpp $(NUCLEUS_DIR)/subsystems/process/process_driver.hpp

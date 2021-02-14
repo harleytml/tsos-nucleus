@@ -5,24 +5,8 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./sound_driver.hpp"
-
-class Tone
-{
-public:
-  // Constructor
-  Tone(uint16_t f, uint16_t l);
-
-  // Constructor to copy a tone
-  Tone(const Tone &tone);
-
-  // The frequency of the tone
-  uint16_t frequency;
-
-  // The length of the tone
-  uint16_t length;
-};
+#include "./sound_tone.hpp"
 
 //The main class controlling sound
 class Sound : public Module<Sound_driver>

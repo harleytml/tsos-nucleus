@@ -19,3 +19,5 @@
 [OSDEV: Simple Filesystem](https://wiki.osdev.org/SFS)
 
 [RPI3 Baremetal Programming](https://github.com/bztsrc/raspi3-tutorial)
+
+[C++ Notes](https://wiki.osdev.org/C%2B%2B)

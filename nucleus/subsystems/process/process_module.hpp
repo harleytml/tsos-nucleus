@@ -48,7 +48,7 @@ public:
   Process(void);
 
   // Destructor
-  ~Process(void);
+  ~Process();
 
   // Spawn a process
   uint8_t spawn(char *path);

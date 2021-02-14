@@ -3,7 +3,6 @@
 #ifndef __TSOS_SFS_DRIVER__
 #define __TSOS_SFS_DRIVER__
 
-#include "../../../subsystems/filesystem/filesystem_module.hpp"
 #include "../../../subsystems/filesystem/filesystem_driver.hpp"
 
 class SFS_driver : public Filesystem_driver

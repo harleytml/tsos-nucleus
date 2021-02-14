@@ -15,3 +15,11 @@ From the scripts and code from https://wiki.osdev.org/Bare_Bones
 [/nucleus/drivers/boot/gba_boot/gba_boot.asm](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/drivers/boot/gba_boot/gba_boot.asm)
 
 From the scripts and code from https://www.devrs.com/gba/ccode.php
+
+[/nucleus/core/core.hpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/core.hpp)
+
+A few bits of code from the codebase at osdev for c++ support
+
+[/nucleus/core/core.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/core.cpp)
+
+A few bits of code from the codebase at osdev for c++ support

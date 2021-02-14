@@ -4,9 +4,7 @@
 #define __TSOS_NUCLEUS_DISK_DRIVER__
 
 #include "../../core/driver.hpp"
-#include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 
 class Disk_driver : public Driver
 {

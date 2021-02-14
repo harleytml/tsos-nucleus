@@ -4,7 +4,6 @@
 
 #define SECTOR_SIZE 2048
 
-#include "../../../subsystems/disk/disk_module.hpp"
 #include "../../../subsystems/disk/disk_driver.hpp"
 
 class CD_driver : public Disk_driver

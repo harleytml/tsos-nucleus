@@ -2,6 +2,7 @@
 
 Driver::Driver(void)
 {
+    name="";
 }
 
 Driver::~Driver(void)

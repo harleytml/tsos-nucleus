@@ -1,11 +1,12 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_VIDEO_DRIVER__
-#define __TSOS_NUCLEUS_VIDEO_DRIVER__
+#ifndef __TSOS_NUCLEUS_VIDEO_FONT__
+#define __TSOS_NUCLEUS_VIDEO_FONT__
 
-#include "../../core/driver.hpp"
-#include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
+
+
+// This file is customized by for the system
+#include "../../../build/current_config.hpp"
 
 // The class defining fonts
 class Font

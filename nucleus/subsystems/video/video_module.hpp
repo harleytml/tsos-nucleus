@@ -1,11 +1,10 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_VIDEO__
-#define __TSOS_NUCLEUS_VIDEO__
+#ifndef __TSOS_NUCLEUS_VIDEO_MODULE__
+#define __TSOS_NUCLEUS_VIDEO_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./video_driver.hpp"
 #include "./video_color.hpp"
 #include "./video_font.hpp"

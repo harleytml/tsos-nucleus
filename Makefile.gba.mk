@@ -8,24 +8,24 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=arm-none-eabi-gcc
-CC_FLAGS=-std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CC_FLAGS=-g -std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 CPP=arm-none-eabi-g++
-CPP_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CPP_FLAGS=-g -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 AS=arm-none-eabi-as
-AS_FLAGS=-mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
 
 LD=arm-none-eabi-ld.gold
-LD_FLAGS= -g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 $(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
 :$(CPP) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/core/driver.cpp $(NUCLEUS_DIR)/core/driver.hpp $(NUCLEUS_DIR)/core/module.cpp $(NUCLEUS_DIR)/core/module.hpp  $(BUILD_DIR)/current_config.hpp
+$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/core.hpp $(NUCLEUS_DIR)/core/driver.cpp $(NUCLEUS_DIR)/core/driver.hpp $(NUCLEUS_DIR)/core/module.cpp $(NUCLEUS_DIR)/core/module.hpp $(BUILD_DIR)/current_config.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video_module.cpp $(NUCLEUS_DIR)/subsystems/video/video_module.hpp $(NUCLEUS_DIR)/subsystems/video/video_driver.cpp $(NUCLEUS_DIR)/subsystems/video/video_driver.hpp
+$(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video_module.cpp $(NUCLEUS_DIR)/subsystems/video/video_module.hpp $(NUCLEUS_DIR)/subsystems/video/video_driver.cpp $(NUCLEUS_DIR)/subsystems/video/video_driver.hpp  $(NUCLEUS_DIR)/subsystems/video/video_color.cpp $(NUCLEUS_DIR)/subsystems/video/video_color.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^  
 
 $(BUILD_DIR)/input.o: $(NUCLEUS_DIR)/subsystems/input/input_module.cpp $(NUCLEUS_DIR)/subsystems/input/input_module.hpp $(NUCLEUS_DIR)/subsystems/input/input_driver.cpp $(NUCLEUS_DIR)/subsystems/input/input_driver.hpp
@@ -43,7 +43,7 @@ $(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_modul
 $(BUILD_DIR)/boot.o: $(NUCLEUS_DIR)/subsystems/boot/boot_module.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_module.hpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/sound.o: $(NUCLEUS_DIR)/subsystems/sound/sound_module.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_module.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.hpp
+$(BUILD_DIR)/sound.o: $(NUCLEUS_DIR)/subsystems/sound/sound_module.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_module.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.hpp $(NUCLEUS_DIR)/subsystems/sound/sound_tone.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_tone.hpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/process.o: $(NUCLEUS_DIR)/subsystems/process/process_module.cpp $(NUCLEUS_DIR)/subsystems/process/process_module.hpp $(NUCLEUS_DIR)/subsystems/process/process_driver.cpp $(NUCLEUS_DIR)/subsystems/process/process_driver.hpp

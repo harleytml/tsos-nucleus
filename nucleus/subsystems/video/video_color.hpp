@@ -2,10 +2,7 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_COLOR__
 #define __TSOS_NUCLEUS_VIDEO_COLOR__
 
-#include "../../core/driver.hpp"
-#include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 
 // Describes the character color for text mode video
 class Color

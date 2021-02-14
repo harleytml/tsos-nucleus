@@ -25,7 +25,7 @@
 // This file is customized by for the system
 #include "../../build/current_config.hpp"
 
-extern void kernel_main(void);
+#define ATEXIT_MAX_FUNCS 128
 
 // The machine's type
 enum machine_type
@@ -86,5 +86,18 @@ protected:
 };
 
 Tsos tsos;
+
+struct atexit_func_entry_t
+{
+  void (*destructor_func)(void *);
+  void *obj_ptr;
+  void *dso_handle;
+};
+
+extern "C"
+{
+  int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
+  void __cxa_finalize(void *f);
+}
 
 #endif
