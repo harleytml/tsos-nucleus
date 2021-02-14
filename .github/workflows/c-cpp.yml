@@ -18,4 +18,4 @@ jobs:
     container: tsukisuperior/tsos-build:latest
     steps:
       - name: Test Build
-        run: git clone https://github.com/tsuki-superior/tsos-nucleus.git && cd tsos-nucleus && ./build.sh pc
+        run: git clone https://github.com/tsuki-superior/tsos-nucleus.git && cd tsos-nucleus && ./build.sh gba
