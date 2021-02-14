@@ -1,10 +1,8 @@
 //By Tsuki Superior
 #include "./video_module.hpp"
 
-Video::Video(void)
+Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(Color(0xff, 0xff, 0xff))
 {
-  backgroundcolor = Color(0x00, 0x00, 0x00);
-  foregroundcolor = Color(0xff, 0xff, 0xff);
   clear();
 }
 
@@ -27,7 +25,7 @@ void Video::putchar(char c)
 
 void Video::putstring(char *str)
 {
-  int x;
+  int x = 0;
   char c;
   while (str[x] != 0)
   {

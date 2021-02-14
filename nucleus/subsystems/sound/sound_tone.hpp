@@ -13,6 +13,8 @@ public:
   // Constructor to copy a tone
   Tone(const Tone &tone);
 
+  ~Tone();
+
   // The frequency of the tone
   uint16_t frequency;
 

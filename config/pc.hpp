@@ -36,8 +36,8 @@ extern void SFS_driver();
     {                  \
         GRUB2_driver() \
     }
-#define FILESYSTEM_DRIVERS                                            \
-    {                                                                 \
+#define FILESYSTEM_DRIVERS                                                         \
+    {                                                                              \
         FAT12_driver(), FAT16_driver(), FAT32_driver(), UDF_driver(), SFS_driver() \
     }
 #define SOUND_DRIVERS \

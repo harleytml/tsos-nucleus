@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "PC",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/tsos-toolchain/bin/i686-elf-g++",
+            "cStandard": "c99",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-x86"
+        },
+        {
+            "name": "GBA",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/tsos-toolchain/bin/arm-none-eabi-g++",
+            "cStandard": "c99",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-arm"
+        },
+        {
+            "name": "PSX",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/tsos-toolchain/bin/mipsel-unknown-elf-g++",
+            "cStandard": "c99",
+            "cppStandard": "c++20",
+            "intelliSenseMode": ""
+        }
+    ],
+    "version": 4
+}

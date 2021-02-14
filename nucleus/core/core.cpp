@@ -72,6 +72,13 @@ Tsos::Tsos(void)
 
 Tsos::~Tsos(void)
 {
+    video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
+    video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
+    video.clear();
+    video.putstring("Shutting down... \n");
+    video.putstring("Do not touch the power button.\n");
+    process.killall();
+    disk.commitall();
 }
 
 // Start the kernel

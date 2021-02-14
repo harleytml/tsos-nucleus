@@ -11,6 +11,8 @@ public:
   // Constructor
   Sound_driver(void);
 
+  ~Sound_driver();
+
   // Play a tone
   virtual void playtone(Tone tone) = 0;
 };

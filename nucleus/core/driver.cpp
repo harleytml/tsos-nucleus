@@ -3,7 +3,7 @@
 
 Driver::Driver(void)
 {
-    name="";
+    name = "";
 }
 
 Driver::~Driver(void)
