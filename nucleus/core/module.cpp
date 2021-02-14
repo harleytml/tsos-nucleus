@@ -1,8 +1,10 @@
+//By Tsuki Superior
 #include "./module.hpp"
 
 template <class T>
 Module<T>::Module(void)
 {
+    name="";
 }
 
 template <class T>
