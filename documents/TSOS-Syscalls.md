@@ -112,6 +112,10 @@ PROCESS SYSCALLS:
 
   Allocate memory
 
+ freememory:
+  
+  Free memory
+
 SERIAL SYSCALLS:
 
  exchangebyte:

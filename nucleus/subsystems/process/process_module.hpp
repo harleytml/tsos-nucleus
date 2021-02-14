@@ -5,7 +5,6 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./process_driver.hpp"
 
 #define PROCESS_COUNT 0xff
@@ -61,6 +60,9 @@ public:
 
   // Allocate memory
   uint8_t *allocatememory(uint32_t len);
+
+  // Free Memory
+  void freememory(uint8_t *);
 
 private:
   // Process driver
