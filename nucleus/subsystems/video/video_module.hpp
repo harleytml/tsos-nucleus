@@ -6,68 +6,14 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
-
-// This file is customized by for the system
-#include "../../../build/current_config.hpp"
+#include "./video_driver.hpp"
+#include "./video_color.hpp"
+#include "./video_font.hpp"
 
 enum video_mode
 {
   TEXT,
   GRAPHIC
-};
-
-// Describes the character color for text mode video
-class Color
-{
-public:
-  //Default constructor
-  Color();
-
-  // Constructors
-  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a, uint8_t i);
-  Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
-  Color(uint8_t r, uint8_t g, uint8_t b);
-
-  // Destructor
-  ~Color();
-
-  // To copy a color
-  Color(const Color &color);
-
-  // Red
-  uint8_t red;
-
-  // Green
-  uint8_t green;
-
-  //Blue
-  uint8_t blue;
-
-  //Alpha
-  uint8_t alpha;
-
-  // Intensity part
-  uint8_t intensity;
-};
-
-// The class defining fonts
-class Font
-{
-public:
-  // Constructor
-  Font(uint8_t *d[]);
-
-  // Destructor
-  ~Font();
-
-  // The character width
-  uint8_t width;
-
-  // The character height
-  uint8_t height;
-
-  // The actual data for the font
-  uint8_t *data[FONT_WIDTH * FONT_HEIGHT];
 };
 
 // The main class controlling video
