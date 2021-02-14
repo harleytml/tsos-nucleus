@@ -2,3 +2,4 @@ build/**
 filesystem/**
 *.o
 *.tse
+a.out

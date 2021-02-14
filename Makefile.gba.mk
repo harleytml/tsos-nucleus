@@ -26,7 +26,7 @@ $(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video_module.cpp $(NUCLEUS_DIR)/subsystems/video/video_driver.cpp $(NUCLEUS_DIR)/subsystems/video/video_color.cpp
-:$(CPP) $(CPP_FLAGS) -o $@ $^  
+:$(CPP) $(CPP_FLAGS) -o $@ $^
 
 $(BUILD_DIR)/input.o: $(NUCLEUS_DIR)/subsystems/input/input_module.cpp $(NUCLEUS_DIR)/subsystems/input/input_driver.cpp 
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
