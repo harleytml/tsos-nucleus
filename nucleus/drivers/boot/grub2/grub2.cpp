@@ -25,8 +25,8 @@ void GRUB2_driver::reboot(void)
 
     //Lets actually reboot
     asm("push 0xffff"
-        : "push 0x0000"
-        : "retf");
+        "push 0x0000"
+        "retf");
 }
 
 void GRUB2_driver::shutdown(void)

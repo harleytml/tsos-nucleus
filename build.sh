@@ -86,5 +86,6 @@ mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/t
 mkdir -pv "$CODE_DIR/build/"
 rm -rfv "$CODE_DIR/build/*"
 cd "$CODE_DIR/build/"
-cp "../Makefile.$1.mk" "./Makefile"
+cp -v "../Makefile.$1.mk" "./Makefile"
+cp -v "../config/$1.hpp" "./current_config.hpp"
 make -j$(nproc)

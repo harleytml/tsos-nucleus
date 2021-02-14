@@ -12,7 +12,6 @@ GBA_BOOT_driver::~GBA_BOOT_driver(void)
 
 bool GBA_BOOT_driver::detectsystem(void)
 {
-
     return true;
 }
 
