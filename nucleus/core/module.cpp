@@ -2,9 +2,8 @@
 #include "./module.hpp"
 
 template <class T>
-Module<T>::Module(void)
+Module<T>::Module(void) : name("")
 {
-    name = "";
 }
 
 template <class T>

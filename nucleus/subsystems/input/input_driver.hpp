@@ -4,6 +4,7 @@
 
 #include "../../core/driver.hpp"
 #include "../../core/types.hpp"
+#include "./input_key_identifier.hpp"
 
 class Input_driver : public Driver
 {

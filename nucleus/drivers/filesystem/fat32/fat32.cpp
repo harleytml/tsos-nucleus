@@ -28,19 +28,19 @@ void FAT32_driver::rename(char *path, char *newPath)
 {
 }
 
-Tsos_file FAT32_driver::open(char *path)
+File FAT32_driver::open(char *path)
 {
 }
 
-void FAT32_driver::close(Tsos_file file)
+void FAT32_driver::close(File file)
 {
 }
 
-char *FAT32_driver::read(Tsos_file file)
+char *FAT32_driver::read(File file)
 {
 }
 
-void FAT32_driver::write(Tsos_file file, char *data)
+void FAT32_driver::write(File file, char *data)
 {
 }
 

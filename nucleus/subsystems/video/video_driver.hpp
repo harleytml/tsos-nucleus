@@ -4,6 +4,8 @@
 
 #include "../../core/driver.hpp"
 #include "../../core/types.hpp"
+#include "./video_font.hpp"
+#include "./video_color.hpp"
 
 class Video_driver : public Driver
 {

@@ -8,10 +8,10 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=arm-none-eabi-gcc
-CC_FLAGS=-g -std=gnu99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 CPP=arm-none-eabi-g++
-CPP_FLAGS=-g -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 AS=arm-none-eabi-as
 AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
@@ -26,9 +26,9 @@ $(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video_module.cpp $(NUCLEUS_DIR)/subsystems/video/video_driver.cpp $(NUCLEUS_DIR)/subsystems/video/video_color.cpp
-:$(CPP) $(CPP_FLAGS) -o $@ $^
+:$(CPP) $(CPP_FLAGS) -o $@ $^  
 
-$(BUILD_DIR)/input.o: $(NUCLEUS_DIR)/subsystems/input/input_module.cpp $(NUCLEUS_DIR)/subsystems/input/input_driver.cpp 
+$(BUILD_DIR)/input.o: $(NUCLEUS_DIR)/subsystems/input/input_module.cpp $(NUCLEUS_DIR)/subsystems/input/input_driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/disk.o: $(NUCLEUS_DIR)/subsystems/disk/disk_module.cpp $(NUCLEUS_DIR)/subsystems/disk/disk_driver.cpp
@@ -37,7 +37,7 @@ $(BUILD_DIR)/disk.o: $(NUCLEUS_DIR)/subsystems/disk/disk_module.cpp $(NUCLEUS_DI
 $(BUILD_DIR)/serial.o: $(NUCLEUS_DIR)/subsystems/serial/serial_module.cpp $(NUCLEUS_DIR)/subsystems/serial/serial_driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_module.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_driver.cpp
+$(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_module.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_driver.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_file.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/boot.o: $(NUCLEUS_DIR)/subsystems/boot/boot_module.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.cpp
@@ -46,7 +46,7 @@ $(BUILD_DIR)/boot.o: $(NUCLEUS_DIR)/subsystems/boot/boot_module.cpp $(NUCLEUS_DI
 $(BUILD_DIR)/sound.o: $(NUCLEUS_DIR)/subsystems/sound/sound_module.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_driver.cpp $(NUCLEUS_DIR)/subsystems/sound/sound_tone.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/process.o: $(NUCLEUS_DIR)/subsystems/process/process_module.cpp $(NUCLEUS_DIR)/subsystems/process/process_driver.cpp 
+$(BUILD_DIR)/process.o: $(NUCLEUS_DIR)/subsystems/process/process_module.cpp $(NUCLEUS_DIR)/subsystems/process/process_driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/bootloader.o: $(NUCLEUS_DIR)/drivers/boot/gba_boot/gba_boot.asm 

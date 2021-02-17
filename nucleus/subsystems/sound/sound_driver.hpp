@@ -4,6 +4,7 @@
 
 #include "../../core/driver.hpp"
 #include "../../core/types.hpp"
+#include "./sound_tone.hpp"
 
 class Sound_driver : public Driver
 {

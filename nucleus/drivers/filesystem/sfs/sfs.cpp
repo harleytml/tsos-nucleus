@@ -28,19 +28,19 @@ void SFS_driver::rename(char *path, char *newPath)
 {
 }
 
-Tsos_file SFS_driver::open(char *path)
+File SFS_driver::open(char *path)
 {
 }
 
-void SFS_driver::close(Tsos_file file)
+void SFS_driver::close(File file)
 {
 }
 
-char *SFS_driver::read(Tsos_file file)
+char *SFS_driver::read(File file)
 {
 }
 
-void SFS_driver::write(Tsos_file file, char *data)
+void SFS_driver::write(File file, char *data)
 {
 }
 

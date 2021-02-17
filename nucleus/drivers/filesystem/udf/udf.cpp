@@ -28,19 +28,19 @@ void UDF_driver::rename(char *path, char *newPath)
 {
 }
 
-Tsos_file UDF_driver::open(char *path)
+File UDF_driver::open(char *path)
 {
 }
 
-void UDF_driver::close(Tsos_file file)
+void UDF_driver::close(File file)
 {
 }
 
-char *UDF_driver::read(Tsos_file file)
+char *UDF_driver::read(File file)
 {
 }
 
-void UDF_driver::write(Tsos_file file, char *data)
+void UDF_driver::write(File file, char *data)
 {
 }
 

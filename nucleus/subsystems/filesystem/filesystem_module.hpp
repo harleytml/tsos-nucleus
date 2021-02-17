@@ -2,46 +2,13 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 #define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 
-#define MAX_FILES_OPEN 0xff
-
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "../../core/core.hpp"
 #include "./filesystem_driver.hpp"
-
-class File_permissions
-{
-public:
-  //Constructor
-  File_permissions(bool r, bool w, bool e);
-
-  //Read permission
-  bool read;
-
-  //Write permission
-  bool write;
-
-  //Execute permission
-  bool execute;
-};
-
-//A file in Tsos
-class Tsos_file
-{
-public:
-  //Constructor of a 0 file
-  Tsos_file(void);
-
-  //Constructor
-  Tsos_file(char *pa, File_permissions per);
-
-  //The path of the file
-  char *path;
-
-  //The permissions the file was opened in
-  File_permissions permissions;
-};
+#include "./filesystem_file.hpp"
+#include "./filesystem_permissions.hpp"
 
 //The main class controlling the filesystem
 class Filesystem : public Module<Filesystem_driver>
@@ -60,16 +27,16 @@ public:
   void rename(char *path, char *newPath);
 
   //Open a file
-  Tsos_file open(char *path);
+  File open(char *path);
 
   //Close a file
-  void close(Tsos_file file);
+  void close(File file);
 
   //Read from a file
-  uint8_t **read(Tsos_file file, uint32_t length);
+  uint8_t **read(File file, uint32_t length);
 
   //Write to a file
-  void write(Tsos_file file, uint8_t data[]);
+  void write(File file, uint8_t data[]);
 
   //Read all from a file
   uint8_t *readfile(char *path);
@@ -84,7 +51,7 @@ public:
   bool exists(char *path);
 
   //Create a directory
-  void mkdir(char *path, File_permissions f);
+  void mkdir(char *path, Permissions f);
 
   //Remove a directory
   void rmdir(char *path);
@@ -97,7 +64,7 @@ private:
   char *current_directory;
 
   //The files currently opened
-  Tsos_file open_files[MAX_FILES_OPEN];
+  File open_files[128];
 
   //Filesystem driver
   Filesystem_driver *driver;

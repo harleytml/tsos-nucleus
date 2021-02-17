@@ -26,25 +26,25 @@ void Filesystem::rename(char *path, char *newPath)
     }
 }
 
-Tsos_file Filesystem::open(char *path)
+File Filesystem::open(char *path)
 {
     if (exists(path))
     {
     }
 }
 
-void Filesystem::close(Tsos_file file)
+void Filesystem::close(File file)
 {
     if (file.path != NULL)
     {
     }
 }
 
-uint8_t *Filesystem::read(Tsos_file file, uint32_t length);
+uint8_t *Filesystem::read(File file, uint32_t length);
 {
 }
 
-void Filesystem::write(Tsos_file file, uint8_t data[])
+void Filesystem::write(File file, uint8_t data[])
 {
 }
 
@@ -74,7 +74,7 @@ bool Filesystem::exists(char *path)
     return driver->exists(path);
 }
 
-void Filesystem::mkdir(char *path, File_permissions f)
+void Filesystem::mkdir(char *path, Permissions f)
 {
 }
 
@@ -84,11 +84,4 @@ void Filesystem::rmdir(char *path)
 
 void Filesystem::access(char *path)
 {
-}
-
-File_permissions::File_permissions(bool r, bool w, bool e)
-{
-    read = r;
-    write = w;
-    execute = e;
 }

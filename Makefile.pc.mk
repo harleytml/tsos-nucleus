@@ -8,7 +8,7 @@ CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
 CC=i686-elf-gcc
-CC_FLAGS=-g -std=c9x -ffreestanding -O2 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
+CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
 
 CPP=i686-elf-g++
 CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
@@ -37,7 +37,7 @@ $(BUILD_DIR)/disk.o: $(NUCLEUS_DIR)/subsystems/disk/disk_module.cpp $(NUCLEUS_DI
 $(BUILD_DIR)/serial.o: $(NUCLEUS_DIR)/subsystems/serial/serial_module.cpp $(NUCLEUS_DIR)/subsystems/serial/serial_driver.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_module.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_driver.cpp
+$(BUILD_DIR)/filesystem.o: $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_module.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_driver.cpp $(NUCLEUS_DIR)/subsystems/filesystem/filesystem_file.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/boot.o: $(NUCLEUS_DIR)/subsystems/boot/boot_module.cpp $(NUCLEUS_DIR)/subsystems/boot/boot_driver.cpp

@@ -1,9 +1,8 @@
 //By Tsuki Superior
 #include "./driver.hpp"
 
-Driver::Driver(void)
+Driver::Driver(void) : name("")
 {
-    name = "";
 }
 
 Driver::~Driver(void)

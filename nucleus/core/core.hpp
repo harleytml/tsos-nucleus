@@ -27,16 +27,6 @@
 
 #define ATEXIT_MAX_FUNCS 128
 
-// The machine's type
-enum machine_type
-{
-  PERSONAL_COMPUTER,
-  DOT_MATRIX_GAME,
-  GAMEBOY_ADVANCE,
-  GENERIC,
-  UNKNOWN
-};
-
 // The main class collecting the TS/OS nucleus api
 class Tsos
 {

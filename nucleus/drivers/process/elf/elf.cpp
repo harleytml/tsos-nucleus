@@ -12,5 +12,5 @@ bool ELF_driver::detectsystem(void)
 
 bool ELF_driver::isvalidexecutable(char *path)
 {
-    Tsos_file elffile = tsos.filesystem.open("/kernel.tse");
+    File elffile = tsos.filesystem.open("/kernel.tse");
 }

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # https://github.com/tsuki-superior/tsos-nucleus/blob/master/documents/TSOS-Ports.md
 
+# Travel to the parent directory
+cd "$(basename "$(dirname "$0")")"
+
 # This simple function checks if a command exists
 exists() {
     command -v "$1" >/dev/null 2>&1

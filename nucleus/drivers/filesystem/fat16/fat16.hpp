@@ -3,6 +3,7 @@
 #define __TSOS_FAT16_DRIVER__
 
 #include "../../../subsystems/filesystem/filesystem_driver.hpp"
+#include "../../../subsystems/filesystem/filesystem_file.hpp"
 
 class FAT16_driver : public Filesystem_driver
 {
@@ -10,10 +11,10 @@ public:
   FAT16_driver(void);
   char **readdir(char *path);
   void rename(char *path, char *newPath);
-  Tsos_file open(char *path);
-  void close(Tsos_file file);
-  char *read(Tsos_file file);
-  void write(Tsos_file file, char *data);
+  File open(char *path);
+  void close(File file);
+  char *read(File file);
+  void write(File file, char *data);
   char *readfile(char *path);
   void writefile(char *path, char *data);
   void appendfile(char *path, char *data);
@@ -21,7 +22,7 @@ public:
 
 private:
   char *currentdirectory;
-  Tsos_file openfiles[MAX_FILES_OPEN];
+  File openfiles[128];
 };
 
 #endif
