@@ -1,6 +1,6 @@
 # CURRENTLY SUPPORTED PORTS
 
-[Trello](https://trello.com/b/tjOwxujy/ts-os-port-status)
+[![Trello](https://trello.com/favicon.ico)](https://trello.com/b/tjOwxujy/ts-os-port-status)
 
 pc
 
