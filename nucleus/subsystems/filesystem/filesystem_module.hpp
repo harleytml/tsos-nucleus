@@ -33,7 +33,7 @@ public:
   void close(File file);
 
   //Read from a file
-  uint8_t **read(File file, uint32_t length);
+  uint8_t *read(File file, uint32_t length);
 
   //Write to a file
   void write(File file, uint8_t data[]);

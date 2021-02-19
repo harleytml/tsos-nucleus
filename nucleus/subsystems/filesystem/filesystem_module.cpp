@@ -55,14 +55,14 @@ uint8_t *Filesystem::readfile(char *path)
     }
 }
 
-void Filesystem::writefile(char *path, uint8_t *data[])
+void Filesystem::writefile(char *path, uint8_t *data)
 {
     if (exists(path))
     {
     }
 }
 
-void Filesystem::appendfile(char *path, uint8_t[] data)
+void Filesystem::appendfile(char *path, uint8_t * data)
 {
     if (exists(path))
     {

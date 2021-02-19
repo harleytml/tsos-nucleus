@@ -12,6 +12,8 @@ public:
   // Constructor
   Input_driver(void);
 
+  ~Input_driver();
+
   // Read a key, and convert its scancode
   virtual key_identifier getkey(void) = 0;
 

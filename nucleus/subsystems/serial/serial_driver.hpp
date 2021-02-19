@@ -11,6 +11,8 @@ public:
   // Constructor
   Serial_driver(void);
 
+  ~Serial_driver();
+
   // Exchange a byte
   virtual uint8_t exchangebyte(uint8_t b) = 0;
 

@@ -16,6 +16,9 @@ public:
   //Constructor
   File(char *pa, Permissions per);
 
+  //Destructor
+  ~File()
+
   //The path of the file
   char *path;
 
