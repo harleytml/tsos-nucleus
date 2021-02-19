@@ -6,6 +6,11 @@ XT_KEYBOARD_driver::XT_KEYBOARD_driver(void)
     name = "PC/XT Keyboard";
 }
 
+
+XT_KEYBOARD_driver::~XT_KEYBOARD_driver()
+{
+}
+
 bool XT_KEYBOARD_driver::detectsystem(void)
 {
 

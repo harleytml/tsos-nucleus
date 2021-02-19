@@ -10,6 +10,8 @@ public:
     // Constructor
     AT_KEYBOARD_driver(void);
 
+    ~AT_KEYBOARD_driver();
+
     // Detects if the module should be used
     bool detectsystem(void);
 

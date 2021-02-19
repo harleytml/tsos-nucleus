@@ -10,6 +10,8 @@ public:
     // Constructor
     XT_KEYBOARD_driver(void);
 
+    ~XT_KEYBOARD_driver();
+
     // Detects if the module should be used
     bool detectsystem(void);
 

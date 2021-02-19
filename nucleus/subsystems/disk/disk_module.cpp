@@ -5,7 +5,7 @@ Disk::Disk(void)
 {
 }
 
-Disk::~Disk(void)
+Disk::~Disk()
 {
 }
 

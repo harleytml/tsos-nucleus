@@ -9,6 +9,7 @@ class FAT16_driver : public Filesystem_driver
 {
 public:
   FAT16_driver(void);
+  bool detectsystem(void);
   char **readdir(char *path);
   void rename(char *path, char *newPath);
   File open(char *path);

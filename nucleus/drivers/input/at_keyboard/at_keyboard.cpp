@@ -6,6 +6,10 @@ AT_KEYBOARD_driver::AT_KEYBOARD_driver(void)
     name = "PC/AT Keyboard";
 }
 
+AT_KEYBOARD_driver::~AT_KEYBOARD_driver(void)
+{
+}
+
 bool AT_KEYBOARD_driver::detectsystem(void)
 {
 
