@@ -12,7 +12,7 @@ public:
     bool detectsystem(void);
 
     // Get an amount of bytes from the disk
-    char *getbytes(uint16_t offset, uint8_t len);
+    void getbytes(uint8_t * buffer, uint16_t offset, uint8_t len);
 
     // Get the sector size
     uint16_t getsectorsize(void);

@@ -10,7 +10,7 @@ CD_driver::~CD_driver()
 {
 }
 
-char *CD_driver::getbytes(uint16_t offset, uint8_t len)
+void CD_driver::getbytes(uint8_t * buffer, uint16_t offset, uint8_t len)
 {
 }
 
