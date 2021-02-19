@@ -1,34 +1,34 @@
 #define MACHINE GAMEBOY_ADVANCED
 #define VIDEO_DRIVERS       \
     {                       \
-        GBA_SCREEN_driver() \
+        new GBA_SCREEN_driver() \
     }
 #define INPUT_DRIVERS        \
     {                        \
-        GBA_GAMEPAD_driver() \
+        new GBA_GAMEPAD_driver() \
     }
 #define DISK_DRIVERS           \
     {                          \
-        GBA_CARTRIDGE_driver() \
+        new GBA_CARTRIDGE_driver() \
     }
 #define SERIAL_DRIVERS       \
     {                        \
-        GBA_IO_PORT_driver() \
+        new GBA_IO_PORT_driver() \
     }
 #define BOOT_DRIVERS      \
     {                     \
-        GBA_BOOT_driver() \
+        new GBA_BOOT_driver() \
     }
 #define FILESYSTEM_DRIVERS                                            \
     {                                                                 \
-        FAT12_driver(), FAT16_driver(), FAT32_driver(), CDFS_driver() \
+        new FAT12_driver(), new FAT16_driver(), new FAT32_driver(), new CDFS_driver() \
     }
 #define SOUND_DRIVERS \
     {                 \
     }
 #define PROCESS_DRIVERS \
     {                   \
-        ELF_driver()    \
+        new ELF_driver()    \
     }
 #define VIDEO_DRIVER_COUNT 1
 #define INPUT_DRIVER_COUNT 1
