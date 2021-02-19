@@ -20,6 +20,6 @@ From the scripts and code from https://www.devrs.com/gba/ccode.php
 
 A few bits of code from the codebase at osdev for c++ support
 
-[/nucleus/core/core.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/core.cpp)
+[/nucleus/core/core.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/icxxabi.cpp)
 
 A few bits of code from the codebase at osdev for c++ support
