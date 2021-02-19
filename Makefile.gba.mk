@@ -11,7 +11,7 @@ CC=arm-none-eabi-gcc
 CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 CPP=arm-none-eabi-g++
-CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -lk -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -D__is_kernel
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -D__is_kernel
 
 AS=arm-none-eabi-as
 AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
