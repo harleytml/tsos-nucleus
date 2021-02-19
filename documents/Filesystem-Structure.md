@@ -18,7 +18,7 @@ This is the directory where non-executable, non-configuration files are stored.
 
 ```/sys/tmp```
 
-This is the tmp directory that the system uses. 
+This is the tmp directory that the system uses.
 
 ```/sys/headers```
 
