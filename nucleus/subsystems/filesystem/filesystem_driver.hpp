@@ -12,7 +12,7 @@ public:
     Filesystem_driver(void);
 
     //Destructor
-    ~Filesystem_driver(void);
+    ~Filesystem_driver();
 
     //Read the directory
     virtual char **readdir(char *path) = 0;

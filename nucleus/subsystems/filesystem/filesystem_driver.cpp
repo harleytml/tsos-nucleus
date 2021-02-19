@@ -5,6 +5,6 @@ Filesystem_driver::Filesystem_driver(void)
 {
 }
 
-Filesystem_driver::~Filesystem_driver(void)
+Filesystem_driver::~Filesystem_driver()
 {
 }

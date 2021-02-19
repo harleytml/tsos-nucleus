@@ -44,13 +44,15 @@ void Video::putstring(char *str)
       break;
     case '\t':
 
-      //The screen will render a tab as 4 spaces
-      for (int y = 0; y < 4; y++)
+      //The screen will render a tab as 2 spaces
+      for (uint16_t y = 0; y < 2; y++)
       {
         putchar(' ');
         rseektextcursor(1);
       }
       break;
+
+      //Just a normal character
     default:
       putchar(str[x++]);
       rseektextcursor(1);

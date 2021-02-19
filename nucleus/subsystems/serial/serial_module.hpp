@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_SERIAL__
-#define __TSOS_NUCLEUS_SERIAL__
+#ifndef __TSOS_NUCLEUS_SERIAL_MODULE__
+#define __TSOS_NUCLEUS_SERIAL_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"

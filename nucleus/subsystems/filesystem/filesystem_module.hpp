@@ -18,7 +18,7 @@ public:
   Filesystem(void);
 
   //Destructor
-  ~Filesystem(void);
+  ~Filesystem();
 
   //Read the contents of a directory
   char **readdir(char *path);

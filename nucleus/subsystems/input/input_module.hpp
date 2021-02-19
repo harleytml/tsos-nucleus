@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_INPUT__
-#define __TSOS_NUCLEUS_INPUT__
+#ifndef __TSOS_NUCLEUS_INPUT_MODULE__
+#define __TSOS_NUCLEUS_INPUT_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"

@@ -5,7 +5,7 @@ Boot::Boot(void)
 {
 }
 
-Boot::~Boot(void)
+Boot::~Boot()
 {
 }
 
@@ -18,7 +18,7 @@ void Boot::shutdown(void)
 {
 
     // Destroy tsos, to trigger the kernel destruction
-    delete &tsos;
+    delete tsos;
     driver->shutdown();
 }
 

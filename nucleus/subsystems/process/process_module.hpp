@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_PROCESS__
-#define __TSOS_NUCLEUS_PROCESS__
+#ifndef __TSOS_NUCLEUS_PROCESS_MODULE__
+#define __TSOS_NUCLEUS_PROCESS_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"

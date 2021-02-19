@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_SOUND__
-#define __TSOS_NUCLEUS_SOUND__
+#ifndef __TSOS_NUCLEUS_SOUND_MODULE__
+#define __TSOS_NUCLEUS_SOUND_MODULE__
 
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
