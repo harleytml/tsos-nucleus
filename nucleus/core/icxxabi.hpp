@@ -1,6 +1,9 @@
 #ifndef __ICXXABI__
 #define __ICXXABI__
 
+#include "./types.hpp"
+#include "./core.hpp"
+
 #define ATEXIT_MAX_FUNCS 128
 
 extern "C"

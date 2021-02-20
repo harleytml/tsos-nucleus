@@ -110,16 +110,16 @@ void EGA_driver::seektextcursor(uint16_t pos)
   }
 }
 
-uint8_t EGA_driver::getscreenwidth(void)
+uint16_t EGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
   return *((uint16_t *)0x40044a);
 }
 
-uint8_t EGA_driver::getscreenheight(void)
+uint16_t EGA_driver::getscreenheight(void)
 {
-  switch (type)
+  switch (mode)
   {
   case TEXT:
 

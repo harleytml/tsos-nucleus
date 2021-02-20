@@ -15,7 +15,7 @@ bool GBA_SCREEN_driver::detectsystem(void)
 
 void GBA_SCREEN_driver::reset(void)
 {
-  uint16_t screen_control;
+  uint16_t *screen_control;
 
   // LCD screen mode register
   screen_control = (uint16_t *)0x4000010;
@@ -70,12 +70,12 @@ void GBA_SCREEN_driver::seektextcursor(uint16_t pos)
   }
 }
 
-uint8_t GBA_SCREEN_driver::getscreenwidth(void)
+uint16_t GBA_SCREEN_driver::getscreenwidth(void)
 {
   return 30;
 }
 
-uint8_t GBA_SCREEN_driver::getscreenheight(void)
+uint16_t GBA_SCREEN_driver::getscreenheight(void)
 {
   return 20;
 }

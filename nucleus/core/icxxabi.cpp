@@ -113,4 +113,26 @@ extern "C"
 	void __cxa_guard_abort(__cxxabiv1::__guard *)
 	{
 	}
+
+	//The kernel knows how to do these things, so ill map it there
+
+	void *operator new(size_t size)
+	{
+		return tsos.process.allocatememory(size);
+	}
+
+	void *operator new[](size_t size)
+	{
+		return tsos.process.allocatememory(size);
+	}
+
+	void operator delete(void *p)
+	{
+		tsos.process.freememory(p);
+	}
+
+	void operator delete[](void *p)
+	{
+		tsos.process.freememory(p);
+	}
 };

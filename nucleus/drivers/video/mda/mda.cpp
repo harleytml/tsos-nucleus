@@ -53,13 +53,13 @@ void MDA_driver::seektextcursor(uint16_t pos)
 }
 
 // Also pointless, considering MDA has only one mode, but I'll read from a BIOS field anyway
-uint8_t MDA_driver::getscreenwidth(void)
+uint16_t MDA_driver::getscreenwidth(void)
 {
     // Read the width from a BIOS field
     return *((uint16_t *)0x40044a);
 }
 
-uint8_t MDA_driver::getscreenheight(void)
+uint16_t MDA_driver::getscreenheight(void)
 {
     // The height of the screen, text mode, is always 25
     return 25;
@@ -69,7 +69,7 @@ char *MDA_driver::gettextbuffer(void)
 {
 
     // Read the offset of the current video page from the BIOS
-    return (char *)(*((uint16_t)0x40044e));
+    return (char *)(*((uint16_t *)0x40044e));
 }
 
 uint16_t MDA_driver::gettextbufferlength(void)
@@ -80,7 +80,7 @@ uint16_t MDA_driver::gettextbufferlength(void)
 }
 
 // You have to manipulate the hardware to change the font on MDA
-void MDA_driver::setfont(Tsos_font font)
+void MDA_driver::setfont(Font font)
 {
     return;
 }

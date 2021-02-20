@@ -130,14 +130,14 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
     }
   }
 
-  uint8_t VGA_driver::getscreenwidth(void)
+  uint16_t VGA_driver::getscreenwidth(void)
   {
 
     // Read the width from a BIOS field
     return *((uint16_t *)0x40044a);
   }
 
-  uint8_t VGA_driver::getscreenheight(void)
+  uint16_t VGA_driver::getscreenheight(void)
   {
     switch (video_mode)
     {

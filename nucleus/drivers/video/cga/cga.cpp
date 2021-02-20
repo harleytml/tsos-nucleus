@@ -98,16 +98,16 @@ void CGA_driver::seektextcursor(uint16_t pos)
   }
 }
 
-uint8_t CGA_driver::getscreenwidth(void)
+uint16_t CGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
   return *((uint16_t *)0x40044a);
 }
 
-uint8_t CGA_driver::getscreenheight(void)
+uint16_t CGA_driver::getscreenheight(void)
 {
-  switch (video_mode)
+  switch (mode)
   {
   case TEXT:
 
