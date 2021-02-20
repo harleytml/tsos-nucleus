@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/i686-elf-g++",
+            "compilerPath": "/usr/tsos-toolchain/bin/tsos-i686-g++",
             "cStandard": "c99",
             "cppStandard": "c++20",
             "intelliSenseMode": "gcc-x86"
@@ -17,7 +17,7 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/arm-none-eabi-g++",
+            "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
             "cStandard": "c99",
             "cppStandard": "c++20",
             "intelliSenseMode": "gcc-arm"
@@ -28,7 +28,7 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/mipsel-unknown-elf-g++",
+            "compilerPath": "/usr/tsos-toolchain/bin/tsos-mipsel-g++",
             "cStandard": "c99",
             "cppStandard": "c++20",
             "intelliSenseMode": "${default}"
