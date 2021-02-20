@@ -26,8 +26,6 @@
 // This file is customized by for the system
 #include "../../build/current_config.hpp"
 
-#define ATEXIT_MAX_FUNCS 128
-
 // The main class collecting the TS/OS nucleus api
 class Tsos
 {
