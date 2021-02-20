@@ -10,13 +10,13 @@ Tsos::Tsos(void)
     short_code_name = "n";
 
     // The Init system
-    video = new Video();
-    input = new Input();
-    filesystem = new Filesystem();
-    boot = new Boot();
-    serial = new Serial();
-    process = new Process();
-    disk = new Disk();
+    video = Video();
+    input = Input();
+    filesystem = Filesystem();
+    boot = Boot();
+    serial = Serial();
+    process = Process();
+    disk = Disk();
 
     //All these define based constants are in a generated header file (see core.hpp)
     Video_driver video_drivers[VIDEO_DRIVER_COUNT] = VIDEO_DRIVERS;

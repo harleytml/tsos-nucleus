@@ -15,7 +15,7 @@ char **Filesystem::readdir(char *path)
     {
         return driver->readdir(path);
     }
-    return NULL;
+    return (char **)"";
 }
 
 void Filesystem::rename(char *path, char *newPath)
@@ -35,7 +35,7 @@ File Filesystem::open(char *path)
 
 void Filesystem::close(File file)
 {
-    if (file.path != NULL)
+    if (file.path != "")
     {
     }
 }
@@ -62,7 +62,7 @@ void Filesystem::writefile(char *path, uint8_t *data)
     }
 }
 
-void Filesystem::appendfile(char *path, uint8_t * data)
+void Filesystem::appendfile(char *path, uint8_t *data)
 {
     if (exists(path))
     {

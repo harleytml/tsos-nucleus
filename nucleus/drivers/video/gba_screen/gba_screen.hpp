@@ -3,6 +3,7 @@
 #define __TSOS_GBA_SCREEN_DRIVER__
 
 #include "../../../subsystems/video/video_driver.hpp"
+#include "../../../subsystems/video/video_modes.hpp"
 
 class GBA_SCREEN_driver : public Video_driver
 {

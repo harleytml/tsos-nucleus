@@ -3,6 +3,7 @@
 #define __TSOS_CGA_DRIVER__
 
 #include "../../../subsystems/video/video_driver.hpp"
+#include "../../../subsystems/video/video_modes.hpp"
 
 class CGA_driver : public Video_driver
 {

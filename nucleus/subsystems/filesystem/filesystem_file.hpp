@@ -17,7 +17,7 @@ public:
   File(char *pa, Permissions per);
 
   //Destructor
-  ~File()
+  ~File();
 
   //The path of the file
   char *path;

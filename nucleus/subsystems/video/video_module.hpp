@@ -8,12 +8,7 @@
 #include "./video_driver.hpp"
 #include "./video_color.hpp"
 #include "./video_font.hpp"
-
-enum video_mode
-{
-  TEXT,
-  GRAPHIC
-};
+#include "./video_modes.hpp"
 
 // The main class controlling video
 class Video : public Module<Video_driver>

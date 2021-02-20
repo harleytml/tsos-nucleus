@@ -3,6 +3,7 @@
 #define __TSOS_EGA_DRIVER__
 
 #include "../../../subsystems/video/video_driver.hpp"
+#include "../../../subsystems/video/video_modes.hpp"
 
 class EGA_driver : public Video_driver
 {
