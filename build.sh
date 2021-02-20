@@ -22,10 +22,10 @@ help)
     exit 0
     ;;
 pc)
-    NEEDED_COMMANDS=(i686-elf-gcc i686-elf-g++ i686-elf-ld.gold make)
+    NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld.gold make)
     ;;
 gba)
-    NEEDED_COMMANDS=(arm-none-eabi-gcc arm-none-eabi-g++ arm-none-eabi-ld.gold make)
+    NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make)
     ;;
 psp)
     NEEDED_COMMANDS=(make)
