@@ -3,10 +3,8 @@
 
 Input_driver::Input_driver(void)
 {
-
 }
 
 Input_driver::~Input_driver()
 {
-    
 }

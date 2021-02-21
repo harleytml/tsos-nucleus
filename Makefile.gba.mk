@@ -12,9 +12,10 @@ DISK_CORE=$(BUILD_DIR)/disk_driver.o $(BUILD_DIR)/disk_module.o
 FILESYSTEM_CORE=$(BUILD_DIR)/filesystem_driver.o $(BUILD_DIR)/filesystem_module.o $(BUILD_DIR)/filesystem_file.o
 INPUT_CORE=$(BUILD_DIR)/input_driver.o $(BUILD_DIR)/input_module.o
 PROCESS_CORE=$(BUILD_DIR)/process_driver.o $(BUILD_DIR)/process_module.o
-SERIAL_CORE=$(BUILD_DIR)/serial_driver.o $(BUILD_DIR)/serial_m odule.o
+SERIAL_CORE=$(BUILD_DIR)/serial_driver.o $(BUILD_DIR)/serial_module.o
 SOUND_CORE=$(BUILD_DIR)/sound_driver.o $(BUILD_DIR)/sound_module.o $(BUILD_DIR)/sound_tone.o 
 VIDEO_CORE=$(BUILD_DIR)/video_driver.o $(BUILD_DIR)/video_module.o $(BUILD_DIR)/video_color.o $(BUILD_DIR)/video_font.o
+DRIVER_LIST=$(BUILD_DIR)/sfs.o $(BUILD_DIR)/gba_boot.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/gba_gamepad.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/gba_io_port.o $(BUILD_DIR)/gba_screen.o
 
 CC=tsos-armeabi-gcc
 CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
@@ -28,7 +29,7 @@ AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
 LD=tsos-armeabi-ld.gold
 LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O2 -nostdlib -lgcc
 
-$(BUILD_DIR)/nucleus.tse:  $(BOOT_CORE) $(DISK_CORE) $(FILESYSTEM_CORE) $(INPUT_CORE) $(PROCESS_CORE) $(SERIAL_CORE) $(SOUND_CORE) $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/module.o $(BUILD_DIR)/core.o  $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/gba_boot.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/gba_gamepad.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/gba_io_port.o $(BUILD_DIR)/gba_screen.o
+$(BUILD_DIR)/nucleus.tse:  $(BOOT_CORE) $(DISK_CORE) $(FILESYSTEM_CORE) $(INPUT_CORE) $(PROCESS_CORE) $(SERIAL_CORE) $(SOUND_CORE) $(DRIVER_LIST) $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/module.o $(BUILD_DIR)/core.o  $(BUILD_DIR)/bootloader.o
 :$(CPP) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/icxxabi.o: $(NUCLEUS_DIR)/core/icxxabi.cpp
@@ -72,6 +73,8 @@ $(BUILD_DIR)/bootloader.o: $(NUCLEUS_DIR)/drivers/boot/gba_boot/gba_boot.asm
 
 $(BUILD_DIR)/gba_boot.o: $(NUCLEUS_DIR)/drivers/boot/gba_boot/gba_boot.cpp 
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
+
+# Driver Modules
 
 $(BUILD_DIR)/cd.o: $(NUCLEUS_DIR)/drivers/disk/cd/cd.cpp 
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 

@@ -12,6 +12,7 @@ public:
   // Constructor
   Input_driver(void);
 
+  //Deconstructor
   ~Input_driver();
 
   // Read a key, and convert its scancode

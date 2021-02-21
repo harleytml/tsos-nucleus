@@ -4,192 +4,192 @@ TOTAL SYSCALLS: 43
 
 BOOT SYSCALLS:
 
- reboot:
+reboot:
 
-  Reboot the system
+Reboot the system
 
- shutdown:
+shutdown:
 
-  Shutdown the system
+Shutdown the system
 
- fission:
+fission:
 
-  Inform the user that a fatal system error has been encountered, and reboot
+Inform the user that a fatal system error has been encountered, and reboot
 
 DISK SYSCALLS:
 
- getbytes:
+getbytes:
 
-  Get a length of bytes from a offset in the computer
+Get a length of bytes from a offset in the computer
 
- getsectorsize:
+getsectorsize:
 
-  Get the sector size of the disk
+Get the sector size of the disk
 
- commitall:
+commitall:
 
-  Make sure all data to be written to the disk, is actually written to the disk
+Make sure all data to be written to the disk, is actually written to the disk
 
 FILESYSTEM SYSCALLS:
 
- readdir:
+readdir:
 
-  Return the contents of a directory
+Return the contents of a directory
 
- rename:
+rename:
 
-  Rename a directory/file
+Rename a directory/file
 
- open:
+open:
 
-  Mark a file as opened, and return a instance of file
+Mark a file as opened, and return a instance of file
 
- close:
+close:
 
-  Close a file
+Close a file
 
- read:
+read:
 
-  Read a number of bytes from a file
+Read a number of bytes from a file
 
- write:
+write:
 
-  Write a number of bytes to a file
+Write a number of bytes to a file
 
- readfile:
+readfile:
 
-  Read a entire file
+Read a entire file
 
- writefile:
+writefile:
 
-  Write a entire file
+Write a entire file
 
- appendfile:
+appendfile:
 
-  Append data to a file
+Append data to a file
 
- exists:
+exists:
 
-  Check if file exists
+Check if file exists
 
- mkdir:
+mkdir:
 
-  Make a directory
+Make a directory
 
- rmdir:
+rmdir:
 
-  Remove a directory
+Remove a directory
 
- access:
+access:
 
-  Check if calling user has permissions to a file
+Check if calling user has permissions to a file
 
 INPUT SYSCALLS:
 
- getkey:
+getkey:
 
-  Pop a key value off of the key buffer.
+Pop a key value off of the key buffer.
 
- waitkey:
+waitkey:
 
-  Wait for a key to be pressed.
+Wait for a key to be pressed.
 
 PROCESS SYSCALLS:
 
- spawn:
+spawn:
 
-  Spawn a process
+Spawn a process
 
- kill:
+kill:
 
-  Kill a process
+Kill a process
 
- killall:
+killall:
 
-  Kill all processes
+Kill all processes
 
- allocatememory:
+allocatememory:
 
-  Allocate memory
+Allocate memory
 
- freememory:
-  
-  Free memory
+freememory:
+
+Free memory
 
 SERIAL SYSCALLS:
 
- exchangebyte:
+exchangebyte:
 
-  Exchange a byte with the other device
+Exchange a byte with the other device
 
- isdevicethere:
+isdevicethere:
 
-  Check if a device is connected to this device
+Check if a device is connected to this device
 
 SOUND SYSCALLS:
 
- playtone:
+playtone:
 
-  Play a tone of frequency and length
+Play a tone of frequency and length
 
 VIDEO SYSCALLS:
 
- reset:
+reset:
 
-  Reset the video system
+Reset the video system
 
- putchar:
+putchar:
 
-  Put a single character on to the text buffer
+Put a single character on to the text buffer
 
- putstring:
+putstring:
 
-  Put a C-Style string to the text buffer
+Put a C-Style string to the text buffer
 
- gettextcursor:
+gettextcursor:
 
-  Get the position of the text cursor
+Get the position of the text cursor
 
- seektextcursor:
+seektextcursor:
 
-  Set the position of the text cursor
+Set the position of the text cursor
 
- rseektextcursor:
+rseektextcursor:
 
-  Set the position of the text cursor relatively
+Set the position of the text cursor relatively
 
- gettextbuffer:
+gettextbuffer:
 
-  Get a reference to the text buffer
+Get a reference to the text buffer
 
- gettextbufferlength:
+gettextbufferlength:
 
-  Get the length of the text buffer
+Get the length of the text buffer
 
- getscreenwidth:
+getscreenwidth:
 
-  Get the width of the screen
+Get the width of the screen
 
- getscreenheight:
+getscreenheight:
 
-  Get the height of the screen
+Get the height of the screen
 
- setfont:
+setfont:
 
-  Set the font of the text system
+Set the font of the text system
 
- clear:
+clear:
 
-  Clear the text buffer
+Clear the text buffer
 
- scroll:
+scroll:
 
-  Scroll the text buffer  
+Scroll the text buffer
 
- settextbackgroundcolor:
+settextbackgroundcolor:
 
-  Set the background of the text system
+Set the background of the text system
 
- settextforegroundcolor:
+settextforegroundcolor:
 
-  Set the foreground of the text system
+Set the foreground of the text system

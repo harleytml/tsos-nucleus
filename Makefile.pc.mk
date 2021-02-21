@@ -15,12 +15,13 @@ PROCESS_CORE=$(BUILD_DIR)/process_driver.o $(BUILD_DIR)/process_module.o
 SERIAL_CORE=$(BUILD_DIR)/serial_driver.o $(BUILD_DIR)/serial_module.o
 SOUND_CORE=$(BUILD_DIR)/sound_driver.o $(BUILD_DIR)/sound_module.o $(BUILD_DIR)/sound_tone.o 
 VIDEO_CORE=$(BUILD_DIR)/video_driver.o $(BUILD_DIR)/video_module.o $(BUILD_DIR)/video_color.o $(BUILD_DIR)/video_font.o
+DRIVER_LIST= $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
 
 CC=tsos-i686-gcc
-CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
+CC_FLAGS=-g -std=c99 -ffreestanding -O3 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
 
 CPP=tsos-i686-g++
-CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O3 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
 
 AS=tsos-i686-as
 AS_FLAGS=-g -mtune=i686
@@ -28,7 +29,7 @@ AS_FLAGS=-g -mtune=i686
 LD=tsos-i686-ld.gold
 LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib -lgcc
 
-$(BUILD_DIR)/nucleus.tse: $(BOOT_CORE) $(DISK_CORE) $(FILESYSTEM_CORE) $(INPUT_CORE) $(PROCESS_CORE) $(SERIAL_CORE) $(SOUND_CORE) $(VIDEO_CORE) $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/module.o $(BUILD_DIR)/core.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
+$(BUILD_DIR)/nucleus.tse: $(BOOT_CORE) $(DISK_CORE) $(FILESYSTEM_CORE) $(INPUT_CORE) $(PROCESS_CORE) $(SERIAL_CORE) $(SOUND_CORE) $(VIDEO_CORE) $(DRIVER_LIST) $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/module.o $(BUILD_DIR)/core.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/bootloader.o
 :$(CPP) $(LD_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp
