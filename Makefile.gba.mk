@@ -7,6 +7,15 @@ NUCLEUS_DIR=$(PWD)/../nucleus
 CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
+BOOT_CORE=$(BUILD_DIR)/boot_driver.o $(BUILD_DIR)/boot_module.o
+DISK_CORE=$(BUILD_DIR)/disk_driver.o $(BUILD_DIR)/disk_module.o
+FILESYSTEM_CORE=$(BUILD_DIR)/filesystem_driver.o $(BUILD_DIR)/filesystem_module.o $(BUILD_DIR)/filesystem_file.o
+INPUT_CORE=$(BUILD_DIR)/input_driver.o $(BUILD_DIR)/input_module.o
+PROCESS_CORE=$(BUILD_DIR)/process_driver.o $(BUILD_DIR)/process_module.o
+SERIAL_CORE=$(BUILD_DIR)/serial_driver.o $(BUILD_DIR)/serial_m odule.o
+SOUND_CORE=$(BUILD_DIR)/sound_driver.o $(BUILD_DIR)/sound_module.o $(BUILD_DIR)/sound_tone.o 
+VIDEO_CORE=$(BUILD_DIR)/video_driver.o $(BUILD_DIR)/video_module.o $(BUILD_DIR)/video_color.o $(BUILD_DIR)/video_font.o
+
 CC=tsos-armeabi-gcc
 CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
@@ -17,16 +26,22 @@ AS=tsos-armeabi-as
 AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
 
 LD=tsos-armeabi-ld.gold
-LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O2 -nostdlib -lgcc
 
-$(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/core.o $(BUILD_DIR)/video.o $(BUILD_DIR)/input.o $(BUILD_DIR)/disk.o $(BUILD_DIR)/serial.o $(BUILD_DIR)/filesystem.o $(BUILD_DIR)/boot.o $(BUILD_DIR)/sound.o $(BUILD_DIR)/process.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/grub2.o $(BUILD_DIR)/cd.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/at_keyboard.o $(BUILD_DIR)/xt_keyboard.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/rs232.o $(BUILD_DIR)/cga.o $(BUILD_DIR)/ega.o $(BUILD_DIR)/mda.o $(BUILD_DIR)/vga.o
+$(BUILD_DIR)/nucleus.tse:  $(BOOT_CORE) $(DISK_CORE) $(FILESYSTEM_CORE) $(INPUT_CORE) $(PROCESS_CORE) $(SERIAL_CORE) $(SOUND_CORE) $(BUILD_DIR)/icxxabi.o $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/driver.o $(BUILD_DIR)/module.o $(BUILD_DIR)/core.o  $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/sfs.o $(BUILD_DIR)/gba_boot.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/gba_gamepad.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/gba_io_port.o $(BUILD_DIR)/gba_screen.o
 :$(CPP) $(LD_FLAGS) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/icxxabi.o: $(NUCLEUS_DIR)/core/icxxabi.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp $(NUCLEUS_DIR)/core/driver.cpp $(NUCLEUS_DIR)/core/module.cpp
+$(BUILD_DIR)/core.o: $(NUCLEUS_DIR)/core/core.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
+
+$(BUILD_DIR)/driver.o: $(NUCLEUS_DIR)/core/driver.cpp
+:$(CPP) $(CPP_FLAGS) -o $@ $^ 
+
+$(BUILD_DIR)/module.o: $(NUCLEUS_DIR)/core/module.cpp
+:$(CPP) $(CPP_FLAGS) -o 
 
 $(BUILD_DIR)/video.o: $(NUCLEUS_DIR)/subsystems/video/video_module.cpp $(NUCLEUS_DIR)/subsystems/video/video_driver.cpp $(NUCLEUS_DIR)/subsystems/video/video_color.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^  
@@ -88,4 +103,6 @@ $(BUILD_DIR)/gba_io_port.o: $(NUCLEUS_DIR)/drivers/serial/gba_io_port/gba_io_por
 $(BUILD_DIR)/gba_screen.o: $(NUCLEUS_DIR)/drivers/video/gba_screen/gba_screen.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
+$(BUILD_DIR)/gba_cartridge.o: $(NUCLEUS_DIR)/drivers/video/gba_cartridge/gba_cartridge.cpp
+:$(CPP) $(CPP_FLAGS) -o $@ $^ 
 

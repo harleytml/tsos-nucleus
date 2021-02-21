@@ -86,8 +86,8 @@ rm -rfv "$FILESYSTEM_ROOT"
 mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
 
 # Make the target nucleus
+rm -rfv "$CODE_DIR/build/"
 mkdir -pv "$CODE_DIR/build/"
-rm -rfv "$CODE_DIR/build/*"
 cd "$CODE_DIR/build/"
 cp -v "../Makefile.$1.mk" "./Makefile"
 cp -v "../config/$1.hpp" "./current_config.hpp"

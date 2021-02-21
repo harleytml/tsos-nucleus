@@ -59,10 +59,10 @@ public:
   void killall(void);
 
   // Allocate memory
-  uint8_t *allocatememory(uint32_t len);
+  void *allocatememory(uint32_t len);
 
   // Free Memory
-  void freememory(uint8_t *);
+  void freememory(void *mem);
 
 private:
   // Process driver

@@ -22,6 +22,10 @@ void Process::killall(void)
 {
 }
 
-uint8_t *Process::allocatememory(uint32_t len)
+void *Process::allocatememory(uint32_t len)
+{
+}
+
+void Process::freememory(void *mem)
 {
 }

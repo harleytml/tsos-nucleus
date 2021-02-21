@@ -5,7 +5,6 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./input_driver.hpp"
 #include "./input_key_identifier.hpp"
 

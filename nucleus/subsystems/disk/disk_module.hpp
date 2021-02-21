@@ -5,7 +5,6 @@
 #include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./disk_driver.hpp"
 
 // The main class controlling the disks
