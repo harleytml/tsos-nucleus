@@ -23,7 +23,7 @@ Tsos::Tsos(void)
     Input_driver input_drivers[INPUT_DRIVER_COUNT] = INPUT_DRIVERS;
     Filesystem_driver filesystem_drivers[FILESYSTEM_DRIVER_COUNT] = FILESYSTEM_DRIVERS;
     Boot_driver boot_drivers[BOOT_DRIVER_COUNT] = BOOT_DRIVERS;
-    Serial serial_drivers[SERIAL_DRIVER_COUNT] = SERIAL_DRIVERS;
+    Serial_driver serial_drivers[SERIAL_DRIVER_COUNT] = SERIAL_DRIVERS;
     Process_driver process_drivers[PROCESS_DRIVER_COUNT] = PROCESS_DRIVERS;
     Disk_driver disk_drivers[DISK_DRIVER_COUNT] = DISK_DRIVERS;
 
