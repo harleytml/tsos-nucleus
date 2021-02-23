@@ -11,11 +11,11 @@ bool MDA_driver::detectsystem(void)
 {
 
     // Check to make sure EGA and VGA is not installed
-    if (*((uint8_t)0x400087) == 0)
+    if (*((uint8_t *)0x400087) == 0)
     {
 
         // Check if display is monochrome
-        if (*((uint8_t)0x400010) & 0x30 == 0x30)
+        if (*((uint8_t *)0x400010) & 0x30 == 0x30)
         {
 
             // Display is MDA, or a card in MDA emulation mode
@@ -76,7 +76,7 @@ uint16_t MDA_driver::gettextbufferlength(void)
 {
 
     // Read the length from the BIOS
-    return (*((uint16_t)0x40044c));
+    return (*((uint16_t *)0x40044c));
 }
 
 // You have to manipulate the hardware to change the font on MDA

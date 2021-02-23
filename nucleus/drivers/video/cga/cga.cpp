@@ -11,11 +11,11 @@ bool CGA_driver::detectsystem(void)
 {
 
   // Check to make sure EGA and VGA is not installed
-  if (*((uint8_t)0x400087) == 0)
+  if (*((uint8_t *)0x400087) == 0)
   {
 
     // Check if display is monochrome, or MDA
-    if ((*((uint8_t)0x400010) & 0x30) != 0x30)
+    if ((*((uint8_t *)0x400010) & 0x30) != 0x30)
     {
 
       // Display is probably CGA, or a card in CGA emulation mode
@@ -122,7 +122,7 @@ char *CGA_driver::gettextbuffer(void)
 {
 
   // Read the offset of the current video page from the BIOS
-  return (char *)(*((uint16_t)0x40044e));
+  return (char *)(*((uint16_t *)0x40044e));
 }
 
 uint16_t CGA_driver::gettextbufferlength(void)
