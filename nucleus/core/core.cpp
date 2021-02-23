@@ -52,24 +52,25 @@ Tsos::Tsos(void)
     boot.attachdriver(GRUB2_driver());
 
 #endif
+}
 
-    Tsos::~Tsos(void)
+Tsos::~Tsos()
+{
+    video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
+    video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
+    video.clear();
+    video.putstring("Shutting down... \n");
+    video.putstring("Do not touch the power button.\n");
+    process.killall();
+    disk.commitall();
+}
+
+// Start the kernel
+
+extern "C"
+{
+    void kernel_main(void)
     {
-        video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
-        video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
-        video.clear();
-        video.putstring("Shutting down... \n");
-        video.putstring("Do not touch the power button.\n");
-        process.killall();
-        disk.commitall();
+        tsos = Tsos();
     }
-
-    // Start the kernel
-
-    extern "C"
-    {
-        void kernel_main(void)
-        {
-            tsos = Tsos();
-        }
-    }
+}
