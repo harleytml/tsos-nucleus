@@ -23,7 +23,7 @@ public:
 
 private:
   // The text cursor
-  uin16_t text_cursor;
+  uint16_t text_cursor;
 
   // The length of the text buffer
   uint16_t text_buffer_length;
