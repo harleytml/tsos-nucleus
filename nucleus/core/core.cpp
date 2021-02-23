@@ -49,7 +49,7 @@ Tsos::Tsos(void)
     disk.attachdriver(CD_driver());
 
     //Boot stuff
-    disk.attachdriver(GRUB2_driver());
+    boot.attachdriver(GRUB2_driver());
 
 #endif
 
