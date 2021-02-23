@@ -25,7 +25,7 @@ bool MDA_driver::detectsystem(void)
     return false;
 }
 
-void MDA_driver::init(void)
+void MDA_driver::reset(void)
 {
     text_cursor = 0;
     text_buffer_length = gettextbufferlength();
