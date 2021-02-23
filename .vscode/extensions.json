@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-vscode.cpptools",
+    "mads-hartmann.bash-ide-vscode",
+    "basdp.language-gas-x86",
+    "amapleaf.linker-script",
+    "ms-vscode.makefile-tools",
+    "davidanson.vscode-markdownlint",
+    "foxundermoon.shell-format",
+    "redhat.vscode-yaml"
+  ]
+}
