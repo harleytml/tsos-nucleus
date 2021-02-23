@@ -31,34 +31,45 @@ Tsos::Tsos(void)
     input.attachdriver(XT_KEYBOARD_driver());
 
     // Now the filesystem
-    Sfilesystem.attachdriver(FAT32_driver);
-    filesystem.attachdriver(FAT16_driver);
-    filesystem.attachdriver(FAT12_driver);
-    filesystem.attachdriver(_driver);
-    hdriver(FAT32_driver);
+    filesystem.attachdriver(FAT32_driver());
+    filesystem.attachdriver(FAT16_driver());
+    filesystem.attachdriver(FAT12_driver());
+    filesystem.attachdriver(SFS_driver());
+    filesystem.attachdriver(UDF_driver());
 
-    //Boot
+    //Process stuff
+    process.attachdriver(ELF_driver());
 
-#endif // Is a GBA
-}
+    //Serial stuff
+    serial.attachdriver(RS232_driver());
 
-Tsos::~Tsos(void)
-{
-    video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
-    video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
-    video.clear();
-    video.putstring("Shutting down... \n");
-    video.putstring("Do not touch the power button.\n");
-    process.killall();
-    disk.commitall();
-}
+    //No sound stuff
 
-// Start the kernel
+    //Disk stuf
+    disk.attachdriver(CD_driver());
 
-extern "C"
-{
-    void kernel_main(void)
+    //Boot stuff
+    disk.attachdriver(GRUB2_driver());
+
+#endif
+
+    Tsos::~Tsos(void)
     {
-        tsos = Tsos();
+        video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
+        video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
+        video.clear();
+        video.putstring("Shutting down... \n");
+        video.putstring("Do not touch the power button.\n");
+        process.killall();
+        disk.commitall();
     }
-}
+
+    // Start the kernel
+
+    extern "C"
+    {
+        void kernel_main(void)
+        {
+            tsos = Tsos();
+        }
+    }
