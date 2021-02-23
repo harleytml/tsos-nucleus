@@ -18,56 +18,28 @@ Tsos::Tsos(void)
     process = Process();
     disk = Disk();
 
-    //All these define based constants are in a generated header file (see core.hpp)
-    Video_driver video_drivers[VIDEO_DRIVER_COUNT] = VIDEO_DRIVERS;
-    Input_driver input_drivers[INPUT_DRIVER_COUNT] = INPUT_DRIVERS;
-    Filesystem_driver filesystem_drivers[FILESYSTEM_DRIVER_COUNT] = FILESYSTEM_DRIVERS;
-    Boot_driver boot_drivers[BOOT_DRIVER_COUNT] = BOOT_DRIVERS;
-    Serial_driver serial_drivers[SERIAL_DRIVER_COUNT] = SERIAL_DRIVERS;
-    Process_driver process_drivers[PROCESS_DRIVER_COUNT] = PROCESS_DRIVERS;
-    Disk_driver disk_drivers[DISK_DRIVER_COUNT] = DISK_DRIVERS;
+#if MACHINE PERSONAL_COMPUTER
 
-    // Attaching video drivers
-    for (uint8_t x = 0; x < VIDEO_DRIVER_COUNT; x++)
-    {
-        video.attachdriver(video_drivers[x]);
-    }
+    //First attach video stuff
+    video.attachdriver(VGA_driver());
+    video.attachdriver(EGA_driver());
+    video.attachdriver(CGA_driver());
+    video.attachdriver(MDA_driver());
 
-    // Attach input drivers
-    for (uint8_t x = 0; x < INPUT_DRIVER_COUNT; x++)
-    {
-        input.attachdriver(input_drivers[x]);
-    }
+    //Then to input
+    input.attachdriver(AT_KEYBOARD_driver());
+    input.attachdriver(XT_KEYBOARD_driver());
 
-    // Attach filesystem drivers
-    for (uint8_t x = 0; x < FILESYSTEM_DRIVER_COUNT; x++)
-    {
-        filesystem.attachdriver(filesystem_drivers[x]);
-    }
+    // Now the filesystem
+    Sfilesystem.attachdriver(FAT32_driver);
+    filesystem.attachdriver(FAT16_driver);
+    filesystem.attachdriver(FAT12_driver);
+    filesystem.attachdriver(_driver);
+    hdriver(FAT32_driver);
 
-    // Attach boot drivers
-    for (uint8_t x = 0; x < BOOT_DRIVER_COUNT; x++)
-    {
-        boot.attachdriver(boot_drivers[x]);
-    }
+    //Boot
 
-    // Attach serial drivers
-    for (uint8_t x = 0; x < SERIAL_DRIVER_COUNT; x++)
-    {
-        serial.attachdriver(serial_drivers[x]);
-    }
-
-    // Attach process drivers
-    for (uint8_t x = 0; x < PROCESS_DRIVER_COUNT; x++)
-    {
-        process.attachdriver(process_drivers[x]);
-    }
-
-    // Attach disk drivers
-    for (uint8_t x = 0; x < DISK_DRIVER_COUNT; x++)
-    {
-        disk.attachdriver(disk_drivers[x]);
-    }
+#endif // Is a GBA
 }
 
 Tsos::~Tsos(void)

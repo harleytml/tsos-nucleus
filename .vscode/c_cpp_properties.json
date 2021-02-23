@@ -1,38 +1,32 @@
 {
-    "configurations": [
-        {
-            "name": "PC",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/tsos-i686-g++",
-            "cStandard": "c99",
-            "cppStandard": "c++20",
-            "intelliSenseMode": "gcc-x86"
-        },
-        {
-            "name": "GBA",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
-            "cStandard": "c99",
-            "cppStandard": "c++20",
-            "intelliSenseMode": "gcc-arm"
-        },
-        {
-            "name": "PSX",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/tsos-toolchain/bin/tsos-mipsel-g++",
-            "cStandard": "c99",
-            "cppStandard": "c++20",
-            "intelliSenseMode": "${default}"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "PC",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "compilerPath": "/usr/tsos-toolchain/bin/tsos-i686-g++",
+      "cStandard": "c99",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "gcc-x86"
+    },
+    {
+      "name": "GBA",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
+      "cStandard": "c99",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "gcc-arm"
+    },
+    {
+      "name": "PSX",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "compilerPath": "/usr/tsos-toolchain/bin/tsos-mipsel-g++",
+      "cStandard": "c99",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "${default}"
+    }
+  ],
+  "version": 4
 }

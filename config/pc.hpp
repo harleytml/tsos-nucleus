@@ -2,46 +2,22 @@
 #ifndef __TSOS_CURRENT_CONFIG__
 #define __TSOS_CURRENT_CONFIG__
 
+#include "../nucleus/drivers/boot/grub2/grub2.hpp"
+#include "../nucleus/drivers/disk/cd/cd.hpp"
+#include "../nucleus/drivers/filesystem/fat12/fat12.hpp"
+#include "../nucleus/drivers/filesystem/fat16/fat16.hpp"
+#include "../nucleus/drivers/filesystem/fat32/fat32.hpp"
+#include "../nucleus/drivers/filesystem/sfs/sfs.hpp"
+#include "../nucleus/drivers/filesystem/udf/udf.hpp"
+#include "../nucleus/drivers/input/at_keyboard/at_keyboard.hpp"
+#include "../nucleus/drivers/process/elf/elf.hpp"
+#include "../nucleus/drivers/serial/rs232/rs232.hpp"
+#include "../nucleus/drivers/video/cga/cga.hpp"
+#include "../nucleus/drivers/video/ega/ega.hpp"
+#include "../nucleus/drivers/video/mda/mda.hpp"
+#include "../nucleus/drivers/video/vga/vga.hpp"
+
 #define MACHINE PERSONAL_COMPUTER
-#define VIDEO_DRIVERS                                          \
-    {                                                          \
-        MDA_driver(), CGA_driver(), EGA_driver(), VGA_driver() \
-    }
-#define INPUT_DRIVERS                              \
-    {                                              \
-        XT_KEYBOARD_driver(), AT_KEYBOARD_driver() \
-    }
-#define DISK_DRIVERS \
-    {                \
-        CD_driver()  \
-    }
-#define SERIAL_DRIVERS \
-    {                  \
-        RS232_driver() \
-    }
-#define BOOT_DRIVERS   \
-    {                  \
-        GRUB2_driver() \
-    }
-#define FILESYSTEM_DRIVERS                                                         \
-    {                                                                              \
-        FAT12_driver(), FAT16_driver(), FAT32_driver(), UDF_driver(), SFS_driver() \
-    }
-#define SOUND_DRIVERS \
-    {                 \
-    }
-#define PROCESS_DRIVERS \
-    {                   \
-        ELF_driver()    \
-    }
-#define VIDEO_DRIVER_COUNT 4
-#define INPUT_DRIVER_COUNT 2
-#define DISK_DRIVER_COUNT 1
-#define SERIAL_DRIVER_COUNT 1
-#define BOOT_DRIVER_COUNT 1
-#define FILESYSTEM_DRIVER_COUNT 4
-#define SOUND_DRIVER_COUNT 0
-#define PROCESS_DRIVER_COUNT 2
 
 #define FONT_WIDTH 8
 #define FONT_HEIGHT 8

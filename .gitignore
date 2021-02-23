@@ -3,3 +3,4 @@ filesystem/**
 *.o
 *.tse
 a.out
+current_config.hpp
