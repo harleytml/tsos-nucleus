@@ -2,10 +2,8 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 #define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 
-#include "../../core/driver.hpp"
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
-#include "../../core/core.hpp"
 #include "./filesystem_driver.hpp"
 #include "./filesystem_file.hpp"
 #include "./filesystem_permissions.hpp"
