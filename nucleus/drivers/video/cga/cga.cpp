@@ -81,6 +81,8 @@ void CGA_driver::putchar(char c, Color bc, Color fc)
     return;
   case GRAPHIC:
     return;
+  default:
+    return;
   }
 }
 

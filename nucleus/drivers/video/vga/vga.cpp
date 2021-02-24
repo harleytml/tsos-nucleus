@@ -162,7 +162,7 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
   {
 
     // Read the length from the BIOS
-    return (*((uint16_t)0x40044c));
+    return (*((uint16_t *)0x40044c));
   }
 
   void VGA_driver::setfont(Font f)
@@ -176,5 +176,8 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
       return;
     case GRAPHIC:
       font = f;
+
+    default:
+      return;
     }
   }
