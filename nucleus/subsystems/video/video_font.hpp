@@ -9,6 +9,9 @@ class Font
 {
 public:
 
+    //Default constructor for font
+    Font(void);
+
     // Constructor
     Font(uint8_t *d);
 
