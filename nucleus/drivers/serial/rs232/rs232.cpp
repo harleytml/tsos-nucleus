@@ -10,6 +10,10 @@ bool RS232_driver::detectsystem(void)
 {
 }
 
+bool RS232_driver::isdevicethere(void)
+{
+}
+
 uint8_t RS232_driver::exchangebyte(uint8_t b)
 {
 }

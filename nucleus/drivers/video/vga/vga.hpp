@@ -40,6 +40,8 @@ private:
   uint16_t screen_height;
 
   video_mode mode;
+
+  Font font;
 };
 
 #endif

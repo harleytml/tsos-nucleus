@@ -7,7 +7,7 @@ ELF_driver::ELF_driver(void)
 
 bool ELF_driver::detectsystem(void)
 {
-    return isvalidexecutable();
+    return isvalidexecutable("/bin/nucleus.tse");
 }
 
 bool ELF_driver::isvalidexecutable(char *path)

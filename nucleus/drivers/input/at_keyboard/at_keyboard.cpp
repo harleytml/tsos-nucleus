@@ -33,6 +33,19 @@ key_identifier AT_KEYBOARD_driver::getkey(void)
 {
     switch (*((uint8_t *)0x400096))
     {
-    case:
+    default:
+        return KEY_NULL;
     }
+}
+
+bool AT_KEYBOARD_driver::isshiftpressed(void)
+{
+}
+
+bool AT_KEYBOARD_driver::isaltpressed(void)
+{
+}
+
+bool AT_KEYBOARD_driver::isctrlpressed(void)
+{
 }

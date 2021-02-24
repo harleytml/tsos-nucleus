@@ -12,6 +12,7 @@ public:
   bool detectsystem(void);
   void reset(void);
   void putchar(char c, Color bc, Color fc);
+  void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
   uint16_t gettextcursor(void);
   void seektextcursor(uint16_t pos);
   char *gettextbuffer(void);
@@ -24,7 +25,7 @@ public:
 
 private:
   // The text cursor
-  uin16_t text_cursor;
+  uint16_t text_cursor;
 
   // The length of the text buffer
   uint16_t text_buffer_length;
@@ -33,6 +34,8 @@ private:
   char *text_buffer;
 
   video_mode mode;
+
+  Font font;
 };
 
 #endif

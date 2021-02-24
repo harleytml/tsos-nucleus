@@ -1,7 +1,7 @@
 // By Tsuki Superior
 #include "./video_font.hpp"
 
-Font::Font(uint8_t *d[])
+Font::Font(uint8_t *d)
 {
     data = d;
 }

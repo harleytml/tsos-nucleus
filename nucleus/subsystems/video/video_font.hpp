@@ -8,8 +8,9 @@
 class Font
 {
 public:
+
     // Constructor
-    Font(uint8_t *d[]);
+    Font(uint8_t *d);
 
     // Destructor
     ~Font();
@@ -21,7 +22,7 @@ public:
     uint8_t height;
 
     // The actual data for the font
-    uint8_t *data[FONT_WIDTH * FONT_HEIGHT];
+    uint8_t *data;
 };
 
 #endif

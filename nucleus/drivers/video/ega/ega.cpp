@@ -86,12 +86,11 @@ void EGA_driver::putchar(char c, Color bc, Color fc)
       // Put the attribute byte
       text_buffer[text_cursor] = (char)a;
       return;
-    default:
-
-      // Something weird is happening, so we will exit
-      return;
     }
   case GRAPHIC:
+    return;
+
+  default:
     return;
   }
 }

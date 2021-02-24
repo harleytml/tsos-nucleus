@@ -93,12 +93,13 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
       // Something weird is happening, so we will exit
       return;
     }
+    return;
   case GRAPHIC:
 
     //Lets draw a glyph
     uint16_t cx, cy;
     uint16_t mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};
-    uint8_t *gylph = font + (uint8_t)c * 16;
+    uint8_t *glyph = font.data + (uint8_t)c * 16;
     uint8_t fgcolor;
     uint8_t bgcolor;
     for (cy = 0; cy < 16; cy++)

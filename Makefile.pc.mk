@@ -11,7 +11,7 @@ CC=tsos-i686-gcc
 CC_FLAGS=-g -std=c99 -ffreestanding -O3 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32
 
 CPP=tsos-i686-g++
-CPP_FLAGS=-g -std=c++20 -ffreestanding -O3 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O3 -Wall -Wextra -Wno-write-strings -Wno-unused-parameter -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32
 
 AS=tsos-i686-as
 AS_FLAGS=-g -mtune=i686

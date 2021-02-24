@@ -10,12 +10,10 @@
 #include "../nucleus/drivers/filesystem/sfs/sfs.hpp"
 #include "../nucleus/drivers/filesystem/udf/udf.hpp"
 #include "../nucleus/drivers/input/gba_gamepad/gba_gamepad.hpp"
+#include "../nucleus/drivers/serial/gba_io_port/gba_io_port.hpp"
 #include "../nucleus/drivers/process/elf/elf.hpp"
 #include "../nucleus/drivers/video/gba_screen/gba_screen.hpp"
 
 #define MACHINE GAMEBOY_ADVANCED
-
-#define FONT_WIDTH 8
-#define FONT_HEIGHT 8
 
 #endif

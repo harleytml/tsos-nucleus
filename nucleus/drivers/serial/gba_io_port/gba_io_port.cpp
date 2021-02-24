@@ -16,5 +16,5 @@ uint8_t GBA_IO_PORT_driver::exchangebyte(uint8_t b)
 
     // Confirming that a reciving DMG is actually there
     uint8_t *SB = (uint8_t *)0xff01;
-    *SB = 0x00
+    *SB = 0x00;
 }

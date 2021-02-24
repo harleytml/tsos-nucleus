@@ -11,6 +11,7 @@ public:
   EGA_driver(void);
   bool detectsystem(void);
   void reset(void);
+  void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
   void putchar(char c, Color bc, Color fc);
   uint16_t gettextcursor(void);
   void seektextcursor(uint16_t pos);
@@ -33,6 +34,8 @@ private:
   char *text_buffer;
 
   video_mode mode;
+
+  Font font;
 };
 
 #endif

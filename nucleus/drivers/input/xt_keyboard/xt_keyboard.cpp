@@ -6,7 +6,6 @@ XT_KEYBOARD_driver::XT_KEYBOARD_driver(void)
     name = "PC/XT Keyboard";
 }
 
-
 XT_KEYBOARD_driver::~XT_KEYBOARD_driver()
 {
 }
@@ -24,15 +23,30 @@ bool XT_KEYBOARD_driver::detectsystem(void)
     }
 }
 
-/* So detecting keys in PC is a little tricky
+/*
+   So detecting keys in PC is a little tricky
    The keyboard buffer is a cyclic queue
    hence you have to read characters before it is filled and starts to overwrite itself
    if this starts to happen, your BIOS will beep at you.
-   If you are testing TS/OS, please watch for this */
+   If you are testing TS/OS, please watch for this
+    */
 key_identifier XT_KEYBOARD_driver::getkey(void)
 {
     switch (*((uint8_t *)0x400096))
     {
-    case:
+    default:
+        return KEY_NULL;
     }
+}
+
+bool XT_KEYBOARD_driver::isshiftpressed(void)
+{
+}
+
+bool XT_KEYBOARD_driver::isaltpressed(void)
+{
+}
+
+bool XT_KEYBOARD_driver::isctrlpressed(void)
+{
 }

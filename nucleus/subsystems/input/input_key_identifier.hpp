@@ -4,6 +4,7 @@
 
 enum key_identifier
 {
+    KEY_NULL,
     KEY_0,
     KEY_1,
     KEY_2,

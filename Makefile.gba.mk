@@ -21,7 +21,7 @@ CC=tsos-armeabi-gcc
 CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
 CPP=tsos-armeabi-g++
-CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -D__is_kernel
+CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -Wno-write-strings -Wno-unused-parameter -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -D__is_kernel
 
 AS=tsos-armeabi-as
 AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
