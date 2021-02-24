@@ -17,25 +17,29 @@ SOUND_CORE=$(BUILD_DIR)/sound_driver.o $(BUILD_DIR)/sound_module.o $(BUILD_DIR)/
 VIDEO_CORE=$(BUILD_DIR)/video_driver.o $(BUILD_DIR)/video_module.o $(BUILD_DIR)/video_color.o $(BUILD_DIR)/video_font.o
 DRIVER_LIST=$(BUILD_DIR)/sfs.o $(BUILD_DIR)/gba_boot.o $(BUILD_DIR)/udf.o $(BUILD_DIR)/fat12.o $(BUILD_DIR)/fat16.o $(BUILD_DIR)/fat32.o $(BUILD_DIR)/gba_gamepad.o $(BUILD_DIR)/elf.o $(BUILD_DIR)/gba_io_port.o $(BUILD_DIR)/gba_screen.o
 
-CC=tsos-armeabi-gcc
-CC_FLAGS=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CC:=tsos-armeabi-gcc
+CC_FLAGS:=-g -std=c99 -ffreestanding -O2 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
-CPP=tsos-armeabi-g++
-CPP_FLAGS=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -Wno-write-strings -Wno-unused-parameter -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
+CPP:=tsos-armeabi-g++
+CPP_FLAGS:=-g -std=c++20 -ffreestanding -O2 -Wall -Wextra -Wno-write-strings -Wno-unused-parameter -fno-exceptions -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork
 
-AS=tsos-armeabi-as
-AS_FLAGS=-mcpu=arm7tdmi -mthumb-interwork
+AS:=tsos-armeabi-as
+AS_FLAGS:=-mcpu=arm7tdmi -mthumb-interwork
 
-LD=tsos-armeabi-ld.gold
-LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O2 -nostdlib -lgcc
+LD:=tsos-armeabi-ld.gold
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O2 -nostdlib -lgcc
 
-CPP_FILES=$(shell find $(NUCLEUS_DIR) -name \*.cpp)
+CPP_FILES:=$(shell find $(NUCLEUS_DIR) -name \*.cpp)
+OBJ_FILES:=${CPP_FILES:.cpp=.o}
 
-$(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o 
+$(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(BUILD_DIR)/bootloader.o 
 :$(CPP) $(LD_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/nucleus.o: $(CPP_FILES)
+$(BUILD_DIR)/%.o: $(CPP_FILES)
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/bootloader.o: $(NUCLEUS_DIR)/drivers/boot/gba_boot/gba_boot.asm 
 :$(AS) $(AS_FLAGS) -o $@ $^
+
+clean:
+:rm -rfv $(shell find $(NUCLEUS_DIR) -name \*.o)
