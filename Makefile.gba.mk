@@ -3,7 +3,7 @@
 .RECIPEPREFIX=:
 
 BUILD_DIR=$(PWD)/../build
-NUCLEUS_DIR=$(PWD)/../nucleus
+NUCLEUS_DIR=$(PWD)/../src
 CONFIG_DIR=$(PWD)/../config
 LINKER_SCRIPTS_DIR=$(PWD)/../linker-scripts
 
