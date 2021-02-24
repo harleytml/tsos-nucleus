@@ -18,6 +18,6 @@
 #include "../nucleus/drivers/video/mda/mda.hpp"
 #include "../nucleus/drivers/video/vga/vga.hpp"
 
-#define MACHINE PERSONAL_COMPUTER
+#define PERSONAL_COMPUTER
 
 #endif

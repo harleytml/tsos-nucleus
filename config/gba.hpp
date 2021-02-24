@@ -14,6 +14,6 @@
 #include "../nucleus/drivers/process/elf/elf.hpp"
 #include "../nucleus/drivers/video/gba_screen/gba_screen.hpp"
 
-#define MACHINE GAMEBOY_ADVANCED
+#define GAMEBOY_ADVANCED
 
 #endif

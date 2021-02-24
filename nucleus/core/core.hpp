@@ -68,9 +68,6 @@ protected:
 
   // The 1-2 letter code name of TS/OS being used here
   char *short_code_name;
-
-  // The type of machine being run here
-  machine_type machine = MACHINE;
 };
 
 Tsos tsos;

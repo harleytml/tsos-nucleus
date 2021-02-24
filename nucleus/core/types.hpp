@@ -17,15 +17,4 @@ typedef __SIZE_TYPE__ size_t;
 
 const uint8_t NULL = '\0';
 
-// The machine's type
-enum machine_type
-{
-  PERSONAL_COMPUTER,
-  DOT_MATRIX_GAME,
-  GAMEBOY_ADVANCED,
-  PLAYSTATION_X,
-  GENERIC,
-  UNKNOWN
-};
-
 #endif

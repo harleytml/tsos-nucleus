@@ -11,7 +11,6 @@ public:
   ELF_driver(void);
   bool detectsystem(void);
   bool isvalidexecutable(char *path);
-  machine_type machine = GENERIC;
 };
 
 #endif

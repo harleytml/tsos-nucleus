@@ -21,8 +21,6 @@ public:
   uint16_t getscreenheight(void);
   void setfont(Font f);
 
-  machine_type machine = PERSONAL_COMPUTER;
-
 private:
   // The text cursor
   uint16_t text_cursor;

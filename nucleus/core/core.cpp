@@ -18,70 +18,107 @@ Tsos::Tsos(void)
     process = Process();
     disk = Disk();
 
-#ifdef MACHINE PERSONAL_COMPUTER
+#ifdef PERSONAL_COMPUTER
 
     //First attach video stuff
-    video.attachdriver(VGA_driver());
-    video.attachdriver(EGA_driver());
-    video.attachdriver(CGA_driver());
-    video.attachdriver(MDA_driver());
+    VGA_driver vga_driver = VGA_driver();
+    EGA_driver ega_driver = EGA_driver();
+    CGA_driver cga_driver = CGA_driver();
+    MDA_driver mda_driver = MDA_driver();
+    AT_KEYBOARD_driver at_keyboard_driver = AT_KEYBOARD_driver();
+    XT_KEYBOARD_driver xt_keyboard_driver = XT_KEYBOARD_driver();
+    FAT12_driver fat12_driver = FAT12_driver();
+    FAT16_driver fat16_driver = FAT16_driver();
+    FAT32_driver fat32_driver = FAT32_driver();
+    SFS_driver sfs_driver = SFS_driver();
+    UDF_driver udf_driver = UDF_driver();
+    ELF_driver elf_driver = ELF_driver();
+    RS232_driver rs232_driver = RS232_driver();
+    CD_driver cd_driver = CD_driver();
+    GRUB2_driver grub2_driver = GRUB2_driver();
+
+    //Video first
+    video.attachdriver(vga_driver);
+    video.attachdriver(ega_driver);
+    video.attachdriver(cga_driver);
+    video.attachdriver(mda_driver);
 
     //Then to input
-    input.attachdriver(AT_KEYBOARD_driver());
-    input.attachdriver(XT_KEYBOARD_driver());
+    input.attachdriver(at_keyboard_driver);
+    input.attachdriver(xt_keyboard_driver);
 
     // Now the filesystem
-    filesystem.attachdriver(FAT32_driver());
-    filesystem.attachdriver(FAT16_driver());
-    filesystem.attachdriver(FAT12_driver());
-    filesystem.attachdriver(SFS_driver());
-    filesystem.attachdriver(UDF_driver());
+    filesystem.attachdriver(fat32_driver);
+    filesystem.attachdriver(fat16_driver);
+    filesystem.attachdriver(fat12_driver);
+    filesystem.attachdriver(sfs_driver);
+    filesystem.attachdriver(udf_driver);
 
     //Process stuff
-    process.attachdriver(ELF_driver());
+    process.attachdriver(elf_driver);
 
     //Serial stuff
-    serial.attachdriver(RS232_driver());
+    serial.attachdriver(rs232_driver);
 
     //No sound stuff
 
-    //Disk stuf
-    disk.attachdriver(CD_driver());
+    //Disk stuff
+    disk.attachdriver(cd_driver);
 
     //Boot stuff
-    boot.attachdriver(GRUB2_driver());
+    boot.attachdriver(grub2_driver);
 
 #endif
 
-#ifdef MACHINE GAMEBOY_ADVANCED
+#ifdef GAMEBOY_ADVANCED
 
     //First attach video stuff
-    video.attachdriver(GBA_SCREEN_driver());
+    VGA_driver vga_driver = VGA_driver();
+    EGA_driver ega_driver = EGA_driver();
+    CGA_driver cga_driver = CGA_driver();
+    MDA_driver mda_driver = MDA_driver();
+    AT_KEYBOARD_driver at_keyboard_driver = AT_KEYBOARD_driver();
+    XT_KEYBOARD_driver xt_keyboard_driver = XT_KEYBOARD_driver();
+    FAT12_driver fat12_driver = FAT12_driver();
+    FAT16_driver fat16_driver = FAT16_driver();
+    FAT32_driver fat32_driver = FAT32_driver();
+    SFS_driver sfs_driver = SFS_driver();
+    UDF_driver udf_driver = UDF_driver();
+    ELF_driver elf_driver = ELF_driver();
+    GBA_IO_PORT_driver rs232_driver = GBA_IO_PORT_driver();
+    CD_driver cd_driver = CD_driver();
+    GRUB2_driver grub2_driver = GRUB2_driver();
+
+    //Video first
+    video.attachdriver(vga_driver);
+    video.attachdriver(ega_driver);
+    video.attachdriver(cga_driver);
+    video.attachdriver(mda_driver);
 
     //Then to input
-    input.attachdriver(GBA_GAMEPAD_driver());
+    input.attachdriver(at_keyboard_driver);
+    input.attachdriver(xt_keyboard_driver);
 
     // Now the filesystem
-    filesystem.attachdriver(FAT32_driver());
-    filesystem.attachdriver(FAT16_driver());
-    filesystem.attachdriver(FAT12_driver());
-    filesystem.attachdriver(SFS_driver());
-    filesystem.attachdriver(UDF_driver());
+    filesystem.attachdriver(fat32_driver);
+    filesystem.attachdriver(fat16_driver);
+    filesystem.attachdriver(fat12_driver);
+    filesystem.attachdriver(sfs_driver);
+    filesystem.attachdriver(udf_driver);
 
     //Process stuff
-    process.attachdriver(ELF_driver());
+    process.attachdriver(elf_driver);
 
     //Serial stuff
-    serial.attachdriver(RS232_driver());
+    serial.attachdriver(rs232_driver);
 
-    //Sound stuff
-    sound.attachdriver(GBA_SOUND_driver());
+    //No sound stuff
 
-    //Disk stuf
-    disk.attachdriver(GBA_CARTRIDGE_driver());
+    //Disk stuff
+    disk.attachdriver(cd_driver);
 
     //Boot stuff
-    boot.attachdriver(GBA_BOOT_driver());
+    boot.attachdriver(grub2_driver);
 
 #endif
 }
