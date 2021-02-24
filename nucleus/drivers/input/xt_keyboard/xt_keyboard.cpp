@@ -15,12 +15,7 @@ bool XT_KEYBOARD_driver::detectsystem(void)
 
     /* Check the first keyboard flag bitmap
        Bit 4 equaling 0 means a XT keyboard */
-    if ((*((uint8_t *)0x400096) & 0x10) == 0)
-    {
-
-        // This keyboard is XT, or a emulator
-        return true;
-    }
+    return (*((uint8_t *)0x400096) & 0x10) == 0;
 }
 
 /*
@@ -41,12 +36,15 @@ key_identifier XT_KEYBOARD_driver::getkey(void)
 
 bool XT_KEYBOARD_driver::isshiftpressed(void)
 {
+    return false;
 }
 
 bool XT_KEYBOARD_driver::isaltpressed(void)
 {
+    return false;
 }
 
 bool XT_KEYBOARD_driver::isctrlpressed(void)
 {
+    return false;
 }

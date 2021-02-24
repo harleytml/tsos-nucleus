@@ -115,6 +115,8 @@ uint16_t CGA_driver::getscreenheight(void)
     return 25;
   case GRAPHIC:
     return 0;
+  default:
+    return 0;
   }
 }
 

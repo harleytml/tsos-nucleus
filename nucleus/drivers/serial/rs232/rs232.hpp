@@ -10,7 +10,7 @@ public:
     RS232_driver(void);
     bool detectsystem(void);
     bool isdevicethere(void);
-    uint8_t exchangebyte(uint8_t b)
+    uint8_t exchangebyte(uint8_t b);
 };
 
 #endif

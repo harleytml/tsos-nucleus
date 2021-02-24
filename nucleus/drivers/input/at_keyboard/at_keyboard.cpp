@@ -15,12 +15,7 @@ bool AT_KEYBOARD_driver::detectsystem(void)
 
     /* Check the first keyboard flag bitmap
     Bit 4 equaling 1 means a AT keyboard */
-    if ((*((uint8_t *)0x400096) & 0x10) == 1)
-    {
-
-        //This keyboard is AT, or a emulator
-        return true;
-    }
+    return (*((uint8_t *)0x400096) & 0x10) == 1;
 }
 
 /* So detecting keys in PC is a little sketchy.
@@ -40,12 +35,15 @@ key_identifier AT_KEYBOARD_driver::getkey(void)
 
 bool AT_KEYBOARD_driver::isshiftpressed(void)
 {
+    return false;
 }
 
 bool AT_KEYBOARD_driver::isaltpressed(void)
 {
+    return false;
 }
 
 bool AT_KEYBOARD_driver::isctrlpressed(void)
 {
+    return false;
 }

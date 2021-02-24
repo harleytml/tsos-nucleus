@@ -40,7 +40,7 @@ void Filesystem::close(File file)
     }
 }
 
-uint8_t *Filesystem::read(File file, uint32_t length);
+uint8_t *Filesystem::read(File file, uint32_t length)
 {
 }
 
