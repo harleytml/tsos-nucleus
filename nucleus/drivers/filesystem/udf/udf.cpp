@@ -8,6 +8,8 @@ UDF_driver::UDF_driver(void)
 
 bool UDF_driver::detectsystem(void)
 {
+    //Doesn't work right now 
+    /*
     uint8_t diskfsname[5] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "";
     for (uint8_t x = 0; x < 0x5; x++)
@@ -18,6 +20,8 @@ bool UDF_driver::detectsystem(void)
         }
     }
     return true;
+    */
+   return true;
 }
 
 char **UDF_driver::readdir(char *path)

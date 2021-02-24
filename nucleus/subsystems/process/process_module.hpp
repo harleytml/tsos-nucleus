@@ -6,38 +6,8 @@
 #include "../../core/module.hpp"
 #include "../../core/types.hpp"
 #include "./process_driver.hpp"
-
-#define PROCESS_COUNT 0xff
-
-// The possible state of processes
-enum process_state
-{
-  // A running process
-  RUNNING,
-
-  // A halted process
-  HALTED,
-
-  // A hung process
-  HUNG,
-
-  // An idle process
-  IDLE
-};
-
-// The class holding the information of a process
-class Process_info
-{
-public:
-  // Constructor
-  Process_info(uint8_t p, process_state s);
-
-  // The PID of a process
-  uint8_t pid;
-
-  // The state of a process
-  process_state state;
-};
+#include "./process_info.hpp"
+#include "./process_state.hpp"
 
 // The main classes to control processes
 class Process : public Module<Process_driver>
@@ -69,7 +39,7 @@ private:
   Process_driver *driver;
 
   // The table of processes
-  Process_info processes[PROCESS_COUNT];
+  Process_info processes[255];
 };
 
 #endif

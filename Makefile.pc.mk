@@ -21,7 +21,7 @@ LD_FLAGS=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmat
 
 CPP_FILES=$(shell find $(NUCLEUS_DIR) -name \*.cpp)
 
-$(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/nucleus.o $(BUILD_DIR)/bootloader.o 
+$(BUILD_DIR)/nucleus.tse: $(BUILD_DIR)/bootloader.o $(BUILD_DIR)/nucleus.o 
 :$(CPP) $(LD_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/nucleus.o: $(CPP_FILES)

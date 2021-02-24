@@ -34,17 +34,21 @@ void CGA_driver::reset(void)
 
 void CGA_driver::putchar(char c, Color bc, Color fc)
 {
+  uint8_t a = 0;
+  uint8_t o;
   switch (mode)
   {
   case TEXT:
-    uint8_t a = 0;
-    uint8_t o = text_buffer[text_cursor + 2];
 
-    /* This is a early driver.
-       Each attribute has 1 bit per color, plus intensity
-       Basically, if a color is higher than 0, it is considered active
-       Also, it compares it with its old value if the alpha is high enough
-       The result is a rather messy algorithem */
+    o = text_buffer[text_cursor + 2];
+
+    /* 
+    This is a early driver.
+    Each attribute has 1 bit per color, plus intensity
+    Basically, if a color is higher than 0, it is considered active
+    Also, it compares it with its old value if the alpha is high enough
+    The result is a rather messy algorithem
+     */
 
     // Set the background intensity
     a |= ((bc.intensity >= 0x80) << 7) | ((o & 0x80) & ((bc.alpha >= 0x80) << 7));

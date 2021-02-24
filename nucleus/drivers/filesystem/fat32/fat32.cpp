@@ -8,6 +8,8 @@ FAT32_driver::FAT32_driver(void)
 
 bool FAT32_driver::detectsystem(void)
 {
+    //Doesn't work right now
+    /*
     uint8_t diskfsname[] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "FAT32";
     for (uint8_t x = 0; x < 0x5; x++)
@@ -17,6 +19,8 @@ bool FAT32_driver::detectsystem(void)
             return false;
         }
     }
+    return true;
+    */
     return true;
 }
 
