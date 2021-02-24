@@ -10,6 +10,7 @@
 #include "../nucleus/drivers/filesystem/sfs/sfs.hpp"
 #include "../nucleus/drivers/filesystem/udf/udf.hpp"
 #include "../nucleus/drivers/input/at_keyboard/at_keyboard.hpp"
+#include "../nucleus/drivers/input/xt_keyboard/xt_keyboard.hpp"
 #include "../nucleus/drivers/process/elf/elf.hpp"
 #include "../nucleus/drivers/serial/rs232/rs232.hpp"
 #include "../nucleus/drivers/video/cga/cga.hpp"
