@@ -4,10 +4,6 @@
 
 #include "../../core/types.hpp"
 
-
-// This file is customized by for the system
-#include "../../../build/current_config.hpp"
-
 // The class defining fonts
 class Font
 {

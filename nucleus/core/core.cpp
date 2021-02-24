@@ -18,7 +18,7 @@ Tsos::Tsos(void)
     process = Process();
     disk = Disk();
 
-#if MACHINE PERSONAL_COMPUTER
+#ifdef MACHINE PERSONAL_COMPUTER
 
     //First attach video stuff
     video.attachdriver(VGA_driver());
@@ -50,6 +50,38 @@ Tsos::Tsos(void)
 
     //Boot stuff
     boot.attachdriver(GRUB2_driver());
+
+#endif
+
+#ifdef MACHINE GAMEBOY_ADVANCED
+
+    //First attach video stuff
+    video.attachdriver(GBA_SCREEN_driver());
+
+    //Then to input
+    input.attachdriver(GBA_GAMEPAD_driver());
+
+    // Now the filesystem
+    filesystem.attachdriver(FAT32_driver());
+    filesystem.attachdriver(FAT16_driver());
+    filesystem.attachdriver(FAT12_driver());
+    filesystem.attachdriver(SFS_driver());
+    filesystem.attachdriver(UDF_driver());
+
+    //Process stuff
+    process.attachdriver(ELF_driver());
+
+    //Serial stuff
+    serial.attachdriver(RS232_driver());
+
+    //Sound stuff
+    sound.attachdriver(GBA_SOUND_driver());
+
+    //Disk stuf
+    disk.attachdriver(GBA_CARTRIDGE_driver());
+
+    //Boot stuff
+    boot.attachdriver(GBA_BOOT_driver());
 
 #endif
 }

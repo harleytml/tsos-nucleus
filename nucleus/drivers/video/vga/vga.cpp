@@ -11,7 +11,7 @@ bool VGA_driver::detectsystem(void)
 {
 
   // Check to see if VGA or EGA is installed
-  if (*((uint8_t)0x400087) != 0)
+  if (*((uint8_t *)0x400087) != 0)
   {
 
     // WARNING: This also passes for EGA
@@ -35,7 +35,7 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port number for the color type
-    switch (*((uint16_t)0x400463))
+    switch (*((uint16_t *)0x400463))
     {
 
     //Monochrome
@@ -110,9 +110,9 @@ void VGA_driver::putchar(char c, Color bc, Color fc)
     }
   }
 
-  void VGA_driver::drawpx(int pos_x, int pos_y, Color c)
+  void VGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
   {
-    uint8_t *location = (unsigned char *)0xA0000 + screen_width * pos_y + pos_x;
+    uint8_t *location = (uint8_t *)0xA0000 + screen_width * pos_y + pos_x;
     *location = c;
   }
 

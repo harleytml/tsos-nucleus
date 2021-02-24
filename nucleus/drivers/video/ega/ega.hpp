@@ -9,6 +9,7 @@ class EGA_driver : public Video_driver
 {
 public:
   EGA_driver(void);
+  bool detectsystem(void);
   void reset(void);
   void putchar(char c, Color bc, Color fc);
   uint16_t gettextcursor(void);

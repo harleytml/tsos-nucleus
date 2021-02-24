@@ -15,7 +15,7 @@ bool MDA_driver::detectsystem(void)
     {
 
         // Check if display is monochrome
-        if (*((uint8_t *)0x400010) & 0x30 == 0x30)
+        if ((*((uint8_t *)0x400010) & 0x30) == 0x30)
         {
 
             // Display is MDA, or a card in MDA emulation mode

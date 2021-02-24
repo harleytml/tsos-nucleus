@@ -28,5 +28,4 @@ enum machine_type
   UNKNOWN
 };
 
-
 #endif

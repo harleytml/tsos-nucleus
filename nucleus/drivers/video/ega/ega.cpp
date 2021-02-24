@@ -10,7 +10,7 @@ EGA_driver::EGA_driver(void)
 bool EGA_driver::detectsystem(void)
 {
   // Check to see if VGA or EGA is installed
-  if (*((uint8_t)0x400087) != 0)
+  if (*((uint8_t *)0x400087) != 0)
   {
     // WARNING: This also passes for VGA
     return true;
@@ -33,7 +33,7 @@ void EGA_driver::putchar(char c, Color bc, Color fc)
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port for the color type
-    switch (*((uint16_t)0x400463))
+    switch (*((uint16_t *)0x400463))
     {
 
     // Monochrome
@@ -81,10 +81,10 @@ void EGA_driver::putchar(char c, Color bc, Color fc)
       text_buffer[text_cursor] = c;
 
       // Move that cursor forward a little
-      seektextcursor(gettextcursor() + 1)
+      seektextcursor(gettextcursor() + 1);
 
-          // Put the attribute byte
-          text_buffer[text_cursor] = (char)a;
+      // Put the attribute byte
+      text_buffer[text_cursor] = (char)a;
       return;
     default:
 
@@ -134,13 +134,13 @@ char *EGA_driver::gettextbuffer(void)
 {
 
   // Read the offset of the current video page from the BIOS
-  return (char *)(*((uint16_t)0x40044e));
+  return (char *)(*((uint16_t *)0x40044e));
 }
 
 uint16_t EGA_driver::gettextbufferlength(void)
 {
   // Read the length from the BIOS
-  return (*((uint16_t)0x40044c));
+  return (*((uint16_t *)0x40044c));
 }
 
 void EGA_driver::setfont(Font f)
