@@ -10,7 +10,6 @@ EGA_driver::EGA_driver(void)
 bool EGA_driver::detectsystem(void)
 {
   // Check to see if VGA or EGA is installed
-
   // WARNING: This also passes for VGA
 
   return *((uint8_t *)0x400087) != 0;
@@ -41,7 +40,7 @@ void EGA_driver::putchar(char c, Color bc, Color fc)
 
     // Color
     case 0x3d4:
-      uint8_t a;
+      uint8_t a = 0;
       uint8_t o = text_buffer[text_cursor + 2];
 
       /* This is a early driver

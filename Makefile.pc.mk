@@ -27,13 +27,13 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 default: $(BUILD_DIR)/nucleus.tse
 
 $(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(BUILD_DIR)/bootloader.o 
-:$(CPP) $(LD_FLAGS) -o $@ $^ 
+:$(CPP) $(LD_FLAGS) -o $@ -c $^ 
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-:$(CPP) $(CPP_FLAGS) -o $@ $^ 
+:$(CPP) $(CPP_FLAGS) -o $@ -c $^ 
 
 $(BUILD_DIR)/bootloader.o: $(ASM_DIR)/grub2.asm 
-:$(AS) $(AS_FLAGS) -o $@ $^
+:$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
 :rm -rfv $(shell find $(SRC_DIR) -name \*.o)
