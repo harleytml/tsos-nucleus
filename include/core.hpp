@@ -70,6 +70,6 @@ protected:
   char *short_code_name;
 };
 
-Tsos tsos;
+static Tsos tsos = Tsos();
 
 #endif

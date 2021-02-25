@@ -132,6 +132,6 @@ extern "C"
 {
     void kernel_main(void)
     {
-        tsos = Tsos();
+        tsos.video.putstring("Welcome to TS/OS\n");
     }
 }
