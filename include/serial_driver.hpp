@@ -2,8 +2,8 @@
 #ifndef __TSOS_NUCLEUS_SERIAL_DRIVER__
 #define __TSOS_NUCLEUS_SERIAL_DRIVER__
 
- #include "driver.hpp"
- #include "types.hpp"
+#include "driver.hpp"
+#include "types.hpp"
 
 class Serial_driver : public Driver
 {

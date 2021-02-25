@@ -2,8 +2,8 @@
 #ifndef __TSOS_NUCLEUS_SOUND_DRIVER__
 #define __TSOS_NUCLEUS_SOUND_DRIVER__
 
- #include "driver.hpp"
- #include "types.hpp"
+#include "driver.hpp"
+#include "types.hpp"
 #include "sound_tone.hpp"
 
 class Sound_driver : public Driver
