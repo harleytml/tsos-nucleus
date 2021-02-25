@@ -8,6 +8,9 @@
 class Permissions
 {
 public:
+
+  Permissions();
+  
   //Constructor
   Permissions(bool r, bool w, bool e);
 

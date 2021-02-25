@@ -9,7 +9,6 @@ Module<T>::Module(void) : name("")
 template <class T>
 Module<T>::~Module(void)
 {
-    delete[] name;
 }
 
 template <class T>
@@ -25,6 +24,5 @@ void Module<T>::attachdriver(T &d) const
     {
 
         // Preventing overfill of the heap
-        delete &d;
     }
 }

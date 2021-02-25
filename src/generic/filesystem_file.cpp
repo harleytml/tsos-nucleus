@@ -3,7 +3,7 @@
 
 File::File(void)
 {
-    permissions = new Permissions(false, false, false);
+    permissions = Permissions(false, false, false);
 }
 
 File::File(char *pa, Permissions per)

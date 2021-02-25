@@ -119,12 +119,10 @@ void Video::scroll(uint8_t lines)
 
 void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
-  delete &backgroundcolor;
   backgroundcolor = Color(red, green, blue, alpha);
 }
 
 void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
 {
-  delete &foregroundcolor;
   foregroundcolor = Color(red, green, blue, alpha);
 }

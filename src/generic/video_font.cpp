@@ -13,5 +13,4 @@ Font::Font(uint8_t *d)
 
 Font::~Font(void)
 {
-    delete data;
 }

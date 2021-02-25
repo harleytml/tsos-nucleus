@@ -23,7 +23,7 @@ public:
   char *path;
 
   //The permissions the file was opened in
-  Permissions *permissions;
+  Permissions permissions;
 };
 
 #endif
