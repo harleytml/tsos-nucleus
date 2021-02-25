@@ -115,6 +115,13 @@ extern "C"
 	{
 	}
 
+	void __cxa_pure_virtual()
+	{
+		while (true)
+		{
+		}
+	}
+
 	//The kernel knows how to do these things, so ill map it there
 
 	void *operator new(size_t size)
