@@ -26,6 +26,7 @@ bool FAT12_driver::detectsystem(void)
 
 char **FAT12_driver::readdir(char *path)
 {
+    return (char **)"";
 }
 
 void FAT12_driver::rename(char *path, char *newPath)
@@ -34,6 +35,7 @@ void FAT12_driver::rename(char *path, char *newPath)
 
 File FAT12_driver::open(char *path)
 {
+    return File();
 }
 
 void FAT12_driver::close(File file)
@@ -42,6 +44,7 @@ void FAT12_driver::close(File file)
 
 char *FAT12_driver::read(File file)
 {
+    return "";
 }
 
 void FAT12_driver::write(File file, char *data)
@@ -50,6 +53,7 @@ void FAT12_driver::write(File file, char *data)
 
 char *FAT12_driver::readfile(char *path)
 {
+    return "";
 }
 
 void FAT12_driver::writefile(char *path, char *data)
@@ -62,4 +66,5 @@ void FAT12_driver::appendfile(char *path, char *data)
 
 bool FAT12_driver::exists(char *path)
 {
+    return true;
 }

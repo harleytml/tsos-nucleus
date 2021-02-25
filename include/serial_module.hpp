@@ -2,9 +2,9 @@
 #ifndef __TSOS_NUCLEUS_SERIAL_MODULE__
 #define __TSOS_NUCLEUS_SERIAL_MODULE__
 
- #include "driver.hpp" 
- #include "module.hpp"
- #include "types.hpp"
+#include "driver.hpp"
+#include "module.hpp"
+#include "types.hpp"
 #include "serial_driver.hpp"
 
 // The main class controlling serial

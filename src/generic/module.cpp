@@ -20,9 +20,4 @@ void Module<T>::attachdriver(T &d) const
     {
         driver = &d;
     }
-    else
-    {
-
-        // Preventing overfill of the heap
-    }
 }

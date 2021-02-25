@@ -133,5 +133,8 @@ extern "C"
     void kernel_main(void)
     {
         tsos.video.putstring("Welcome to TS/OS\n");
+        tsos.video.putstring("Build Date: ");
+        tsos.video.putstring(__DATE__);
+        tsos.video.putstring("\n");
     }
 }

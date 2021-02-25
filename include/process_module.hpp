@@ -2,9 +2,9 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_MODULE__
 #define __TSOS_NUCLEUS_PROCESS_MODULE__
 
- #include "driver.hpp" 
- #include "module.hpp"
- #include "types.hpp"
+#include "driver.hpp"
+#include "module.hpp"
+#include "types.hpp"
 #include "process_driver.hpp"
 #include "process_info.hpp"
 #include "process_state.hpp"
