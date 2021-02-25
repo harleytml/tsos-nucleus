@@ -21,18 +21,19 @@ AS_FLAGS:=-g -mtune=i686
 LD:=tsos-i686-ld.gold
 LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib -lgcc
 
-CPP_FILES:=$(wildcard $(SRC_DIR)/*.cpp)
+CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
+CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus.tse
 
-$(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(BUILD_DIR)/bootloader.o 
+$(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(ASM_DIR)/bootloader.o 
 :$(CPP) $(LD_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BUILD_DIR)/bootloader.o: $(ASM_DIR)/grub2.asm 
+$(ASM_DIR)/bootloader.o: $(ASM_DIR)/grub2.asm 
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
