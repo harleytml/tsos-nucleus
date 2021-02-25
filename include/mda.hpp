@@ -11,7 +11,7 @@ public:
   MDA_driver(void);
   bool detectsystem(void);
   void reset(void);
-  void putchar(char c, Color bc, Color fc);
+  void putchar(char c, const Color &bc, const Color &fc);
   void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
   uint16_t gettextcursor(void);
   void seektextcursor(uint16_t pos);

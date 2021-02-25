@@ -3,6 +3,19 @@
 
 Input::Input(void)
 {
+#ifdef __PERSONAL_COMPUTER__
+    AT_KEYBOARD_driver at_keyboard_driver = AT_KEYBOARD_driver();
+    XT_KEYBOARD_driver xt_keyboard_driver = XT_KEYBOARD_driver();
+
+    attachdriver(at_keyboard_driver);
+    attachdriver(xt_keyboard_driver);
+#endif
+
+#ifdef __GAMEBOY_ADVANCED__
+    GBA_GAMEPAD_driver gba_gamepad_driver = GBA_GAMEPAD_driver();
+
+    attachdriver(gba_gamepad_driver);
+#endif
 }
 
 Input::~Input(void)

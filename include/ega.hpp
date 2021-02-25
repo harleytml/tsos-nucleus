@@ -12,7 +12,7 @@ public:
   bool detectsystem(void);
   void reset(void);
   void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
-  void putchar(char c, Color bc, Color fc);
+  void putchar(char c, const Color &bc, const Color &fc);
   uint16_t gettextcursor(void);
   void seektextcursor(uint16_t pos);
   char *gettextbuffer(void);

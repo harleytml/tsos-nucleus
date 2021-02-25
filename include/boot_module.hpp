@@ -6,6 +6,7 @@
 #include "module.hpp"
 #include "types.hpp"
 #include "boot_driver.hpp"
+#include "current_config.hpp"
 
 // The main class controlling the system runtime
 class Boot : public Module<Boot_driver>
@@ -25,10 +26,6 @@ public:
 
   // The equivelant kernel panic, or bsod,
   void fission(char *errormsg);
-
-private:
-  // The boot driver being used
-  Boot_driver *driver;
 };
 
 #endif

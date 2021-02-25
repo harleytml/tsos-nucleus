@@ -6,6 +6,7 @@
 #include "module.hpp"
 #include "types.hpp"
 #include "serial_driver.hpp"
+#include "current_config.hpp"
 
 // The main class controlling serial
 class Serial : public Module<Serial_driver>
@@ -22,10 +23,6 @@ public:
 
   // Is device there
   bool isdevicethere(void);
-
-private:
-  // Serial driver
-  Serial_driver *driver;
 };
 
 #endif

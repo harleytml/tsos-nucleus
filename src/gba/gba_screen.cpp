@@ -43,7 +43,7 @@ void GBA_SCREEN_driver::reset(void)
   text_buffer = gettextbuffer();
 }
 
-void GBA_SCREEN_driver::putchar(char c, Color bc, Color fc)
+void GBA_SCREEN_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   text_buffer[text_cursor] = c;
 }

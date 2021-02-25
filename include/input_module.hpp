@@ -2,11 +2,12 @@
 #ifndef __TSOS_NUCLEUS_INPUT_MODULE__
 #define __TSOS_NUCLEUS_INPUT_MODULE__
 
- #include "driver.hpp" 
- #include "module.hpp"
- #include "types.hpp"
+#include "driver.hpp"
+#include "module.hpp"
+#include "types.hpp"
 #include "input_driver.hpp"
 #include "input_key_identifier.hpp"
+#include "current_config.hpp"
 
 // The main class controlling input
 class Input : public Module<Input_driver>
@@ -23,10 +24,6 @@ public:
 
   // Wait for a key to be pressed
   void waitkey(void);
-
-private:
-  // Input driver
-  Input_driver *driver;
 };
 
 enum key_position

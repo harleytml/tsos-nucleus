@@ -7,6 +7,7 @@
 #include "filesystem_driver.hpp"
 #include "filesystem_file.hpp"
 #include "filesystem_permissions.hpp"
+#include "current_config.hpp"
 
 //The main class controlling the filesystem
 class Filesystem : public Module<Filesystem_driver>
@@ -63,9 +64,6 @@ private:
 
   //The files currently opened
   File open_files[128];
-
-  //Filesystem driver
-  Filesystem_driver *driver;
 };
 
 #endif

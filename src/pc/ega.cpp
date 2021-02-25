@@ -26,7 +26,7 @@ void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 {
 }
 
-void EGA_driver::putchar(char c, Color bc, Color fc)
+void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   switch (mode)
   {

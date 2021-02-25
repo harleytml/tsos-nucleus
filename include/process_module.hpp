@@ -8,6 +8,7 @@
 #include "process_driver.hpp"
 #include "process_info.hpp"
 #include "process_state.hpp"
+#include "current_config.hpp"
 
 // The main classes to control processes
 class Process : public Module<Process_driver>
@@ -33,11 +34,6 @@ public:
 
   // Free Memory
   void freememory(void *mem);
-
-private:
-  // Process driver
-  Process_driver *driver;
-
   // The table of processes
   Process_info processes[255];
 };

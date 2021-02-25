@@ -20,9 +20,9 @@ public:
   const char *name;
 
   // Attach a driver
-  void attachdriver(T &d) const;
+  void attachdriver(const T &d);
 
-private:
+protected:
   T *driver;
 };
 

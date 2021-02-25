@@ -2,13 +2,14 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_MODULE__
 #define __TSOS_NUCLEUS_VIDEO_MODULE__
 
- #include "driver.hpp"
-  #include "module.hpp"
-  #include "types.hpp"
+#include "driver.hpp"
+#include "module.hpp"
+#include "types.hpp"
 #include "video_driver.hpp"
 #include "video_color.hpp"
 #include "video_font.hpp"
 #include "video_modes.hpp"
+#include "current_config.hpp"
 
 // The main class controlling video
 class Video : public Module<Video_driver>
@@ -66,9 +67,6 @@ public:
   void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
 
 private:
-  // Video driver
-  Video_driver *driver;
-
   // Current font
   Font font;
 

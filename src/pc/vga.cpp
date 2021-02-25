@@ -27,7 +27,7 @@ void VGA_driver::reset(void)
   text_buffer = gettextbuffer();
 }
 
-void VGA_driver::putchar(char c, Color bc, Color fc)
+void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
   uint8_t o;

@@ -36,7 +36,7 @@ void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 {
 }
 
-void CGA_driver::putchar(char c, Color bc, Color fc)
+void CGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
   uint8_t o;

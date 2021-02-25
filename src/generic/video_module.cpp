@@ -3,12 +3,28 @@
 
 Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(Color(0xff, 0xff, 0xff))
 {
+#ifdef __PERSONAL_COMPUTER__
+  VGA_driver vga_driver = VGA_driver();
+  EGA_driver ega_driver = EGA_driver();
+  CGA_driver cga_driver = CGA_driver();
+  MDA_driver mda_driver = MDA_driver();
+
+  attachdriver(vga_driver);
+  attachdriver(ega_driver);
+  attachdriver(cga_driver);
+  attachdriver(mda_driver);
+#endif
+
+#ifdef __GAMEBOY_ADVANCED__
+  GBA_SCREEN_driver gba_screen_driver = GBA_SCREEN_driver();
+
+  attachdriver(gba_screen_driver);
+#endif
   clear();
 }
 
 Video::~Video()
 {
-
 }
 
 void Video::reset(void)

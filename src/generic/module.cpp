@@ -12,7 +12,7 @@ Module<T>::~Module(void)
 }
 
 template <class T>
-void Module<T>::attachdriver(T &d) const
+void Module<T>::attachdriver(const T &d)
 {
 
     // The driver has to be for the right machine and run on that machine's configuration

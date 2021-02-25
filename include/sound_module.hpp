@@ -7,6 +7,7 @@
 #include "types.hpp"
 #include "sound_driver.hpp"
 #include "sound_tone.hpp"
+#include "current_config.hpp"
 
 //The main class controlling sound
 class Sound : public Module<Sound_driver>
@@ -20,10 +21,6 @@ public:
 
   // Play a tone
   void playtone(Tone tone);
-
-private:
-  // Sound driver
-  Sound_driver *driver;
 };
 
 #endif

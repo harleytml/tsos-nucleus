@@ -6,6 +6,7 @@
 #include "module.hpp"
 #include "types.hpp"
 #include "disk_driver.hpp"
+#include "current_config.hpp"
 
 // The main class controlling the disks
 class Disk : public Module<Disk_driver>
@@ -25,10 +26,6 @@ public:
 
   // Do not return till the disk is idle (for when you need to shutdown, reboot, or remove the disk)
   void commitall(void);
-
-private:
-  // Disk driver
-  Disk_driver *driver;
 };
 
 #endif

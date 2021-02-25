@@ -7,7 +7,8 @@
       "compilerPath": "/usr/tsos-toolchain/bin/tsos-i686-g++",
       "cStandard": "c99",
       "cppStandard": "c++20",
-      "intelliSenseMode": "gcc-x86"
+      "intelliSenseMode": "gcc-x86",
+      "compilerArgs": ["-D__PERSONAL_COMPUTER__"]
     },
     {
       "name": "GBA",
@@ -16,7 +17,16 @@
       "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
       "cStandard": "c99",
       "cppStandard": "c++20",
-      "intelliSenseMode": "gcc-arm"
+      "intelliSenseMode": "gcc-arm",
+      "compilerArgs": ["-D__GAMEBOY_ADVANCED__"],
+      "intelliSenseModeIsExplicit": true,
+      "cStandardIsExplicit": true,
+      "cppStandardIsExplicit": true,
+      "compilerPathIsExplicit": true,
+      "browse": {
+        "path": ["${workspaceFolder}/**"],
+        "limitSymbolsToIncludedHeaders": true
+      }
     },
     {
       "name": "PSX",
@@ -25,7 +35,15 @@
       "compilerPath": "/usr/tsos-toolchain/bin/tsos-mipsel-g++",
       "cStandard": "c99",
       "cppStandard": "c++20",
-      "intelliSenseMode": "${default}"
+      "compilerArgs": ["-D__PLAYSTATION_X__"],
+      "intelliSenseModeIsExplicit": true,
+      "cStandardIsExplicit": true,
+      "cppStandardIsExplicit": true,
+      "compilerPathIsExplicit": true,
+      "browse": {
+        "path": ["${workspaceFolder}/**"],
+        "limitSymbolsToIncludedHeaders": true
+      }
     }
   ],
   "version": 4
