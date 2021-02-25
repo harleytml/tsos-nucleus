@@ -92,3 +92,18 @@ cp -v "../Makefile.$1.mk" "./Makefile"
 cp -v "../config/$1.hpp" "./current_config.hpp"
 make clean
 make -j$(nproc)
+
+# Lets deploy these images
+case $1 in
+pc)
+    if ! grub-file --is-x86-multiboot "./nucleus.tse"; then
+        echo "Compiling failed"
+        exit 1
+    fi
+    cp -v ./nucleus.tse "$FILESYSTEM_ROOT/bin/nucleus.tse"
+    cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/cfg/grub.cfg"
+    grub-mkrescue -o ./tsos.iso "$FILESYSTEM_ROOT"
+    ;;
+gba) ;;
+
+esac
