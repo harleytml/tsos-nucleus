@@ -12,7 +12,7 @@ public:
   // Constructor
   CD_driver(void);
 
-  ~CD_driver(void);
+  ~CD_driver();
 
   bool detectsystem(void);
 

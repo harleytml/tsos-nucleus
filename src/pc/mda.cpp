@@ -4,7 +4,7 @@
 MDA_driver::MDA_driver(void)
 {
     name = "Monochrome Display Adapter";
-    font=Font();
+    font = Font();
     reset();
 }
 
@@ -31,6 +31,10 @@ void MDA_driver::reset(void)
     text_cursor = 0;
     text_buffer_length = gettextbufferlength();
     text_buffer = gettextbuffer();
+}
+
+void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+{
 }
 
 // This feels pointless considering that MDA is monochrome
