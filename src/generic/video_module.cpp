@@ -8,9 +8,7 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 
 Video::~Video()
 {
-  delete &font;
-  delete &backgroundcolor;
-  delete &foregroundcolor;
+
 }
 
 void Video::reset(void)
