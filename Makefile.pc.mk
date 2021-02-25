@@ -4,7 +4,7 @@
 
 BUILD_DIR:=../build
 SRC_DIR:=../src
-BOOTLOADER_DIR:=../bootloader
+ASM_DIR:=../asm
 INCLUDE_DIR:=../include
 CONFIG_DIR:=../config
 LINKER_SCRIPTS_DIR:=../linker-scripts
@@ -27,13 +27,13 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus.tse
 
-$(BUILD_DIR)/nucleus.tse: $(BOOTLOADER_DIR)/pc/grub2.o $(OBJ_FILES)
+$(BUILD_DIR)/nucleus.tse: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
 :$(CPP) $(LD_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(BOOTLOADER_DIR)/pc/grub2.o: $(BOOTLOADER_DIR)/pc/grub2.asm 
+$(ASM_DIR)/pc/grub2.o: $(ASM_DIR)/pc/grub2.asm 
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
