@@ -32,6 +32,10 @@ extern "C"
 
 	void __cxa_finalize(void *f);
 	void __cxa_pure_virtual();
+	void *memcpy(void *dstptr, const void *srcptr, size_t size);
+	void *memset(void *bufptr, int value, size_t size);
+	int memcmp(const void *aptr, const void *bptr, size_t size);
+	void *memmove(void *dstptr, const void *srcptr, size_t size);
 }
 
 namespace __cxxabiv1
