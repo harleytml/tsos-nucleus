@@ -210,6 +210,7 @@ extern "C"
 		}
 		return dstptr;
 	}
+
 	int strcmp(const char *p1, const char *p2)
 	{
 		const uint8_t *s1 = (const uint8_t *)p1;
