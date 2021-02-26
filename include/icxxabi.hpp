@@ -23,6 +23,13 @@ extern "C"
 	};
 
 	int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
+
+#ifdef __ARM_EABI__
+
+	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
+
+#endif
+
 	void __cxa_finalize(void *f);
 	void __cxa_pure_virtual();
 }

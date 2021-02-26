@@ -100,10 +100,9 @@ pc)
         echo "Compiling failed"
         exit 1
     fi
-    cp -v ./nucleus.tse "$FILESYSTEM_ROOT/bin/nucleus.tse"
-    cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/cfg/grub.cfg"
-    grub-mkrescue -o ./tsos.iso "$FILESYSTEM_ROOT"
+    cp -v "./nucleus.tse" "$FILESYSTEM_ROOT/bin/nucleus.tse"
+    cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/grub.cfg"
+    grub-mkrescue "$FILESYSTEM_ROOT" -o "./tsos.iso"
     ;;
-gba) ;;
 
 esac

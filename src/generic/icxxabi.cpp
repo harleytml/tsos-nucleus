@@ -101,6 +101,15 @@ extern "C"
 		};
 	}
 
+#ifdef __ARM_EABI__
+
+	int __aeabi_atexit(void *arg, void (*func)(void *), void *d)
+	{
+		return __cxa_atexit(func, arg, d);
+	}
+
+#endif
+
 	int __cxa_guard_acquire(__cxxabiv1::__guard *g)
 	{
 		return !*(char *)(g);

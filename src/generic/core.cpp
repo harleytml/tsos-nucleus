@@ -8,15 +8,6 @@ Tsos::Tsos(void)
     version = 0.0;
     code_name = "Neutronium";
     short_code_name = "n";
-
-    // The Init system
-    video = Video();
-    input = Input();
-    filesystem = Filesystem();
-    boot = Boot();
-    serial = Serial();
-    process = Process();
-    disk = Disk();
 }
 
 Tsos::~Tsos()
@@ -40,5 +31,8 @@ extern "C"
         tsos.video.putstring("Build Date: ");
         tsos.video.putstring(__DATE__);
         tsos.video.putstring("\n");
+        while (true)
+        {
+        }
     }
 }
