@@ -83,7 +83,7 @@ done
 # Prepare the filesystem root for TS/OS
 FILESYSTEM_ROOT="$CODE_DIR/filesystem"
 rm -rfv "$FILESYSTEM_ROOT"
-mkdir -pv "$FILESYSTEM_ROOT/"{bin,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
+mkdir -pv "$FILESYSTEM_ROOT/"{bin,boot,cfg,lib,sys,sys/tmp,sys/headers,sys/info,sys/trash,tmp}
 
 # Make the target nucleus
 mkdir -pv "$CODE_DIR/build/"
@@ -101,8 +101,9 @@ pc)
         exit 1
     fi
     cp -v "./nucleus.tse" "$FILESYSTEM_ROOT/bin/nucleus.tse"
-    cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/grub.cfg"
-    grub-mkrescue "$FILESYSTEM_ROOT" -o "./tsos.iso"
+    mkdir -pv "$FILESYSTEM_ROOT/boot/grub"
+    cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
+    grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
     ;;
 
 esac
