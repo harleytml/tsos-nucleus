@@ -11,16 +11,24 @@ class Module
 {
 public:
   // Constructor
-  Module(void);
+  Module(void) : name(""){};
 
   // Destructor
-  ~Module();
+  ~Module(){};
 
   // The full name of the modules's target
   const char *name;
 
   // Attach a driver
-  void attachdriver(const T &d);
+  void attachdriver(T &d)
+  {
+
+    // The driver has to be for the right machine and run on that machine's configuration
+    if (driver->detectsystem())
+    {
+      driver = &d;
+    }
+  };
 
 protected:
   T *driver;
