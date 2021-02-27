@@ -13,19 +13,19 @@ public:
     ~XT_KEYBOARD_driver();
 
     // Detects if the module should be used
-    bool detectsystem(void);
+    bool detectsystem(void) override;
 
     // Get the key currently pressed
-    key_identifier getkey(void);
+    key_identifier getkey(void) override;
 
     // Is shift pressed
-    bool isshiftpressed(void);
+    bool isshiftpressed(void) override;
 
     // Is alt pressed
-    bool isaltpressed(void);
+    bool isaltpressed(void) override;
 
     // Is ctrl pressed
-    bool isctrlpressed(void);
+    bool isctrlpressed(void) override;
 
 private:
 };

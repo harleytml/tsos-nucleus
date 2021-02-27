@@ -9,8 +9,8 @@ class ELF_driver : public Process_driver
 {
 public:
   ELF_driver(void);
-  bool detectsystem(void);
-  bool isvalidexecutable(char *path);
+  bool detectsystem(void) override;
+  bool isvalidexecutable(char *path) override;
 };
 
 #endif

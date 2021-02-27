@@ -101,7 +101,7 @@ pc)
         exit 1
     fi
     cp -v "./nucleus.tse" "$FILESYSTEM_ROOT/bin/nucleus.tse"
-    mkdir -pv "$FILESYSTEM_ROOT/boot/grub"
+    mkdir -pv "$FILESYSTEM_ROOT/boot/grub/"
     cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
     grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
     ;;

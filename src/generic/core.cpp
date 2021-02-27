@@ -31,8 +31,6 @@ extern "C"
         tsos.video.putstring("Build Date: ");
         tsos.video.putstring(__DATE__);
         tsos.video.putstring("\n");
-        while (true)
-        {
-        }
+        tsos.boot.reboot();
     }
 }

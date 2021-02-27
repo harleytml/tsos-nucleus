@@ -9,9 +9,9 @@ class FAT12_driver : public Filesystem_driver
 {
 public:
   FAT12_driver(void);
-  bool detectsystem(void);
-  char **readdir(char *path);
-  void rename(char *path, char *newPath);
+  bool detectsystem(void) override;
+  char **readdir(char *path) override;
+  void rename(char *path, char *newPath) override;
   File open(char *path);
   void close(File file);
   char *read(File file);
@@ -19,7 +19,7 @@ public:
   char *readfile(char *path);
   void writefile(char *path, char *data);
   void appendfile(char *path, char *data);
-  bool exists(char *path);
+  bool exists(char *path) override;
 
 private:
   char *currentdirectory;

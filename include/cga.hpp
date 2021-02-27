@@ -9,16 +9,16 @@ class CGA_driver : public Video_driver
 {
 public:
   CGA_driver(void);
-  bool detectsystem(void);
-  void reset(void);
-  void drawpx(uint16_t pos_x, uint16_t pos_y, Color c);
-  void putchar(char c, const Color &bc, const Color &fc);
-  uint16_t gettextcursor(void);
-  void seektextcursor(uint16_t pos);
-  char *gettextbuffer(void);
-  uint16_t gettextbufferlength(void);
-  uint16_t getscreenwidth(void);
-  uint16_t getscreenheight(void);
+  bool detectsystem(void) override;
+  void reset(void) override;
+  void drawpx(uint16_t pos_x, uint16_t pos_y, Color c) override;
+  void putchar(char c, const Color &bc, const Color &fc) override;
+  uint16_t gettextcursor(void) override;
+  void seektextcursor(uint16_t pos) override;
+  char *gettextbuffer(void) override;
+  uint16_t gettextbufferlength(void) override;
+  uint16_t getscreenwidth(void) override;
+  uint16_t getscreenheight(void) override;
   void setfont(Font f);
 
 private:

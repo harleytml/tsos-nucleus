@@ -20,3 +20,20 @@ key_identifier GBA_GAMEPAD_driver::getkey(void)
     return KEY_NULL;
 }
 
+// Is shift pressed
+bool GBA_GAMEPAD_driver::isshiftpressed(void)
+{
+    return false;
+}
+
+// Is alt pressed
+bool GBA_GAMEPAD_driver::isaltpressed(void)
+{
+    return false;
+}
+
+// Is ctrl pressed
+bool GBA_GAMEPAD_driver::isctrlpressed(void)
+{
+    return false;
+}

@@ -13,13 +13,13 @@ CC:=tsos-armeabi-gcc
 CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c -fno-builtin
 
 CPP:=tsos-armeabi-g++
-CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -Wno-return-type -Wno-int-to-pointer-cast -Wno-unused-parameter -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c
+CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -Wno-return-type -Wno-int-to-pointer-cast -Wno-unused-parameter -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c
 
 AS:=tsos-armeabi-as
 AS_FLAGS:=-g -mcpu=arm7tdmi -mthumb-interwork
 
 LD:=tsos-armeabi-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O0 -nostdlib -lgcc
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -static -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O0 -nostdlib -lgcc
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)

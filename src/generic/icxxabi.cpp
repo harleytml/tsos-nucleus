@@ -126,6 +126,7 @@ extern "C"
 
 	void __cxa_pure_virtual()
 	{
+		tsos.video.putstring("Pure Virtual Function Called\n");
 		while (true)
 		{
 		}

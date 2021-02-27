@@ -13,13 +13,13 @@ CC:=tsos-i686-gcc
 CC_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32 -c -fno-builtin
 
 CPP:=tsos-i686-g++
-CPP_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -Wno-return-type -Wno-int-to-pointer-cast -Wno-unused-parameter -fno-exceptions -fno-builtin -fno-rtti -fno-unwind-tables -nostdlib -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32 -c
+CPP_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -Wno-return-type -Wno-int-to-pointer-cast -Wno-unused-parameter -fno-exceptions -fno-builtin -fno-rtti -fno-unwind-tables -nostdlib -nodefaultlibs -lgcc -pedantic -mtune=i686 -mfpmath=387 -m32 -c
 
 AS:=tsos-i686-as
 AS_FLAGS:=-g -mtune=i686 
 
 LD:=tsos-i686-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib -lgcc
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -static -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib -lgcc
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)

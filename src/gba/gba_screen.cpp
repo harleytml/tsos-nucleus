@@ -7,6 +7,10 @@ GBA_SCREEN_driver::GBA_SCREEN_driver(void)
   reset();
 }
 
+GBA_SCREEN_driver::~GBA_SCREEN_driver()
+{
+}
+
 bool GBA_SCREEN_driver::detectsystem(void)
 {
   // There is no way that this GBA driver is running on anything but a GBA, so a true is forced here
@@ -41,6 +45,10 @@ void GBA_SCREEN_driver::reset(void)
   text_cursor = 0;
   text_buffer_length = gettextbufferlength();
   text_buffer = gettextbuffer();
+}
+
+void GBA_SCREEN_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+{
 }
 
 void GBA_SCREEN_driver::putchar(char c, const Color &bc, const Color &fc)
