@@ -169,7 +169,7 @@ char *VGA_driver::gettextbuffer(void)
 {
 
   // Read the offset of the current video page from the BIOS
-  return (char *)(*((uint16_t *)0x40044e));
+  return (char *)0xb800;
 }
 
 uint16_t VGA_driver::gettextbufferlength(void)

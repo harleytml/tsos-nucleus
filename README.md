@@ -5,16 +5,15 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tsuki-superior/tsos-nucleus&utm_campaign=Badge_Grade)
 ![C/C++ CI](https://github.com/tsuki-superior/tsos-nucleus/workflows/C/C++%20CI/badge.svg)
 
-TS/OS
-
 This is TS/OS's Monolithic kernel
 
-Current Version: Neutronium (0.0)
+Current Version: `Neutronium (0.0)`
 
 TS/OS is a SysV ABI, \*nix inspired (sorta), operating system with a focus on being as multiplatform as possible.
 
 TS/OS was a operating system made for several reasons
 
+```text
 1: Because I got bored, and I had nothing to do
 
 2: Because I needed to learn C/C++
@@ -22,6 +21,7 @@ TS/OS was a operating system made for several reasons
 3: Because I got infuriated by the fact that some devices cannot have Linux ports (like the GBA)
 
 4: And finally, because I was inspired by the genius of Terry A. Davis.
+```
 
 TS/OS's existence is for it to be ported. With a fairly rigid and simple driver interface, it should be easy to run it on all those small devices Linux is too picky to run on. The first ports are PC, GBA
 
@@ -31,12 +31,22 @@ The story behind TS/OS is a interesting one. The first edition was mostly develo
 
 I had just learned C++, and wanted to reinvent the wheel. I had a little too much time on my hands.
 
-The naming of TS/OS is the floor of the TS/OS version, as the atomic number of a element. So TS/OS 1 is Hydrogen, TS/OS 2 is Helium etc (look up a periodic table).
-
 The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
 
 In the documents directory, you can find more documents concerning TS/OS.
 
-Portions of this OS were made with software from others
+To build TS/OS, run
 
-Check the documents to find out
+```sh
+./build.sh <platform>
+```
+
+For example, the platform `pc` runs the pc build.
+
+If you want to test, simply run `test` also
+
+```sh
+./build.sh <platform> test
+```
+
+Note that each platform needs its own testing tools

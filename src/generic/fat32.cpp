@@ -26,6 +26,7 @@ bool FAT32_driver::detectsystem(void)
 
 char **FAT32_driver::readdir(char *path)
 {
+    return (char **)NULL;
 }
 
 void FAT32_driver::rename(char *path, char *newPath)
@@ -34,6 +35,7 @@ void FAT32_driver::rename(char *path, char *newPath)
 
 File FAT32_driver::open(char *path)
 {
+    return File();
 }
 
 void FAT32_driver::close(File file)
@@ -42,6 +44,7 @@ void FAT32_driver::close(File file)
 
 char *FAT32_driver::read(File file)
 {
+    return "";
 }
 
 void FAT32_driver::write(File file, char *data)
@@ -50,6 +53,7 @@ void FAT32_driver::write(File file, char *data)
 
 char *FAT32_driver::readfile(char *path)
 {
+    return "";
 }
 
 void FAT32_driver::writefile(char *path, char *data)
@@ -62,4 +66,5 @@ void FAT32_driver::appendfile(char *path, char *data)
 
 bool FAT32_driver::exists(char *path)
 {
+    return false;
 }

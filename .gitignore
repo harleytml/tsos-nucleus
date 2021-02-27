@@ -3,5 +3,6 @@ filesystem/**
 *.o
 *.tse
 *.log
+*.iso
 a.out
 current_config.hpp

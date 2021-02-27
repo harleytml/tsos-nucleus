@@ -13,7 +13,7 @@ CC:=tsos-armeabi-gcc
 CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c -fno-builtin
 
 CPP:=tsos-armeabi-g++
-CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -Wno-unused-parameter -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c
+CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c
 
 AS:=tsos-armeabi-as
 AS_FLAGS:=-g -mcpu=arm7tdmi -mthumb-interwork
@@ -37,4 +37,4 @@ $(ASM_DIR)/gba/gba_boot.o: $(ASM_DIR)/gba/gba_boot.asm
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
-:rm -rfv $(shell find ../ -name \*.o)
+:rm -rfv $(shell find ../ -name \*.o) $(shell find ../ -name \*.tse) $(shell find ../ -name \*.iso)

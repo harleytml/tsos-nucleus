@@ -26,7 +26,7 @@ bool FAT12_driver::detectsystem(void)
 
 char **FAT12_driver::readdir(char *path)
 {
-    return (char **)"";
+    return (char **)NULL;
 }
 
 void FAT12_driver::rename(char *path, char *newPath)

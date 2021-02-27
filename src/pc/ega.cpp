@@ -127,6 +127,8 @@ uint16_t EGA_driver::getscreenheight(void)
     return 25;
   case GRAPHIC:
     return 0;
+  default:
+    return 0;
   }
 }
 

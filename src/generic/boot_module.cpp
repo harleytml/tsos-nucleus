@@ -27,7 +27,6 @@ void Boot::reboot(void)
 
 void Boot::shutdown(void)
 {
-
     // Destroy tsos, to trigger the kernel destruction
     driver->shutdown();
 }

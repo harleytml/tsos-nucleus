@@ -8,18 +8,18 @@ From the scripts and code by Jeff Frohwein from https://www.devrs.com/gba/ccode.
 
 From the scripts and code from https://wiki.osdev.org/Bare_Bones
 
-[/nucleus/drivers/boot/grub2/grub2.asm](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/drivers/boot/grub2/grub2.asm)
+[/asm/pc/grub2/grub2.asm](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/asm/pc/grub2/grub2.asm)
 
 From the scripts and code from https://wiki.osdev.org/Bare_Bones
 
-[/nucleus/drivers/boot/gba_boot/gba_boot.asm](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/drivers/boot/gba_boot/gba_boot.asm)
+[/nucleus/drivers/boot/gba_boot/gba_boot.asm](https://github.com/tsuki-superior/tsos-nucleus/blob/master/asm/gba/gba_boot/gba_boot.asm)
 
 From the scripts and code from https://www.devrs.com/gba/ccode.php
 
-[/nucleus/core/core.hpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/core.hpp)
+[/src/icxxabi.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/src/icxxabi.cpp)
 
-A few bits of code from the codebase at osdev for c++ support
+Taken for solid C++ support
 
-[/nucleus/core/core.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/nucleus/core/icxxabi.cpp)
+[/src/icxxabi.hpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/include/icxxabi.hpp)
 
-A few bits of code from the codebase at osdev for c++ support
+Taken for solid C++ support

@@ -22,13 +22,13 @@ help)
     exit 0
     ;;
 pc)
-    NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld.gold make)
+    NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld.gold make xorriso grub-mkrescue)
     ;;
 gba)
     NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make)
     ;;
 psp)
-    NEEDED_COMMANDS=(make)
+    NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
     echo "This system is not supported yet."
     exit 1
     ;;
@@ -104,6 +104,38 @@ pc)
     mkdir -pv "$FILESYSTEM_ROOT/boot/grub/"
     cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
     grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
+    ;;
+
+esac
+
+case $2 in
+test)
+    case $1 in
+    pc)
+        echo "Launching with qemu"
+        if ! exists "qemu-system-i386"; then
+            echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
+            exit 1
+        fi
+        qemu-system-i386 -kernel "./nucleus.tse"
+        ;;
+    gba) ;;
+
+    esac
+    ;;
+debug)
+    case $1 in
+    pc)
+        if ! exists "qemu-system-i386"; then
+            echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
+            exit 1
+        fi
+        echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
+        qemu-system-i386 -kernel "./nucleus.tse" -s -S
+        ;;
+    gba) ;;
+
+    esac
     ;;
 
 esac
