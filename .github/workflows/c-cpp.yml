@@ -9,13 +9,20 @@ on:
 jobs:
   build-test-pc:
     runs-on: ubuntu-latest
-    container: tsukisuperior/tsos-build:latest
     steps:
-      - name: Test Build
-        run: git clone https://github.com/tsuki-superior/tsos-nucleus.git && cd tsos-nucleus && ./build.sh pc
+      - uses: addnab/docker-run-action@v2
+        with:
+          image: tsukisuperior/tsos-build:latest
+          shell: bash
+          run: |
+            "./build.sh pc"
+
   build-test-gba:
     runs-on: ubuntu-latest
-    container: tsukisuperior/tsos-build:latest
     steps:
-      - name: Test Build
-        run: git clone https://github.com/tsuki-superior/tsos-nucleus.git && cd tsos-nucleus && ./build.sh gba
+      - uses: addnab/docker-run-action@v2
+        with:
+          image: tsukisuperior/tsos-build:latest
+          shell: bash
+          run: |
+            "./build.sh gba"

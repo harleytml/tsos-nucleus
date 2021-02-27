@@ -41,7 +41,7 @@ void Video::putstring(char *str)
 {
   int x = 0;
   char c;
-  while (str[x] != 0)
+  while (str[x] != NULL)
   {
     c = str[x];
     switch (c)
