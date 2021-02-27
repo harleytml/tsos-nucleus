@@ -22,14 +22,7 @@ Serial::~Serial()
 
 uint8_t Serial::exchangebyte(uint8_t b)
 {
-    if (isdevicethere())
-    {
-        return driver->exchangebyte(b);
-    }
-    else
-    {
-        return 0x00;
-    }
+    return isdevicethere() ? driver->exchangebyte(b) : 0x00;
 }
 
 bool Serial::isdevicethere(void)
