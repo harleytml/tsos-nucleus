@@ -7,6 +7,7 @@
     "ms-vscode.makefile-tools",
     "davidanson.vscode-markdownlint",
     "foxundermoon.shell-format",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "jeff-hykin.better-cpp-syntax"
   ]
 }

@@ -1,4 +1,4 @@
 {
-    "editor.formatOnSave": true,
-    "C_Cpp.errorSquiggles": "Enabled"
+  "editor.formatOnSave": true,
+  "C_Cpp.errorSquiggles": "Enabled"
 }

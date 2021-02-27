@@ -16,7 +16,7 @@ From the scripts and code from https://wiki.osdev.org/Bare_Bones
 
 From the scripts and code from https://www.devrs.com/gba/ccode.php
 
-[/src/icxxabi.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/src/icxxabi.cpp)
+[/src/icxxabi.cpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/src/generic/icxxabi.cpp)
 
 Taken for solid C++ support
 
