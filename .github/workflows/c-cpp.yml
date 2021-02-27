@@ -13,7 +13,6 @@ jobs:
       - uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          shell: bash
           run: |
             "./build.sh pc"
 
@@ -23,6 +22,5 @@ jobs:
       - uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          shell: bash
           run: |
             "./build.sh gba"
