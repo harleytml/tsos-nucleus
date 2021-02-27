@@ -18,7 +18,7 @@ help)
     echo "Valid systems:"
     echo ""
     echo "pc  - i686 or higher IBM compatible Personal Computer"
-    echo "gba - Nintendo Gameboy Advanced"
+    echo "gba - Nintendo Gameboy Advance"
     exit 0
     ;;
 pc)
@@ -93,6 +93,8 @@ cp -v "../config/$1.hpp" "./current_config.hpp"
 make clean
 make -j$(nproc)
 
+echo ""
+
 # Lets deploy these images
 case $1 in
 pc)
@@ -108,18 +110,26 @@ pc)
 
 esac
 
+echo ""
+
 case $2 in
 test)
     case $1 in
     pc)
-        echo "Launching with qemu"
         if ! exists "qemu-system-i386"; then
             echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
             exit 1
         fi
         qemu-system-i386 -kernel "./nucleus.tse"
         ;;
-    gba) ;;
+    gba)
+        if ! exists "mgba"; then
+            echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
+            exit 1
+        fi
+        echo "Set you debugger to localhost:2345 with the nucleus.tse as your executable"
+        mgba -d "./nucleus.tse"
+        ;;
 
     esac
     ;;
@@ -127,13 +137,20 @@ debug)
     case $1 in
     pc)
         if ! exists "qemu-system-i386"; then
-            echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
+            echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS on PC"
             exit 1
         fi
         echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
         qemu-system-i386 -kernel "./nucleus.tse" -s -S
         ;;
-    gba) ;;
+    gba)
+        if ! exists "mgba"; then
+            echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
+            exit 1
+        fi
+        echo "Set you debugger to localhost:2345 with the nucleus.tse as your executable"
+        mgba -g "./nucleus.tse"
+        ;;
 
     esac
     ;;
