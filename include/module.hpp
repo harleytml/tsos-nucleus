@@ -17,7 +17,7 @@ public:
   ~Module(){};
 
   // The full name of the modules's target
-  const char *name;
+  char *name;
 
   // Attach a driver
   void attachdriver(T &d)

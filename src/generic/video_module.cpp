@@ -13,6 +13,7 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
   attachdriver(ega_driver);
   attachdriver(cga_driver);
   attachdriver(mda_driver);
+
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__

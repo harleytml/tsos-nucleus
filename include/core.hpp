@@ -38,6 +38,9 @@ public:
   // The module being used to control video
   Video video;
 
+  // The module being used to control disks
+  Disk disk;
+
   // The module being used to process input
   Input input;
 
@@ -52,9 +55,6 @@ public:
 
   // The module being used to control process
   Process process;
-
-  // The module being used to control disks
-  Disk disk;
 
   // The module being used to control sound
   Sound sound;
