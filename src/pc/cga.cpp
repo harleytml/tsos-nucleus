@@ -11,11 +11,15 @@ bool CGA_driver::detectsystem(void)
 {
 
   // Check to make sure EGA and VGA is not installed
-  if (*((uint8_t *)0x400087) == 0)
+  //Address is 0040:0087
+
+  if (*((uint8_t *)0x487) == 0)
   {
 
     // Check if display is monochrome, or MDA
-    if ((*((uint8_t *)0x400010) & 0x30) != 0x30)
+    //Address is 0040:0080
+
+    if ((*((uint8_t *)0x480) & 0x30) != 0x30)
     {
 
       // Display is probably CGA, or a card in CGA emulation mode
@@ -112,7 +116,7 @@ uint16_t CGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
-  return *((uint16_t *)0x40044a);
+  return *((uint16_t *)0x84a);
 }
 
 uint16_t CGA_driver::getscreenheight(void)
@@ -134,14 +138,16 @@ char *CGA_driver::gettextbuffer(void)
 {
 
   // Read the offset of the current video page from the BIOS
-  return (char *)(*((uint16_t *)0x40044e));
+  // address is 0040:044e
+  return (char *)(*((uint16_t *)0x84e));
 }
 
 uint16_t CGA_driver::gettextbufferlength(void)
 {
 
   // Read the length from the BIOS
-  return (*((uint16_t *)0x40044c));
+  // Address is 0040:044c
+  return (*((uint16_t *)0x84c));
 }
 
 void CGA_driver::setfont(Font f)

@@ -2,7 +2,7 @@
 # https://github.com/tsuki-superior/tsos-nucleus/blob/master/documents/TSOS-Ports.md
 
 # Travel to the parent directory
-cd "$(basename "$(dirname "$0")")"
+cd "$(basename "$(dirname "$0")")" || exit 1
 
 # This simple function checks if a command exists
 exists() {
@@ -87,11 +87,11 @@ mkdir -pv "$FILESYSTEM_ROOT/"{bin,boot,cfg,lib,sys,sys/tmp,sys/headers,sys/info,
 
 # Make the target nucleus
 mkdir -pv "$CODE_DIR/build/"
-cd "$CODE_DIR/build/"
+cd "$CODE_DIR/build/" || exit 1
 cp -v "../Makefile.$1.mk" "./Makefile"
 cp -v "../config/$1.hpp" "./current_config.hpp"
 make clean
-make -j$(nproc)
+make -j"$(nproc)"
 
 echo ""
 

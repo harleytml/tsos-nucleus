@@ -11,7 +11,8 @@ bool VGA_driver::detectsystem(void)
 {
 
   // Check to see if VGA or EGA is installed
-  if (*((uint8_t *)0x400087) != 0)
+  //Address is 0040:0087
+  if (*((uint8_t *)0x487) != 0)
   {
 
     // WARNING: This also passes for EGA
@@ -37,7 +38,8 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port number for the color type
-    switch (*((uint16_t *)0x400463))
+    // Address is 0040:0463
+    switch (*((uint16_t *)0x863))
     {
 
     //Monochrome
@@ -147,7 +149,8 @@ uint16_t VGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
-  return *((uint16_t *)0x40044a);
+  // Address is 0040:44a
+  return *((uint16_t *)0x84a);
 }
 
 uint16_t VGA_driver::getscreenheight(void)
@@ -169,14 +172,16 @@ char *VGA_driver::gettextbuffer(void)
 {
 
   // Read the offset of the current video page from the BIOS
-  return (char *)0xb800;
+  // address is 0040:044e
+  return (char *)(*((uint16_t *)0x84e));
 }
 
 uint16_t VGA_driver::gettextbufferlength(void)
 {
 
   // Read the length from the BIOS
-  return (*((uint16_t *)0x40044c));
+  // Address is 0040:044c
+  return (*((uint16_t *)0x84c));
 }
 
 void VGA_driver::setfont(Font f)

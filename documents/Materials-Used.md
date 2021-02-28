@@ -21,3 +21,5 @@
 [RPI3 Baremetal Programming](https://github.com/bztsrc/raspi3-tutorial)
 
 [C++ Notes](https://wiki.osdev.org/C%2B%2B)
+
+[x86 Bios Data Area Map](http://www.bioscentral.com/misc/bda.htm)

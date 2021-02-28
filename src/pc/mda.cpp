@@ -12,11 +12,15 @@ bool MDA_driver::detectsystem(void)
 {
 
     // Check to make sure EGA and VGA is not installed
-    if (*((uint8_t *)0x400087) == 0)
+    //Address is 0040:0087
+
+    if (*((uint8_t *)0x487) == 0)
     {
 
         // Check if display is monochrome
-        if ((*((uint8_t *)0x400010) & 0x30) == 0x30)
+        //Address is 0040:0080
+
+        if ((*((uint8_t *)0x480) & 0x30) == 0x30)
         {
 
             // Display is MDA, or a card in MDA emulation mode
@@ -60,8 +64,10 @@ void MDA_driver::seektextcursor(uint16_t pos)
 // Also pointless, considering MDA has only one mode, but I'll read from a BIOS field anyway
 uint16_t MDA_driver::getscreenwidth(void)
 {
+
     // Read the width from a BIOS field
-    return *((uint16_t *)0x40044a);
+    // Address is 0040:44a
+    return *((uint16_t *)0x84a);
 }
 
 uint16_t MDA_driver::getscreenheight(void)
@@ -74,14 +80,16 @@ char *MDA_driver::gettextbuffer(void)
 {
 
     // Read the offset of the current video page from the BIOS
-    return (char *)(*((uint16_t *)0x40044e));
+    // address is 0040:044e
+    return (char *)(*((uint16_t *)0x84e));
 }
 
 uint16_t MDA_driver::gettextbufferlength(void)
 {
 
     // Read the length from the BIOS
-    return (*((uint16_t *)0x40044c));
+    // Address is 0040:044c
+    return (*((uint16_t *)0x84c));
 }
 
 // You have to manipulate the hardware to change the font on MDA

@@ -13,9 +13,10 @@ XT_KEYBOARD_driver::~XT_KEYBOARD_driver()
 bool XT_KEYBOARD_driver::detectsystem(void)
 {
 
-    /* Check the first keyboard flag bitmap
-       Bit 4 equaling 0 means a XT keyboard */
-    return (*((uint8_t *)0x400096) & 0x10) == 0;
+    // Check the first keyboard flag bitmap
+    //Bit 4 equaling 0 means a XT keyboard
+    //Address is 0040:0096
+    return (*((uint8_t *)0x496) & 0x10) == 0;
 }
 
 /*
@@ -27,7 +28,9 @@ bool XT_KEYBOARD_driver::detectsystem(void)
     */
 key_identifier XT_KEYBOARD_driver::getkey(void)
 {
-    switch (*((uint8_t *)0x400096))
+    //Address is 0040:0096
+
+    switch (*((uint8_t *)0x496))
     {
     default:
         return KEY_NULL;
