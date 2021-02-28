@@ -4,7 +4,7 @@
 EGA_driver::EGA_driver(void)
 {
   name = "Enhanced Graphics Adapter";
-  reset();
+  font = Font();
 }
 
 bool EGA_driver::detectsystem(void)

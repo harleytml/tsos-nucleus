@@ -4,7 +4,7 @@
 CGA_driver::CGA_driver(void)
 {
   name = "Color Graphics Array";
-  reset();
+  font = Font();
 }
 
 bool CGA_driver::detectsystem(void)

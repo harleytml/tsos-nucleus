@@ -4,7 +4,7 @@
 VGA_driver::VGA_driver(void)
 {
   name = "Video Graphics Array";
-  reset();
+  font = Font();
 }
 
 bool VGA_driver::detectsystem(void)

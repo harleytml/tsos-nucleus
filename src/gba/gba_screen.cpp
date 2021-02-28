@@ -4,7 +4,7 @@
 GBA_SCREEN_driver::GBA_SCREEN_driver(void)
 {
   name = "Gameboy Advanced Screen";
-  reset();
+  font = Font();
 }
 
 GBA_SCREEN_driver::~GBA_SCREEN_driver()

@@ -5,7 +5,6 @@ MDA_driver::MDA_driver(void)
 {
     name = "Monochrome Display Adapter";
     font = Font();
-    reset();
 }
 
 bool MDA_driver::detectsystem(void)
