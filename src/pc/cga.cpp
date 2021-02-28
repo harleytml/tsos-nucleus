@@ -18,7 +18,6 @@ bool CGA_driver::detectsystem(void)
 
     // Check if display is monochrome, or MDA
     //Address is 0040:0080
-
     if ((*((uint8_t *)0x480) & 0x30) != 0x30)
     {
 

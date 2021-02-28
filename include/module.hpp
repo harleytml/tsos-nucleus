@@ -23,7 +23,7 @@ public:
   void attachdriver(T &d)
   {
     // The driver has to be for the right machine and run on that machine's configuration
-    if (driver->detectsystem())
+    if (d.detectsystem())
     {
       driver = &d;
     }
