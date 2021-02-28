@@ -3,10 +3,8 @@
 
 Video_driver::Video_driver(void)
 {
-
 }
 
 Video_driver::~Video_driver()
 {
-
 }

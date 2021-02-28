@@ -29,13 +29,17 @@ void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 
 void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
+  uint8_t a;
+  uint8_t o;
+
   switch (mode)
   {
   case TEXT:
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port for the color type
-    switch (*((uint16_t *)0x400463))
+    // Address 0040:0463
+    switch (*((uint16_t *)0x863))
     {
 
     // Monochrome
@@ -45,15 +49,17 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
     // Color
     case 0x3d4:
-      uint8_t a = 0;
-      uint8_t o = text_buffer[text_cursor + 2];
+      a = 0;
+      o = text_buffer[text_cursor + 2];
 
-      /* This is a early driver
+      /*
+        This is a early driver
         Each attribute has 1 bit per color, plus intensity
         Basically, if a color is higher than 0, it is considered active
         Also, it ORs it with its old value if the alpha is high enough
         The result is a rather messy algorithem
-        But it uses bit logic, so it hopefully will be fast */
+        But it uses bit logic, so it hopefully will be fast
+      */
 
       // Set the background intensity
       a |= ((bc.intensity >= 0x80) << 7) | ((o & 0x80) & ((bc.alpha >= 0x80) << 7));
@@ -89,6 +95,7 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       text_buffer[text_cursor] = (char)a;
       return;
     }
+    return;
   case GRAPHIC:
     return;
 

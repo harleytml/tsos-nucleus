@@ -4,13 +4,13 @@
 Serial::Serial(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-    RS232_driver rs232_driver = RS232_driver();
+    static RS232_driver rs232_driver = RS232_driver();
 
     attachdriver(rs232_driver);
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
-    GBA_IO_PORT_driver gba_io_port_driver = GBA_IO_PORT_driver();
+    static GBA_IO_PORT_driver gba_io_port_driver = GBA_IO_PORT_driver();
 
     attachdriver(gba_io_port_driver);
 #endif

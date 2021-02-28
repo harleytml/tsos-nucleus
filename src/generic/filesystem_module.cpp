@@ -3,6 +3,11 @@
 
 Filesystem::Filesystem(void)
 {
+    static FAT12_driver fat12_driver = FAT12_driver();
+    static FAT16_driver fat16_driver = FAT16_driver();
+    static FAT32_driver fat32_driver = FAT32_driver();
+    static SFS_driver sfs_driver = SFS_driver();
+    static UDF_driver udf_driver = UDF_driver();
 
     attachdriver(fat32_driver);
     attachdriver(fat16_driver);

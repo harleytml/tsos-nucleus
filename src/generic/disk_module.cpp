@@ -4,11 +4,13 @@
 Disk::Disk(void)
 {
 #ifdef __PERSONAL_COMPUTER__
+    static CD_driver cd_driver = CD_driver();
 
     attachdriver(cd_driver);
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
+    static GBA_CARTRIDGE_driver gba_cartridge_driver = GBA_CARTRIDGE_driver();
 
     attachdriver(gba_cartridge_driver);
 #endif

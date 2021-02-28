@@ -4,10 +4,13 @@
 Boot::Boot(void)
 {
 #ifdef __PERSONAL_COMPUTER__
+    static GRUB2_driver grub2_driver = GRUB2_driver();
+
     attachdriver(grub2_driver);
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
+    static GBA_BOOT_driver gba_boot_driver = GBA_BOOT_driver();
 
     attachdriver(gba_boot_driver);
 #endif

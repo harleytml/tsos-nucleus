@@ -48,7 +48,7 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       return;
 
     //Color
-    case 0x3d4:
+    default:
 
       o = text_buffer[text_cursor + 2];
 
@@ -91,10 +91,6 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
       // Put the attribute byte
       text_buffer[text_cursor] = (char)a;
-      return;
-    default:
-
-      // Something weird is happening, so we will exit
       return;
     }
     return;

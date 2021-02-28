@@ -3,6 +3,7 @@
 
 Process::Process(void)
 {
+    static ELF_driver elf_driver = ELF_driver();
     attachdriver(elf_driver);
 }
 
