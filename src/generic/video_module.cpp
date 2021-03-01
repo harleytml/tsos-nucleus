@@ -41,9 +41,9 @@ void Video::putstring(char *str)
 {
   int x = 0;
   char c;
-  while (str[x] != '\0')
+  while (str[x] != NULL)
   {
-    c = str[x];
+    c = str[x++];
     switch (c)
     {
     case '\n':
@@ -68,7 +68,7 @@ void Video::putstring(char *str)
 
       //Just a normal character
     default:
-      putchar(str[x++]);
+      putchar(str[x]);
       rseektextcursor(1);
       break;
     }
