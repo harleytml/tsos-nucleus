@@ -33,6 +33,9 @@ extern "C"
         tsos.video.putstring("Build Date: ");
         tsos.video.putstring(__DATE__);
         tsos.video.putstring("\n");
+        tsos.video.putstring("Built with GCC version: ");
+        tsos.video.putstring(__VERSION__);
+        tsos.video.putstring("\n");
         tsos.boot.reboot();
     }
 }
