@@ -48,7 +48,7 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       return;
 
     //Color
-    case 0x3d4:
+    default:
 
       o = text_buffer[text_cursor + 2];
 
@@ -146,7 +146,8 @@ uint16_t VGA_driver::getscreenwidth(void)
 
   // Read the width from a BIOS field
   // Address is 0040:44a
-  return *((uint16_t *)0x84a);
+  //return *((uint16_t *)0x84a);
+  return 80;
 }
 
 uint16_t VGA_driver::getscreenheight(void)
@@ -169,7 +170,8 @@ char *VGA_driver::gettextbuffer(void)
 
   // Read the offset of the current video page from the BIOS
   // address is 0040:044e
-  return (char *)(*((uint16_t *)0x84e));
+  // return (char *)(*((uint16_t *)0x84e));
+  return (char *)0xb8000;
 }
 
 uint16_t VGA_driver::gettextbufferlength(void)

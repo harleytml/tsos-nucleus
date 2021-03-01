@@ -41,7 +41,7 @@ void Video::putstring(char *str)
 {
   int x = 0;
   char c;
-  while (str[x] != NULL)
+  while (str[x] != '\0')
   {
     c = str[x];
     switch (c)
@@ -82,10 +82,6 @@ uint16_t Video::gettextcursor(void)
 
 void Video::seektextcursor(uint16_t pos)
 {
-  while (gettextcursor() > gettextbufferlength())
-  {
-    scroll(1);
-  }
   driver->seektextcursor(pos);
 }
 
