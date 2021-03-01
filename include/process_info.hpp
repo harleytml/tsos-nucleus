@@ -14,6 +14,7 @@ public:
     // Constructor
     Process_info(uint8_t p, process_state s);
 
+protected:
     // The PID of a process
     uint8_t pid;
 

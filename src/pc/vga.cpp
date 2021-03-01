@@ -48,7 +48,7 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       return;
 
     //Color
-    default:
+    case 0x3d4:
 
       o = text_buffer[text_cursor + 2];
 

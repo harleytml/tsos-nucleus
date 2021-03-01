@@ -77,7 +77,7 @@
 @ linked in with your project so do not enable c++ support
 @ unless you plan to use it.
 
-@ .equ __CPPSupport, 1
+.equ __CPPSupport, 1
 
 @ Comment out the following line to disable interrupt support
 @ in your code and to save some space in this file.
@@ -90,7 +90,7 @@
 @ down interrupt execution and has no advantage other than
 @ saving a little bit of IWRAM.
 
- .equ __ISRinIWRAM, 1
+.equ __ISRinIWRAM, 1
 
 @ NOTE: Only ONE of the following 3 interrupt options may be
 @ uncommented. Also, __InterruptSupport above must be uncommented
@@ -131,7 +131,7 @@
 @ System mode (User stack) when handling multiple interrupts.
 @ To force use of IRQ stack only, comment out the following line.
 
- .equ __SwitchToUserStack, 1
+.equ __SwitchToUserStack, 1
 
 @ !!!! NOTE: THE COPY ROUTINES IN THIS FILE WORK ON 4 BYTE
 @ BOUNDARIES. YOUR LINKER SCRIPT MUST ALIGN SECTION STARTS
@@ -369,7 +369,7 @@ CEW0Skip:
         mov     lr,r3            @ Set start_vector as return address
 
 .ifdef __CPPSupport
-        ldr     r3,=main
+        ldr     r3,=kernel_main
 .else
         ldr     r3,=kernel_main
 .endif

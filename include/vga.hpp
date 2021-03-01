@@ -31,12 +31,6 @@ private:
   // The text buffer
   char *text_buffer;
 
-  // Screen resolution width
-  uint16_t screen_width;
-
-  // Screen resolution height
-  uint16_t screen_height;
-
   video_mode mode;
 
   Font font;
