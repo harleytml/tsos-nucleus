@@ -8,6 +8,7 @@
     "davidanson.vscode-markdownlint",
     "foxundermoon.shell-format",
     "redhat.vscode-yaml",
-    "jeff-hykin.better-cpp-syntax"
+    "jeff-hykin.better-cpp-syntax",
+    "webfreak.debug"
   ]
 }
