@@ -33,7 +33,7 @@ $(BUILD_DIR)/nucleus.tse: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(ASM_DIR)/pc/grub2.o: $(ASM_DIR)/pc/grub2.asm 
+$(ASM_DIR)/pc/grub2.o: $(ASM_DIR)/pc/grub2.S
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:

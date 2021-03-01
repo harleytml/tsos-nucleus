@@ -33,7 +33,7 @@ $(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(ASM_DIR)/gba/gba_boot.o
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(ASM_DIR)/gba/gba_boot.o: $(ASM_DIR)/gba/gba_boot.asm 
+$(ASM_DIR)/gba/gba_boot.o: $(ASM_DIR)/gba/gba_boot.S
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
