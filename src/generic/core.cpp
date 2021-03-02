@@ -28,6 +28,9 @@ extern "C"
     {
         static Tsos tmp = Tsos();
         tsos = tmp;
+        #ifdef __PERSONAL_COMPUTER__
+            GlobalDescriptorTable gdt;
+        #endif
         tsos.video.reset();
         tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
         tsos.video.putstring("Welcome to TS/OS\n");
