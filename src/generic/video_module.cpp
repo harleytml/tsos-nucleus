@@ -120,7 +120,6 @@ void Video::clear(void)
   {
     putchar(' ');
   }
-  reset();
 }
 
 void Video::scroll(uint8_t lines)
@@ -129,12 +128,12 @@ void Video::scroll(uint8_t lines)
   rseektextcursor(len * -1);
 }
 
-void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue)
 {
-  backgroundcolor = Color(red, green, blue, alpha);
+  backgroundcolor = Color(red, green, blue);
 }
 
-void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
+void Video::settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue)
 {
-  foregroundcolor = Color(red, green, blue, alpha);
+  foregroundcolor = Color(red, green, blue);
 }

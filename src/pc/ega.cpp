@@ -62,28 +62,28 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       */
 
       // Set the background intensity
-      a |= ((bc.intensity >= 0x80) << 7) | ((o & 0x80) & ((bc.alpha >= 0x80) << 7));
+      a |= 0x1 << 7;
 
       // Set the background red
-      a |= ((bc.red >= 0x80) << 6) | ((o & 0x40) & ((bc.alpha >= 0x80) << 6));
+      a |= ((bc.red >= 0x80) << 6);
 
       // Set the background blue
-      a |= ((bc.blue >= 0x80) << 5) | ((o & 0x20) & ((bc.alpha >= 0x80) << 5));
+      a |= ((bc.green >= 0x80) << 5);
 
       // Set the background green
-      a |= ((bc.green >= 0x80) << 4) | ((o & 0x10) & ((bc.alpha >= 0x80) << 4));
+      a |= ((bc.blue >= 0x80) << 4);
 
       // Set the foreground intensity
-      a |= ((fc.intensity >= 0x80) << 3) | ((o & 0x8) & ((bc.alpha >= 0x80) << 3));
+      a |= 0x1 << 3;
 
       // Set the foreground red
-      a |= ((fc.red >= 0x80) << 2) | ((o & 0x4) & ((bc.alpha >= 0x80) << 2));
+      a |= ((fc.red >= 0x80) << 2);
 
       // Set the foreground green
-      a |= ((fc.green >= 0x80) << 1) | ((o & 0x2) & ((bc.alpha >= 0x80) << 1));
+      a |= ((fc.green >= 0x80) << 1);
 
       // Set the foreground blue
-      a |= ((fc.blue >= 0x80) << 0) | ((o & 0x1) & ((bc.alpha >= 0x80) << 0));
+      a |= ((fc.blue >= 0x80) << 0);
 
       // Put the character byte
       text_buffer[text_cursor] = c;

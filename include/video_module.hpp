@@ -61,10 +61,10 @@ public:
   void scroll(uint8_t lines);
 
   // Set text background color
-  void settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+  void settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue);
 
   // Set text foreground color
-  void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha);
+  void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue);
 
 private:
   // Current font

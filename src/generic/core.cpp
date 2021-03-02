@@ -11,8 +11,8 @@ Tsos::Tsos(void)
 
 Tsos::~Tsos()
 {
-    video.settextbackgroundcolor(0x00, 0xff, 0x00, 0x00);
-    video.settextforegroundcolor(0xff, 0xff, 0xff, 0x00);
+    video.settextbackgroundcolor(0x00, 0xff, 0x00);
+    video.settextforegroundcolor(0xff, 0xff, 0xff);
     video.clear();
     video.putstring("Shutting down... \n");
     video.putstring("Do not touch the power button.\n");
@@ -29,6 +29,7 @@ extern "C"
         static Tsos tmp = Tsos();
         tsos = tmp;
         tsos.video.reset();
+        tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
         tsos.video.putstring("Welcome to TS/OS\n");
         tsos.video.putstring("Build Date: ");
         tsos.video.putstring(__DATE__);
