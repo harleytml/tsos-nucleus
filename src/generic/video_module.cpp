@@ -120,6 +120,7 @@ void Video::clear(void)
   {
     putchar(' ');
   }
+  reset();
 }
 
 void Video::scroll(uint8_t lines)

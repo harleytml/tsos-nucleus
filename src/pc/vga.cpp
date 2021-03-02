@@ -52,12 +52,14 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
       o = text_buffer[text_cursor + 2];
 
-      /* This is a early driver
-         Each attribute has 1 bit per color, plus intensity
-         Basically, if a color is higher than 0x80, it is considered active
-         Also, it ORs it with its old value if the alpha is high enough
-         The result is a rather messy algorithem
-         But it uses bit logic, so it hopefully will be fast */
+      /* 
+      This is a early driver
+      Each attribute has 1 bit per color, plus intensity
+      Basically, if a color is higher than 0x80, it is considered active
+      Also, it ORs it with its old value if the alpha is high enough
+      The result is a rather messy algorithem
+      But it uses bit logic, so it hopefully will be fast
+      */
 
       // Set the background intensity
       a |= ((bc.intensity >= 0x80) << 7) | ((o & 0x80) & ((bc.alpha >= 0x80) << 7));
@@ -146,8 +148,8 @@ uint16_t VGA_driver::getscreenwidth(void)
 
   // Read the width from a BIOS field
   // Address is 0040:44a
-  //return *((uint16_t *)0x84a);
-  return 80;
+  return *((uint8_t *)0x84a);
+  // return 80;
 }
 
 uint16_t VGA_driver::getscreenheight(void)
@@ -180,6 +182,7 @@ uint16_t VGA_driver::gettextbufferlength(void)
   // Read the length from the BIOS
   // Address is 0040:044c
   return (*((uint16_t *)0x84c));
+  // return 0x1000;
 }
 
 void VGA_driver::setfont(Font f)
