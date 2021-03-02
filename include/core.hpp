@@ -21,6 +21,7 @@
 #include "driver.hpp"
 #include "module.hpp"
 #include "types.hpp"
+#include "gdt.hpp"
 
 // This file is customized by for the system
 #include "current_config.hpp"
