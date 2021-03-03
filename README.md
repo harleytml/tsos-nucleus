@@ -49,3 +49,13 @@ If you want to test, simply run `test` also
 ```
 
 Note that each platform needs its own testing tools
+
+To debug, simply use this command
+
+```sh
+./build.sh <platform> debug
+```
+
+The debugging tools are the same as the testing tools
+
+The GDB port you need to connect to is outputted to the termianl as a message.

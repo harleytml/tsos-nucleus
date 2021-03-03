@@ -28,6 +28,7 @@ extern "C"
     {
         static Tsos tmp = Tsos();
         tsos = tmp;
+
 #ifdef __PERSONAL_COMPUTER__
         GlobalDescriptorTable gdt;
 #endif

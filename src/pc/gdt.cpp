@@ -1,3 +1,4 @@
+// By AptRock
 #include <gdt.hpp>
 
 GlobalDescriptorTable::GlobalDescriptorTable()
@@ -83,7 +84,9 @@ uint32_t GlobalDescriptorTable::SegmentDescriptor::Limit()
     result = (result << 8) + target[0];
 
     if ((target[6] & 0xC0) == 0xC0)
+    {
         result = (result << 12) | 0xFFF;
+    }
 
     return result;
 }

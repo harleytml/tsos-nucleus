@@ -24,9 +24,9 @@ void GRUB2_driver::reboot(void)
     *post_reset_flag = 0x1234;
 
     //Lets actually reboot
-    asm("push 0xffff\n"
-        "push 0x0000\n"
-        "ret\n");
+    asm volatile("push 0xffff\n"
+                 "push 0x0000\n"
+                 "ret\n");
 }
 
 void GRUB2_driver::shutdown(void)
