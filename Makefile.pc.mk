@@ -19,7 +19,7 @@ AS:=tsos-i686-as
 AS_FLAGS:=-g -mtune=i686 
 
 LD:=tsos-i686-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -static -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib -lgcc
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -static -nostartfiles -mtune=i686 -mfpmath=387 -m32 -ffreestanding -O2 -nostdlib
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)
@@ -28,7 +28,7 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 default: $(BUILD_DIR)/nucleus.tse
 
 $(BUILD_DIR)/nucleus.tse: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
-:$(CPP) $(LD_FLAGS) -o $@ $^ 
+:$(CPP) $(LD_FLAGS) -o $@ $^ -lgcc 
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
