@@ -25,7 +25,7 @@ pc)
     NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld.gold make xorriso grub-mkrescue)
     ;;
 gba)
-    NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make)
+    NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make tsos-gbafix)
     ;;
 psp)
     NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
@@ -107,6 +107,10 @@ pc)
     cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
     grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
     ;;
+gba)
+    tsos-armeabi-objcopy -v -O binary "./nucleus.tse" "./nucleus.gba"
+    tsos-gbafix "nucleus.gba"
+    ;;
 
 esac
 
@@ -127,8 +131,7 @@ test)
             echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
             exit 1
         fi
-        echo "Set you debugger to localhost:2345 with the nucleus.tse as your executable"
-        mgba -d "./nucleus.tse"
+        mgba "./nucleus.gba"
         ;;
 
     esac
@@ -149,7 +152,7 @@ debug)
             exit 1
         fi
         echo "Set you debugger to localhost:2345 with the nucleus.tse as your executable"
-        mgba -g "./nucleus.tse"
+        mgba -g "./nucleus.gba"
         ;;
 
     esac
