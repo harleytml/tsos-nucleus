@@ -40,10 +40,9 @@ void Video::putchar(char c)
 void Video::putstring(char *str)
 {
   int x = 0;
-  char c;
   while (str[x] != NULL)
   {
-    c = str[x++];
+    char c = str[x++];
     switch (c)
     {
     case '\n':
@@ -87,7 +86,12 @@ void Video::seektextcursor(uint16_t pos)
 
 void Video::rseektextcursor(int16_t pos)
 {
-  seektextcursor(gettextcursor() + pos);
+  int16_t newpos = gettextcursor() + pos;
+  if (newpos < 0)
+  {
+    newpos = 0;
+  }
+  seektextcursor(newpos);
 }
 
 char *Video::gettextbuffer(void)
@@ -120,6 +124,7 @@ void Video::clear(void)
   {
     putchar(' ');
   }
+  reset();
 }
 
 void Video::scroll(uint8_t lines)

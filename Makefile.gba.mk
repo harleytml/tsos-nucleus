@@ -8,6 +8,7 @@ ASM_DIR:=../asm
 INCLUDE_DIR:=../include
 CONFIG_DIR:=../config
 LINKER_SCRIPTS_DIR:=../linker-scripts
+LIB=-lgcc
 
 CC:=tsos-armeabi-gcc
 CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mthumb -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c -fno-builtin
@@ -28,7 +29,7 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 default: $(BUILD_DIR)/nucleus.tse
 
 $(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(ASM_DIR)/gba/gba_boot.o 
-:$(CPP) $(LD_FLAGS) -o $@ $^ -lgcc 
+:$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 

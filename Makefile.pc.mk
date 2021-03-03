@@ -8,6 +8,7 @@ ASM_DIR:=../asm
 INCLUDE_DIR:=../include
 CONFIG_DIR:=../config
 LINKER_SCRIPTS_DIR:=../linker-scripts
+LIB=-lgcc
 
 CC:=tsos-i686-gcc
 CC_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mtune=i686 -mfpmath=387 -m32 -c -fno-builtin
@@ -28,7 +29,7 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 default: $(BUILD_DIR)/nucleus.tse
 
 $(BUILD_DIR)/nucleus.tse: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
-:$(CPP) $(LD_FLAGS) -o $@ $^ -lgcc 
+:$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 

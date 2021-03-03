@@ -21,7 +21,6 @@ Tsos::~Tsos()
 }
 
 // Start the kernel
-
 extern "C"
 {
     [[noreturn]] void kernel_main(void)
@@ -32,8 +31,11 @@ extern "C"
 #ifdef __PERSONAL_COMPUTER__
         GlobalDescriptorTable gdt;
 #endif
-        tsos.video.reset();
+
+        tsos.video.settextforegroundcolor(0xff, 0xff, 0xff);
         tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
+        tsos.video.reset();
+        tsos.video.clear();
         tsos.video.putstring("Welcome to TS/OS\n");
         tsos.video.putstring("Build Date: ");
         tsos.video.putstring(__DATE__);
@@ -41,6 +43,13 @@ extern "C"
         tsos.video.putstring("Built with GCC version: ");
         tsos.video.putstring(__VERSION__);
         tsos.video.putstring("\n");
+        tsos.video.settextbackgroundcolor(0xff, 0x00, 0x00);
+        tsos.video.putstring("TS/OS Copyright (C) 2021 TSDEV Team\n");
+        tsos.video.putstring("This program comes with ABSOLUTELY NO WARRANTY;\n");
+        tsos.video.putstring("This is free software, and you are welcome to redistribute it\n");
+        tsos.video.putstring("under certain conditions;\n");
+        tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
+        tsos.video.putstring("This OS wouldn't be possible without the help of the many that worked on it.\n");
         tsos.boot.reboot();
     }
 }

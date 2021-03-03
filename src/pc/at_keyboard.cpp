@@ -15,7 +15,7 @@ bool AT_KEYBOARD_driver::detectsystem(void)
 
     /* Check the first keyboard flag bitmap
     Bit 4 equaling 1 means a AT keyboard */
-    return (*((uint8_t *)0x496) & 0x10) == 1;
+    return (*((uint8_t *)0x496) & 0x10) == 0x10;
 }
 
 /* So detecting keys in PC is a little sketchy.

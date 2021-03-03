@@ -109,7 +109,7 @@ pc)
     ;;
 gba)
     tsos-armeabi-objcopy -v -O binary "./nucleus.tse" "./nucleus.gba"
-    tsos-gbafix "nucleus.gba" -t -p
+    tsos-gbafix "./nucleus.gba" -t -p
     ;;
 
 esac
@@ -124,7 +124,7 @@ test)
             echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
             exit 1
         fi
-        qemu-system-i386 -kernel "./nucleus.tse"
+        qemu-system-i386 -kernel "./nucleus.tse" -name "TS/OS"
         ;;
     gba)
         if ! exists "mgba"; then
@@ -144,7 +144,7 @@ debug)
             exit 1
         fi
         echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
-        qemu-system-i386 -kernel "./nucleus.tse" -s -S
+        qemu-system-i386 -kernel "./nucleus.tse" -s -S -name "TS/OS"
         ;;
     gba)
         if ! exists "mgba"; then

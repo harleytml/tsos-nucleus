@@ -4,5 +4,6 @@ filesystem/**
 *.tse
 *.log
 *.iso
+*.gba
 a.out
 current_config.hpp

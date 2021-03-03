@@ -31,7 +31,6 @@ void VGA_driver::reset(void)
 void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
-  uint8_t o;
   switch (mode)
   {
   case TEXT:
@@ -49,9 +48,6 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
     //Color
     default:
-
-      o = text_buffer[text_cursor + 2];
-
       /* 
       This is a early driver
       Each attribute has 1 bit per color, plus intensity
@@ -148,8 +144,8 @@ uint16_t VGA_driver::getscreenwidth(void)
 
   // Read the width from a BIOS field
   // Address is 0040:44a
-  return *((uint8_t *)0x84a);
-  // return 80;
+  // return *((uint8_t *)0x84a);
+  return 80;
 }
 
 uint16_t VGA_driver::getscreenheight(void)
