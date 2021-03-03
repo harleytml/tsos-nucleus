@@ -128,10 +128,10 @@ test)
         ;;
     gba)
         if ! exists "mgba"; then
-            echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
+            echo "Error: vba is not installed, which is needed for testing and debugging TS/OS on gba"
             exit 1
         fi
-        mgba "./nucleus.gba"
+        vba "./nucleus.gba"
         ;;
 
     esac
@@ -151,8 +151,8 @@ debug)
             echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
             exit 1
         fi
-        echo "Set you debugger to localhost:2345 with the nucleus.tse as your executable"
-        mgba -g "./nucleus.gba"
+        echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
+        vba --gdb=tcp:1234 "./nucleus.gba"
         ;;
 
     esac
