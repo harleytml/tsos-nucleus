@@ -20,6 +20,4 @@
 #include "gdt.hpp"
 #include "port.hpp"
 
-#define PERSONAL_COMPUTER
-
 #endif
