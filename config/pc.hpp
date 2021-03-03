@@ -17,6 +17,8 @@
 #include "ega.hpp"
 #include "mda.hpp"
 #include "vga.hpp"
+#include "gdt.hpp"
+#include "port.hpp"
 
 #define PERSONAL_COMPUTER
 
