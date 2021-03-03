@@ -37,4 +37,4 @@ $(ASM_DIR)/pc/grub2.o: $(ASM_DIR)/pc/grub2.S
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
-:rm -rfv $(shell find ../ -name \*.o) $(shell find ../ -name \*.tse) $(shell find ../ -name \*.iso)
+:rm -rfv $(shell find ../ -name \*.o) $(shell find ../ -name \*.tse) $(shell find ../ -name \*.iso) $(shell find ../ -name \*.gba) 

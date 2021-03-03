@@ -109,7 +109,7 @@ pc)
     ;;
 gba)
     tsos-armeabi-objcopy -v -O binary "./nucleus.tse" "./nucleus.gba"
-    tsos-gbafix "nucleus.gba"
+    tsos-gbafix "nucleus.gba" -t -p
     ;;
 
 esac
