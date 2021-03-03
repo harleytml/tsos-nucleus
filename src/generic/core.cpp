@@ -11,21 +11,23 @@ Tsos::Tsos(void)
 
 Tsos::~Tsos()
 {
-    video.settextbackgroundcolor(0x00, 0xff, 0x00);
+    video.settextbackgroundcolor(0xff, 0x00, 0x00);
     video.settextforegroundcolor(0xff, 0xff, 0xff);
+    video.reset();
     video.clear();
     video.putstring("Shutting down... \n");
     video.putstring("Do not touch the power button.\n");
     process.killall();
     disk.commitall();
+    boot.reboot();
 }
 
 // Start the kernel
 extern "C"
 {
-    [[noreturn]] void kernel_main(void)
+    void kernel_main(void)
     {
-        static Tsos tmp = Tsos();
+        Tsos tmp = Tsos();
         tsos = tmp;
 
 #ifdef __PERSONAL_COMPUTER__
@@ -50,6 +52,10 @@ extern "C"
         tsos.video.putstring("under certain conditions;\n");
         tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
         tsos.video.putstring("This OS wouldn't be possible without the help of the many that worked on it.\n");
-        tsos.boot.reboot();
+
+        //For now we will prevent destruction
+        while (true)
+        {
+        }
     }
 }
