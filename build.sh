@@ -19,6 +19,7 @@ help)
     echo ""
     echo "pc  - i686 or higher IBM compatible Personal Computer"
     echo "gba - Nintendo Gameboy Advance"
+    echo "psx - Playstation 1"
     exit 0
     ;;
 pc)
@@ -26,6 +27,9 @@ pc)
     ;;
 gba)
     NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make tsos-gbafix)
+    ;;
+psx)
+    NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
     ;;
 psp)
     NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
@@ -38,7 +42,7 @@ nspire)
     exit 1
     ;;
 rpi3)
-    NEEDED_COMMANDS=(make)
+    NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld.gold make)
     echo "This system is not supported yet."
     exit 1
     ;;
@@ -58,11 +62,6 @@ pcat)
     exit 1
     ;;
 nds)
-    NEEDED_COMMANDS=(make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
-psx)
     NEEDED_COMMANDS=(make)
     echo "This system is not supported yet."
     exit 1
