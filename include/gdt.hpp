@@ -1,5 +1,4 @@
 // By AptRock
-
 #ifndef __TSOS_NUCLEUS_GDT__
 #define __TSOS_NUCLEUS_GDT__
 
