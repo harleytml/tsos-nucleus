@@ -33,6 +33,10 @@ extern "C"
 #ifdef __PERSONAL_COMPUTER__
         GlobalDescriptorTable gdt;
         InterruptManager interruptManager(0x20, &gdt);
+        DriverManager drivahManager;
+        MouseHandlerBasic mousehandler;
+        MouseDriver mouse(&interruptManager, &mousehandler);
+        drivahManager.AddDriver(&mouse);
 #endif
 
         tsos.video.settextforegroundcolor(0xff, 0xff, 0xff);
