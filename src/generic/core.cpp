@@ -32,7 +32,6 @@ extern "C"
 
 #ifdef __PERSONAL_COMPUTER__
         GlobalDescriptorTable gdt;
-        InterruptManager interruptManager(0x20, &gdt);
 #endif
 
         tsos.video.settextforegroundcolor(0xff, 0xff, 0xff);
@@ -53,11 +52,6 @@ extern "C"
         tsos.video.putstring("under certain conditions;\n");
         tsos.video.settextbackgroundcolor(0x00, 0x00, 0x00);
         tsos.video.putstring("This OS wouldn't be possible without the help of the many that worked on it.\n");
-
-//always remember to activate the interrupts at the very end
-#ifdef __PERSONAL_COMPUTER__
-        interruptManager.Activate();
-#endif
 
         //For now we will prevent destruction
         while (true)
