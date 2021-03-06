@@ -14,7 +14,7 @@ CC:=tsos-mipsel-gcc
 CC_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -nostartfiles -c -fno-builtin -march=r3000
 
 CPP:=tsos-mipsel-g++
-CPP_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -nostartfiles -c -march=r3000 
+CPP_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -nostartfiles -c -march=r3000 
 
 AS:=tsos-mipsel-as
 AS_FLAGS:=-g -march=r3000
