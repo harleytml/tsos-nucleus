@@ -34,6 +34,7 @@ public:
 
   // Free Memory
   void freememory(void *mem);
+
   // The table of processes
   Process_info processes[255];
 };

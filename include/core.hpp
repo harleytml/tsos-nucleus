@@ -21,10 +21,6 @@
 #include "driver.hpp"
 #include "module.hpp"
 #include "types.hpp"
-#include "GDT.hpp"
-#include "IDT.hpp"
-#include "driver.hpp"
-#include "mouse.hpp"
 
 // This file is customized by for the system
 #include "current_config.hpp"

@@ -19,5 +19,6 @@
 #include "vga.hpp"
 #include "gdt.hpp"
 #include "port.hpp"
+#include "idt.hpp"
 
 #endif
