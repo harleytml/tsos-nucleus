@@ -90,7 +90,7 @@ cd "$CODE_DIR/build/" || exit 1
 cp -v "../Makefile.$1.mk" "./Makefile"
 cp -v "../config/$1.hpp" "./current_config.hpp"
 make clean
-make -j"$(nproc)"
+make
 
 echo ""
 
