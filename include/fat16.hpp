@@ -12,13 +12,13 @@ public:
   bool detectsystem(void) override;
   char **readdir(char *path) override;
   void rename(char *path, char *newPath) override;
-  File open(char *path);
-  void close(File file);
-  char *read(File file);
-  void write(File file, char *data);
-  char *readfile(char *path);
-  void writefile(char *path, char *data);
-  void appendfile(char *path, char *data);
+  File open(char *path) override;
+  void close(File file) override;
+  char *read(File file) override;
+  void write(File file, char *data) override;
+  char *readfile(char *path) override;
+  void writefile(char *path, char *data) override;
+  void appendfile(char *path, char *data) override;
   bool exists(char *path) override;
 
 private:
