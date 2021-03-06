@@ -1,4 +1,4 @@
-BOOT=cdrom:\bin\nucleus.tse
+BOOT=cdrom:\nucleus.tse;1
 TCB=4
 EVENT=10
 STACK=801FFFF0

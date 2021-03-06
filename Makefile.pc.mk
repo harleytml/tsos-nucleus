@@ -26,9 +26,9 @@ CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
-default: $(BUILD_DIR)/nucleus.tse
+default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus.tse: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
+$(BUILD_DIR)/nucleus: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp

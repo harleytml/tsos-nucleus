@@ -26,9 +26,9 @@ CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
-default: $(BUILD_DIR)/nucleus.tse
+default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus.tse: $(OBJ_FILES) $(ASM_DIR)/gba/gba_boot.o 
+$(BUILD_DIR)/nucleus: $(OBJ_FILES) $(ASM_DIR)/gba/gba_boot.o 
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp

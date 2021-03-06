@@ -7,14 +7,10 @@ ELF_driver::ELF_driver(void)
 
 bool ELF_driver::detectsystem(void)
 {
-    return isvalidexecutable("/bin/nucleus.tse");
+    return isvalidexecutable("/nucleus");
 }
 
 bool ELF_driver::isvalidexecutable(char *path)
 {
-    //Doesn't work right now
-    /*
-    File elffile = tsos.filesystem.open("/kernel.tse");
-    */
     return true;
 }

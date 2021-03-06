@@ -97,18 +97,18 @@ echo ""
 # Lets deploy these images
 case $1 in
 pc)
-    if ! grub-file --is-x86-multiboot "./nucleus.tse"; then
+    if ! grub-file --is-x86-multiboot "./nucleus"; then
         echo "Compiling failed"
         exit 1
     fi
-    cp -v "./nucleus.tse" "$FILESYSTEM_ROOT/bin/nucleus.tse"
+    cp -v "./nucleus" "$FILESYSTEM_ROOT/nucleus"
     mkdir -pv "$FILESYSTEM_ROOT/boot/grub/"
     cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
     grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
     ;;
 gba)
-    tsos-armeabi-objcopy -v -O binary "./nucleus.tse" "./nucleus.gba"
-    tsos-gbafix "./nucleus.gba" -t -p
+    tsos-armeabi-objcopy -v -O binary "./nucleus" "./tsos.gba"
+    tsos-gbafix "./tsos.gba" -t -p
     ;;
 
 esac
@@ -123,14 +123,14 @@ test)
             echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
             exit 1
         fi
-        qemu-system-i386 -kernel "./nucleus.tse" -name "TS/OS"
+        qemu-system-i386 -kernel "./nucleus" -name "TS/OS"
         ;;
     gba)
         if ! exists "mgba"; then
             echo "Error: vba is not installed, which is needed for testing and debugging TS/OS on gba"
             exit 1
         fi
-        vba "./nucleus.gba"
+        vba "./tsos.gba"
         ;;
 
     esac
@@ -143,7 +143,7 @@ debug)
             exit 1
         fi
         echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
-        qemu-system-i386 -kernel "./nucleus.tse" -s -S -name "TS/OS"
+        qemu-system-i386 -kernel "./nucleus" -s -S -name "TS/OS"
         ;;
     gba)
         if ! exists "mgba"; then
@@ -151,7 +151,7 @@ debug)
             exit 1
         fi
         echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
-        vba --gdb=tcp:1234 "./nucleus.gba"
+        vba --gdb=tcp:1234 "./tsos.gba"
         ;;
 
     esac

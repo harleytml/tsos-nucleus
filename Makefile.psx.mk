@@ -25,9 +25,9 @@ LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreesta
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
-default: $(BUILD_DIR)/nucleus.tse
+default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus.tse: $(OBJ_FILES)
+$(BUILD_DIR)/nucleus: $(OBJ_FILES)
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
