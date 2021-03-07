@@ -1,4 +1,4 @@
-//Driver by Tsuki Superior
+//By Tsuki Superior
 #ifndef __TSOS_RS232_DRIVER__
 #define __TSOS_RS232_DRIVER__
 

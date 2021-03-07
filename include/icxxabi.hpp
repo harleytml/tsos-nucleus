@@ -1,5 +1,5 @@
-#ifndef __ICXXABI__
-#define __ICXXABI__
+#ifndef __TSOS_ICXXABI__
+#define __TSOS_ICXXABI__
 
 #include "types.hpp"
 #include "core.hpp"
