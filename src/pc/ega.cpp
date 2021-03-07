@@ -29,38 +29,31 @@ void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 
 void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
-  uint8_t a;
-  uint8_t o;
-
+  uint8_t a = 0;
   switch (mode)
   {
   case TEXT:
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
-    // We are checking the video controller 6845 port for the color type
-    // Address 0040:0463
-    switch (*((uint16_t *)0x863))
+    // We are checking the video controller 6845 port number for the color type
+    // Address is 0040:0463
+    switch (*((uint16_t *)0x44e))
     {
 
-    // Monochrome
-    case 0x3b4:
+    //Monochrome
+    case 0xb0000:
       text_buffer[text_cursor] = c;
       return;
 
-    // Color
-    case 0x3d4:
-      a = 0;
-
-      /*
-        This is a early driver
-        Each attribute has 1 bit per color, plus intensity
-        Basically, if a color is higher than 0, it is considered active
-        The result is a rather messy algorithem
-        But it uses bit logic, so it hopefully will be fast
+    //Color
+    default:
+      /* 
+      This is a early driver
+      Each attribute has 1 bit per color, plus intensity
+      Basically, if a color is higher than 0x80, it is considered active
+      The result is a rather messy algorithem
+      But it uses bit logic, so it hopefully will be fast
       */
-
-      // Set the background intensity
-      a |= 0x1 << 7;
 
       // Set the background red
       a |= ((bc.red >= 0x80) << 6);
@@ -71,8 +64,8 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       // Set the background green
       a |= ((bc.blue >= 0x80) << 4);
 
-      // Set the foreground intensity
-      a |= 0x1 << 3;
+      // Set the background intensity
+      a |= ((a & 0xE0) != 0) << 7;
 
       // Set the foreground red
       a |= ((fc.red >= 0x80) << 2);
@@ -82,6 +75,9 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
       // Set the foreground blue
       a |= ((fc.blue >= 0x80) << 0);
+
+      // Set the foreground intensity
+      a |= ((a & 0xE) != 0) << 3;
 
       // Put the character byte
       text_buffer[text_cursor] = c;
@@ -95,11 +91,35 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
     }
     return;
   case GRAPHIC:
-    return;
 
+    //Doesn't work right now
+    /*
+    //Lets draw a glyph
+    uint16_t cx, cy;
+    uint16_t mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+    uint8_t *glyph = font.data + (uint8_t)c * 16;
+    uint8_t fgcolor;
+    uint8_t bgcolor;
+    for (cy = 0; cy < 16; cy++)
+    {
+      for (cx = 0; cx < 8; cx++)
+      {
+        drawpx((glyph[cy] & mask[cx]) ? fgcolor : bgcolor, x + cx, y + cy - 12);
+      }
+    }
+    */
+    return;
   default:
     return;
   }
+}
+
+char *EGA_driver::gettextbuffer(void)
+{
+
+  // Read the offset of the current video page from the BIOS
+  // address is 0040:044e
+  return (char *)(*((uint16_t *)0x84e));
 }
 
 uint16_t EGA_driver::gettextcursor(void)
@@ -116,12 +136,20 @@ void EGA_driver::seektextcursor(uint16_t pos)
   }
 }
 
+uint16_t EGA_driver::gettextbufferlength(void)
+{
+  // Read the length from the BIOS
+  // Address is 0040:044c
+  return (*((uint16_t *)0x84c));
+}
+
 uint16_t EGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
   // Address is 0040:44a
-  return *((uint16_t *)0x84a);
+  // return *((uint8_t *)0x84a);
+  return 80;
 }
 
 uint16_t EGA_driver::getscreenheight(void)
@@ -137,21 +165,6 @@ uint16_t EGA_driver::getscreenheight(void)
   default:
     return 0;
   }
-}
-
-char *EGA_driver::gettextbuffer(void)
-{
-
-  // Read the offset of the current video page from the BIOS
-  // address is 0040:044e
-  return (char *)(*((uint16_t *)0x84e));
-}
-
-uint16_t EGA_driver::gettextbufferlength(void)
-{
-  // Read the length from the BIOS
-  // Address is 0040:044c
-  return (*((uint16_t *)0x84c));
 }
 
 void EGA_driver::setfont(Font f)

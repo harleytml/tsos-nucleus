@@ -38,11 +38,11 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port number for the color type
     // Address is 0040:0463
-    switch (*((uint16_t *)0x863))
+    switch (*((uint16_t *)0x44e))
     {
 
     //Monochrome
-    case 0x3b4:
+    case 0xb0000:
       text_buffer[text_cursor] = c;
       return;
 
@@ -56,9 +56,6 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       But it uses bit logic, so it hopefully will be fast
       */
 
-      // Set the background intensity
-      a |= 0x1 << 7;
-
       // Set the background red
       a |= ((bc.red >= 0x80) << 6);
 
@@ -68,8 +65,8 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       // Set the background green
       a |= ((bc.blue >= 0x80) << 4);
 
-      // Set the foreground intensity
-      a |= 0x1 << 3;
+      // Set the background intensity
+      a |= ((a & 0xE0) != 0) << 7;
 
       // Set the foreground red
       a |= ((fc.red >= 0x80) << 2);
@@ -79,6 +76,9 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
       // Set the foreground blue
       a |= ((fc.blue >= 0x80) << 0);
+
+      // Set the foreground intensity
+      a |= ((a & 0xE) != 0) << 3;
 
       // Put the character byte
       text_buffer[text_cursor] = c;
