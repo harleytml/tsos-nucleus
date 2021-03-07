@@ -11,7 +11,7 @@ bool EGA_driver::detectsystem(void)
 {
   // Check to see if VGA or EGA is installed
   // WARNING: This also passes for VGA
-  //Address is 0040:0087
+  // Address is 0040:0087
 
   return *((uint8_t *)0x487) != 0;
 }
@@ -65,7 +65,7 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       a |= ((bc.blue >= 0x80) << 4);
 
       // Set the background intensity
-      a |= ((a & 0xE0) != 0) << 7;
+      a |= ((a & 0xe0) != 0) << 7;
 
       // Set the foreground red
       a |= ((fc.red >= 0x80) << 2);
@@ -77,7 +77,7 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       a |= ((fc.blue >= 0x80) << 0);
 
       // Set the foreground intensity
-      a |= ((a & 0xE) != 0) << 3;
+      a |= ((a & 0xe) != 0) << 3;
 
       // Put the character byte
       text_buffer[text_cursor] = c;
