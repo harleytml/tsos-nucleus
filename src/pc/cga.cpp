@@ -42,18 +42,14 @@ void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 void CGA_driver::putchar(char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
-  uint8_t o;
   switch (mode)
   {
   case TEXT:
-
-    o = text_buffer[text_cursor + 2];
 
     /* 
     This is a early driver.
     Each attribute has 1 bit per color, plus intensity
     Basically, if a color is higher than 0, it is considered active
-    Also, it compares it with its old value if the alpha is high enough
     The result is a rather messy algorithem
      */
 

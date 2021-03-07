@@ -50,13 +50,11 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
     // Color
     case 0x3d4:
       a = 0;
-      o = text_buffer[text_cursor + 2];
 
       /*
         This is a early driver
         Each attribute has 1 bit per color, plus intensity
         Basically, if a color is higher than 0, it is considered active
-        Also, it ORs it with its old value if the alpha is high enough
         The result is a rather messy algorithem
         But it uses bit logic, so it hopefully will be fast
       */

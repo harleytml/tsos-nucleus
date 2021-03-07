@@ -1,12 +1,8 @@
 //By Tsuki Superior
 #include "core.hpp"
 
-Tsos::Tsos(void)
+Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {
-    // The version and related information of the OS
-    version = 0.0;
-    code_name = "Neutronium";
-    short_code_name = "n";
 }
 
 Tsos::~Tsos()
@@ -27,8 +23,7 @@ extern "C"
 {
     void kernel_main(void)
     {
-        Tsos tmp = Tsos();
-        tsos = tmp;
+        Tsos tsos = Tsos();
 
 #ifdef __PERSONAL_COMPUTER__
         GlobalDescriptorTable gdt;
