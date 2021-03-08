@@ -27,8 +27,7 @@ uint8_t Port8Bit::Read()
     return Read8(portnumber);
 }
 
-Port8BitSlow::Port8BitSlow(uint16_t portnumber)
-    : Port8Bit(portnumber)
+Port8BitSlow::Port8BitSlow(uint16_t portnumber) : Port8Bit(portnumber)
 {
 }
 
