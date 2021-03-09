@@ -17,7 +17,7 @@ jobs:
         with:
           debug: true
           directory: ./
-          badge: ./.github/badge.svg
+          badge: ./badge.svg
 
       - name: Print the output
         run: |
