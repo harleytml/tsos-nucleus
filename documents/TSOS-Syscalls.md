@@ -1,7 +1,5 @@
 # TS/OS Syscalls
 
-TOTAL SYSCALLS: 43
-
 BOOT SYSCALLS:
 
 reboot:
@@ -146,26 +144,6 @@ putstring:
 
 Put a C-Style string to the text buffer
 
-gettextcursor:
-
-Get the position of the text cursor
-
-seektextcursor:
-
-Set the position of the text cursor
-
-rseektextcursor:
-
-Set the position of the text cursor relatively
-
-gettextbuffer:
-
-Get a reference to the text buffer
-
-gettextbufferlength:
-
-Get the length of the text buffer
-
 getscreenwidth:
 
 Get the width of the screen
@@ -181,10 +159,6 @@ Set the font of the text system
 clear:
 
 Clear the text buffer
-
-scroll:
-
-Scroll the text buffer
 
 settextbackgroundcolor:
 
