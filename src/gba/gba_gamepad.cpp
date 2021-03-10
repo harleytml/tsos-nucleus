@@ -20,6 +20,10 @@ key_identifier GBA_GAMEPAD_driver::getkey(void)
     return KEY_NULL;
 }
 
+void GBA_GAMEPAD_driver::waitkey(void)
+{
+}
+
 // Is shift pressed
 bool GBA_GAMEPAD_driver::isshiftpressed(void)
 {

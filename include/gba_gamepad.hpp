@@ -18,6 +18,9 @@ public:
     // Get the key currently pressed
     key_identifier getkey(void) override;
 
+    //Wait for a key
+    void waitkey(void) override;
+
     // Is shift pressed
     bool isshiftpressed(void) override;
 
