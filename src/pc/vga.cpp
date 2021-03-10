@@ -32,9 +32,7 @@ void VGA_driver::reset(void)
       text_buffer = (char *)0xb0000;
       return;
   }
-  
-  text_buffer = (char *)0xb8000;
-}
+ }
 
 void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
