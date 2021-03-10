@@ -41,41 +41,14 @@ void GBA_SCREEN_driver::reset(void)
 
   // Get the BG0 tile map control
   screen_control = (uint16_t *)0x4000008;
-
-  text_cursor = 0;
-  text_buffer_length = gettextbufferlength();
-  text_buffer = gettextbuffer();
 }
 
 void GBA_SCREEN_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 {
 }
 
-void GBA_SCREEN_driver::putchar(char c, const Color &bc, const Color &fc)
+void GBA_SCREEN_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
-  text_buffer[text_cursor] = c;
-}
-
-uint16_t GBA_SCREEN_driver::gettextcursor(void)
-{
-  return text_cursor;
-}
-
-void GBA_SCREEN_driver::seektextcursor(uint16_t pos)
-{
-  text_cursor = pos;
-
-  // Make sure it doesn't make it over that 20 tile width
-  if ((text_cursor % 0x32) > 0x14)
-  {
-    text_cursor += 0x32 - (text_cursor % 0x32);
-  }
-
-  // Prevent the cursor from passing over that 18 tile height
-  while (text_cursor >= 0x240)
-  {
-    text_cursor -= 0x240;
-  }
 }
 
 uint16_t GBA_SCREEN_driver::getscreenwidth(void)
@@ -86,15 +59,6 @@ uint16_t GBA_SCREEN_driver::getscreenwidth(void)
 uint16_t GBA_SCREEN_driver::getscreenheight(void)
 {
   return 20;
-}
-
-char *GBA_SCREEN_driver::gettextbuffer(void)
-{
-}
-
-uint16_t GBA_SCREEN_driver::gettextbufferlength(void)
-{
-  return 0x258;
 }
 
 void GBA_SCREEN_driver::setfont(Font f)

@@ -33,5 +33,4 @@ void Boot::shutdown(void)
 
 void Boot::fission(char *errormsg)
 {
-    reboot();
 }

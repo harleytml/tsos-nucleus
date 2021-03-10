@@ -25,25 +25,10 @@ public:
   void reset(void);
 
   // Put a character
-  void putchar(char c);
+  void putchar(uint16_t posx, uint16_t posy, char c);
 
   // Put a string on the screen
-  void putstring(char *str);
-
-  // Get the current location of the text cursor
-  uint16_t gettextcursor(void);
-
-  // Seek the text cursor
-  void seektextcursor(uint16_t pos);
-
-  // Seek the text cursor relatively
-  void rseektextcursor(int16_t pos);
-
-  // Get a reference to the text buffer
-  char *gettextbuffer(void);
-
-  // Get the length of the text buffer
-  uint16_t gettextbufferlength(void);
+  void putstring(uint16_t posx, uint16_t posy, char *str);
 
   // Get the width of the screen
   uint16_t getscreenwidth(void);
@@ -56,9 +41,6 @@ public:
 
   // Clear the screen
   void clear(void);
-
-  // Scroll the screen
-  void scroll(uint8_t lines);
 
   // Set text background color
   void settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue);

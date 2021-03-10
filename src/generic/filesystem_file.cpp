@@ -8,6 +8,8 @@ File::File(void)
 
 File::File(char *pa, Permissions per)
 {
+    path = pa;
+    permissions = per;
 }
 
 File::~File()

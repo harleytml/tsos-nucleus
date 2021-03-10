@@ -26,6 +26,7 @@ bool SFS_driver::detectsystem(void)
 
 char **SFS_driver::readdir(char *path)
 {
+    return (char **)"";
 }
 
 void SFS_driver::rename(char *path, char *newPath)
@@ -34,6 +35,7 @@ void SFS_driver::rename(char *path, char *newPath)
 
 File SFS_driver::open(char *path)
 {
+    return File();
 }
 
 void SFS_driver::close(File file)
@@ -42,6 +44,7 @@ void SFS_driver::close(File file)
 
 char *SFS_driver::read(File file)
 {
+    return "";
 }
 
 void SFS_driver::write(File file, char *data)
@@ -50,6 +53,7 @@ void SFS_driver::write(File file, char *data)
 
 char *SFS_driver::readfile(char *path)
 {
+    return "";
 }
 
 void SFS_driver::writefile(char *path, char *data)
@@ -62,4 +66,5 @@ void SFS_driver::appendfile(char *path, char *data)
 
 bool SFS_driver::exists(char *path)
 {
+    return false;
 }
