@@ -43,6 +43,6 @@ public:
   char directory_name[11];
   uint8_t file_attributes;
   uint8_t __reserved_1__;
-};
+} __attribute__((packed));
 
 #endif
