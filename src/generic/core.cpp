@@ -50,7 +50,7 @@ extern "C"
             tsos.boot.fission("INIT EXECUTABLE NOT FOUND\n");
         }
 
-        File init_executable = tsos.filesystem.open("/bin/init");
+        File init_executable = tsos.filesystem.open(init_file_path);
 
         //For now we will prevent destruction
         while (true)
