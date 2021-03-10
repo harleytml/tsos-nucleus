@@ -21,6 +21,9 @@ public:
   // Is shift pressed
   virtual bool isshiftpressed(void) = 0;
 
+  //Wait key
+  virtual void waitkey(void) = 0;
+
   // Is alt pressed
   virtual bool isaltpressed(void) = 0;
 

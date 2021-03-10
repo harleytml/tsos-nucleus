@@ -3,6 +3,7 @@
 #define __TSOS_XT_KEYBOARD_DRIVER__
 
 #include "input_driver.hpp"
+#include "port.hpp"
 
 class XT_KEYBOARD_driver : public Input_driver
 {
@@ -17,6 +18,9 @@ public:
 
     // Get the key currently pressed
     key_identifier getkey(void) override;
+
+    //Wait for a key
+    void waitkey(void) override;
 
     // Is shift pressed
     bool isshiftpressed(void) override;
