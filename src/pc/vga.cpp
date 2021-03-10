@@ -23,16 +23,16 @@ bool VGA_driver::detectsystem(void)
 
 void VGA_driver::reset(void)
 {
-  switch(*((uint16_t *)0x410))
+  switch (*((uint16_t *)0x410) & 0x30)
   {
-    case 0x20:
-      text_buffer = (char *)0xb8000;
-      return;
-    default:
-      text_buffer = (char *)0xb0000;
-      return;
+  case 0x20:
+    text_buffer = (char *)0xb8000;
+    return;
+  default:
+    text_buffer = (char *)0xb0000;
+    return;
   }
- }
+}
 
 void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {

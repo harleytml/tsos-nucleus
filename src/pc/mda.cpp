@@ -30,6 +30,7 @@ bool MDA_driver::detectsystem(void)
 
 void MDA_driver::reset(void)
 {
+    text_buffer = (char *)0xb0000;
 }
 
 void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
