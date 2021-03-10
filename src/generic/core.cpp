@@ -51,8 +51,6 @@ extern "C"
         }
 
         File init_executable = tsos.filesystem.open(init_file_path);
-
-        //For now we will prevent destruction
         while (true)
         {
         }

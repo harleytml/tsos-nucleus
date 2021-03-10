@@ -15,18 +15,16 @@ bool GRUB2_driver::detectsystem(void)
     return true;
 }
 
-// Defining the reboot function
+//8042 reset
 void GRUB2_driver::reboot(void)
 {
-    uint16_t *post_reset_flag = (uint16_t *)0x400072;
-
-    // Tell the BIOS to perform a warm boot
-    *post_reset_flag = 0x1234;
-
-    //Lets actually reboot
-    asm volatile("push 0xffff\n"
-                 "push 0x0000\n"
-                 "ret\n");
+    uint8_t good = 0x02;
+    while (good & 0x02)
+    {
+        good = inb(0x64);
+    }
+    outb(0x64, 0xfe);
+    asm("hlt");
 }
 
 void GRUB2_driver::shutdown(void)
