@@ -24,7 +24,7 @@ void GRUB2_driver::reboot(void)
         good = inb(0x64);
     }
     outb(0x64, 0xfe);
-    asm("hlt");
+    __asm__("hlt");
 }
 
 void GRUB2_driver::shutdown(void)
