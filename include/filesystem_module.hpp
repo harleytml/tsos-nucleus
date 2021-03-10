@@ -9,6 +9,8 @@
 #include "filesystem_permissions.hpp"
 #include "current_config.hpp"
 
+extern "C" int strcmp(const char *p1, const char *p2);
+
 //The main class controlling the filesystem
 class Filesystem : public Module<Filesystem_driver>
 {
