@@ -23,14 +23,14 @@ bool VGA_driver::detectsystem(void)
 
 void VGA_driver::reset(void)
 {
-  text_cursor = 0;
-  text_buffer_length = gettextbufferlength();
-  text_buffer = gettextbuffer();
+  text_buffer = (char *)0xb8000;
 }
 
-void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
+void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
+  uint16_t screenwidth = getscreenwidth();
+  uint16_t intendedposition = ((posy * screenwidth) + posx) * 2;
   switch (mode)
   {
   case TEXT:
@@ -43,7 +43,7 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
     //Monochrome
     case 0xb0000:
-      text_buffer[text_cursor] = c;
+      text_buffer[intendedposition] = c;
       return;
 
     //Color
@@ -81,13 +81,10 @@ void VGA_driver::putchar(char c, const Color &bc, const Color &fc)
       a |= ((a & 0xE) != 0) << 3;
 
       // Put the character byte
-      text_buffer[text_cursor] = c;
-
-      // Move that cursor forward a little
-      seektextcursor(gettextcursor() + 1);
+      text_buffer[intendedposition] = c;
 
       // Put the attribute byte
-      text_buffer[text_cursor] = (char)a;
+      text_buffer[intendedposition + 1] = (char)a;
       return;
     }
     return;
@@ -124,20 +121,6 @@ void VGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
   */
 }
 
-uint16_t VGA_driver::gettextcursor(void)
-{
-  return text_cursor;
-}
-
-void VGA_driver::seektextcursor(uint16_t pos)
-{
-  text_cursor = pos;
-  while (text_cursor <= text_buffer_length)
-  {
-    text_cursor -= text_buffer_length;
-  }
-}
-
 uint16_t VGA_driver::getscreenwidth(void)
 {
 
@@ -160,24 +143,6 @@ uint16_t VGA_driver::getscreenheight(void)
   default:
     return 0;
   }
-}
-
-char *VGA_driver::gettextbuffer(void)
-{
-
-  // Read the offset of the current video page from the BIOS
-  // address is 0040:044e
-  // return (char *)(*((uint16_t *)0x84e));
-  return (char *)0xb8000;
-}
-
-uint16_t VGA_driver::gettextbufferlength(void)
-{
-
-  // Read the length from the BIOS
-  // Address is 0040:044c
-  return (*((uint16_t *)0x84c));
-  // return 0x1000;
 }
 
 void VGA_driver::setfont(Font f)

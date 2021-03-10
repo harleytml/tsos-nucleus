@@ -26,6 +26,7 @@ bool UDF_driver::detectsystem(void)
 
 char **UDF_driver::readdir(char *path)
 {
+    return (char **)"";
 }
 
 void UDF_driver::rename(char *path, char *newPath)

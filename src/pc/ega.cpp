@@ -18,18 +18,14 @@ bool EGA_driver::detectsystem(void)
 
 void EGA_driver::reset(void)
 {
-  text_cursor = 0;
-  text_buffer_length = gettextbufferlength();
-  text_buffer = gettextbuffer();
+  text_buffer = (char *)0xb8000;
 }
 
-void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
-{
-}
-
-void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
+void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
+  uint16_t screenwidth = getscreenwidth();
+  uint16_t intendedposition = (posy * screenwidth) + posx;
   switch (mode)
   {
   case TEXT:
@@ -42,7 +38,7 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
 
     //Monochrome
     case 0xb0000:
-      text_buffer[text_cursor] = c;
+      text_buffer[intendedposition] = c;
       return;
 
     //Color
@@ -65,7 +61,7 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       a |= ((bc.blue >= 0x80) << 4);
 
       // Set the background intensity
-      a |= ((a & 0xe0) != 0) << 7;
+      a |= ((a & 0xE0) != 0) << 7;
 
       // Set the foreground red
       a |= ((fc.red >= 0x80) << 2);
@@ -77,16 +73,13 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
       a |= ((fc.blue >= 0x80) << 0);
 
       // Set the foreground intensity
-      a |= ((a & 0xe) != 0) << 3;
+      a |= ((a & 0xE) != 0) << 3;
 
       // Put the character byte
-      text_buffer[text_cursor] = c;
-
-      // Move that cursor forward a little
-      seektextcursor(gettextcursor() + 1);
+      text_buffer[intendedposition] = c;
 
       // Put the attribute byte
-      text_buffer[text_cursor] = (char)a;
+      text_buffer[intendedposition + 1] = (char)a;
       return;
     }
     return;
@@ -114,33 +107,13 @@ void EGA_driver::putchar(char c, const Color &bc, const Color &fc)
   }
 }
 
-char *EGA_driver::gettextbuffer(void)
+void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 {
-
-  // Read the offset of the current video page from the BIOS
-  // address is 0040:044e
-  return (char *)(*((uint16_t *)0x84e));
-}
-
-uint16_t EGA_driver::gettextcursor(void)
-{
-  return text_cursor;
-}
-
-void EGA_driver::seektextcursor(uint16_t pos)
-{
-  text_cursor = pos;
-  while (text_cursor <= text_buffer_length)
-  {
-    text_cursor -= text_buffer_length;
-  }
-}
-
-uint16_t EGA_driver::gettextbufferlength(void)
-{
-  // Read the length from the BIOS
-  // Address is 0040:044c
-  return (*((uint16_t *)0x84c));
+  //Doesn't work right now
+  /*
+  uint8_t *location = (uint8_t *)0xA0000 + screen_width * pos_y + pos_x;
+  *location = c;
+  */
 }
 
 uint16_t EGA_driver::getscreenwidth(void)

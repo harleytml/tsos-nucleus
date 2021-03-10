@@ -20,7 +20,7 @@ public:
   ~File();
 
   //The path of the file
-  char *path;
+  const char *path;
 
   //The permissions the file was opened in
   Permissions permissions;

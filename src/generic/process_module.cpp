@@ -14,6 +14,7 @@ Process::~Process(void)
 
 uint8_t Process::spawn(char *path)
 {
+    return 0;
 }
 
 void Process::kill(uint8_t pid)

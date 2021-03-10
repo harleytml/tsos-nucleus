@@ -32,76 +32,36 @@ void Video::reset(void)
   driver->reset();
 }
 
-void Video::putchar(char c)
+void Video::putchar(uint16_t posx, uint16_t posy, char c)
 {
-  driver->putchar(c, backgroundcolor, foregroundcolor);
+  driver->putchar(posx, posy, c, backgroundcolor, foregroundcolor);
 }
 
-void Video::putstring(char *str)
+void Video::putstring(uint16_t posx, uint16_t posy, char *str)
 {
-  int x = 0;
-  while (str[x] != NULL)
+  uint16_t pos = 0;
+  uint16_t x = posx;
+  uint16_t y = posy;
+  while (str[pos] != NULL)
   {
-    char c = str[x++];
+    char c = str[pos];
     switch (c)
     {
     case '\n':
-
-      //We will seek the text cursor to a new line
-      rseektextcursor(getscreenwidth());
+      y++;
       break;
     case '\b':
-
-      //The back symbol
-      rseektextcursor(-1);
-      break;
-    case '\t':
-
-      //The screen will render a tab as 2 spaces
-      for (uint16_t y = 0; y < 2; y++)
-      {
-        putchar(' ');
-        rseektextcursor(1);
-      }
+      x--;
       break;
 
       //Just a normal character
     default:
-      putchar(str[x]);
-      rseektextcursor(1);
+      putchar(x, y, str[pos]);
+      x++;
       break;
     }
+    pos++;
   }
-}
-
-uint16_t Video::gettextcursor(void)
-{
-  return driver->gettextcursor();
-}
-
-void Video::seektextcursor(uint16_t pos)
-{
-  driver->seektextcursor(pos);
-}
-
-void Video::rseektextcursor(int16_t pos)
-{
-  int16_t newpos = gettextcursor() + pos;
-  if (newpos < 0)
-  {
-    newpos = 0;
-  }
-  seektextcursor(newpos);
-}
-
-char *Video::gettextbuffer(void)
-{
-  return driver->gettextbuffer();
-}
-
-uint16_t Video::gettextbufferlength(void)
-{
-  return driver->gettextbufferlength();
 }
 
 uint16_t Video::getscreenwidth(void)
@@ -120,17 +80,14 @@ void Video::setfont(Font f)
 
 void Video::clear(void)
 {
-  for (uint32_t x = 0, len = getscreenheight() * getscreenwidth(); x < len; x++)
+  for (uint16_t x = 0, lenx = getscreenwidth(); x < lenx; x++)
   {
-    putchar(' ');
+    for (uint16_t y = 0, leny = getscreenheight(); y < leny; y++)
+    {
+      putchar(x, y, ' ');
+    }
   }
   reset();
-}
-
-void Video::scroll(uint8_t lines)
-{
-  int16_t len = getscreenwidth();
-  rseektextcursor(len * -1);
 }
 
 void Video::settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue)
