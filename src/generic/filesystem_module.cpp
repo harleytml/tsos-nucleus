@@ -46,7 +46,7 @@ File Filesystem::open(char *path)
 
 void Filesystem::close(File file)
 {
-    if (file.path != "")
+    if (strcmp(file.path,"") != 0)
     {
     }
 }
