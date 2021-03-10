@@ -30,7 +30,15 @@ bool CGA_driver::detectsystem(void)
 
 void CGA_driver::reset(void)
 {
-  text_buffer = (char *)0xb8000;
+  switch (*((uint16_t *)0x410) & 0x30)
+  {
+  case 0x20:
+    text_buffer = (char *)0xb8000;
+    return;
+  default:
+    text_buffer = (char *)0xb0000;
+    return;
+  }
 }
 
 void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
