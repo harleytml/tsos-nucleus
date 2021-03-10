@@ -34,6 +34,18 @@ key_identifier AT_KEYBOARD_driver::getkey(void)
     }
 }
 
+void AT_KEYBOARD_driver::waitkey(void)
+{
+
+    char k;
+    while ((k = inb(0x60)) < 128)
+    {
+    }
+    while (inb(0x60) > 128)
+    {
+    }
+}
+
 bool AT_KEYBOARD_driver::isshiftpressed(void)
 {
     return false;
