@@ -23,6 +23,8 @@ LD:=tsos-mipsel-ld.gold
 LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib -march=r3000
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
+CPP_FILES+=$(wildcard $(SRC_DIR)/psx/*.cpp)
+CPP_FILES+=$(wildcard $(SRC_DIR)/mipsel/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus

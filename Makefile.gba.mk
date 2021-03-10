@@ -24,6 +24,7 @@ LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -static -mcpu=arm7tdmi -nostart
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)
+CPP_FILES+=$(wildcard $(SRC_DIR)/armeabi/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus

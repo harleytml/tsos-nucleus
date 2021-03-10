@@ -24,6 +24,7 @@ LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -static -nostartfiles -mtune=i68
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)
+CPP_FILES+=$(wildcard $(SRC_DIR)/i686/*.cpp)
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus
