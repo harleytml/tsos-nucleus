@@ -14,7 +14,8 @@ jobs:
         with:
           image: tsukisuperior/tsos-build:latest
           run: |
-            /build.sh pc
+            cd /github/workspace
+            ./build.sh pc
   gba-build:
     runs-on: ubuntu-latest
     name: GBA Build
@@ -27,7 +28,8 @@ jobs:
         with:
           image: tsukisuperior/tsos-build:latest
           run: |
-            /build.sh gba
+            cd /github/workspace
+            ./build.sh gba
   psx-build:
     runs-on: ubuntu-latest
     name: PSX Build
@@ -40,4 +42,5 @@ jobs:
         with:
           image: tsukisuperior/tsos-build:latest
           run: |
-            /build.sh psx
+            cd /github/workspace
+            ./build.sh psx
