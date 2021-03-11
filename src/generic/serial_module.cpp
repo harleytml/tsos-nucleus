@@ -14,6 +14,10 @@ Serial::Serial(void)
 
     attachdriver(gba_io_port_driver);
 #endif
+
+#ifdef __PLAYSTATION_X__
+
+#endif
 }
 
 Serial::~Serial()

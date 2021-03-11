@@ -9,6 +9,7 @@ exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+# The root dir of the project
 CODE_DIR=$(pwd)
 
 # Make sure the required tools are here
@@ -19,7 +20,7 @@ help)
     echo ""
     echo "pc  - i686 or higher IBM compatible Personal Computer"
     echo "gba - Nintendo Gameboy Advance"
-    echo "psx - Playstation 1"
+    echo "psx - Sony Playstation 1"
     exit 0
     ;;
 pc)
@@ -43,8 +44,6 @@ nspire)
     ;;
 rpi3)
     NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld.gold make)
-    echo "This system is not supported yet."
-    exit 1
     ;;
 pc98)
     NEEDED_COMMANDS=(make)

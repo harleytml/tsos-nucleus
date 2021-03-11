@@ -1,6 +1,8 @@
-#!/bin/make -f
+#!/usr/bin/env make -f
 # By Tsuki Superior
 .RECIPEPREFIX=:
+
+PLATFORM_OPTIONS:=-march=r3000 -msoft-float
 
 BUILD_DIR:=../build
 SRC_DIR:=../src
@@ -11,16 +13,16 @@ LINKER_SCRIPTS_DIR:=../linker-scripts
 LIB=-lgcc
 
 CC:=tsos-mipsel-gcc
-CC_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -nostartfiles -c -fno-builtin -march=r3000
+CC_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 CPP:=tsos-mipsel-g++
-CPP_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -msoft-float -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -nostartfiles -c -march=r3000 
+CPP_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 AS:=tsos-mipsel-as
-AS_FLAGS:=-g -march=r3000 -msoft-float
+AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
 LD:=tsos-mipsel-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib -march=r3000
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/psx/*.cpp)

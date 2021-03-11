@@ -23,7 +23,3 @@ Taken for solid C++ support
 [/src/icxxabi.hpp](https://github.com/tsuki-superior/tsos-nucleus/blob/master/include/icxxabi.hpp)
 
 Taken for solid C++ support
-
-[/linker-scripts/psx-elf.ld](https://github.com/simias/psx-sdk-rs/blob/master/psx.ld)
-
-I needed a LD script ok....

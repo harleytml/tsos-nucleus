@@ -21,6 +21,12 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 
   attachdriver(gba_screen_driver);
 #endif
+
+#ifdef __PLAYSTATION_X__
+  static PSX_SCREEN_driver psx_screen_driver = PSX_SCREEN_driver();
+
+  attachdriver(psx_screen_driver);
+#endif
 }
 
 Video::~Video()
