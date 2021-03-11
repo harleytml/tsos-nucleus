@@ -13,7 +13,6 @@ jobs:
         uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          options: -v ${{ github.workspace }}:/work
           run: |
             /build.sh pc
   gba-build:
@@ -27,7 +26,6 @@ jobs:
         uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          options: -v ${{ github.workspace }}:/work
           run: |
             /build.sh gba
   psx-build:
@@ -41,6 +39,5 @@ jobs:
         uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          options: -v ${{ github.workspace }}:/work
           run: |
             /build.sh psx
