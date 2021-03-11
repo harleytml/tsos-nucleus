@@ -1,10 +1,10 @@
 on: [push]
-name: Run Test
+name: Build
 
 jobs:
-  loc-count:
+  pc-build:
     runs-on: ubuntu-latest
-    name: LoC
+    name: PC Build
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -13,6 +13,34 @@ jobs:
         uses: addnab/docker-run-action@v2
         with:
           image: tsukisuperior/tsos-build:latest
-          options: -v ${{ github.workspace }}:/
+          options: -v ${{ github.workspace }}:/work
           run: |
             /build.sh pc
+  gba-build:
+    runs-on: ubuntu-latest
+    name: GBA Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Main-Build
+        uses: addnab/docker-run-action@v2
+        with:
+          image: tsukisuperior/tsos-build:latest
+          options: -v ${{ github.workspace }}:/work
+          run: |
+            /build.sh gba
+  psx-build:
+    runs-on: ubuntu-latest
+    name: PSX Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Main-Build
+        uses: addnab/docker-run-action@v2
+        with:
+          image: tsukisuperior/tsos-build:latest
+          options: -v ${{ github.workspace }}:/work
+          run: |
+            /build.sh psx

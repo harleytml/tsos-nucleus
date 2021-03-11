@@ -1,5 +1,5 @@
 on: [push]
-name: Run Test
+name: Count Lines Of Code
 
 jobs:
   loc-count:
