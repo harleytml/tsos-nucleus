@@ -135,7 +135,8 @@ uint16_t CGA_driver::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
-  return *((uint16_t *)0x84a);
+  // Address is 0040:44a
+  return *((uint16_t *)0x44a);
 }
 
 uint16_t CGA_driver::getscreenheight(void)

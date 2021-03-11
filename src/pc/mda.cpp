@@ -51,7 +51,7 @@ uint16_t MDA_driver::getscreenwidth(void)
 
     // Read the width from a BIOS field
     // Address is 0040:44a
-    return *((uint16_t *)0x84a);
+    return *((uint16_t *)0x44a);
 }
 
 uint16_t MDA_driver::getscreenheight(void)

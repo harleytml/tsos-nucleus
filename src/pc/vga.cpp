@@ -134,8 +134,7 @@ uint16_t VGA_driver::getscreenwidth(void)
 
   // Read the width from a BIOS field
   // Address is 0040:44a
-  // return *((uint8_t *)0x84a);
-  return 80;
+  return *((uint16_t *)0x44a);
 }
 
 uint16_t VGA_driver::getscreenheight(void)
