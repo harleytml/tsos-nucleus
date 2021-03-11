@@ -9,7 +9,7 @@ This is TS/OS's Monolithic kernel
 
 Current Version: `Neutronium (0.0)`
 
-TS/OS is a SysV ABI, \*nix inspired (sorta), operating system with a focus on being as multiplatform as possible.
+TS/OS is a SysV ABI operating system with a focus on being as multiplatform as possible.
 
 TS/OS was a operating system made for several reasons
 
