@@ -3,7 +3,7 @@
 #define __TSOS_XT_KEYBOARD_DRIVER__
 
 #include "input_driver.hpp"
-#include "port.hpp"
+#include "io.hpp"
 
 class XT_KEYBOARD_driver : public Input_driver
 {
