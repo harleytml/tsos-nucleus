@@ -7,7 +7,7 @@ jobs:
     name: PC Build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Main-Build
         uses: addnab/docker-run-action@v2
@@ -20,7 +20,7 @@ jobs:
     name: GBA Build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Main-Build
         uses: addnab/docker-run-action@v2
@@ -33,7 +33,7 @@ jobs:
     name: PSX Build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Main-Build
         uses: addnab/docker-run-action@v2
