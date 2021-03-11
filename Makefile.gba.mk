@@ -1,6 +1,8 @@
-#!/bin/make -f
+#!/usr/bin/env make -f
 # By Tsuki Superior
 .RECIPEPREFIX=:
+
+PLATFORM_OPTIONS:=-mthumb-interwork -mcpu=arm7tdmi -mthumb 
 
 BUILD_DIR:=../build
 SRC_DIR:=../src
@@ -11,16 +13,16 @@ LINKER_SCRIPTS_DIR:=../linker-scripts
 LIB=-lgcc
 
 CC:=tsos-armeabi-gcc
-CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -O0 -Wall -Wextra -pedantic -mthumb -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c -fno-builtin
+CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 CPP:=tsos-armeabi-g++
-CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -lgcc -pedantic -mthumb -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -c
+CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS) 
 
 AS:=tsos-armeabi-as
-AS_FLAGS:=-g -mcpu=arm7tdmi -mthumb-interwork
+AS_FLAGS:=-g $(PLATFORM_OPTIONS) 
 
 LD:=tsos-armeabi-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -static -mcpu=arm7tdmi -nostartfiles -mthumb-interwork -ffreestanding -O0 -nostdlib
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS) 
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)

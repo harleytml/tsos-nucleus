@@ -14,6 +14,12 @@ Disk::Disk(void)
 
     attachdriver(gba_cartridge_driver);
 #endif
+
+#ifdef __PLAYSTATION_X__
+    static PSX_DISK_driver psx_disk_driver = PSX_DISK_driver();
+
+    attachdriver(psx_disk_driver);
+#endif
 }
 
 Disk::~Disk()

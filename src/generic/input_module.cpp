@@ -16,6 +16,12 @@ Input::Input(void)
 
     attachdriver(gba_gamepad_driver);
 #endif
+
+#ifdef __PLAYSTATION_X__
+    static PSX_GAMEPAD_driver psx_gamepad_driver = PSX_GAMEPAD_driver();
+
+    attachdriver(psx_gamepad_driver);
+#endif
 }
 
 Input::~Input(void)

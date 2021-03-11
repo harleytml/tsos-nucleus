@@ -30,9 +30,10 @@
 /* list the lma address as the vma address for    */
 /* some versions of objdump.                      */
 
-OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
+OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
+
 /* SEARCH_DIR(/bin/arm); */
 
 /* By default this linker script will generate code        */

@@ -39,14 +39,6 @@ key_identifier XT_KEYBOARD_driver::getkey(void)
 
 void XT_KEYBOARD_driver::waitkey(void)
 {
-
-    char k;
-    while ((k = inb(0x60)) < 128)
-    {
-    }
-    while (inb(0x60) > 128)
-    {
-    }
 }
 
 bool XT_KEYBOARD_driver::isshiftpressed(void)

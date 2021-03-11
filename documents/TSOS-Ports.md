@@ -10,6 +10,10 @@ gba
 
 This is the Nintendo Gameboy Advance, with a ARM processor, and a GBZ80 processor (That most likely will not be used).
 
+psx
+
+This is the Sony Playstation 1
+
 FUTURE PORTS:
 
 psp
@@ -39,7 +43,3 @@ This is the PC AT, with somewhat PC-Compatible hardware.
 nds
 
 This is the Nintendo Dual Screen, with dual ARM processors.
-
-psx
-
-This is the Sony Playstation 1
