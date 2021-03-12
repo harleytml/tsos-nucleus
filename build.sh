@@ -44,6 +44,8 @@ nspire)
     ;;
 rpi3)
     NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld.gold make)
+    echo "This system is not supported yet."
+    exit 1
     ;;
 pc98)
     NEEDED_COMMANDS=(make)
@@ -151,7 +153,7 @@ debug)
             exit 1
         fi
         echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
-        vba --gdb=tcp:1234 "./tsos.gba"
+        vba --gdb=tcp:1234 --rtc "./tsos.gba"
         ;;
 
     esac
