@@ -38,4 +38,4 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
 clean:
-:rm -rfv $(shell find ../ -name \*.o) $(shell find ../ -name \*.tse) $(shell find ../ -name \*.iso) $(shell find ../ -name \*.gba) 
+:rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*

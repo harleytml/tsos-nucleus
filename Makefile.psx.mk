@@ -41,4 +41,4 @@ $(ASM_DIR)/psx/psx_boot.o: $(ASM_DIR)/psx/psx_boot.S
 :$(AS) $(AS_FLAGS) -o $@ $^ 
 
 clean:
-:rm -rfv $(shell find ../ -name \*.o) $(shell find ../ -name \*.tse) $(shell find ../ -name \*.iso) $(shell find ../ -name \*.gba) 
+:rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*
