@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "disk_module.hpp"
+#include "nucleus_instance.hpp"
 
 Disk::Disk(void)
 {

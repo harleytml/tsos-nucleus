@@ -2,7 +2,7 @@
 #define __TSOS_ICXXABI__
 
 #include "types.hpp"
-#include "core.hpp"
+#include "nucleus_instance.hpp"
 
 #define ATEXIT_MAX_FUNCS 128
 
@@ -36,8 +36,7 @@ extern "C"
 	void *memset(void *bufptr, int value, size_t size);
 	int memcmp(const void *aptr, const void *bptr, size_t size);
 	void *memmove(void *dstptr, const void *srcptr, size_t size);
-    int strcmp(const char *p1, const char *p2);
-
+	int strcmp(const char *p1, const char *p2);
 }
 
 namespace __cxxabiv1

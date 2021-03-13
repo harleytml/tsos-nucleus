@@ -48,6 +48,8 @@ public:
   // Set text foreground color
   void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue);
 
+  uint16_t scroll;
+
 private:
   // Current font
   Font font;

@@ -1,8 +1,11 @@
 //By Tsuki Superior
 #include "video_module.hpp"
+#include "nucleus_instance.hpp"
 
 Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(Color(0xff, 0xff, 0xff))
 {
+  scroll = 0;
+
 #ifdef __PERSONAL_COMPUTER__
   static EGA_driver ega_driver = EGA_driver();
   static VGA_driver vga_driver = VGA_driver();
@@ -16,7 +19,6 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
   {
     return;
   }
-
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
