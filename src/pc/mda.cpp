@@ -35,6 +35,7 @@ void MDA_driver::reset(void)
 
 void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
 {
+    // Well the MDA is simply not capable of drawing pixels...
 }
 
 // This feels pointless considering that MDA is monochrome
@@ -50,7 +51,6 @@ uint16_t MDA_driver::getscreenwidth(void)
 {
 
     // Read the width from a BIOS field
-    // Address is 0040:44a
     return *((uint16_t *)0x44a);
 }
 

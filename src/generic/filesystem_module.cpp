@@ -9,11 +9,14 @@ Filesystem::Filesystem(void)
     static SFS_driver sfs_driver = SFS_driver();
     static UDF_driver udf_driver = UDF_driver();
 
-    attachdriver(fat32_driver);
-    attachdriver(fat16_driver);
-    attachdriver(fat12_driver);
-    attachdriver(sfs_driver);
-    attachdriver(udf_driver);
+    if (attachdriver(fat32_driver) ||
+        attachdriver(fat16_driver) ||
+        attachdriver(fat12_driver) ||
+        attachdriver(sfs_driver) ||
+        attachdriver(udf_driver))
+    {
+        return;
+    }
 }
 
 Filesystem::~Filesystem()
@@ -46,7 +49,7 @@ File Filesystem::open(char *path)
 
 void Filesystem::close(File file)
 {
-    if (strcmp(file.path,"") != 0)
+    if (strcmp(file.path, "") != 0)
     {
     }
 }

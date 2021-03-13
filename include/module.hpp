@@ -20,13 +20,15 @@ public:
   char *name;
 
   // Attach a driver
-  void attachdriver(T &d)
+  bool attachdriver(T &d)
   {
     // The driver has to be for the right machine and run on that machine's configuration
     if (d.detectsystem())
     {
       driver = &d;
+      return true;
     }
+    return false;
   };
 
 protected:

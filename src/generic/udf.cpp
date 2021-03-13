@@ -24,6 +24,10 @@ bool UDF_driver::detectsystem(void)
     return true;
 }
 
+void UDF_driver::reset(void)
+{
+}
+
 char **UDF_driver::readdir(char *path)
 {
     return (char **)"";

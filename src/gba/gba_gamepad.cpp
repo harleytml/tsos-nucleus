@@ -15,6 +15,10 @@ bool GBA_GAMEPAD_driver::detectsystem(void)
     return true;
 }
 
+void GBA_GAMEPAD_driver::reset(void)
+{
+}
+
 key_identifier GBA_GAMEPAD_driver::getkey(void)
 {
     return KEY_NULL;

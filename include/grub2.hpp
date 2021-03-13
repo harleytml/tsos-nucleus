@@ -17,6 +17,8 @@ public:
   //Detect the type of system its running on
   bool detectsystem(void) override;
 
+  void reset(void) override;
+
   //Reboot the system
   void reboot(void) override;
 

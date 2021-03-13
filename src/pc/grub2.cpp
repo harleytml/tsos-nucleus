@@ -15,6 +15,10 @@ bool GRUB2_driver::detectsystem(void)
     return true;
 }
 
+void GRUB2_driver::reset(void)
+{
+}
+
 //8042 reset
 void GRUB2_driver::reboot(void)
 {

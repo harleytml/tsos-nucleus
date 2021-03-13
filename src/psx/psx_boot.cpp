@@ -15,6 +15,10 @@ bool PSX_BOOT_driver::detectsystem(void)
     return true;
 }
 
+void PSX_BOOT_driver::reset(void)
+{
+}
+
 void PSX_BOOT_driver::reboot(void)
 {
 }

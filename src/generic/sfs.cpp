@@ -24,6 +24,10 @@ bool SFS_driver::detectsystem(void)
     return true;
 }
 
+void SFS_driver::reset(void)
+{
+}
+
 char **SFS_driver::readdir(char *path)
 {
     return (char **)"";

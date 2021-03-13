@@ -17,6 +17,8 @@ public:
     // A function called to determine if a driver should be used.
     virtual bool detectsystem(void) = 0;
 
+    virtual void reset(void) = 0;
+
     // The name of said driver
     char *name;
 };

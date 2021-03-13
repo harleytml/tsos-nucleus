@@ -15,6 +15,10 @@ bool PSX_GAMEPAD_driver::detectsystem(void)
     return true;
 }
 
+void PSX_GAMEPAD_driver::reset(void)
+{
+}
+
 key_identifier PSX_GAMEPAD_driver::getkey(void)
 {
     return KEY_NULL;

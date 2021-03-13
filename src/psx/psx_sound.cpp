@@ -11,6 +11,10 @@ bool PSX_SOUND_driver::detectsystem(void)
     return true;
 }
 
+void PSX_SOUND_driver::reset(void)
+{
+}
+
 void PSX_SOUND_driver::playtone(Tone tone)
 {
 }

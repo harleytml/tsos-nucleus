@@ -13,6 +13,8 @@ public:
 
   ~Serial_driver();
 
+  virtual void reset(void) = 0;
+
   // Exchange a byte
   virtual uint8_t exchangebyte(uint8_t b) = 0;
 

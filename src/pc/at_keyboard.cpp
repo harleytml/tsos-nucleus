@@ -18,11 +18,17 @@ bool AT_KEYBOARD_driver::detectsystem(void)
     return (*((uint8_t *)0x496) & 0x10) == 0x10;
 }
 
-/* So detecting keys in PC is a little sketchy.
-  The keyboard buffer is a cyclic queue
-  hence you have to read characters before it is filled and starts to overwrite itself
-  and this starts to happen, your BIOS will beep at you
-  If you are testing TS/OS, please watch for this */
+void AT_KEYBOARD_driver::reset(void)
+{
+}
+
+/*
+So detecting keys in PC is a little sketchy.
+The keyboard buffer is a cyclic queue
+hence you have to read characters before it is filled and starts to overwrite itself
+and this starts to happen, your BIOS will beep at you
+If you are testing TS/OS, please watch for this 
+*/
 
 key_identifier AT_KEYBOARD_driver::getkey(void)
 {

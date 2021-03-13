@@ -11,6 +11,7 @@ class SFS_driver : public Filesystem_driver
 public:
   SFS_driver(void);
   bool detectsystem(void) override;
+  void reset(void) override;
   char **readdir(char *path) override;
   void rename(char *path, char *newPath) override;
   File open(char *path) override;
