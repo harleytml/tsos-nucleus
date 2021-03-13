@@ -135,22 +135,22 @@ extern "C"
 
 	void *operator new(size_t size)
 	{
-		return tsos.process.allocatememory(size);
+		return tsos->process.allocatememory(size);
 	}
 
 	void *operator new[](size_t size)
 	{
-		return tsos.process.allocatememory(size);
+		return tsos->process.allocatememory(size);
 	}
 
 	void operator delete(void *p)
 	{
-		tsos.process.freememory(p);
+		tsos->process.freememory(p);
 	}
 
 	void operator delete[](void *p)
 	{
-		tsos.process.freememory(p);
+		tsos->process.freememory(p);
 	}
 
 	void *memcpy(void *dstptr, const void *srcptr, size_t size)

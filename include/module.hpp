@@ -11,7 +11,10 @@ class Module
 {
 public:
   // Constructor
-  Module(void) : name(""){};
+  Module(void)
+  {
+    name = "";
+  };
 
   // Destructor
   ~Module(){};

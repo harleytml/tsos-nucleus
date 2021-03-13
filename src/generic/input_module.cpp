@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "input_module.hpp"
+#include "nucleus_instance.hpp"
 
 Input::Input(void)
 {

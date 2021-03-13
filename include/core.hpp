@@ -10,16 +10,6 @@
 #include "serial_module.hpp"
 #include "sound_module.hpp"
 #include "video_module.hpp"
-#include "boot_driver.hpp"
-#include "disk_driver.hpp"
-#include "filesystem_driver.hpp"
-#include "input_driver.hpp"
-#include "process_driver.hpp"
-#include "serial_driver.hpp"
-#include "sound_driver.hpp"
-#include "video_driver.hpp"
-#include "driver.hpp"
-#include "module.hpp"
 #include "types.hpp"
 
 // The main class collecting the TS/OS nucleus api
@@ -57,15 +47,13 @@ public:
   Sound sound;
 
   // The version of TS/OS being used here
-  const float version;
+  float version;
 
   // The code name to TS/OS being used here
-  const char *code_name;
+  char *code_name;
 
   // The 1-2 letter code name of TS/OS being used here
-  const char *short_code_name;
+  char *short_code_name;
 };
-
-static Tsos tsos;
 
 #endif

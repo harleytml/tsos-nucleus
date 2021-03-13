@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "serial_module.hpp"
+#include "nucleus_instance.hpp"
 
 Serial::Serial(void)
 {

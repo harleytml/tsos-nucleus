@@ -1,5 +1,6 @@
 // By Tsuki Superior
 #include "filesystem_module.hpp"
+#include "nucleus_instance.hpp"
 
 Filesystem::Filesystem(void)
 {

@@ -1,5 +1,7 @@
 //By Tsuki Superior
+
 #include "boot_module.hpp"
+#include "nucleus_instance.hpp"
 
 Boot::Boot(void)
 {
@@ -48,4 +50,5 @@ void Boot::shutdown(void)
 
 void Boot::fission(char *errormsg)
 {
+    tsos->video.putstring(0, tsos->video.scroll++, errormsg);
 }
