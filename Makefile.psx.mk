@@ -22,7 +22,7 @@ AS:=tsos-mipsel-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
 LD:=tsos-mipsel-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/psx/*.cpp)

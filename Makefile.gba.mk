@@ -22,7 +22,7 @@ AS:=tsos-armeabi-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS) 
 
 LD:=tsos-armeabi-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba-elf.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS) 
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS) 
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)

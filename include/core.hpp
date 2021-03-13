@@ -22,9 +22,6 @@
 #include "module.hpp"
 #include "types.hpp"
 
-// This file is customized by for the system
-#include "current_config.hpp"
-
 // The main class collecting the TS/OS nucleus api
 class Tsos
 {

@@ -22,7 +22,7 @@ AS:=tsos-aarch64-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
 LD:=tsos-aarch64-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/rpi3.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/rpi3/*.cpp)
@@ -31,11 +31,14 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus: $(OBJ_FILES)
+$(BUILD_DIR)/nucleus: $(OBJ_FILES) $(ASM_DIR)/rpi3/rpi3_boot.o
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
+
+$(ASM_DIR)/rpi3/rpi3_boot.o: $(ASM_DIR)/rpi3/rpi3_boot.S
+:$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
 :rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*
