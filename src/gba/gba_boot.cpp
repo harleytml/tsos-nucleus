@@ -15,6 +15,10 @@ bool GBA_BOOT_driver::detectsystem(void)
     return true;
 }
 
+void GBA_BOOT_driver::reset(void)
+{
+}
+
 void GBA_BOOT_driver::reboot(void)
 {
 }

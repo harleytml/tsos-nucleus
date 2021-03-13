@@ -11,6 +11,10 @@ bool GBA_IO_PORT_driver::detectsystem(void)
     return true;
 }
 
+void GBA_IO_PORT_driver::reset(void)
+{
+}
+
 bool GBA_IO_PORT_driver::isdevicethere(void)
 {
     return false;

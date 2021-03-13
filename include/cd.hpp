@@ -16,6 +16,8 @@ public:
 
   bool detectsystem(void) override;
 
+  void reset(void) override;
+
   // Get an amount of bytes from the disk
   void getbytes(uint8_t *buffer, uint16_t offset, uint8_t len) override;
 

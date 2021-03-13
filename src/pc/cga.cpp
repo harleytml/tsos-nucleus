@@ -33,7 +33,7 @@ void CGA_driver::reset(void)
   switch (*((uint16_t *)0x410) & 0x30)
   {
   case 0x20:
-    text_buffer = (char *)0xb8000;
+    text_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
     return;
   default:
     text_buffer = (char *)0xb0000;
@@ -56,17 +56,16 @@ void CGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
 
     // Lets check if the video system has made it in a mode different than when the driver was initialized
     // We are checking the video controller 6845 port number for the color type
-    // Address is 0040:0463
-    switch (*((uint16_t *)0x44e))
+    switch (*((uint16_t *)0x410) & 0x30)
     {
 
     //Monochrome
-    case 0xb0000:
+    case 0x30:
       text_buffer[intendedposition] = c;
       return;
 
     //Color
-    default:
+    case 0x20:
       /* 
       This is a early driver
       Each attribute has 1 bit per color, plus intensity

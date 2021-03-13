@@ -19,6 +19,10 @@ bool XT_KEYBOARD_driver::detectsystem(void)
     return (*((uint8_t *)0x496) & 0x10) == 0;
 }
 
+void XT_KEYBOARD_driver::reset(void)
+{
+}
+
 /*
    So detecting keys in PC is a little tricky
    The keyboard buffer is a cyclic queue

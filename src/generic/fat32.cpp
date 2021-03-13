@@ -24,6 +24,10 @@ bool FAT32_driver::detectsystem(void)
     return true;
 }
 
+void FAT32_driver::reset(void)
+{
+}
+
 char **FAT32_driver::readdir(char *path)
 {
     return (char **)NULL;

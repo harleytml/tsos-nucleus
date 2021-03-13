@@ -11,6 +11,10 @@ bool RS232_driver::detectsystem(void)
     return true;
 }
 
+void RS232_driver::reset(void)
+{
+}
+
 bool RS232_driver::isdevicethere(void)
 {
     return false;

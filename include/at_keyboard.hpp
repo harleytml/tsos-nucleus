@@ -16,6 +16,8 @@ public:
     // Detects if the module should be used
     bool detectsystem(void) override;
 
+    void reset(void) override;
+
     // Get the key currently pressed
     key_identifier getkey(void) override;
 

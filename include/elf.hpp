@@ -10,6 +10,7 @@ class ELF_driver : public Process_driver
 public:
   ELF_driver(void);
   bool detectsystem(void) override;
+  void reset(void) override;
   bool isvalidexecutable(char *path) override;
 };
 

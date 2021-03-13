@@ -15,6 +15,10 @@ bool PSX_DISK_driver::detectsystem()
     return true;
 }
 
+void PSX_DISK_driver::reset(void)
+{
+}
+
 void PSX_DISK_driver::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len)
 {
 }

@@ -27,9 +27,6 @@ public:
 
     // Get the height of the screen
     virtual uint16_t getscreenheight(void) = 0;
-
-    // Reset the system
-    virtual void reset(void) = 0;
 };
 
 #endif

@@ -15,6 +15,10 @@ bool CD_driver::detectsystem()
     return true;
 }
 
+void CD_driver::reset(void)
+{
+}
+
 void CD_driver::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len)
 {
 }
