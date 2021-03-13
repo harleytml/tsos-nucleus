@@ -22,7 +22,7 @@ AS:=tsos-i686-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
 LD:=tsos-i686-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc-elf.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)

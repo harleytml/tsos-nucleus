@@ -1,6 +1,9 @@
 //By Tsuki Superior
 #include "core.hpp"
 
+// This file is customized by for the system
+#include "current_config.hpp"
+
 Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {
 }
