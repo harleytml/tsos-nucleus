@@ -28,18 +28,6 @@ rpi3
 
 This is the Raspiberry Pi 3, with a ARM64 processor.
 
-pc98
-
-This is the NEC-PC98, with a x86 processor, with non PC-Compatible hardware.
-
-pcxt
-
-This is the PC XT, with somewhat PC-Compatible hardware.
-
-pcat
-
-This is the PC AT, with somewhat PC-Compatible hardware.
-
 nds
 
 This is the Nintendo Dual Screen, with dual ARM processors.

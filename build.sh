@@ -30,7 +30,7 @@ gba)
     NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make tsos-gbafix)
     ;;
 psx)
-    NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
+    NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make tsos-elf2x)
     ;;
 psp)
     NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
@@ -44,21 +44,6 @@ nspire)
     ;;
 rpi3)
     NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld.gold make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
-pc98)
-    NEEDED_COMMANDS=(make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
-pcxt)
-    NEEDED_COMMANDS=(make)
-    echo "This system is not supported yet."
-    exit 1
-    ;;
-pcat)
-    NEEDED_COMMANDS=(make)
     echo "This system is not supported yet."
     exit 1
     ;;
@@ -112,7 +97,9 @@ gba)
     tsos-armeabi-objcopy -v -O binary "./nucleus" "./tsos.gba"
     tsos-gbafix "./tsos.gba" -t -p
     ;;
-
+psx)
+    tsos-elf2x "./nucleus" "./nucleus.psx"
+    ;;
 esac
 
 echo ""
