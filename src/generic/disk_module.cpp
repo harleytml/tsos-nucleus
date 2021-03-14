@@ -7,28 +7,19 @@ Disk::Disk(void)
 #ifdef __PERSONAL_COMPUTER__
     static CD_driver cd_driver = CD_driver();
 
-    if (attachdriver(cd_driver))
-    {
-        return;
-    }
+    attachdriver(cd_driver);
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
     static GBA_CARTRIDGE_driver gba_cartridge_driver = GBA_CARTRIDGE_driver();
 
-    if (attachdriver(gba_cartridge_driver))
-    {
-        return;
-    }
+    attachdriver(gba_cartridge_driver);
 #endif
 
 #ifdef __PLAYSTATION_X__
     static PSX_DISK_driver psx_disk_driver = PSX_DISK_driver();
 
-    if (attachdriver(psx_disk_driver))
-    {
-        return;
-    }
+    attachdriver(psx_disk_driver);
 #endif
 }
 

@@ -19,19 +19,14 @@ Input::Input(void)
 #ifdef __GAMEBOY_ADVANCED__
     static GBA_GAMEPAD_driver gba_gamepad_driver = GBA_GAMEPAD_driver();
 
-    if (attachdriver(gba_gamepad_driver))
-    {
-        return;
-    }
+    attachdriver(gba_gamepad_driver);
+
 #endif
 
 #ifdef __PLAYSTATION_X__
     static PSX_GAMEPAD_driver psx_gamepad_driver = PSX_GAMEPAD_driver();
 
-    if (attachdriver(psx_gamepad_driver))
-    {
-        return;
-    }
+    attachdriver(psx_gamepad_driver);
 #endif
 }
 
