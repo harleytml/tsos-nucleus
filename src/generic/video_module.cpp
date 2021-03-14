@@ -24,19 +24,13 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 #ifdef __GAMEBOY_ADVANCED__
   static GBA_SCREEN_driver gba_screen_driver = GBA_SCREEN_driver();
 
-  if (attachdriver(gba_screen_driver))
-  {
-    return;
-  }
+  attachdriver(gba_screen_driver);
 #endif
 
 #ifdef __PLAYSTATION_X__
   static PSX_SCREEN_driver psx_screen_driver = PSX_SCREEN_driver();
 
-  if (attachdriver(psx_screen_driver))
-  {
-    return;
-  }
+  attachdriver(psx_screen_driver);
 #endif
 }
 

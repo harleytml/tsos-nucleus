@@ -6,10 +6,7 @@ Process::Process(void)
 {
     static ELF_driver elf_driver = ELF_driver();
 
-    if (attachdriver(elf_driver))
-    {
-        return;
-    }
+    attachdriver(elf_driver);
 }
 
 Process::~Process(void)
