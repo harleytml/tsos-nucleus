@@ -74,10 +74,10 @@ mkdir -pv "$FILESYSTEM_ROOT/"{bin,boot,cfg,lib,sys,sys/tmp,sys/headers,sys/info,
 mkdir -pv "$CODE_DIR/build/"
 cd "$CODE_DIR/build/" || exit 1
 rm -rfv "$CODE_DIR/build/nucleus*"
-cp -v "../Makefile.$1.mk" "./Makefile"
+cp -v "../makefiles/$1.mk" "./Makefile"
 make clean
 cp -v "../config/$1.hpp" "./current_config.hpp"
-cp -v "../Makefile.$1.mk" "./Makefile"
+cp -v "../makefiles/$1.mk" "./Makefile"
 make -j"$(nproc)"
 
 echo ""
