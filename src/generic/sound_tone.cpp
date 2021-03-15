@@ -1,7 +1,7 @@
 // By Tsuki Superior
 #include "sound_tone.hpp"
 
-Tone::Tone(uint16_t f, uint16_t l) : frequency(f), length(l)
+Tone::Tone(uint32_t f, uint16_t l) : frequency(f), length(l)
 {
 }
 

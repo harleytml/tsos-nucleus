@@ -8,7 +8,7 @@ class Tone
 {
 public:
   // Constructor
-  Tone(uint16_t f, uint16_t l);
+  Tone(uint32_t f, uint16_t l);
 
   // Constructor to copy a tone
   Tone(const Tone &tone);
@@ -16,7 +16,7 @@ public:
   ~Tone();
 
   // The frequency of the tone
-  uint16_t frequency;
+  uint32_t frequency;
 
   // The length of the tone
   uint16_t length;
