@@ -3,12 +3,12 @@
 
 PSX_SOUND_driver::PSX_SOUND_driver(void)
 {
-    name = "Playstation X Sound";
+  name = "Playstation X Sound";
 }
 
 bool PSX_SOUND_driver::detectsystem(void)
 {
-    return true;
+  return true;
 }
 
 void PSX_SOUND_driver::reset(void)

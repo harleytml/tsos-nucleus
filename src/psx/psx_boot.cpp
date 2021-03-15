@@ -3,7 +3,7 @@
 
 PSX_BOOT_driver::PSX_BOOT_driver(void)
 {
-    name = "Playstation X Boot";
+  name = "Playstation X Boot";
 }
 
 PSX_BOOT_driver::~PSX_BOOT_driver(void)
@@ -12,7 +12,7 @@ PSX_BOOT_driver::~PSX_BOOT_driver(void)
 
 bool PSX_BOOT_driver::detectsystem(void)
 {
-    return true;
+  return true;
 }
 
 void PSX_BOOT_driver::reset(void)

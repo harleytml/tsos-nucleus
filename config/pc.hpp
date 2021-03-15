@@ -2,13 +2,10 @@
 #ifndef __TSOS_CURRENT_CONFIG__
 #define __TSOS_CURRENT_CONFIG__
 
+#include "generic.hpp"
+
 #include "grub2.hpp"
 #include "cd.hpp"
-#include "fat12.hpp"
-#include "fat16.hpp"
-#include "fat32.hpp"
-#include "sfs.hpp"
-#include "udf.hpp"
 #include "at_keyboard.hpp"
 #include "xt_keyboard.hpp"
 #include "elf.hpp"

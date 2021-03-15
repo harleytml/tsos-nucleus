@@ -3,7 +3,7 @@
 
 AT_KEYBOARD_driver::AT_KEYBOARD_driver(void)
 {
-    name = "PC/AT Keyboard";
+  name = "PC/AT Keyboard";
 }
 
 AT_KEYBOARD_driver::~AT_KEYBOARD_driver(void)
@@ -13,9 +13,9 @@ AT_KEYBOARD_driver::~AT_KEYBOARD_driver(void)
 bool AT_KEYBOARD_driver::detectsystem(void)
 {
 
-    /* Check the first keyboard flag bitmap
+  /* Check the first keyboard flag bitmap
     Bit 4 equaling 1 means a AT keyboard */
-    return (*((uint8_t *)0x496) & 0x10) == 0x10;
+  return (*((uint8_t *)0x496) & 0x10) == 0x10;
 }
 
 void AT_KEYBOARD_driver::reset(void)
@@ -32,12 +32,12 @@ If you are testing TS/OS, please watch for this
 
 key_identifier AT_KEYBOARD_driver::getkey(void)
 {
-    //Address 0040:0096
-    switch (*((uint8_t *)0x496))
-    {
-    default:
-        return KEY_NULL;
-    }
+  //Address 0040:0096
+  switch (*((uint8_t *)0x496))
+  {
+  default:
+    return KEY_NULL;
+  }
 }
 
 void AT_KEYBOARD_driver::waitkey(void)
@@ -46,15 +46,15 @@ void AT_KEYBOARD_driver::waitkey(void)
 
 bool AT_KEYBOARD_driver::isshiftpressed(void)
 {
-    return false;
+  return false;
 }
 
 bool AT_KEYBOARD_driver::isaltpressed(void)
 {
-    return false;
+  return false;
 }
 
 bool AT_KEYBOARD_driver::isctrlpressed(void)
 {
-    return false;
+  return false;
 }

@@ -29,6 +29,7 @@ public:
     if (d.detectsystem())
     {
       driver = &d;
+      name = driver->name;
       return true;
     }
     return false;

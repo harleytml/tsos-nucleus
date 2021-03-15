@@ -3,7 +3,7 @@
 
 GBA_BOOT_driver::GBA_BOOT_driver(void)
 {
-    name = "Gameboy Advanced Boot";
+  name = "Gameboy Advanced Boot";
 }
 
 GBA_BOOT_driver::~GBA_BOOT_driver(void)
@@ -12,7 +12,7 @@ GBA_BOOT_driver::~GBA_BOOT_driver(void)
 
 bool GBA_BOOT_driver::detectsystem(void)
 {
-    return true;
+  return true;
 }
 
 void GBA_BOOT_driver::reset(void)
