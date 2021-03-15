@@ -91,7 +91,7 @@ pc)
   fi
   cp -v "./nucleus" "$FILESYSTEM_ROOT/nucleus"
   mkdir -pv "$FILESYSTEM_ROOT/boot/grub/"
-  cp -v "$CODE_DIR/config/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
+  cp -v "$CODE_DIR/misc/grub.cfg" "$FILESYSTEM_ROOT/boot/grub/grub.cfg"
   grub-mkrescue -o "./tsos.iso" "$FILESYSTEM_ROOT"
   ;;
 gba)
