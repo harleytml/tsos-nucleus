@@ -16,5 +16,6 @@
 #include "vga.hpp"
 #include "gdt.hpp"
 #include "io.hpp"
+#include "pc_speaker.hpp"
 
 #endif

@@ -13,24 +13,23 @@ bool PC_SPEAKER_driver::detectsystem(void)
 
 void PC_SPEAKER_driver::reset(void)
 {
-
 }
 
 void PC_SPEAKER_driver::playtone(Tone tone)
 {
   uint32_t div;
- 	uint8_t tmp;
- 
+  uint8_t tmp;
+
   //Set the PIT to the desired frequency
- 	div = 1193180 / tone.frequency;
- 	outb(0x43, 0xb6);
- 	outb(0x42, (uint8_t) (div) );
- 	outb(0x42, (uint8_t) (div >> 8));
- 
+  div = 1193180 / tone.frequency;
+  outb(0x43, 0xb6);
+  outb(0x42, (uint8_t)(div));
+  outb(0x42, (uint8_t)(div >> 8));
+
   //And play the sound using the PC speaker
- 	tmp = inb(0x61);
+  tmp = inb(0x61);
   if (tmp != (tmp | 3))
   {
- 	  outb(0x61, tmp | 3);
- 	}
+    outb(0x61, tmp | 3);
+  }
 }
