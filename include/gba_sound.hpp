@@ -10,7 +10,8 @@ public:
     GBA_SOUND_driver(void);
     bool detectsystem(void) override;
     void reset(void) override;
-    void playtone(Tone tone) override;
+    void playtone(uint32_t tone) override;
+    void killsound(void) override;
 };
 
 #endif

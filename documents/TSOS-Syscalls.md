@@ -128,7 +128,11 @@ SOUND SYSCALLS:
 
 playtone:
 
-Play a tone of frequency and length
+Play a tone of frequency
+
+killsound:
+
+kill the audio
 
 VIDEO SYSCALLS:
 
