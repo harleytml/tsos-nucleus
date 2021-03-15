@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_GBA_BOOT_DRIVER__
-#define __TSOS_GBA_BOOT_DRIVER__
+#ifndef __TSOS_PSX_BOOT_DRIVER__
+#define __TSOS_PSX_BOOT_DRIVER__
 
 #include "boot_driver.hpp"
 
