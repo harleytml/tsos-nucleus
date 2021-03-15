@@ -18,3 +18,7 @@ void PSX_SOUND_driver::reset(void)
 void PSX_SOUND_driver::playtone(uint32_t tone)
 {
 }
+
+void PSX_SOUND_driver::killsound(void)
+{
+}

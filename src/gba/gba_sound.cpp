@@ -18,3 +18,7 @@ void GBA_SOUND_driver::reset(void)
 void GBA_SOUND_driver::playtone(uint32_t tone)
 {
 }
+
+void GBA_SOUND_driver::killsound(void)
+{
+}
