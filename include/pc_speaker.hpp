@@ -12,7 +12,8 @@ public:
   PC_SPEAKER_driver(void);
   void reset(void) override;
   bool detectsystem(void) override;
-  void playtone(Tone tone) override;
+  void playtone(uint32_t tone) override;
+  void killsound(void) override;
 };
 
 #endif

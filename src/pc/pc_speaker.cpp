@@ -15,13 +15,13 @@ void PC_SPEAKER_driver::reset(void)
 {
 }
 
-void PC_SPEAKER_driver::playtone(Tone tone)
+void PC_SPEAKER_driver::playtone(uint32_t tone)
 {
   uint32_t div;
   uint8_t tmp;
 
   //Set the PIT to the desired frequency
-  div = 1193180 / tone.frequency;
+  div = 1193180 / tone;
   outb(0x43, 0xb6);
   outb(0x42, (uint8_t)(div));
   outb(0x42, (uint8_t)(div >> 8));
@@ -32,4 +32,10 @@ void PC_SPEAKER_driver::playtone(Tone tone)
   {
     outb(0x61, tmp | 3);
   }
+}
+
+void PC_SPEAKER_driver::killsound(void)
+{
+  uint8_t tmp = inb(0x61) & 0xfc;
+  outb(0x61, tmp);
 }

@@ -6,7 +6,6 @@
 #include "module.hpp"
 #include "types.hpp"
 #include "sound_driver.hpp"
-#include "sound_tone.hpp"
 #include "current_config.hpp"
 
 //The main class controlling sound
@@ -20,7 +19,7 @@ public:
   ~Sound();
 
   // Play a tone
-  void playtone(Tone tone);
+  void playtone(uint32_t tone);
 };
 
 #endif

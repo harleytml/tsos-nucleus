@@ -4,7 +4,6 @@
 
 #include "driver.hpp"
 #include "types.hpp"
-#include "sound_tone.hpp"
 
 class Sound_driver : public Driver
 {
@@ -15,7 +14,9 @@ public:
   ~Sound_driver();
 
   // Play a tone
-  virtual void playtone(Tone tone) = 0;
+  virtual void playtone(uint32_t tone) = 0;
+
+  virtual void killsound(void) = 0;
 };
 
 #endif
