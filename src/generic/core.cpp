@@ -4,7 +4,6 @@
 
 Tsos::Tsos(void)
 {
-
     version = 0.0;
     code_name = "Neutronium";
     short_code_name = "n";
@@ -30,7 +29,7 @@ extern "C"
     void kernel_main(void)
     {
         char *init_file_path = "/bin/init";
-        static Tsos os_instance;
+        Tsos os_instance;
         tsos = &os_instance;
 
 #ifdef __PERSONAL_COMPUTER__
@@ -47,10 +46,20 @@ extern "C"
         tsos->video.putstring(0, tsos->video.scroll++, "This is free software, and you are welcome to redistribute it\n");
         tsos->video.putstring(0, tsos->video.scroll++, "under certain conditions;\n");
         tsos->video.putstring(0, tsos->video.scroll++, "This OS wouldn't be possible without the help of the many that worked on it.\n");
+        tsos->video.scroll++;
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->boot.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->disk.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->filesystem.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->input.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->process.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->serial.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
+        tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
+
         if (!tsos->filesystem.exists(init_file_path))
         {
             tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
-            tsos->boot.fission("INIT EXECUTABLE NOT FOUND\n");
+            //tsos->boot.fission("INIT EXECUTABLE NOT FOUND\n");
         }
 
         File init_executable = tsos->filesystem.open(init_file_path);

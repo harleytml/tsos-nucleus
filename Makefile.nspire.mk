@@ -31,11 +31,14 @@ OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
 
 default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus: $(OBJ_FILES)
+$(BUILD_DIR)/nucleus: $(OBJ_FILES) $(ASM_DIR)/nspire/nspire_boot.o
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
+
+$(ASM_DIR)/nspire/nspire_boot.o: $(ASM_DIR)/nspire/nspire_boot.S
+:$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
 :rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*

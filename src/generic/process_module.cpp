@@ -4,19 +4,19 @@
 
 Process::Process(void)
 {
-    static ELF_driver elf_driver = ELF_driver();
+  static ELF_driver elf_driver = ELF_driver();
 
-    attachdriver(elf_driver);
+  attachdriver(elf_driver);
 }
 
 Process::~Process(void)
 {
-    killall();
+  killall();
 }
 
 uint8_t Process::spawn(char *path)
 {
-    return 0;
+  return 0;
 }
 
 void Process::kill(uint8_t pid)

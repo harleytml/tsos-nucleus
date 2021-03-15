@@ -3,12 +3,12 @@
 
 GBA_IO_PORT_driver::GBA_IO_PORT_driver(void)
 {
-    name = "Gameboy Advanced IO Port";
+  name = "Gameboy Advanced IO Port";
 }
 
 bool GBA_IO_PORT_driver::detectsystem(void)
 {
-    return true;
+  return true;
 }
 
 void GBA_IO_PORT_driver::reset(void)
@@ -17,11 +17,11 @@ void GBA_IO_PORT_driver::reset(void)
 
 bool GBA_IO_PORT_driver::isdevicethere(void)
 {
-    return false;
+  return false;
 }
 
 // Serial on the DMG is lovely and simple
 uint8_t GBA_IO_PORT_driver::exchangebyte(uint8_t b)
 {
-    return 0;
+  return 0;
 }

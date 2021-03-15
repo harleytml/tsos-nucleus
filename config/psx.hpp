@@ -6,6 +6,7 @@
 #include "psx_gamepad.hpp"
 #include "psx_boot.hpp"
 #include "psx_disk.hpp"
+#include "psx_sound.hpp"
 #include "fat12.hpp"
 #include "fat16.hpp"
 #include "fat32.hpp"

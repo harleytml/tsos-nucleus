@@ -3,13 +3,13 @@
 
 UDF_driver::UDF_driver(void)
 {
-    name = "Universal Disk Filesystem";
+  name = "Universal Disk Filesystem";
 }
 
 bool UDF_driver::detectsystem(void)
 {
-    //Doesn't work right now
-    /*
+  //Doesn't work right now
+  /*
     uint8_t diskfsname[5] = tsos.disk.getbytes(0x4f, 0x05);
     char *fsname = "";
     for (uint8_t x = 0; x < 0x5; x++)
@@ -21,7 +21,7 @@ bool UDF_driver::detectsystem(void)
     }
     return true;
     */
-    return true;
+  return true;
 }
 
 void UDF_driver::reset(void)
@@ -30,7 +30,7 @@ void UDF_driver::reset(void)
 
 char **UDF_driver::readdir(char *path)
 {
-    return (char **)"";
+  return (char **)"";
 }
 
 void UDF_driver::rename(char *path, char *newPath)
@@ -39,7 +39,7 @@ void UDF_driver::rename(char *path, char *newPath)
 
 File UDF_driver::open(char *path)
 {
-    return File();
+  return File();
 }
 
 void UDF_driver::close(File file)
@@ -48,7 +48,7 @@ void UDF_driver::close(File file)
 
 char *UDF_driver::read(File file)
 {
-    return "";
+  return "";
 }
 
 void UDF_driver::write(File file, char *data)
@@ -57,7 +57,7 @@ void UDF_driver::write(File file, char *data)
 
 char *UDF_driver::readfile(char *path)
 {
-    return "";
+  return "";
 }
 
 void UDF_driver::writefile(char *path, char *data)
@@ -70,5 +70,5 @@ void UDF_driver::appendfile(char *path, char *data)
 
 bool UDF_driver::exists(char *path)
 {
-    return false;
+  return false;
 }

@@ -3,12 +3,12 @@
 
 Font::Font(void)
 {
-    data = (uint8_t *)"";
+  data = (uint8_t *)"";
 }
 
 Font::Font(uint8_t *d)
 {
-    data = d;
+  data = d;
 }
 
 Font::~Font(void)
