@@ -2,7 +2,23 @@ on: [push]
 name: Compile test
 
 jobs:
-  compile:
+  pc-test:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Compile Test
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+  gba-test:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Compile Test
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+  psx-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
