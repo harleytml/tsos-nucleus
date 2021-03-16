@@ -9,4 +9,4 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Look at /usr
-      run: ls -la /usr
+      run: cd ~/Documents && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
