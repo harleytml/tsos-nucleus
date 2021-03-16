@@ -34,4 +34,4 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh psx
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh nspire
