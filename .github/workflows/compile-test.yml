@@ -2,10 +2,11 @@ on: [push]
 name: Compile test
 
 jobs:
-  container:
+  compile:
     runs-on: ubuntu-latest
-    container: tsukisuperior/tsos-build:latest
-    steps:
-      - run: ls -la /usr
-      - name: Run in container
-
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: What OS is running
+      run: uname -a
