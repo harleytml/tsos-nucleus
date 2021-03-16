@@ -1,8 +1,0 @@
-version: 2.0
-jobs:
-  build:
-    docker:
-      - image: tsukisuperior/tsos-build
-    working_directory: ~/Documents
-    steps:
-      - run: git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
