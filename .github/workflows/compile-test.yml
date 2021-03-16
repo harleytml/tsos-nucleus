@@ -9,4 +9,4 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
