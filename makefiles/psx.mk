@@ -27,18 +27,21 @@ LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx.ld -static -nostartfiles -ffreestandin
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/psx/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/mipsel/*.cpp)
+ASM_FILES:=$(wildcard $(ASM_DIR)/psx/*.S)
+
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
+OBJ_FILES+=$(patsubst %.S, $(BUILD_DIR)/%.o, $(ASM_FILES))
 
 default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus: $(OBJ_FILES) $(ASM_DIR)/psx/psx_boot.o
+$(BUILD_DIR)/nucleus: $(OBJ_FILES)
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(ASM_DIR)/psx/psx_boot.o: $(ASM_DIR)/psx/psx_boot.S
-:$(AS) $(AS_FLAGS) -o $@ $^ 
+$(BUILD_DIR)/%.o: $(ASM_DIR)/%.S
+:$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
 :rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*
