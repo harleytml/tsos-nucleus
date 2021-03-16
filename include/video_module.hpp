@@ -25,16 +25,16 @@ public:
   void reset(void);
 
   // Put a character
-  void putchar(uint16_t posx, uint16_t posy, char c);
+  void putchar(uint16_t posx, uint16_t posy, char c) const;
 
   // Put a string on the screen
-  void putstring(uint16_t posx, uint16_t posy, char *str);
+  void putstring(uint16_t posx, uint16_t posy, const char *str) const;
 
   // Get the width of the screen
-  uint16_t getscreenwidth(void);
+  uint16_t getscreenwidth(void) const;
 
   // Get the current height of the screen
-  uint16_t getscreenheight(void);
+  uint16_t getscreenheight(void) const;
 
   // Set the font to be used in the screen
   void setfont(Font f);

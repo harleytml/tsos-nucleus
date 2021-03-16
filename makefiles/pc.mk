@@ -16,13 +16,13 @@ CC:=tsos-i686-gcc
 CC_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -c $(PLATFORM_OPTIONS)
 
 CPP:=tsos-i686-g++
-CPP_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings  -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-rtti -fno-unwind-tables -nostdlib -nodefaultlibs -pedantic -c $(PLATFORM_OPTIONS)
+CPP_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++17 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings  -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-rtti -fno-unwind-tables -nostdlib -nodefaultlibs -pedantic -c $(PLATFORM_OPTIONS)
 
 AS:=tsos-i686-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
 LD:=tsos-i686-ld.gold
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)

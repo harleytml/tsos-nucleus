@@ -7,30 +7,30 @@
 class PSX_GAMEPAD_driver : public Input_driver
 {
 public:
-    // Constructor
-    PSX_GAMEPAD_driver(void);
+  // Constructor
+  PSX_GAMEPAD_driver(void);
 
-    ~PSX_GAMEPAD_driver();
+  ~PSX_GAMEPAD_driver();
 
-    // Detects if the module should be used
-    bool detectsystem(void) override;
+  // Detects if the module should be used
+  bool detectsystem(void) override;
 
-    void reset(void) override;
+  void reset(void) override;
 
-    // Get the key currently pressed
-    key_identifier getkey(void) override;
+  // Get the key currently pressed
+  key_identifier getkey(void) override;
 
-    //Wait for a key
-    void waitkey(void) override;
+  //Wait for a key
+  void waitkey(void) override;
 
-    // Is shift pressed
-    bool isshiftpressed(void) override;
+  // Is shift pressed
+  bool isshiftpressed(void) override;
 
-    // Is alt pressed
-    bool isaltpressed(void) override;
+  // Is alt pressed
+  bool isaltpressed(void) override;
 
-    // Is ctrl pressed
-    bool isctrlpressed(void) override;
+  // Is ctrl pressed
+  bool isctrlpressed(void) override;
 
 private:
 };

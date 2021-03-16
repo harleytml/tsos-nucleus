@@ -32,3 +32,8 @@ void Sound::playtone(uint32_t tone)
 {
   driver->playtone(tone);
 }
+
+void Sound::killsound(void)
+{
+  driver->killsound();
+}

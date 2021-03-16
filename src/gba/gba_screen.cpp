@@ -19,7 +19,7 @@ bool GBA_SCREEN_driver::detectsystem(void)
 
 void GBA_SCREEN_driver::reset(void)
 {
-  uint16_t *screen_control;
+  volatile uint16_t *screen_control;
 
   // LCD screen mode register
   screen_control = (uint16_t *)0x4000010;

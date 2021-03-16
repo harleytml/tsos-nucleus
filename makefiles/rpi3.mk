@@ -16,7 +16,7 @@ CC:=tsos-aarch64-gcc
 CC_FLAGS:=-D__RASPBERRY_PI_3__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 CPP:=tsos-aarch64-g++
-CPP_FLAGS:=-D__RASPBERRY_PI_3__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
+CPP_FLAGS:=-D__RASPBERRY_PI_3__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++17 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 AS:=tsos-aarch64-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)

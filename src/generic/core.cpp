@@ -61,9 +61,11 @@ extern "C"
     {
       tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
       tsos->boot.fission("INIT EXECUTABLE NOT FOUND\n");
+      tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
     }
 
     File init_executable = tsos->filesystem.open(init_file_path);
+
     while (true)
     {
     }
