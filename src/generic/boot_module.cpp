@@ -50,7 +50,7 @@ void Boot::shutdown(void)
     tsos->video.putstring(0, tsos->video.scroll++, "You may now touch the power button.\n");
 }
 
-void Boot::fission(char *errormsg)
+void Boot::fission(const char *errormsg)
 {
     tsos->video.putstring(0, tsos->video.scroll++, errormsg);
 }

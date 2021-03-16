@@ -25,7 +25,7 @@ public:
   void shutdown(void);
 
   // The equivelant kernel panic, or bsod,
-  void fission(char *errormsg);
+  void fission(const char *errormsg);
 };
 
 #endif
