@@ -1,4 +1,5 @@
 on: [push]
+
 name: Compile test
 
 jobs:
@@ -9,7 +10,7 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh pc
   gba-test:
     runs-on: ubuntu-latest
     container:
@@ -17,7 +18,7 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh gba
   psx-test:
     runs-on: ubuntu-latest
     container:
@@ -25,4 +26,12 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh psx
+  nspire-test:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Compile Test
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh psx
