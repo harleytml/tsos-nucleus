@@ -7,31 +7,31 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh pc
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh pc
   gba-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh gba
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh gba
   psx-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh psx
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh psx
   nspire-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
-    steps:  
-    - uses: actions/checkout@v2
-    - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh nspire
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh nspire
