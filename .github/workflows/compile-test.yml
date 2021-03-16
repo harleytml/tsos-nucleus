@@ -10,7 +10,7 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh pc
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh pc
   gba-test:
     runs-on: ubuntu-latest
     container:
@@ -18,7 +18,7 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh gba
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh gba
   psx-test:
     runs-on: ubuntu-latest
     container:
@@ -26,7 +26,7 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh psx
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh psx
   nspire-test:
     runs-on: ubuntu-latest
     container:
@@ -34,4 +34,4 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: Compile Test
-      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd /github/workspace/ && ./build.sh nspire
+      run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh nspire
