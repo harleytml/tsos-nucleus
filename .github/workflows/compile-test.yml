@@ -8,5 +8,5 @@ jobs:
       image: tsukisuperior/tsos-build:latest
     steps:  
     - uses: actions/checkout@v2
-    - name: What OS is running
-      run: uname -a
+    - name: Look at /usr
+      run: ls -la /usr
