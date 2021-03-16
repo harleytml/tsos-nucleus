@@ -27,17 +27,20 @@ LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -static -nostartfiles -ffreestanding
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/pc/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/x86/*.cpp)
+ASM_FILES:=$(wildcard $(ASM_DIR)/pc/*.S)
+
 OBJ_FILES:=$(patsubst %.cpp, $(BUILD_DIR)/%.o, $(CPP_FILES))
+OBJ_FILES+=$(patsubst %.S, $(BUILD_DIR)/%.o, $(ASM_FILES))
 
 default: $(BUILD_DIR)/nucleus
 
-$(BUILD_DIR)/nucleus: $(ASM_DIR)/pc/grub2.o $(OBJ_FILES)
+$(BUILD_DIR)/nucleus: $(OBJ_FILES)
 :$(CPP) $(LD_FLAGS) -o $@ $^ $(LIB)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
-$(ASM_DIR)/pc/grub2.o: $(ASM_DIR)/pc/grub2.S
+$(BUILD_DIR)/%.o: $(ASM_DIR)/%.S
 :$(AS) $(AS_FLAGS) -o $@ -c $^
 
 clean:
