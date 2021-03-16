@@ -8,5 +8,5 @@ jobs:
       image: tsukisuperior/tsos-build:latest
     steps:  
     - uses: actions/checkout@v2
-    - name: Look at /usr
-      run: cd ~/Documents && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
+    - name: Compile Test
+      run: cd ~/ && git clone https://github.com/tsuki-superior/tsos-nucleus && cd tsos-nucleus && ./build.sh pc
