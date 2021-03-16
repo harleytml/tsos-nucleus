@@ -16,7 +16,7 @@ CC:=tsos-armeabi-gcc
 CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
 
 CPP:=tsos-armeabi-g++
-CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++20 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS) 
+CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++17 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS) 
 
 AS:=tsos-armeabi-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS) 

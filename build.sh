@@ -117,7 +117,7 @@ test)
       echo "Error: qemu is not installed, which is needed for testing and debugging TS/OS"
       exit 1
     fi
-    qemu-system-i386 -kernel "./nucleus" -name "TS/OS" -soundhw pcspk
+    qemu-system-i386 -kernel "./nucleus" -name "TS/OS" -soundhw pcspk -cpu pentium2
     ;;
   gba)
     if ! exists "mgba"; then
@@ -142,7 +142,7 @@ debug)
       exit 1
     fi
     echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
-    qemu-system-i386 -kernel "./nucleus" -s -S -name "TS/OS" -soundhw pcspk
+    qemu-system-i386 -kernel "./nucleus" -s -S -name "TS/OS" -soundhw pcspk -cpu pentium2
     ;;
   gba)
     if ! exists "mgba"; then

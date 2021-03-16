@@ -7,11 +7,11 @@
 class GBA_SOUND_driver : public Sound_driver
 {
 public:
-    GBA_SOUND_driver(void);
-    bool detectsystem(void) override;
-    void reset(void) override;
-    void playtone(uint32_t tone) override;
-    void killsound(void) override;
+  GBA_SOUND_driver(void);
+  bool detectsystem(void) override;
+  void reset(void) override;
+  void playtone(uint32_t tone) override;
+  void killsound(void) override;
 };
 
 #endif

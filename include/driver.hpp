@@ -8,19 +8,19 @@
 class Driver
 {
 public:
-    // Constructor
-    Driver(void);
+  // Constructor
+  Driver(void);
 
-    // Destructor
-    ~Driver();
+  // Destructor
+  ~Driver();
 
-    // A function called to determine if a driver should be used.
-    virtual bool detectsystem(void) = 0;
+  // A function called to determine if a driver should be used.
+  virtual bool detectsystem(void) = 0;
 
-    virtual void reset(void) = 0;
+  virtual void reset(void) = 0;
 
-    // The name of said driver
-    char *name;
+  // The name of said driver
+  char *name;
 };
 
 #endif

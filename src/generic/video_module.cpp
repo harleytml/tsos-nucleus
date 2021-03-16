@@ -43,12 +43,12 @@ void Video::reset(void)
   driver->reset();
 }
 
-void Video::putchar(uint16_t posx, uint16_t posy, char c)
+void Video::putchar(uint16_t posx, uint16_t posy, char c) const
 {
   driver->putchar(posx, posy, c, backgroundcolor, foregroundcolor);
 }
 
-void Video::putstring(uint16_t posx, uint16_t posy, char *str)
+void Video::putstring(uint16_t posx, uint16_t posy, const char *str) const
 {
   uint16_t pos = 0;
   uint16_t x = posx;
@@ -75,12 +75,12 @@ void Video::putstring(uint16_t posx, uint16_t posy, char *str)
   }
 }
 
-uint16_t Video::getscreenwidth(void)
+uint16_t Video::getscreenwidth(void) const
 {
   return driver->getscreenwidth();
 }
 
-uint16_t Video::getscreenheight(void)
+uint16_t Video::getscreenheight(void) const
 {
   return driver->getscreenheight();
 }

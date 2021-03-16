@@ -20,6 +20,8 @@ public:
 
   // Play a tone
   void playtone(uint32_t tone);
+
+  void killsound(void);
 };
 
 #endif

@@ -7,11 +7,11 @@
 class PSX_SOUND_driver : public Sound_driver
 {
 public:
-    PSX_SOUND_driver(void);
-    void reset(void) override;
-    bool detectsystem(void) override;
-    void playtone(uint32_t tone) override;
-    void killsound(void) override;
+  PSX_SOUND_driver(void);
+  void reset(void) override;
+  bool detectsystem(void) override;
+  void playtone(uint32_t tone) override;
+  void killsound(void) override;
 };
 
 #endif

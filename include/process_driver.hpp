@@ -8,11 +8,11 @@
 class Process_driver : public Driver
 {
 public:
-    Process_driver(void);
+  Process_driver(void);
 
-    ~Process_driver();
+  ~Process_driver();
 
-    virtual bool isvalidexecutable(char *path) = 0;
+  virtual bool isvalidexecutable(char *path) = 0;
 };
 
 #endif
