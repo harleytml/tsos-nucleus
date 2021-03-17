@@ -47,13 +47,13 @@ public:
   Sound sound;
 
   // The version of TS/OS being used here
-  float version;
+  const float version;
 
   // The code name to TS/OS being used here
-  char *code_name;
+  const char *code_name;
 
   // The 1-2 letter code name of TS/OS being used here
-  char *short_code_name;
+  const char *short_code_name;
 };
 
 #endif

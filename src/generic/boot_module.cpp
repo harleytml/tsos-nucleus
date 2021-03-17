@@ -28,12 +28,12 @@ Boot::~Boot()
 {
 }
 
-void Boot::reboot(void)
+void Boot::reboot(void) const
 {
     driver->reboot();
 }
 
-void Boot::shutdown(void)
+void Boot::shutdown(void) const
 {
     // Destroy tsos, to trigger the kernel destruction
     driver->shutdown();
@@ -50,7 +50,7 @@ void Boot::shutdown(void)
     tsos->video.putstring(0, tsos->video.scroll++, "You may now touch the power button.\n");
 }
 
-void Boot::fission(const char *errormsg)
+void Boot::fission(const char *errormsg) const
 {
     tsos->video.putstring(0, tsos->video.scroll++, errormsg);
 }

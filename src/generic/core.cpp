@@ -2,11 +2,8 @@
 #include "core.hpp"
 #include "nucleus_instance.hpp"
 
-Tsos::Tsos(void)
+Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {
-  version = 0.0;
-  code_name = "Neutronium";
-  short_code_name = "n";
 }
 
 Tsos::~Tsos()

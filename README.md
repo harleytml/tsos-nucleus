@@ -58,4 +58,4 @@ To debug, simply use this command
 
 The debugging tools are the same as the testing tools
 
-The GDB port you need to connect to is outputted to the terminal as a message.
+The GDB port you need to connect to is outputted to the terminal as a message, and usually it is 1234.

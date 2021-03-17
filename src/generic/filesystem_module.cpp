@@ -57,6 +57,7 @@ void Filesystem::close(File file)
 
 uint8_t *Filesystem::read(File file, uint32_t length)
 {
+    return (uint8_t *)"";
 }
 
 void Filesystem::write(File file, uint8_t data[])
@@ -68,6 +69,7 @@ uint8_t *Filesystem::readfile(char *path)
     if (exists(path))
     {
     }
+    return (uint8_t *)"";
 }
 
 void Filesystem::writefile(char *path, uint8_t *data)
