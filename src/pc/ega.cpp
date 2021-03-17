@@ -114,7 +114,7 @@ void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   }
 }
 
-void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   //Doesn't work right now
   /*

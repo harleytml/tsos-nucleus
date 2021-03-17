@@ -48,6 +48,11 @@ void Video::putchar(uint16_t posx, uint16_t posy, char c) const
   driver->putchar(posx, posy, c, backgroundcolor, foregroundcolor);
 }
 
+void Video::drawpx(uint16_t posx, uint16_t posy) const
+{
+  driver->drawpx(posx, posy, foregroundcolor);
+}
+
 void Video::putstring(uint16_t posx, uint16_t posy, const char *str) const
 {
   uint16_t pos = 0;

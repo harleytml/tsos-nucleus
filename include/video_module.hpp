@@ -30,6 +30,9 @@ public:
   // Put a string on the screen
   void putstring(uint16_t posx, uint16_t posy, const char *str) const;
 
+  // Draw a pixel
+  void drawpx(uint16_t posx, uint16_t posy) const;
+
   // Get the width of the screen
   uint16_t getscreenwidth(void) const;
 

@@ -41,7 +41,7 @@ void CGA_driver::reset(void)
   }
 }
 
-void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
 }
 

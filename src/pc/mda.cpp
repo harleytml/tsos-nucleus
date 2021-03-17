@@ -33,7 +33,7 @@ void MDA_driver::reset(void)
   text_buffer = (char *)0xb0000;
 }
 
-void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   // Well the MDA is simply not capable of drawing pixels...
 }
