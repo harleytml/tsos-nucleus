@@ -36,7 +36,7 @@ public:
   void freememory(void *mem);
 
   // The table of processes
-  Process_info processes[255];
+  Process_info processes[16];
 };
 
 #endif

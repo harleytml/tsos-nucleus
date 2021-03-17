@@ -19,13 +19,13 @@ public:
   ~Boot();
 
   // Reboot the system
-  void reboot(void);
+  void reboot(void) const;
 
   // Shutdown the system
-  void shutdown(void);
+  void shutdown(void) const;
 
   // The equivelant kernel panic, or bsod,
-  void fission(const char *errormsg);
+  void fission(const char *errormsg) const;
 };
 
 #endif

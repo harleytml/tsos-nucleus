@@ -19,13 +19,13 @@ public:
   ~Disk();
 
   // Get an amount of bytes from the disk
-  uint8_t *getbytes(uint16_t offset, uint8_t len);
+  uint8_t *getbytes(uint16_t offset, uint8_t len) const;
 
   // Get the sector size
-  uint16_t getsectorsize(void);
+  uint16_t getsectorsize(void) const;
 
   // Do not return till the disk is idle (for when you need to shutdown, reboot, or remove the disk)
-  void commitall(void);
+  void commitall(void) const;
 };
 
 #endif

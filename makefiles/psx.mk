@@ -21,7 +21,7 @@ CPP_FLAGS:=-D__PLAYSTATON_X__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c
 AS:=tsos-mipsel-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
-LD:=tsos-mipsel-ld.gold
+LD:=tsos-mipsel-ld
 LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/psx.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)

@@ -6,5 +6,4 @@ filesystem/**
 *.iso
 *.gba
 a.out
-current_config.hpp
 .directory

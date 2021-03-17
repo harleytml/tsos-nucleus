@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches: [master]
+
 name: Count Lines Of Code
 
 jobs:

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# By Tsuki Superior
 # https://github.com/tsuki-superior/tsos-nucleus/blob/master/documents/TSOS-Ports.md
 
 # Travel to the parent directory
@@ -25,24 +26,24 @@ help)
   exit 0
   ;;
 pc)
-  NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld.gold make xorriso grub-mkrescue)
+  NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld make xorriso grub-mkrescue grub-file)
   ;;
 gba)
-  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make tsos-gbafix)
+  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld make tsos-gbafix)
   ;;
 psx)
-  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make tsos-elf2x)
+  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld make tsos-elf2x)
+  ;;
+nspire)
+  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld make)
   ;;
 psp)
-  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld.gold make)
+  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld make)
   echo "This system is not supported yet."
   exit 1
   ;;
-nspire)
-  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld.gold make)
-  ;;
 rpi3)
-  NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld.gold make)
+  NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld make)
   echo "This system is not supported yet."
   exit 1
   ;;
@@ -76,7 +77,6 @@ cd "$CODE_DIR/build/" || exit 1
 rm -rfv "$CODE_DIR/build/nucleus*"
 cp -v "../makefiles/$1.mk" "./Makefile"
 make clean
-cp -v "../config/$1.hpp" "./current_config.hpp"
 cp -v "../makefiles/$1.mk" "./Makefile"
 make -j"$(nproc)"
 

@@ -65,7 +65,7 @@ private:
   char *current_directory;
 
   //The files currently opened
-  File open_files[128];
+  File open_files[16];
 };
 
 #endif

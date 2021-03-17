@@ -21,7 +21,7 @@ CPP_FLAGS:=-D__PERSONAL_COMPUTER__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -
 AS:=tsos-i686-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
-LD:=tsos-i686-ld.gold
+LD:=tsos-i686-ld
 LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)

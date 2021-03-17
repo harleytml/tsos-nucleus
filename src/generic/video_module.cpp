@@ -38,7 +38,7 @@ Video::~Video()
 {
 }
 
-void Video::reset(void)
+void Video::reset(void) const
 {
   driver->reset();
 }
@@ -94,7 +94,7 @@ void Video::setfont(Font f)
 {
 }
 
-void Video::clear(void)
+void Video::clear(void) const
 {
   for (uint16_t x = 0, lenx = getscreenwidth(); x < lenx; x++)
   {

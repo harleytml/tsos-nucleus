@@ -12,6 +12,8 @@
 /*         support added to allow labels end, _end, */
 /*         & __end__ to point to end of iwram or    */
 /*         the end of ewram.                        */
+/*  v1.4 - Changes by Tsuki Superior for use in     */
+/*         TS/OS
 
 /* This file is released into the public domain   */
 /* for commercial or non-commercial use with no   */
@@ -33,6 +35,7 @@
 OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
+EXTERN(_start)
 
 /* SEARCH_DIR(/bin/arm); */
 

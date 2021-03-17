@@ -21,7 +21,7 @@ CPP_FLAGS:=-D__RASPBERRY_PI_3__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std
 AS:=tsos-aarch64-as
 AS_FLAGS:=-g $(PLATFORM_OPTIONS)
 
-LD:=tsos-aarch64-ld.gold
+LD:=tsos-aarch64-ld
 LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/rpi3.ld -static -nostartfiles -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
