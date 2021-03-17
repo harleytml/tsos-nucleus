@@ -117,11 +117,12 @@ void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
 void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   uint16_t color = 0;
+  volatile uint8_t *location = (uint8_t *)0xA0000 + getscreenwidth() * pos_y + pos_x;
+
   color |= (c.blue & 0x1f) << 10;
   color |= (c.green & 0x1f) << 5;
   color |= (c.red & 0x1f);
 
-  uint8_t *location = (uint8_t *)0xA0000 + getscreenwidth() * pos_y + pos_x;
   *location = color;
 }
 
