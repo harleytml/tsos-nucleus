@@ -19,32 +19,21 @@ bool GBA_SCREEN_driver::detectsystem(void)
 
 void GBA_SCREEN_driver::reset(void)
 {
-  volatile uint16_t *screen_control;
+  /* the display control pointer points to the gba graphics register */
+  volatile uint32_t *display_control = (volatile uint32_t *)0x4000000;
 
-  // LCD screen mode register
-  screen_control = (uint16_t *)0x4000010;
-
-  // Only enable BG0, and set to mode 0. Disable sprites.
-  *screen_control = 0x1000;
-
-  // Background 0 Scroll X register
-  screen_control = (uint16_t *)0x4000010;
-
-  // Set the scroll value of SCX to 0
-  *screen_control = 0;
-
-  // Background 0 Scroll Y register
-  screen_control = (uint16_t *)0x4000012;
-
-  // Set the scroll value of SCY to 0
-  *screen_control = 0;
-
-  // Get the BG0 tile map control
-  screen_control = (uint16_t *)0x4000008;
+  /* we set the mode to mode 3 with background 2 on */
+  *display_control = MODE3 | BG2;
 }
 
-void GBA_SCREEN_driver::drawpx(uint16_t pos_x, uint16_t pos_y, Color c)
+void GBA_SCREEN_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
+  volatile uint16_t *screen = (volatile uint16_t *)0x6000000;
+  uint16_t color = 0;
+  color |= (c.blue & 0x1f) << 10;
+  color |= (c.green & 0x1f) << 5;
+  color |= (c.red & 0x1f);
+  screen[pos_y * getscreenwidth() + pos_x] = color;
 }
 
 void GBA_SCREEN_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)

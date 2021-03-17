@@ -120,7 +120,7 @@ test)
     qemu-system-i386 -kernel "./nucleus" -name "TS/OS" -soundhw pcspk -cpu pentium2
     ;;
   gba)
-    if ! exists "mgba"; then
+    if ! exists "vba"; then
       echo "Error: vba is not installed, which is needed for testing and debugging TS/OS on gba"
       exit 1
     fi
@@ -145,8 +145,8 @@ debug)
     qemu-system-i386 -kernel "./nucleus" -s -S -name "TS/OS" -soundhw pcspk -cpu pentium2
     ;;
   gba)
-    if ! exists "mgba"; then
-      echo "Error: mgba is not installed, which is needed for testing and debugging TS/OS on gba"
+    if ! exists "vba"; then
+      echo "Error: vba is not installed, which is needed for testing and debugging TS/OS on gba"
       exit 1
     fi
     echo "Set you debugger to localhost:1234 with the nucleus.tse as your executable"
