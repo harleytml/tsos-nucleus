@@ -85,7 +85,7 @@ void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
       a |= ((fc.blue >= 0x80) << 0);
 
       // Set the foreground intensity
-      a |= ((a & 0xE) != 0) << 3;
+      a |= ((a & 0xe) != 0) << 3;
 
       // Put the character byte
       text_buffer[intendedposition] = c;
@@ -122,7 +122,7 @@ void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
 void VGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   uint16_t color = 0;
-  volatile uint8_t *location = (uint8_t *)0xA0000 + getscreenwidth() * pos_y + pos_x;
+  volatile uint8_t *location = (uint8_t *)0xa0000 + getscreenwidth() * pos_y + pos_x;
 
   color |= (c.blue & 0x1f) << 10;
   color |= (c.green & 0x1f) << 5;
