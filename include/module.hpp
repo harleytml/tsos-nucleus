@@ -14,6 +14,7 @@ public:
   Module(void)
   {
     name = "";
+    driver = nullptr;
   };
 
   // Destructor
