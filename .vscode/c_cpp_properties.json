@@ -29,10 +29,6 @@
         "-pedantic",
         "-c"
       ],
-      "intelliSenseModeIsExplicit": true,
-      "cStandardIsExplicit": true,
-      "cppStandardIsExplicit": true,
-      "compilerPathIsExplicit": true,
       "browse": {
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
@@ -67,10 +63,6 @@
         "-nostartfiles",
         "-c"
       ],
-      "intelliSenseModeIsExplicit": true,
-      "cStandardIsExplicit": true,
-      "cppStandardIsExplicit": true,
-      "compilerPathIsExplicit": true,
       "browse": {
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
@@ -105,10 +97,6 @@
         "-nostartfiles",
         "-c"
       ],
-      "intelliSenseModeIsExplicit": true,
-      "cStandardIsExplicit": true,
-      "cppStandardIsExplicit": true,
-      "compilerPathIsExplicit": true,
       "browse": {
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
@@ -142,10 +130,6 @@
         "-nostartfiles",
         "-c"
       ],
-      "intelliSenseModeIsExplicit": true,
-      "cStandardIsExplicit": true,
-      "cppStandardIsExplicit": true,
-      "compilerPathIsExplicit": true,
       "browse": {
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true

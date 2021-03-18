@@ -22,7 +22,7 @@ help)
   echo "pc     - i686 or higher IBM compatible Personal Computer"
   echo "gba    - Nintendo Gameboy Advance"
   echo "psx    - Sony Playstation 1"
-  echo "nspire - TI-Nspire"
+  echo "nspire - Texas Instruments Nspire"
   exit 0
   ;;
 pc)

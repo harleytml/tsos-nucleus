@@ -40,6 +40,9 @@ $(BUILD_DIR)/nucleus: $(OBJ_FILES)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 :$(CPP) $(CPP_FLAGS) -o $@ $^ 
 
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+:$(CC) $(CC_FLAGS) -o $@ $^ 
+
 $(BUILD_DIR)/%.o: $(ASM_DIR)/%.S
 :$(AS) $(AS_FLAGS) -o $@ $^
 
