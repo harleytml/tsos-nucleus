@@ -14,8 +14,6 @@ psx
 
 This is the Sony Playstation 1
 
-FUTURE PORTS:
-
 psp
 
 This is the Sony Playstation Portable, with MIPS32 processors.

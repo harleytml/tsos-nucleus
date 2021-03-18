@@ -56,4 +56,16 @@ This file ensures the proper headers are being used for the proper system
 
 #endif
 
+#ifdef __PLAYSTATION_PORTABLE__
+
+#endif
+
+#ifdef __RASPBERRY_PI_3__
+
+#endif
+
+#ifdef __NINTENDO_DUAL_SCREEN__
+
+#endif
+
 #endif
