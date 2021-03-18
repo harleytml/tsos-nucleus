@@ -49,7 +49,7 @@ _start:
     sub     w2, w2, #1
     cbnz    w2, 3b
 
-    // jump to C code, should not return
+    // jump to C++ code, should not return
 4:  bl      kernel_main
     // for failsafe, halt this core too
     b       1b
