@@ -5,5 +5,5 @@ filesystem/**
 *.log
 *.iso
 *.gba
-a.out
+*.out
 .directory
