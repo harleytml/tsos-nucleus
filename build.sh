@@ -130,9 +130,7 @@ test)
     echo "This script cannot test this system yet"
     exit 0
     ;;
-
   esac
-
   ;;
 debug)
   case $1 in
