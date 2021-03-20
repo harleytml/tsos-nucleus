@@ -56,6 +56,7 @@ extern "C"
     tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
     tsos->sound.playtone(100);
+    tsos->video.drawpx(0, 0);
 
     /*
     if (!tsos->filesystem.exists(init_file_path))
@@ -67,8 +68,6 @@ extern "C"
     */
 
     File init_executable = tsos->filesystem.open(init_file_path);
-
-    tsos->video.drawpx(0, 0);
 
     while (true)
     {
