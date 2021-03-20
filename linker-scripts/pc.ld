@@ -45,4 +45,6 @@ SECTIONS
 		*(COMMON)
 		*(.bss)
 	}
+
+	_kernelend= . ;
 }

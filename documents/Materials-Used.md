@@ -23,3 +23,5 @@
 [C++ Notes](https://wiki.osdev.org/C%2B%2B)
 
 [x86 Bios Data Area Map](http://www.bioscentral.com/misc/bda.htm)
+
+[GBA Memory Domains](https://corrupt.wiki/consoles/gameboy-advance/bizhawk-memory-domains)

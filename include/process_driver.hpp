@@ -13,6 +13,8 @@ public:
   ~Process_driver();
 
   virtual bool isvalidexecutable(char *path) = 0;
+
+  virtual uintptr_t getstartoffreemem(void) = 0;
 };
 
 #endif

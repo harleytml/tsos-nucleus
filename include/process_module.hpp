@@ -37,6 +37,9 @@ public:
 
   // The table of processes
   Process_info processes[16];
+
+private:
+  uintptr_t current_heap_offset;
 };
 
 #endif
