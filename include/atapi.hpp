@@ -1,18 +1,16 @@
 //By Tsuki Superior
-#ifndef __TSOS_CD_DRIVER__
-#define __TSOS_CD_DRIVER__
-
-#define SECTOR_SIZE 2048
+#ifndef __TSOS_ATAPI_DRIVER__
+#define __TSOS_ATAPI_DRIVER__
 
 #include "disk_driver.hpp"
 
-class CD_driver : public Disk_driver
+class ATAPI_driver : public Disk_driver
 {
 public:
   // Constructor
-  CD_driver(void);
+  ATAPI_driver(void);
 
-  ~CD_driver();
+  ~ATAPI_driver();
 
   bool detectsystem(void) override;
 

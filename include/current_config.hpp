@@ -16,7 +16,7 @@ This file ensures the proper headers are being used for the proper system
 #ifdef __PERSONAL_COMPUTER__
 
 #include "grub2.hpp"
-#include "cd.hpp"
+#include "atapi.hpp"
 #include "at_keyboard.hpp"
 #include "xt_keyboard.hpp"
 #include "elf.hpp"
