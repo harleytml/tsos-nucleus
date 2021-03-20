@@ -29,6 +29,9 @@ extern "C"
     static Tsos os_instance = Tsos();
     tsos = &os_instance;
 
+    //A memory allocation test that doesn't work rn
+    //char *test = new char(10);
+
 #ifdef __PERSONAL_COMPUTER__
     GlobalDescriptorTable gdt;
 #endif
