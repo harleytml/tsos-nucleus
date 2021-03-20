@@ -26,7 +26,7 @@ extern "C"
   void kernel_main(void)
   {
     char *init_file_path = "/bin/init";
-    Tsos os_instance;
+    static Tsos os_instance = Tsos();
     tsos = &os_instance;
 
 #ifdef __PERSONAL_COMPUTER__

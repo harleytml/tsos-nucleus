@@ -131,28 +131,6 @@ extern "C"
     }
   }
 
-  //The kernel knows how to do these things, so ill map it there
-
-  void *operator new(size_t size)
-  {
-    return tsos->process.allocatememory(size);
-  }
-
-  void *operator new[](size_t size)
-  {
-    return tsos->process.allocatememory(size);
-  }
-
-  void operator delete(void *p)
-  {
-    tsos->process.freememory(p);
-  }
-
-  void operator delete[](void *p)
-  {
-    tsos->process.freememory(p);
-  }
-
   void *memcpy(void *dstptr, const void *srcptr, size_t size)
   {
     uint8_t *dst = (uint8_t *)dstptr;
@@ -231,4 +209,24 @@ extern "C"
     } while (c1 == c2);
     return c1 - c2;
   }
+}
+
+void *operator new(size_t size)
+{
+  return tsos->process.allocatememory(size);
+}
+
+void *operator new[](size_t size)
+{
+  return tsos->process.allocatememory(size);
+}
+
+void operator delete(void *p)
+{
+  tsos->process.freememory(p);
+}
+
+void operator delete[](void *p)
+{
+  tsos->process.freememory(p);
 }

@@ -7,6 +7,8 @@ Process::Process(void)
   static ELF_driver elf_driver = ELF_driver();
 
   attachdriver(elf_driver);
+
+  current_heap_offset = 0;
 }
 
 Process::~Process(void)
@@ -29,8 +31,12 @@ void Process::killall(void)
 
 void *Process::allocatememory(uint32_t len)
 {
+  uintptr_t memlocation = driver->getstartoffreemem() + current_heap_offset;
+  current_heap_offset += len;
+  return (void *)memlocation;
 }
 
 void Process::freememory(void *mem)
 {
+  current_heap_offset -= sizeof(&mem);
 }

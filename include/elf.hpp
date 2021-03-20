@@ -12,6 +12,7 @@ public:
   bool detectsystem(void) override;
   void reset(void) override;
   bool isvalidexecutable(char *path) override;
+  uintptr_t getstartoffreemem(void) override;
 };
 
 #endif
