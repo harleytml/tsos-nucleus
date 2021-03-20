@@ -5,7 +5,7 @@
 Disk::Disk(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static CD_driver cd_driver = CD_driver();
+  static ATAPI_driver cd_driver = ATAPI_driver();
 
   attachdriver(cd_driver);
 #endif

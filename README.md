@@ -1,11 +1,16 @@
 # TS/OS Nucleus
 
+[![HitCount](http://hits.dwyl.com/tsuki-superior/tsos-nucleus.svg)](http://hits.dwyl.com/tsuki-superior/tsos-nucleus)
 [![Discord](https://badgen.net/badge/Discord/join/purple?icon=discord)](https://discord.gg/UgXJwS5rup)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/tsos-nucleus)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tsuki-superior/tsos-nucleus&utm_campaign=Badge_Grade)
 ![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
 ![Release](https://badgen.net/github/release/tsuki-superior/tsos-nucleus)
 [![Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-test.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-test.yml)
+
+## Contributors
+
+![Contributers](https://contrib.rocks/image?repo=tsuki-superior/tsos-nucleus)
 
 This is TS/OS's Monolithic kernel
 
@@ -35,6 +40,8 @@ The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be m
 
 In the documents directory, you can find more documents concerning TS/OS.
 
+## Building
+
 To build TS/OS, run
 
 ```sh
@@ -43,6 +50,8 @@ To build TS/OS, run
 
 For example, the platform `pc` runs the pc build.
 
+## Testing
+
 If you want to test, simply run `test` also
 
 ```sh
@@ -50,6 +59,8 @@ If you want to test, simply run `test` also
 ```
 
 Note that each platform needs its own testing tools
+
+## Debugging
 
 To debug, simply use this command
 
