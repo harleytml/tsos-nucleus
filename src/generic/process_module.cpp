@@ -2,13 +2,11 @@
 #include "process_module.hpp"
 #include "nucleus_instance.hpp"
 
-Process::Process(void)
+Process::Process(void) : current_heap_offset(0)
 {
   static ELF_driver elf_driver = ELF_driver();
 
   attachdriver(elf_driver);
-
-  current_heap_offset = 0;
 }
 
 Process::~Process(void)
