@@ -22,7 +22,7 @@ AS:=llvm-as-11
 AS_FLAGS:=$(PLATFORM_OPTIONS) -c
 
 LD:=ld.lld-11
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/pc.ld -fuse-ld=lld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/rpi3.ld -fuse-ld=lld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/rpi3/*.cpp)
