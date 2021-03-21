@@ -24,6 +24,7 @@
  */
 
 EXTERN(_start)
+OUTPUT_FORMAT("elf64-littleaarch64")
 
 SECTIONS
 {
