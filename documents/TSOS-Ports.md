@@ -10,10 +10,6 @@ gba
 
 This is the Nintendo Gameboy Advance, with a ARM processor, and a GBZ80 processor (That most likely will not be used).
 
-psx
-
-This is the Sony Playstation 1
-
 psp
 
 This is the Sony Playstation Portable, with MIPS32 processors.

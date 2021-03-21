@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+name: Compile test
+
+jobs:
+  pc-test:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh pc
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: PC Nucleus
+          path: build/nucleus

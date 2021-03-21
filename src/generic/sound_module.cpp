@@ -16,12 +16,6 @@ Sound::Sound(void)
   attachdriver(gba_sound_driver);
 
 #endif
-
-#ifdef __PLAYSTATION_X__
-  static PSX_SOUND_driver psx_sound_driver = PSX_SOUND_driver();
-
-  attachdriver(psx_sound_driver);
-#endif
 }
 
 Sound::~Sound(void)

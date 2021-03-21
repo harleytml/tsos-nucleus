@@ -21,34 +21,29 @@ help)
   echo ""
   echo "pc     - i686 or higher IBM compatible Personal Computer"
   echo "gba    - Nintendo Gameboy Advance"
-  echo "psx    - Sony Playstation 1"
   echo "nspire - Texas Instruments Nspire"
+  echo "rpi3   - Raspberry PI 3"
   exit 0
   ;;
 pc)
-  NEEDED_COMMANDS=(tsos-i686-gcc tsos-i686-g++ tsos-i686-ld make xorriso grub-mkrescue grub-file)
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make xorriso grub-mkrescue grub-file)
   ;;
 gba)
-  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld make tsos-gbafix)
-  ;;
-psx)
-  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld make tsos-elf2x)
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make tsos-gbafix)
   ;;
 nspire)
-  NEEDED_COMMANDS=(tsos-armeabi-gcc tsos-armeabi-g++ tsos-armeabi-ld make)
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make)
   ;;
 psp)
-  NEEDED_COMMANDS=(tsos-mipsel-gcc tsos-mipsel-g++ tsos-mipsel-ld make)
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make)
   echo "This system is not supported yet."
   exit 1
   ;;
 rpi3)
-  NEEDED_COMMANDS=(tsos-aarch64-gcc tsos-aarch64-g++ tsos-aarch64-ld make)
-  echo "This system is not supported yet."
-  exit 1
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make)
   ;;
 nds)
-  NEEDED_COMMANDS=(make)
+  NEEDED_COMMANDS=(clang-11 clang++-11 llvm-as-11 ld.lld-11 make)
   echo "This system is not supported yet."
   exit 1
   ;;
@@ -97,9 +92,6 @@ pc)
 gba)
   tsos-armeabi-objcopy -v -O binary "./nucleus" "./tsos.gba"
   tsos-gbafix "./tsos.gba" -t -p
-  ;;
-psx)
-  tsos-elf2x "./nucleus" "./nucleus.psx"
   ;;
 *)
   echo "This script cannot deploy this system yet."

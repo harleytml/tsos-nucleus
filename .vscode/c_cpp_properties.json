@@ -4,7 +4,7 @@
       "name": "PC",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/tsos-toolchain/bin/tsos-i686-g++",
+      "compilerPath": "/usr/bin/clang++-11",
       "cStandard": "c99",
       "cppStandard": "c++17",
       "intelliSenseMode": "gcc-x86",
@@ -38,10 +38,10 @@
       "name": "GBA",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
+      "compilerPath": "/usr/bin/clang++-11",
       "cStandard": "c99",
       "cppStandard": "c++17",
-      "intelliSenseMode": "gcc-arm",
+      "intelliSenseMode": "clang-arm",
       "compilerArgs": [
         "-D__GAMEBOY_ADVANCED__",
         "-g",
@@ -70,43 +70,10 @@
       "configurationProvider": "ms-vscode.makefile-tools"
     },
     {
-      "name": "PSX",
-      "includePath": ["${workspaceFolder}/**"],
-      "defines": [],
-      "compilerPath": "/usr/tsos-toolchain/bin/tsos-mipsel-g++",
-      "cStandard": "c99",
-      "cppStandard": "c++17",
-      "compilerArgs": [
-        "-D__PLAYSTATION_X__",
-        "-g",
-        "-std=c++17",
-        "-trigraphs",
-        "-ffreestanding",
-        "-O0",
-        "-Wall",
-        "-Wextra",
-        "-Wno-write-strings",
-        "-fno-exceptions",
-        "-fno-builtin",
-        "-fno-unwind-tables",
-        "-fno-rtti",
-        "-nostdlib",
-        "-nodefaultlibs",
-        "-lgcc",
-        "-pedantic",
-        "-nostartfiles",
-        "-c"
-      ],
-      "browse": {
-        "path": ["${workspaceFolder}/**"],
-        "limitSymbolsToIncludedHeaders": true
-      }
-    },
-    {
       "name": "NSPIRE",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/tsos-toolchain/bin/tsos-armeabi-g++",
+      "compilerPath": "/usr/bin/clang++-11",
       "cStandard": "c99",
       "cppStandard": "c++17",
       "compilerArgs": [
@@ -133,7 +100,8 @@
       "browse": {
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
-      }
+      },
+      "intelliSenseMode": "clang-arm"
     }
   ],
   "version": 4
