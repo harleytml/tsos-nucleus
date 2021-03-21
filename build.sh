@@ -77,6 +77,11 @@ make -j"$(nproc)"
 
 echo ""
 
+if [ ! -f "./nucleus" ]; then
+  echo "Compiling failed"
+  exit 1
+fi
+
 # Lets deploy these images
 case $1 in
 pc)
@@ -92,9 +97,6 @@ pc)
 gba)
   tsos-armeabi-objcopy -v -O binary "./nucleus" "./tsos.gba"
   tsos-gbafix "./tsos.gba" -t -p
-  if [ ! -f "./tsos.gba" ]; then
-    exit 1
-  fi
   ;;
 *)
   echo "This script cannot deploy this system yet."
