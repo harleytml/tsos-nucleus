@@ -42,6 +42,8 @@ In the documents directory, you can find more documents concerning TS/OS.
 
 ## Building
 
+You need to install clang-11
+
 To build TS/OS, run
 
 ```sh

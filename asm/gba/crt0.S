@@ -28,7 +28,7 @@
 @ This file is released into the public domain for commercial
 @ or non-commercial usage with no restrictions placed upon it.
 
-    .TEXT
+    .text
 
 @ Comment out the next line ONLY if you plan to never support
 @ multiboot mode and want to save a few bytes by removing
@@ -138,10 +138,10 @@
 @ AND SECTION ENDS FOR SECTIONS THAT GET COPIED TO RAM WITH
 @ ALIGN(4) !!!!
 
-    .GLOBAL     _start
+    .global     _start
 _start:
-        .ALIGN
-        .CODE 32
+        .align
+        .code 32
     @ Start Vector
 
         b       rom_header_end
@@ -185,8 +185,8 @@ _start:
     @ Checksum (80000BEh)
         .byte   0x00,0x00
 
-    .ALIGN
-    .ARM                                @ ..or you can use CODE 32 here
+    .align
+    .code 32
 
 rom_header_end:
         b       start_vector        @ This branch must be here for proper
@@ -231,9 +231,9 @@ __slave_number:
 @        Reset       @
 @@@@@@@@@@@@@@@@@@@@@@
 
-    .GLOBAL     start_vector
-    .ALIGN
-    .ARM                                @ ..or you can use CODE 32 here
+    .global     start_vector
+    .align
+    .code 32
 start_vector:
         mov     r0, #0x12               @ Switch to IRQ Mode
         msr     cpsr, r0
@@ -247,7 +247,7 @@ start_vector:
                                         @  for those that want to conserve labels.
         bx     r0
 
-        .THUMB                          @ ..or you can use .CODE 16 here
+        .code 16
 1:
 
  .ifdef __InterruptSupport
@@ -376,10 +376,10 @@ CEW0Skip:
         bx      r3
 
 
-    .GLOBAL     __FarFunction,__FarProcedure
-    .THUMB_FUNC
+    .global     __FarFunction,__FarProcedure
+    .thumb_func
 __FarFunction:
-    .THUMB_FUNC
+    .thumb_func
 __FarProcedure:
         bx      r0
         nop
@@ -454,6 +454,7 @@ CopyMem:
         strh    r3,[r0,#0xe]    @ Start DMA
 .else
 CIDLoop:
+
         ldmia   r1!,{r0}
         stmia   r2!,{r0}
         sub     r3,#4
@@ -463,29 +464,29 @@ CIDExit:
 If_Undefined_Reference__rename_main_or_AgbMain_to_each_other_in_your_C_file:
         bx      lr
 
-        .ALIGN
+        .align
 
 .ifdef __DMACopyClear
 fill_val: .word  0
 reg_base: .word  0x040000d0
 .endif
 
-        .ALIGN
-        .POOL
+        .align
+        .pool
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @                  Interrupt Processing                  @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
  .ifdef __ISRinIWRAM
-    .SECTION    .iwram,"ax",%progbits
+    .section    .iwram,"ax",%progbits
  .endif
 
-    .EXTERN     IntrTable
-    .EXTERN     InterruptProcess
-    .GLOBAL     intr_main
-    .ALIGN
-    .ARM
+    .extern     IntrTable
+    .extern     InterruptProcess
+    .global     intr_main
+    .align
+    .code 32
 
 @ NOTE: Ifyou copy the following code (start: intr_main -
 @ end: intr_main_end) to internal WRAM then do not forget
@@ -667,16 +668,16 @@ IntrRet:
 
   .endif
 
-    .ALIGN
-    .POOL               @ Ifyou copy the intr_main routine, above, to internal
+    .align
+    .pool               @ If you copy the intr_main routine, above, to internal
                         @ RAM then copy the pool data as well because IntrTable
                         @ address is stored here. Use intr_main_end as last address+1.
 intr_main_end:
  .endif
 
-    .ALIGN
-    .POOL
+    .align
+    .pool
 
 
-    .END
+    .end
 

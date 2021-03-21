@@ -2,7 +2,7 @@
 # By Tsuki Superior
 .RECIPEPREFIX=:
 
-PLATFORM_OPTIONS:=-mthumb-interwork -mcpu=arm7tdmi -mthumb 
+PLATFORM_OPTIONS:=-D__GAMEBOY_ADVANCED__ --target=armv4t-unknown-none-eabi -mcpu=arm7tdmi -mthumb
 
 BUILD_DIR:=../build
 SRC_DIR:=../src
@@ -10,19 +10,19 @@ ASM_DIR:=../asm
 INCLUDE_DIR:=../include
 CONFIG_DIR:=../config
 LINKER_SCRIPTS_DIR:=../linker-scripts
-LIB=-lgcc
+LIB=
 
-CC:=tsos-armeabi-gcc
-CC_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -nostartfiles -c $(PLATFORM_OPTIONS)
+CC:=clang-11
+CC_FLAGS:=-g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c99 -ffreestanding -fno-builtin -O0 -Wall -Wextra -pedantic -c $(PLATFORM_OPTIONS)
 
-CPP:=tsos-armeabi-g++
-CPP_FLAGS:=-D__GAMEBOY_ADVANCED__ -g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++17 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-parameter -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-unwind-tables -fno-rtti -nostdlib -nodefaultlibs -pedantic -nostartfiles -c $(PLATFORM_OPTIONS) 
+CPP:=clang++-11
+CPP_FLAGS:=-g -I $(INCLUDE_DIR) -I $(CONFIG_DIR) -I ./ -std=c++17 -trigraphs -ffreestanding -O0 -Wall -Wextra -Wno-unused-private-field -Wno-unused-parameter -Wno-write-strings -Wno-write-strings -fno-threadsafe-statics -fno-exceptions -fno-builtin -fno-rtti -fno-unwind-tables -nostdlib -nodefaultlibs -pedantic -c $(PLATFORM_OPTIONS)
 
-AS:=tsos-armeabi-as
-AS_FLAGS:=-g $(PLATFORM_OPTIONS) 
+AS:=llvm-as-11
+AS_FLAGS:=$(PLATFORM_OPTIONS) -c
 
-LD:=tsos-armeabi-ld
-LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba.ld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS) 
+LD:=ld.lld-11
+LD_FLAGS:=-g -T $(LINKER_SCRIPTS_DIR)/gba.ld -fuse-ld=lld -static -ffreestanding -O0 -nostdlib $(PLATFORM_OPTIONS)
 
 CPP_FILES:=$(wildcard $(SRC_DIR)/generic/*.cpp)
 CPP_FILES+=$(wildcard $(SRC_DIR)/gba/*.cpp)
@@ -44,7 +44,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 :$(CC) $(CC_FLAGS) -o $@ $^ 
 
 $(BUILD_DIR)/%.o: $(ASM_DIR)/%.S
-:$(AS) $(AS_FLAGS) -o $@ -c $^
+:$(CPP) $(AS_FLAGS) -o $@ $^
 
 clean:
 :rm -rfv $(shell find ../ -name \*.o) $(BUILD_DIR)/*

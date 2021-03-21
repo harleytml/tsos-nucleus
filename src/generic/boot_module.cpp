@@ -16,12 +16,6 @@ Boot::Boot(void)
 
   attachdriver(gba_boot_driver);
 #endif
-
-#ifdef __PLAYSTATION_X__
-  static PSX_BOOT_driver psx_boot_driver = PSX_BOOT_driver();
-
-  attachdriver(psx_boot_driver);
-#endif
 }
 
 Boot::~Boot()

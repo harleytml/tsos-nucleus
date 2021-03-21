@@ -42,16 +42,6 @@ This file ensures the proper headers are being used for the proper system
 
 #endif
 
-#ifdef __PLAYSTATION_X__
-
-#include "psx_screen.hpp"
-#include "psx_gamepad.hpp"
-#include "psx_boot.hpp"
-#include "psx_disk.hpp"
-#include "psx_sound.hpp"
-
-#endif
-
 #ifdef __NSPIRE__
 
 #endif
