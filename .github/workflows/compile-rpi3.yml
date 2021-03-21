@@ -7,7 +7,7 @@ on:
 name: RPI3 Compile test
 
 jobs:
-  pc-test:
+  rpi3-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest

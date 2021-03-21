@@ -7,7 +7,7 @@ on:
 name: GBA Compile test
 
 jobs:
-  pc-test:
+  gba-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest

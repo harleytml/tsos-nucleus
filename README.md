@@ -6,7 +6,11 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tsuki-superior/tsos-nucleus&utm_campaign=Badge_Grade)
 ![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
 ![Release](https://badgen.net/github/release/tsuki-superior/tsos-nucleus)
-[![Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-test.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-test.yml)
+
+[![GBA Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml)
+[![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml)
+[![PC Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml)
+[![RPI3 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml)
 
 ## Contributors
 
