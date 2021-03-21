@@ -7,6 +7,8 @@
 ![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
 ![Release](https://badgen.net/github/release/tsuki-superior/tsos-nucleus)
 
+## Build Tests
+
 [![GBA Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml)
 [![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml)
 [![PC Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml)
