@@ -92,6 +92,9 @@ pc)
 gba)
   tsos-armeabi-objcopy -v -O binary "./nucleus" "./tsos.gba"
   tsos-gbafix "./tsos.gba" -t -p
+  if [ ! -f "./tsos.gba" ]; then
+    exit 1
+  fi
   ;;
 *)
   echo "This script cannot deploy this system yet."
