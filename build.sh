@@ -86,7 +86,7 @@ fi
 case $1 in
 pc)
   if ! grub-file --is-x86-multiboot "./nucleus"; then
-    echo "Compiling failed"
+    echo "Compiling failed, not x86 multiboot"
     exit 1
   fi
   cp -v "./nucleus" "$FILESYSTEM_ROOT/nucleus"
