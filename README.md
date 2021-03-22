@@ -56,15 +56,22 @@ In the documents directory, you can find more documents concerning TS/OS.
 
 ## Building
 
-You need to install clang-11
+You need to install these tools:
+
+```text
+clang-11
+termcolor
+make
+cmake
+python3
+```
 
 To build TS/OS, run
 
 ```sh
-mkdir build
-cd build || exit 1
-cmake .. -DPLATFORM=<platform> -G "Unix Makefiles"
-make -j"$(nproc)"
+python3 ./build.py <platform>
 ```
 
 For example, the platform `PC` runs the pc build.
+
+To get the list of supported systems, type `list` as the platform

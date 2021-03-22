@@ -3,6 +3,8 @@
 
 import sys
 import os
+import shutil
+import termcolor
 
 systemlist = ["pc", "gba", "rpi3", "nspire"]
 
@@ -26,26 +28,53 @@ if platform == "list":
     - NSPIRE - Texas Instruments TI-Nspire
 
     - RPI3 - Raspberry Pi 3
-    """)
+    """
+    )
     exit(0)
 
 if platform in systemlist:
+
+    # Create build folder if it doesn't exist
     if not os.path.isdir("build"):
         os.mkdir("build")
+
+    # Change to build dir
     os.chdir("build")
+
+    # Run cmake
     os.system("cmake .. -DPLATFORM="+platform.upper())
+
+    # Run make
     os.system("make -j$(nproc)")
+
+    # Insure that the kernel was produced, and if not, fail
     if not os.path.exists("nucleus"):
+        print(termcolor.colored("Compiling failed!", "red"))
         exit(1)
+
+    # Deploy the pc port
     if platform == "pc":
+
+        # Grub file can only exist on a posix system anyway
         if os.name == "posix":
-            if os.system("grub-file --is-x86-multiboot nucleus") == 0:
-                exit(0)
-            else:
-                print("The Nucleus is malformed (not x86 multiboot complaint)")
+
+            # Make sure grub-file exists
+            if shutil.which("grub-file") == None:
+                print(termcolor.colored("grub-file is not installed!", "red"))
+                exit(1)
+
+            # Verify that the nucleus produced is actually not malformed
+            if os.system("grub-file --is-x86-multiboot nucleus") != 0:
+                print(termcolor.colored(
+                    "The Nucleus is malformed (not x86 multiboot complaint)", "red"))
                 exit(1)
         else:
-            print("Build script is not supporting the target", os.name)
+
+            # I don't know how to do this on a non-posix system
+            print(termcolor.colored(
+                "Build script is not supporting the host system", "red"), os.name)
 else:
-    print("Invalid system")
+
+    # You tried to build for the wrong system
+    print(termcolor.colored("Invalid system", "red"))
     exit(1)
