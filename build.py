@@ -10,9 +10,10 @@ systemlist = ["pc", "gba", "rpi3", "nspire"]
 if len(sys.argv) != 2:
     print(sys.argv[0], "<system>")
     print("Set the system to list to see the list if systems")
+    exit(1)
 
 # Get the platform
-platform = sys.argv[1]
+platform = sys.argv[1].lower()
 
 # Get a switch block emulation of the list of systems
 if platform == "list":
@@ -28,7 +29,7 @@ if platform == "list":
     """)
     exit(0)
 
-if platform.lower() in systemlist:
+if platform in systemlist:
     if not os.path.isdir("build"):
         os.mkdir("build")
     os.chdir("build")
@@ -36,6 +37,15 @@ if platform.lower() in systemlist:
     os.system("make -j$(nproc)")
     if not os.path.exists("nucleus"):
         exit(1)
+    if platform == "pc":
+        if os.name == "posix":
+            if os.system("grub-file --is-x86-multiboot nucleus") == 0:
+                exit(0)
+            else:
+                print("The Nucleus is malformed (not x86 multiboot complaint)")
+                exit(1)
+        else:
+            print("Build script is not supporting the target", os.name)
 else:
     print("Invalid system")
     exit(1)
