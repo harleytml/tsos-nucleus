@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile Test
-        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && ./build.sh nspire
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=NSPIRE && make
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
