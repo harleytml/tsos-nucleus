@@ -34,5 +34,8 @@ if platform.lower() in systemlist:
     os.chdir("build")
     os.system("cmake .. -DPLATFORM="+platform.upper())
     os.system("make -j$(nproc)")
+    if not os.path.exists("nucleus"):
+        exit(1)
 else:
     print("Invalid system")
+    exit(1)
