@@ -41,7 +41,8 @@ SECTIONS
         *(COMMON)
         __bss_end = .;
     }
-    _kernelend = .;
+    . = ALIGN(8);
+    _kernelend = . ;
 
    /DISCARD/ : { *(.comment) *(.gnu*) *(.note*) *(.eh_frame*) }
 }
