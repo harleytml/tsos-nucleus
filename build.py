@@ -4,6 +4,8 @@
 import sys
 import os
 import shutil
+
+# You will have to install this one
 import termcolor
 
 systemlist = ["pc", "gba", "rpi3", "nspire"]
