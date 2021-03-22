@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++-11")
 set(CMAKE_C_COMPILER "/usr/bin/clang-11")
 set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-11")
