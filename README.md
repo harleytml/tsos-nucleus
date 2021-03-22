@@ -26,15 +26,13 @@ TS/OS is a SysV ABI operating system with a focus on being as multiplatform as p
 
 TS/OS was a operating system made for several reasons
 
-```text
-1: Because I got bored, and I had nothing to do
+- 1: Because I got bored, and I had nothing to do
 
-2: Because I needed to learn C/C++
+- 2: Because I needed to learn C/C++
 
-3: Because I got infuriated by the fact that some devices cannot have Linux ports (like the GBA)
+- 3: Because I got infuriated by the fact that some devices cannot have Linux ports (like the GBA)
 
-4: And finally, because I was inspired by the genius of Terry A. Davis.
-```
+- 4: And finally, because I was inspired by the genius of Terry A. Davis.
 
 I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, PSP and below. If I can get it to run on a GBA, surely I can run it on the others.
 
@@ -46,6 +44,16 @@ The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be m
 
 In the documents directory, you can find more documents concerning TS/OS.
 
+## Current Platforms
+
+- PC - i686 or higher IBM Personal Computer
+
+- GBA - Nintendo Gameboy Advanced
+
+- NSPIRE - Texas Instruments TI-Nspire
+
+- RPI3 - Raspberry Pi 3
+
 ## Building
 
 You need to install clang-11
@@ -53,29 +61,10 @@ You need to install clang-11
 To build TS/OS, run
 
 ```sh
-./build.sh <platform>
+mkdir build
+cd build || exit 1
+cmake .. -DPLATFORM=<platform> -G "Unix Makefiles"
+make -j"$(nproc)"
 ```
 
-For example, the platform `pc` runs the pc build.
-
-## Testing
-
-If you want to test, simply run `test` also
-
-```sh
-./build.sh <platform> test
-```
-
-Note that each platform needs its own testing tools
-
-## Debugging
-
-To debug, simply use this command
-
-```sh
-./build.sh <platform> debug
-```
-
-The debugging tools are the same as the testing tools
-
-The GDB port you need to connect to is outputted to the terminal as a message, and usually it is 1234.
+For example, the platform `PC` runs the pc build.

@@ -46,6 +46,7 @@ File Filesystem::open(char *path)
   if (exists(path))
   {
   }
+  return File();
 }
 
 void Filesystem::close(File file)
