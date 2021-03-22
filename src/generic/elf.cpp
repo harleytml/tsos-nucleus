@@ -32,23 +32,18 @@ uintptr_t ELF_driver::getstartoffreemem(void)
   return 0x03000000;
 #endif
 
-#ifdef __PLAYSTATION_X__
-
-#endif
-
 #ifdef __NSPIRE__
-
-#endif
-
-#ifdef __PLAYSTATION_PORTABLE__
-
+  extern uintptr_t _kernelend;
+  return _kernelend;
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-
+  extern uintptr_t _kernelend;
+  return _kernelend;
 #endif
 
 #ifdef __NINTENDO_DUAL_SCREEN__
 
 #endif
+  return 0;
 }

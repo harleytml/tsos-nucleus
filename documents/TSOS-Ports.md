@@ -10,10 +10,6 @@ gba
 
 This is the Nintendo Gameboy Advance, with a ARM processor, and a GBZ80 processor (That most likely will not be used).
 
-psp
-
-This is the Sony Playstation Portable, with MIPS32 processors.
-
 nspire
 
 This is the Texas Instruments TI-Nspire, with a ARM processor.
