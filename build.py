@@ -29,6 +29,10 @@ if platform == "list":
     exit(0)
 
 if platform.lower() in systemlist:
+    if not os.path.isdir("./build"):
+        os.mkdir("./build")
     os.chdir("./build")
     os.system("cmake .. -DPLATFORM="+platform.upper())
     os.system("make -j$(nproc)")
+else:
+    print("Invalid system")
