@@ -61,6 +61,7 @@ add_compile_options(
   -fno-builtin
   -fno-rtti
   -fno-unwind-tables
+  -ffunction-sections
   -nostdlib
   -nodefaultlibs
   ${platform_options})
