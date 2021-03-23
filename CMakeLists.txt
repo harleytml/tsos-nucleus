@@ -15,6 +15,7 @@ if(PLATFORM STREQUAL "PC")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__PERSONAL_COMPUTER__ --target=i686-pc-none-elf
                        -mtune=i686)
+  set(platform_link -m elf32-i386)
   set(linker_script pc.ld)
   file(GLOB platform_specific_files "src/pc/*.cpp" "asm/pc/*.S")
 endif(PLATFORM STREQUAL "PC")
@@ -23,6 +24,7 @@ if(PLATFORM STREQUAL "GBA")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__GAMEBOY_ADVANCED__ --target=armv4t-unknown-none-eabi
                        -mtune=arm7tdmi -mthumb)
+  set(platform_link -m elf32-littlearm)
   set(linker_script gba.ld)
   file(GLOB platform_specific_files "src/gba/*.cpp" "asm/gba/*.S")
 endif(PLATFORM STREQUAL "GBA")
@@ -31,6 +33,7 @@ if(PLATFORM STREQUAL "NSPIRE")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__NSPIRE__ --target=armv5tej-unknown-none-eabi
                        -mtune=arm926ej-s)
+  set(platform_link -m elf32-littlearm)
   set(linker_script nspire.ld)
   file(GLOB platform_specific_files "src/nspire/*.cpp" "asm/nspire/*.S")
 endif(PLATFORM STREQUAL "NSPIRE")
@@ -39,6 +42,7 @@ if(PLATFORM STREQUAL "RPI3")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__RASPBERRY_PI_3__ --target=aarch64-unknown-none-eabi
                        -mtune=cortex-a53)
+  set(platform_link -m aarch64elf)
   set(linker_script rpi3.ld)
   file(GLOB platform_specific_files "src/rpi3/*.cpp" "asm/rpi3/*.S")
 endif(PLATFORM STREQUAL "RPI3")
@@ -79,6 +83,8 @@ add_link_options(
   -O0
   -nostdlib
   -nodefaultlibs
-  ${platform_options})
+  ${platform_options}
+  ${platform_link}
+  )
 
 add_executable(nucleus ${source_files} ${platform_specific_files})
