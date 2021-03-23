@@ -11,7 +11,7 @@ import termcolor
 systemlist = ["pc", "gba", "rpi3", "nspire"]
 
 # Make sure the script has the correct number of arguments
-if len(sys.argv) != 2:
+if len(sys.argv) != 2 or sys.argv[1] == "help":
     print(sys.argv[0], "<system>")
     print("Set the system to list to see the list if systems")
     exit(1)
