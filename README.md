@@ -54,11 +54,11 @@ In the documents directory, you can find more documents concerning TS/OS.
 
 - RPI3 - Raspberry Pi 3
 
-## Building
+## Pre-Building
 
 You need to install these tools:
 
-```text
+```sh
 clang-11
 lld-11
 llvm-11
@@ -66,7 +66,18 @@ termcolor
 make
 cmake
 python3
+pip3
 ```
+
+Debian/Ubuntu :
+
+```sh
+sudo apt-get update
+sudo apt-get install clang-11 lld-11 llvm-11 make cmake python3 python3-pip
+pip3 install termcolor
+```
+
+## Building
 
 To build TS/OS, run
 

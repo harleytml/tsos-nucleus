@@ -8,6 +8,10 @@ import shutil
 # You will have to install this one
 import termcolor
 
+if os.name != "posix":
+    print(termcolor.colored("Only posix systems are supported in this script!", "red"))
+    exit(1)
+
 systemlist = ["pc", "gba", "rpi3", "nspire"]
 
 # Make sure the script has the correct number of arguments
@@ -57,26 +61,39 @@ if platform in systemlist:
     # Deploy the pc port
     if platform == "pc":
 
-        # Grub file can only exist on a posix system anyway
-        if os.name == "posix":
+        # Make sure grub-file exists
+        if shutil.which("grub-file") == None:
+            print(termcolor.colored("grub-file is not installed!", "red"))
+            exit(1)
 
-            # Make sure grub-file exists
-            if shutil.which("grub-file") == None:
-                print(termcolor.colored("grub-file is not installed!", "red"))
-                exit(1)
-
-            # Verify that the nucleus produced is actually not malformed
-            if os.system("grub-file --is-x86-multiboot nucleus") != 0:
-                print(termcolor.colored(
-                    "The Nucleus is malformed (not x86 multiboot complaint)", "red"))
-                exit(1)
-        else:
-
-            # I don't know how to do this on a non-posix system
+        # Verify that the nucleus produced is actually not malformed
+        if os.system("grub-file --is-x86-multiboot nucleus") != 0:
             print(termcolor.colored(
-                "Build script is not supporting the host system", "red"), os.name)
+                "The Nucleus is malformed (not x86 multiboot complaint)", "red"))
+            exit(1)
+
+    elif platform == "gba":
+        if not os.system("llvm-objcopy-11 -O binary nucleus"):
+            print(termcolor.colored("objcopy failed on given nucleus image!", "red"))
+            exit(1)
+
+        if shutil.which("tsos-gbafix") == None:
+            print(termcolor.colored("tsos-gbafix is not installed!", "red"))
+            exit(1)
+
+        if not os.system("tsos-gbafix nucleus"):
+            print(termcolor.colored("tsos-gbafix failed!", "red"))
+            exit(1)
+
+    elif platform == "nspire":
+        exit(0)
+    elif platform == "rpi3":
+        exit(0)
+
 else:
 
     # You tried to build for the wrong system
     print(termcolor.colored("Invalid system", "red"))
     exit(1)
+
+print(termcolor.colored("Compiling and deploying completed.", "green"))

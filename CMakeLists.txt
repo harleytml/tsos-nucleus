@@ -7,6 +7,7 @@ set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-11")
 project("TS/OS Nucleus")
 
 enable_language(CXX ASM)
+set(CMAKE_CXX_STANDARD 17)
 
 option(PLATFORM "Set the target platform of TS/OS" PC)
 
@@ -44,11 +45,11 @@ endif(PLATFORM STREQUAL "RPI3")
 
 include_directories(include)
 
-set(CMAKE_CXX_STANDARD 17)
 file(GLOB source_files "src/generic/*.cpp")
 
 set(CMAKE_ASM-ATT_FLAGS "${platform_options}")
 add_compile_options(
+  -g
   -trigraphs
   -ffreestanding
   -O0
@@ -69,6 +70,7 @@ add_compile_options(
   ${platform_options})
 
 add_link_options(
+  -g
   -T
   ../linker-scripts/${linker_script}
   -fuse-ld=lld
@@ -76,6 +78,7 @@ add_link_options(
   -ffreestanding
   -O0
   -nostdlib
+  -nodefaultlibs
   ${platform_options})
 
 add_executable(nucleus ${source_files} ${platform_specific_files})
