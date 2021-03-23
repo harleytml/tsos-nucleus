@@ -34,7 +34,7 @@ TS/OS was a operating system made for several reasons
 
 - 4: And finally, because I was inspired by the genius of Terry A. Davis.
 
-I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, PSP and below. If I can get it to run on a GBA, surely I can run it on the others.
+I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, mostly the little arm ones. If I can get it to run on a GBA, surely I can run it on the others.
 
 The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophmore year, and I always wanted to make a OS. So I did with a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
 
@@ -60,6 +60,8 @@ You need to install these tools:
 
 ```text
 clang-11
+lld-11
+llvm-11
 termcolor
 make
 cmake
