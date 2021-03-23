@@ -12,6 +12,13 @@
 .long FLAGS
 .long CHECKSUM
 
+# Reserve a stack for the initial thread.
+.section .bss
+.align 4
+stack_bottom:
+.skip 16384 # 16 KiB
+stack_top:
+
 # The kernel entry point.
 .section .text
 .global _start
@@ -30,12 +37,5 @@ _start:
 0:	
   hlt
 	jmp 0b
-
-# Reserve a stack for the initial thread.
-.section .bss
-.align 4
-stack_bottom:
-.skip 16384 # 16 KiB
-stack_top:
 
 .size _start, . - _start
