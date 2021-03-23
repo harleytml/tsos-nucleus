@@ -21,6 +21,7 @@ stack_top:
 
 # The kernel entry point.
 .section .text, "ax"
+.align 16
 .global _start
 .type _start, @function
 _start:
