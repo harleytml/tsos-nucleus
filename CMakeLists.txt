@@ -50,7 +50,6 @@ file(GLOB source_files "src/generic/*.cpp")
 set(CMAKE_ASM-ATT_FLAGS "${platform_options}")
 add_compile_options(
   -g
-  -trigraphs
   -ffreestanding
   -O0
   -Wall
