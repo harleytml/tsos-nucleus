@@ -80,7 +80,6 @@ add_link_options(
   -nostdlib
   -nodefaultlibs
   ${platform_options}
-  ${platform_link}
   )
 
 add_executable(nucleus ${source_files} ${platform_specific_files})
