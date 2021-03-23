@@ -97,3 +97,4 @@ else:
     exit(1)
 
 print(termcolor.colored("Compiling and deploying completed.", "green"))
+print(termcolor.colored("You copy of TS/OS nucleus build/nucleus", "green"))
