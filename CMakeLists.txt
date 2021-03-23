@@ -14,7 +14,7 @@ option(PLATFORM "Set the target platform of TS/OS" PC)
 if(PLATFORM STREQUAL "PC")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__PERSONAL_COMPUTER__ --target=i686-pc-none-elf
-                       -mtune=i686)
+                       -mtune=i686 -mno-red-zone)
   set(linker_script pc.ld)
   file(GLOB platform_specific_files "src/pc/*.cpp" "asm/pc/*.S")
 endif(PLATFORM STREQUAL "PC")
@@ -66,6 +66,9 @@ add_compile_options(
   -ffunction-sections
   -nostdlib
   -nodefaultlibs
+  -fdata-sections
+  -fno-stack-protector
+  -fno-strict-aliasing
   ${platform_options})
 
 add_link_options(
@@ -78,7 +81,6 @@ add_link_options(
   -O0
   -nostdlib
   -nodefaultlibs
-  ${platform_options}
-  )
+  ${platform_options})
 
 add_executable(nucleus ${source_files} ${platform_specific_files})

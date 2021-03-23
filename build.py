@@ -73,7 +73,7 @@ if platform in systemlist:
             exit(1)
 
     elif platform == "gba":
-        if not os.system("llvm-objcopy-11 --target=armv4t-unknown-none-eabi -O binary nucleus"):
+        if not os.system("llvm-objcopy-11 -O binary nucleus"):
             print(termcolor.colored("objcopy failed on given nucleus image!", "red"))
             exit(1)
 
