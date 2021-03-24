@@ -16,6 +16,12 @@ Sound::Sound(void)
   attachdriver(gba_sound_driver);
 
 #endif
+
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_SOUND_driver rpi3_sound_driver = RPI3_SOUND_driver();
+
+  attachdriver(rpi3_sound_driver);
+#endif
 }
 
 Sound::~Sound(void)

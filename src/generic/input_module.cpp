@@ -20,7 +20,12 @@ Input::Input(void)
   static GBA_GAMEPAD_driver gba_gamepad_driver = GBA_GAMEPAD_driver();
 
   attachdriver(gba_gamepad_driver);
+#endif
 
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_KEYBOARD_driver rpi3_keyboard_driver = RPI3_KEYBOARD_driver();
+
+  attachdriver(rpi3_keyboard_driver);
 #endif
 }
 

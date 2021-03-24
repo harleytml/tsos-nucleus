@@ -15,6 +15,12 @@ Disk::Disk(void)
 
   attachdriver(gba_cartridge_driver);
 #endif
+
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_SD_CARD_driver rpi3_sd_card_driver = RPI3_SD_CARD_driver();
+
+  attachdriver(rpi3_sd_card_driver);
+#endif
 }
 
 Disk::~Disk()

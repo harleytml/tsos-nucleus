@@ -16,8 +16,10 @@ Serial::Serial(void)
   attachdriver(gba_io_port_driver);
 #endif
 
-#ifdef __PLAYSTATION_X__
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_UART_driver rpi3_uart_driver = RPI3_UART_driver();
 
+  attachdriver(rpi3_uart_driver);
 #endif
 }
 

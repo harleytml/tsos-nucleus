@@ -48,6 +48,13 @@ This file ensures the proper headers are being used for the proper system
 
 #ifdef __RASPBERRY_PI_3__
 
+#include "rpi3_boot.hpp"
+#include "rpi3_keyboard.hpp"
+#include "rpi3_screen.hpp"
+#include "rpi3_sd_card.hpp"
+#include "rpi3_sound.hpp"
+#include "rpi3_uart.hpp"
+
 #endif
 
 #ifdef __NINTENDO_DUAL_SCREEN__
