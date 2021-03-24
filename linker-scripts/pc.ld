@@ -36,12 +36,14 @@ SECTIONS
 	.rodata  ALIGN(4K) :
 	{
 		*(.rodata)
+		*.(.rodata.*)
 	}
  
 	/* Read-write data (initialized) */
 	.data ALIGN(4K) : 
 	{
 		*(.data)
+		*(.data.*)
 	}
  
 	/* Read-write data (uninitialized) and stack */
