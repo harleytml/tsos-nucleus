@@ -102,6 +102,40 @@
         "limitSymbolsToIncludedHeaders": true
       },
       "intelliSenseMode": "clang-arm"
+    },
+    {
+      "name": "RPI3",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": [],
+      "compilerPath": "/usr/bin/clang++-11",
+      "cStandard": "c99",
+      "cppStandard": "c++17",
+      "compilerArgs": [
+        "-D__RASPBERRY_PI_3__",
+        "-g",
+        "-std=c++17",
+        "-trigraphs",
+        "-ffreestanding",
+        "-O0",
+        "-Wall",
+        "-Wextra",
+        "-Wno-write-strings",
+        "-fno-exceptions",
+        "-fno-builtin",
+        "-fno-unwind-tables",
+        "-fno-rtti",
+        "-nostdlib",
+        "-nodefaultlibs",
+        "-lgcc",
+        "-pedantic",
+        "-nostartfiles",
+        "-c"
+      ],
+      "browse": {
+        "path": ["${workspaceFolder}/**"],
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "intelliSenseMode": "clang-arm64"
     }
   ],
   "version": 4

@@ -26,6 +26,12 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 
   attachdriver(gba_screen_driver);
 #endif
+
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_SCREEN_driver rpi3_screen_driver = RPI3_SCREEN_driver();
+
+  attachdriver(rpi3_screen_driver);
+#endif
 }
 
 Video::~Video()

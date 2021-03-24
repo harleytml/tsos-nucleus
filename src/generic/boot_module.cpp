@@ -16,6 +16,12 @@ Boot::Boot(void)
 
   attachdriver(gba_boot_driver);
 #endif
+
+#ifdef __RASPBERRY_PI_3__
+  static RPI3_BOOT_driver rpi3_boot_driver = RPI3_BOOT_driver();
+
+  attachdriver(rpi3_boot_driver);
+#endif
 }
 
 Boot::~Boot()
