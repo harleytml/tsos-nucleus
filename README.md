@@ -62,6 +62,7 @@ You need to install these tools:
 clang-11
 lld-11
 llvm-11
+lldb-11
 termcolor
 make
 cmake
@@ -73,7 +74,7 @@ Debian/Ubuntu :
 
 ```sh
 sudo apt-get update
-sudo apt-get install clang-11 lld-11 llvm-11 make cmake python3 python3-pip
+sudo apt-get install clang-11 lld-11 llvm-11 lldb-11 make cmake python3 python3-pip
 pip3 install termcolor
 ```
 
