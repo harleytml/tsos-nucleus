@@ -29,8 +29,8 @@
 @ or non-commercial usage with no restrictions placed upon it.
 
 .text
-
 .global     _start
+.type _start, #function
 _start:
         .align
         .code 32

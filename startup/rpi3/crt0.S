@@ -24,7 +24,7 @@
  */
 
 .section ".text.boot"
-
+.type _start, @function
 .global _start
 
 _start:

@@ -1,5 +1,6 @@
     .align
     .section .text
+    .type _start, #function
     .global _start
 
 _start:
