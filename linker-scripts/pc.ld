@@ -25,8 +25,6 @@ SECTIONS
   
 	.text ALIGN(4K) : 
 	{
-		KEEP(*(.init))
-    KEEP(*(.fini))
 		*(.text)
 		*(.text.*)
 		*(.ctors)
