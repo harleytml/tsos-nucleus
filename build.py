@@ -73,7 +73,7 @@ if platform in systemlist:
             exit(1)
 
     elif platform == "gba":
-        if not os.system("llvm-objcopy-11 -O binary nucleus"):
+        if os.system("llvm-objcopy-11 -O binary nucleus") != 0:
             print(termcolor.colored("objcopy failed on given nucleus image!", "red"))
             exit(1)
 
@@ -81,7 +81,7 @@ if platform in systemlist:
             print(termcolor.colored("tsos-gbafix is not installed!", "red"))
             exit(1)
 
-        if not os.system("tsos-gbafix nucleus"):
+        if os.system("tsos-gbafix nucleus") != 0:
             print(termcolor.colored("tsos-gbafix failed!", "red"))
             exit(1)
 
@@ -97,4 +97,4 @@ else:
     exit(1)
 
 print(termcolor.colored("Compiling and deploying completed.", "green"))
-print(termcolor.colored("You copy of TS/OS nucleus build/nucleus", "green"))
+print(termcolor.colored("Your copy of TS/OS nucleus is at build/nucleus", "green"))
