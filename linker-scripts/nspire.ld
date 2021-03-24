@@ -7,26 +7,37 @@ EXTERN(_start)
 
 SECTIONS
 {
-	.text :
+	.text ALIGN(4) : 
 	{
+		KEEP(*(.init))
+    KEEP(*(.fini))
 		*(.text)
+		*(.text.*)
+		*(.ctors)
+		*(.dtors)
 	}
  
-	.rodata :
+	/* Read-only data. */
+	.rodata ALIGN(16) :
 	{
 		*(.rodata)
+		*.(.rodata.*)
 	}
  
-	.data :
+	/* Read-write data (initialized) */
+	.data ALIGN(16) : 
 	{
 		*(.data)
+		*(.data.*)
+		*(vtable)
 	}
  
-	.bss :
+	/* Read-write data (uninitialized) and stack */
+	.bss ALIGN(16) : 
 	{
 		*(COMMON)
 		*(.bss)
+		*(.bss.*)
 	}
-
 	_kernelend = . ;
 }

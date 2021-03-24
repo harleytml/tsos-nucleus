@@ -20,7 +20,8 @@ __irq_flags   = 0x03007ff8;
 
 SECTIONS
 {
-  . = __text_start;
+  VMA = __text_start ;
+  . += VMA;
 
   /* static data stored in cart ROM */
   .header : AT(ADDR(.header) - VMA)
@@ -28,11 +29,8 @@ SECTIONS
     KEEP(*(.header.header));
   } > ROM
 
-  VMA = __text_start;
-
-  . += VMA;
-
-  .text : AT(ADDR(.text) - VMA) { 
+  .text : AT(ADDR(.text) - VMA)
+  { 
     KEEP(*(.text.boot));
     KEEP(*(.text.reset_handler));
     KEEP(*(.text.isr));
@@ -40,8 +38,9 @@ SECTIONS
     . = ALIGN(4); 
   } > ROM
 
-  .rodata : AT(ADDR(.rodata) - VMA) { 
-    *(.rodata .rodata.*); 
+  .rodata : AT(ADDR(.rodata) - VMA)
+  { 
+    *(.rodata .rodata.*);
     . = ALIGN(4); 
   } > ROM
 
@@ -51,7 +50,7 @@ SECTIONS
     . = ALIGN(4);
     _sdata = .;
 
-    *(.data);
+    *(.data .data.*);
 
     . = ALIGN(4);
      _edata = .; 
