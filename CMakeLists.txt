@@ -16,7 +16,9 @@ if(PLATFORM STREQUAL "PC")
   set(platform_options -D__PERSONAL_COMPUTER__ --target=i686-pc-none-elf
                        -mtune=i686 -mno-red-zone)
   set(linker_script pc.ld)
-  file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*" "startup/x86/*")
+  include_directories("include/pc")
+  file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*"
+       "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
 
 if(PLATFORM STREQUAL "GBA")
@@ -24,7 +26,9 @@ if(PLATFORM STREQUAL "GBA")
   set(platform_options -D__GAMEBOY_ADVANCED__ --target=armv4t-unknown-none-eabi
                        -mtune=arm7tdmi -mthumb)
   set(linker_script gba.ld)
-  file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*" "startup/arm/*")
+  include_directories("include/gba")
+  file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*"
+       "startup/arm/*")
 endif(PLATFORM STREQUAL "GBA")
 
 if(PLATFORM STREQUAL "NSPIRE")
@@ -32,7 +36,9 @@ if(PLATFORM STREQUAL "NSPIRE")
   set(platform_options -D__NSPIRE__ --target=armv5tej-unknown-none-eabi
                        -mtune=arm926ej-s)
   set(linker_script nspire.ld)
-  file(GLOB platform_specific_files "src/nspire/*" "src/arm/*" "startup/nspire/*" "startup/arm/*")
+  include_directories("include/nspire")
+  file(GLOB platform_specific_files "src/nspire/*" "src/arm/*"
+       "startup/nspire/*" "startup/arm/*")
 endif(PLATFORM STREQUAL "NSPIRE")
 
 if(PLATFORM STREQUAL "RPI3")
@@ -40,10 +46,12 @@ if(PLATFORM STREQUAL "RPI3")
   set(platform_options -D__RASPBERRY_PI_3__ --target=aarch64-unknown-none-eabi
                        -mtune=cortex-a53)
   set(linker_script rpi3.ld)
-  file(GLOB platform_specific_files "src/rpi3/*" "src/aarch64/*" "startup/rpi3/*" "startup/aarch64/*")
+  include_directories("include/rpi3")
+  file(GLOB platform_specific_files "src/rpi3/*" "src/aarch64/*"
+       "startup/rpi3/*" "startup/aarch64/*")
 endif(PLATFORM STREQUAL "RPI3")
 
-include_directories(include)
+include_directories("include/generic")
 
 file(GLOB source_files "src/generic/*")
 
