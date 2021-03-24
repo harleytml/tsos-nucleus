@@ -146,14 +146,19 @@ if extra_action == "test":
             print(termcolor.colored("qemu-system-i386 is not installed!", "red"))
             exit(1)
         os.system("qemu-system-i386 -kernel nucleus")
+        exit(0)
+
     if platform == "rpi3":
         if shutil.which("qemu-system-aarch64") == None:
             print(termcolor.colored("qemu-system-aarch64 is not installed!", "red"))
             exit(1)
         os.system("qemu-system-aarch64 -M raspi3 -kernel nucleus")
+        exit(0)
+
     else:
         print(termcolor.colored(
             "Cannot test this system with this script yet.", "yellow"))
+        exit(0)
 
 # Debug the deployed system
 elif extra_action == "debug":
@@ -164,6 +169,7 @@ elif extra_action == "debug":
             print(termcolor.colored("qemu-system-i386 is not installed!", "red"))
             exit(1)
         os.system("qemu-system-i386 -kernel nucleus -s -S")
+        exit(0)
 
     # Debug the rpi3 system
     elif platform == "rpi3":
@@ -171,8 +177,11 @@ elif extra_action == "debug":
             print(termcolor.colored("qemu-system-aarch64 is not installed!", "red"))
             exit(1)
         os.system("qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S")
+        exit(0)
+
     else:
         print(termcolor.colored(
             "Cannot test this system with this script yet.", "yellow"))
+        exit(0)
 else:
     print(termcolor.colored("Invalid action", "red"))
