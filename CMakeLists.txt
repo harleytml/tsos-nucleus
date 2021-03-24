@@ -4,7 +4,7 @@ set(CMAKE_CXX_COMPILER "/usr/bin/clang++-11")
 set(CMAKE_C_COMPILER "/usr/bin/clang-11")
 set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-11")
 
-project("TS/OS Nucleus")
+project("TS/OS Nucleus" VERSION 0.0)
 
 enable_language(CXX ASM)
 set(CMAKE_CXX_STANDARD 17)

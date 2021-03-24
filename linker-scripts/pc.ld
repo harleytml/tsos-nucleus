@@ -18,9 +18,9 @@ SECTIONS
 	   loaded at by the bootloader. */
 	. = 1M;
 
-	.multiboot ALIGN(4):
+	.boot ALIGN(4):
 	{
-		KEEP(*(.multiboot))
+		KEEP(*(.boot))
 	}
   
 	.text ALIGN(4K) : 
