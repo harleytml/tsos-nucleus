@@ -63,10 +63,8 @@ add_compile_options(
   -fno-builtin
   -fno-rtti
   -fno-unwind-tables
-  -ffunction-sections
   -nostdlib
   -nodefaultlibs
-  -fdata-sections
   -fno-stack-protector
   -fno-strict-aliasing
   ${platform_options})

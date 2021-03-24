@@ -11,7 +11,7 @@ MEMORY
 
 __text_start  = ORIGIN(ROM);
 __app_start   = __text_start + 0xe0;
-__eheap_end.  = ORIGIN(EWRAM) + LENGTH(EWRAM);
+__eheap_end  =  ORIGIN(EWRAM) + LENGTH(EWRAM);
 __iwram_start = ORIGIN(IWRAM);
 __iwram_top   = ORIGIN(IWRAM) + LENGTH(IWRAM);
 __sp_irq      = __iwram_top - 0x060;
@@ -23,12 +23,16 @@ SECTIONS
   . = __text_start;
 
   /* static data stored in cart ROM */
-  .header :
+  .header : AT(ADDR(.header) - VMA)
   {
     KEEP(*(.header.header));
   } > ROM
 
-  .text : { 
+  VMA = __text_start;
+
+  . += VMA;
+
+  .text : AT(ADDR(.text) - VMA) { 
     KEEP(*(.text.boot));
     KEEP(*(.text.reset_handler));
     KEEP(*(.text.isr));
@@ -36,13 +40,13 @@ SECTIONS
     . = ALIGN(4); 
   } > ROM
 
-  .rodata : { 
+  .rodata : AT(ADDR(.rodata) - VMA) { 
     *(.rodata .rodata.*); 
     . = ALIGN(4); 
   } > ROM
 
   /* dynamic data placed in IWRAM */
-  .data : { 
+  .data : AT(ADDR(.data) - VMA) { 
     _sidata = LOADADDR(.data);
     . = ALIGN(4);
     _sdata = .;
@@ -53,7 +57,7 @@ SECTIONS
      _edata = .; 
   } > IWRAM AT > ROM
 
-  .bss : {
+  .bss : AT(ADDR(.bss) - VMA) {
     . = ALIGN(4);
     _sbss = .;
 
