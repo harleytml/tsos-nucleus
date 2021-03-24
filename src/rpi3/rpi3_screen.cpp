@@ -31,10 +31,12 @@ void RPI3_SCREEN_driver::putchar(uint16_t posx, uint16_t posy, char c, const Col
 
 uint16_t RPI3_SCREEN_driver::getscreenwidth(void)
 {
+  return 0;
 }
 
 uint16_t RPI3_SCREEN_driver::getscreenheight(void)
 {
+  return 0;
 }
 
 void RPI3_SCREEN_driver::setfont(Font f)

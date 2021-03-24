@@ -85,6 +85,6 @@ To build TS/OS, run
 python3 ./build.py <platform>
 ```
 
-For example, the platform `PC` runs the pc build.
+For example, the platform `pc` runs the pc build.
 
-To get the list of supported systems, type `list` as the platform
+To get the list of supported systems and other options, type `help` as the platform

@@ -22,14 +22,15 @@ SECTIONS
 	{
 		KEEP(*(.multiboot))
 	}
-
-	/* First put the multiboot header, as it is required to be put very early
-	   early in the image or the bootloader won't recognize the file format.
-	   Next we'll put the .text section. */
+  
 	.text ALIGN(4K) : 
 	{
+		KEEP(*(.init))
+    KEEP(*(.fini))
 		*(.text)
 		*(.text.*)
+		*(.ctors)
+		*(.dtors)
 	}
  
 	/* Read-only data. */
@@ -44,6 +45,7 @@ SECTIONS
 	{
 		*(.data)
 		*(.data.*)
+		*(vtable)
 	}
  
 	/* Read-write data (uninitialized) and stack */
@@ -51,6 +53,7 @@ SECTIONS
 	{
 		*(COMMON)
 		*(.bss)
+		*(.bss.*)
 	}
 	_kernelend = . ;
 }
