@@ -32,6 +32,7 @@ if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
     cprint("Official TS/OS buildscript (C) Tsuki Superior. Licensed under the same as TS/OS (see LICENSE file)\n", "yellow")
     print(sys.argv[0], "<system> <action>")
     print("Supported systems:\n")
+
     for x in build_settings["systems"]:
         print(x, "-", build_settings["systems"][x]["description"])
     cprint("\nSet the action to either debug or test, or you can leave it blank", "yellow")
