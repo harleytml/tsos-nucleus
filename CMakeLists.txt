@@ -57,7 +57,7 @@ file(GLOB source_files "src/generic/*")
 
 set(CMAKE_ASM-ATT_FLAGS "${platform_options}")
 add_compile_options(
-  -g
+  -ggdb
   -ffreestanding
   -O0
   -Wall
@@ -78,7 +78,7 @@ add_compile_options(
   ${platform_options})
 
 add_link_options(
-  -g
+  -ggdb
   -T
   ../linker-scripts/${linker_script}
   -fuse-ld=lld

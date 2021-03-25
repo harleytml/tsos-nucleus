@@ -13,8 +13,6 @@ SECTIONS
     KEEP(*(.fini))
 		*(.text)
 		*(.text.*)
-		*(.ctors)
-		*(.dtors)
 	}
  
 	/* Read-only data. */
@@ -39,5 +37,15 @@ SECTIONS
 		*(.bss)
 		*(.bss.*)
 	}
+
+	/DISCARD/ :
+	{ 
+    *(.comment) 
+    *(.gnu*) 
+    *(.note*) 
+    *(.eh_frame*)
+		*(.ARM.exidx .ARM.exidx.*);
+  }
+	
 	_kernelend = . ;
 }

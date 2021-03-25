@@ -119,10 +119,10 @@ start_vector:
         ldr     sp,=__sp_usr            @ Set SP_usr
 
 @ Enter Thumb mode
-        adr    r0,1f + 1                @ add r0,pc,#1 also works here
+        adr    r0,_stop + 1                @ add r0,pc,#1 also works here
                                         @  for those that want to conserve labels.
         bx     r0
 
         .code 16
-1:
-b 1b
+_stop:
+b _stop

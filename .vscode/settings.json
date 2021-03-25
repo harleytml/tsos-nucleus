@@ -1,5 +1,10 @@
 {
   "editor.formatOnSave": true,
   "C_Cpp.errorSquiggles": "Enabled",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.ipp": "cpp",
+    "array": "cpp",
+    "string_view": "cpp"
+  }
 }

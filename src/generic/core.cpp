@@ -40,7 +40,7 @@ extern "C"
     tsos->video.settextbackgroundcolor(0x00, 0x00, 0x00);
     tsos->video.reset();
     tsos->video.clear();
-    tsos->video.putstring(0, tsos->video.scroll++, "Welcome to TS/OS\n");
+    tsos->video.putstring(0, tsos->video.scroll++, "Tsuki Superior/Operating System\n");
     tsos->video.putstring(0, tsos->video.scroll++, "TS/OS Copyright (C) 2021 TSDEV Team\n");
     tsos->video.putstring(0, tsos->video.scroll++, "This program comes with ABSOLUTELY NO WARRANTY;\n");
     tsos->video.putstring(0, tsos->video.scroll++, "This is free software, and you are welcome to redistribute it\n");
