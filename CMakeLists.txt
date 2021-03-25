@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++-13")
-set(CMAKE_C_COMPILER "/usr/bin/clang-13")
-set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-13")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++-12")
+set(CMAKE_C_COMPILER "/usr/bin/clang-12")
+set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-12")
 
 project("TS/OS Nucleus" VERSION 0.0)
 
