@@ -79,12 +79,12 @@ add_compile_options(
 
 add_link_options(
   -ggdb
+  -Og
   -T
   ../linker-scripts/${linker_script}
   -fuse-ld=lld
   -static
   -ffreestanding
-  -Og
   -nostdlib
   -nodefaultlibs
   ${platform_options})
