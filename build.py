@@ -87,11 +87,11 @@ if platform in build_settings["systems"]:
     # The user wants to deploy the gba system
     elif platform == "gba":
 
-        if shutil.which("llvm-objcopy-11") == None:
-            cprint("llvm-objcopy-11 is not installed!", "red")
+        if shutil.which("llvm-objcopy-13") == None:
+            cprint("llvm-objcopy-13 is not installed!", "red")
             exit(1)
 
-        if os.system("llvm-objcopy-11 -O binary nucleus") != 0:
+        if os.system("llvm-objcopy-13 -O binary nucleus") != 0:
             cprint("objcopy failed on given nucleus image!", "red")
             exit(1)
 
@@ -107,20 +107,20 @@ if platform in build_settings["systems"]:
 
     # Target the nspire
     elif platform == "nspire":
-        if shutil.which("llvm-objcopy-11") == None:
-            cprint("llvm-objcopy-11 is not installed!", "red")
+        if shutil.which("llvm-objcopy-13") == None:
+            cprint("llvm-objcopy-13 is not installed!", "red")
             exit(1)
 
-        if os.system("llvm-objcopy-11 -O binary nucleus") != 0:
+        if os.system("llvm-objcopy-13 -O binary nucleus") != 0:
             cprint("objcopy failed on given nucleus image!", "red")
             exit(1)
 
     elif platform == "rpi3":
-        if shutil.which("llvm-objcopy-11") == None:
-            cprint("llvm-objcopy-11 is not installed!", "red")
+        if shutil.which("llvm-objcopy-13") == None:
+            cprint("llvm-objcopy-13 is not installed!", "red")
             exit(1)
 
-        if os.system("llvm-objcopy-11 -O binary nucleus") != 0:
+        if os.system("llvm-objcopy-13 -O binary nucleus") != 0:
             cprint("objcopy failed on given nucleus image!", "red")
             exit(1)
 
