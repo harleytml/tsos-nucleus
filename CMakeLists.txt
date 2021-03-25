@@ -59,7 +59,7 @@ set(CMAKE_ASM-ATT_FLAGS "${platform_options}")
 add_compile_options(
   -ggdb
   -ffreestanding
-  -O0
+  -Og
   -Wall
   -Wextra
   -Wno-unused-private-field
@@ -84,7 +84,7 @@ add_link_options(
   -fuse-ld=lld
   -static
   -ffreestanding
-  -O0
+  -Og
   -nostdlib
   -nodefaultlibs
   ${platform_options})
