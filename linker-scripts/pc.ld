@@ -25,24 +25,21 @@ SECTIONS
   
 	.text ALIGN(4K) : 
 	{
-		*(.text)
-		*(.text.*)
-		*(.ctors)
-		*(.dtors)
+		*(.text .text.*)
+    *(.init)
+		*(.fini)
 	}
  
 	/* Read-only data. */
 	.rodata  ALIGN(4K) :
 	{
-		*(.rodata)
-		*.(.rodata.*)
+		*(.rodata .rodata.*)
 	}
  
 	/* Read-write data (initialized) */
 	.data ALIGN(4K) : 
 	{
-		*(.data)
-		*(.data.*)
+		*(.data .data.*)
 		*(vtable)
 	}
  
@@ -50,8 +47,15 @@ SECTIONS
 	.bss ALIGN(4K) : 
 	{
 		*(COMMON)
-		*(.bss)
-		*(.bss.*)
+		*(.bss .bss.*) 
 	}
+
+	/DISCARD/ :
+	{ 
+    *(.comment) 
+    *(.gnu*) 
+    *(.note*) 
+    *(.eh_frame*)
+  }
 	_kernelend = . ;
 }

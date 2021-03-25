@@ -39,6 +39,7 @@ SECTIONS
     {
          *(.rodata .rodata.* .gnu.linkonce.r*)
     }
+    
     PROVIDE(_data = .);
     .data :
     {
