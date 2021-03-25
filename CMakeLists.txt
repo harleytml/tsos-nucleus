@@ -7,7 +7,7 @@ set(CMAKE_ASM-ATT_COMPILER "/usr/bin/clang++-11")
 project("TS/OS Nucleus" VERSION 0.0)
 
 enable_language(CXX ASM)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
 option(PLATFORM "Set the target platform of TS/OS" PC)
 
