@@ -18,15 +18,11 @@ SECTIONS
 	   loaded at by the bootloader. */
 	. = 1M;
 
-	.boot ALIGN(4):
-	{
-		*(.boot)
-	}
-  
 	.text ALIGN(4K) : 
 	{
+    	KEEP(*(.boot))
 		*(.text .text.*)
-    		*(.init)
+    *(.init)
 		*(.fini)
 	}
  
