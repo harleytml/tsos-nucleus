@@ -30,14 +30,15 @@ OUTPUT_ARCH(aarch64)
 SECTIONS
 {
     . = 0x80000;
-    .text : {
+    .text : 
+    {
          KEEP(*(.text.boot))
         *(.text .text.* .gnu.linkonce.t*)
     }
 
     .rodata : 
     {
-         *(.rodata .rodata.* .gnu.linkonce.r*)
+      *(.rodata .rodata.* .gnu.linkonce.r*)
     }
     
     PROVIDE(_data = .);
@@ -45,6 +46,7 @@ SECTIONS
     {
         *(.data .data.* .gnu.linkonce.d*)
     }
+    
     .bss (NOLOAD) : {
         . = ALIGN(16);
         __bss_start = .;

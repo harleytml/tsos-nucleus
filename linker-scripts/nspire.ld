@@ -40,12 +40,12 @@ SECTIONS
 
 	/DISCARD/ :
 	{ 
-        *(.comment) 
-        *(.gnu*) 
-        *(.note*) 
-        *(.eh_frame*)
+    *(.comment) 
+    *(.gnu*) 
+    *(.note*) 
+    *(.eh_frame*)
 		*(.ARM.exidx .ARM.exidx.*);
-    }
+  }
 	
 	_kernelend = . ;
 }
