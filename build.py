@@ -27,7 +27,7 @@ if os.name != "posix":
     exit(1)
 
 # You must install cmake to use this
-if shutil.which("cmake") == None:
+if shutil.which("cmake") is None:
     cprint("cmake is not installed!", "red")
     exit(1)
 
@@ -79,7 +79,7 @@ cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
 if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
     disk_type = build_settings["systems"][platform]["options"]["deploy_disk_type"]
     if disk_type == "grub-iso":
-        if shutil.which("grub-file") == None:
+        if shutil.which("grub-file") is None:
             cprint("grub-file is not installed!", "red")
             exit(1)
 
@@ -93,7 +93,7 @@ if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
             cprint("The Nucleus is malformed (not multiboot complaint)", "red")
             exit(1)
 
-        if shutil.which("grub-mkrescue") == None:
+        if shutil.which("grub-mkrescue") is None:
             cprint("grub-mkrescue is not installed!", "red")
             exit(1)
 
@@ -104,7 +104,7 @@ if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
             exit(1)
 
         # Make sure its install
-        if shutil.which("llvm-objcopy-12") == None:
+        if shutil.which("llvm-objcopy-12") is None:
             cprint("llvm-objcopy-12 is not installed!", "red")
             exit(1)
 
@@ -114,7 +114,7 @@ if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
             exit(1)
 
         # Make sure gba fix is installed
-        if shutil.which("tsos-gbafix") == None:
+        if shutil.which("tsos-gbafix") is None:
             cprint("tsos-gbafix is not installed!", "red")
             exit(1)
 
@@ -124,7 +124,7 @@ if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
             exit(1)
 
     elif disk_type == "nspire_boot_partition":
-        if shutil.which("llvm-objcopy-12") == None:
+        if shutil.which("llvm-objcopy-12") is None:
             cprint("llvm-objcopy-12 is not installed!", "red")
             exit(1)
 
@@ -141,7 +141,7 @@ if action == "":
 
 if action in ["debug", "test"]:
 
-    if(build_settings["systems"][platform][action+"_command"] != ""):
+    if build_settings["systems"][platform][action+"_command"] != "":
         os.system(build_settings["systems"][platform][action+"_command"])
 
     else:
