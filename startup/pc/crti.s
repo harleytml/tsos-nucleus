@@ -1,4 +1,4 @@
-.section .init
+.section .init, "ax"
 .global _init
 .align 16
 .type _init, @function
@@ -6,7 +6,7 @@ _init:
 	push %ebp
 	movl %esp, %ebp
 
-.section .fini
+.section .fini, "ax"
 .global _fini
 .align 16
 .type _fini, @function
