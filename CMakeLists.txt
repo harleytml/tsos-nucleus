@@ -8,6 +8,7 @@ project("TS/OS Nucleus" VERSION 0.0)
 
 enable_language(CXX ASM C)
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD 99)
 
 option(PLATFORM "Set the target platform of TS/OS" PC)
 
