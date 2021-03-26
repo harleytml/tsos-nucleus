@@ -17,25 +17,37 @@
       "description": "i686 or higher IBM Personal Computer",
       "test_command": "qemu-system-i386 -kernel nucleus",
       "debug_command": "qemu-system-i386 -kernel nucleus -s -S",
-      "options": {}
+      "options": {
+        "deploy_disk_type": "grub-iso",
+        "arch": "x86"
+      }
     },
     "gba": {
       "description": "Nintendo Gameboy Advanced",
       "test_command": "vba --rtc nucleus",
       "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
-      "options": {}
+      "options": {
+        "deploy_disk_type": "gba-rom",
+        "arch": "arm"
+      }
     },
     "nspire": {
       "description": "Texas Instruments TI-Nspire",
       "test_command": "",
       "debug_command": "",
-      "options": {}
+      "options": {
+        "deploy_disk_type": "nspire_boot_partition",
+        "arch": "arm"
+      }
     },
     "rpi3": {
       "description": "Raspberry Pi 3",
       "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
       "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
-      "options": {}
+      "options": {
+        "deploy_disk_type": "fat32-disk",
+        "arch": "aarch64"
+      }
     }
   }
 }
