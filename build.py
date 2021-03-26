@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # By Tsuki Superior
 
-from termcolor import cprint
 import sys
 import os
 import shutil
 import json
+
+from termcolor import cprint
 
 # Create build folder if it doesn't exist
 if os.path.isdir("/tmp/tsos-filesystem"):
