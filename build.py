@@ -101,11 +101,14 @@ if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
         if build_settings["systems"][platform]["options"]["arch"] != "arm":
             cprint("The disk_type " + disk_type +
                    " can only be used in arm", "red")
+            exit(1)
 
+        # Make sure its install
         if shutil.which("llvm-objcopy-12") == None:
             cprint("llvm-objcopy-12 is not installed!", "red")
             exit(1)
 
+        # Convert to binary
         if os.system("llvm-objcopy-12 -O binary nucleus") != 0:
             cprint("objcopy failed on given nucleus image!", "red")
             exit(1)
