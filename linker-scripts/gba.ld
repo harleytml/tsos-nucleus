@@ -24,52 +24,46 @@ SECTIONS
   . += VMA;
 
   /* static data stored in cart ROM */
-  .header : AT(ADDR(.header) - VMA)
+  .header ALIGN(4) : AT(ADDR(.header) - VMA)
   {
     KEEP(*(.header.header));
   } > ROM
 
-  .text : AT(ADDR(.text) - VMA)
+  .text ALIGN(4) : AT(ADDR(.text) - VMA)
   { 
     KEEP(*(.text.boot));
     KEEP(*(.text.reset_handler));
     KEEP(*(.text.isr));
     *(.text .text.*); 
-    . = ALIGN(4); 
   } > ROM
 
-  .rodata : AT(ADDR(.rodata) - VMA)
+  .rodata ALIGN(4) : AT(ADDR(.rodata) - VMA)
   { 
     *(.rodata .rodata.*);
-    . = ALIGN(4); 
   } > ROM
 
   /* dynamic data placed in IWRAM */
-  .data : AT(ADDR(.data) - VMA) { 
-    _sidata = LOADADDR(.data);
-    . = ALIGN(4);
-    _sdata = .;
+  .data ALIGN(4) : AT(ADDR(.data) - VMA)
+  { 
 
     *(.data .data.*);
 
-    . = ALIGN(4);
-     _edata = .; 
   } > IWRAM AT > ROM
 
-  .bss : AT(ADDR(.bss) - VMA) {
-    . = ALIGN(4);
-    _sbss = .;
+  .bss ALIGN(4) : AT(ADDR(.bss) - VMA)
+  {
 
-    *(.bss); 
-    *(.bss.*); 
+    *(.bss .bss.*); 
 
-    . = ALIGN(4); 
-    _ebss = .;
   } > IWRAM
 
   /* discard arm symbols */
   /DISCARD/ :
   {
     *(.ARM.exidx .ARM.exidx.*);
+    *(.comment) 
+    *(.gnu*) 
+    *(.note*) 
+    *(.eh_frame*)
   }
 }
