@@ -1,9 +1,9 @@
-.section .init
+.section .init, "ax"
 .align 16
 	popl %ebp
 	ret
 
-.section .fini
+.section .fini, "ax"
 .align 16
 	popl %ebp
 	ret
