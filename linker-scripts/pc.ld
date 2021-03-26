@@ -20,7 +20,7 @@ SECTIONS
 
 	.text ALIGN(4K) : 
 	{
-    	KEEP(*(.boot))
+    KEEP(*(.boot))
 		*(.text .text.*)
     *(.init)
 		*(.fini)
@@ -46,12 +46,12 @@ SECTIONS
 		*(.bss .bss.*) 
 	}
 
-    /DISCARD/ :
-    { 
-        *(.comment) 
-        *(.gnu*) 
-        *(.note*) 
-        *(.eh_frame*)
-    }
+  /DISCARD/ :
+  { 
+      *(.comment) 
+      *(.gnu*) 
+      *(.note*) 
+      *(.eh_frame*)
+  }
 	_kernelend = . ;
 }
