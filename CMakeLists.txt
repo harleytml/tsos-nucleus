@@ -55,7 +55,7 @@ include_directories("include/generic")
 
 file(GLOB source_files "src/generic/*")
 
-set(CMAKE_ASM-ATT_FLAGS "${platorm-target}")
+set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 add_compile_options(
   -ggdb
   -ffreestanding
@@ -64,7 +64,6 @@ add_compile_options(
   -Wextra
   -Wno-unused-private-field
   -Wno-unused-parameter
-  -Wno-write-strings
   -Wno-write-strings
   -Wno-unused-command-line-argument
   -fno-threadsafe-statics

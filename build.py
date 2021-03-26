@@ -7,6 +7,10 @@ import os
 import shutil
 import json
 
+# Create build folder if it doesn't exist
+if os.path.isdir("/tmp/tsos-filesystem"):
+    shutil.rmtree("/tmp/tsos-filesystem")
+
 # Open that config file and read from it
 build_settings_file = open("cfg/build.json")
 build_settings = json.loads(build_settings_file.read())
@@ -68,25 +72,35 @@ if platform in build_settings["systems"]:
         cprint("Compiling failed!", "red")
         exit(1)
 
-    # Deploy the pc port
-    if platform == "pc":
+# Building was succesful if it made it to here
+cprint("Compiling and deploying completed.", "green")
+cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
 
-        # Make sure grub-file exists
+if "deploy_disk_type" in build_settings["systems"][platform]["options"]:
+    disk_type = build_settings["systems"][platform]["options"]["deploy_disk_type"]
+    if disk_type == "grub-iso":
         if shutil.which("grub-file") == None:
             cprint("grub-file is not installed!", "red")
             exit(1)
 
+        if build_settings["systems"][platform]["options"]["arch"] == "x86":
+            check_type = "--is-x86-multiboot"
+        else:
+            cprint("Cannot deploy this kernel type yet to " + disk_type, "yellow")
+
         # Verify that the nucleus produced is actually not malformed
-        if os.system("grub-file --is-x86-multiboot nucleus") != 0:
-            cprint("The Nucleus is malformed (not x86 multiboot complaint)", "red")
+        if os.system("grub-file " + check_type + " nucleus") != 0:
+            cprint("The Nucleus is malformed (not multiboot complaint)", "red")
             exit(1)
 
         if shutil.which("grub-mkrescue") == None:
             cprint("grub-mkrescue is not installed!", "red")
             exit(1)
 
-    # The user wants to deploy the gba system
-    elif platform == "gba":
+    elif disk_type == "gba-rom":
+        if build_settings["systems"][platform]["options"]["arch"] != "arm":
+            cprint("The disk_type " + disk_type +
+                   " can only be used in arm", "red")
 
         if shutil.which("llvm-objcopy-12") == None:
             cprint("llvm-objcopy-12 is not installed!", "red")
@@ -106,8 +120,7 @@ if platform in build_settings["systems"]:
             cprint("tsos-gbafix failed!", "red")
             exit(1)
 
-    # Target the nspire
-    elif platform == "nspire":
+    elif disk_type == "nspire_boot_partition":
         if shutil.which("llvm-objcopy-12") == None:
             cprint("llvm-objcopy-12 is not installed!", "red")
             exit(1)
@@ -116,24 +129,8 @@ if platform in build_settings["systems"]:
             cprint("objcopy failed on given nucleus image!", "red")
             exit(1)
 
-    elif platform == "rpi3":
-        if shutil.which("llvm-objcopy-12") == None:
-            cprint("llvm-objcopy-12 is not installed!", "red")
-            exit(1)
-
-        if os.system("llvm-objcopy-12 -O binary nucleus") != 0:
-            cprint("objcopy failed on given nucleus image!", "red")
-            exit(1)
-
-else:
-
-    # You tried to build for the wrong system
-    cprint("Invalid system", "red")
-    exit(1)
-
-# Building was succesful if it made it to here
-cprint("Compiling and deploying completed.", "green")
-cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
+    else:
+        cprint("Cannot yet deploy this system", "yellow")
 
 # Meaning that the user didn't want any other action
 if action == "":

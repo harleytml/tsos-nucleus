@@ -20,7 +20,7 @@ SECTIONS
 
 	.boot ALIGN(4):
 	{
-		KEEP(*(.boot))
+		*(.boot)
 	}
   
 	.text ALIGN(4K) : 
