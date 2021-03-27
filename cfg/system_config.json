@@ -1,35 +1,30 @@
 {
-  "systems": {
-    "pc": {
-      "description": "i686 or higher IBM Personal Computer",
-      "test_command": "qemu-system-i386 -kernel nucleus",
-      "debug_command": "qemu-system-i386 -kernel nucleus -s -S",
-      "deploy_type": "grub-iso",
-      "arch": "x86",
-      "required_test_tools": ["qemu-system-i386"]
-    },
-    "gba": {
-      "description": "Nintendo Gameboy Advanced",
-      "test_command": "vba --rtc nucleus",
-      "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
-      "deploy_type": "gba-rom",
-      "arch": "arm",
-      "required_test_tools": ["vba"]
-    },
-    "nspire": {
-      "description": "Texas Instruments TI-Nspire",
-      "test_command": "",
-      "debug_command": "",
-      "deploy_type": "nspire_partition",
-      "arch": "arm",
-      "required_test_tools": []
-    },
-    "rpi3": {
-      "description": "Raspberry Pi 3",
-      "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
-      "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
-      "arch": "aarch64",
-      "required_test_tools": ["qemu-system-aarch64"]
-    }
+  "pc": {
+    "description": "i686 or higher IBM Personal Computer",
+    "test_command": "qemu-system-i386 -kernel nucleus",
+    "debug_command": "qemu-system-i386 -kernel nucleus -s -S",
+    "required_test_tools": ["qemu-system-i386"],
+    "required_tools": ["grub-file", "grub-mkrescue"]
+  },
+  "gba": {
+    "description": "Nintendo Gameboy Advanced",
+    "test_command": "vba --rtc nucleus",
+    "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
+    "required_test_tools": ["vba"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
+  },
+  "nspire": {
+    "description": "Texas Instruments TI-Nspire",
+    "test_command": "",
+    "debug_command": "",
+    "required_test_tools": [],
+    "required_tools": ["llvm-objcopy-12"]
+  },
+  "rpi3": {
+    "description": "Raspberry Pi 3",
+    "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
+    "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
+    "required_test_tools": ["qemu-system-aarch64"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
   }
 }
