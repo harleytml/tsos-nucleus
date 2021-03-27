@@ -1,0 +1,22 @@
+{
+  "grub-iso": {
+    "supported_arch": ["x86", "x86_64"],
+    "required_tools": ["grub-file", "grub-mkrescue"],
+    "script": "deploy_grub-iso.py"
+  },
+  "gba-rom": {
+    "supported_arch": ["arm"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"],
+    "script": "deploy_gba-rom.py"
+  },
+  "fat32-disk": {
+    "supported_arch": ["generic"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"],
+    "script": ""
+  },
+  "nspire_partition": {
+    "supported_arch": ["arm"],
+    "required_tools": ["llvm-objcopy-12"],
+    "script": "deploy_nspire-partition.py"
+  }
+}

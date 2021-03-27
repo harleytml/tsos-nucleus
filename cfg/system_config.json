@@ -1,53 +1,35 @@
 {
-  "directory_structure": {
-    "usr": {},
-    "tmp": {},
-    "sys": {
-      "tmp": {},
-      "headers": {},
-      "info": {},
-      "trash": {}
-    },
-    "lib": {},
-    "bin": {},
-    "cfg": {}
-  },
   "systems": {
     "pc": {
       "description": "i686 or higher IBM Personal Computer",
       "test_command": "qemu-system-i386 -kernel nucleus",
       "debug_command": "qemu-system-i386 -kernel nucleus -s -S",
-      "options": {
-        "deploy_disk_type": "grub-iso",
-        "arch": "x86"
-      }
+      "deploy_type": "grub-iso",
+      "arch": "x86",
+      "required_test_tools": ["qemu-system-i386"]
     },
     "gba": {
       "description": "Nintendo Gameboy Advanced",
       "test_command": "vba --rtc nucleus",
       "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
-      "options": {
-        "deploy_disk_type": "gba-rom",
-        "arch": "arm"
-      }
+      "deploy_type": "gba-rom",
+      "arch": "arm",
+      "required_test_tools": ["vba"]
     },
     "nspire": {
       "description": "Texas Instruments TI-Nspire",
       "test_command": "",
       "debug_command": "",
-      "options": {
-        "deploy_disk_type": "nspire_boot_partition",
-        "arch": "arm"
-      }
+      "deploy_type": "nspire_partition",
+      "arch": "arm",
+      "required_test_tools": []
     },
     "rpi3": {
       "description": "Raspberry Pi 3",
       "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
       "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
-      "options": {
-        "deploy_disk_type": "fat32-disk",
-        "arch": "aarch64"
-      }
+      "arch": "aarch64",
+      "required_test_tools": ["qemu-system-aarch64"]
     }
   }
 }
