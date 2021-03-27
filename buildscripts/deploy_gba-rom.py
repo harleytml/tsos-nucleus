@@ -9,7 +9,7 @@ import json
 from termcolor import cprint
 
 # Open that config file and read from it
-build_settings_file = open("cfg/system_config.json")
+build_settings_file = open("../cfg/system_config.json")
 build_settings = json.loads(build_settings_file.read())
 build_settings_file.close()
 
