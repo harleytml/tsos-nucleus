@@ -27,11 +27,8 @@ TS/OS is a SysV ABI operating system with a focus on being as multiplatform as p
 TS/OS was a operating system made for several reasons
 
 - 1: Because I got bored, and I had nothing to do
-
 - 2: Because I needed to learn C/C++
-
 - 3: Because I got infuriated by the fact that some devices cannot have Linux ports (like the GBA)
-
 - 4: And finally, because I was inspired by the genius of Terry A. Davis.
 
 I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, mostly the little arm ones. If I can get it to run on a GBA, surely I can run it on the others.
@@ -47,11 +44,8 @@ In the documents directory, you can find more documents concerning TS/OS.
 ## Current Platforms
 
 - PC - i686 or higher IBM Personal Computer
-
 - GBA - Nintendo Gameboy Advanced
-
 - NSPIRE - Texas Instruments TI-Nspire
-
 - RPI3 - Raspberry Pi 3
 
 ## Pre-Building
