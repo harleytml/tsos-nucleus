@@ -22,16 +22,6 @@ tmp_file = open("cfg/directory_structure.json")
 directory_structure = json.loads(tmp_file.read())
 tmp_file.close()
 
-# Read the deploy config file
-tmp_file = open("cfg/deploy_config.json")
-deploy_configs = json.loads(tmp_file.read())
-tmp_file.close()
-
-# Make sure the most important part is there
-if not "systems" in build_settings:
-    cprint("Malformed build file!")
-    exit(1)
-
 # This only works on unix like systems right now
 if os.name != "posix":
     cprint("Only posix systems are supported in this script!", "red")
@@ -44,13 +34,14 @@ if shutil.which("cmake") is None:
 
 # Make sure the script has the correct number of arguments, and if not, display help
 if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
-    cprint("Official TS/OS buildscript (C) Tsuki Superior. Licensed under the same as TS/OS (see LICENSE file)\n", "yellow")
+    cprint("Official TS/OS buildscript (C) Tsuki Superior. Licensed under the same license as TS/OS (see LICENSE file)\n", "yellow")
     print(sys.argv[0], "<system> <action>")
     print("Supported systems:\n")
 
-    for x in build_settings["systems"]:
-        print(x, "-", build_settings["systems"][x]["description"])
-    cprint("\nSet the action to either debug or test, or you can leave it blank", "yellow")
+    for x in build_settings:
+        print(x, "-", build_settings[x]["description"])
+    cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
+    print("Look in buildscript directory to find the buildscripts pertaining to the systems")
     exit(0)
 
 # Get the platform
@@ -60,7 +51,7 @@ if len(sys.argv) > 2:
 else:
     action = ""
 
-if platform in build_settings["systems"]:
+if platform in build_settings:
 
     # Create build folder if it doesn't exist
     if not os.path.isdir("build"):
@@ -71,6 +62,12 @@ if platform in build_settings["systems"]:
 
     if os.path.exists("nucleus"):
         os.remove("nucleus")
+
+    if os.path.exists("tsos.iso"):
+        os.remove("tsos.iso")
+
+    if os.path.exists("tsos.img"):
+        os.remove("tsos.img")
 
     # Run cmake
     os.system("cmake .. -DPLATFORM=" + platform.upper())
@@ -83,40 +80,25 @@ if platform in build_settings["systems"]:
         cprint("Compiling failed!", "red")
         exit(1)
 
-# Make sure the correct option is in the config
-if "deploy_type" in build_settings["systems"][platform]:
+    # Make sure the required tools are actually there
+    for x in build_settings[platform]["required_tools"]:
 
-    # Get the deploy type of the system
-    deploy_type = build_settings["systems"][platform]["deploy_type"]
-
-    # Make sure the deploy type is valid
-    if deploy_type in deploy_configs:
-
-        # Make sure the required tools are actually there
-        for x in deploy_configs[deploy_type]["required_tools"]:
-
-            # Warn the user is this is not true
-            if shutil.which(x) is None:
-                cprint(x + " is not installed, which is needed for deploying", "red")
-                exit(1)
+        # Warn the user is this is not true
+        if shutil.which(x) is None:
+            cprint(x + " is not installed, which is needed for deploying", "red")
+            exit(1)
 
         # Make sure the script exists
-        if os.path.exists("../buildscripts/" + deploy_configs[deploy_type]["script"]):
+    if os.path.exists("../buildscripts/deploy_" + platform + ".py"):
 
-            # Run that script
-            if os.system("python3 ../buildscripts/" + deploy_configs[deploy_type]["script"] + " " + platform) != 0:
-                cprint("Buildscript failed!", "red")
-                exit(1)
-        else:
-            cprint("Buildscript \"" +
-                   deploy_configs[deploy_type]["script"] + "\" could not be found", "red")
+        # Run that script
+        if os.system("python3 " + "../buildscripts/deploy_" + platform + ".py") != 0:
+            cprint("Buildscript failed!", "red")
             exit(1)
 
     else:
-        cprint("Could not find the deploy type \"" +
-               deploy_type + "\" in the system config!", "red")
+        cprint("Buildscript could not be found", "red")
         exit(1)
-
 
 else:
     cprint("Cannot yet deploy this system", "yellow")
@@ -134,7 +116,7 @@ if action == "":
 if action in ["debug", "test"]:
 
     # Make sure the correct testing tools are there
-    for x in build_settings["systems"][platform]["required_test_tools"]:
+    for x in build_settings[platform]["required_test_tools"]:
 
         # Warn the user if not
         if shutil.which(x) is None:
@@ -142,10 +124,10 @@ if action in ["debug", "test"]:
             exit(1)
 
     # Run said command
-    if build_settings["systems"][platform][action+"_command"] != "":
+    if build_settings[platform][action+"_command"] != "":
 
         # Make sure command doesn't fail
-        if os.system(build_settings["systems"][platform][action+"_command"]) != 0:
+        if os.system(build_settings[platform][action+"_command"]) != 0:
             cprint("Action " + action + "failed", "red")
             exit(1)
 

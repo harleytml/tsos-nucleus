@@ -13,11 +13,6 @@ build_settings_file = open("../cfg/system_config.json")
 build_settings = json.loads(build_settings_file.read())
 build_settings_file.close()
 
-platform = sys.argv[1].lower()
-
-if not(len(sys.argv) == 2):
-    cprint("This script is not meant to be run by users!", "red")
-
 # Make sure its installed
 if shutil.which("llvm-objcopy-12") is None:
     cprint("llvm-objcopy-12 is not installed!", "red")
