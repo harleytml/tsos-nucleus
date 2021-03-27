@@ -67,14 +67,15 @@ make
 cmake
 python3
 pip3
+dosfstools
 ```
 
 Debian/Ubuntu :
 
 ```sh
 sudo apt-get update
-sudo apt-get install clang-12 lld-12 llvm-12 make cmake python3 python3-pip
-pip3 install termcolor
+sudo apt-get install clang-12 lld-12 llvm-12 make cmake python3 python3-pip dosfstools
+pip3 install -r requirements.txt
 ```
 
 ## Building
