@@ -1,16 +1,16 @@
 {
   "recommendations": [
     "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools",
+    "ms-python.python",
+    "ms-vscode.makefile-tools",
     "mads-hartmann.bash-ide-vscode",
     "basdp.language-gas-x86",
     "amapleaf.linker-script",
-    "ms-vscode.makefile-tools",
     "davidanson.vscode-markdownlint",
     "foxundermoon.shell-format",
     "redhat.vscode-yaml",
     "jeff-hykin.better-cpp-syntax",
-    "webfreak.debug",
-    "ms-vscode.cmake-tools",
-    "ms-python.python"
+    "webfreak.debug"
   ]
 }
