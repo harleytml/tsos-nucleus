@@ -91,4 +91,4 @@ To get the list of supported systems and other options, type `help` as the platf
 
 ## Configuring
 
-In the `cfg` directory, some json config files exist. `build.json` controls the buildscript. I plan to make it control the entire build process of TS/OS, much like the `.config` file in the linux kernel.
+In the `cfg` directory, some json config files exist. I plan to make them control the entire build process of TS/OS.
