@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # By Tsuki Superior
 
-import sys
 import os
-import shutil
 import json
 
 from termcolor import cprint
