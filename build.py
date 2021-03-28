@@ -17,11 +17,6 @@ tmp_file = open("cfg/system_config.json")
 build_settings = json.loads(tmp_file.read())
 tmp_file.close()
 
-# Open up the directory structure file
-tmp_file = open("cfg/directory_structure.json")
-directory_structure = json.loads(tmp_file.read())
-tmp_file.close()
-
 # This only works on unix like systems right now
 if os.name != "posix":
     cprint("Only posix systems are supported in this script!", "red")
