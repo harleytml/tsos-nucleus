@@ -12,15 +12,15 @@ public:
 
   ~ATAPI_driver();
 
-  bool detectsystem(void) override;
+  bool detectsystem(void) final;
 
-  void reset(void) override;
+  void reset(void) final;
 
   // Get an amount of bytes from the disk
-  void getbytes(uint8_t *buffer, uint16_t offset, uint8_t len) override;
+  void getbytes(uint8_t *buffer, uint16_t offset, uint8_t len) final;
 
   // Get the sector size
-  uint16_t getsectorsize(void) override;
+  uint16_t getsectorsize(void) final;
 };
 
 #endif

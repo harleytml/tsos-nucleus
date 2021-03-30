@@ -14,14 +14,14 @@ public:
   ~GRUB2_driver();
 
   //Detect the type of system its running on
-  bool detectsystem(void) override;
+  bool detectsystem(void) final;
 
-  void reset(void) override;
+  void reset(void) final;
 
   //Reboot the system
-  void reboot(void) override;
+  void reboot(void) final;
 
   // Shutdown the system
-  void shutdown(void) override;
+  void shutdown(void) final;
 };
 #endif

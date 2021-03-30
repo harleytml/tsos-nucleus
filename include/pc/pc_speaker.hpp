@@ -9,10 +9,10 @@ class PC_SPEAKER_driver : public Sound_driver
 {
 public:
   PC_SPEAKER_driver(void);
-  void reset(void) override;
-  bool detectsystem(void) override;
-  void playtone(uint32_t tone) override;
-  void killsound(void) override;
+  void reset(void) final;
+  bool detectsystem(void) final;
+  void playtone(uint32_t tone) final;
+  void killsound(void) final;
 };
 
 #endif

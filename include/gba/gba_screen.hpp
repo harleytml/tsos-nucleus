@@ -13,12 +13,12 @@ class GBA_SCREEN_driver : public Video_driver
 public:
   GBA_SCREEN_driver(void);
   ~GBA_SCREEN_driver();
-  bool detectsystem(void) override;
-  void reset(void) override;
-  void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) override;
-  void drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c) override;
-  uint16_t getscreenwidth(void) override;
-  uint16_t getscreenheight(void) override;
+  bool detectsystem(void) final;
+  void reset(void) final;
+  void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;
+  void drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c) final;
+  uint16_t getscreenwidth(void) final;
+  uint16_t getscreenheight(void) final;
   void setfont(Font f);
 
 private:
