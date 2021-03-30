@@ -18,9 +18,7 @@ jobs:
         with:
           debug: true
           directory: ./
-          patterns: |
-            '*.hpp'
-            '*.cpp'
+          patterns: '*.cpp'
           badge: ./badge.svg
 
       - name: Print the output
