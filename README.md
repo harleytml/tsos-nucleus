@@ -33,7 +33,7 @@ TS/OS was a operating system made for several reasons
 
 I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, mostly the little arm ones. If I can get it to run on a GBA, surely I can run it on the others.
 
-The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophmore year, and I always wanted to make a OS. So I did with a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
+The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophomore year, and I always wanted to make a OS. So I did with a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
 
 I had just learned C++, and wanted to reinvent the wheel. I had a little too much time on my hands.
 
@@ -71,6 +71,8 @@ sudo apt-get update
 sudo apt-get install clang-12 lld-12 llvm-12 make cmake python3 python3-pip dosfstools
 pip3 install -r requirements.txt
 ```
+
+Your distro may not support llvm-12 yet. Please see [llvm apt](https://apt.llvm.org/) to get the entries for your sources.list
 
 ## Building
 
