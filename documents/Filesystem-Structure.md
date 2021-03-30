@@ -6,7 +6,7 @@ This is the root directory.
 
 `/usr`
 
-Despite its name, this operates like the /home directory in \*nix systems. It has subdirectories that corrospond to users on the system.
+Despite its name, this operates like the /home directory in \*nix systems. It has subdirectories that correspond to users on the system.
 
 `/tmp`
 

@@ -26,8 +26,8 @@ This file ensures the proper headers are being used for the proper system
 #include "mda.hpp"
 #include "vga.hpp"
 #include "gdt.hpp"
-#include "io.hpp"
 #include "pc_speaker.hpp"
+#include "pc_io.hpp"
 
 #endif
 

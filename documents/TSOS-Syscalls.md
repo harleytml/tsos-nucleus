@@ -2,6 +2,7 @@
 
 BOOT SYSCALLS:
 
+```text
 reboot:
 
 Reboot the system
@@ -13,9 +14,11 @@ Shutdown the system
 fission:
 
 Inform the user that a fatal system error has been encountered, and reboot
+```
 
 DISK SYSCALLS:
 
+```text
 getbytes:
 
 Get a length of bytes from a offset in the computer
@@ -27,9 +30,11 @@ Get the sector size of the disk
 commitall:
 
 Make sure all data to be written to the disk, is actually written to the disk
+```
 
 FILESYSTEM SYSCALLS:
 
+```text
 readdir:
 
 Return the contents of a directory
@@ -81,9 +86,11 @@ Remove a directory
 access:
 
 Check if calling user has permissions to a file
+```
 
 INPUT SYSCALLS:
 
+```text
 getkey:
 
 Pop a key value off of the key buffer.
@@ -91,9 +98,11 @@ Pop a key value off of the key buffer.
 waitkey:
 
 Wait for a key to be pressed.
+```
 
 PROCESS SYSCALLS:
 
+```text
 spawn:
 
 Spawn a process
@@ -113,9 +122,11 @@ Allocate memory
 freememory:
 
 Free memory
+```
 
 SERIAL SYSCALLS:
 
+```text
 exchangebyte:
 
 Exchange a byte with the other device
@@ -123,9 +134,11 @@ Exchange a byte with the other device
 isdevicethere:
 
 Check if a device is connected to this device
+```
 
 SOUND SYSCALLS:
 
+```text
 playtone:
 
 Play a tone of frequency
@@ -133,9 +146,11 @@ Play a tone of frequency
 killsound:
 
 kill the audio
+```
 
 VIDEO SYSCALLS:
 
+```text
 reset:
 
 Reset the video system
@@ -171,3 +186,33 @@ Set the background of the text system
 settextforegroundcolor:
 
 Set the foreground of the text system
+```
+
+IO SYSCALLS:
+
+```text
+get8:
+
+Get a uint8_t from the port io
+
+put8:
+
+Send a uint8_t through the port io
+
+get16:
+
+Get a uint16_t from the port io
+
+put16:
+
+Send a uint16_t through the port io
+
+get32:
+
+Get a uint32_t from the port io
+
+put32:
+
+Send a uint32t through the port io
+
+```

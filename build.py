@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # By Tsuki Superior
 
+from termcolor import cprint
 import sys
 import os
 import shutil
 import json
-
-from termcolor import cprint
 
 # Create build folder if it doesn't exist
 if os.path.isdir("/tmp/tsos-filesystem"):
@@ -68,7 +67,7 @@ if platform in build_settings:
     os.system("cmake .. -DPLATFORM=" + platform.upper())
 
     # Run make
-    os.system("make -j$(nproc)")
+    os.system("make")
 
     # Insure that the kernel was produced, and if not, fail
     if not os.path.exists("nucleus"):

@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "grub2.hpp"
+#include "nucleus_instance.hpp"
 
 GRUB2_driver::GRUB2_driver(void)
 {
@@ -25,9 +26,9 @@ void GRUB2_driver::reboot(void)
   uint8_t good = 0x02;
   while (good & 0x02)
   {
-    good = inb(0x64);
+    good = tsos->io.get8(0x64);
   }
-  outb(0x64, 0xfe);
+  tsos->io.put8(0x64, 0xfe);
   __asm__("hlt");
 }
 

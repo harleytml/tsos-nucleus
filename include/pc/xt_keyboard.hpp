@@ -3,7 +3,6 @@
 #define __TSOS_XT_KEYBOARD_DRIVER__
 
 #include "input_driver.hpp"
-#include "io.hpp"
 
 class XT_KEYBOARD_driver : public Input_driver
 {
@@ -14,25 +13,25 @@ public:
     ~XT_KEYBOARD_driver();
 
     // Detects if the module should be used
-    bool detectsystem(void) override;
+    bool detectsystem(void) final;
 
     // Init and reset driver
-    void reset(void) override;
+    void reset(void) final;
 
     // Get the key currently pressed
-    key_identifier getkey(void) override;
+    key_identifier getkey(void) final;
 
     //Wait for a key
-    void waitkey(void) override;
+    void waitkey(void) final;
 
     // Is shift pressed
-    bool isshiftpressed(void) override;
+    bool isshiftpressed(void) final;
 
     // Is alt pressed
-    bool isaltpressed(void) override;
+    bool isaltpressed(void) final;
 
     // Is ctrl pressed
-    bool isctrlpressed(void) override;
+    bool isctrlpressed(void) final;
 
 private:
 };

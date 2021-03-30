@@ -3,7 +3,6 @@
 #define __TSOS_GRUB2_DRIVER__
 
 #include "boot_driver.hpp"
-#include "io.hpp"
 
 class GRUB2_driver : public Boot_driver
 {
@@ -15,14 +14,14 @@ public:
   ~GRUB2_driver();
 
   //Detect the type of system its running on
-  bool detectsystem(void) override;
+  bool detectsystem(void) final;
 
-  void reset(void) override;
+  void reset(void) final;
 
   //Reboot the system
-  void reboot(void) override;
+  void reboot(void) final;
 
   // Shutdown the system
-  void shutdown(void) override;
+  void shutdown(void) final;
 };
 #endif

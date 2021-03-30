@@ -2,7 +2,6 @@
 #define __TSOS_ICXXABI__
 
 #include "types.hpp"
-#include "nucleus_instance.hpp"
 
 #define ATEXIT_MAX_FUNCS 128
 

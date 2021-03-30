@@ -9,10 +9,10 @@ class ELF_driver : public Process_driver
 {
 public:
   ELF_driver(void);
-  bool detectsystem(void) override;
-  void reset(void) override;
-  bool isvalidexecutable(char *path) override;
-  uintptr_t getstartoffreemem(void) override;
+  bool detectsystem(void) final;
+  void reset(void) final;
+  bool isvalidexecutable(char *path) final;
+  uintptr_t getstartoffreemem(void) final;
 };
 
 #endif

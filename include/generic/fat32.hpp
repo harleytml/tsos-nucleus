@@ -9,18 +9,18 @@ class FAT32_driver : public Filesystem_driver
 {
 public:
   FAT32_driver(void);
-  bool detectsystem(void) override;
-  void reset(void) override;
-  char **readdir(char *path) override;
-  void rename(char *path, char *newPath) override;
-  File open(char *path) override;
-  void close(File file) override;
-  char *read(File file) override;
-  void write(File file, char *data) override;
-  char *readfile(char *path) override;
-  void writefile(char *path, char *data) override;
-  void appendfile(char *path, char *data) override;
-  bool exists(char *path) override;
+  bool detectsystem(void) final;
+  void reset(void) final;
+  char **readdir(char *path) final;
+  void rename(char *path, char *newPath) final;
+  File open(char *path) final;
+  void close(File file) final;
+  char *read(File file) final;
+  void write(File file, char *data) final;
+  char *readfile(char *path) final;
+  void writefile(char *path, char *data) final;
+  void appendfile(char *path, char *data) final;
+  bool exists(char *path) final;
 
 private:
   char *currentdirectory;

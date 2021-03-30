@@ -10,6 +10,7 @@
 #include "serial_module.hpp"
 #include "sound_module.hpp"
 #include "video_module.hpp"
+#include "io_module.hpp"
 #include "types.hpp"
 
 // The main class collecting the TS/OS nucleus api
@@ -21,6 +22,9 @@ public:
 
   // Destructor
   ~Tsos();
+
+  // The module being used to control io
+  IO io;
 
   // The module being used to control video
   Video video;
