@@ -4,7 +4,7 @@
 
 pc
 
-This is the standared 32-bit IBM-PC, with a i686 processor and above.
+This is the standard 32-bit IBM-PC, with a i686 processor and above.
 
 gba
 
@@ -16,7 +16,7 @@ This is the Texas Instruments TI-Nspire, with a ARM processor.
 
 rpi3
 
-This is the Raspiberry Pi 3, with a ARM64 processor.
+This is the Raspberry Pi 3, with a ARM64 processor.
 
 nds
 

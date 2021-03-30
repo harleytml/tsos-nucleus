@@ -45,7 +45,7 @@ endif(PLATFORM STREQUAL "NSPIRE")
 if(PLATFORM STREQUAL "RPI3")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__RASPBERRY_PI_3__ -mtune=cortex-a53
-                       --target=aarch64-unknown-none-eabi)
+                       --target=aarch64-unknown-none-eabi -mgeneral-regs-only)
   set(linker_script rpi3.ld)
   include_directories("include/rpi3")
   file(GLOB platform_specific_files "src/rpi3/*" "src/aarch64/*"

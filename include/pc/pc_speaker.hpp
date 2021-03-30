@@ -3,7 +3,6 @@
 #define __TSOS_PC_SPEAKER_DRIVER__
 
 #include "sound_driver.hpp"
-#include "io.hpp"
 #include "types.hpp"
 
 class PC_SPEAKER_driver : public Sound_driver

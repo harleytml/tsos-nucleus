@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "pc_speaker.hpp"
+#include "nucleus_instance.hpp"
 
 PC_SPEAKER_driver::PC_SPEAKER_driver(void)
 {
@@ -22,20 +23,20 @@ void PC_SPEAKER_driver::playtone(uint32_t tone)
 
   //Set the PIT to the desired frequency
   div = 1193180 / tone;
-  outb(0x43, 0xb6);
-  outb(0x42, (uint8_t)(div));
-  outb(0x42, (uint8_t)(div >> 8));
+  tsos->io.put8(0x43, 0xb6);
+  tsos->io.put8(0x42, (uint8_t)(div));
+  tsos->io.put8(0x42, (uint8_t)(div >> 8));
 
   //And play the sound using the PC speaker
-  tmp = inb(0x61);
+  tmp = tsos->io.get8(0x61);
   if (tmp != (tmp | 3))
   {
-    outb(0x61, tmp | 3);
+    tsos->io.put8(0x61, tmp | 3);
   }
 }
 
 void PC_SPEAKER_driver::killsound(void)
 {
-  uint8_t tmp = inb(0x61) & 0xfc;
-  outb(0x61, tmp);
+  uint8_t tmp = tsos->io.get8(0x61) & 0xfc;
+  tsos->io.put8(0x61, tmp);
 }

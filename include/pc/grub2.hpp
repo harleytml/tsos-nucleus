@@ -3,7 +3,6 @@
 #define __TSOS_GRUB2_DRIVER__
 
 #include "boot_driver.hpp"
-#include "io.hpp"
 
 class GRUB2_driver : public Boot_driver
 {
