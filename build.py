@@ -20,12 +20,12 @@ tmp_file.close()
 # This only works on unix like systems right now
 if os.name != "posix":
     cprint("Only posix systems are supported in this script!", "red")
-    exit(1)
+    sys.exit(1)
 
 # You must install cmake to use this
 if shutil.which("cmake") is None:
     cprint("cmake is not installed!", "red")
-    exit(1)
+    sys.exit(1)
 
 # Make sure the script has the correct number of arguments, and if not, display help
 if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
@@ -37,7 +37,7 @@ if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
         print(x, "-", build_settings[x]["description"])
     cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
     print("Look in buildscript directory to find the buildscripts pertaining to the systems")
-    exit(0)
+    sys.exit(1)
 
 # Get the platform
 platform = sys.argv[1].lower()
@@ -73,7 +73,7 @@ if platform in build_settings:
     # Insure that the kernel was produced, and if not, fail
     if not os.path.exists("nucleus"):
         cprint("Compiling failed!", "red")
-        exit(1)
+        sys.exit(1)
 
     # Make sure the required tools are actually there
     for x in build_settings[platform]["required_tools"]:
@@ -81,7 +81,7 @@ if platform in build_settings:
         # Warn the user is this is not true
         if shutil.which(x) is None:
             cprint(x + " is not installed, which is needed for deploying", "red")
-            exit(1)
+            sys.exit(1)
 
         # Make sure the script exists
     if os.path.exists("../buildscripts/deploy_" + platform + ".py"):
@@ -89,11 +89,11 @@ if platform in build_settings:
         # Run that script
         if os.system("python3 " + "../buildscripts/deploy_" + platform + ".py") != 0:
             cprint("Buildscript failed!", "red")
-            exit(1)
+            sys.exit(1)
 
     else:
         cprint("Buildscript could not be found", "red")
-        exit(1)
+        sys.exit(1)
 
 else:
     cprint("Cannot yet deploy this system", "yellow")
@@ -105,7 +105,7 @@ cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
 
 # Meaning that the user didn't want any other action
 if action == "":
-    exit(0)
+    sys.exit(0)
 
 # Make sure you are either debugging or configuring
 if action in ["debug", "test"]:
@@ -116,7 +116,7 @@ if action in ["debug", "test"]:
         # Warn the user if not
         if shutil.which(x) is None:
             cprint(x + " is not installed, which is needed for " + action, "red")
-            exit(1)
+            sys.exit(1)
 
     # Run said command
     if build_settings[platform][action+"_command"] != "":
@@ -124,12 +124,12 @@ if action in ["debug", "test"]:
         # Make sure command doesn't fail
         if os.system(build_settings[platform][action+"_command"]) != 0:
             cprint("Action " + action + "failed", "red")
-            exit(1)
+            sys.exit(1)
 
     else:
         cprint("Cannot " + action + " this system with this script yet.", "yellow")
-        exit(0)
+        sys.exit(0)
 
 else:
     cprint("Invalid action", "red")
-    exit(1)
+    sys.exit(1)
