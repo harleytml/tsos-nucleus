@@ -2,12 +2,12 @@
 #ifndef __TSOS_NUCLEUS_INPUT_MODULE__
 #define __TSOS_NUCLEUS_INPUT_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "input_driver.hpp"
-#include "input_key_identifier.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/input_driver.hpp"
+#include "generic/input_key_identifier.hpp"
+#include "generic/current_config.hpp"
 
 // The main class controlling input
 class Input : public Module<Input_driver>

@@ -3,8 +3,8 @@
 #ifndef __TSOS_SFS_DRIVER__
 #define __TSOS_SFS_DRIVER__
 
-#include "filesystem_driver.hpp"
-#include "filesystem_file.hpp"
+#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_file.hpp"
 
 class SFS_driver : public Filesystem_driver
 {

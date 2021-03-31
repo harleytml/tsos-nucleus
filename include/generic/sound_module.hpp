@@ -2,11 +2,11 @@
 #ifndef __TSOS_NUCLEUS_SOUND_MODULE__
 #define __TSOS_NUCLEUS_SOUND_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "sound_driver.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/sound_driver.hpp"
+#include "generic/current_config.hpp"
 
 //The main class controlling sound
 class Sound : public Module<Sound_driver>

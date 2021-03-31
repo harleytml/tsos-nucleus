@@ -2,14 +2,14 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_MODULE__
 #define __TSOS_NUCLEUS_VIDEO_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "video_driver.hpp"
-#include "video_color.hpp"
-#include "video_font.hpp"
-#include "video_modes.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_color.hpp"
+#include "generic/video_font.hpp"
+#include "generic/video_modes.hpp"
+#include "generic/current_config.hpp"
 
 // The main class controlling video
 class Video : public Module<Video_driver>

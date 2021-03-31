@@ -2,11 +2,11 @@
 #ifndef __TSOS_NUCLEUS_IO_MODULE__
 #define __TSOS_NUCLEUS_IO_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "io_driver.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/io_driver.hpp"
+#include "generic/current_config.hpp"
 
 // The main class controlling video
 class IO : public Module<IO_driver>
