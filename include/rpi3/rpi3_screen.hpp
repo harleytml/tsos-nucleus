@@ -2,8 +2,8 @@
 #ifndef __TSOS_RPI3_SCREEN_DRIVER__
 #define __TSOS_RPI3_SCREEN_DRIVER__
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class RPI3_SCREEN_driver : public Video_driver
 {

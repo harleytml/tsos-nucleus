@@ -2,8 +2,8 @@
 #ifndef __TSOS_EGA_DRIVER__
 #define __TSOS_EGA_DRIVER__
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class EGA_driver : public Video_driver
 {

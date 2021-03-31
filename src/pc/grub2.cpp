@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "grub2.hpp"
-#include "nucleus_instance.hpp"
+#include "pc/grub2.hpp"
+#include "generic/nucleus_instance.hpp"
 
 GRUB2_driver::GRUB2_driver(void)
 {

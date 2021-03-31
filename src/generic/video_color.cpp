@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "video_color.hpp"
+#include "generic/video_color.hpp"
 
 Color::Color() : red(0x00), green(0x00), blue(0x00)
 {

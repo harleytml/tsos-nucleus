@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_BOOT_DRIVER__
 #define __TSOS_RPI3_BOOT_DRIVER__
 
-#include "boot_driver.hpp"
+#include "generic/boot_driver.hpp"
 
 class RPI3_BOOT_driver : public Boot_driver
 {

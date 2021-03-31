@@ -1,8 +1,15 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Gameboy Advanced IO Port Driver 
+ *
+ * The driver for the GBA's io port
+ * The GBA has a simple serial port that is usually used for transmitting game 
+ * data.
+ */
+
 #ifndef __TSOS_GBA_IO_PORT_DRIVER__
 #define __TSOS_GBA_IO_PORT_DRIVER__
 
-#include "serial_driver.hpp"
+#include "generic/serial_driver.hpp"
 
 class GBA_IO_PORT_driver : public Serial_driver
 {

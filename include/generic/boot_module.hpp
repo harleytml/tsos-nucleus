@@ -1,12 +1,19 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Boot Module
+ *
+ * This module, like the other modules, acts as a wrapper to call the drivers
+ * It has one more function, known as the fission, which is like the BSOD of
+ * Windows, or the Kernel Panic of the *nix operating systems
+ */
+
 #ifndef __TSOS_NUCLEUS_BOOT_MODULE__
 #define __TSOS_NUCLEUS_BOOT_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "boot_driver.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/boot_driver.hpp"
+#include "generic/current_config.hpp"
 
 // The main class controlling the system runtime
 class Boot : public Module<Boot_driver>

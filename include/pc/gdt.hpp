@@ -2,7 +2,7 @@
 #ifndef __TSOS_NUCLEUS_GDT__
 #define __TSOS_NUCLEUS_GDT__
 
-#include "types.hpp"
+#include "generic/types.hpp"
 
 class GlobalDescriptorTable
 {

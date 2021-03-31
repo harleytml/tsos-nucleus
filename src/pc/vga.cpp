@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "vga.hpp"
+#include "pc/vga.hpp"
 
 VGA_driver::VGA_driver(void)
 {

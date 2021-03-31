@@ -2,7 +2,7 @@
 #ifndef __TSOS_ATAPI_DRIVER__
 #define __TSOS_ATAPI_DRIVER__
 
-#include "disk_driver.hpp"
+#include "generic/disk_driver.hpp"
 
 class ATAPI_driver : public Disk_driver
 {

@@ -2,9 +2,9 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
 #define __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
 
-#include "driver.hpp"
-#include "types.hpp"
-#include "filesystem_file.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
+#include "generic/filesystem_file.hpp"
 
 class Filesystem_driver : public Driver
 {

@@ -2,15 +2,14 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 #define __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 
- #include "driver.hpp"
- #include "types.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
 
 class Permissions
 {
 public:
-
   Permissions();
-  
+
   //Constructor
   Permissions(bool r, bool w, bool e);
 

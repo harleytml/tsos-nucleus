@@ -1,7 +1,7 @@
 //By Tsuki Superior
 
-#include "boot_module.hpp"
-#include "nucleus_instance.hpp"
+#include "generic/boot_module.hpp"
+#include "generic/nucleus_instance.hpp"
 
 Boot::Boot(void)
 {

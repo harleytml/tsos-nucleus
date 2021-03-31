@@ -1,12 +1,23 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Gameboy Advanced Screen Driver 
+ *
+ * The driver for the GBA's Screen
+ * 
+ * The GBA has a 320 by 240 sized screen, with 4 maximum layers to the screen buffer
+ * None of this will not be fully used by TS/OS (As of version 0.0)
+ * This version of TS/OS is focusing of console mode, which means that
+ * The screen drivers will report back the charactor width of the screen
+ * as its height.
+ */
+
 #ifndef __TSOS_GBA_SCREEN_DRIVER__
 #define __TSOS_GBA_SCREEN_DRIVER__
 
 #define MODE3 0x0003
 #define BG2 0x0400
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class GBA_SCREEN_driver : public Video_driver
 {

@@ -2,8 +2,8 @@
 #ifndef __TSOS_MDA_DRIVER__
 #define __TSOS_MDA_DRIVER__
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class MDA_driver : public Video_driver
 {

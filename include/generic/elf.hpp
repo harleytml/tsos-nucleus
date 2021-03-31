@@ -2,8 +2,8 @@
 #ifndef __TSOS_ELF_DRIVER__
 #define __TSOS_ELF_DRIVER__
 
-#include "process_driver.hpp"
-#include "filesystem_file.hpp"
+#include "generic/process_driver.hpp"
+#include "generic/filesystem_file.hpp"
 
 class ELF_driver : public Process_driver
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "filesystem_permissions.hpp"
+#include "generic/filesystem_permissions.hpp"
 
 Permissions::Permissions() : read(false), write(false), execute(false)
 {

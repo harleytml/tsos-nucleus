@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_io_port.hpp"
+#include "gba/gba_io_port.hpp"
 
 GBA_IO_PORT_driver::GBA_IO_PORT_driver(void)
 {

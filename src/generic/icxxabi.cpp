@@ -1,5 +1,5 @@
-#include "icxxabi.hpp"
-#include "nucleus_instance.hpp"
+#include "generic/icxxabi.hpp"
+#include "generic/nucleus_instance.hpp"
 
 extern "C"
 {

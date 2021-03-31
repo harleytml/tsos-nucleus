@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "core.hpp"
-#include "nucleus_instance.hpp"
+#include "generic/core.hpp"
+#include "generic/nucleus_instance.hpp"
 
 Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {

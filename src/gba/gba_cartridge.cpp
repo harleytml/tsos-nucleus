@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_cartridge.hpp"
+#include "gba/gba_cartridge.hpp"
 
 GBA_CARTRIDGE_driver::GBA_CARTRIDGE_driver(void)
 {
