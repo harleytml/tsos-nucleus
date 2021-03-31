@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Sound Driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_SOUND_DRIVER__
 #define __TSOS_NUCLEUS_SOUND_DRIVER__
 

@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Input Module
+ * 
+ * The wrapper module for the input drivers
+ */
+
 #ifndef __TSOS_NUCLEUS_INPUT_MODULE__
 #define __TSOS_NUCLEUS_INPUT_MODULE__
 

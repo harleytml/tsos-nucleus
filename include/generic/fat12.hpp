@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic FAT12 Driver
+ *
+ * The FAT12 will be used rarely these days, but you might see it on a floppy disk
+ */
+
 #ifndef __TSOS_FAT12_DRIVER__
 #define __TSOS_FAT12_DRIVER__
 

@@ -1,4 +1,10 @@
-// By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Filesystem Module
+ *
+ * The module used to wrap filesystem drivers
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 #define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 

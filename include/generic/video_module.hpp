@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Video Module
+ * 
+ * The wrapper module for the video drivers
+ */
+
 #ifndef __TSOS_NUCLEUS_VIDEO_MODULE__
 #define __TSOS_NUCLEUS_VIDEO_MODULE__
 

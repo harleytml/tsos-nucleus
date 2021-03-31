@@ -1,4 +1,11 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Driver
+ *
+ * This is the abstract class that all the subclasses of
+ * drivers inherit from.
+ *  
+ */
+
 #ifndef __TSOS_DRIVER_CORE__
 #define __TSOS_DRIVER_CORE__
 

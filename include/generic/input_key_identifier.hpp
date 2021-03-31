@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Input Key Definitions
+ * 
+ * The definitions of the keys
+ */
+
 #ifndef __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
 #define __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
 

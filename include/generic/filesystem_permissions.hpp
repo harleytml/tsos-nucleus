@@ -1,4 +1,10 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Filesystem permissions
+ * 
+ * The permissions class is how the nucleus represents the 
+ * file permissions internally
+ */
+
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 #define __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 

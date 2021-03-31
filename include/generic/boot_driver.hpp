@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic Boot Driver
+ * Abstract Boot Driver
  *
  * This is a abstract class that all the Boot drivers inherit from
  */

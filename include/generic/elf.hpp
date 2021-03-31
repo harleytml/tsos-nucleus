@@ -1,4 +1,10 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Elf Driver
+ *
+ * This is a driver for controlling system runtime, oriented
+ * around the ELF format
+ */
+
 #ifndef __TSOS_ELF_DRIVER__
 #define __TSOS_ELF_DRIVER__
 

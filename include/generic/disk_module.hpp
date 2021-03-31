@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic Disk Module
+ * Disk Module
  * 
  * This is the wrapper module for the drivers.
  */

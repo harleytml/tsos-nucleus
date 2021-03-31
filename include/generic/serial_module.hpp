@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Serial Module
+ * 
+ * The wrapper module for the serial drivers
+ */
+
 #ifndef __TSOS_NUCLEUS_SERIAL_MODULE__
 #define __TSOS_NUCLEUS_SERIAL_MODULE__
 

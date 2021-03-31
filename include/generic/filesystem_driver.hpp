@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Filesystem Driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
 #define __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
 
