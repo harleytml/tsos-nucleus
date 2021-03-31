@@ -2,10 +2,10 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_DRIVER__
 #define __TSOS_NUCLEUS_VIDEO_DRIVER__
 
-#include "driver.hpp"
-#include "types.hpp"
-#include "video_font.hpp"
-#include "video_color.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
+#include "generic/video_font.hpp"
+#include "generic/video_color.hpp"
 
 class Video_driver : public Driver
 {

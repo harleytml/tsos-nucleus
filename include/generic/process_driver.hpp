@@ -2,8 +2,8 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_DRIVER__
 #define __TSOS_NUCLEUS_PROCESS_DRIVER__
 
-#include "driver.hpp"
-#include "types.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
 
 class Process_driver : public Driver
 {

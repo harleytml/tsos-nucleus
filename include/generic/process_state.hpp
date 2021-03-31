@@ -2,7 +2,7 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_STATE__
 #define __TSOS_NUCLEUS_PROCESS_STATE__
 
-#include "types.hpp"
+#include "generic/types.hpp"
 
 // The possible state of processes
 enum process_state

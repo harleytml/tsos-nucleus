@@ -2,13 +2,13 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_MODULE__
 #define __TSOS_NUCLEUS_PROCESS_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "process_driver.hpp"
-#include "process_info.hpp"
-#include "process_state.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/process_driver.hpp"
+#include "generic/process_info.hpp"
+#include "generic/process_state.hpp"
+#include "generic/current_config.hpp"
 
 // The main classes to control processes
 class Process : public Module<Process_driver>

@@ -2,8 +2,8 @@
 #ifndef __TSOS_MODULE_CORE__
 #define __TSOS_MODULE_CORE__
 
-#include "driver.hpp"
-#include "types.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
 
 // The base class of TS/OS modules
 template <class T>

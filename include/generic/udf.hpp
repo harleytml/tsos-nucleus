@@ -2,8 +2,8 @@
 #ifndef __TSOS_UDF_DRIVER__
 #define __TSOS_UDF_DRIVER__
 
-#include "filesystem_driver.hpp"
-#include "filesystem_file.hpp"
+#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_file.hpp"
 
 class UDF_driver : public Filesystem_driver
 {
