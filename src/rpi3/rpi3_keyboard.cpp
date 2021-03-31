@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "rpi3_keyboard.hpp"
+#include "rpi3/rpi3_keyboard.hpp"
 
 RPI3_KEYBOARD_driver::RPI3_KEYBOARD_driver(void)
 {

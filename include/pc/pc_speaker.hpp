@@ -2,8 +2,8 @@
 #ifndef __TSOS_PC_SPEAKER_DRIVER__
 #define __TSOS_PC_SPEAKER_DRIVER__
 
-#include "sound_driver.hpp"
-#include "types.hpp"
+#include "generic/sound_driver.hpp"
+#include "generic/types.hpp"
 
 class PC_SPEAKER_driver : public Sound_driver
 {

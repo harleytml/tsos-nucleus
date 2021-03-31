@@ -2,8 +2,8 @@
 #ifndef __TSOS_CGA_DRIVER__
 #define __TSOS_CGA_DRIVER__
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class CGA_driver : public Video_driver
 {

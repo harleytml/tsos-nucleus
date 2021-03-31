@@ -17,7 +17,6 @@ if(PLATFORM STREQUAL "PC")
   set(platform_options -D__PERSONAL_COMPUTER__ -mtune=i686 -mno-red-zone
                        --target=i686-pc-none-elf -mcmodel=kernel)
   set(linker_script pc.ld)
-  include_directories("include/pc")
   file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*"
        "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
@@ -27,7 +26,6 @@ if(PLATFORM STREQUAL "GBA")
   set(platform_options -D__GAMEBOY_ADVANCED__ -mtune=arm7tdmi -mthumb
                        --target=armv4t-unknown-none-eabi)
   set(linker_script gba.ld)
-  include_directories("include/gba")
   file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*"
        "startup/arm/*")
 endif(PLATFORM STREQUAL "GBA")
@@ -37,7 +35,6 @@ if(PLATFORM STREQUAL "NSPIRE")
   set(platform_options -D__NSPIRE__ -mtune=arm926ej-s
                        --target=armv5tej-unknown-none-eabi)
   set(linker_script nspire.ld)
-  include_directories("include/nspire")
   file(GLOB platform_specific_files "src/nspire/*" "src/arm/*"
        "startup/nspire/*" "startup/arm/*")
 endif(PLATFORM STREQUAL "NSPIRE")
@@ -47,12 +44,11 @@ if(PLATFORM STREQUAL "RPI3")
   set(platform_options -D__RASPBERRY_PI_3__ -mtune=cortex-a53
                        --target=aarch64-unknown-none-eabi -mgeneral-regs-only)
   set(linker_script rpi3.ld)
-  include_directories("include/rpi3")
   file(GLOB platform_specific_files "src/rpi3/*" "src/aarch64/*"
        "startup/rpi3/*" "startup/aarch64/*")
 endif(PLATFORM STREQUAL "RPI3")
 
-include_directories("include/generic")
+include_directories("include")
 
 file(GLOB source_files "src/generic/*")
 

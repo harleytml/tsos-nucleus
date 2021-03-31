@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "process_module.hpp"
-#include "nucleus_instance.hpp"
+#include "generic/process_module.hpp"
+#include "generic/nucleus_instance.hpp"
 
 Process::Process(void) : current_heap_offset(0)
 {

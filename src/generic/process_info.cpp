@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "process_info.hpp"
+#include "generic/process_info.hpp"
 
 Process_info::Process_info(void)
 {

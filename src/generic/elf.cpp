@@ -1,4 +1,5 @@
-#include "elf.hpp"
+// By Tsuki Superior
+#include "generic/elf.hpp"
 
 ELF_driver::ELF_driver(void)
 {

@@ -1,8 +1,8 @@
 #ifndef __TSOS_NUCLEUS_PC_IO_DRIVER__
 #define __TSOS_NUCLEUS_PC_IO_DRIVER__
 
-#include "types.hpp"
-#include "io_driver.hpp"
+#include "generic/types.hpp"
+#include "generic/io_driver.hpp"
 
 class PC_IO_driver : public IO_driver
 {

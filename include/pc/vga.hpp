@@ -2,8 +2,8 @@
 #ifndef __TSOS_VGA_DRIVER__
 #define __TSOS_VGA_DRIVER__
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class VGA_driver : public Video_driver
 {

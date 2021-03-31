@@ -5,8 +5,8 @@
 #define MODE3 0x0003
 #define BG2 0x0400
 
-#include "video_driver.hpp"
-#include "video_modes.hpp"
+#include "generic/video_driver.hpp"
+#include "generic/video_modes.hpp"
 
 class GBA_SCREEN_driver : public Video_driver
 {

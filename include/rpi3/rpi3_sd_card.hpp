@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_SD_CARD_DRIVER__
 #define __TSOS_RPI3_SD_CARD_DRIVER__
 
-#include "disk_driver.hpp"
+#include "generic/disk_driver.hpp"
 
 class RPI3_SD_CARD_driver : public Disk_driver
 {

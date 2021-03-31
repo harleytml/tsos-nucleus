@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_sound.hpp"
+#include "gba/gba_sound.hpp"
 
 GBA_SOUND_driver::GBA_SOUND_driver(void)
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "gba_screen.hpp"
+#include "gba/gba_screen.hpp"
 
 GBA_SCREEN_driver::GBA_SCREEN_driver(void)
 {

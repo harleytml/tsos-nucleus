@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "video_module.hpp"
-#include "nucleus_instance.hpp"
+#include "generic/video_module.hpp"
+#include "generic/nucleus_instance.hpp"
 
 Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(Color(0xff, 0xff, 0xff))
 {

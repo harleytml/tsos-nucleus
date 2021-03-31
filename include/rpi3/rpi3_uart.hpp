@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_UART_DRIVER__
 #define __TSOS_RPI3_UART_DRIVER__
 
-#include "serial_driver.hpp"
+#include "generic/serial_driver.hpp"
 
 class RPI3_UART_driver : public Serial_driver
 {
