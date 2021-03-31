@@ -22,7 +22,7 @@ SECTIONS
 	{
     KEEP(*(.boot))
 		*(.text .text.*)
-    *(.init)
+		*(.init)
 		*(.fini)
 	}
  
@@ -42,8 +42,8 @@ SECTIONS
 	/* Read-write data (uninitialized) and stack */
 	.bss ALIGN(4K) : 
 	{
-		*(COMMON)
 		*(.bss .bss.*) 
+		*(COMMON)
 	}
 
   /DISCARD/ :
