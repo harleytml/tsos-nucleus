@@ -71,6 +71,8 @@ add_compile_options(
   -nodefaultlibs
   -fno-stack-protector
   -fno-strict-aliasing
+  -ffunction-sections
+  -fdata-sections
   ${platform_options})
 
 add_link_options(
@@ -82,6 +84,8 @@ add_link_options(
   -ffreestanding
   -nostdlib
   -nodefaultlibs
+  -ffunction-sections
+  -fdata-sections
   ${platform_options})
 
 add_executable(nucleus ${source_files} ${platform_specific_files})
