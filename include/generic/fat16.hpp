@@ -2,8 +2,8 @@
 #ifndef __TSOS_FAT16_DRIVER__
 #define __TSOS_FAT16_DRIVER__
 
-#include "filesystem_driver.hpp"
-#include "filesystem_file.hpp"
+#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_file.hpp"
 
 class FAT16_driver : public Filesystem_driver
 {

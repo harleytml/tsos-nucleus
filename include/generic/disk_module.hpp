@@ -1,12 +1,17 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Disk Module
+ * 
+ * This is the wrapper module for the drivers.
+ */
+
 #ifndef __TSOS_NUCLEUS_DISK_MODULE__
 #define __TSOS_NUCLEUS_DISK_MODULE__
 
-#include "driver.hpp"
-#include "module.hpp"
-#include "types.hpp"
-#include "disk_driver.hpp"
-#include "current_config.hpp"
+#include "generic/driver.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/disk_driver.hpp"
+#include "generic/current_config.hpp"
 
 // The main class controlling the disks
 class Disk : public Module<Disk_driver>

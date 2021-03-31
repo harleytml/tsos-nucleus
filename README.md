@@ -89,3 +89,8 @@ To get the list of supported systems and other options, type `help` as the platf
 ## Configuring
 
 In the `cfg` directory, some json config files exist. I plan to make them control the entire build process of TS/OS.
+
+## Developing
+
+Look in the `documents` directory for some more information on TS/OS, and also the C++ header files have more information
+on TS/OS, and how it is interacting with hardware.

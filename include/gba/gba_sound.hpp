@@ -1,4 +1,7 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Gameboy Advanced Sound Driver
+ */
+
 #ifndef __TSOS_GBA_SOUND_DRIVER__
 #define __TSOS_GBA_SOUND_DRIVER__
 

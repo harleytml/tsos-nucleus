@@ -2,9 +2,9 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
 #define __TSOS_NUCLEUS_FILESYSTEM_FILE__
 
-#include "driver.hpp"
-#include "types.hpp"
-#include "filesystem_permissions.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
+#include "generic/filesystem_permissions.hpp"
 
 //A file in Tsos
 class File

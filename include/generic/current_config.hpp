@@ -1,10 +1,12 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Nucleus Configuration
+ *
+ * This is the configuration file that detects from the defines to see what
+ * drivers should actually be included
+ */
+
 #ifndef __TSOS_CURRENT_CONFIG__
 #define __TSOS_CURRENT_CONFIG__
-
-/*
-This file ensures the proper headers are being used for the proper system
-*/
 
 #include "generic/fat12.hpp"
 #include "generic/fat16.hpp"

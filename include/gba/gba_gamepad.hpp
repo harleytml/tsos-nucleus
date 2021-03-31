@@ -1,4 +1,11 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Gameboy Advanced Gamepad Driver 
+ *
+ * The driver for the GBA's control pad
+ * Note that since the GBA's control pad has a few buttons,
+ * you will have to scroll and choose your answer
+ */
+
 #ifndef __TSOS_GBA_GAMEPAD_DRIVER__
 #define __TSOS_GBA_GAMEPAD_DRIVER__
 

@@ -2,9 +2,9 @@
 #ifndef __TSOS_NUCLEUS_INPUT_DRIVER__
 #define __TSOS_NUCLEUS_INPUT_DRIVER__
 
-#include "driver.hpp"
-#include "types.hpp"
-#include "input_key_identifier.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
+#include "generic/input_key_identifier.hpp"
 
 class Input_driver : public Driver
 {

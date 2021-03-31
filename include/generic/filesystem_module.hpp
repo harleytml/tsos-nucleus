@@ -2,12 +2,12 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 #define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
 
-#include "module.hpp"
-#include "types.hpp"
-#include "filesystem_driver.hpp"
-#include "filesystem_file.hpp"
-#include "filesystem_permissions.hpp"
-#include "current_config.hpp"
+#include "generic/module.hpp"
+#include "generic/types.hpp"
+#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_file.hpp"
+#include "generic/filesystem_permissions.hpp"
+#include "generic/current_config.hpp"
 
 extern "C" int strcmp(const char *p1, const char *p2);
 

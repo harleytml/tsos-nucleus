@@ -1,8 +1,13 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Boot Driver
+ *
+ * This is a abstract class that all the Boot drivers inherit from
+ */
+
 #ifndef __TSOS_NUCLEUS_BOOT_DRIVER__
 #define __TSOS_NUCLEUS_BOOT_DRIVER__
 
-#include "driver.hpp"
+#include "generic/driver.hpp"
 
 class Boot_driver : public Driver
 {

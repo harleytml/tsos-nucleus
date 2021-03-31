@@ -1,9 +1,14 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Disk Driver
+ * 
+ * This is the abstract class that all disk drivers in TS/OS should inherit from
+ */
+
 #ifndef __TSOS_NUCLEUS_DISK_DRIVER__
 #define __TSOS_NUCLEUS_DISK_DRIVER__
 
-#include "driver.hpp"
-#include "types.hpp"
+#include "generic/driver.hpp"
+#include "generic/types.hpp"
 
 class Disk_driver : public Driver
 {

@@ -1,17 +1,28 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Nucleus Core
+ *
+ * This is the main file of the TS/OS source code, and its purpose is to
+ * collect all the API into one class.
+ * 
+ * All the modules are instaited as members of the Tsos class.
+ * 
+ * There may only be ONE instance of the TS/OS class. Future updates will have a lock
+ * to make sure this rule is enforced.
+ */
+
 #ifndef __TSOS_NUCLEUS_CORE__
 #define __TSOS_NUCLEUS_CORE__
 
-#include "boot_module.hpp"
-#include "disk_module.hpp"
-#include "filesystem_module.hpp"
-#include "input_module.hpp"
-#include "process_module.hpp"
-#include "serial_module.hpp"
-#include "sound_module.hpp"
-#include "video_module.hpp"
-#include "io_module.hpp"
-#include "types.hpp"
+#include "generic/boot_module.hpp"
+#include "generic/disk_module.hpp"
+#include "generic/filesystem_module.hpp"
+#include "generic/input_module.hpp"
+#include "generic/process_module.hpp"
+#include "generic/serial_module.hpp"
+#include "generic/sound_module.hpp"
+#include "generic/video_module.hpp"
+#include "generic/io_module.hpp"
+#include "generic/types.hpp"
 
 // The main class collecting the TS/OS nucleus api
 class Tsos
