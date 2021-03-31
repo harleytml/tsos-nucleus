@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Video Driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_VIDEO_DRIVER__
 #define __TSOS_NUCLEUS_VIDEO_DRIVER__
 

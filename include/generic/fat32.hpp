@@ -1,4 +1,10 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic FAT32 Driver
+ *
+ * The FAT32 will be used more than its previous versions of FAT.
+ * 
+ */
+
 #ifndef __TSOS_FAT32_DRIVER__
 #define __TSOS_FAT32_DRIVER__
 

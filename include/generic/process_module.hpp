@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Process Module
+ * 
+ * The wrapper module for the process drivers
+ */
+
 #ifndef __TSOS_NUCLEUS_PROCESS_MODULE__
 #define __TSOS_NUCLEUS_PROCESS_MODULE__
 

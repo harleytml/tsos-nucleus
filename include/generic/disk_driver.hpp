@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic Disk Driver
+ * Abstract Disk Driver
  * 
  * This is the abstract class that all disk drivers in TS/OS should inherit from
  */

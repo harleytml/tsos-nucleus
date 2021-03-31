@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Sound Module
+ * 
+ * The wrapper module for the sound drivers
+ */
+
 #ifndef __TSOS_NUCLEUS_SOUND_MODULE__
 #define __TSOS_NUCLEUS_SOUND_MODULE__
 

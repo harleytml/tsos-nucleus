@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Input Driver
+ * 
+ * This is the abstract driver for the input driver
+ */
+
 #ifndef __TSOS_NUCLEUS_INPUT_DRIVER__
 #define __TSOS_NUCLEUS_INPUT_DRIVER__
 

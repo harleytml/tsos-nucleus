@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Serial Driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_SERIAL_DRIVER__
 #define __TSOS_NUCLEUS_SERIAL_DRIVER__
 

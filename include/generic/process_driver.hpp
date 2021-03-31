@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract Process Driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_PROCESS_DRIVER__
 #define __TSOS_NUCLEUS_PROCESS_DRIVER__
 

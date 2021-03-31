@@ -1,4 +1,8 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Abstract IO driver
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_IO_DRIVER__
 #define __TSOS_NUCLEUS_IO_DRIVER__
 

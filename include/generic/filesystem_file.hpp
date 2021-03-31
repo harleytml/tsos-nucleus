@@ -1,4 +1,11 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Generic Filesystem File Driver
+ *
+ * This is the file type that the nucleus uses internally
+ * to represent files
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
 #define __TSOS_NUCLEUS_FILESYSTEM_FILE__
 
@@ -6,7 +13,6 @@
 #include "generic/types.hpp"
 #include "generic/filesystem_permissions.hpp"
 
-//A file in Tsos
 class File
 {
 public:
