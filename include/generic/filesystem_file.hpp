@@ -14,7 +14,7 @@ public:
   File(void);
 
   //Constructor
-  File(char *pa, Permissions per);
+  File(char *pa, Permissions &per);
 
   //Destructor
   ~File();
