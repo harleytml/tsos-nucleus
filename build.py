@@ -64,6 +64,9 @@ if platform in build_settings:
     if os.path.exists("tsos.img"):
         os.remove("tsos.img")
 
+    if os.path.exists("tsos.gba"):
+        os.remove("tsos.gba")
+
     # Run cmake
     os.system("cmake .. -DPLATFORM=" + platform.upper())
 
