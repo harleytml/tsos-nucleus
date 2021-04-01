@@ -4,8 +4,8 @@
  * This is the wrapper module for the drivers.
  */
 
-#ifndef __TSOS_NUCLEUS_DISK_MODULE__
-#define __TSOS_NUCLEUS_DISK_MODULE__
+#ifndef __TSOS_NUCLEUS_DISK_NUCLEON__
+#define __TSOS_NUCLEUS_DISK_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"

@@ -4,8 +4,8 @@
  * The wrapper module for the serial drivers
  */
 
-#ifndef __TSOS_NUCLEUS_SERIAL_MODULE__
-#define __TSOS_NUCLEUS_SERIAL_MODULE__
+#ifndef __TSOS_NUCLEUS_SERIAL_NUCLEON__
+#define __TSOS_NUCLEUS_SERIAL_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"

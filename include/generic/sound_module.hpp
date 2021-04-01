@@ -4,8 +4,8 @@
  * The wrapper module for the sound drivers
  */
 
-#ifndef __TSOS_NUCLEUS_SOUND_MODULE__
-#define __TSOS_NUCLEUS_SOUND_MODULE__
+#ifndef __TSOS_NUCLEUS_SOUND_NUCLEON__
+#define __TSOS_NUCLEUS_SOUND_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"

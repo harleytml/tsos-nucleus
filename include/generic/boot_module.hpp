@@ -6,8 +6,8 @@
  * Windows, or the Kernel Panic of the *nix operating systems
  */
 
-#ifndef __TSOS_NUCLEUS_BOOT_MODULE__
-#define __TSOS_NUCLEUS_BOOT_MODULE__
+#ifndef __TSOS_NUCLEUS_BOOT_NUCLEON__
+#define __TSOS_NUCLEUS_BOOT_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"

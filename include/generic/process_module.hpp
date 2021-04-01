@@ -4,8 +4,8 @@
  * The wrapper module for the process drivers
  */
 
-#ifndef __TSOS_NUCLEUS_PROCESS_MODULE__
-#define __TSOS_NUCLEUS_PROCESS_MODULE__
+#ifndef __TSOS_NUCLEUS_PROCESS_NUCLEON__
+#define __TSOS_NUCLEUS_PROCESS_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"
