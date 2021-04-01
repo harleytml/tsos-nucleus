@@ -28,7 +28,9 @@ _start:
 	movl $stack_top, %esp
 
 	# Call the global constructors.
-	call _init
+	# The init function doesn't appear to work with clang right now
+	# So i will skip it
+	# call _init
 
 	# Transfer control to the main kernel.
 	call kernel_main
