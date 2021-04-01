@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- *Model by Brendan Trotter
+ * Model by Brendan Trotter
  * Simple Filesystem Driver
  */
 
