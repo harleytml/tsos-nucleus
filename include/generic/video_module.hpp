@@ -6,8 +6,8 @@
  * This is the module that is most thought out (as of version 0.0)
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_MODULE__
-#define __TSOS_NUCLEUS_VIDEO_MODULE__
+#ifndef __TSOS_NUCLEUS_VIDEO_NUCLEON__
+#define __TSOS_NUCLEUS_VIDEO_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"

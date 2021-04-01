@@ -5,8 +5,8 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_MODULE__
-#define __TSOS_NUCLEUS_FILESYSTEM_MODULE__
+#ifndef __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
+#define __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
 
 #include "generic/module.hpp"
 #include "generic/types.hpp"

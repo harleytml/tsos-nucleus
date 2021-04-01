@@ -4,8 +4,8 @@
  * The wrapper module for the input drivers
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_MODULE__
-#define __TSOS_NUCLEUS_INPUT_MODULE__
+#ifndef __TSOS_NUCLEUS_INPUT_NUCLEON__
+#define __TSOS_NUCLEUS_INPUT_NUCLEON__
 
 #include "generic/driver.hpp"
 #include "generic/module.hpp"
