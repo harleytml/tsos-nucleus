@@ -54,8 +54,9 @@ file(GLOB source_files "src/generic/*")
 
 set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 add_compile_options(
-  -ffreestanding
   -Og
+  -ffreestanding
+  -g
   -Wall
   -Wextra
   -Wno-unused-private-field
@@ -69,6 +70,7 @@ add_compile_options(
   -fno-unwind-tables
   -nostdlib
   -nodefaultlibs
+  -nostdinc++
   -fno-stack-protector
   -fno-strict-aliasing
   -ffunction-sections
@@ -77,8 +79,8 @@ add_compile_options(
 
 add_link_options(
   -Og
-  -T
-  ../linker-scripts/${linker_script}
+  -g
+  -T../linkerscripts/${linker_script}
   -fuse-ld=lld
   -static
   -ffreestanding

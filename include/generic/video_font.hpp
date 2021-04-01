@@ -1,4 +1,11 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Video Font
+ * 
+ * This is very difficult to make multiplatform, within the current 
+ * simplicity of TS/OS, because pretty much every system has
+ * its own font format
+ */
+
 #ifndef __TSOS_NUCLEUS_VIDEO_FONT__
 #define __TSOS_NUCLEUS_VIDEO_FONT__
 

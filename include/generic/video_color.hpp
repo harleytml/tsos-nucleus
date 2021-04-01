@@ -1,4 +1,12 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Video Color
+ * 
+ * The color definations for TS/OS video
+ * 
+ * This is a class to help make color more multiplatform, at the cost of speed
+ * 
+ */
+
 #ifndef __TSOS_NUCLEUS_VIDEO_COLOR__
 #define __TSOS_NUCLEUS_VIDEO_COLOR__
 

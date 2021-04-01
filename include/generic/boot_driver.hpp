@@ -1,7 +1,7 @@
 /* By Tsuki Superior
  * Abstract Boot Driver
  *
- * This is a abstract class that all the Boot drivers inherit from
+ * To make a new Boot driver, simply have it inherit from this class
  */
 
 #ifndef __TSOS_NUCLEUS_BOOT_DRIVER__

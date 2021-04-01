@@ -1,6 +1,7 @@
 /* By Tsuki Superior
  * Abstract IO driver
  * 
+ * To make a new IO driver, simply have it inherit from this class
  */
 
 #ifndef __TSOS_NUCLEUS_IO_DRIVER__

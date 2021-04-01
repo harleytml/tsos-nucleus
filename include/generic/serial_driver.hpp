@@ -1,6 +1,9 @@
 /* By Tsuki Superior
  * Abstract Serial Driver
  * 
+ * To make a new Serial driver, simply have it inherit from this class
+ * 
+ * Not sure how useful serial is (other than debugging), but I'll write drivers for it anyway
  */
 
 #ifndef __TSOS_NUCLEUS_SERIAL_DRIVER__

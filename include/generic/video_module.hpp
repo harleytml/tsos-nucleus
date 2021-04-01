@@ -2,6 +2,8 @@
  * Video Module
  * 
  * The wrapper module for the video drivers
+ * 
+ * This is the module that is most thought out (as of version 0.0)
  */
 
 #ifndef __TSOS_NUCLEUS_VIDEO_MODULE__

@@ -1,6 +1,10 @@
 /* By Tsuki Superior
  * Abstract Process Driver
  * 
+ * To make a new Process driver, simply have it inherit from this class
+ * 
+ * This driver class will most likely only have elf inherit from it
+ * The only other class would be COFF or maybe some windows format
  */
 
 #ifndef __TSOS_NUCLEUS_PROCESS_DRIVER__

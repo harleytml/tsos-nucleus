@@ -1,7 +1,7 @@
 /* By Tsuki Superior
  * Abstract Disk Driver
  * 
- * This is the abstract class that all disk drivers in TS/OS should inherit from
+ * To make a new Disk driver, simply have it inherit from this class
  */
 
 #ifndef __TSOS_NUCLEUS_DISK_DRIVER__
