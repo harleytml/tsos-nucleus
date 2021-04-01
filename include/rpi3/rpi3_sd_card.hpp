@@ -2,15 +2,15 @@
 #ifndef __TSOS_RPI3_SD_CARD_QUARK__
 #define __TSOS_RPI3_SD_CARD_QUARK__
 
-#include "generic/disk_driver.hpp"
+#include "generic/disk_quark.hpp"
 
-class RPI3_SD_CARD_driver : public Disk_driver
+class RPI3_SD_CARD_quark : public Disk_quark
 {
 public:
   // Constructor
-  RPI3_SD_CARD_driver(void);
+  RPI3_SD_CARD_quark(void);
 
-  ~RPI3_SD_CARD_driver();
+  ~RPI3_SD_CARD_quark();
 
   bool detectsystem(void) final;
 

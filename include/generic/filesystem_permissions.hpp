@@ -8,7 +8,7 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 #define __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
 
-#include "generic/driver.hpp"
+#include "generic/quark.hpp"
 #include "generic/types.hpp"
 
 class Permissions

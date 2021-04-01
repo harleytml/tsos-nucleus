@@ -9,7 +9,7 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
 #define __TSOS_NUCLEUS_FILESYSTEM_FILE__
 
-#include "generic/driver.hpp"
+#include "generic/quark.hpp"
 #include "generic/types.hpp"
 #include "generic/filesystem_permissions.hpp"
 

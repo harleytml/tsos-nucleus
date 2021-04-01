@@ -1,27 +1,27 @@
 // By Tsuki Superior
 #include "generic/elf.hpp"
 
-ELF_driver::ELF_driver(void)
+ELF_quark::ELF_quark(void)
 {
   name = "Executable and Linkable Format";
 }
 
-bool ELF_driver::detectsystem(void)
+bool ELF_quark::detectsystem(void)
 {
   return isvalidexecutable("/nucleus");
 }
 
-void ELF_driver::reset(void)
+void ELF_quark::reset(void)
 {
 }
 
-bool ELF_driver::isvalidexecutable(char *path)
+bool ELF_quark::isvalidexecutable(char *path)
 {
   return true;
 }
 
 // This needs to give back the address to the first free memory location in the os, that can be used for a primitive heap
-uintptr_t ELF_driver::getstartoffreemem(void)
+uintptr_t ELF_quark::getstartoffreemem(void)
 {
 
 #ifdef __PERSONAL_COMPUTER__

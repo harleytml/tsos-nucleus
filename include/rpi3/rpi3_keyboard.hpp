@@ -2,17 +2,17 @@
 #ifndef __TSOS_RPI3_KEYBOARD_QUARK__
 #define __TSOS_RPI3_KEYBOARD_QUARK__
 
-#include "generic/input_driver.hpp"
+#include "generic/input_quark.hpp"
 
-class RPI3_KEYBOARD_driver : public Input_driver
+class RPI3_KEYBOARD_quark : public Input_quark
 {
 public:
   // Constructor
-  RPI3_KEYBOARD_driver(void);
+  RPI3_KEYBOARD_quark(void);
 
-  ~RPI3_KEYBOARD_driver();
+  ~RPI3_KEYBOARD_quark();
 
-  // Detects if the module should be used
+  // Detects if the nucleon should be used
   bool detectsystem(void) final;
 
   void reset(void) final;

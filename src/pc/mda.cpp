@@ -1,13 +1,13 @@
 //By Tsuki Superior
 #include "pc/mda.hpp"
 
-MDA_driver::MDA_driver(void)
+MDA_quark::MDA_quark(void)
 {
   name = "Monochrome Display Adapter";
   font = Font();
 }
 
-bool MDA_driver::detectsystem(void)
+bool MDA_quark::detectsystem(void)
 {
 
   // Check to make sure EGA and VGA is not installed
@@ -28,18 +28,18 @@ bool MDA_driver::detectsystem(void)
   return false;
 }
 
-void MDA_driver::reset(void)
+void MDA_quark::reset(void)
 {
   text_buffer = (char *)0xb0000;
 }
 
-void MDA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
+void MDA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   // Well the MDA is simply not capable of drawing pixels...
 }
 
 // This feels pointless considering that MDA is monochrome
-void MDA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
+void MDA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint16_t screenwidth = getscreenwidth();
   uint16_t intendedposition = (posy * screenwidth) + posx;
@@ -47,21 +47,21 @@ void MDA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
 }
 
 // Also pointless, considering MDA has only one mode, but I'll read from a BIOS field anyway
-uint16_t MDA_driver::getscreenwidth(void)
+uint16_t MDA_quark::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
   return *((uint16_t *)0x44a);
 }
 
-uint16_t MDA_driver::getscreenheight(void)
+uint16_t MDA_quark::getscreenheight(void)
 {
   // The height of the screen, text mode, is always 25
   return 25;
 }
 
 // You have to manipulate the hardware to change the font on MDA
-void MDA_driver::setfont(Font font)
+void MDA_quark::setfont(Font font)
 {
   return;
 }

@@ -15,15 +15,15 @@
 #ifndef __TSOS_GBA_CARTRIDGE_QUARK__
 #define __TSOS_GBA_CARTRIDGE_QUARK__
 
-#include "generic/disk_driver.hpp"
+#include "generic/disk_quark.hpp"
 
-class GBA_CARTRIDGE_driver : public Disk_driver
+class GBA_CARTRIDGE_quark : public Disk_quark
 {
 public:
   // Constructor
-  GBA_CARTRIDGE_driver(void);
+  GBA_CARTRIDGE_quark(void);
 
-  ~GBA_CARTRIDGE_driver();
+  ~GBA_CARTRIDGE_quark();
 
   bool detectsystem(void) final;
 

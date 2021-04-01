@@ -2,26 +2,26 @@
 #include "pc/grub2.hpp"
 #include "generic/nucleus_instance.hpp"
 
-GRUB2_driver::GRUB2_driver(void)
+GRUB2_quark::GRUB2_quark(void)
 {
   name = "Grand Unified Bootloader 2";
 }
 
-GRUB2_driver::~GRUB2_driver()
+GRUB2_quark::~GRUB2_quark()
 {
 }
 
-bool GRUB2_driver::detectsystem(void)
+bool GRUB2_quark::detectsystem(void)
 {
   return true;
 }
 
-void GRUB2_driver::reset(void)
+void GRUB2_quark::reset(void)
 {
 }
 
 //8042 reset
-void GRUB2_driver::reboot(void)
+void GRUB2_quark::reboot(void)
 {
   uint8_t good = 0x02;
   while (good & 0x02)
@@ -32,6 +32,6 @@ void GRUB2_driver::reboot(void)
   __asm__("hlt");
 }
 
-void GRUB2_driver::shutdown(void)
+void GRUB2_quark::shutdown(void)
 {
 }

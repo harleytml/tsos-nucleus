@@ -1,26 +1,26 @@
 //Driver by Tsuki Superior
 #include "pc/rs232.hpp"
 
-RS232_driver::RS232_driver(void)
+RS232_quark::RS232_quark(void)
 {
   name = "Recommended Standard 232";
 }
 
-bool RS232_driver::detectsystem(void)
+bool RS232_quark::detectsystem(void)
 {
   return true;
 }
 
-void RS232_driver::reset(void)
+void RS232_quark::reset(void)
 {
 }
 
-bool RS232_driver::isdevicethere(void)
+bool RS232_quark::isdevicethere(void)
 {
   return false;
 }
 
-uint8_t RS232_driver::exchangebyte(uint8_t b)
+uint8_t RS232_quark::exchangebyte(uint8_t b)
 {
   return 0;
 }

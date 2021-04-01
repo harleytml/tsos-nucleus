@@ -2,20 +2,20 @@
 #ifndef __TSOS_XT_KEYBOARD_QUARK__
 #define __TSOS_XT_KEYBOARD_QUARK__
 
-#include "generic/input_driver.hpp"
+#include "generic/input_quark.hpp"
 
-class XT_KEYBOARD_driver : public Input_driver
+class XT_KEYBOARD_quark : public Input_quark
 {
 public:
     // Constructor
-    XT_KEYBOARD_driver(void);
+    XT_KEYBOARD_quark(void);
 
-    ~XT_KEYBOARD_driver();
+    ~XT_KEYBOARD_quark();
 
-    // Detects if the module should be used
+    // Detects if the nucleon should be used
     bool detectsystem(void) final;
 
-    // Init and reset driver
+    // Init and reset quark
     void reset(void) final;
 
     // Get the key currently pressed

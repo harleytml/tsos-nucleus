@@ -1,12 +1,12 @@
 /* By Tsuki Superior
  * Gameboy Advanced Screen Driver 
  *
- * The driver for the GBA's Screen
+ * The quark for the GBA's Screen
  * 
  * The GBA has a 320 by 240 sized screen, with 4 maximum layers to the screen buffer
  * None of this will not be fully used by TS/OS (As of version 0.0)
  * This version of TS/OS is focusing of console mode, which means that
- * The screen drivers will report back the charactor width of the screen
+ * The screen quarks will report back the charactor width of the screen
  * as its height.
  */
 
@@ -16,14 +16,14 @@
 #define MODE3 0x0003
 #define BG2 0x0400
 
-#include "generic/video_driver.hpp"
+#include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class GBA_SCREEN_driver : public Video_driver
+class GBA_SCREEN_quark : public Video_quark
 {
 public:
-  GBA_SCREEN_driver(void);
-  ~GBA_SCREEN_driver();
+  GBA_SCREEN_quark(void);
+  ~GBA_SCREEN_quark();
   bool detectsystem(void) final;
   void reset(void) final;
   void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;

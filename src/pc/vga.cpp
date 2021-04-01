@@ -1,13 +1,13 @@
 //By Tsuki Superior
 #include "pc/vga.hpp"
 
-VGA_driver::VGA_driver(void)
+VGA_quark::VGA_quark(void)
 {
   name = "Video Graphics Array";
   font = Font();
 }
 
-bool VGA_driver::detectsystem(void)
+bool VGA_quark::detectsystem(void)
 {
 
   // Check to see if VGA or EGA is installed
@@ -21,7 +21,7 @@ bool VGA_driver::detectsystem(void)
   return false;
 }
 
-void VGA_driver::reset(void)
+void VGA_quark::reset(void)
 {
   switch (*((uint16_t *)0x410) & 0x30)
   {
@@ -34,7 +34,7 @@ void VGA_driver::reset(void)
   }
 }
 
-void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
+void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
   uint16_t screenwidth = getscreenwidth();
@@ -43,7 +43,7 @@ void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   {
   case TEXT:
 
-    // Lets check if the video system has made it in a mode different than when the driver was initialized
+    // Lets check if the video system has made it in a mode different than when the quark was initialized
     // We are checking the video controller 6845 port number for the color type
     switch (*((uint16_t *)0x410) & 0x30)
     {
@@ -56,7 +56,7 @@ void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
     //Color
     case 0x20:
       /* 
-      This is a early driver
+      This is a early quark
       Each attribute has 1 bit per color, plus intensity
       Basically, if a color is higher than 0x80, it is considered active
       The result is a rather messy algorithem
@@ -119,7 +119,7 @@ void VGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   }
 }
 
-void VGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
+void VGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   uint16_t color = 0;
   volatile uint8_t *location = (uint8_t *)0xa0000 + getscreenwidth() * pos_y + pos_x;
@@ -131,7 +131,7 @@ void VGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
   *location = color;
 }
 
-uint16_t VGA_driver::getscreenwidth(void)
+uint16_t VGA_quark::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
@@ -139,7 +139,7 @@ uint16_t VGA_driver::getscreenwidth(void)
   return *((uint16_t *)0x44a);
 }
 
-uint16_t VGA_driver::getscreenheight(void)
+uint16_t VGA_quark::getscreenheight(void)
 {
   switch (mode)
   {
@@ -154,7 +154,7 @@ uint16_t VGA_driver::getscreenheight(void)
   }
 }
 
-void VGA_driver::setfont(Font f)
+void VGA_quark::setfont(Font f)
 {
   switch (mode)
   {

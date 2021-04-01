@@ -1,12 +1,12 @@
 //By Tsuki Superior
 #include "generic/fat32.hpp"
 
-FAT32_driver::FAT32_driver(void)
+FAT32_quark::FAT32_quark(void)
 {
   name = "File Allocation Table 32";
 }
 
-bool FAT32_driver::detectsystem(void)
+bool FAT32_quark::detectsystem(void)
 {
   //Doesn't work right now
   /*
@@ -24,51 +24,51 @@ bool FAT32_driver::detectsystem(void)
   return true;
 }
 
-void FAT32_driver::reset(void)
+void FAT32_quark::reset(void)
 {
 }
 
-char **FAT32_driver::readdir(char *path)
+char **FAT32_quark::readdir(char *path)
 {
   return (char **)NULL;
 }
 
-void FAT32_driver::rename(char *path, char *newPath)
+void FAT32_quark::rename(char *path, char *newPath)
 {
 }
 
-File FAT32_driver::open(char *path)
+File FAT32_quark::open(char *path)
 {
   return File();
 }
 
-void FAT32_driver::close(File file)
+void FAT32_quark::close(File file)
 {
 }
 
-char *FAT32_driver::read(File file)
-{
-  return "";
-}
-
-void FAT32_driver::write(File file, char *data)
-{
-}
-
-char *FAT32_driver::readfile(char *path)
+char *FAT32_quark::read(File file)
 {
   return "";
 }
 
-void FAT32_driver::writefile(char *path, char *data)
+void FAT32_quark::write(File file, char *data)
 {
 }
 
-void FAT32_driver::appendfile(char *path, char *data)
+char *FAT32_quark::readfile(char *path)
+{
+  return "";
+}
+
+void FAT32_quark::writefile(char *path, char *data)
 {
 }
 
-bool FAT32_driver::exists(char *path)
+void FAT32_quark::appendfile(char *path, char *data)
+{
+}
+
+bool FAT32_quark::exists(char *path)
 {
   return false;
 }

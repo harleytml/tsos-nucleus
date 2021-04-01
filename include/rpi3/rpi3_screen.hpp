@@ -2,14 +2,14 @@
 #ifndef __TSOS_RPI3_SCREEN_QUARK__
 #define __TSOS_RPI3_SCREEN_QUARK__
 
-#include "generic/video_driver.hpp"
+#include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class RPI3_SCREEN_driver : public Video_driver
+class RPI3_SCREEN_quark : public Video_quark
 {
 public:
-  RPI3_SCREEN_driver(void);
-  ~RPI3_SCREEN_driver();
+  RPI3_SCREEN_quark(void);
+  ~RPI3_SCREEN_quark();
   bool detectsystem(void) final;
   void reset(void) final;
   void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;

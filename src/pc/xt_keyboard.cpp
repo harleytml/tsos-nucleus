@@ -1,16 +1,16 @@
 //By Tsuki Superior
 #include "pc/xt_keyboard.hpp"
 
-XT_KEYBOARD_driver::XT_KEYBOARD_driver(void)
+XT_KEYBOARD_quark::XT_KEYBOARD_quark(void)
 {
   name = "PC/XT Keyboard";
 }
 
-XT_KEYBOARD_driver::~XT_KEYBOARD_driver()
+XT_KEYBOARD_quark::~XT_KEYBOARD_quark()
 {
 }
 
-bool XT_KEYBOARD_driver::detectsystem(void)
+bool XT_KEYBOARD_quark::detectsystem(void)
 {
 
   // Check the first keyboard flag bitmap
@@ -19,7 +19,7 @@ bool XT_KEYBOARD_driver::detectsystem(void)
   return (*((uint8_t *)0x496) & 0x10) == 0;
 }
 
-void XT_KEYBOARD_driver::reset(void)
+void XT_KEYBOARD_quark::reset(void)
 {
 }
 
@@ -30,7 +30,7 @@ void XT_KEYBOARD_driver::reset(void)
    if this starts to happen, your BIOS will beep at you.
    If you are testing TS/OS, please watch for this
     */
-key_identifier XT_KEYBOARD_driver::getkey(void)
+key_identifier XT_KEYBOARD_quark::getkey(void)
 {
   //Address is 0040:0096
 
@@ -41,21 +41,21 @@ key_identifier XT_KEYBOARD_driver::getkey(void)
   }
 }
 
-void XT_KEYBOARD_driver::waitkey(void)
+void XT_KEYBOARD_quark::waitkey(void)
 {
 }
 
-bool XT_KEYBOARD_driver::isshiftpressed(void)
-{
-  return false;
-}
-
-bool XT_KEYBOARD_driver::isaltpressed(void)
+bool XT_KEYBOARD_quark::isshiftpressed(void)
 {
   return false;
 }
 
-bool XT_KEYBOARD_driver::isctrlpressed(void)
+bool XT_KEYBOARD_quark::isaltpressed(void)
+{
+  return false;
+}
+
+bool XT_KEYBOARD_quark::isctrlpressed(void)
 {
   return false;
 }

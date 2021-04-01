@@ -2,15 +2,15 @@
 #ifndef __TSOS_ATAPI_QUARK__
 #define __TSOS_ATAPI_QUARK__
 
-#include "generic/disk_driver.hpp"
+#include "generic/disk_quark.hpp"
 
-class ATAPI_driver : public Disk_driver
+class ATAPI_quark : public Disk_quark
 {
 public:
   // Constructor
-  ATAPI_driver(void);
+  ATAPI_quark(void);
 
-  ~ATAPI_driver();
+  ~ATAPI_quark();
 
   bool detectsystem(void) final;
 

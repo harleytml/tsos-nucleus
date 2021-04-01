@@ -1,12 +1,12 @@
 //By Tsuki Superior
 #include "generic/udf.hpp"
 
-UDF_driver::UDF_driver(void)
+UDF_quark::UDF_quark(void)
 {
   name = "Universal Disk Filesystem";
 }
 
-bool UDF_driver::detectsystem(void)
+bool UDF_quark::detectsystem(void)
 {
   //Doesn't work right now
   /*
@@ -24,51 +24,51 @@ bool UDF_driver::detectsystem(void)
   return true;
 }
 
-void UDF_driver::reset(void)
+void UDF_quark::reset(void)
 {
 }
 
-char **UDF_driver::readdir(char *path)
+char **UDF_quark::readdir(char *path)
 {
   return (char **)"";
 }
 
-void UDF_driver::rename(char *path, char *newPath)
+void UDF_quark::rename(char *path, char *newPath)
 {
 }
 
-File UDF_driver::open(char *path)
+File UDF_quark::open(char *path)
 {
   return File();
 }
 
-void UDF_driver::close(File file)
+void UDF_quark::close(File file)
 {
 }
 
-char *UDF_driver::read(File file)
-{
-  return "";
-}
-
-void UDF_driver::write(File file, char *data)
-{
-}
-
-char *UDF_driver::readfile(char *path)
+char *UDF_quark::read(File file)
 {
   return "";
 }
 
-void UDF_driver::writefile(char *path, char *data)
+void UDF_quark::write(File file, char *data)
 {
 }
 
-void UDF_driver::appendfile(char *path, char *data)
+char *UDF_quark::readfile(char *path)
+{
+  return "";
+}
+
+void UDF_quark::writefile(char *path, char *data)
 {
 }
 
-bool UDF_driver::exists(char *path)
+void UDF_quark::appendfile(char *path, char *data)
+{
+}
+
+bool UDF_quark::exists(char *path)
 {
   return false;
 }

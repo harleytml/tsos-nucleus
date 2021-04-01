@@ -2,13 +2,13 @@
 #ifndef __TSOS_MDA_QUARK__
 #define __TSOS_MDA_QUARK__
 
-#include "generic/video_driver.hpp"
+#include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class MDA_driver : public Video_driver
+class MDA_quark : public Video_quark
 {
 public:
-  MDA_driver(void);
+  MDA_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;
