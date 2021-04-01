@@ -2,21 +2,21 @@
 #include "pc/pc_speaker.hpp"
 #include "generic/nucleus_instance.hpp"
 
-PC_SPEAKER_driver::PC_SPEAKER_driver(void)
+PC_SPEAKER_quark::PC_SPEAKER_quark(void)
 {
   name = "PC Speaker";
 }
 
-bool PC_SPEAKER_driver::detectsystem(void)
+bool PC_SPEAKER_quark::detectsystem(void)
 {
   return true;
 }
 
-void PC_SPEAKER_driver::reset(void)
+void PC_SPEAKER_quark::reset(void)
 {
 }
 
-void PC_SPEAKER_driver::playtone(uint32_t tone)
+void PC_SPEAKER_quark::playtone(uint32_t tone)
 {
   uint32_t div;
   uint8_t tmp;
@@ -35,7 +35,7 @@ void PC_SPEAKER_driver::playtone(uint32_t tone)
   }
 }
 
-void PC_SPEAKER_driver::killsound(void)
+void PC_SPEAKER_quark::killsound(void)
 {
   uint8_t tmp = tsos->io.get8(0x61) & 0xfc;
   tsos->io.put8(0x61, tmp);

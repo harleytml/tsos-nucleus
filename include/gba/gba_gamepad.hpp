@@ -1,7 +1,7 @@
 /* By Tsuki Superior
  * Gameboy Advanced Gamepad Driver 
  *
- * The driver for the GBA's control pad
+ * The quark for the GBA's control pad
  * Note that since the GBA's control pad has a few buttons,
  * you will have to scroll and choose your answer
  */
@@ -9,17 +9,17 @@
 #ifndef __TSOS_GBA_GAMEPAD_QUARK__
 #define __TSOS_GBA_GAMEPAD_QUARK__
 
-#include "generic/input_driver.hpp"
+#include "generic/input_quark.hpp"
 
-class GBA_GAMEPAD_driver : public Input_driver
+class GBA_GAMEPAD_quark : public Input_quark
 {
 public:
   // Constructor
-  GBA_GAMEPAD_driver(void);
+  GBA_GAMEPAD_quark(void);
 
-  ~GBA_GAMEPAD_driver();
+  ~GBA_GAMEPAD_quark();
 
-  // Detects if the module should be used
+  // Detects if the nucleon should be used
   bool detectsystem(void) final;
 
   void reset(void) final;

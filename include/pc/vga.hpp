@@ -2,13 +2,13 @@
 #ifndef __TSOS_VGA_QUARK__
 #define __TSOS_VGA_QUARK__
 
-#include "generic/video_driver.hpp"
+#include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class VGA_driver : public Video_driver
+class VGA_quark : public Video_quark
 {
 public:
-  VGA_driver(void);
+  VGA_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;

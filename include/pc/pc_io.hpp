@@ -2,14 +2,14 @@
 #define __TSOS_NUCLEUS_PC_IO_QUARK__
 
 #include "generic/types.hpp"
-#include "generic/io_driver.hpp"
+#include "generic/io_quark.hpp"
 
-class PC_IO_driver : public IO_driver
+class PC_IO_quark : public IO_quark
 {
 public:
-  PC_IO_driver(void);
+  PC_IO_quark(void);
 
-  ~PC_IO_driver();
+  ~PC_IO_quark();
 
   bool detectsystem(void) final;
 

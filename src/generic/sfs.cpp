@@ -1,12 +1,12 @@
 //By Tsuki Superior
 #include "generic/sfs.hpp"
 
-SFS_driver::SFS_driver(void)
+SFS_quark::SFS_quark(void)
 {
   name = "Simple File System";
 }
 
-bool SFS_driver::detectsystem(void)
+bool SFS_quark::detectsystem(void)
 {
   //Doesn't work right now
   /*
@@ -24,51 +24,51 @@ bool SFS_driver::detectsystem(void)
   return true;
 }
 
-void SFS_driver::reset(void)
+void SFS_quark::reset(void)
 {
 }
 
-char **SFS_driver::readdir(char *path)
+char **SFS_quark::readdir(char *path)
 {
   return (char **)"";
 }
 
-void SFS_driver::rename(char *path, char *newPath)
+void SFS_quark::rename(char *path, char *newPath)
 {
 }
 
-File SFS_driver::open(char *path)
+File SFS_quark::open(char *path)
 {
   return File();
 }
 
-void SFS_driver::close(File file)
+void SFS_quark::close(File file)
 {
 }
 
-char *SFS_driver::read(File file)
-{
-  return "";
-}
-
-void SFS_driver::write(File file, char *data)
-{
-}
-
-char *SFS_driver::readfile(char *path)
+char *SFS_quark::read(File file)
 {
   return "";
 }
 
-void SFS_driver::writefile(char *path, char *data)
+void SFS_quark::write(File file, char *data)
 {
 }
 
-void SFS_driver::appendfile(char *path, char *data)
+char *SFS_quark::readfile(char *path)
+{
+  return "";
+}
+
+void SFS_quark::writefile(char *path, char *data)
 {
 }
 
-bool SFS_driver::exists(char *path)
+void SFS_quark::appendfile(char *path, char *data)
+{
+}
+
+bool SFS_quark::exists(char *path)
 {
   return false;
 }

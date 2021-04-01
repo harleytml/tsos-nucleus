@@ -2,7 +2,7 @@
  * Nucleus Configuration
  *
  * This is the configuration file that detects from the defines to see what
- * drivers should actually be included
+ * quarks should actually be included
  */
 
 #ifndef __TSOS_CURRENT_CONFIG__

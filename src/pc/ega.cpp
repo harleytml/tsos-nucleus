@@ -1,13 +1,13 @@
 //By Tsuki Superior
 #include "pc/ega.hpp"
 
-EGA_driver::EGA_driver(void)
+EGA_quark::EGA_quark(void)
 {
   name = "Enhanced Graphics Adapter";
   font = Font();
 }
 
-bool EGA_driver::detectsystem(void)
+bool EGA_quark::detectsystem(void)
 {
   // Check to see if VGA or EGA is installed
   // WARNING: This also passes for VGA
@@ -16,7 +16,7 @@ bool EGA_driver::detectsystem(void)
   return *((uint8_t *)0x487) != 0;
 }
 
-void EGA_driver::reset(void)
+void EGA_quark::reset(void)
 {
   switch (*((uint16_t *)0x410) & 0x30)
   {
@@ -29,7 +29,7 @@ void EGA_driver::reset(void)
   }
 }
 
-void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
+void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
   uint16_t screenwidth = getscreenwidth();
@@ -38,7 +38,7 @@ void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   {
   case TEXT:
 
-    // Lets check if the video system has made it in a mode different than when the driver was initialized
+    // Lets check if the video system has made it in a mode different than when the quark was initialized
     // We are checking the video controller 6845 port number for the color type
     switch (*((uint16_t *)0x410) & 0x30)
     {
@@ -51,7 +51,7 @@ void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
     //Color
     case 0x20:
       /* 
-      This is a early driver
+      This is a early quark
       Each attribute has 1 bit per color, plus intensity
       Basically, if a color is higher than 0x80, it is considered active
       The result is a rather messy algorithem
@@ -114,7 +114,7 @@ void EGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   }
 }
 
-void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
+void EGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
   uint16_t color = 0;
   volatile uint8_t *location = (uint8_t *)0xA0000 + getscreenwidth() * pos_y + pos_x;
@@ -126,7 +126,7 @@ void EGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
   *location = color;
 }
 
-uint16_t EGA_driver::getscreenwidth(void)
+uint16_t EGA_quark::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
@@ -134,7 +134,7 @@ uint16_t EGA_driver::getscreenwidth(void)
   return *((uint16_t *)0x44a);
 }
 
-uint16_t EGA_driver::getscreenheight(void)
+uint16_t EGA_quark::getscreenheight(void)
 {
   switch (mode)
   {
@@ -149,7 +149,7 @@ uint16_t EGA_driver::getscreenheight(void)
   }
 }
 
-void EGA_driver::setfont(Font f)
+void EGA_quark::setfont(Font f)
 {
   switch (mode)
   {

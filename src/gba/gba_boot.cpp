@@ -1,28 +1,28 @@
 //By Tsuki Superior
 #include "gba/gba_boot.hpp"
 
-GBA_BOOT_driver::GBA_BOOT_driver(void)
+GBA_BOOT_quark::GBA_BOOT_quark(void)
 {
   name = "Gameboy Advanced Boot";
 }
 
-GBA_BOOT_driver::~GBA_BOOT_driver(void)
+GBA_BOOT_quark::~GBA_BOOT_quark(void)
 {
 }
 
-bool GBA_BOOT_driver::detectsystem(void)
+bool GBA_BOOT_quark::detectsystem(void)
 {
   return true;
 }
 
-void GBA_BOOT_driver::reset(void)
+void GBA_BOOT_quark::reset(void)
 {
 }
 
-void GBA_BOOT_driver::reboot(void)
+void GBA_BOOT_quark::reboot(void)
 {
 }
 
-void GBA_BOOT_driver::shutdown(void)
+void GBA_BOOT_quark::shutdown(void)
 {
 }

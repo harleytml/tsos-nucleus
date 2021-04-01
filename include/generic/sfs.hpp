@@ -6,13 +6,13 @@
 #ifndef __TSOS_SFS_QUARK__
 #define __TSOS_SFS_QUARK__
 
-#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_quark.hpp"
 #include "generic/filesystem_file.hpp"
 
-class SFS_driver : public Filesystem_driver
+class SFS_quark : public Filesystem_quark
 {
 public:
-  SFS_driver(void);
+  SFS_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   char **readdir(char *path) final;

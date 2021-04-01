@@ -2,13 +2,13 @@
 #ifndef __TSOS_CGA_QUARK__
 #define __TSOS_CGA_QUARK__
 
-#include "generic/video_driver.hpp"
+#include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class CGA_driver : public Video_driver
+class CGA_quark : public Video_quark
 {
 public:
-  CGA_driver(void);
+  CGA_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   void drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c) final;

@@ -1,29 +1,29 @@
 //By Tsuki Superior
 #include "pc/atapi.hpp"
 
-ATAPI_driver::ATAPI_driver(void)
+ATAPI_quark::ATAPI_quark(void)
 {
   name = "AT Attachment Packet Interface";
 }
 
-ATAPI_driver::~ATAPI_driver()
+ATAPI_quark::~ATAPI_quark()
 {
 }
 
-bool ATAPI_driver::detectsystem()
+bool ATAPI_quark::detectsystem()
 {
   return true;
 }
 
-void ATAPI_driver::reset(void)
+void ATAPI_quark::reset(void)
 {
 }
 
-void ATAPI_driver::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len)
+void ATAPI_quark::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len)
 {
 }
 
-uint16_t ATAPI_driver::getsectorsize(void)
+uint16_t ATAPI_quark::getsectorsize(void)
 {
   return 2048;
 }

@@ -1,27 +1,27 @@
 //By Tsuki Superior
 #include "gba/gba_io_port.hpp"
 
-GBA_IO_PORT_driver::GBA_IO_PORT_driver(void)
+GBA_IO_PORT_quark::GBA_IO_PORT_quark(void)
 {
   name = "Gameboy Advanced IO Port";
 }
 
-bool GBA_IO_PORT_driver::detectsystem(void)
+bool GBA_IO_PORT_quark::detectsystem(void)
 {
   return true;
 }
 
-void GBA_IO_PORT_driver::reset(void)
+void GBA_IO_PORT_quark::reset(void)
 {
 }
 
-bool GBA_IO_PORT_driver::isdevicethere(void)
+bool GBA_IO_PORT_quark::isdevicethere(void)
 {
   return false;
 }
 
 // Serial on the DMG is lovely and simple
-uint8_t GBA_IO_PORT_driver::exchangebyte(uint8_t b)
+uint8_t GBA_IO_PORT_quark::exchangebyte(uint8_t b)
 {
   return 0;
 }

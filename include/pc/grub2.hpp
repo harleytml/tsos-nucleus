@@ -2,16 +2,16 @@
 #ifndef __TSOS_GRUB2_QUARK__
 #define __TSOS_GRUB2_QUARK__
 
-#include "generic/boot_driver.hpp"
+#include "generic/boot_quark.hpp"
 
-class GRUB2_driver : public Boot_driver
+class GRUB2_quark : public Boot_quark
 {
 public:
   //Constructor
-  GRUB2_driver(void);
+  GRUB2_quark(void);
 
   //Destructor
-  ~GRUB2_driver();
+  ~GRUB2_quark();
 
   //Detect the type of system its running on
   bool detectsystem(void) final;

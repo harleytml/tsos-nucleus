@@ -1,24 +1,24 @@
 //By Tsuki Superior
 #include "gba/gba_sound.hpp"
 
-GBA_SOUND_driver::GBA_SOUND_driver(void)
+GBA_SOUND_quark::GBA_SOUND_quark(void)
 {
   name = "Gameboy Advanced Sound";
 }
 
-bool GBA_SOUND_driver::detectsystem(void)
+bool GBA_SOUND_quark::detectsystem(void)
 {
   return true;
 }
 
-void GBA_SOUND_driver::reset(void)
+void GBA_SOUND_quark::reset(void)
 {
 }
 
-void GBA_SOUND_driver::playtone(uint32_t tone)
+void GBA_SOUND_quark::playtone(uint32_t tone)
 {
 }
 
-void GBA_SOUND_driver::killsound(void)
+void GBA_SOUND_quark::killsound(void)
 {
 }

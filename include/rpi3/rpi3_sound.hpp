@@ -2,12 +2,12 @@
 #ifndef __TSOS_RPI3_SOUND_QUARK__
 #define __TSOS_RPI3_SOUND_QUARK__
 
-#include "generic/sound_driver.hpp"
+#include "generic/sound_quark.hpp"
 
-class RPI3_SOUND_driver : public Sound_driver
+class RPI3_SOUND_quark : public Sound_quark
 {
 public:
-  RPI3_SOUND_driver(void);
+  RPI3_SOUND_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   void playtone(uint32_t tone) final;

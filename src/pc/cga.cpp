@@ -1,13 +1,13 @@
 //By Tsuki Superior
 #include "pc/cga.hpp"
 
-CGA_driver::CGA_driver(void)
+CGA_quark::CGA_quark(void)
 {
   name = "Color Graphics Array";
   font = Font();
 }
 
-bool CGA_driver::detectsystem(void)
+bool CGA_quark::detectsystem(void)
 {
 
   // Check to make sure EGA and VGA is not installed
@@ -28,7 +28,7 @@ bool CGA_driver::detectsystem(void)
   return false;
 }
 
-void CGA_driver::reset(void)
+void CGA_quark::reset(void)
 {
   switch (*((uint16_t *)0x410) & 0x30)
   {
@@ -41,11 +41,11 @@ void CGA_driver::reset(void)
   }
 }
 
-void CGA_driver::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
+void CGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
 }
 
-void CGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
+void CGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
   uint8_t a = 0;
   uint16_t screenwidth = getscreenwidth();
@@ -54,7 +54,7 @@ void CGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   {
   case TEXT:
 
-    // Lets check if the video system has made it in a mode different than when the driver was initialized
+    // Lets check if the video system has made it in a mode different than when the quark was initialized
     // We are checking the video controller 6845 port number for the color type
     switch (*((uint16_t *)0x410) & 0x30)
     {
@@ -67,7 +67,7 @@ void CGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
     //Color
     case 0x20:
       /* 
-      This is a early driver
+      This is a early quark
       Each attribute has 1 bit per color, plus intensity
       Basically, if a color is higher than 0x80, it is considered active
       The result is a rather messy algorithem
@@ -130,7 +130,7 @@ void CGA_driver::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, 
   }
 }
 
-uint16_t CGA_driver::getscreenwidth(void)
+uint16_t CGA_quark::getscreenwidth(void)
 {
 
   // Read the width from a BIOS field
@@ -138,7 +138,7 @@ uint16_t CGA_driver::getscreenwidth(void)
   return *((uint16_t *)0x44a);
 }
 
-uint16_t CGA_driver::getscreenheight(void)
+uint16_t CGA_quark::getscreenheight(void)
 {
   switch (mode)
   {
@@ -153,7 +153,7 @@ uint16_t CGA_driver::getscreenheight(void)
   }
 }
 
-void CGA_driver::setfont(Font f)
+void CGA_quark::setfont(Font f)
 {
   switch (mode)
   {

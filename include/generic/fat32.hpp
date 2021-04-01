@@ -8,13 +8,13 @@
 #ifndef __TSOS_FAT32_QUARK__
 #define __TSOS_FAT32_QUARK__
 
-#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_quark.hpp"
 #include "generic/filesystem_file.hpp"
 
-class FAT32_driver : public Filesystem_driver
+class FAT32_quark : public Filesystem_quark
 {
 public:
-  FAT32_driver(void);
+  FAT32_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   char **readdir(char *path) final;

@@ -7,13 +7,13 @@
 #ifndef __TSOS_FAT16_QUARK__
 #define __TSOS_FAT16_QUARK__
 
-#include "generic/filesystem_driver.hpp"
+#include "generic/filesystem_quark.hpp"
 #include "generic/filesystem_file.hpp"
 
-class FAT16_driver : public Filesystem_driver
+class FAT16_quark : public Filesystem_quark
 {
 public:
-  FAT16_driver(void);
+  FAT16_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
   char **readdir(char *path) final;
