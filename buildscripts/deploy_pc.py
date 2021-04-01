@@ -10,3 +10,7 @@ from termcolor import cprint
 if os.system("grub-file --is-x86-multiboot nucleus") != 0:
     cprint("The Nucleus is malformed (not multiboot complaint)", "red")
     exit(1)
+
+if os.system("grub-script-check ../misc/grub.cfg") != 0:
+    cprint("The grub config file is not valid", "red")
+    exit(1)
