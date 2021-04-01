@@ -71,4 +71,6 @@ public:
   const char *short_code_name;
 };
 
+static bool nucleuslock = false;
+
 #endif
