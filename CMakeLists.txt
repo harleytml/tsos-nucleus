@@ -54,9 +54,9 @@ file(GLOB source_files "src/generic/*")
 
 set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 add_compile_options(
+  -Og
   -ffreestanding
   -g
-  -Og
   -Wall
   -Wextra
   -Wno-unused-private-field
@@ -79,8 +79,7 @@ add_compile_options(
 add_link_options(
   -Og
   -g
-  -T
-  ../linkerscripts/${linker_script}
+  -T../linkerscripts/${linker_script}
   -fuse-ld=lld
   -static
   -ffreestanding
