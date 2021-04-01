@@ -7,5 +7,5 @@ _start:
 
     bl kernel_main
 
-    0:
-      b 0b
+    _stop:
+      b _stop

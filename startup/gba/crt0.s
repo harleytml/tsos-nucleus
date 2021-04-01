@@ -29,14 +29,14 @@
 @ or non-commercial usage with no restrictions placed upon it.
 
 .text
-.global     _start
+.global _start
 .type _start, #function
 _start:
         .align
         .code 32
     @ Start Vector
 
-        b       rom_header_end
+        b rom_header_end
 
     @ Nintendo Logo Character Data (8000004h)
         .fill   156,1,0

@@ -70,6 +70,7 @@ add_compile_options(
   -fno-unwind-tables
   -nostdlib
   -nodefaultlibs
+  -nostdinc++
   -fno-stack-protector
   -fno-strict-aliasing
   -ffunction-sections

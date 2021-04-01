@@ -6,7 +6,7 @@
 .set CHECKSUM, -(MAGIC + FLAGS) # checksum of above, to prove we are multiboot
 
 # Declare a header as in the Multiboot Standard.
-.section .boot
+.section .text.boot
 .align 4
 .long MAGIC
 .long FLAGS

@@ -23,7 +23,7 @@ SECTIONS
 
 	.text ALIGN(4K) : 
 	{
-    KEEP(*(.boot))
+    KEEP(*(.text.boot))
 		*(.text .text.*)
 		*(.init)
 		*(.fini)

@@ -4,7 +4,7 @@
       "name": "PC",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/bin/clang++-12",
+      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "intelliSenseMode": "clang-x86",
@@ -38,7 +38,7 @@
       "name": "GBA",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/bin/clang++-12",
+      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "intelliSenseMode": "clang-arm",
@@ -67,13 +67,17 @@
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
       },
-      "configurationProvider": "ms-vscode.makefile-tools"
+      "configurationProvider": "ms-vscode.makefile-tools",
+      "intelliSenseModeIsExplicit": true,
+      "cStandardIsExplicit": true,
+      "cppStandardIsExplicit": true,
+      "compilerPathIsExplicit": true
     },
     {
       "name": "NSPIRE",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/bin/clang++-12",
+      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "compilerArgs": [
@@ -101,7 +105,11 @@
         "path": ["${workspaceFolder}/**"],
         "limitSymbolsToIncludedHeaders": true
       },
-      "intelliSenseMode": "clang-arm"
+      "intelliSenseMode": "clang-arm",
+      "intelliSenseModeIsExplicit": true,
+      "cStandardIsExplicit": true,
+      "cppStandardIsExplicit": true,
+      "compilerPathIsExplicit": true
     },
     {
       "name": "RPI3",
