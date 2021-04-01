@@ -4,6 +4,14 @@
 
 Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {
+  if (nucleuslock)
+  {
+    boot.fission("NUCLEUS LOCK VIOLATED");
+  }
+  else
+  {
+    nucleuslock = true;
+  }
 }
 
 Tsos::~Tsos()
