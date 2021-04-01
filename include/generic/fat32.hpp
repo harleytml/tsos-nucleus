@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic FAT32 Driver
+ * Generic FAT32 Quark
  *
  * The FAT32 will be used more than its previous versions of FAT.
  * 

@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Filesystem Driver
+ * Abstract Filesystem Quark
  * 
  * To make a new Filesystem quark, simply have it inherit from this class
  * 
@@ -12,7 +12,7 @@
 #include "generic/types.hpp"
 #include "generic/filesystem_file.hpp"
 
-class Filesystem_quark : public Driver
+class Filesystem_quark : public Quark
 {
 public:
   //Constructor

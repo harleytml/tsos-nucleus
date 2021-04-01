@@ -1,10 +1,10 @@
 //By Tsuki Superior
 #include "generic/quark.hpp"
 
-Driver::Driver(void) : name("")
+Quark::Quark(void) : name("")
 {
 }
 
-Driver::~Driver(void)
+Quark::~Quark(void)
 {
 }

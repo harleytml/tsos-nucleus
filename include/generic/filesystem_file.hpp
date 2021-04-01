@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic Filesystem File Driver
+ * Generic Filesystem File Quark
  *
  * This is the file type that the nucleus uses internally
  * to represent files

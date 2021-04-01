@@ -10,7 +10,7 @@
 #include "generic/quark.hpp"
 #include "generic/types.hpp"
 
-class IO_quark : public Driver
+class IO_quark : public Quark
 {
 public:
   // Constructor

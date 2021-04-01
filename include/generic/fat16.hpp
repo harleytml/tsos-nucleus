@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic FAT16 Driver
+ * Generic FAT16 Quark
  *
  * The FAT16 will be used rarely these days, but you might see it on a floppy disk
  */

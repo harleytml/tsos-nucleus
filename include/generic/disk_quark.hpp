@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Disk Driver
+ * Abstract Disk Quark
  * 
  * To make a new Disk quark, simply have it inherit from this class
  */
@@ -10,7 +10,7 @@
 #include "generic/quark.hpp"
 #include "generic/types.hpp"
 
-class Disk_quark : public Driver
+class Disk_quark : public Quark
 {
 public:
   // Constructor

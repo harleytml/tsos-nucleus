@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Universal Disk Filesystem Driver
+ * Universal Disk Filesystem Quark
  * 
  * Normally filesystem quarks are multiplatform, but
  * this one is for PC only, because as of TS/OS version 0.0

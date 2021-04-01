@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Video Driver
+ * Abstract Video Quark
  * 
  * To make a new Video quark, simply have it inherit from this class
  * 
@@ -15,7 +15,7 @@
 #include "generic/video_font.hpp"
 #include "generic/video_color.hpp"
 
-class Video_quark : public Driver
+class Video_quark : public Quark
 {
 public:
   // Constructor

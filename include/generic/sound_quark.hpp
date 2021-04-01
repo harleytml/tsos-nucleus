@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Sound Driver
+ * Abstract Sound Quark
  *
  * To make a new Sound quark, simply have it inherit from this class
  * 
@@ -12,7 +12,7 @@
 #include "generic/quark.hpp"
 #include "generic/types.hpp"
 
-class Sound_quark : public Driver
+class Sound_quark : public Quark
 {
 public:
   // Constructor

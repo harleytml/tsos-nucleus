@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Serial Driver
+ * Abstract Serial Quark
  * 
  * To make a new Serial quark, simply have it inherit from this class
  * 
@@ -12,7 +12,7 @@
 #include "generic/quark.hpp"
 #include "generic/types.hpp"
 
-class Serial_quark : public Driver
+class Serial_quark : public Quark
 {
 public:
   // Constructor

@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Model by Brendan Trotter
- * Simple Filesystem Driver
+ * Simple Filesystem Quark
  */
 
 #ifndef __TSOS_SFS_QUARK__

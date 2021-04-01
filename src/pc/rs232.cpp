@@ -1,4 +1,4 @@
-//Driver by Tsuki Superior
+//Quark by Tsuki Superior
 #include "pc/rs232.hpp"
 
 RS232_quark::RS232_quark(void)
