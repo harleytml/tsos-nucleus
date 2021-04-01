@@ -4,8 +4,8 @@
  * To make a new Input driver, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_DRIVER__
-#define __TSOS_NUCLEUS_INPUT_DRIVER__
+#ifndef __TSOS_NUCLEUS_INPUT_QUARK__
+#define __TSOS_NUCLEUS_INPUT_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

@@ -12,8 +12,8 @@
  * actual format and not just a blob of raw data
  */
 
-#ifndef __TSOS_GBA_CARTRIDGE_DRIVER__
-#define __TSOS_GBA_CARTRIDGE_DRIVER__
+#ifndef __TSOS_GBA_CARTRIDGE_QUARK__
+#define __TSOS_GBA_CARTRIDGE_QUARK__
 
 #include "generic/disk_driver.hpp"
 

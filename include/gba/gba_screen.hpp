@@ -10,8 +10,8 @@
  * as its height.
  */
 
-#ifndef __TSOS_GBA_SCREEN_DRIVER__
-#define __TSOS_GBA_SCREEN_DRIVER__
+#ifndef __TSOS_GBA_SCREEN_QUARK__
+#define __TSOS_GBA_SCREEN_QUARK__
 
 #define MODE3 0x0003
 #define BG2 0x0400

@@ -5,8 +5,8 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
-#define __TSOS_NUCLEUS_FILESYSTEM_DRIVER__
+#ifndef __TSOS_NUCLEUS_FILESYSTEM_QUARK__
+#define __TSOS_NUCLEUS_FILESYSTEM_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

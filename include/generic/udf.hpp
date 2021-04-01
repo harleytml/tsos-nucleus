@@ -7,8 +7,8 @@
  * and this is most likely to happen on PC for UDF, because its used on Disks
  */
 
-#ifndef __TSOS_UDF_DRIVER__
-#define __TSOS_UDF_DRIVER__
+#ifndef __TSOS_UDF_QUARK__
+#define __TSOS_UDF_QUARK__
 
 #include "generic/filesystem_driver.hpp"
 #include "generic/filesystem_file.hpp"

@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_EGA_DRIVER__
-#define __TSOS_EGA_DRIVER__
+#ifndef __TSOS_EGA_QUARK__
+#define __TSOS_EGA_QUARK__
 
 #include "generic/video_driver.hpp"
 #include "generic/video_modes.hpp"

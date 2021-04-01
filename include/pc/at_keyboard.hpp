@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_AT_KEYBOARD_DRIVER__
-#define __TSOS_AT_KEYBOARD_DRIVER__
+#ifndef __TSOS_AT_KEYBOARD_QUARK__
+#define __TSOS_AT_KEYBOARD_QUARK__
 
 #include "generic/input_driver.hpp"
 

@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_UART_DRIVER__
-#define __TSOS_RPI3_UART_DRIVER__
+#ifndef __TSOS_RPI3_UART_QUARK__
+#define __TSOS_RPI3_UART_QUARK__
 
 #include "generic/serial_driver.hpp"
 

@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_SCREEN_DRIVER__
-#define __TSOS_RPI3_SCREEN_DRIVER__
+#ifndef __TSOS_RPI3_SCREEN_QUARK__
+#define __TSOS_RPI3_SCREEN_QUARK__
 
 #include "generic/video_driver.hpp"
 #include "generic/video_modes.hpp"

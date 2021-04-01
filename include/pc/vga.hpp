@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_VGA_DRIVER__
-#define __TSOS_VGA_DRIVER__
+#ifndef __TSOS_VGA_QUARK__
+#define __TSOS_VGA_QUARK__
 
 #include "generic/video_driver.hpp"
 #include "generic/video_modes.hpp"

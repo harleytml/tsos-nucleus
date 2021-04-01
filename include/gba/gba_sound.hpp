@@ -2,8 +2,8 @@
  * Gameboy Advanced Sound Driver
  */
 
-#ifndef __TSOS_GBA_SOUND_DRIVER__
-#define __TSOS_GBA_SOUND_DRIVER__
+#ifndef __TSOS_GBA_SOUND_QUARK__
+#define __TSOS_GBA_SOUND_QUARK__
 
 #include "generic/sound_driver.hpp"
 

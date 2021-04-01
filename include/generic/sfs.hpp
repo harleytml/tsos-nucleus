@@ -3,8 +3,8 @@
  * Simple Filesystem Driver
  */
 
-#ifndef __TSOS_SFS_DRIVER__
-#define __TSOS_SFS_DRIVER__
+#ifndef __TSOS_SFS_QUARK__
+#define __TSOS_SFS_QUARK__
 
 #include "generic/filesystem_driver.hpp"
 #include "generic/filesystem_file.hpp"

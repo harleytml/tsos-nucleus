@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_RS232_DRIVER__
-#define __TSOS_RS232_DRIVER__
+#ifndef __TSOS_RS232_QUARK__
+#define __TSOS_RS232_QUARK__
 
 #include "generic/serial_driver.hpp"
 

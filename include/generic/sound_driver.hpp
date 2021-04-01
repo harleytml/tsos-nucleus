@@ -6,8 +6,8 @@
  * The TS/OS sound api is pretty slim right now (as of version 0.0)
  */
 
-#ifndef __TSOS_NUCLEUS_SOUND_DRIVER__
-#define __TSOS_NUCLEUS_SOUND_DRIVER__
+#ifndef __TSOS_NUCLEUS_SOUND_QUARK__
+#define __TSOS_NUCLEUS_SOUND_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

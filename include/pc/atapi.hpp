@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_ATAPI_DRIVER__
-#define __TSOS_ATAPI_DRIVER__
+#ifndef __TSOS_ATAPI_QUARK__
+#define __TSOS_ATAPI_QUARK__
 
 #include "generic/disk_driver.hpp"
 

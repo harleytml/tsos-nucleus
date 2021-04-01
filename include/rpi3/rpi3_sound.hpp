@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_SOUND_DRIVER__
-#define __TSOS_RPI3_SOUND_DRIVER__
+#ifndef __TSOS_RPI3_SOUND_QUARK__
+#define __TSOS_RPI3_SOUND_QUARK__
 
 #include "generic/sound_driver.hpp"
 

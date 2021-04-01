@@ -6,8 +6,8 @@
  * you will have to scroll and choose your answer
  */
 
-#ifndef __TSOS_GBA_GAMEPAD_DRIVER__
-#define __TSOS_GBA_GAMEPAD_DRIVER__
+#ifndef __TSOS_GBA_GAMEPAD_QUARK__
+#define __TSOS_GBA_GAMEPAD_QUARK__
 
 #include "generic/input_driver.hpp"
 

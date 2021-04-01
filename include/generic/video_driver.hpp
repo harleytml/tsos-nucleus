@@ -7,8 +7,8 @@
  * kept in the wrapper module, to ease the load on making consistant drivers
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_DRIVER__
-#define __TSOS_NUCLEUS_VIDEO_DRIVER__
+#ifndef __TSOS_NUCLEUS_VIDEO_QUARK__
+#define __TSOS_NUCLEUS_VIDEO_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

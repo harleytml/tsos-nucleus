@@ -10,8 +10,8 @@
  * 
  */
 
-#ifndef __TSOS_GBA_BOOT_DRIVER__
-#define __TSOS_GBA_BOOT_DRIVER__
+#ifndef __TSOS_GBA_BOOT_QUARK__
+#define __TSOS_GBA_BOOT_QUARK__
 
 #include "generic/boot_driver.hpp"
 
