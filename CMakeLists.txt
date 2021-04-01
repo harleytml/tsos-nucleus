@@ -80,7 +80,7 @@ add_link_options(
   -Og
   -g
   -T
-  ../linker-scripts/${linker_script}
+  ../linkerscripts/${linker_script}
   -fuse-ld=lld
   -static
   -ffreestanding
