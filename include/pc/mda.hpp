@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_MDA_DRIVER__
-#define __TSOS_MDA_DRIVER__
+#ifndef __TSOS_MDA_QUARK__
+#define __TSOS_MDA_QUARK__
 
 #include "generic/video_driver.hpp"
 #include "generic/video_modes.hpp"

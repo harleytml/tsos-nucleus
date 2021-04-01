@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_PC_SPEAKER_DRIVER__
-#define __TSOS_PC_SPEAKER_DRIVER__
+#ifndef __TSOS_PC_SPEAKER_QUARK__
+#define __TSOS_PC_SPEAKER_QUARK__
 
 #include "generic/sound_driver.hpp"
 #include "generic/types.hpp"

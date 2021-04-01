@@ -6,8 +6,8 @@
  * data.
  */
 
-#ifndef __TSOS_GBA_IO_PORT_DRIVER__
-#define __TSOS_GBA_IO_PORT_DRIVER__
+#ifndef __TSOS_GBA_IO_PORT_QUARK__
+#define __TSOS_GBA_IO_PORT_QUARK__
 
 #include "generic/serial_driver.hpp"
 

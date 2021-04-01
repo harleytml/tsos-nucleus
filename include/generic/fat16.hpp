@@ -4,8 +4,8 @@
  * The FAT16 will be used rarely these days, but you might see it on a floppy disk
  */
 
-#ifndef __TSOS_FAT16_DRIVER__
-#define __TSOS_FAT16_DRIVER__
+#ifndef __TSOS_FAT16_QUARK__
+#define __TSOS_FAT16_QUARK__
 
 #include "generic/filesystem_driver.hpp"
 #include "generic/filesystem_file.hpp"

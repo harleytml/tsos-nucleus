@@ -7,8 +7,8 @@
  * The only other class would be COFF or maybe some windows format
  */
 
-#ifndef __TSOS_NUCLEUS_PROCESS_DRIVER__
-#define __TSOS_NUCLEUS_PROCESS_DRIVER__
+#ifndef __TSOS_NUCLEUS_PROCESS_QUARK__
+#define __TSOS_NUCLEUS_PROCESS_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

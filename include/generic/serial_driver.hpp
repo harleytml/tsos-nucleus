@@ -6,8 +6,8 @@
  * Not sure how useful serial is (other than debugging), but I'll write drivers for it anyway
  */
 
-#ifndef __TSOS_NUCLEUS_SERIAL_DRIVER__
-#define __TSOS_NUCLEUS_SERIAL_DRIVER__
+#ifndef __TSOS_NUCLEUS_SERIAL_QUARK__
+#define __TSOS_NUCLEUS_SERIAL_QUARK__
 
 #include "generic/driver.hpp"
 #include "generic/types.hpp"

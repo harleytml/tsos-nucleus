@@ -4,8 +4,8 @@
  * To make a new Boot driver, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_BOOT_DRIVER__
-#define __TSOS_NUCLEUS_BOOT_DRIVER__
+#ifndef __TSOS_NUCLEUS_BOOT_QUARK__
+#define __TSOS_NUCLEUS_BOOT_QUARK__
 
 #include "generic/driver.hpp"
 

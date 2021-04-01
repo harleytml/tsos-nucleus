@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_GRUB2_DRIVER__
-#define __TSOS_GRUB2_DRIVER__
+#ifndef __TSOS_GRUB2_QUARK__
+#define __TSOS_GRUB2_QUARK__
 
 #include "generic/boot_driver.hpp"
 

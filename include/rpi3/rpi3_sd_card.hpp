@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_SD_CARD_DRIVER__
-#define __TSOS_RPI3_SD_CARD_DRIVER__
+#ifndef __TSOS_RPI3_SD_CARD_QUARK__
+#define __TSOS_RPI3_SD_CARD_QUARK__
 
 #include "generic/disk_driver.hpp"
 

@@ -5,8 +5,8 @@
  * around the ELF format
  */
 
-#ifndef __TSOS_ELF_DRIVER__
-#define __TSOS_ELF_DRIVER__
+#ifndef __TSOS_ELF_QUARK__
+#define __TSOS_ELF_QUARK__
 
 #include "generic/process_driver.hpp"
 #include "generic/filesystem_file.hpp"
