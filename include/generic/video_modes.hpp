@@ -1,4 +1,9 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Video Modes
+ * 
+ * The possible modes for video in TS/OS
+ */
+
 #ifndef __TSOS_NUCLEUS_VIDEO_MODES__
 #define __TSOS_NUCLEUS_VIDEO_MODES__
 

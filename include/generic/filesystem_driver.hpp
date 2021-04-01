@@ -1,6 +1,8 @@
 /* By Tsuki Superior
  * Abstract Filesystem Driver
  * 
+ * To make a new Filesystem driver, simply have it inherit from this class
+ * 
  */
 
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_DRIVER__

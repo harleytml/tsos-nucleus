@@ -1,7 +1,7 @@
 /* By Tsuki Superior
  * Abstract Input Driver
  * 
- * This is the abstract driver for the input driver
+ * To make a new Input driver, simply have it inherit from this class
  */
 
 #ifndef __TSOS_NUCLEUS_INPUT_DRIVER__

@@ -1,4 +1,12 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ * Universal Disk Filesystem Driver
+ * 
+ * Normally filesystem drivers are multiplatform, but
+ * this one is for PC only, because as of TS/OS version 0.0
+ * the only drive that can be read from is the one that was booted from,
+ * and this is most likely to happen on PC for UDF, because its used on Disks
+ */
+
 #ifndef __TSOS_UDF_DRIVER__
 #define __TSOS_UDF_DRIVER__
 

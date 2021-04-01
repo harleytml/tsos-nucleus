@@ -1,6 +1,10 @@
 /* By Tsuki Superior
  * Abstract Video Driver
  * 
+ * To make a new Video driver, simply have it inherit from this class
+ * 
+ * The TS/OS video drivers do not have to do much, because most of the functionality is
+ * kept in the wrapper module, to ease the load on making consistant drivers
  */
 
 #ifndef __TSOS_NUCLEUS_VIDEO_DRIVER__

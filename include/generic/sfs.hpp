@@ -1,5 +1,8 @@
-//By Tsuki Superior
-//Model by Brendan Trotter
+/* By Tsuki Superior
+ *Model by Brendan Trotter
+ * Simple Filesystem Driver
+ */
+
 #ifndef __TSOS_SFS_DRIVER__
 #define __TSOS_SFS_DRIVER__
 
