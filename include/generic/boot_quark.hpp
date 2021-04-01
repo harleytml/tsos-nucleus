@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Boot Driver
+ * Abstract Boot Quark
  *
  * To make a new Boot quark, simply have it inherit from this class
  */
@@ -9,7 +9,7 @@
 
 #include "generic/quark.hpp"
 
-class Boot_quark : public Driver
+class Boot_quark : public Quark
 {
 public:
   // Constructor

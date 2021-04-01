@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced IO Port Driver 
+ * Gameboy Advanced IO Port Quark 
  *
  * The quark for the GBA's io port
  * The GBA has a simple serial port that is usually used for transmitting game 

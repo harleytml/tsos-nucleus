@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced Sound Driver
+ * Gameboy Advanced Sound Quark
  */
 
 #ifndef __TSOS_GBA_SOUND_QUARK__

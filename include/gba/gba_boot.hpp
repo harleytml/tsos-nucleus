@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced Boot Driver 
+ * Gameboy Advanced Boot Quark 
  *
  * Note that the GBA is a simple game console
  * and therefore has no hardware provided functions for anything

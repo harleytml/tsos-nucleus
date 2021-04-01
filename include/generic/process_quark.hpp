@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Process Driver
+ * Abstract Process Quark
  * 
  * To make a new Process quark, simply have it inherit from this class
  * 
@@ -13,7 +13,7 @@
 #include "generic/quark.hpp"
 #include "generic/types.hpp"
 
-class Process_quark : public Driver
+class Process_quark : public Quark
 {
 public:
   Process_quark(void);

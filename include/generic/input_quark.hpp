@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Input Driver
+ * Abstract Input Quark
  * 
  * To make a new Input quark, simply have it inherit from this class
  */
@@ -11,7 +11,7 @@
 #include "generic/types.hpp"
 #include "generic/input_key_identifier.hpp"
 
-class Input_quark : public Driver
+class Input_quark : public Quark
 {
 public:
   // Constructor

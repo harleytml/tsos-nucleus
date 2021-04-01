@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced Gamepad Driver 
+ * Gameboy Advanced Gamepad Quark 
  *
  * The quark for the GBA's control pad
  * Note that since the GBA's control pad has a few buttons,

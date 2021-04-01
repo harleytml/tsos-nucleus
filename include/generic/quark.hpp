@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Abstract Driver
+ * Abstract Quark
  *
  * This is the abstract class that all the subclasses of
  * quarks inherit from.
@@ -12,14 +12,14 @@
 #include "generic/types.hpp"
 
 // The class for quarks
-class Driver
+class Quark
 {
 public:
   // Constructor
-  Driver(void);
+  Quark(void);
 
   // Destructor
-  ~Driver();
+  ~Quark();
 
   // A function called to determine if a quark should be used.
   virtual bool detectsystem(void) = 0;

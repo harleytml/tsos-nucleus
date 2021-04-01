@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced Screen Driver 
+ * Gameboy Advanced Screen Quark 
  *
  * The quark for the GBA's Screen
  * 

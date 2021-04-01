@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Generic Elf Driver
+ * Generic Elf Quark
  *
  * This is a quark for controlling system runtime, oriented
  * around the ELF format

@@ -1,5 +1,5 @@
 /* By Tsuki Superior
- * Gameboy Advanced Cartridge Driver 
+ * Gameboy Advanced Cartridge Quark 
  *
  * There are two ways to approach the problem of how to store memory on a 
  * game console like this, within the simplicity that is TS/OS so far.
