@@ -31,7 +31,7 @@ public:
   // Shutdown the system
   void shutdown(void) const;
 
-  // The equivelant kernel panic, or bsod,
+  // The equivelent kernel panic, or bsod,
   void fission(const char *errormsg) const;
 };
 
