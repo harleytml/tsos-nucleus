@@ -16,22 +16,22 @@ public:
   void reset(void) final;
 
   // Get a uint8_t from the io ports
-  uint8_t get8(uint16_t port) final;
+  uint8_t in8(uint16_t port) final;
 
   // Send a uint8_t through the io ports
-  void put8(uint16_t port, uint8_t value) final;
+  void out8(uint16_t port, uint8_t value) final;
 
   // Get a uint16_t from the io ports
-  uint16_t get16(uint16_t port) final;
+  uint16_t in16(uint16_t port) final;
 
   // Send a uint16_t through the io ports
-  void put16(uint16_t port, uint16_t value) final;
+  void out16(uint16_t port, uint16_t value) final;
 
   // Get a uint32_t from the io ports
-  uint32_t get32(uint16_t port) final;
+  uint32_t in32(uint16_t port) final;
 
   // Send a uint32_t through the io ports
-  void put32(uint16_t port, uint32_t value) final;
+  void out32(uint16_t port, uint32_t value) final;
 };
 
 #endif

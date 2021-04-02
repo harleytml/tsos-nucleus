@@ -30,37 +30,37 @@ void IO::reset(void) const
 }
 
 // Get a uint8_t from the io ports
-uint8_t IO::get8(uint16_t port)
+uint8_t IO::in8(uint16_t port)
 {
-  return quark->get8(port);
+  return quark->in8(port);
 }
 
 // Send a uint8_t through the io ports
-void IO::put8(uint16_t port, uint8_t value)
+void IO::out8(uint16_t port, uint8_t value)
 {
-  quark->put8(port, value);
+  quark->out8(port, value);
 }
 
 // Get a uint16_t from the io ports
-uint8_t IO::get16(uint16_t port)
+uint8_t IO::in16(uint16_t port)
 {
-  return quark->get16(port);
+  return quark->in16(port);
 }
 
 // Send a uint16_t through the io ports
-void IO::put16(uint16_t port, uint16_t value)
+void IO::out16(uint16_t port, uint16_t value)
 {
-  quark->put16(port, value);
+  quark->out16(port, value);
 }
 
 // Get a uint32_t from the io ports
-uint8_t IO::get32(uint16_t port)
+uint8_t IO::in32(uint16_t port)
 {
-  return quark->get32(port);
+  return quark->in32(port);
 }
 
 // Send a uint32_t through the io ports
-void IO::put32(uint16_t port, uint32_t value)
+void IO::out32(uint16_t port, uint32_t value)
 {
-  quark->put32(port, value);
+  quark->out32(port, value);
 }

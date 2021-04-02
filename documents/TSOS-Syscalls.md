@@ -191,27 +191,27 @@ Set the foreground of the text system
 IO SYSCALLS:
 
 ```text
-get8:
+in8:
 
 Get a uint8_t from the port io
 
-put8:
+out8:
 
 Send a uint8_t through the port io
 
-get16:
+in16:
 
 Get a uint16_t from the port io
 
-put16:
+out16:
 
 Send a uint16_t through the port io
 
-get32:
+in32:
 
 Get a uint32_t from the port io
 
-put32:
+out32:
 
 Send a uint32t through the port io
 

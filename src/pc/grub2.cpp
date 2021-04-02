@@ -26,9 +26,9 @@ void GRUB2_quark::reboot(void)
   uint8_t good = 0x02;
   while (good & 0x02)
   {
-    good = tsos->io.get8(0x64);
+    good = tsos->io.in8(0x64);
   }
-  tsos->io.put8(0x64, 0xfe);
+  tsos->io.out8(0x64, 0xfe);
   __asm__("hlt");
 }
 

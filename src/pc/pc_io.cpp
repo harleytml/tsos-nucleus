@@ -21,7 +21,7 @@ void PC_IO_quark::reset(void)
 }
 
 // Get a uint8_t from the io ports
-uint8_t PC_IO_quark::get8(uint16_t port)
+uint8_t PC_IO_quark::in8(uint16_t port)
 {
   uint8_t ret;
   __asm__ volatile("inb %1, %0"
@@ -31,7 +31,7 @@ uint8_t PC_IO_quark::get8(uint16_t port)
 }
 
 // Send a uint8_t through the io ports
-void PC_IO_quark::put8(uint16_t port, uint8_t value)
+void PC_IO_quark::out8(uint16_t port, uint8_t value)
 {
   __asm__ volatile("outb %0, %1"
                    :
@@ -39,7 +39,7 @@ void PC_IO_quark::put8(uint16_t port, uint8_t value)
 }
 
 // Get a uint16_t from the io ports
-uint16_t PC_IO_quark::get16(uint16_t port)
+uint16_t PC_IO_quark::in16(uint16_t port)
 {
   uint16_t ret;
   __asm__ volatile("inw %1, %0"
@@ -49,7 +49,7 @@ uint16_t PC_IO_quark::get16(uint16_t port)
 }
 
 // Send a uint16_t through the io ports
-void PC_IO_quark::put16(uint16_t port, uint16_t value)
+void PC_IO_quark::out16(uint16_t port, uint16_t value)
 {
   __asm__ volatile("outw %1, %0"
                    :
@@ -57,7 +57,7 @@ void PC_IO_quark::put16(uint16_t port, uint16_t value)
 }
 
 // Get a uint32_t from the io ports
-uint32_t PC_IO_quark::get32(uint16_t port)
+uint32_t PC_IO_quark::in32(uint16_t port)
 {
   uint32_t ret;
   __asm__ volatile("inl %1, %0"
@@ -67,7 +67,7 @@ uint32_t PC_IO_quark::get32(uint16_t port)
 }
 
 // Send a uint32_t through the io ports
-void PC_IO_quark::put32(uint16_t port, uint32_t value)
+void PC_IO_quark::out32(uint16_t port, uint32_t value)
 {
   __asm__ volatile("outl %1, %0"
                    :
