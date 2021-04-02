@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #include "generic/udf.hpp"
+#include "generic/nucleus_instance.hpp"
 
 UDF_quark::UDF_quark(void)
 {
@@ -8,19 +9,16 @@ UDF_quark::UDF_quark(void)
 
 bool UDF_quark::detectsystem(void)
 {
-  //Doesn't work right now
-  /*
-    uint8_t diskfsname[5] = tsos.disk.getbytes(0x4f, 0x05);
-    char *fsname = "";
-    for (uint8_t x = 0; x < 0x5; x++)
+
+  uint8_t *diskfsname = tsos->disk.getbytes(0x4f, 0x05);
+  char *fsname = "";
+  for (uint8_t x = 0; x < 0x5; x++)
+  {
+    if ((uint8_t)fsname[x] != diskfsname[x])
     {
-        if ((uint8_t)fsname[x] != diskfsname[x])
-        {
-            return false;
-        }
+      return false;
     }
-    return true;
-    */
+  }
   return true;
 }
 
