@@ -60,6 +60,8 @@ extern "C"
     tsos->video.putstring(0, tsos->video.scroll++, tsos->disk.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->filesystem.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->input.name);
+    tsos->video.putstring(0, tsos->video.scroll++, tsos->io.name);
+    tsos->video.putstring(0, tsos->video.scroll++, tsos->memory.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->process.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->serial.name);
     tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
