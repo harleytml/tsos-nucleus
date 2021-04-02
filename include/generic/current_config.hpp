@@ -29,6 +29,7 @@
 #include "pc/gdt.hpp"
 #include "pc/pc_speaker.hpp"
 #include "pc/pc_io.hpp"
+#include "pc/pc_mem.hpp"
 
 #endif
 
