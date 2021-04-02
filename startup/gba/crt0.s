@@ -5,7 +5,7 @@
 
     .section .crt0, "ax"
     .align 2
-    .arm
+    .code 32
     .global _start
 _start:
     @ Immediately jump past header data to ROM code
@@ -35,12 +35,14 @@ _start:
 
     @ Set IRQ stack pointer
     mov	    r0, #0x12
+  
     @ Switch to IRQ mode (0x12)
     msr     cpsr, r0
     ldr	    sp, =__sp_irq
 
     @ Set user stack pointer
     mov	    r0, #0x1F
+ 
     @ Switch to user mode (0x1F)
     msr	    cpsr, r0
     ldr	    sp, =__sp_usr
@@ -49,7 +51,7 @@ _start:
     adr	    r0, .Lthumb_start + 1
     bx	    r0
 
-    .thumb
+    .code 16
 .Lthumb_start:
     @ CpuSet copy ewram
     ldr	    r0, =__ewram_lma
