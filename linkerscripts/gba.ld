@@ -11,7 +11,7 @@ MEMORY
 
 __text_start  = ORIGIN(ROM);
 __app_start   = __text_start + 0xe0;
-__eheap_end  =  ORIGIN(EWRAM) + LENGTH(EWRAM);
+__eheap_end   = ORIGIN(EWRAM) + LENGTH(EWRAM);
 __iwram_start = ORIGIN(IWRAM);
 __iwram_top   = ORIGIN(IWRAM) + LENGTH(IWRAM);
 __sp_irq      = __iwram_top - 0x060;
@@ -56,6 +56,8 @@ SECTIONS
     *(.bss .bss.*); 
 
   } > IWRAM
+
+  . = _kernelend
 
   /* discard arm symbols */
   /DISCARD/ :
