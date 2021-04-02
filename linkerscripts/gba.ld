@@ -25,17 +25,6 @@ SECTIONS {
     . = ALIGN(4);
   } >rom
 
-  .preinit_array : {
-    __preinit_array_start = ABSOLUTE(.);
-    KEEP (*(.preinit_array))
-    __preinit_array_end = ABSOLUTE(.);
-    . = ALIGN(4);
-  } >rom
-
-  .init : {
-    KEEP (*(.init))
-    . = ALIGN(4);
-  } >rom
 
   .init_array : {
     __init_array_start = ABSOLUTE(.);
@@ -45,10 +34,6 @@ SECTIONS {
     . = ALIGN(4);
   } >rom
 
-  .fini : {
-    KEEP (*(.fini))
-    . = ALIGN(4);
-  } >rom
 
   .fini_array : {
     __fini_array_start = ABSOLUTE(.);
@@ -70,22 +55,6 @@ SECTIONS {
     *(.ARM.exidx* .gnu.linkonce.armexidx.*)
   } >rom
   __exidx_end = .;
-
-  .ctors : {
-    KEEP (*crtbegin.o(.ctors))
-    KEEP (*(EXCLUDE_FILE (*crtend.o ) .ctors))
-    KEEP (*(SORT(.ctors.*)))
-    KEEP (*(.ctors))
-    . = ALIGN(4);
-  } >rom
-
-  .dtors : {
-    KEEP (*crtbegin.o(.dtors))
-    KEEP (*(EXCLUDE_FILE (*crtend.o ) .dtors))
-    KEEP (*(SORT(.dtors.*)))
-    KEEP (*(.dtors))
-    . = ALIGN(4);
-  } >rom
 
   .eh_frame : {
     KEEP (*(.eh_frame))
