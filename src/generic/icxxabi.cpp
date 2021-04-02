@@ -20,7 +20,7 @@ extern "C"
     __atexit_funcs[__atexit_func_count].obj_ptr = objptr;
     __atexit_funcs[__atexit_func_count].dso_handle = dso;
     __atexit_func_count++;
-    return 0; /*I would prefer if functions returned 1 on success, but the ABI says...*/
+    return 0;
   }
 
   void __cxa_finalize(void *f)
@@ -127,9 +127,7 @@ extern "C"
 
   void __cxa_pure_virtual()
   {
-    while (true)
-    {
-    }
+    tsos->boot.fission("PURE VIRTUAL FUNCTION CALLED");
   }
 
   void *memcpy(void *dstptr, const void *srcptr, size_t size)

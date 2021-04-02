@@ -23,7 +23,7 @@ void GBA_CARTRIDGE_quark::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len
 {
   extern void *memcpy(void *dstptr, const void *srcptr, size_t size);
 
-  memcpy(0 + offset, (void *)buffer, len);
+  memcpy((void *)buffer, (void *)(0 + offset), len);
 }
 
 uint16_t GBA_CARTRIDGE_quark::getsectorsize(void)
