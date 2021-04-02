@@ -4,6 +4,6 @@
 
 #include "generic/core.hpp"
 
-static Tsos *tsos;
+extern Tsos *tsos;
 
 #endif

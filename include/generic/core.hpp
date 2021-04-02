@@ -6,8 +6,7 @@
  * 
  * All the nucleons are instaited as members of the Tsos class.
  * 
- * There may only be ONE instance of the TS/OS class. Future updates will have a lock
- * to make sure this rule is enforced.
+ * There may only be ONE instance of the TS/OS class.
  */
 
 #ifndef __TSOS_NUCLEUS_CORE__
@@ -72,5 +71,4 @@ public:
 };
 
 static bool nucleuslock = false;
-
 #endif
