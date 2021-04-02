@@ -21,8 +21,6 @@ void GBA_CARTRIDGE_quark::reset(void)
 
 void GBA_CARTRIDGE_quark::getbytes(uint8_t *buffer, uint16_t offset, uint8_t len)
 {
-  extern void *memcpy(void *dstptr, const void *srcptr, size_t size);
-
   memcpy((void *)buffer, (void *)(0 + offset), len);
 }
 

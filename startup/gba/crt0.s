@@ -47,11 +47,6 @@ _start:
     msr	    cpsr, r0
     ldr	    sp, =__sp_usr
 
-    @ Enter thumb mode (bit 0 is set to 1)
-    adr	    r0, .Lthumb_start + 1
-    bx	    r0
-
-    .code 16
 .Lthumb_start:
     @ CpuSet copy ewram
     ldr	    r0, =__ewram_lma
@@ -77,27 +72,11 @@ _start:
     ldr	    r2, =__data_cpuset_copy
     swi     #0xb
 
-    @ __libc_init_array
-    ldr	    r2, =__libc_init_array
-    bl	    .Lbx_r2
-
     @ main
     mov	    r0, #0		@ argc
     mov	    r1, #0		@ argv
     ldr	    r2, =kernel_main
     bl	    .Lbx_r2
-
-    @ Store result of main
-    push    {r0}
-
-    @ __libc_fini_array
-    ldr     r2, =__libc_fini_array
-    bl	    .Lbx_r2
-
-    @ Restore result of main
-    pop	    {r0}
-    ldr	    r2, =_exit
-    @ fallthrough
 
 .Lbx_r2:
     bx      r2

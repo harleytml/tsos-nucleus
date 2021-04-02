@@ -17,6 +17,11 @@
 
 #include "generic/disk_quark.hpp"
 
+extern "C"
+{
+  void *memcpy(void *dstptr, const void *srcptr, size_t size);
+}
+
 class GBA_CARTRIDGE_quark : public Disk_quark
 {
 public:

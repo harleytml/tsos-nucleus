@@ -15,6 +15,8 @@
 
 #include "generic/boot_quark.hpp"
 
+extern "C" void _start();
+
 class GBA_BOOT_quark : public Boot_quark
 {
 public:
