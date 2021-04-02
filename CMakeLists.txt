@@ -14,7 +14,7 @@ option(PLATFORM "Set the target platform of TS/OS" PC)
 
 if(PLATFORM STREQUAL "PC")
   message(STATUS "Platform ${PLATFORM}")
-  set(platform_options -D__PERSONAL_COMPUTER__ -mtune=i686 -mno-red-zone
+  set(platform_options -D__PERSONAL_COMPUTER__ -mtune=i686 -mno-red-zone -m32
                        --target=i686-pc-none-elf -mcmodel=kernel)
   set(linker_script_command -T../linkerscripts/pc.ld)
   file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*"
