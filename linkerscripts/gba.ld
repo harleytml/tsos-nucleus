@@ -57,7 +57,7 @@ SECTIONS
 
   } > IWRAM
 
-  . = _kernelend
+  . = kernel_end
 
   /* discard arm symbols */
   /DISCARD/ :
