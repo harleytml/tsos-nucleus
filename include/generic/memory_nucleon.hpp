@@ -8,6 +8,7 @@
 #define __TSOS_NUCLEUS_MEMORY_NUCLEON__
 
 #include "generic/memory_quark.hpp"
+#include "generic/memory_table_entry.hpp"
 #include "generic/nucleon.hpp"
 #include "generic/types.hpp"
 #include "generic/current_config.hpp"
@@ -26,8 +27,10 @@ public:
 
   // Free Memory
   void freememory(void *mem);
+
 private:
   uintptr_t current_heap_offset;
+  Memory_table_entry *first_memory_table_entry;
 };
 
 #endif
