@@ -126,7 +126,7 @@ if action in ["debug", "test"]:
 
         # Make sure command doesn't fail
         if os.system(build_settings[platform][action+"_command"]) != 0:
-            cprint("Action " + action + "failed", "red")
+            cprint("Action " + action + " failed", "red")
             sys.exit(1)
 
     else:
