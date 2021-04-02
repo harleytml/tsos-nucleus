@@ -212,20 +212,20 @@ extern "C"
 
 void *operator new(size_t size)
 {
-  return tsos->process.allocatememory(size);
+  return tsos->memory.allocatememory(size);
 }
 
 void *operator new[](size_t size)
 {
-  return tsos->process.allocatememory(size);
+  return tsos->memory.allocatememory(size);
 }
 
 void operator delete(void *p)
 {
-  tsos->process.freememory(p);
+  tsos->memory.freememory(p);
 }
 
 void operator delete[](void *p)
 {
-  tsos->process.freememory(p);
+  tsos->memory.freememory(p);
 }

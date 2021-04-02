@@ -114,7 +114,11 @@ Kill a process
 killall:
 
 Kill all processes
+```
 
+MEMORY SYSCALLS:
+
+```text
 allocatememory:
 
 Allocate memory
