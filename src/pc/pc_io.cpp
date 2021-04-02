@@ -12,7 +12,8 @@ PC_IO_quark::~PC_IO_quark()
 
 bool PC_IO_quark::detectsystem(void)
 {
-  return true;
+
+  return (bool)(__pentiumpro__);
 }
 
 void PC_IO_quark::reset(void)
