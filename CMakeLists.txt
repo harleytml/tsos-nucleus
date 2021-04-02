@@ -58,6 +58,7 @@ add_compile_options(
   -ggdb
   -Wall
   -Wextra
+  -Werror
   -Wno-unused-private-field
   -Wno-unused-parameter
   -Wno-write-strings
