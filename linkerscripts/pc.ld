@@ -57,7 +57,7 @@ SECTIONS
 		*(.bss .bss.*) 
 		*(COMMON)
 	}
-	kernel_end = . ;
+	_kernelend = . ;
 
   /DISCARD/ :
   { 
