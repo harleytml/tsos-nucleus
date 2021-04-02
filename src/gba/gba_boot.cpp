@@ -21,8 +21,7 @@ void GBA_BOOT_quark::reset(void)
 
 void GBA_BOOT_quark::reboot(void)
 {
-  extern void start();
-  start();
+  _start();
 }
 
 void GBA_BOOT_quark::shutdown(void)
