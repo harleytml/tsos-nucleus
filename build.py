@@ -71,7 +71,7 @@ if platform in build_settings:
     os.system("cmake .. -DPLATFORM=" + platform.upper())
 
     # Run make
-    os.system("make")
+    os.system("make -j$(nproc)")
 
     # Insure that the kernel was produced, and if not, fail
     if not os.path.exists("nucleus"):
