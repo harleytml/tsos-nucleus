@@ -35,7 +35,7 @@ extern "C"
 {
   void kernel_main(void)
   {
-    char *init_file_path = "/bin/init";
+    const char *init_file_path = "/bin/init";
     static Tsos os_instance = Tsos();
     tsos = &os_instance;
     uint32_t len = 100;
