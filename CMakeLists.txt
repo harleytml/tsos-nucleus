@@ -23,7 +23,7 @@ endif(PLATFORM STREQUAL "PC")
 
 if(PLATFORM STREQUAL "GBA")
   message(STATUS "Platform ${PLATFORM}")
-  set(platform_options -D__GAMEBOY_ADVANCED__ -mtune=arm7tdmi -mthumb-interwork
+  set(platform_options -D__GAMEBOY_ADVANCED__ -mtune=arm7tdmi -marm
                        --target=armv4t-unknown-none-eabi)
   set(linker_script_command -T../linkerscripts/gba.ld)
   file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*"
