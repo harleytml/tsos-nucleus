@@ -1,8 +1,8 @@
 {
   "pc": {
     "description": "i686 or higher IBM Personal Computer",
-    "test_command": "qemu-system-i386 -kernel nucleus",
-    "debug_command": "qemu-system-i386 -kernel nucleus -s -S",
+    "test_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3",
+    "debug_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3 -s -S",
     "required_test_tools": ["qemu-system-i386"],
     "required_tools": ["grub-file", "grub-mkrescue"]
   },

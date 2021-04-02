@@ -20,7 +20,7 @@ bool GBA_IO_PORT_quark::isdevicethere(void)
   return false;
 }
 
-// Serial on the DMG is lovely and simple
+// Serial on the GBA is lovely and simple
 uint8_t GBA_IO_PORT_quark::exchangebyte(uint8_t b)
 {
   return 0;

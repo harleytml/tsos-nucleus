@@ -1,3 +1,13 @@
+/* By Tsuki Superior
+ *
+ * Itanium CXX Application Binary Interface
+ * 
+ * This file is being used as basically a small Libc
+ * It implements memory allocation, and defines some basic functions
+ * for the operation of normal code
+ * 
+ */
+
 #ifndef __TSOS_ICXXABI__
 #define __TSOS_ICXXABI__
 
@@ -13,9 +23,10 @@ extern "C"
 	struct atexit_func_entry_t
 	{
 		/*
-	* Each member is at least 4 bytes large. Such that each entry is 12bytes.
-	* 128 * 12 = 1.5KB exact.
-	**/
+	   * Each member is at least 4 bytes large. Such that each entry is 12bytes.
+	   * 128 * 12 = 1.5KB exact.
+	   */
+
 		void (*destructor_func)(void *);
 		void *obj_ptr;
 		void *dso_handle;

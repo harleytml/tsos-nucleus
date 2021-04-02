@@ -25,8 +25,8 @@ uintptr_t ELF_quark::getstartoffreemem(void)
 {
 
 #ifdef __PERSONAL_COMPUTER__
-  extern uintptr_t _kernelend;
-  return _kernelend;
+  extern uintptr_t kernel_end;
+  return kernel_end;
 #endif
 
 #ifdef __GAMEBOY_ADVANCED__
@@ -34,13 +34,13 @@ uintptr_t ELF_quark::getstartoffreemem(void)
 #endif
 
 #ifdef __NSPIRE__
-  extern uintptr_t _kernelend;
-  return _kernelend;
+  extern uintptr_t kernel_end;
+  return kernel_end;
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-  extern uintptr_t _kernelend;
-  return _kernelend;
+  extern uintptr_t kernel_end;
+  return kernel_end;
 #endif
 
 #ifdef __NINTENDO_DUAL_SCREEN__

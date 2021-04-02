@@ -16,7 +16,7 @@ if(PLATFORM STREQUAL "PC")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__PERSONAL_COMPUTER__ -mtune=i686 -mno-red-zone
                        --target=i686-pc-none-elf -mcmodel=kernel)
-  set(linker_script pc.ld)
+  set(linker_script_command -T../linkerscripts/pc.ld)
   file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*"
        "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
@@ -25,7 +25,7 @@ if(PLATFORM STREQUAL "GBA")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__GAMEBOY_ADVANCED__ -mtune=arm7tdmi -mthumb
                        --target=armv4t-unknown-none-eabi)
-  set(linker_script gba.ld)
+  set(linker_script_command -T../linkerscripts/gba.ld)
   file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*"
        "startup/arm/*")
 endif(PLATFORM STREQUAL "GBA")
@@ -34,7 +34,7 @@ if(PLATFORM STREQUAL "NSPIRE")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__NSPIRE__ -mtune=arm926ej-s
                        --target=armv5tej-unknown-none-eabi)
-  set(linker_script nspire.ld)
+  set(linker_script_command -T../linkerscripts/nspire.ld)
   file(GLOB platform_specific_files "src/nspire/*" "src/arm/*"
        "startup/nspire/*" "startup/arm/*")
 endif(PLATFORM STREQUAL "NSPIRE")
@@ -43,7 +43,7 @@ if(PLATFORM STREQUAL "RPI3")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__RASPBERRY_PI_3__ -mtune=cortex-a53
                        --target=aarch64-unknown-none-eabi -mgeneral-regs-only)
-  set(linker_script rpi3.ld)
+  set(linker_script_command -T../linkerscripts/rpi3.ld)
   file(GLOB platform_specific_files "src/rpi3/*" "src/aarch64/*"
        "startup/rpi3/*" "startup/aarch64/*")
 endif(PLATFORM STREQUAL "RPI3")
@@ -55,8 +55,7 @@ file(GLOB source_files "src/generic/*")
 set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 add_compile_options(
   -Og
-  -ffreestanding
-  -g
+  -ggdb
   -Wall
   -Wextra
   -Wno-unused-private-field
@@ -75,18 +74,20 @@ add_compile_options(
   -fno-strict-aliasing
   -ffunction-sections
   -fdata-sections
+  -ffreestanding
   ${platform_options})
 
 add_link_options(
   -Og
-  -g
-  -T../linkerscripts/${linker_script}
+  -ggdb
   -fuse-ld=lld
   -static
-  -ffreestanding
   -nostdlib
   -nodefaultlibs
   -ffunction-sections
   -fdata-sections
-  ${platform_options})
+  -ffreestanding
+  ${platform_options}
+  ${linker_script_command})
+
 add_executable(nucleus ${source_files} ${platform_specific_files})

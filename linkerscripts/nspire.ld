@@ -47,5 +47,5 @@ SECTIONS
 		*(.ARM.exidx .ARM.exidx.*);
   }
 	
-	_kernelend = . ;
+	kernel_end = . ;
 }

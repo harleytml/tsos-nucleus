@@ -57,6 +57,7 @@ SECTIONS
 		*(.bss .bss.*) 
 		*(COMMON)
 	}
+	kernel_end = . ;
 
   /DISCARD/ :
   { 
@@ -65,5 +66,4 @@ SECTIONS
       *(.note*) 
       *(.eh_frame*)
   }
-	_kernelend = . ;
 }

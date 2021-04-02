@@ -55,7 +55,7 @@ SECTIONS
         __bss_end = .;
     }
     . = ALIGN(8);
-    _kernelend = . ;
+    kernel_end = . ;
 
    /DISCARD/ :
     { 
@@ -64,7 +64,7 @@ SECTIONS
         *(.note*) 
         *(.eh_frame*)
     }
-    _kernelend = . ;
+    kernel_end = . ;
 
 }
 __bss_size = (__bss_end - __bss_start)>>3;
