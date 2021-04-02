@@ -21,8 +21,6 @@ public:
   ~Process_quark();
 
   virtual bool isvalidexecutable(char *path) = 0;
-
-  virtual uintptr_t getstartoffreemem(void) = 0;
 };
 
 #endif

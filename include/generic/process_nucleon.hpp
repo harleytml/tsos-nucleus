@@ -7,7 +7,6 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_NUCLEON__
 #define __TSOS_NUCLEUS_PROCESS_NUCLEON__
 
-#include "generic/quark.hpp"
 #include "generic/nucleon.hpp"
 #include "generic/types.hpp"
 #include "generic/process_quark.hpp"
@@ -34,17 +33,9 @@ public:
   // Kill all processes
   void killall(void);
 
-  // Allocate memory
-  void *allocatememory(uint32_t len);
-
-  // Free Memory
-  void freememory(void *mem);
-
+private:
   // The table of processes
   Process_info processes[16];
-
-private:
-  uintptr_t current_heap_offset;
 };
 
 #endif

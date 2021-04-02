@@ -18,7 +18,6 @@ public:
   bool detectsystem(void) final;
   void reset(void) final;
   bool isvalidexecutable(char *path) final;
-  uintptr_t getstartoffreemem(void) final;
 };
 
 #endif
