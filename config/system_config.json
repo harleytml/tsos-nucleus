@@ -23,7 +23,7 @@
   "canon-a1100": {
     "description": "Canon PowerShot A1100IS",
     "test_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus",
-    "debug_command": "",
+    "debug_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus -s -S",
     "required_test_tools": ["qemu-system-arm"],
     "required_tools": ["llvm-objcopy-12"]
   }
