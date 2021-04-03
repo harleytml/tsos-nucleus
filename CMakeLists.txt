@@ -102,4 +102,4 @@ add_link_options(
   ${platform_options}
   ${linker_script_command})
 
-add_executable(nucleus ${source_files} ${platform_specific_files})
+add_executable(nucleus.elf ${source_files} ${platform_specific_files})

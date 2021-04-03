@@ -74,7 +74,7 @@ if platform in build_settings:
     os.system("make -j$(nproc)")
 
     # Insure that the kernel was produced, and if not, fail
-    if not os.path.exists("nucleus"):
+    if not os.path.exists("nucleus.elf"):
         cprint("Compiling failed!", "red")
         sys.exit(1)
 

@@ -3,8 +3,11 @@
 
 import os
 import sys
+import shutil
 
 from termcolor import cprint
+
+shutil.copyfile("nucleus.elf", "nucleus")
 
 # Convert to binary
 if os.system("llvm-objcopy-12 -O binary nucleus") != 0:
