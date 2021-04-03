@@ -5,12 +5,12 @@
 ATAPI_quark::ATAPI_quark(void)
 {
   name = "AT Attachment Packet Interface";
-  channels[0]=IDEChannelRegisters();
-  channels[1]=IDEChannelRegisters();
-  ide_devices[0]=IDE_device();
-  ide_devices[1]=IDE_device();
-  ide_devices[2]=IDE_device();
-  ide_devices[3]=IDE_device();
+  channels[0] = IDEChannelRegisters();
+  channels[1] = IDEChannelRegisters();
+  ide_devices[0] = IDE_device();
+  ide_devices[1] = IDE_device();
+  ide_devices[2] = IDE_device();
+  ide_devices[3] = IDE_device();
 }
 
 ATAPI_quark::~ATAPI_quark()
@@ -35,14 +35,15 @@ uint16_t ATAPI_quark::getsectorsize(void)
   return 2048;
 }
 
-void ATAPI_quark::insl(uint32_t port, void *addr, uint32_t cnt) {
-        __asm__ volatile (
-            "cld;"
-            "repne; insl;"
-            : "=D" (addr), "=c" (cnt)
-            : "d" (port), "0" (addr), "1" (cnt)
-            : "memory", "cc");
-    }
+void ATAPI_quark::insl(uint32_t port, void *addr, uint32_t cnt)
+{
+  __asm__ volatile(
+      "cld;"
+      "repne; insl;"
+      : "=D"(addr), "=c"(cnt)
+      : "d"(port), "0"(addr), "1"(cnt)
+      : "memory", "cc");
+}
 
 void ATAPI_quark::ide_write(uint8_t channel, uint8_t reg, uint8_t data)
 {
@@ -132,48 +133,48 @@ void ATAPI_quark::ide_read_buffer(uint8_t channel, uint8_t reg, void *buffer, ui
   }
 }
 
-
-uint8_t ATAPI_quark::ide_polling(uint8_t channel, uint32_t advanced_check) 
+uint8_t ATAPI_quark::ide_polling(uint8_t channel, uint32_t advanced_check)
 {
- 
+
   // (I) Delay 400 nanosecond for BSY to be set:
   // -------------------------------------------------
-  for(int i = 0; i < 4; i++)
+  for (int i = 0; i < 4; i++)
   {
     ide_read(channel, ATA_REG_ALTSTATUS); // Reading the Alternate Status port wastes 100ns; loop four times.
   }
 
-   // (II) Wait for BSY to be cleared:
-   // -------------------------------------------------
-   while (ide_read(channel, ATA_REG_STATUS) & ATA_SR_BSY){}; // Wait for BSY to be zero.
- 
-   if (advanced_check) {
-      uint8_t state = ide_read(channel, ATA_REG_STATUS); // Read Status Register.
- 
-      // (III) Check For Errors:
-      // -------------------------------------------------
-      if (state & ATA_SR_ERR)
-      {
-         return 2; // Error.
-      }
- 
-      // (IV) Check If Device fault:
-      // -------------------------------------------------
-      if (state & ATA_SR_DF)
-      {
-         return 1; // Device Fault.
-      }
- 
-      // (V) Check DRQ:
-      // -------------------------------------------------
-      // BSY = 0; DF = 0; ERR = 0 so we should check for DRQ now.
-      if ((state & ATA_SR_DRQ) == 0)
-      {
-         return 3; // DRQ should be set
-      }
- 
-   }
- 
-   return 0; // No Error.
- 
+  // (II) Wait for BSY to be cleared:
+  // -------------------------------------------------
+  while (ide_read(channel, ATA_REG_STATUS) & ATA_SR_BSY)
+  {
+  }; // Wait for BSY to be zero.
+
+  if (advanced_check)
+  {
+    uint8_t state = ide_read(channel, ATA_REG_STATUS); // Read Status Register.
+
+    // (III) Check For Errors:
+    // -------------------------------------------------
+    if (state & ATA_SR_ERR)
+    {
+      return 2; // Error.
+    }
+
+    // (IV) Check If Device fault:
+    // -------------------------------------------------
+    if (state & ATA_SR_DF)
+    {
+      return 1; // Device Fault.
+    }
+
+    // (V) Check DRQ:
+    // -------------------------------------------------
+    // BSY = 0; DF = 0; ERR = 0 so we should check for DRQ now.
+    if ((state & ATA_SR_DRQ) == 0)
+    {
+      return 3; // DRQ should be set
+    }
+  }
+
+  return 0; // No Error.
 }
