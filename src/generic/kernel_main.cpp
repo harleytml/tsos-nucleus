@@ -8,7 +8,6 @@ void kernel_main(void)
 
   uint32_t len = 100;
 
-  //A memory allocation test that doesn't work rn
   Array<char> *test = new Array<char>(len);
   test[0] = 'Q';
 
