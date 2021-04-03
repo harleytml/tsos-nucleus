@@ -2,7 +2,6 @@
 # By Tsuki Superior
 
 import os
-import json
 import sys
 
 from termcolor import cprint
