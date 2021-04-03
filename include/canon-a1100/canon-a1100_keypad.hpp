@@ -1,23 +1,16 @@
-/* By Tsuki Superior
- * Gameboy Advanced Gamepad Quark 
- *
- * The quark for the GBA's control pad
- * Note that since the GBA's control pad has a few buttons,
- * you will have to scroll and choose your answer
- */
-
-#ifndef __TSOS_GBA_GAMEPAD_QUARK__
-#define __TSOS_GBA_GAMEPAD_QUARK__
+//By Tsuki Superior
+#ifndef __TSOS_CANON_A1100_KEYPAD_QUARK__
+#define __TSOS_CANON_A1100_KEYPAD_QUARK__
 
 #include "generic/input_quark.hpp"
 
-class GBA_GAMEPAD_quark : public Input_quark
+class CANON_A1100_KEYPAD_quark : public Input_quark
 {
 public:
   // Constructor
-  GBA_GAMEPAD_quark(void);
+  CANON_A1100_KEYPAD_quark(void);
 
-  ~GBA_GAMEPAD_quark();
+  ~CANON_A1100_KEYPAD_quark();
 
   // Detects if the nucleon should be used
   bool detectsystem(void) final;
