@@ -36,6 +36,12 @@ public:
     return false;
   };
 
+  // Make sure the quark is set
+  bool isquarkset(void)
+  {
+    return quark != nullptr;
+  }
+
 protected:
   T *quark;
 };
