@@ -20,12 +20,12 @@ template <class T>
 class Array
 {
 public:
-  Array(uint16_t length)
+  Array(const uint16_t length)
   {
     internaldata = new T[length];
   };
 
-  Array(T *data, uint16_t length)
+  Array(const T *data, const uint16_t length)
   {
     internaldata = new T[length];
     memcpy(internaldata, data, length);
@@ -41,6 +41,15 @@ public:
   }
 
   T &operator[](const uint16_t index)
+  {
+    if (index < internaldatalength)
+    {
+      tsos->boot.fission("ARRAY WAS ACCESSED OUTSIDE OF ITS BOUNDARIES");
+    }
+    return index;
+  }
+
+  T operator[](const uint16_t index) const
   {
     if (index < internaldatalength)
     {
@@ -73,7 +82,7 @@ public:
   }
 
 private:
-  T *internaldata;
+  volatile T *internaldata;
   uint16_t internaldatalength;
 };
 
