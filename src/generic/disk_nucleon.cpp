@@ -10,12 +10,6 @@ Disk::Disk(void)
   attachquark(cd_quark);
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_CARTRIDGE_quark gba_cartridge_quark = GBA_CARTRIDGE_quark();
-
-  attachquark(gba_cartridge_quark);
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_SD_CARD_quark rpi3_sd_card_quark = RPI3_SD_CARD_quark();
 

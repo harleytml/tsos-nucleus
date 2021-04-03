@@ -16,12 +16,6 @@ Input::Input(void)
 
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_GAMEPAD_quark gba_gamepad_quark = GBA_GAMEPAD_quark();
-
-  attachquark(gba_gamepad_quark);
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_KEYBOARD_quark rpi3_keyboard_quark = RPI3_KEYBOARD_quark();
 

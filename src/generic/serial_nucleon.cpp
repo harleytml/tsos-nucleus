@@ -10,12 +10,6 @@ Serial::Serial(void)
   attachquark(rs232_quark);
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_IO_PORT_quark gba_io_port_quark = GBA_IO_PORT_quark();
-
-  attachquark(gba_io_port_quark);
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_UART_quark rpi3_uart_quark = RPI3_UART_quark();
 
