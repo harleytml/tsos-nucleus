@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [master]
 
-name: GBA Compile test
+name: CANON-A1100 Compile test
 
 jobs:
   gba-test:
