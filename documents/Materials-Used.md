@@ -33,3 +33,5 @@
 [A PDP-11 Emulator on the GBA](https://web.archive.org/web/20200110172111/http://www.kernelthread.com/publications/gbaunix/)
 
 [GBA/NDS info](https://problemkaputt.de/gbatek.htm)
+
+[Camera Fandom Documents](https://chdk.fandom.com/wiki/Developer_Technical_Documents)

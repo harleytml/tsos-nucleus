@@ -24,4 +24,4 @@ This is the Nintendo Dual Screen, with dual ARM processors.
 
 canon-a1100
 
-This is the Canon PowerShot A1100IS
+This is the Canon PowerShot A1100IS, with a DIGIC4 arm processor
