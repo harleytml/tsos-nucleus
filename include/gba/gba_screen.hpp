@@ -3,7 +3,7 @@
  *
  * The quark for the GBA's Screen
  * 
- * The GBA has a 320 by 240 sized screen, with 4 maximum layers to the screen buffer
+ * The GBA has a 240 by 160 sized screen, with 4 maximum layers to the screen buffer
  * None of this will not be fully used by TS/OS (As of version 0.0)
  * This version of TS/OS is focusing of console mode, which means that
  * The screen quarks will report back the charactor width of the screen
