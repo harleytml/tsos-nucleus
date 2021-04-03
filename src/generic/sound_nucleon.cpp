@@ -10,13 +10,6 @@ Sound::Sound(void)
   attachquark(pc_speaker_quark);
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_SOUND_quark gba_sound_quark = GBA_SOUND_quark();
-
-  attachquark(gba_sound_quark);
-
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_SOUND_quark rpi3_sound_quark = RPI3_SOUND_quark();
 

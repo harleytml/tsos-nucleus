@@ -11,12 +11,6 @@ Boot::Boot(void)
   attachquark(grub2_quark);
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_BOOT_quark gba_boot_quark = GBA_BOOT_quark();
-
-  attachquark(gba_boot_quark);
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_BOOT_quark rpi3_boot_quark = RPI3_BOOT_quark();
 

@@ -6,13 +6,6 @@
     "required_test_tools": ["qemu-system-i386"],
     "required_tools": ["grub-file", "grub-mkrescue"]
   },
-  "gba": {
-    "description": "Nintendo Gameboy Advanced",
-    "test_command": "vba --rtc nucleus",
-    "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
-    "required_test_tools": ["vba"],
-    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
-  },
   "nspire": {
     "description": "Texas Instruments TI-Nspire",
     "test_command": "",

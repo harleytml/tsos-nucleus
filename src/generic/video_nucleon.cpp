@@ -21,12 +21,6 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
   }
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-  static GBA_SCREEN_quark gba_screen_quark = GBA_SCREEN_quark();
-
-  attachquark(gba_screen_quark);
-#endif
-
 #ifdef __RASPBERRY_PI_3__
   static RPI3_SCREEN_quark rpi3_screen_quark = RPI3_SCREEN_quark();
 
