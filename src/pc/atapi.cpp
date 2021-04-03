@@ -29,6 +29,15 @@ uint16_t ATAPI_quark::getsectorsize(void)
   return 2048;
 }
 
+void ATAPI_quark::insl(uint32_t port, void *addr, int cnt) {
+        __asm__ volatile (
+            "cld;"
+            "repne; insl;"
+            : "=D" (addr), "=c" (cnt)
+            : "d" (port), "0" (addr), "1" (cnt)
+            : "memory", "cc");
+    }
+
 void ATAPI_quark::ide_write(uint8_t channel, uint8_t reg, uint8_t data)
 {
   if (reg > 0x07 && reg < 0x0C)
@@ -87,36 +96,78 @@ uint8_t ATAPI_quark::ide_read(uint8_t channel, uint8_t reg)
   return result;
 }
 
-/*
-
-void ATAPI_quark::ide_read_buffer(uint8_t channel, uint8_t reg, uint32_t buffer,
-                                  uint32_t quads)
+void ATAPI_quark::ide_read_buffer(uint8_t channel, uint8_t reg, void *buffer, uint32_t quads)
 {
   if (reg > 0x07 && reg < 0x0C)
   {
     ide_write(channel, ATA_REG_CONTROL, 0x80 | channels[channel].nIEN);
   }
-  asm("pushw %es; movw %ds, %ax; movw %ax, %es");
+  __asm__ volatile("pushw %es; movw %ds, %ax; movw %ax, %es");
   if (reg < 0x08)
   {
-    tsos->io.in32(channels[channel].base + reg - 0x00, buffer, quads);
+    insl(channels[channel].base + reg - 0x00, buffer, quads);
   }
   else if (reg < 0x0C)
   {
-    tsos->io.in32(channels[channel].base + reg - 0x06, buffer, quads);
+    insl(channels[channel].base + reg - 0x06, buffer, quads);
   }
   else if (reg < 0x0E)
   {
-    tsos->io.in32(channels[channel].ctrl + reg - 0x0A, buffer, quads);
+    insl(channels[channel].ctrl + reg - 0x0A, buffer, quads);
   }
   else if (reg < 0x16)
   {
-    tsos->io.in32(channels[channel].bmide + reg - 0x0E, buffer, quads);
+    insl(channels[channel].bmide + reg - 0x0E, buffer, quads);
   }
-  asm("popw %es;");
+  __asm__ volatile("popw %es;");
   if (reg > 0x07 && reg < 0x0C)
   {
     ide_write(channel, ATA_REG_CONTROL, channels[channel].nIEN);
   }
 }
-*/
+
+
+uint8_t ATAPI_quark::ide_polling(uint8_t channel, uint32_t advanced_check) 
+{
+ 
+  // (I) Delay 400 nanosecond for BSY to be set:
+  // -------------------------------------------------
+  for(int i = 0; i < 4; i++)
+  {
+    ide_read(channel, ATA_REG_ALTSTATUS); // Reading the Alternate Status port wastes 100ns; loop four times.
+  }
+
+   // (II) Wait for BSY to be cleared:
+   // -------------------------------------------------
+   while (ide_read(channel, ATA_REG_STATUS) & ATA_SR_BSY){}; // Wait for BSY to be zero.
+ 
+   if (advanced_check) {
+      uint8_t state = ide_read(channel, ATA_REG_STATUS); // Read Status Register.
+ 
+      // (III) Check For Errors:
+      // -------------------------------------------------
+      if (state & ATA_SR_ERR)
+      {
+         return 2; // Error.
+      }
+ 
+      // (IV) Check If Device fault:
+      // -------------------------------------------------
+      if (state & ATA_SR_DF)
+      {
+         return 1; // Device Fault.
+      }
+ 
+      // (V) Check DRQ:
+      // -------------------------------------------------
+      // BSY = 0; DF = 0; ERR = 0 so we should check for DRQ now.
+      if ((state & ATA_SR_DRQ) == 0)
+      {
+         return 3; // DRQ should be set
+      }
+ 
+   }
+ 
+   return 0; // No Error.
+ 
+}
