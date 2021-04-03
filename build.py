@@ -13,7 +13,7 @@ if os.path.isdir("/tmp/tsos-filesystem"):
     shutil.rmtree("/tmp/tsos-filesystem")
 
 # Open that config file and read from it
-tmp_file = open("cfg/system_config.json")
+tmp_file = open("config/system_config.json")
 build_settings = json.loads(tmp_file.read())
 tmp_file.close()
 
