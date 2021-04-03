@@ -13,6 +13,7 @@
 [![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml)
 [![PC Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml)
 [![RPI3 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml)
+[![CANON-A1100 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml)
 
 ## Contributors
 
