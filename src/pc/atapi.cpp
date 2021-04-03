@@ -86,3 +86,37 @@ uint8_t ATAPI_quark::ide_read(uint8_t channel, uint8_t reg)
   }
   return result;
 }
+
+/*
+
+void ATAPI_quark::ide_read_buffer(uint8_t channel, uint8_t reg, uint32_t buffer,
+                                  uint32_t quads)
+{
+  if (reg > 0x07 && reg < 0x0C)
+  {
+    ide_write(channel, ATA_REG_CONTROL, 0x80 | channels[channel].nIEN);
+  }
+  asm("pushw %es; movw %ds, %ax; movw %ax, %es");
+  if (reg < 0x08)
+  {
+    tsos->io.in32(channels[channel].base + reg - 0x00, buffer, quads);
+  }
+  else if (reg < 0x0C)
+  {
+    tsos->io.in32(channels[channel].base + reg - 0x06, buffer, quads);
+  }
+  else if (reg < 0x0E)
+  {
+    tsos->io.in32(channels[channel].ctrl + reg - 0x0A, buffer, quads);
+  }
+  else if (reg < 0x16)
+  {
+    tsos->io.in32(channels[channel].bmide + reg - 0x0E, buffer, quads);
+  }
+  asm("popw %es;");
+  if (reg > 0x07 && reg < 0x0C)
+  {
+    ide_write(channel, ATA_REG_CONTROL, channels[channel].nIEN);
+  }
+}
+*/

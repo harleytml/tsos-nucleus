@@ -96,6 +96,7 @@ public:
 private:
   void ide_write(uint8_t channel, uint8_t reg, uint8_t data);
   uint8_t ide_read(uint8_t channel, uint8_t reg);
+  //void ide_read_buffer(uint8_t channel, uint8_t reg, uint32_t buffer, uint32_t quads);
 
   struct IDEChannelRegisters
   {
