@@ -1,4 +1,4 @@
-# CURRENTLY SUPPORTED PORTS
+# TS/OS PORTS
 
 [![Trello](https://trello.com/favicon.ico)](https://trello.com/b/tjOwxujy/ts-os-port-status)
 
@@ -21,3 +21,7 @@ This is the Raspberry Pi 3, with a ARM64 processor.
 nds
 
 This is the Nintendo Dual Screen, with dual ARM processors.
+
+canon-a1100
+
+This is the Canon PowerShot A1100IS
