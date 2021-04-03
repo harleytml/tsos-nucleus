@@ -9,7 +9,6 @@
 
 ## Build Tests
 
-[![GBA Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-gba.yml)
 [![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml)
 [![PC Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml)
 [![RPI3 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml)
@@ -29,12 +28,10 @@ TS/OS was a operating system made for several reasons
 
 - 1: Because I got bored, and I had nothing to do
 - 2: Because I needed to learn C/C++
-- 3: Because I got infuriated by the fact that some devices cannot have Linux ports (like the GBA)
+- 3: Because I got infuriated by the fact that some devices cannot have Linux ports
 - 4: And finally, because I was inspired by the genius of Terry A. Davis.
 
-I intend for TS/OS to be ported to everything. My first goal is all those handheld game consoles, mostly the little arm ones. If I can get it to run on a GBA, surely I can run it on the others.
-
-The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophomore year, and I always wanted to make a OS. So I did with a copy of The Revolutionary Guide To Assembly Language, and some random documents on the GBA.
+The story behind TS/OS is a interesting one. The first edition was mostly developed on a hacked TI-Nspire, a graphing calculator. I got bored during the winter break of my sophomore year, and I always wanted to make a OS. So I did with a copy of The Revolutionary Guide To Assembly Language, and a C++ book.
 
 I had just learned C++, and wanted to reinvent the wheel. I had a little too much time on my hands.
 
