@@ -19,6 +19,7 @@ extern "C"
 template <class T>
 class Array
 {
+public:
   Array(uint16_t length)
   {
     internaldata = new T[length];
