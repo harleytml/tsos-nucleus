@@ -43,10 +43,13 @@ In the documents directory, you can find more documents concerning TS/OS.
 
 ## Current Platforms
 
-- PC - i686 or higher IBM Personal Computer
-- GBA - Nintendo Gameboy Advanced
-- NSPIRE - Texas Instruments TI-Nspire
-- RPI3 - Raspberry Pi 3
+Run
+
+```sh
+python3 ./build.py help
+```
+
+to see all the platforms
 
 ## Pre-Building
 
