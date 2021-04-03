@@ -31,3 +31,5 @@
 [RPI OS Tutorial](https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html)
 
 [A PDP-11 Emulator on the GBA](https://web.archive.org/web/20200110172111/http://www.kernelthread.com/publications/gbaunix/)
+
+[GBA/NDS info](https://problemkaputt.de/gbatek.htm)

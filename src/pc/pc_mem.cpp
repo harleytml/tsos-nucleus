@@ -8,7 +8,7 @@ PC_MEM_quark::PC_MEM_quark(void)
 
 bool PC_MEM_quark::detectsystem(void)
 {
-  return __i686__==1;
+  return (bool)(__pentiumpro__);
 }
 
 void PC_MEM_quark::reset(void)

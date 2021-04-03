@@ -16,6 +16,13 @@
 #define MODE3 0x0003
 #define BG2 0x0400
 
+#define GBA_EWRAM 0x02000000
+#define GBA_IWRAM 0x03000000
+#define GBA_IOBASE 0x04000000
+#define GBA_PALETTE 0x05000000
+#define GBA_VRAM 0x06000000
+#define GBA_SRAM 0x0E000000
+
 #include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
