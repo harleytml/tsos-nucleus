@@ -21,15 +21,6 @@ if(PLATFORM STREQUAL "PC")
        "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
 
-if(PLATFORM STREQUAL "GBA")
-  message(STATUS "Platform ${PLATFORM}")
-  set(platform_options -D__GAMEBOY_ADVANCED__ -mtune=arm7tdmi -marm
-                       -mgeneral-regs-only --target=armv4t-unknown-none-eabi)
-  set(linker_script_command -T../linkerscripts/gba.ld)
-  file(GLOB platform_specific_files "src/gba/*" "src/arm/*" "startup/gba/*"
-       "startup/arm/*")
-endif(PLATFORM STREQUAL "GBA")
-
 if(PLATFORM STREQUAL "NSPIRE")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__NSPIRE__ -mtune=arm926ej-s
