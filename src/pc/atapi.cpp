@@ -5,6 +5,12 @@
 ATAPI_quark::ATAPI_quark(void)
 {
   name = "AT Attachment Packet Interface";
+  channels[0]=IDEChannelRegisters();
+  channels[1]=IDEChannelRegisters();
+  ide_devices[0]=IDE_device();
+  ide_devices[1]=IDE_device();
+  ide_devices[2]=IDE_device();
+  ide_devices[3]=IDE_device();
 }
 
 ATAPI_quark::~ATAPI_quark()
