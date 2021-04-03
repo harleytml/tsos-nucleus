@@ -11,7 +11,7 @@ bool FAT16_quark::detectsystem(void)
 {
   return true;
   uint8_t *diskfsname = tsos->disk.getbytes(0x4f, 0x05);
-  char *fsname = "FAT16";
+  const char *fsname = "FAT16";
   for (uint8_t x = 0; x < 0x5; x++)
   {
     if ((uint8_t)fsname[x] != diskfsname[x])
