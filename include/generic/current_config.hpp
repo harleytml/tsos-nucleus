@@ -33,17 +33,6 @@
 
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-
-#include "gba/gba_screen.hpp"
-#include "gba/gba_gamepad.hpp"
-#include "gba/gba_io_port.hpp"
-#include "gba/gba_boot.hpp"
-#include "gba/gba_cartridge.hpp"
-#include "gba/gba_sound.hpp"
-
-#endif
-
 #ifdef __NSPIRE__
 
 #endif
