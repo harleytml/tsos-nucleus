@@ -58,6 +58,18 @@ public:
     return index;
   }
 
+  bool operator==(Array<T> &array) const
+  {
+    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+    {
+      if (internaldata[x] != array[x])
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+
   Array<T> operator+(const Array<T> &array)
   {
     uint_fast32_t x = 0;
