@@ -33,7 +33,7 @@ public:
 
   Array(Array<T> &array)
   {
-    internaldata = new T[array->len()];
+    internaldata = new T[array.len()];
     for (uint_fast16_t x = 0, len = array->len(); x < len; x++)
     {
       internaldata[x] = array[x];
@@ -62,14 +62,14 @@ public:
   {
     uint_fast32_t x = 0;
     uint_fast32_t y = 0;
-    uint_fast32_t len = 0;
+    uint_fast32_t l = 0;
     uint32_t total_length = internaldatalength + array.len();
     Array<T> newarray = new Array<T>(total_length);
-    for (x = 0, len = internaldatalength; x < len; x++)
+    for (x = 0, l = internaldatalength; x < l; x++)
     {
       newarray[x] = array[x];
     }
-    for (y = 0, len = array.len(); x < len; x++, y++)
+    for (y = 0, l = array.len(); x < l; x++, y++)
     {
       newarray[x] = array[y];
     }
