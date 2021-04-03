@@ -35,3 +35,5 @@
 [GBA/NDS info](https://problemkaputt.de/gbatek.htm)
 
 [Camera Fandom Documents](https://chdk.fandom.com/wiki/Developer_Technical_Documents)
+
+[Firmware Image Maker](https://github.com/frantony/barebox/blob/master/scripts/canon-a1100-image)
