@@ -98,7 +98,7 @@ private:
   uint8_t ide_read(uint8_t channel, uint8_t reg);
   void ide_read_buffer(uint8_t channel, uint8_t reg, void* buffer, uint32_t quads);
   uint8_t ide_polling(uint8_t channel, uint32_t advanced_check);
-  void insl(uint32_t port, void *addr, int cnt);
+  void insl(uint32_t port, void *addr, uint32_t cnt);
 
   struct IDEChannelRegisters
   {
