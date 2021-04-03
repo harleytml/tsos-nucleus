@@ -63,6 +63,7 @@ add_compile_options(
   -Wno-unused-parameter
   -Wno-write-strings
   -Wno-unused-command-line-argument
+  -Wno-deprecated-copy
   -fno-threadsafe-statics
   -fno-exceptions
   -fno-builtin
