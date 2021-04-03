@@ -36,17 +36,35 @@ public:
     internaldata = new T[array->len()];
     for (uint_fast16_t x = 0, len = array->len(); x < len; x++)
     {
-      internaldata[x] = (*array)[x];
+      internaldata[x] = array[x];
     }
   }
 
-  T &operator[](uint16_t index)
+  T &operator[](const uint16_t index)
   {
     if (index < internaldatalength)
     {
       tsos->boot.fission("ARRAY WAS ACCESSED OUTSIDE OF ITS BOUNDARIES");
     }
     return index;
+  }
+
+  Array<T> operator+(const Array<T> &array)
+  {
+    uint_fast32_t x = 0;
+    uint_fast32_t y = 0;
+    uint_fast32_t len = 0;
+    uint32_t total_length = internaldatalength + array.len();
+    Array<T> newarray = new Array<T>(total_length);
+    for (x = 0, len = internaldatalength; x < len; x++)
+    {
+      newarray[x] = array[x];
+    }
+    for (y = 0, len = array.len(); x < len; x++, y++)
+    {
+      newarray[x] = array[y];
+    }
+    return array;
   }
 
   uint16_t len(void)
