@@ -3,56 +3,35 @@
     "description": "i686 or higher IBM Personal Computer",
     "test_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3",
     "debug_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3 -s -S",
-    "required_test_tools": [
-      "qemu-system-i386"
-    ],
-    "required_tools": [
-      "grub-file",
-      "grub-mkrescue"
-    ]
+    "required_test_tools": ["qemu-system-i386"],
+    "required_tools": ["grub-file", "grub-mkrescue"]
   },
   "gba": {
     "description": "Nintendo Gameboy Advanced",
     "test_command": "vba --rtc nucleus",
     "debug_command": "vba --gdb=tcp:1234 --rtc nucleus",
-    "required_test_tools": [
-      "vba"
-    ],
-    "required_tools": [
-      "tsos-gbafix",
-      "llvm-objcopy-12"
-    ]
+    "required_test_tools": ["vba"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
   },
   "nspire": {
     "description": "Texas Instruments TI-Nspire",
     "test_command": "",
     "debug_command": "",
     "required_test_tools": [],
-    "required_tools": [
-      "llvm-objcopy-12"
-    ]
+    "required_tools": ["llvm-objcopy-12"]
   },
   "rpi3": {
     "description": "Raspberry Pi 3",
     "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
     "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
-    "required_test_tools": [
-      "qemu-system-aarch64"
-    ],
-    "required_tools": [
-      "tsos-gbafix",
-      "llvm-objcopy-12"
-    ]
+    "required_test_tools": ["qemu-system-aarch64"],
+    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
   },
   "canon-a1100": {
     "description": "Canon PowerShot A1100IS",
-    "test_command": "",
+    "test_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus",
     "debug_command": "",
-    "required_test_tools": [
-      "qemu-system-aarch64"
-    ],
-    "required_tools": [
-      "llvm-objcopy-12"
-    ]
+    "required_test_tools": ["qemu-system-arm"],
+    "required_tools": ["llvm-objcopy-12"]
   }
 }
