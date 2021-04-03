@@ -29,7 +29,7 @@ uint16_t ATAPI_quark::getsectorsize(void)
   return 2048;
 }
 
-void ATAPI_quark::insl(uint32_t port, void *addr, int cnt) {
+void ATAPI_quark::insl(uint32_t port, void *addr, uint32_t cnt) {
         __asm__ volatile (
             "cld;"
             "repne; insl;"
