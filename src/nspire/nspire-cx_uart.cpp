@@ -1,9 +1,9 @@
 //By Tsuki Superior
-#include "nspire-cx/nspire-cx_uart.hpp"
+#include "nspire/nspire-cx_uart.hpp"
 
 NSPIRE_CX_UART_quark::NSPIRE_CX_UART_quark(void)
 {
-  name = "Texas Instruments Nspire Universal Asynchronous Receiver-Transmitter";
+  name = "Texas Instruments Nspire CX Universal Asynchronous Receiver-Transmitter";
 }
 
 bool NSPIRE_CX_UART_quark::detectsystem(void)
