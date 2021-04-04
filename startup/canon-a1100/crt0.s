@@ -3,7 +3,7 @@
   .type _start, #function
   .global _start
 
-    ldr     SP, =0x8000
+    ldr     SP, =0x1900
 
 // Turn OFF SD Card power
 // to support autostart
