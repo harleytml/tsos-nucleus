@@ -54,9 +54,9 @@ to see all the platforms
 You need to install these tools:
 
 ```sh
-clang
-lld
-llvm
+clang   # 10 or above is recommended
+lld     # 10 or above is recommended
+llvm    # 10 or above is recommended
 termcolor
 make
 cmake
