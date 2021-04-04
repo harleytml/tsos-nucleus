@@ -34,14 +34,11 @@ void kernel_main(void)
   tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
   tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
 
-  //This is quite annoying
-  //tsos->sound.playtone(100);
+  //This is quite annoying, you should comment it out
+  tsos->sound.playtone(100);
 
   tsos->video.drawpx(0, 0);
-
-  // I mean, this outputs through serial, but it loops forever.
-  // Uncomment at your own risk
-  //tsos->serial.sendbyte((uint8_t)'Q');
+  tsos->serial.sendbyte((uint8_t)'Q');
 
   if (!tsos->filesystem.exists(init_file_path))
   {
