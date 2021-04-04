@@ -9,7 +9,7 @@
 
 ## Build Tests
 
-[![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire.yml)
+[![NSPIRE Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire-cx.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-nspire-cx.yml)
 [![PC Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-pc.yml)
 [![RPI3 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-rpi3.yml)
 [![CANON-A1100 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml)
@@ -54,9 +54,9 @@ to see all the platforms
 You need to install these tools:
 
 ```sh
-clang-12
-lld-12
-llvm-12
+clang
+lld
+llvm
 termcolor
 make
 cmake
