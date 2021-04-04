@@ -19,7 +19,7 @@ public:
   Font(void);
 
   // Constructor
-  Font(uint8_t *d);
+  Font(uint8_t *d, uint8_t char_width, uint8_t char_height);
 
   // Destructor
   ~Font();

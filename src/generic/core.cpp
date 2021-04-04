@@ -5,6 +5,7 @@ Tsos *tsos;
 
 Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
 {
+  static Font font = get_default_font();
   if (nucleuslock)
   {
     boot.fission("NUCLEUS LOCK VIOLATED");
@@ -13,6 +14,7 @@ Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
   {
     nucleuslock = true;
   }
+  video.setfont(font);
 }
 
 Tsos::~Tsos()

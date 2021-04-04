@@ -6,9 +6,11 @@ Font::Font(void)
   data = (uint8_t *)"";
 }
 
-Font::Font(uint8_t *d)
+Font::Font(uint8_t *d, uint8_t char_width, uint8_t char_height)
 {
   data = d;
+  width = char_width;
+  height = char_height;
 }
 
 Font::~Font(void)
