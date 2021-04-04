@@ -18,7 +18,7 @@
     "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
     "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
     "required_test_tools": ["qemu-system-aarch64"],
-    "required_tools": ["tsos-gbafix", "llvm-objcopy"]
+    "required_tools": ["llvm-objcopy"]
   },
   "canon-a1100": {
     "description": "Canon PowerShot A1100IS",
