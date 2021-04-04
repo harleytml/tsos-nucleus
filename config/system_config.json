@@ -6,25 +6,25 @@
     "required_test_tools": ["qemu-system-i386"],
     "required_tools": ["grub-file", "grub-mkrescue"]
   },
-  "nspire": {
-    "description": "Texas Instruments TI-Nspire",
+  "nspire-cx": {
+    "description": "Texas Instruments TI-Nspire CX",
     "test_command": "",
     "debug_command": "",
     "required_test_tools": [],
-    "required_tools": ["llvm-objcopy-12"]
+    "required_tools": ["llvm-objcopy"]
   },
   "rpi3": {
     "description": "Raspberry Pi 3",
     "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
     "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
     "required_test_tools": ["qemu-system-aarch64"],
-    "required_tools": ["tsos-gbafix", "llvm-objcopy-12"]
+    "required_tools": ["tsos-gbafix", "llvm-objcopy"]
   },
   "canon-a1100": {
     "description": "Canon PowerShot A1100IS",
     "test_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus",
     "debug_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus -s -S",
     "required_test_tools": ["qemu-system-arm"],
-    "required_tools": ["llvm-objcopy-12"]
+    "required_tools": ["llvm-objcopy"]
   }
 }
