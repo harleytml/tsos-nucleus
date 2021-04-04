@@ -17,6 +17,7 @@
 #include "generic/video_font.hpp"
 #include "generic/video_modes.hpp"
 #include "generic/current_config.hpp"
+#include "generic/default_font.hpp"
 
 // The main class controlling video
 class Video : public Nucleon<Video_quark>
