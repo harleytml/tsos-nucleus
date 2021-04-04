@@ -6,11 +6,6 @@ void kernel_main(void)
   static Tsos os_instance = Tsos();
   tsos = &os_instance;
 
-  uint32_t len = 100;
-
-  Array<char> *test = new Array<char>(len);
-  test[0] = 'Q';
-
 #ifdef __PERSONAL_COMPUTER__
   GlobalDescriptorTable gdt;
 #endif
