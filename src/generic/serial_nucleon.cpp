@@ -23,21 +23,18 @@ Serial::~Serial()
 
 void Serial::sendbyte(uint8_t b)
 {
-  while (isdevicereadytoreceive())
+  while (!isdevicereadytoreceive())
   {
-    quark->sendbyte(b);
   }
+  quark->sendbyte(b);
 }
 
 uint8_t Serial::getbyte(void)
 {
-  while (isdevicereadytotransmit())
+  while (!isdevicereadytotransmit())
   {
-    return quark->getbyte();
   }
-
-  // This should never happen, but apparently needs to be here
-  return 0;
+  return quark->getbyte();
 }
 
 bool Serial::isdevicereadytoreceive(void)
