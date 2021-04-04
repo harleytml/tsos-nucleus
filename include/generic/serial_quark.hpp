@@ -21,7 +21,10 @@ public:
   ~Serial_quark();
 
   // Is device there
-  virtual bool isdevicethere(void) = 0;
+  virtual bool isdevicereadytotransmit(void) = 0;
+
+  // Is device there
+  virtual bool isdevicereadytoreceive(void) = 0;
 
   // Send a byte
   virtual void sendbyte(uint8_t byte) = 0;
