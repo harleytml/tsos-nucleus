@@ -1,3 +1,4 @@
+// From chdk
   .align
   .section .text.boot
   .type _start, #function
