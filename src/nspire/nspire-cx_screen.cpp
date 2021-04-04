@@ -1,9 +1,9 @@
 //By Tsuki Superior
-#include "nspire-cx/nspire-cx_screen.hpp"
+#include "nspire/nspire-cx_screen.hpp"
 
 NSPIRE_CX_SCREEN_quark::NSPIRE_CX_SCREEN_quark(void)
 {
-  name = "Texas Instruments Nspire Screen";
+  name = "Texas Instruments Nspire CX Screen";
   font = Font();
 }
 

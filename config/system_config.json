@@ -6,8 +6,8 @@
     "required_test_tools": ["qemu-system-i386"],
     "required_tools": ["grub-file", "grub-mkrescue"]
   },
-  "nspire-cx": {
-    "description": "Texas Instruments TI-Nspire CX",
+  "nspire": {
+    "description": "Texas Instruments TI-Nspire",
     "test_command": "",
     "debug_command": "",
     "required_test_tools": [],

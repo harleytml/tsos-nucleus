@@ -1,9 +1,9 @@
 //By Tsuki Superior
-#include "nspire-cx/nspire-cx_keyboard.hpp"
+#include "nspire/nspire-cx_keyboard.hpp"
 
 NSPIRE_CX_KEYBOARD_quark::NSPIRE_CX_KEYBOARD_quark(void)
 {
-  name = "Texas Instruments Nspire Keyboard";
+  name = "Texas Instruments Nspire CX Keyboard";
 }
 
 NSPIRE_CX_KEYBOARD_quark::~NSPIRE_CX_KEYBOARD_quark()

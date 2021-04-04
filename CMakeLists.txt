@@ -21,14 +21,14 @@ if(PLATFORM STREQUAL "PC")
        "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
 
-if(PLATFORM STREQUAL "NSPIRE-CX")
+if(PLATFORM STREQUAL "NSPIRE")
   message(STATUS "Platform ${PLATFORM}")
   set(platform_options -D__NSPIRE__ -mtune=arm926ej-s
                        --target=armv5tej-unknown-none-eabi -mgeneral-regs-only)
   set(linker_script_command -T../linkerscripts/nspire.ld)
-  file(GLOB platform_specific_files "src/nspire-cx/*" "src/arm/*"
-       "startup/nspire-cx/*" "startup/arm/*")
-endif(PLATFORM STREQUAL "NSPIRE-CX")
+  file(GLOB platform_specific_files "src/nspire/*" "src/arm/*"
+       "startup/nspire/*" "startup/arm/*")
+endif(PLATFORM STREQUAL "NSPIRE")
 
 if(PLATFORM STREQUAL "RPI3")
   message(STATUS "Platform ${PLATFORM}")
