@@ -7,7 +7,7 @@ on:
 name: CANON-A1100 Compile test
 
 jobs:
-  gba-test:
+  canon-a1100-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
