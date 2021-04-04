@@ -84,8 +84,9 @@ uint16_t Video::getscreenheight(void) const
   return quark->getscreenheight();
 }
 
-void Video::setfont(Font f)
+void Video::setfont(Font &f)
 {
+  font = f;
 }
 
 void Video::clear(void) const

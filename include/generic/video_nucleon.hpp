@@ -48,7 +48,7 @@ public:
   uint16_t getscreenheight(void) const;
 
   // Set the font to be used in the screen
-  void setfont(Font f);
+  void setfont(Font &f);
 
   // Clear the screen
   void clear(void) const;
