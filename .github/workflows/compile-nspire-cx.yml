@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [master]
 
-name: NSPIRE Compile test
+name: NSPIRE CX Compile test
 
 jobs:
   nspire-test:
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile Test
-        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py nspire
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py nspire-cx
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2

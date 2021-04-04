@@ -1,17 +1,17 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_BOOT_QUARK__
-#define __TSOS_CANON_A1100_BOOT_QUARK__
+#ifndef __TSOS_NSPIRE_CX_BOOT_QUARK__
+#define __TSOS_NSPIRE_CX_BOOT_QUARK__
 
 #include "generic/boot_quark.hpp"
 
-class CANON_A1100_BOOT_quark : public Boot_quark
+class NSPIRE_CX_BOOT_quark : public Boot_quark
 {
 public:
   // Constructor
-  CANON_A1100_BOOT_quark(void);
+  NSPIRE_CX_BOOT_quark(void);
 
   // Destructor
-  ~CANON_A1100_BOOT_quark();
+  ~NSPIRE_CX_BOOT_quark();
 
   // Detect the type of system its running on
   bool detectsystem(void) final;

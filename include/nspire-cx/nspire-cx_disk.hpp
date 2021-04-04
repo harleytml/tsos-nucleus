@@ -1,16 +1,16 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_SD_CARD_QUARK__
-#define __TSOS_CANON_A1100_SD_CARD_QUARK__
+#ifndef __TSOS_NSPIRE_CX_DISK_QUARK__
+#define __TSOS_NSPIRE_CX_DISK_QUARK__
 
 #include "generic/disk_quark.hpp"
 
-class CANON_A1100_SD_CARD_quark : public Disk_quark
+class NSPIRE_CX_DISK_quark : public Disk_quark
 {
 public:
   // Constructor
-  CANON_A1100_SD_CARD_quark(void);
+  NSPIRE_CX_DISK_quark(void);
 
-  ~CANON_A1100_SD_CARD_quark();
+  ~NSPIRE_CX_DISK_quark();
 
   bool detectsystem(void) final;
 

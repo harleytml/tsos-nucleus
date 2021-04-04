@@ -1,16 +1,16 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_KEYPAD_QUARK__
-#define __TSOS_CANON_A1100_KEYPAD_QUARK__
+#ifndef __TSOS_NSPIRE_CX_KEYBOARD_QUARK__
+#define __TSOS_NSPIRE_CX_KEYBOARD_QUARK__
 
 #include "generic/input_quark.hpp"
 
-class CANON_A1100_KEYPAD_quark : public Input_quark
+class NSPIRE_CX_KEYBOARD_quark : public Input_quark
 {
 public:
   // Constructor
-  CANON_A1100_KEYPAD_quark(void);
+  NSPIRE_CX_KEYBOARD_quark(void);
 
-  ~CANON_A1100_KEYPAD_quark();
+  ~NSPIRE_CX_KEYBOARD_quark();
 
   // Detects if the nucleon should be used
   bool detectsystem(void) final;

@@ -1,15 +1,15 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_SCREEN_QUARK__
-#define __TSOS_CANON_A1100_SCREEN_QUARK__
+#ifndef __TSOS_NSPIRE_CX_SCREEN_QUARK__
+#define __TSOS_NSPIRE_CX_SCREEN_QUARK__
 
 #include "generic/video_quark.hpp"
 #include "generic/video_modes.hpp"
 
-class CANON_A1100_SCREEN_quark : public Video_quark
+class NSPIRE_CX_SCREEN_quark : public Video_quark
 {
 public:
-  CANON_A1100_SCREEN_quark(void);
-  ~CANON_A1100_SCREEN_quark();
+  NSPIRE_CX_SCREEN_quark(void);
+  ~NSPIRE_CX_SCREEN_quark();
   bool detectsystem(void) final;
   void reset(void) final;
   void putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc) final;

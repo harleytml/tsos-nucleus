@@ -10,7 +10,7 @@ from termcolor import cprint
 shutil.copyfile("nucleus.elf", "nucleus")
 
 # Convert to binary
-if os.system("llvm-objcopy-12 -O binary nucleus") != 0:
+if os.system("llvm-objcopy -O binary nucleus") != 0:
     cprint("objcopy failed on given nucleus image!", "red")
     sys.exit(1)
 
