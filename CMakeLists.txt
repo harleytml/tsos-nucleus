@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 
-set(CMAKE_CXX_COMPILER "/usr/tsos-toolchain/bin/clang++")
-set(CMAKE_C_COMPILER "/usr/tsos-toolchain/bin/clang")
-set(CMAKE_ASM_COMPILER "/usr/tsos-toolchain/bin/clang++")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_ASM_COMPILER "/usr/bin/clang++")
 
 project("TS/OS Nucleus" VERSION 0.0)
 

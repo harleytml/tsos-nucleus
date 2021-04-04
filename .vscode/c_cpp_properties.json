@@ -4,7 +4,7 @@
       "name": "PC",
       "includePath": ["${workspaceFolder}/**"],
       "defines": ["__PERSONAL_COMPUTER__"],
-      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
+      "compilerPath": "/usr/bin/clang++-12",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "intelliSenseMode": "clang-x86",
@@ -18,7 +18,7 @@
       "name": "GBA",
       "includePath": ["${workspaceFolder}/**"],
       "defines": [],
-      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
+      "compilerPath": "/usr/bin/clang++-12",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "intelliSenseMode": "clang-arm",
@@ -30,10 +30,24 @@
       "configurationProvider": "ms-vscode.makefile-tools"
     },
     {
-      "name": "NSPIRE",
+      "name": "NSPIRE-CX",
       "includePath": ["${workspaceFolder}/**"],
       "defines": ["__NSPIRE__"],
-      "compilerPath": "/usr/tsos-toolchain/bin/clang++",
+      "compilerPath": "/usr/bin/clang++-12",
+      "cStandard": "c99",
+      "cppStandard": "c++11",
+      "compilerArgs": [],
+      "browse": {
+        "path": ["${workspaceFolder}/**"],
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "intelliSenseMode": "clang-arm"
+    },
+    {
+      "name": "CANON-A1100",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": ["__CANON_A1100__"],
+      "compilerPath": "/usr/bin/clang++-12",
       "cStandard": "c99",
       "cppStandard": "c++11",
       "compilerArgs": [],
