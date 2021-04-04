@@ -4,6 +4,9 @@
 
 #include "generic/serial_quark.hpp"
 
+#define BAUD_115200 (0x01)
+#define COM1 (0x3F8)
+
 class RS232_quark : public Serial_quark
 {
 public:
@@ -13,6 +16,9 @@ public:
   bool isdevicethere(void) final;
   void sendbyte(uint8_t byte) final;
   uint8_t getbyte(void) final;
+
+private:
+  void set_baud(uint16_t port, uint8_t baud_rate);
 };
 
 #endif
