@@ -20,7 +20,11 @@ bool NSPIRE_CM_UART_quark::isdevicethere(void)
   return false;
 }
 
-uint8_t NSPIRE_CM_UART_quark::exchangebyte(uint8_t b)
+void NSPIRE_CM_UART_quark::sendbyte(uint8_t byte)
+{
+}
+
+uint8_t NSPIRE_CM_UART_quark::getbyte(void)
 {
   return 0;
 }

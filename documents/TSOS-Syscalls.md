@@ -131,9 +131,13 @@ Free memory
 SERIAL SYSCALLS:
 
 ```text
-exchangebyte:
+getbyte:
 
-Exchange a byte with the other device
+Send a byte to the other device
+
+sendbyte:
+
+Gey a byte from the other device
 
 isdevicethere:
 

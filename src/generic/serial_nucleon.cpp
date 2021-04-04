@@ -21,9 +21,21 @@ Serial::~Serial()
 {
 }
 
-uint8_t Serial::exchangebyte(uint8_t b)
+void Serial::sendbyte(uint8_t b)
 {
-  return isdevicethere() ? quark->exchangebyte(b) : 0x00;
+  if (isdevicethere())
+  {
+    quark->sendbyte(b);
+  }
+}
+
+uint8_t Serial::getbyte(void)
+{
+  if (isdevicethere())
+  {
+    return quark->getbyte();
+  }
+  return 0;
 }
 
 bool Serial::isdevicethere(void)

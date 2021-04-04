@@ -20,7 +20,11 @@ bool CANON_A1100_UART_quark::isdevicethere(void)
   return false;
 }
 
-uint8_t CANON_A1100_UART_quark::exchangebyte(uint8_t b)
+void CANON_A1100_UART_quark::sendbyte(uint8_t byte)
+{
+}
+
+uint8_t CANON_A1100_UART_quark::getbyte(void)
 {
   return 0;
 }

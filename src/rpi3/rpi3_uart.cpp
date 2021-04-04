@@ -20,7 +20,11 @@ bool RPI3_UART_quark::isdevicethere(void)
   return false;
 }
 
-uint8_t RPI3_UART_quark::exchangebyte(uint8_t b)
+void RPI3_UART_quark::sendbyte(uint8_t byte)
+{
+}
+
+uint8_t RPI3_UART_quark::getbyte(void)
 {
   return 0;
 }

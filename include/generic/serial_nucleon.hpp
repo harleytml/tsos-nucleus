@@ -23,8 +23,11 @@ public:
   // Destructor
   ~Serial();
 
-  // Exchange a byte
-  uint8_t exchangebyte(uint8_t b);
+  // Send a byte
+  void sendbyte(uint8_t byte);
+
+  // Get a byte
+  uint8_t getbyte(void);
 
   // Is device there
   bool isdevicethere(void);
