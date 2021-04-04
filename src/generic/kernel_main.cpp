@@ -36,6 +36,11 @@ void kernel_main(void)
   tsos->sound.playtone(100);
   tsos->video.drawpx(0, 0);
 
+  if (tsos->serial.isdevicethere())
+  {
+    tsos->serial.sendbyte((uint8_t)'Q');
+  }
+
   if (!tsos->filesystem.exists(init_file_path))
   {
     tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);

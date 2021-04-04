@@ -20,11 +20,14 @@ public:
 
   ~Serial_quark();
 
-  // Exchange a byte
-  virtual uint8_t exchangebyte(uint8_t b) = 0;
-
   // Is device there
   virtual bool isdevicethere(void) = 0;
+
+  // Send a byte
+  virtual void sendbyte(uint8_t byte) = 0;
+
+  // Send a byte
+  virtual uint8_t getbyte(void) = 0;
 };
 
 #endif

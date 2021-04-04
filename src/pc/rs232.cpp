@@ -20,7 +20,11 @@ bool RS232_quark::isdevicethere(void)
   return false;
 }
 
-uint8_t RS232_quark::exchangebyte(uint8_t b)
+void RS232_quark::sendbyte(uint8_t byte)
+{
+}
+
+uint8_t RS232_quark::getbyte(void)
 {
   return 0;
 }
