@@ -8,6 +8,7 @@ SECTIONS
 {
 	.text ALIGN(4) : 
 	{
+		KEEP(*(.text.boot))
 		KEEP(*(.init))
     KEEP(*(.fini))
 		*(.text)
