@@ -69,11 +69,9 @@ Debian/Ubuntu :
 
 ```sh
 sudo apt-get update
-sudo apt-get install clang-12 lld-12 llvm-12 make cmake python3 python3-pip dosfstools
+sudo apt-get install clang lld llvm make cmake python3 python3-pip dosfstools
 pip3 install -r requirements.txt
 ```
-
-Your distro may not support llvm-12 yet. Please see [llvm apt](https://apt.llvm.org/) to get the entries for your sources.list
 
 ## Building
 
