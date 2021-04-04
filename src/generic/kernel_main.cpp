@@ -40,7 +40,7 @@ void kernel_main(void)
   tsos->video.drawpx(0, 0);
 
   // I mean, this outputs through serial, but it loops forever.
-  // Uncomment at you own risk
+  // Uncomment at your own risk
   //tsos->serial.sendbyte((uint8_t)'Q');
 
   if (!tsos->filesystem.exists(init_file_path))
