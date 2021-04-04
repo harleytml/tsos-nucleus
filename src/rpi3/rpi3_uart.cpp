@@ -15,7 +15,12 @@ void RPI3_UART_quark::reset(void)
 {
 }
 
-bool RPI3_UART_quark::isdevicethere(void)
+bool RPI3_UART_quark::isdevicereadytotransmit(void)
+{
+  return false;
+}
+
+bool RPI3_UART_quark::isdevicereadytoreceive(void)
 {
   return false;
 }

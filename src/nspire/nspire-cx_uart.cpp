@@ -15,7 +15,12 @@ void NSPIRE_CX_UART_quark::reset(void)
 {
 }
 
-bool NSPIRE_CX_UART_quark::isdevicethere(void)
+bool NSPIRE_CX_UART_quark::isdevicereadytotransmit(void)
+{
+  return false;
+}
+
+bool NSPIRE_CX_UART_quark::isdevicereadytoreceive(void)
 {
   return false;
 }

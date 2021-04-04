@@ -5,9 +5,9 @@
 Serial::Serial(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static RS232_quark rs232_quark = RS232_quark();
+  static PC_UART_quark pc_uart_quark = PC_UART_quark();
 
-  attachquark(rs232_quark);
+  attachquark(pc_uart_quark);
 #endif
 
 #ifdef __RASPBERRY_PI_3__
@@ -23,7 +23,7 @@ Serial::~Serial()
 
 void Serial::sendbyte(uint8_t b)
 {
-  if (isdevicethere())
+  while (isdevicereadytoreceive())
   {
     quark->sendbyte(b);
   }
@@ -31,14 +31,21 @@ void Serial::sendbyte(uint8_t b)
 
 uint8_t Serial::getbyte(void)
 {
-  if (isdevicethere())
+  while (isdevicereadytotransmit())
   {
     return quark->getbyte();
   }
+
+  // This should never happen, but apparently needs to be here
   return 0;
 }
 
-bool Serial::isdevicethere(void)
+bool Serial::isdevicereadytoreceive(void)
 {
-  return quark->isdevicethere();
+  return quark->isdevicereadytoreceive();
+}
+
+bool Serial::isdevicereadytotransmit(void)
+{
+  return quark->isdevicereadytotransmit();
 }

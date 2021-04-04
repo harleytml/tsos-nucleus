@@ -21,7 +21,7 @@
 #include "pc/atapi.hpp"
 #include "pc/at_keyboard.hpp"
 #include "pc/xt_keyboard.hpp"
-#include "pc/rs232.hpp"
+#include "pc/pc_uart.hpp"
 #include "pc/cga.hpp"
 #include "pc/ega.hpp"
 #include "pc/mda.hpp"

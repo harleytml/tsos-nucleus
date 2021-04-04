@@ -29,8 +29,11 @@ public:
   // Get a byte
   uint8_t getbyte(void);
 
-  // Is device there
-  bool isdevicethere(void);
+  // Is device ready to take a byte
+  bool isdevicereadytoreceive(void);
+
+  // Is device ready to send a byte
+  bool isdevicereadytotransmit(void);
 };
 
 #endif

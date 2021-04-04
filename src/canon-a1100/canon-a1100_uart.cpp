@@ -15,7 +15,12 @@ void CANON_A1100_UART_quark::reset(void)
 {
 }
 
-bool CANON_A1100_UART_quark::isdevicethere(void)
+bool CANON_A1100_UART_quark::isdevicereadytotransmit(void)
+{
+  return false;
+}
+
+bool CANON_A1100_UART_quark::isdevicereadytoreceive(void)
 {
   return false;
 }

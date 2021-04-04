@@ -139,7 +139,7 @@ sendbyte:
 
 Gey a byte from the other device
 
-isdevicethere:
+isdeviceready:
 
 Check if a device is connected to this device
 ```
