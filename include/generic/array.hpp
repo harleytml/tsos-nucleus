@@ -9,7 +9,6 @@
 #define __TSOS_ARRAY_TYPE__
 
 #include "generic/types.hpp"
-#include "generic/nucleus_instance.hpp"
 
 extern "C"
 {
@@ -34,7 +33,7 @@ public:
   Array(Array<T> &array)
   {
     internaldata = new T[array.len()];
-    for (uint_fast16_t x = 0, len = array->len(); x < len; x++)
+    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
     {
       internaldata[x] = array[x];
     }
@@ -44,23 +43,25 @@ public:
   {
     if (index < internaldatalength)
     {
-      tsos->boot.fission("ARRAY WAS ACCESSED OUTSIDE OF ITS BOUNDARIES");
+      while (true)
+      {
+      }
     }
-    return index;
+    return internaldata[index];
   }
 
   T operator[](const uint16_t index) const
   {
     if (index < internaldatalength)
     {
-      tsos->boot.fission("ARRAY WAS ACCESSED OUTSIDE OF ITS BOUNDARIES");
+      return 0;
     }
-    return index;
+    return internaldata[index];
   }
 
   bool operator==(Array<T> &array) const
   {
-    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+    for (uint_fast16_t x = 0, length = len(); x < length; x++)
     {
       if (internaldata[x] != array[x])
       {
@@ -94,7 +95,7 @@ public:
   }
 
 private:
-  volatile T *internaldata;
+  T *internaldata;
   uint16_t internaldatalength;
 };
 

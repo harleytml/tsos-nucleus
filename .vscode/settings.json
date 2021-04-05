@@ -1,5 +1,7 @@
 {
   "editor.formatOnSave": true,
+  "editor.wrappingStrategy": "simple",
+  "python.linting.lintOnSave": true,
   "C_Cpp.errorSquiggles": "Enabled",
   "editor.tabSize": 2,
   "files.associations": {

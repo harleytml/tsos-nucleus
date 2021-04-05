@@ -29,9 +29,6 @@ void Boot::reboot(void) const
 
 void Boot::shutdown(void) const
 {
-  // Destroy tsos, to trigger the kernel destruction
-  quark->shutdown();
-
   tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
   tsos->video.settextforegroundcolor(0xff, 0xff, 0xff);
   tsos->video.reset();
@@ -42,9 +39,17 @@ void Boot::shutdown(void) const
   tsos->disk.commitall();
   tsos->boot.reboot();
   tsos->video.putstring(0, tsos->video.scroll++, "You may now touch the power button.\n");
+
+  // Destroy tsos, to trigger the kernel destruction
+  quark->shutdown();
 }
 
 void Boot::fission(const char *errormsg) const
 {
+  tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
+  tsos->video.reset();
+  tsos->video.clear();
+  tsos->video.putstring(0, tsos->video.scroll++, "NUCLEUS FISSION!");
   tsos->video.putstring(0, tsos->video.scroll++, errormsg);
+  tsos->video.putstring(0, tsos->video.scroll++, "PLEASE REBOOT");
 }

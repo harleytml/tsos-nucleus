@@ -32,9 +32,10 @@ Video::~Video()
 {
 }
 
-void Video::reset(void) const
+void Video::reset(void)
 {
   quark->reset();
+  scroll = 0;
 }
 
 void Video::putchar(uint16_t posx, uint16_t posy, char c) const
@@ -89,7 +90,7 @@ void Video::setfont(Font &f)
   font = f;
 }
 
-void Video::clear(void) const
+void Video::clear(void)
 {
   for (uint16_t x = 0, lenx = getscreenwidth(); x < lenx; x++)
   {
