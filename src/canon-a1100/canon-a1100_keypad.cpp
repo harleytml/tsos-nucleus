@@ -3,7 +3,7 @@
 
 CANON_A1100_KEYPAD_quark::CANON_A1100_KEYPAD_quark(void)
 {
-  name = "Canon Powershot A1100 IS Keyboard";
+  name = "Canon Powershot A1100 IS Keypad";
 }
 
 CANON_A1100_KEYPAD_quark::~CANON_A1100_KEYPAD_quark()

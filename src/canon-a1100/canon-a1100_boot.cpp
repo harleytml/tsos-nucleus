@@ -28,7 +28,7 @@ void CANON_A1100_BOOT_quark::reboot(void)
 // From the chdk project
 void CANON_A1100_BOOT_quark::shutdown(void)
 {
-  volatile uint8_t *p = (uint8_t *)0xc022001c;
+  volatile uint32_t *p = (uint32_t *)0xc022001c;
 
   __asm__ volatile(
       "mrs     r1, cpsr        \n"
