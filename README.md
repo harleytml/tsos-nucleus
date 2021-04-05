@@ -54,12 +54,12 @@ to see all the platforms
 You need to install these tools:
 
 ```sh
-clang        # 10 or above is recommended
-lld          # 10 or above is recommended
-llvm         # 10 or above is recommended
-termcolor
+clang        # 10 or above is recommended, I use 13
+lld          # 10 or above is recommended, I use 13
+llvm         # 10 or above is recommended, I use 13
+termcolor   
 make
-cmake        # 3.13 or above is recommended
+cmake        # 3.13 or above is recommended, I use 3.13
 python3
 pip3
 dosfstools
