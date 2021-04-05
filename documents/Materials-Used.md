@@ -29,3 +29,5 @@
 [Firmware Image Maker](https://github.com/frantony/barebox/blob/master/scripts/canon-a1100-image)
 
 [IO Map for some cameras](https://magiclantern.fandom.com/wiki/Register_Map)
+
+[Qemu emulation file for the Canon-a1100](https://github.com/qemu/qemu/blob/master/hw/arm/digic_boards.c)
