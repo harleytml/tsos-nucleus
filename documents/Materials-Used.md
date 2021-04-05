@@ -18,8 +18,6 @@
 
 [x86 Bios Data Area Map](http://www.bioscentral.com/misc/bda.htm)
 
-[GBA Memory Domains](https://corrupt.wiki/consoles/gameboy-advance/bizhawk-memory-domains)
-
 [Assembly Syntax](https://gist.github.com/mishurov/6bcf04df329973c15044)
 
 [RPI OS Tutorial](https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html)
