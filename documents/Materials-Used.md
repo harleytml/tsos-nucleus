@@ -31,3 +31,7 @@
 [IO Map for some cameras](https://magiclantern.fandom.com/wiki/Register_Map)
 
 [Qemu emulation file for the Canon-a1100](https://github.com/qemu/qemu/blob/master/hw/arm/digic_boards.c)
+
+[Digic UART Reference](https://www.digi.com/resources/documentation/digidocs/embedded/dey/3.0/cc6ul/bsp_r_uart_6ul.html)
+
+[Digic UART Driver Linux](https://github.com/digi-embedded/linux/blob/v5.4/dey-3.0/maint/drivers/tty/serial/imx.c)
