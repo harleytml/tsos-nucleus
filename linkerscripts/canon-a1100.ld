@@ -1,4 +1,4 @@
-/*From CHDK*/
+/*By Tsuki Superior*/
 
 OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
@@ -6,36 +6,46 @@ ENTRY(_start)
 
 SECTIONS
 {
+	.text ALIGN(4) : 
+	{
+		KEEP(*(.text.boot))
+		KEEP(*(.init))
+    KEEP(*(.fini))
+		*(.text)
+		*(.text.*)
+	}
+ 
+	/* Read-only data. */
+	.rodata ALIGN(16) :
+	{
+		*(.rodata)
+		*.(.rodata.*)
+	}
+ 
+	/* Read-write data (initialized) */
+	.data ALIGN(16) : 
+	{
+		*(.data)
+		*(.data.*)
+		*(vtable)
+	}
+ 
+	/* Read-write data (uninitialized) and stack */
+	.bss ALIGN(16) : 
+	{
+		*(COMMON)
+		*(.bss)
+		*(.bss.*)
+	}
 
-  .text :
-  {
-	  _start = .;
-	  KEEP(*(.text.boot))
-	  *(.text)
-    *(.glue_7t)
-    *(.glue_7)
-	  . = ALIGN(4);
+	/DISCARD/ :
+	{ 
+    *(.comment) 
+    *(.gnu*) 
+    *(.note*) 
+    *(.eh_frame*)
+		*(.ARM.exidx .ARM.exidx.*);
   }
-  . = ALIGN(4);
-
-  .data : 
-  {
-    *(.rodata.*)
-    *(.rdata)
-    . = ALIGN(4);
-    *(.blob*)
-	  *(.data)
-	  . = ALIGN(4);
-  }
-  . = ALIGN(4);
-
-  .bss : {
-  	*(.bss) 
-  	*(.bss.*) 
-    *(COMMON)
-	  . = ALIGN(16);
-  }
-  . = ALIGN(16);
-  _kernelend = . ;
+	
+	_kernelend = . ;
 }
-
