@@ -43,7 +43,9 @@ public:
   {
     if (index < internaldatalength)
     {
-      return 0;
+      while (true)
+      {
+      }
     }
     return internaldata[index];
   }
