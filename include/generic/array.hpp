@@ -43,9 +43,7 @@ public:
   {
     if (index < internaldatalength)
     {
-      while (true)
-      {
-      }
+      return 0;
     }
     return internaldata[index];
   }
@@ -54,16 +52,14 @@ public:
   {
     if (index < internaldatalength)
     {
-      while (true)
-      {
-      }
+      return 0;
     }
     return internaldata[index];
   }
 
   bool operator==(Array<T> &array) const
   {
-    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+    for (uint_fast16_t x = 0, length = len(); x < length; x++)
     {
       if (internaldata[x] != array[x])
       {
