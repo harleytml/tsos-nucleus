@@ -57,7 +57,7 @@ You need to install these tools:
 clang        # 10 or above is recommended, I use 13
 lld          # 10 or above is recommended, I use 13
 llvm         # 10 or above is recommended, I use 13
-termcolor   
+termcolor
 make
 cmake        # 3.13 or above is recommended, I use 3.13
 python3
