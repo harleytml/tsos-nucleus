@@ -47,6 +47,7 @@ extern "C"
 	int memcmp(const void *aptr, const void *bptr, size_t size);
 	void *memmove(void *dstptr, const void *srcptr, size_t size);
 	int strcmp(const char *p1, const char *p2);
+	size_t strlen(const char *str);
 }
 
 namespace __cxxabiv1

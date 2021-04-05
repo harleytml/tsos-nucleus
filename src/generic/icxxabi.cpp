@@ -208,6 +208,15 @@ extern "C"
     } while (c1 == c2);
     return c1 - c2;
   }
+
+  size_t strlen(const char *str)
+  {
+    size_t pos = 0;
+    while (str[pos++] != 0)
+    {
+    }
+    return pos;
+  }
 }
 
 void *operator new(size_t size)

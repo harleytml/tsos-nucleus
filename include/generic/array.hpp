@@ -33,7 +33,7 @@ public:
   Array(Array<T> &array)
   {
     internaldata = new T[array.len()];
-    for (uint_fast16_t x = 0, len = array->len(); x < len; x++)
+    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
     {
       internaldata[x] = array[x];
     }

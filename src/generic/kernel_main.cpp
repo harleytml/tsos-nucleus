@@ -4,7 +4,7 @@ void kernel_main(void)
 {
   char *init_file_path = "/bin/init";
   char *serialmessage = "Welcome to TS/OS";
-  uint8_t pos = 0;
+  uint_fast8_t pos = 0;
   static Tsos os_instance = Tsos();
   tsos = &os_instance;
 
@@ -31,8 +31,8 @@ void kernel_main(void)
   tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
   tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
 
-  //This is quite annoying, you should comment it out
-  tsos->sound.playtone(100);
+  // This is quite annoying, you should comment it out
+  // tsos->sound.playtone(100);
 
   tsos->video.drawpx(0, 0);
 
