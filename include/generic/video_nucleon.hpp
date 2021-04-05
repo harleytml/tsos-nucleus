@@ -30,7 +30,7 @@ public:
   ~Video();
 
   // Initialize the video system
-  void reset(void) const;
+  void reset(void);
 
   // Put a character
   void putchar(uint16_t posx, uint16_t posy, char c) const;
@@ -51,7 +51,7 @@ public:
   void setfont(Font &f);
 
   // Clear the screen
-  void clear(void) const;
+  void clear(void);
 
   // Set text background color
   void settextbackgroundcolor(uint8_t red, uint8_t green, uint8_t blue);

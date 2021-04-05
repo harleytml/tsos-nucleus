@@ -4,8 +4,8 @@ void kernel_main(void)
 {
   char *init_file_path = "/bin/init";
   char *serialmessage = "Welcome to TS/OS";
-  uint_fast8_t pos = 0;
   static Tsos os_instance = Tsos();
+  uint_fast8_t pos = 0;
   tsos = &os_instance;
 
 #ifdef __PERSONAL_COMPUTER__
@@ -31,7 +31,7 @@ void kernel_main(void)
   tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
   tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
 
-  // This is quite annoying, you should comment it out
+  // This is quite annoying, so I'll comment it out
   // tsos->sound.playtone(100);
 
   tsos->video.drawpx(0, 0);
@@ -41,14 +41,20 @@ void kernel_main(void)
     tsos->serial.sendbyte((uint8_t)serialmessage[pos++]);
   }
 
-  if (!tsos->filesystem.exists(init_file_path))
-  {
-    tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
-    tsos->boot.fission("INIT EXECUTABLE NOT FOUND");
-  }
-
-  File init_executable = tsos->filesystem.open(init_file_path);
   while (true)
   {
+  }
+
+  if (!tsos->filesystem.exists(init_file_path))
+  {
+    tsos->boot.fission("INIT EXECUTABLE NOT FOUND");
+  }
+  else
+  {
+    File init_executable = tsos->filesystem.open(init_file_path);
+    if (!init_executable.permissions.execute)
+    {
+      tsos->boot.fission("INIT EXECUTABLE INVALID");
+    }
   }
 }
