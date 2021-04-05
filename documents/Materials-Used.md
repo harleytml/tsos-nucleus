@@ -29,3 +29,5 @@
 [Camera Fandom Documents](https://chdk.fandom.com/wiki/Developer_Technical_Documents)
 
 [Firmware Image Maker](https://github.com/frantony/barebox/blob/master/scripts/canon-a1100-image)
+
+[IO Map for some cameras](https://magiclantern.fandom.com/wiki/Register_Map)
