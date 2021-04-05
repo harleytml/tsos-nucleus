@@ -3,13 +3,10 @@
 void kernel_main(void)
 {
   char *init_file_path = "/bin/init";
+  char *serialmessage = "Welcome to TS/OS";
+  uint8_t pos = 0;
   static Tsos os_instance = Tsos();
   tsos = &os_instance;
-
-  uint32_t len = 100;
-
-  Array<char> *test = new Array<char>(len);
-  test[0] = 'Q';
 
 #ifdef __PERSONAL_COMPUTER__
   GlobalDescriptorTable gdt;
@@ -38,7 +35,11 @@ void kernel_main(void)
   tsos->sound.playtone(100);
 
   tsos->video.drawpx(0, 0);
-  tsos->serial.sendbyte((uint8_t)'Q');
+
+  while (serialmessage[pos] != 0)
+  {
+    tsos->serial.sendbyte((uint8_t)serialmessage[pos++]);
+  }
 
   if (!tsos->filesystem.exists(init_file_path))
   {
