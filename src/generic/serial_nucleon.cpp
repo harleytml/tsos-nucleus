@@ -21,7 +21,7 @@ Serial::~Serial()
 {
 }
 
-void Serial::sendbyte(uint8_t b)
+void Serial::sendbyte(uint8_t b) const
 {
   while (!isdevicereadytoreceive())
   {
@@ -29,7 +29,7 @@ void Serial::sendbyte(uint8_t b)
   quark->sendbyte(b);
 }
 
-uint8_t Serial::getbyte(void)
+uint8_t Serial::getbyte(void) const
 {
   while (!isdevicereadytotransmit())
   {
@@ -37,12 +37,22 @@ uint8_t Serial::getbyte(void)
   return quark->getbyte();
 }
 
-bool Serial::isdevicereadytoreceive(void)
+void Serial::sendbytearray(Array<uint8_t> array) const
+{
+  uint_fast16_t array_len = array.len();
+  uint_fast16_t x = 0;
+  for (x = 0; x < array_len; x++)
+  {
+    sendbyte(array[x]);
+  }
+}
+
+bool Serial::isdevicereadytoreceive(void) const
 {
   return quark->isdevicereadytoreceive();
 }
 
-bool Serial::isdevicereadytotransmit(void)
+bool Serial::isdevicereadytotransmit(void) const
 {
   return quark->isdevicereadytotransmit();
 }
