@@ -24,6 +24,8 @@ public:
   // Destructor
   ~Serial();
 
+  void reset(void);
+
   // Send a byte
   void sendbyte(uint8_t byte) const;
 

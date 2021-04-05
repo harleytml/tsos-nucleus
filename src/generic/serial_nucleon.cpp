@@ -21,6 +21,11 @@ Serial::~Serial()
 {
 }
 
+void Serial::reset(void)
+{
+  quark->reset();
+}
+
 void Serial::sendbyte(uint8_t b) const
 {
   while (!isdevicereadytoreceive())

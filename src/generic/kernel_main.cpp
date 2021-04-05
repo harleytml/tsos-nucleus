@@ -44,7 +44,7 @@ void kernel_main(void)
   if (!tsos->filesystem.exists(init_file_path))
   {
     tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
-    tsos->boot.fission("INIT EXECUTABLE NOT FOUND\n");
+    tsos->boot.fission("INIT EXECUTABLE NOT FOUND");
   }
 
   File init_executable = tsos->filesystem.open(init_file_path);
