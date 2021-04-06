@@ -11,9 +11,15 @@
 #define __TSOS_ELF_QUARK__
 
 #define EI_NIDENT 16
+#define ELFMAG "\177ELF"
 
 #include <generic/process_quark.hpp>
 #include <generic/filesystem_file.hpp>
+
+extern "C"
+{
+  int memcmp(const void *aptr, const void *bptr, size_t size);
+}
 
 class ELF_quark : public Process_quark
 {

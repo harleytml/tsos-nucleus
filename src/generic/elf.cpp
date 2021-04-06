@@ -19,6 +19,8 @@ void ELF_quark::reset(void)
 bool ELF_quark::isvalidexecutable(char *path)
 {
   return true;
+  uint8_t signature_length = 4;
   File file = tsos->filesystem.open(path);
-  uint8_t *exec = tsos->filesystem.read(file, 4);
+  uint8_t *exec = tsos->filesystem.read(file, signature_length);
+  return memcmp(exec, ELFMAG, signature_length) == 0;
 }
