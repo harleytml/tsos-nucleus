@@ -8,9 +8,9 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_QUARK__
 #define __TSOS_NUCLEUS_FILESYSTEM_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
-#include "generic/filesystem_file.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
+#include <generic/filesystem_file.hpp>
 
 class Filesystem_quark : public Quark
 {

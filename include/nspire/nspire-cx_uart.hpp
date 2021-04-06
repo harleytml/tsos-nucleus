@@ -2,7 +2,7 @@
 #ifndef __TSOS_NSPIRE_CX_UART_QUARK__
 #define __TSOS_NSPIRE_CX_UART_QUARK__
 
-#include "generic/serial_quark.hpp"
+#include <generic/serial_quark.hpp>
 
 #define MMIO_BASE 0x90020000
 

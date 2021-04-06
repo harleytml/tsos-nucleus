@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_KEYBOARD_QUARK__
 #define __TSOS_RPI3_KEYBOARD_QUARK__
 
-#include "generic/input_quark.hpp"
+#include <generic/input_quark.hpp>
 
 class RPI3_KEYBOARD_quark : public Input_quark
 {

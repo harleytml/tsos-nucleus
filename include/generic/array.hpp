@@ -8,7 +8,7 @@
 #ifndef __TSOS_ARRAY_TYPE__
 #define __TSOS_ARRAY_TYPE__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 extern "C"
 {

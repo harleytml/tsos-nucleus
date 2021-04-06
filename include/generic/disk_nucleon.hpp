@@ -7,11 +7,11 @@
 #ifndef __TSOS_NUCLEUS_DISK_NUCLEON__
 #define __TSOS_NUCLEUS_DISK_NUCLEON__
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/disk_quark.hpp"
-#include "generic/current_config.hpp"
+#include <generic/quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/disk_quark.hpp>
+#include <generic/current_config.hpp>
 
 // The main class controlling the disks
 class Disk : public Nucleon<Disk_quark>

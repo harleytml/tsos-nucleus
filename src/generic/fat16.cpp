@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/fat16.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/fat16.hpp>
+#include <generic/nucleus_instance.hpp>
 
 FAT16_quark::FAT16_quark(void)
 {

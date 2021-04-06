@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "generic/elf.hpp"
+#include <generic/elf.hpp>
 
 ELF_quark::ELF_quark(void)
 {

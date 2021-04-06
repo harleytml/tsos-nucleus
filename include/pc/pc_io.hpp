@@ -1,8 +1,8 @@
 #ifndef __TSOS_NUCLEUS_PC_IO_QUARK__
 #define __TSOS_NUCLEUS_PC_IO_QUARK__
 
-#include "generic/types.hpp"
-#include "generic/io_quark.hpp"
+#include <generic/types.hpp>
+#include <generic/io_quark.hpp>
 
 class PC_IO_quark : public IO_quark
 {

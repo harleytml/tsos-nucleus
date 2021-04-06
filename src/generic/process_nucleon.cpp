@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/process_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/process_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Process::Process(void)
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_NSPIRE_CM_UART_QUARK__
 #define __TSOS_NSPIRE_CM_UART_QUARK__
 
-#include "generic/serial_quark.hpp"
+#include <generic/serial_quark.hpp>
 
 class NSPIRE_CM_UART_quark : public Serial_quark
 {

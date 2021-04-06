@@ -9,7 +9,7 @@
 #ifndef __TSOS_DRIVER_CORE__
 #define __TSOS_DRIVER_CORE__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 // The class for quarks
 class Quark

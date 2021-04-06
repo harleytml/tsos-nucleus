@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/serial_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/serial_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Serial::Serial(void)
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_NSPIRE_CX_BOOT_QUARK__
 #define __TSOS_NSPIRE_CX_BOOT_QUARK__
 
-#include "generic/boot_quark.hpp"
+#include <generic/boot_quark.hpp>
 
 class NSPIRE_CX_BOOT_quark : public Boot_quark
 {

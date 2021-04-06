@@ -7,8 +7,8 @@
 #ifndef __TSOS_NUCLEUS_IO_QUARK__
 #define __TSOS_NUCLEUS_IO_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 class IO_quark : public Quark
 {

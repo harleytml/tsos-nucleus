@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/sfs.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/sfs.hpp>
+#include <generic/nucleus_instance.hpp>
 
 SFS_quark::SFS_quark(void)
 {

@@ -2,8 +2,8 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_INFO__
 #define __TSOS_NUCLEUS_PROCESS_INFO__
 
-#include "generic/types.hpp"
-#include "generic/process_state.hpp"
+#include <generic/types.hpp>
+#include <generic/process_state.hpp>
 
 // The class holding the information of a process
 class Process_info

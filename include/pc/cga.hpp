@@ -2,8 +2,8 @@
 #ifndef __TSOS_CGA_QUARK__
 #define __TSOS_CGA_QUARK__
 
-#include "generic/video_quark.hpp"
-#include "generic/video_modes.hpp"
+#include <generic/video_quark.hpp>
+#include <generic/video_modes.hpp>
 
 class CGA_quark : public Video_quark
 {

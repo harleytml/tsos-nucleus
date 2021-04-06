@@ -2,7 +2,7 @@
 #ifndef __TSOS_CANON_A1100_KEYPAD_QUARK__
 #define __TSOS_CANON_A1100_KEYPAD_QUARK__
 
-#include "generic/input_quark.hpp"
+#include <generic/input_quark.hpp>
 
 class CANON_A1100_KEYPAD_quark : public Input_quark
 {

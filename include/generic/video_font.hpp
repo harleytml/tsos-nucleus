@@ -9,7 +9,7 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_FONT__
 #define __TSOS_NUCLEUS_VIDEO_FONT__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 // The class defining fonts
 class Font

@@ -2,7 +2,7 @@
 #ifndef __TSOS_ATAPI_QUARK__
 #define __TSOS_ATAPI_QUARK__
 
-#include "generic/disk_quark.hpp"
+#include <generic/disk_quark.hpp>
 
 #define ATA_SR_BSY 0x80  // Busy
 #define ATA_SR_DRDY 0x40 // Drive ready

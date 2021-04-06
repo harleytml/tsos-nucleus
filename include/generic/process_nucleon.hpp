@@ -7,12 +7,12 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_NUCLEON__
 #define __TSOS_NUCLEUS_PROCESS_NUCLEON__
 
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/process_quark.hpp"
-#include "generic/process_info.hpp"
-#include "generic/process_state.hpp"
-#include "generic/current_config.hpp"
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/process_quark.hpp>
+#include <generic/process_info.hpp>
+#include <generic/process_state.hpp>
+#include <generic/current_config.hpp>
 
 // The main classes to control processes
 class Process : public Nucleon<Process_quark>

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cm_disk.hpp"
+#include <nspire/nspire-cm_disk.hpp>
 
 NSPIRE_CM_DISK_quark::NSPIRE_CM_DISK_quark(void)
 {

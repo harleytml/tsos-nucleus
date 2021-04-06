@@ -2,8 +2,8 @@
 #ifndef __TSOS_NSPIRE_CX_SCREEN_QUARK__
 #define __TSOS_NSPIRE_CX_SCREEN_QUARK__
 
-#include "generic/video_quark.hpp"
-#include "generic/video_modes.hpp"
+#include <generic/video_quark.hpp>
+#include <generic/video_modes.hpp>
 
 class NSPIRE_CX_SCREEN_quark : public Video_quark
 {

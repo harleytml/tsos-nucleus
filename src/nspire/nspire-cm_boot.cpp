@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cm_boot.hpp"
+#include <nspire/nspire-cm_boot.hpp>
 
 NSPIRE_CM_BOOT_quark::NSPIRE_CM_BOOT_quark(void)
 {

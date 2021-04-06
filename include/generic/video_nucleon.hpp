@@ -9,15 +9,15 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_NUCLEON__
 #define __TSOS_NUCLEUS_VIDEO_NUCLEON__
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/video_quark.hpp"
-#include "generic/video_color.hpp"
-#include "generic/video_font.hpp"
-#include "generic/video_modes.hpp"
-#include "generic/current_config.hpp"
-#include "generic/default_font.hpp"
+#include <generic/quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/video_quark.hpp>
+#include <generic/video_color.hpp>
+#include <generic/video_font.hpp>
+#include <generic/video_modes.hpp>
+#include <generic/current_config.hpp>
+#include <generic/default_font.hpp>
 
 // The main class controlling video
 class Video : public Nucleon<Video_quark>

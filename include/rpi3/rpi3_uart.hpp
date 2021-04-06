@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_UART_QUARK__
 #define __TSOS_RPI3_UART_QUARK__
 
-#include "generic/serial_quark.hpp"
+#include <generic/serial_quark.hpp>
 
 class RPI3_UART_quark : public Serial_quark
 {

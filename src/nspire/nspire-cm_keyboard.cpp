@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cm_keyboard.hpp"
+#include <nspire/nspire-cm_keyboard.hpp>
 
 NSPIRE_CM_KEYBOARD_quark::NSPIRE_CM_KEYBOARD_quark(void)
 {

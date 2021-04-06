@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cm_sound.hpp"
+#include <nspire/nspire-cm_sound.hpp>
 
 NSPIRE_CM_SOUND_quark::NSPIRE_CM_SOUND_quark(void)
 {

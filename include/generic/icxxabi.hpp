@@ -11,7 +11,7 @@
 #ifndef __TSOS_ICXXABI__
 #define __TSOS_ICXXABI__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 #define ATEXIT_MAX_FUNCS 128
 

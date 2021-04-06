@@ -9,9 +9,9 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
 #define __TSOS_NUCLEUS_FILESYSTEM_FILE__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
-#include "generic/filesystem_permissions.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
+#include <generic/filesystem_permissions.hpp>
 
 class File
 {

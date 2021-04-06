@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/memory_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/memory_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Memory::Memory(void) : current_heap_offset(0)
 {

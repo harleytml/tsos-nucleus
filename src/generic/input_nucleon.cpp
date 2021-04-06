@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/input_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/input_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Input::Input(void)
 {

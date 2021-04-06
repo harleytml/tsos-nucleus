@@ -9,11 +9,11 @@
 #ifndef __TSOS_NUCLEUS_BOOT_NUCLEON__
 #define __TSOS_NUCLEUS_BOOT_NUCLEON__
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/boot_quark.hpp"
-#include "generic/current_config.hpp"
+#include <generic/quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/boot_quark.hpp>
+#include <generic/current_config.hpp>
 
 // The main class controlling the system runtime
 class Boot : public Nucleon<Boot_quark>

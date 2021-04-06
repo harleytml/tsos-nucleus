@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "canon-a1100/canon-a1100_keypad.hpp"
+#include <canon-a1100/canon-a1100_keypad.hpp>
 
 CANON_A1100_KEYPAD_quark::CANON_A1100_KEYPAD_quark(void)
 {

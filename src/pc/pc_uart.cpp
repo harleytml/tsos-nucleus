@@ -1,7 +1,7 @@
 // Quark by Tsuki Superior
 // Reference for serial is https://github.com/Sayan505/MuffinOS/tree/master/kernel/sys/devices/serial
-#include "pc/pc_uart.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <pc/pc_uart.hpp>
+#include <generic/nucleus_instance.hpp>
 
 PC_UART_quark::PC_UART_quark(void)
 {

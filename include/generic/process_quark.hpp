@@ -10,8 +10,8 @@
 #ifndef __TSOS_NUCLEUS_PROCESS_QUARK__
 #define __TSOS_NUCLEUS_PROCESS_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 class Process_quark : public Quark
 {

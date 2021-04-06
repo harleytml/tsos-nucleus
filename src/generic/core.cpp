@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "generic/core.hpp"
+#include <generic/core.hpp>
 
 Tsos *tsos;
 

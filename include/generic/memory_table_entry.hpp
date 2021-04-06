@@ -7,7 +7,7 @@
 #ifndef __TSOS_NUCLEUS_MEMORY_TABLE_ENTRY__
 #define __TSOS_NUCLEUS_MEMORY_TABLE_ENTRY__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 class Memory_table_entry
 {

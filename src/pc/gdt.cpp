@@ -1,5 +1,5 @@
 // By AptRock
-#include "pc/gdt.hpp"
+#include <pc/gdt.hpp>
 
 GlobalDescriptorTable::GlobalDescriptorTable()
     : nullSegmentSelector(0, 0, 0),

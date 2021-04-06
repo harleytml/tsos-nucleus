@@ -9,8 +9,8 @@
 #ifndef __TSOS_NUCLEUS_SOUND_QUARK__
 #define __TSOS_NUCLEUS_SOUND_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 class Sound_quark : public Quark
 {

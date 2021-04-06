@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "pc/atapi.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <pc/atapi.hpp>
+#include <generic/nucleus_instance.hpp>
 
 ATAPI_quark::ATAPI_quark(void)
 {

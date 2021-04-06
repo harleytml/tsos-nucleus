@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/fat32.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/fat32.hpp>
+#include <generic/nucleus_instance.hpp>
 
 FAT32_quark::FAT32_quark(void)
 {

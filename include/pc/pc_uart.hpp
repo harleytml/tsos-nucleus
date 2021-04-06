@@ -2,7 +2,7 @@
 #ifndef __TSOS_PC_UART_QUARK__
 #define __TSOS_PC_UART_QUARK__
 
-#include "generic/serial_quark.hpp"
+#include <generic/serial_quark.hpp>
 
 #define BAUD_115200 0x01
 #define COM1 0x3F8

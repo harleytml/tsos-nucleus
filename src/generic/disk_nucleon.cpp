@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/disk_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/disk_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Disk::Disk(void)
 {

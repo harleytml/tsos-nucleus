@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "canon-a1100/canon-a1100_sd_card.hpp"
+#include <canon-a1100/canon-a1100_sd_card.hpp>
 
 CANON_A1100_SD_CARD_quark::CANON_A1100_SD_CARD_quark(void)
 {

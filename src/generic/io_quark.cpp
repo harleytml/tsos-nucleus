@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "generic/io_quark.hpp"
+#include <generic/io_quark.hpp>
 
 IO_quark::IO_quark(void)
 {

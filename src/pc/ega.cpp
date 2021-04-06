@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "pc/ega.hpp"
+#include <pc/ega.hpp>
 
 EGA_quark::EGA_quark(void)
 {

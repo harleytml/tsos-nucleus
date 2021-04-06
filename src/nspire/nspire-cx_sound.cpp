@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cx_sound.hpp"
+#include <nspire/nspire-cx_sound.hpp>
 
 NSPIRE_CX_SOUND_quark::NSPIRE_CX_SOUND_quark(void)
 {

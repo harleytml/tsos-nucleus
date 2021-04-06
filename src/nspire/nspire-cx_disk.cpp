@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cx_disk.hpp"
+#include <nspire/nspire-cx_disk.hpp>
 
 NSPIRE_CX_DISK_quark::NSPIRE_CX_DISK_quark(void)
 {

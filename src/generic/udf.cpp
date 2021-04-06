@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/udf.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/udf.hpp>
+#include <generic/nucleus_instance.hpp>
 
 UDF_quark::UDF_quark(void)
 {

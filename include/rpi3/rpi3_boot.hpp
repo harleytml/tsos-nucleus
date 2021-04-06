@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_BOOT_QUARK__
 #define __TSOS_RPI3_BOOT_QUARK__
 
-#include "generic/boot_quark.hpp"
+#include <generic/boot_quark.hpp>
 
 class RPI3_BOOT_quark : public Boot_quark
 {

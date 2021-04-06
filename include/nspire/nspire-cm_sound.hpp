@@ -7,7 +7,7 @@
 #ifndef __TSOS_NSPIRE_CM_SOUND_QUARK__
 #define __TSOS_NSPIRE_CM_SOUND_QUARK__
 
-#include "generic/sound_quark.hpp"
+#include <generic/sound_quark.hpp>
 
 class NSPIRE_CM_SOUND_quark : public Sound_quark
 {

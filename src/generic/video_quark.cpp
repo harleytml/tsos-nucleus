@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "generic/video_quark.hpp"
+#include <generic/video_quark.hpp>
 
 Video_quark::Video_quark(void)
 {

@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "pc/pc_speaker.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <pc/pc_speaker.hpp>
+#include <generic/nucleus_instance.hpp>
 
 PC_SPEAKER_quark::PC_SPEAKER_quark(void)
 {

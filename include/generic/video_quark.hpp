@@ -10,10 +10,10 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_QUARK__
 #define __TSOS_NUCLEUS_VIDEO_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
-#include "generic/video_font.hpp"
-#include "generic/video_color.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
+#include <generic/video_font.hpp>
+#include <generic/video_color.hpp>
 
 class Video_quark : public Quark
 {

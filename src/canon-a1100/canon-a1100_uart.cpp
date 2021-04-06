@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "canon-a1100/canon-a1100_uart.hpp"
+#include <canon-a1100/canon-a1100_uart.hpp>
 
 CANON_A1100_UART_quark::CANON_A1100_UART_quark(void)
 {
@@ -31,12 +31,12 @@ bool CANON_A1100_UART_quark::isdevicereadytoreceive(void)
 
 void CANON_A1100_UART_quark::sendbyte(uint8_t byte)
 {
-  uint8_t *tx_reg=((uint8_t *)CANON_A1100_TX);
-  *tx_reg=byte;
+  uint8_t *tx_reg = ((uint8_t *)CANON_A1100_TX);
+  *tx_reg = byte;
 }
 
 uint8_t CANON_A1100_UART_quark::getbyte(void)
 {
-  uint8_t *rx_reg=((uint8_t *)CANON_A1100_RX);
+  uint8_t *rx_reg = ((uint8_t *)CANON_A1100_RX);
   return *rx_reg;
 }

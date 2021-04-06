@@ -2,8 +2,8 @@
 #ifndef __TSOS_MODULE_CORE__
 #define __TSOS_MODULE_CORE__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 // The base class of TS/OS nucleons
 template <class T>

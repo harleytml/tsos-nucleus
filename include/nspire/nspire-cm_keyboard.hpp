@@ -2,7 +2,7 @@
 #ifndef __TSOS_NSPIRE_CM_KEYBOARD_QUARK__
 #define __TSOS_NSPIRE_CM_KEYBOARD_QUARK__
 
-#include "generic/input_quark.hpp"
+#include <generic/input_quark.hpp>
 
 class NSPIRE_CM_KEYBOARD_quark : public Input_quark
 {

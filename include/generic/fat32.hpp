@@ -8,8 +8,8 @@
 #ifndef __TSOS_FAT32_QUARK__
 #define __TSOS_FAT32_QUARK__
 
-#include "generic/filesystem_quark.hpp"
-#include "generic/filesystem_file.hpp"
+#include <generic/filesystem_quark.hpp>
+#include <generic/filesystem_file.hpp>
 
 class FAT32_quark : public Filesystem_quark
 {

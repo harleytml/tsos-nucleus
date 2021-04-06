@@ -8,12 +8,12 @@
 #ifndef __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
 #define __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
 
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/filesystem_quark.hpp"
-#include "generic/filesystem_file.hpp"
-#include "generic/filesystem_permissions.hpp"
-#include "generic/current_config.hpp"
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/filesystem_quark.hpp>
+#include <generic/filesystem_file.hpp>
+#include <generic/filesystem_permissions.hpp>
+#include <generic/current_config.hpp>
 
 extern "C" int strcmp(const char *p1, const char *p2);
 

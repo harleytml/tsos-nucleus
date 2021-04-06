@@ -7,12 +7,12 @@
 #ifndef __TSOS_NUCLEUS_SERIAL_NUCLEON__
 #define __TSOS_NUCLEUS_SERIAL_NUCLEON__
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/serial_quark.hpp"
-#include "generic/current_config.hpp"
-#include "generic/array.hpp"
+#include <generic/quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/serial_quark.hpp>
+#include <generic/current_config.hpp>
+#include <generic/array.hpp>
 
 // The main class controlling serial
 class Serial : public Nucleon<Serial_quark>

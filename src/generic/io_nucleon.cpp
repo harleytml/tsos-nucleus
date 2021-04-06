@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/io_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/io_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 IO::IO(void)
 {

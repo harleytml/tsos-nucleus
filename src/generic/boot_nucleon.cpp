@@ -1,7 +1,7 @@
 //By Tsuki Superior
 
-#include "generic/boot_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/boot_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Boot::Boot(void)
 {

@@ -2,7 +2,7 @@
 #ifndef __TSOS_RPI3_SD_CARD_QUARK__
 #define __TSOS_RPI3_SD_CARD_QUARK__
 
-#include "generic/disk_quark.hpp"
+#include <generic/disk_quark.hpp>
 
 class RPI3_SD_CARD_quark : public Disk_quark
 {

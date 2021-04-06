@@ -2,10 +2,10 @@
 #ifndef __TSOS_CANON_A1100_UART_QUARK__
 #define __TSOS_CANON_A1100_UART_QUARK__
 
-#include "generic/serial_quark.hpp"
+#include <generic/serial_quark.hpp>
 
-#define CANON_A1100_TX 0xC0800000 
-#define CANON_A1100_RX 0xC0800004 
+#define CANON_A1100_TX 0xC0800000
+#define CANON_A1100_RX 0xC0800004
 #define CANON_A1100_UART_STATUS 0xC0800014
 
 class CANON_A1100_UART_quark : public Serial_quark

@@ -8,8 +8,8 @@
 #ifndef __TSOS_ELF_QUARK__
 #define __TSOS_ELF_QUARK__
 
-#include "generic/process_quark.hpp"
-#include "generic/filesystem_file.hpp"
+#include <generic/process_quark.hpp>
+#include <generic/filesystem_file.hpp>
 
 class ELF_quark : public Process_quark
 {

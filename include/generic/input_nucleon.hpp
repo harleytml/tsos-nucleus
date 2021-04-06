@@ -7,12 +7,12 @@
 #ifndef __TSOS_NUCLEUS_INPUT_NUCLEON__
 #define __TSOS_NUCLEUS_INPUT_NUCLEON__
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/input_quark.hpp"
-#include "generic/input_key_identifier.hpp"
-#include "generic/current_config.hpp"
+#include <generic/quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/input_quark.hpp>
+#include <generic/input_key_identifier.hpp>
+#include <generic/current_config.hpp>
 
 // The main class controlling input
 class Input : public Nucleon<Input_quark>

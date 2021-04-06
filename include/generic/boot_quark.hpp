@@ -7,7 +7,7 @@
 #ifndef __TSOS_NUCLEUS_BOOT_QUARK__
 #define __TSOS_NUCLEUS_BOOT_QUARK__
 
-#include "generic/quark.hpp"
+#include <generic/quark.hpp>
 
 class Boot_quark : public Quark
 {

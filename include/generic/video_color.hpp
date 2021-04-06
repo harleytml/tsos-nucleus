@@ -10,7 +10,7 @@
 #ifndef __TSOS_NUCLEUS_VIDEO_COLOR__
 #define __TSOS_NUCLEUS_VIDEO_COLOR__
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 // Describes the character color for text mode video
 class Color

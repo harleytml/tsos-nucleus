@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "rpi3/rpi3_sound.hpp"
+#include <rpi3/rpi3_sound.hpp>
 
 RPI3_SOUND_quark::RPI3_SOUND_quark(void)
 {

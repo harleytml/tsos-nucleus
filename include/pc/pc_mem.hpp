@@ -6,8 +6,8 @@
 #ifndef __TSOS_PC_MEM_QUARK__
 #define __TSOS_PC_MEM_QUARK__
 
-#include "generic/memory_quark.hpp"
-#include "generic/filesystem_file.hpp"
+#include <generic/memory_quark.hpp>
+#include <generic/filesystem_file.hpp>
 
 class PC_MEM_quark : public Memory_quark
 {

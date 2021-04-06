@@ -2,7 +2,7 @@
 #ifndef __TSOS_XT_KEYBOARD_QUARK__
 #define __TSOS_XT_KEYBOARD_QUARK__
 
-#include "generic/input_quark.hpp"
+#include <generic/input_quark.hpp>
 
 class XT_KEYBOARD_quark : public Input_quark
 {

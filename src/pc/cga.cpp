@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "pc/cga.hpp"
+#include <pc/cga.hpp>
 
 CGA_quark::CGA_quark(void)
 {

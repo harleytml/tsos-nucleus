@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "rpi3/rpi3_screen.hpp"
+#include <rpi3/rpi3_screen.hpp>
 
 RPI3_SCREEN_quark::RPI3_SCREEN_quark(void)
 {

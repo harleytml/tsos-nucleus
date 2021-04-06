@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "generic/input_quark.hpp"
+#include <generic/input_quark.hpp>
 
 Input_quark::Input_quark(void)
 {

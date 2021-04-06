@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cx_uart.hpp"
+#include <nspire/nspire-cx_uart.hpp>
 
 NSPIRE_CX_UART_quark::NSPIRE_CX_UART_quark(void)
 {

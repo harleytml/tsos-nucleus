@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "generic/sound_nucleon.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <generic/sound_nucleon.hpp>
+#include <generic/nucleus_instance.hpp>
 
 Sound::Sound(void)
 {

@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "nspire/nspire-cm_screen.hpp"
+#include <nspire/nspire-cm_screen.hpp>
 
 NSPIRE_CM_SCREEN_quark::NSPIRE_CM_SCREEN_quark(void)
 {

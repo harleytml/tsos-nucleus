@@ -1,5 +1,5 @@
-#include "pc/pc_io.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <pc/pc_io.hpp>
+#include <generic/nucleus_instance.hpp>
 
 PC_IO_quark::PC_IO_quark(void)
 {

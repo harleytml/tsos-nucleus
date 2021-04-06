@@ -2,8 +2,8 @@
 #ifndef __TSOS_CANON_A1100_SCREEN_QUARK__
 #define __TSOS_CANON_A1100_SCREEN_QUARK__
 
-#include "generic/video_quark.hpp"
-#include "generic/video_modes.hpp"
+#include <generic/video_quark.hpp>
+#include <generic/video_modes.hpp>
 
 class CANON_A1100_SCREEN_quark : public Video_quark
 {

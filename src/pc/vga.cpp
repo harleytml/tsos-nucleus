@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "pc/vga.hpp"
+#include <pc/vga.hpp>
 
 VGA_quark::VGA_quark(void)
 {

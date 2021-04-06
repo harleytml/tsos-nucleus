@@ -1,5 +1,5 @@
 //By Tsuki Superior
-#include "canon-a1100/canon-a1100_sound.hpp"
+#include <canon-a1100/canon-a1100_sound.hpp>
 
 CANON_A1100_SOUND_quark::CANON_A1100_SOUND_quark(void)
 {

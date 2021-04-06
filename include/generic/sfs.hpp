@@ -6,8 +6,8 @@
 #ifndef __TSOS_SFS_QUARK__
 #define __TSOS_SFS_QUARK__
 
-#include "generic/filesystem_quark.hpp"
-#include "generic/filesystem_file.hpp"
+#include <generic/filesystem_quark.hpp>
+#include <generic/filesystem_file.hpp>
 
 class SFS_quark : public Filesystem_quark
 {

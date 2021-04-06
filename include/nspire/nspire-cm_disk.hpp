@@ -2,7 +2,7 @@
 #ifndef __TSOS_NSPIRE_CM_DISK_QUARK__
 #define __TSOS_NSPIRE_CM_DISK_QUARK__
 
-#include "generic/disk_quark.hpp"
+#include <generic/disk_quark.hpp>
 
 class NSPIRE_CM_DISK_quark : public Disk_quark
 {

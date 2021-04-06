@@ -1,4 +1,4 @@
-#include "generic/memory_table_entry.hpp"
+#include <generic/memory_table_entry.hpp>
 
 Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr)
 {

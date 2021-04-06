@@ -7,9 +7,9 @@
 #ifndef __TSOS_NUCLEUS_INPUT_QUARK__
 #define __TSOS_NUCLEUS_INPUT_QUARK__
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
-#include "generic/input_key_identifier.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
+#include <generic/input_key_identifier.hpp>
 
 class Input_quark : public Quark
 {

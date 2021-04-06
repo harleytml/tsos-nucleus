@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#include "pc/grub2.hpp"
-#include "generic/nucleus_instance.hpp"
+#include <pc/grub2.hpp>
+#include <generic/nucleus_instance.hpp>
 
 GRUB2_quark::GRUB2_quark(void)
 {

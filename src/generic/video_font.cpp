@@ -1,5 +1,5 @@
 // By Tsuki Superior
-#include "generic/video_font.hpp"
+#include <generic/video_font.hpp>
 
 Font::Font(void)
 {

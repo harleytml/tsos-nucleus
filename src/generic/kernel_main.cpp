@@ -1,4 +1,4 @@
-#include "generic/kernel_main.hpp"
+#include <generic/kernel_main.hpp>
 
 void kernel_main(void)
 {

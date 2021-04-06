@@ -7,11 +7,11 @@
 #ifndef __TSOS_NUCLEUS_MEMORY_NUCLEON__
 #define __TSOS_NUCLEUS_MEMORY_NUCLEON__
 
-#include "generic/memory_quark.hpp"
-#include "generic/memory_table_entry.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/current_config.hpp"
+#include <generic/memory_quark.hpp>
+#include <generic/memory_table_entry.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/types.hpp>
+#include <generic/current_config.hpp>
 
 class Memory : public Nucleon<Memory_quark>
 {
