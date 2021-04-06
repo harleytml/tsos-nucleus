@@ -58,14 +58,14 @@ if platform in build_settings:
     if os.path.exists("nucleus"):
         os.remove("nucleus")
 
+    if os.path.exists("nucleus.elf"):
+        os.remove("nucleus.elf")
+
     if os.path.exists("tsos.iso"):
         os.remove("tsos.iso")
 
     if os.path.exists("tsos.img"):
         os.remove("tsos.img")
-
-    if os.path.exists("tsos.gba"):
-        os.remove("tsos.gba")
 
     # Run cmake
     os.system("cmake .. -DPLATFORM=" + platform.upper())

@@ -6,8 +6,8 @@
  *  
  */
 
-#ifndef __TSOS_DRIVER_CORE__
-#define __TSOS_DRIVER_CORE__
+#ifndef __TSOS_QUARK_CORE__
+#define __TSOS_QUARK_CORE__
 
 #include <generic/types.hpp>
 

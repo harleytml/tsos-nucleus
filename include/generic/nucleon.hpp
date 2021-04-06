@@ -1,6 +1,6 @@
 //By Tsuki Superior
-#ifndef __TSOS_MODULE_CORE__
-#define __TSOS_MODULE_CORE__
+#ifndef __TSOS_NUCLEON_CORE__
+#define __TSOS_NUCLEON_CORE__
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
