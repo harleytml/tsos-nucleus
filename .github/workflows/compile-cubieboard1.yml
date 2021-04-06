@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [master]
 
-name: Cubieboard 1 Compile test
+name: CUBIEBOARD 1 Compile test
 
 jobs:
   cubieboard1-test:
