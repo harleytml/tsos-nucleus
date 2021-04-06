@@ -21,10 +21,10 @@ void EGA_quark::reset(void)
   switch (*((uint16_t *)0x410) & 0x30)
   {
   case 0x20:
-    text_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
+    screen_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
     return;
   default:
-    text_buffer = (char *)0xb0000;
+    screen_buffer = (char *)0xb0000;
     return;
   }
 }
@@ -45,7 +45,7 @@ void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
 
     //Monochrome
     case 0x30:
-      text_buffer[intendedposition] = c;
+      screen_buffer[intendedposition] = c;
       return;
 
     //Color
@@ -83,10 +83,10 @@ void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
       a |= ((a & 0xE) != 0) << 3;
 
       // Put the character byte
-      text_buffer[intendedposition] = c;
+      screen_buffer[intendedposition] = c;
 
       // Put the attribute byte
-      text_buffer[intendedposition + 1] = (char)a;
+      screen_buffer[intendedposition + 1] = (char)a;
       return;
     }
     return;

@@ -20,7 +20,7 @@ public:
 
 private:
   // The text buffer
-  char *text_buffer;
+  char *screen_buffer;
 
   video_mode mode;
 

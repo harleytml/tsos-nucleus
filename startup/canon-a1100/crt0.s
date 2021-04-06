@@ -8,9 +8,9 @@ ldr     sp, =0x1900
 
 // Turn OFF SD Card power
 // to support autostart
-	ldr     r3, =0xC022007C
-	mov     r2, #0x44
-	str     r2, [r3]
+ldr     r3, =0xc022007c
+mov     r2, #0x44
+str     r2, [r3]
 	
 // looks like idle cycle is required for proper shutdown
 	mov     r3, #0x8000

@@ -30,7 +30,7 @@ bool MDA_quark::detectsystem(void)
 
 void MDA_quark::reset(void)
 {
-  text_buffer = (char *)0xb0000;
+  screen_buffer = (char *)0xb0000;
 }
 
 void MDA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
@@ -43,7 +43,7 @@ void MDA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
 {
   uint16_t screenwidth = getscreenwidth();
   uint16_t intendedposition = (posy * screenwidth) + posx;
-  text_buffer[intendedposition] = c;
+  screen_buffer[intendedposition] = c;
 }
 
 // Also pointless, considering MDA has only one mode, but I'll read from a BIOS field anyway

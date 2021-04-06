@@ -18,6 +18,7 @@ bool CANON_A1100_SCREEN_quark::detectsystem(void)
 
 void CANON_A1100_SCREEN_quark::reset(void)
 {
+  screen_buffer = (char *)(*(uint32_t *)0x6adc);
 }
 
 void CANON_A1100_SCREEN_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)

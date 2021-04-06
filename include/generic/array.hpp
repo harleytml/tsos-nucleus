@@ -19,15 +19,21 @@ template <class T>
 class Array
 {
 public:
+  Array(void)
+  {
+    internaldata = nullptr;
+    internaldatalength = 0;
+  }
+
   Array(const uint16_t length)
   {
     internaldata = new T[length];
   };
 
-  Array(const T *data, const uint16_t length)
+  Array(T *data, const uint16_t length)
   {
-    internaldata = new T[length];
-    memcpy(internaldata, data, length);
+    internaldata = data;
+    internaldatalength = length;
   };
 
   Array(Array<T> &array)

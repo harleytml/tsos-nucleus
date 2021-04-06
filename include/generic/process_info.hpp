@@ -4,6 +4,7 @@
 
 #include <generic/types.hpp>
 #include <generic/process_state.hpp>
+#include <generic/memory_table_entry.hpp>
 
 // The class holding the information of a process
 class Process_info
@@ -20,6 +21,9 @@ protected:
 
   // The state of a process
   process_state state;
+
+  // First entry in the memory table
+  Memory_table_entry *first_memory_block;
 };
 
 #endif
