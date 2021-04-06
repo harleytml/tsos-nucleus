@@ -15,9 +15,19 @@
 [![CANON-A1100 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-canon-a1100.yml)
 [![CUBIEBOARD 1 Compile test](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-cubieboard1.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-cubieboard1.yml)
 
+## Platforms
+
+- PC - Personal Computer - Boots, most promising port
+- NSPIRE - TI-Nspire - Quark model in place
+- RPI3 - Raspberry Pi 3 - Quark model in place
+- CANON-A1100 - Canon PowerShot A1100IS - Primitive and experimental drivers in place
+- CUBIEBOARD1 - CubieTech Cubieboard 1 - Planning being done
+
 ## Contributors
 
 ![Contributers](https://contrib.rocks/image?repo=tsuki-superior/tsos-nucleus)
+
+## Description
 
 This is TS/OS's Monolithic kernel
 
