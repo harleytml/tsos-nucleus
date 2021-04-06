@@ -88,7 +88,7 @@ To get the list of supported systems and other options, type `help` as the platf
 
 ## Configuring
 
-In the `cfg` directory, some json config files exist. I plan to make them control the entire build process of TS/OS.
+In the `config` directory, some json config files exist. I plan to make them control the entire build process of TS/OS.
 
 ## Developing
 
