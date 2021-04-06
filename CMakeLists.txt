@@ -48,6 +48,15 @@ if(PLATFORM STREQUAL "CANON-A1100")
        "startup/canon-a1100/*" "startup/arm/*")
 endif(PLATFORM STREQUAL "CANON-A1100")
 
+if(PLATFORM STREQUAL "CUBIEBOARD1")
+  message(STATUS "Platform ${PLATFORM}")
+  set(platform_options -D__CANON_A1100__ -mtune=cortex-a8
+                       --target=armv7a-unknown-none-eabi -mgeneral-regs-only)
+  set(linker_script_command -T../linkerscripts/cubieboard1.ld)
+  file(GLOB platform_specific_files "src/cubieboard1/*" "src/arm/*"
+       "startup/cubieboard1/*" "startup/arm/*")
+endif(PLATFORM STREQUAL "CUBIEBOARD1")
+
 include_directories("include")
 
 file(GLOB source_files "src/generic/*")

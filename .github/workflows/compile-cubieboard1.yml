@@ -4,22 +4,22 @@ on:
   pull_request:
     branches: [master]
 
-name: NSPIRE Compile test
+name: Cubieboard 1 Compile test
 
 jobs:
-  nspire-test:
+  cubieboard1-test:
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
     steps:
       - uses: actions/checkout@v2
       - name: Compile Test
-        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py nspire
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py cubieboard1
 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: NSPIRE Nucleus
+          name: CUBIEBOARD1 Nucleus
           path: |
             build/nucleus
             build/nucleus.elf
