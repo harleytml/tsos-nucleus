@@ -21,7 +21,7 @@ class Array
 public:
   Array(void)
   {
-    internaldata = nullptr;
+    internaldata = (T *)nullptr;
     internaldatalength = 0;
   }
 
