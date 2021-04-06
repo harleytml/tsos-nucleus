@@ -50,7 +50,7 @@ endif(PLATFORM STREQUAL "CANON-A1100")
 
 if(PLATFORM STREQUAL "CUBIEBOARD1")
   message(STATUS "Platform ${PLATFORM}")
-  set(platform_options -D__CANON_A1100__ -mtune=cortex-a8
+  set(platform_options -D__CUBIEBOARD_1__ -mtune=cortex-a8
                        --target=armv7a-unknown-none-eabi -mgeneral-regs-only)
   set(linker_script_command -T../linkerscripts/cubieboard1.ld)
   file(GLOB platform_specific_files "src/cubieboard1/*" "src/arm/*"
