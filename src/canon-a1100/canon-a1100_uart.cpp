@@ -19,7 +19,8 @@ void CANON_A1100_UART_quark::reset(void)
 
 bool CANON_A1100_UART_quark::isdevicereadytotransmit(void)
 {
-  return false;
+  volatile uint32_t *uart_reg = (uint32_t *)CANON_A1100_UART_STATUS;
+  return (*uart_reg & 0xFFFFFFFD) != 0;
 }
 
 bool CANON_A1100_UART_quark::isdevicereadytoreceive(void)
