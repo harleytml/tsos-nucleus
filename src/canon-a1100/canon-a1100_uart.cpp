@@ -31,9 +31,12 @@ bool CANON_A1100_UART_quark::isdevicereadytoreceive(void)
 
 void CANON_A1100_UART_quark::sendbyte(uint8_t byte)
 {
+  uint8_t *tx_reg=((uint8_t *)CANON_A1100_TX);
+  *tx_reg=byte;
 }
 
 uint8_t CANON_A1100_UART_quark::getbyte(void)
 {
-  return 0;
+  uint8_t *rx_reg=((uint8_t *)CANON_A1100_RX);
+  return *rx_reg;
 }
