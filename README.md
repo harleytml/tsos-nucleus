@@ -22,8 +22,8 @@
 ## Platforms
 
 - `PC` - Personal Computer - Boots, most promising port
-- `NSPIRE` - TI-Nspire - Quark model in place
-- `RPI3` - Raspberry Pi 3 - Quark model in place
+- `NSPIRE` - TI-Nspire - Quark model in place, research being done
+- `RPI3` - Raspberry Pi 3 - Quark model in place, research being done
 - `CANON-A1100` - Canon PowerShot A1100IS - Primitive and experimental quarks in place, and being modeled
 - `CUBIEBOARD1` - CubieTech Cubieboard 1 - Planning being done
 
