@@ -46,7 +46,7 @@ The story behind TS/OS is a interesting one. The first edition was mostly develo
 
 I had just learned C++, and wanted to reinvent the wheel. I had a little too much time on my hands.
 
-The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission!
+The TS/OS kernel is called the Nucleus. Many other chemistry analogues will be made in the OS. The TS/OS version of a kernel panic is a Nucleus Fission, and the drivers and modules are called quarks and nucleons!
 
 In the documents directory, you can find more documents concerning TS/OS.
 
