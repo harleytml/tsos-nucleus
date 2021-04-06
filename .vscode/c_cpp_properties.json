@@ -55,6 +55,18 @@
         "limitSymbolsToIncludedHeaders": true
       },
       "intelliSenseMode": "clang-arm64"
+    },
+    {
+      "name": "CUBIEBOARD1",
+      "includePath": ["${workspaceFolder}/**"],
+      "defines": ["__CUBIEBOARD_1__"],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c99",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "linux-clang-x64",
+      "browse": {
+        "limitSymbolsToIncludedHeaders": true
+      }
     }
   ],
   "version": 4
