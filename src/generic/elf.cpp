@@ -18,6 +18,7 @@ void ELF_quark::reset(void)
 
 bool ELF_quark::isvalidexecutable(char *path)
 {
-  File *exec = new File();
   return true;
+  File file = tsos->filesystem.open(path);
+  uint8_t *exec = tsos->filesystem.read(file, 4);
 }
