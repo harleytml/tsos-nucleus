@@ -15,7 +15,7 @@
       }
     },
     {
-      "name": "NSPIRE-CX",
+      "name": "NSPIRE",
       "includePath": ["${workspaceFolder}/**"],
       "defines": ["__NSPIRE__"],
       "compilerPath": "/usr/bin/clang++",
