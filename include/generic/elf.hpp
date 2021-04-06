@@ -62,6 +62,17 @@ private:
       uint16_t    e_shnum;             /* Section header table entry count */
       uint16_t    e_shstrndx;          /* Section header string table index */
   }__attribute__((packed));
+
+  enum e_type
+  {
+    ET_NONE=0,
+    ET_REL=1,
+    ET_EXEC=2,
+    ET_DYN=3,
+    ET_CORE=4,
+    ET_LOPROC=0xff00,
+    ET_HIPROC0xffff
+  };
 };
 
 #endif
