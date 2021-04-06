@@ -9,6 +9,7 @@ SECTIONS
   . = 0x40007000;
 	.text ALIGN(4) : 
 	{
+		KEEP(*(.text.boot))
 		KEEP(*(.init))
     KEEP(*(.fini))
 		*(.text)
