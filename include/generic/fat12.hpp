@@ -6,6 +6,8 @@
  * This quark was adapted from fat12 linux driver by Francois Berder
  * Many thanks to him for making filesystem in a platform independent and 
  * simple way
+ * 
+ * https://github.com/francois-berder/fat16
  */
 
 #ifndef __TSOS_FAT12_QUARK__
