@@ -15,6 +15,14 @@
 #include <generic/filesystem_file.hpp>
 
 #define FIRST_CLUSTER_INDEX_IN_FAT (3)
+#define MAX_BYTES_PER_CLUSTER (32768LU)
+#define VFAT_DIR_ENTRY (0x0F)
+#define AVAILABLE_DIR_ENTRY (0xE5)
+
+extern "C"
+{
+  void *memcpy(void *dstptr, const void *srcptr, size_t size);
+}
 
 class FAT12_quark : public Filesystem_quark
 {
@@ -97,9 +105,21 @@ private:
   } __attribute__((packed));
 
   fat16_layout layout;
+  fat16_bpb bpb;
 
+  uint32_t seekpoint;
+
+  // Needs some work
+
+  /*
   bool allocatecluster(uint16_t *new_cluster, uint16_t cluster);
   uint32_t getfatregion(uint16_t cluster);
+  int32_t getsubdir(char *subdir_name, uint16_t *index, const char *path);
+  bool isinroot(const char *path);
+  bool deleteentryinroot(char *name, bool is_file);
+  bool findrootdirectoryentry(uint16_t *entry_index, char *name);
+  uint32_t movetorootdirectoryregion(uint16_t entry_index);
+ */
 };
 
 #endif
