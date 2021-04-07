@@ -69,3 +69,8 @@ bool FAT16_quark::exists(char *path)
 {
   return false;
 }
+
+bool FAT16_quark::isfilenamevalid(char *name)
+{
+  return true;
+}

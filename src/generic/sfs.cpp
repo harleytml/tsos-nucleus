@@ -69,3 +69,8 @@ bool SFS_quark::exists(char *path)
 {
   return false;
 }
+
+bool SFS_quark::isfilenamevalid(char *name)
+{
+  return true;
+}

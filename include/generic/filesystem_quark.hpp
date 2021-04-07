@@ -50,6 +50,8 @@ public:
 
   //Append to a file
   virtual void appendfile(char *path, char *data) = 0;
+
+  virtual bool isfilenamevalid(char *name) = 0;
 };
 
 #endif

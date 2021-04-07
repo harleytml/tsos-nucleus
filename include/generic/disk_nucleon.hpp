@@ -24,7 +24,10 @@ public:
   ~Disk();
 
   // Get an amount of bytes from the disk
-  uint8_t *getbytes(uint16_t offset, uint8_t len) const;
+  uint8_t *getbytes(uint32_t offset, uint16_t len) const;
+
+  // Get an amount of bytes from the disk
+  void setbytes(uint32_t offset, uint16_t len, uint8_t *data) const;
 
   // Get the sector size
   uint16_t getsectorsize(void) const;

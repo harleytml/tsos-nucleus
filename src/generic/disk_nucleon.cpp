@@ -21,7 +21,7 @@ Disk::~Disk()
 {
 }
 
-uint8_t *Disk::getbytes(uint16_t offset, uint8_t len) const
+uint8_t *Disk::getbytes(uint32_t offset, uint16_t len) const
 {
   uint8_t *buffer = (uint8_t *)"";
   quark->getbytes(buffer, offset, len);
@@ -34,5 +34,9 @@ uint16_t Disk::getsectorsize(void) const
 }
 
 void Disk::commitall(void) const
+{
+}
+
+void Disk::setbytes(uint32_t offset, uint16_t len, uint8_t *data) const
 {
 }

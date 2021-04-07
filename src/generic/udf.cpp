@@ -69,3 +69,8 @@ bool UDF_quark::exists(char *path)
 {
   return false;
 }
+
+bool UDF_quark::isfilenamevalid(char *name)
+{
+  return true;
+}

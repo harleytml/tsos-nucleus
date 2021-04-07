@@ -23,6 +23,10 @@ getbytes:
 
 Get a length of bytes from a offset in the computer
 
+setbytes:
+
+Set a set off bytes at a offset in the computer
+
 getsectorsize:
 
 Get the sector size of the disk

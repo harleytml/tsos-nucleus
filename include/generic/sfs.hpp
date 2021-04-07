@@ -25,6 +25,7 @@ public:
   void writefile(char *path, char *data) final;
   void appendfile(char *path, char *data) final;
   bool exists(char *path) final;
+  bool isfilenamevalid(char *name) final;
 
 private:
   char *currentdirectory;
