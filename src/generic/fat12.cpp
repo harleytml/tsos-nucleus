@@ -132,6 +132,7 @@ uint32_t FAT12_quark::getfatregion(uint16_t cluster)
   uint32_t pos = layout.start_fat_region;
   pos += layout.offset;
   pos += cluster * 2;
+  seekpoint+=pos;
   return pos;
 }
 
@@ -190,7 +191,9 @@ bool FAT12_quark::deleteentryinroot(char *name, bool is_file)
 
   // Find the entry in the root directory
 if (findrootdirectoryentry(&entry_index, name) < 0)
+{
   return false;
+}
 
 movetorootdirectoryregion(entry_index);
 entry = tsos->disk.getbytes(seekpoint, sizeof(entry), ((uint8_t *)&fat_entry));
