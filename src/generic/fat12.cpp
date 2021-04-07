@@ -93,7 +93,6 @@ bool FAT12_quark::isfilenamevalid(char *name)
 
 // Needs some work
 
-/*
 bool FAT12_quark::allocatecluster(uint16_t *new_cluster, uint16_t cluster)
 {
   uint16_t next_cluster = FIRST_CLUSTER_INDEX_IN_FAT;
@@ -101,13 +100,13 @@ bool FAT12_quark::allocatecluster(uint16_t *new_cluster, uint16_t cluster)
   {
     next_cluster++;
     uint16_t fat_entry;
-    tsos->disk.setbytes(getfatregion(next_cluster), sizeof(fat_entry), ((uint8_t *)&fat_entry));
+    tsos->disk.setbytes(movetofatregion(next_cluster), sizeof(fat_entry), ((uint8_t *)&fat_entry));
 
     // Mark it as end of file
     if (fat_entry == 0)
     {
       fat_entry = 0xffff;
-      tsos->disk.setbytes(getfatregion(next_cluster), sizeof(fat_entry), ((uint8_t *)&fat_entry));
+      tsos->disk.setbytes(movetofatregion(next_cluster), sizeof(fat_entry), ((uint8_t *)&fat_entry));
       break;
     }
   } while (next_cluster < layout.data_cluster_count - FIRST_CLUSTER_INDEX_IN_FAT);
@@ -120,19 +119,19 @@ bool FAT12_quark::allocatecluster(uint16_t *new_cluster, uint16_t cluster)
   // Update current cluster to point to next one
   if (cluster != 0)
   {
-    tsos->disk.setbytes(getfatregion(cluster), sizeof(next_cluster), ((uint8_t *)&next_cluster));
+    tsos->disk.setbytes(movetofatregion(cluster), sizeof(next_cluster), ((uint8_t *)&next_cluster));
   }
 
   *new_cluster = next_cluster;
   return true;
 }
 
-uint32_t FAT12_quark::getfatregion(uint16_t cluster)
+uint32_t FAT12_quark::movetofatregion(uint16_t cluster)
 {
   uint32_t pos = layout.start_fat_region;
   pos += layout.offset;
   pos += cluster * 2;
-  seekpoint+=pos;
+  seekpoint += pos;
   return pos;
 }
 
@@ -187,33 +186,33 @@ bool FAT12_quark::isinroot(const char *path)
 bool FAT12_quark::deleteentryinroot(char *name, bool is_file)
 {
   uint16_t entry_index = 0;
-  struct dir_entry entry;
+  dir_entry entry;
 
   // Find the entry in the root directory
-if (findrootdirectoryentry(&entry_index, name) < 0)
-{
-  return false;
-}
+  if (!findrootdirectoryentry(&entry_index, name))
+  {
+    return false;
+  }
 
-movetorootdirectoryregion(entry_index);
-entry = tsos->disk.getbytes(seekpoint, sizeof(entry), ((uint8_t *)&fat_entry));
+  movetorootdirectoryregion(entry_index);
+  memcpy((void *)&entry, tsos->disk.getbytes(seekpoint, sizeof(entry)), sizeof(entry));
 
-dev.read(&entry, sizeof(entry));
+  //dev.read(&entry, sizeof(entry));
 
-// Check that we are deleting an entry of the right type
-if (entry.attribute & VOLUME)
-{
-  return -1;
-}
-if ((is_file && (entry.attribute & SUBDIR)) || (!is_file && !(entry.attribute & SUBDIR)))
-{
-  return -1;
-}
+  // Check that we are deleting an entry of the right type
+  if (entry.attribute & VOLUME)
+  {
+    return -1;
+  }
+  if ((is_file && (entry.attribute & SUBDIR)) || (!is_file && !(entry.attribute & SUBDIR)))
+  {
+    return -1;
+  }
 
-markrootentryasavailable(entry_index);
-free_cluster_chain(entry.starting_cluster);
+  markrootentryasavailable(entry_index);
+  freeclusterchain(entry.starting_cluster);
 
-return true;
+  return true;
 }
 
 bool FAT12_quark::findrootdirectoryentry(uint16_t *entry_index, char *name)
@@ -223,7 +222,7 @@ bool FAT12_quark::findrootdirectoryentry(uint16_t *entry_index, char *name)
   movetorootdirectoryregion(0);
   for (i = 0; i < bpb.root_entry_count; ++i)
   {
-    struct dir_entry e;
+    dir_entry e;
     //dev.read(&e, sizeof(struct dir_entry));
 
     //Skip available entry
@@ -238,7 +237,7 @@ bool FAT12_quark::findrootdirectoryentry(uint16_t *entry_index, char *name)
       break;
     }
 
-    //Ignore any VFAT entry 
+    //Ignore any VFAT entry
     if ((e.attribute & VFAT_DIR_ENTRY) == VFAT_DIR_ENTRY)
       continue;
 
@@ -261,4 +260,59 @@ uint32_t FAT12_quark::movetorootdirectoryregion(uint16_t entry_index)
   return pos;
 }
 
-*/
+void FAT12_quark::markrootentryasavailable(uint16_t entry_index)
+{
+  dir_entry entry;
+  memset(&entry, 0, sizeof(entry));
+
+  if (!lastentryinrootdirectory(entry_index))
+  {
+    entry.name[0] = AVAILABLE_DIR_ENTRY;
+  }
+
+  movetorootdirectoryregion(entry_index);
+  //dev.write(&entry, sizeof(entry));
+}
+
+bool FAT12_quark::lastentryinrootdirectory(uint16_t entry_index)
+{
+  uint8_t tmp = 0;
+
+  if (entry_index == (bpb.root_entry_count - 1))
+    return true;
+
+  /* Check if the next entry is marked as being the end of the
+     * root directory list.
+     */
+  movetorootdirectoryregion(entry_index + 1);
+  //dev.read(&tmp, sizeof(tmp));
+  return tmp == 0;
+}
+
+void FAT12_quark::freeclusterchain(uint16_t cluster)
+{
+  /*
+     * If the file is empty, the starting cluster variable is equal to 0.
+     * No need to iterate through the FAT.
+     */
+  if (cluster == 0)
+    return;
+
+  /* Mark all clusters in the FAT as available */
+  do
+  {
+    uint16_t free_cluster = 0;
+    uint16_t next_cluster = 0;
+    uint32_t pos_cluster = movetofatregion(cluster);
+    //dev.read(&next_cluster, sizeof(next_cluster));
+
+    //dev.seek(pos_cluster);
+    //dev.write(&free_cluster, sizeof(free_cluster));
+
+    if (next_cluster >= 0xFFF8)
+    {
+      break;
+    }
+    cluster = next_cluster;
+  } while (true);
+}
