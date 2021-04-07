@@ -7,6 +7,7 @@
 ![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
 [![Release](https://badgen.net/github/release/tsuki-superior/tsos-nucleus)](https://github.com/tsuki-superior/tsos-nucleus/releases)
 ![LICENSE](https://img.shields.io/github/license/tsuki-superior/tsos-nucleus)
+![DOWNLOADS](https://img.shields.io/github/downloads/tsuki-superior/tsos-nucleus/total)
 
 ## Build Tests
 
