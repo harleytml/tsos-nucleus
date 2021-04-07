@@ -79,6 +79,8 @@ bool FAT12_quark::isfilenamevalid(char *name)
   while (name[pos])
   {
     c = name[pos];
+
+    // Make sure it is all valid characters
     isvalid = ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') || c == '!' || c == '#' || c == '$' || c == '%' || c == '&' || c == '\'' || c == '(' || c == ')' || c == '-' || c == '@' || c == '^' || c == '_' || c == '`' || c == '{' || c == '}' || c == '~';
     if (!isvalid)
     {
@@ -112,7 +114,7 @@ bool FAT12_quark::allocatecluster(uint16_t *new_cluster, uint16_t cluster)
     return false;
   }
 
-  /* Update current cluster to point to next one */
+  // Update current cluster to point to next one
   if (cluster != 0)
   {
     tsos->disk.setbytes(getfatregion(cluster), sizeof(next_cluster), ((uint8_t *)&next_cluster));

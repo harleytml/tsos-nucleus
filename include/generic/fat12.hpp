@@ -2,6 +2,10 @@
  * Generic FAT12 Quark
  *
  * The FAT12 will be used rarely these days, but you might see it on a floppy disk
+ * 
+ * This quark was adapted from fat12 linux driver by Francois Berder
+ * Many thanks to him for making filesystem in a platform independent and 
+ * simple way
  */
 
 #ifndef __TSOS_FAT12_QUARK__
