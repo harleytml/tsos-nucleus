@@ -46,6 +46,7 @@ SECTIONS
 	{
 		*(.bss .bss.*) 
 		*(COMMON)
+    LONG(0)
 	}
 	_kernelend = . ;
 
