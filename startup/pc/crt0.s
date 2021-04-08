@@ -22,7 +22,7 @@ stack_top:
 .section .heap, "aw"
 .align 16
 heap_bottom:
-.skip 16384
+.skip 16384 # 16 KiB
 heap_top:
 
 # The kernel entry point.
