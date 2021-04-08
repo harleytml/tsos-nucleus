@@ -49,7 +49,7 @@ SECTIONS
     LONG(0)
 	}
 
-	.heap ALIGN(16):
+	.heap ALIGN(4K):
 	{
 		LINKER_kernel_heap = .;
 		*(.heap)
