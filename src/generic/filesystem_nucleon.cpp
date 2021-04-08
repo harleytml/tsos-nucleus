@@ -24,13 +24,14 @@ Filesystem::~Filesystem()
 {
 }
 
-char **Filesystem::readdir(char *path)
+Array<Array<char>> *Filesystem::readdir(char *path)
 {
   if (exists(path))
   {
     return quark->readdir(path);
   }
-  return (char **)"";
+  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  return tmp;
 }
 
 void Filesystem::rename(char *path, char *newPath)

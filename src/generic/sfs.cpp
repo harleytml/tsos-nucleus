@@ -25,9 +25,10 @@ void SFS_quark::reset(void)
 {
 }
 
-char **SFS_quark::readdir(char *path)
+Array<Array<char>> *SFS_quark::readdir(char *path)
 {
-  return (char **)"";
+  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  return tmp;
 }
 
 void SFS_quark::rename(char *path, char *newPath)

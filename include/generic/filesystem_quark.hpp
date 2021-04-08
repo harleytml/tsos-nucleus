@@ -11,6 +11,7 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 #include <generic/filesystem_file.hpp>
+#include <generic/array.hpp>
 
 class Filesystem_quark : public Quark
 {
@@ -22,7 +23,7 @@ public:
   ~Filesystem_quark();
 
   //Read the directory
-  virtual char **readdir(char *path) = 0;
+  virtual Array<Array<char>> *readdir(char *path) = 0;
 
   //Rename a target
   virtual void rename(char *path, char *newPath) = 0;

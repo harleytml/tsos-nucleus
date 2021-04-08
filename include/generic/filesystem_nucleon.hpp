@@ -28,7 +28,7 @@ public:
   ~Filesystem();
 
   //Read the contents of a directory
-  char **readdir(char *path);
+  Array<Array<char>> *readdir(char *path);
 
   //Rename a file or folder
   void rename(char *path, char *newPath);

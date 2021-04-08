@@ -26,9 +26,10 @@ void FAT16_quark::reset(void)
 {
 }
 
-char **FAT16_quark::readdir(char *path)
+Array<Array<char>> *FAT16_quark::readdir(char *path)
 {
-  return (char **)NULL;
+  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  return tmp;
 }
 
 void FAT16_quark::rename(char *path, char *newPath)

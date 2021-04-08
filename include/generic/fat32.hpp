@@ -10,6 +10,7 @@
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
+#include <generic/array.hpp>
 
 class FAT32_quark : public Filesystem_quark
 {
@@ -17,7 +18,7 @@ public:
   FAT32_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  char **readdir(char *path) final;
+  Array<Array<char>> *readdir(char *path) final;
   void rename(char *path, char *newPath) final;
   File open(char *path) final;
   void close(File file) final;

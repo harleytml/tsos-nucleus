@@ -25,9 +25,10 @@ void UDF_quark::reset(void)
 {
 }
 
-char **UDF_quark::readdir(char *path)
+Array<Array<char>> *UDF_quark::readdir(char *path)
 {
-  return (char **)"";
+  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  return tmp;
 }
 
 void UDF_quark::rename(char *path, char *newPath)

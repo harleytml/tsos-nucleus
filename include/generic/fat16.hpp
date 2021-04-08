@@ -15,6 +15,7 @@
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
+#include <generic/array.hpp>
 
 #define FIRST_CLUSTER_INDEX_IN_FAT (3)
 #define MAX_BYTES_PER_CLUSTER (32768LU)
@@ -33,7 +34,7 @@ public:
   FAT16_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  char **readdir(char *path) final;
+  Array<Array<char>> *readdir(char *path) final;
   void rename(char *path, char *newPath) final;
   File open(char *path) final;
   void close(File file) final;
