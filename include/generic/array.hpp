@@ -95,6 +95,12 @@ public:
     return array;
   }
 
+  void operator=(Array<T> &array)
+  {
+    internaldata = array.raw();
+    internaldatalength = array.len();
+  }
+
   uint16_t len(void)
   {
     return internaldatalength;

@@ -3,7 +3,6 @@
 
 File::File(void)
 {
-  path = String();
   permissions = Permissions(false, false, false);
 }
 
@@ -11,6 +10,12 @@ File::File(String &pa, Permissions &per)
 {
   path = pa;
   permissions = per;
+}
+
+File::File(File &file)
+{
+  path = file.path;
+  permissions = file.permissions;
 }
 
 File::~File()

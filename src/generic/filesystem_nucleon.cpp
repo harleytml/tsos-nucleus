@@ -4,11 +4,11 @@
 
 Filesystem::Filesystem(void)
 {
-  static FAT12_quark fat12_quark = FAT12_quark();
-  static FAT16_quark fat16_quark = FAT16_quark();
-  static FAT32_quark fat32_quark = FAT32_quark();
-  static SFS_quark sfs_quark = SFS_quark();
-  static UDF_quark udf_quark = UDF_quark();
+  static FAT12_quark fat12_quark;
+  static FAT16_quark fat16_quark;
+  static FAT32_quark fat32_quark;
+  static SFS_quark sfs_quark;
+  static UDF_quark udf_quark;
 
   if (attachquark(fat32_quark) ||
       attachquark(fat16_quark) ||
@@ -38,7 +38,7 @@ void Filesystem::rename(String &path, String &newPath)
 {
   if (!exists(newPath) && exists(path))
   {
-    quark->rename(path.raw(), newPath.raw());
+    quark->rename(path, newPath.raw());
   }
 }
 
@@ -47,7 +47,8 @@ File Filesystem::open(String &path)
   if (exists(path))
   {
   }
-  return File();
+  File tmp;
+  return tmp;
 }
 
 void Filesystem::close(File file)

@@ -37,7 +37,8 @@ void FAT32_quark::rename(String &path, char *newPath)
 
 File FAT32_quark::open(String &path)
 {
-  return File();
+  File tmp;
+  return tmp;
 }
 
 void FAT32_quark::close(File file)

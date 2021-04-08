@@ -13,6 +13,7 @@
 extern "C"
 {
   size_t strlen(const char *str);
+  void *memcpy(void *dstptr, const void *srcptr, size_t size);
 }
 
 class String : public Array<char>
@@ -20,6 +21,7 @@ class String : public Array<char>
 public:
   String(void);
   String(char *str);
+  String(const char *str);
 };
 
 #endif

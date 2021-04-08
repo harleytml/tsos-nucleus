@@ -37,7 +37,8 @@ void UDF_quark::rename(String &path, char *newPath)
 
 File UDF_quark::open(String &path)
 {
-  return File();
+  File tmp;
+  return tmp;
 }
 
 void UDF_quark::close(File file)

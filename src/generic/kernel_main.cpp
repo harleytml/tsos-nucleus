@@ -2,8 +2,8 @@
 
 void kernel_main(void)
 {
-  String &init_file_path = String & ("/bin/init");
-  char *serialmessage = "Welcome to TS/OS";
+  String init_file_path("/bin/init");
+  String serialmessage("Welcome to TS/OS");
   static Tsos os_instance = Tsos();
   uint_fast8_t pos = 0;
   tsos = &os_instance;

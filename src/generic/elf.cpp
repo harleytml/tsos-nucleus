@@ -10,7 +10,7 @@ ELF_quark::ELF_quark(void)
 bool ELF_quark::detectsystem(void)
 {
   return true;
-  return isvalidexecutable("/nucleus");
+  //return isvalidexecutable("/nucleus");
 }
 
 void ELF_quark::reset(void)

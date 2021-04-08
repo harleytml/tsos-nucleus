@@ -118,8 +118,8 @@ private:
   ///*
   bool allocatecluster(uint16_t *new_cluster, uint16_t cluster);
   uint32_t movetofatregion(uint16_t cluster);
-  int32_t getsubdir(char *subdir_name, uint16_t *index, const String &path);
-  bool isinroot(const String &path);
+  int32_t getsubdir(char *subdir_name, uint16_t *index, String &path);
+  bool isinroot(String &path);
   bool deleteentryinroot(char *name, bool is_file);
   bool findrootdirectoryentry(uint16_t *entry_index, char *name);
   uint32_t movetorootdirectoryregion(uint16_t entry_index);

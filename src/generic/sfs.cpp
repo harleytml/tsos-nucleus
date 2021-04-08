@@ -37,7 +37,8 @@ void SFS_quark::rename(String &path, char *newPath)
 
 File SFS_quark::open(String &path)
 {
-  return File();
+  File tmp;
+  return tmp;
 }
 
 void SFS_quark::close(File file)
