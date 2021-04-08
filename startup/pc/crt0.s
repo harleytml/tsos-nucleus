@@ -19,6 +19,12 @@ stack_bottom:
 .skip 16384 # 16 KiB
 stack_top:
 
+.section .heap, "aw", @nobits
+.align 16
+heap_bottom:
+.skip 16384
+heap_top:
+
 # The kernel entry point.
 .section .text, "ax"
 .align 16

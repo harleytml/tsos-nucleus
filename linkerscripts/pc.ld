@@ -48,7 +48,13 @@ SECTIONS
 		*(COMMON)
     LONG(0)
 	}
-	_kernelend = . ;
+
+	.heap ALIGN(16):
+	{
+		_LINKER_kernel_heap = .;
+		(.heap)
+		(.heap.*)
+	}
 
   /DISCARD/ :
   { 
