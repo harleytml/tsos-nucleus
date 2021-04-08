@@ -51,9 +51,10 @@ SECTIONS
 
 	.heap ALIGN(16):
 	{
-		_LINKER_kernel_heap = .;
-		(.heap)
-		(.heap.*)
+		LINKER_kernel_heap = .;
+		*(.heap)
+		*(.heap.*)
+		LONG(0)
 	}
 
   /DISCARD/ :

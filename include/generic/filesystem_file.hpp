@@ -22,11 +22,11 @@ public:
   //Constructor of a file
   File(void);
 
+  // Copy Constructor
+  File(const File &file);
+
   //Constructor
   File(String &pa, Permissions &per);
-
-  // Copy Constructor
-  File(File &file);
 
   //Destructor
   ~File();

@@ -95,18 +95,18 @@ public:
     return array;
   }
 
-  void operator=(Array<T> &array)
+  void operator=(const Array<T> &array)
   {
     internaldata = array.raw();
     internaldatalength = array.len();
   }
 
-  uint16_t len(void)
+  uint16_t len(void) const
   {
     return internaldatalength;
   }
 
-  T *raw(void)
+  T *raw(void) const
   {
     return internaldata;
   }

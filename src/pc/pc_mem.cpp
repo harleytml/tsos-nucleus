@@ -17,6 +17,5 @@ void PC_MEM_quark::reset(void)
 
 uintptr_t PC_MEM_quark::getstartoffreemem(void)
 {
-  extern uintptr_t _LINKER_kernel_heap;
-  return _LINKER_kernel_heap;
+  return LINKER_kernel_heap;
 }

@@ -12,7 +12,7 @@ File::File(String &pa, Permissions &per)
   permissions = per;
 }
 
-File::File(File &file)
+File::File(const File &file)
 {
   path = file.path;
   permissions = file.permissions;

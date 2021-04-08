@@ -9,6 +9,8 @@
 #include <generic/memory_quark.hpp>
 #include <generic/filesystem_file.hpp>
 
+extern uintptr_t LINKER_kernel_heap;
+
 class PC_MEM_quark : public Memory_quark
 {
 public:
