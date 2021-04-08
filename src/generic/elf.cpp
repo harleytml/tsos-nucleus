@@ -17,7 +17,7 @@ void ELF_quark::reset(void)
 {
 }
 
-bool ELF_quark::isvalidexecutable(char *path)
+bool ELF_quark::isvalidexecutable(String &path)
 {
   uint8_t signature_length = 4;
   File file = tsos->filesystem.open(path);

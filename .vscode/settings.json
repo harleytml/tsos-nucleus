@@ -6,11 +6,14 @@
   "editor.tabSize": 2,
   "files.associations": {
     "*.json": "json",
+    "*.inc": "makefile",
     "*.ipp": "cpp",
     "array": "cpp",
     "string_view": "cpp",
     "typeindex": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "*.tcc": "cpp",
+    "fstream": "cpp"
   },
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true

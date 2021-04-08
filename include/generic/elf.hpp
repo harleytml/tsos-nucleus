@@ -27,7 +27,7 @@ public:
   ELF_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  bool isvalidexecutable(char *path) final;
+  bool isvalidexecutable(String &path) final;
 
 private:
   class Elf64_header

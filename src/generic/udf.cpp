@@ -25,17 +25,17 @@ void UDF_quark::reset(void)
 {
 }
 
-Array<Array<char>> *UDF_quark::readdir(char *path)
+Array<String &> *UDF_quark::readdir(String &path)
 {
-  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  Array<String &> *tmp = (Array<String &> *)nullptr;
   return tmp;
 }
 
-void UDF_quark::rename(char *path, char *newPath)
+void UDF_quark::rename(String &path, char *newPath)
 {
 }
 
-File UDF_quark::open(char *path)
+File UDF_quark::open(String &path)
 {
   return File();
 }
@@ -53,20 +53,20 @@ void UDF_quark::write(File file, char *data)
 {
 }
 
-char *UDF_quark::readfile(char *path)
+char *UDF_quark::readfile(String &path)
 {
   return "";
 }
 
-void UDF_quark::writefile(char *path, char *data)
+void UDF_quark::writefile(String &path, char *data)
 {
 }
 
-void UDF_quark::appendfile(char *path, char *data)
+void UDF_quark::appendfile(String &path, char *data)
 {
 }
 
-bool UDF_quark::exists(char *path)
+bool UDF_quark::exists(String &path)
 {
   return false;
 }

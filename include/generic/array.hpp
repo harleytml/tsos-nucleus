@@ -100,7 +100,12 @@ public:
     return internaldatalength;
   }
 
-private:
+  T *raw(void)
+  {
+    return internaldata;
+  }
+
+protected:
   T *internaldata;
   uint16_t internaldatalength;
 };

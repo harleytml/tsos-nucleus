@@ -25,7 +25,7 @@ public:
   ~Process();
 
   // Spawn a process
-  uint8_t spawn(char *path);
+  uint8_t spawn(String &path);
 
   // Kill a process
   void kill(uint8_t pid);

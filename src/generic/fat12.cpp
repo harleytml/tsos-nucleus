@@ -25,17 +25,17 @@ void FAT12_quark::reset(void)
 {
 }
 
-Array<Array<char>> *FAT12_quark::readdir(char *path)
+Array<String &> *FAT12_quark::readdir(String &path)
 {
-  Array<Array<char>> *tmp = (Array<Array<char>> *)nullptr;
+  Array<String &> *tmp = (Array<String &> *)nullptr;
   return tmp;
 }
 
-void FAT12_quark::rename(char *path, char *newPath)
+void FAT12_quark::rename(String &path, char *newPath)
 {
 }
 
-File FAT12_quark::open(char *path)
+File FAT12_quark::open(String &path)
 {
   return File();
 }
@@ -53,20 +53,20 @@ void FAT12_quark::write(File file, char *data)
 {
 }
 
-char *FAT12_quark::readfile(char *path)
+char *FAT12_quark::readfile(String &path)
 {
   return "";
 }
 
-void FAT12_quark::writefile(char *path, char *data)
+void FAT12_quark::writefile(String &path, char *data)
 {
 }
 
-void FAT12_quark::appendfile(char *path, char *data)
+void FAT12_quark::appendfile(String &path, char *data)
 {
 }
 
-bool FAT12_quark::exists(char *path)
+bool FAT12_quark::exists(String &path)
 {
   return false;
 }

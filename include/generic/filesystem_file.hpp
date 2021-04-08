@@ -12,6 +12,8 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 #include <generic/filesystem_permissions.hpp>
+#include <generic/array.hpp>
+#include <generic/string.hpp>
 
 class File
 {
@@ -20,13 +22,13 @@ public:
   File(void);
 
   //Constructor
-  File(char *pa, Permissions &per);
+  File(String &pa, Permissions &per);
 
   //Destructor
   ~File();
 
   //The path of the file
-  const char *path;
+  String path;
 
   //The permissions the file was opened in
   Permissions permissions;

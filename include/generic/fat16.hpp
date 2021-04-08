@@ -16,6 +16,7 @@
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
 #include <generic/array.hpp>
+#include <generic/string.hpp>
 
 #define FIRST_CLUSTER_INDEX_IN_FAT (3)
 #define MAX_BYTES_PER_CLUSTER (32768LU)
@@ -34,16 +35,16 @@ public:
   FAT16_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  Array<Array<char>> *readdir(char *path) final;
-  void rename(char *path, char *newPath) final;
-  File open(char *path) final;
+  Array<String &> readdir(String &path) final;
+  void rename(String &path, char *newPath) final;
+  File open(String &path) final;
   void close(File file) final;
   char *read(File file) final;
   void write(File file, char *data) final;
-  char *readfile(char *path) final;
-  void writefile(char *path, char *data) final;
-  void appendfile(char *path, char *data) final;
-  bool exists(char *path) final;
+  char *readfile(String &path) final;
+  void writefile(String &path, char *data) final;
+  void appendfile(String &path, char *data) final;
+  bool exists(String &path) final;
   bool isfilenamevalid(char *name) final;
 
 private:
@@ -117,8 +118,8 @@ private:
   ///*
   bool allocatecluster(uint16_t *new_cluster, uint16_t cluster);
   uint32_t movetofatregion(uint16_t cluster);
-  int32_t getsubdir(char *subdir_name, uint16_t *index, const char *path);
-  bool isinroot(const char *path);
+  int32_t getsubdir(char *subdir_name, uint16_t *index, const String &path);
+  bool isinroot(const String &path);
   bool deleteentryinroot(char *name, bool is_file);
   bool findrootdirectoryentry(uint16_t *entry_index, char *name);
   uint32_t movetorootdirectoryregion(uint16_t entry_index);
