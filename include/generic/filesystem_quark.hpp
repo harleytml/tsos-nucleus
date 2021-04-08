@@ -24,7 +24,7 @@ public:
   ~Filesystem_quark();
 
   //Read the directory
-  virtual Array<String &> readdir(String &path) = 0;
+  virtual Array<String &> &readdir(String &path) = 0;
 
   //Rename a target
   virtual void rename(String &path, char *newPath) = 0;

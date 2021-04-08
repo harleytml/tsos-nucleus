@@ -25,10 +25,10 @@ void SFS_quark::reset(void)
 {
 }
 
-Array<String &> *SFS_quark::readdir(String &path)
+Array<String &> &SFS_quark::readdir(String &path)
 {
   Array<String &> *tmp = (Array<String &> *)nullptr;
-  return tmp;
+  return *tmp;
 }
 
 void SFS_quark::rename(String &path, char *newPath)

@@ -3,6 +3,7 @@
 
 File::File(void)
 {
+  path = String();
   permissions = Permissions(false, false, false);
 }
 

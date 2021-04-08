@@ -25,10 +25,10 @@ void FAT32_quark::reset(void)
 {
 }
 
-Array<String &> *FAT32_quark::readdir(String &path)
+Array<String &> &FAT16_quark::readdir(String &path)
 {
   Array<String &> *tmp = (Array<String &> *)nullptr;
-  return tmp;
+  return *tmp;
 }
 
 void FAT32_quark::rename(String &path, char *newPath)

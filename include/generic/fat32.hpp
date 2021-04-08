@@ -18,7 +18,7 @@ public:
   FAT32_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  Array<String &> readdir(String &path) final;
+  Array<String &> &readdir(String &path) final;
   void rename(String &path, char *newPath) final;
   File open(String &path) final;
   void close(File file) final;

@@ -1,3 +1,4 @@
+
 /* By Tsuki Superior
  * Generic Filesystem File Quark
  *
@@ -28,7 +29,7 @@ public:
   ~File();
 
   //The path of the file
-  String path;
+  String &path;
 
   //The permissions the file was opened in
   Permissions permissions;

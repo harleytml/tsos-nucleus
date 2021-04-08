@@ -25,10 +25,10 @@ void UDF_quark::reset(void)
 {
 }
 
-Array<String &> *UDF_quark::readdir(String &path)
+Array<String &> &UDF_quark::readdir(String &path)
 {
   Array<String &> *tmp = (Array<String &> *)nullptr;
-  return tmp;
+  return *tmp;
 }
 
 void UDF_quark::rename(String &path, char *newPath)

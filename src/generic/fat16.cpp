@@ -26,10 +26,10 @@ void FAT16_quark::reset(void)
 {
 }
 
-Array<String &> *FAT16_quark::readdir(String &path)
+Array<String &> &FAT16_quark::readdir(String &path)
 {
   Array<String &> *tmp = (Array<String &> *)nullptr;
-  return tmp;
+  return *tmp;
 }
 
 void FAT16_quark::rename(String &path, char *newPath)
@@ -169,7 +169,7 @@ int32_t FAT16_quark::getsubdir(char *subdir_name, uint16_t *index, const String 
     return -1;
   }
 
-  memcpy(subdir_name, &path[beg], len);
+  memcpy(subdir_name, path.raw()[beg], len);
   subdir_name[len] = '\0';
 
   *index = beg + len;
