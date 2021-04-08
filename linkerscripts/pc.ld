@@ -51,7 +51,7 @@ SECTIONS
 
 	.heap ALIGN(4K):
 	{
-		LINKER_kernel_heap = .;
+		LINKER_kernel_heap = ABSOLUTE(.);
 		*(.heap)
 		*(.heap.*)
 		LONG(0)
