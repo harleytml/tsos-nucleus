@@ -47,7 +47,7 @@ public:
 
   T &operator[](const uint16_t index)
   {
-    if (index < internaldatalength)
+    if (index > internaldatalength)
     {
       while (true)
       {
@@ -58,7 +58,7 @@ public:
 
   T operator[](const uint16_t index) const
   {
-    if (index < internaldatalength)
+    if (index > internaldatalength)
     {
       return 0;
     }

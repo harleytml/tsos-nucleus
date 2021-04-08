@@ -36,7 +36,7 @@ void kernel_main(void)
 
   tsos->video.drawpx(0, 0);
 
-  while (serialmessage[pos] != 0)
+  while (pos < serialmessage.len())
   {
     tsos->serial.sendbyte((uint8_t)serialmessage[pos++]);
   }
