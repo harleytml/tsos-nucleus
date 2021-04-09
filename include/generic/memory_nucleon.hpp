@@ -2,6 +2,11 @@
  * Memory Nucleon
  * 
  * The wrapper nucleon for the memory quarks
+ * 
+ * The allocation stratagy is to keep a statically sized table,
+ * and every entry represents a single allocated piece of memory
+ * The OS looks for free memory in the table, and if it cannot find any
+ * It simply just returns nullptr
  */
 
 #ifndef __TSOS_NUCLEUS_MEMORY_NUCLEON__
@@ -14,7 +19,7 @@
 #include <generic/current_config.hpp>
 
 #define MEMORY_BLOCK_COUNT (128)
-#define MEMORY_BLOCK_SIZE ((4) * 1024)
+#define MEMORY_BLOCK_SIZE (128)
 
 class Memory : public Nucleon<Memory_quark>
 {

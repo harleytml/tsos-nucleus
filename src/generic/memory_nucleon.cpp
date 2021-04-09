@@ -56,16 +56,41 @@ void *Memory::allocatememory(uint32_t len)
     return nullptr;
   }
 
-  while (is_possible_to_allocate_count < MEMORY_BLOCK_COUNT)
+  while (is_possible_to_allocate_count <= MEMORY_BLOCK_COUNT)
   {
     for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
+
+      // Address is now outside the heap
       if (possible_address > (start_address + max_length))
       {
         return nullptr;
       }
+
+      // We only need to check the addresses if the memory location is active
+      if (memory_table->is_active)
+      {
+
+        // Make sure the memory blocks are not conflicting
+        if (false)
+        {
+        }
+        else
+        {
+          // The check failed, and there is a conflict in memory
+          possible_address = 0;
+        }
+      }
+      else
+      {
+
+        // The check passed, so we may continues
+        is_possible_to_allocate_count++;
+      }
     }
-    possible_address++;
+
+    // Jump forward by the memory block size
+    possible_address += MEMORY_BLOCK_SIZE;
   }
 
   // This should never make it here, but if it does, return nullptr
