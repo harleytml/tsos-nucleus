@@ -14,6 +14,7 @@
 #include <generic/sfs.hpp>
 #include <generic/udf.hpp>
 #include <generic/elf.hpp>
+#include <generic/ustar.hpp>
 
 #ifdef __PERSONAL_COMPUTER__
 
