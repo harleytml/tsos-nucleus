@@ -23,8 +23,6 @@ public:
 
   // Check if the block is active
   bool isactive;
-
-  Memory_table_entry *next_entry;
 };
 
 #endif

@@ -16,12 +16,22 @@ Memory::~Memory(void)
 
 void *Memory::allocatememory(uint32_t len)
 {
-  uintptr_t memlocation = quark->getstartoffreemem() + current_heap_offset;
-  current_heap_offset += len;
-  return (void *)memlocation;
+  Memory_table_entry *possible_entry;
+  for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
+  {
+    if (memory_table[x].isactive)
+    {
+    }
+  }
 }
 
 void Memory::freememory(void *mem)
 {
-  current_heap_offset -= sizeof(&mem);
+  for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
+  {
+    if (memory_table[x].memory_start == (uintptr_t)mem && memory_table->isactive)
+    {
+      memory_table->isactive = false;
+    }
+  }
 }

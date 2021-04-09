@@ -13,6 +13,9 @@
 #include <generic/types.hpp>
 #include <generic/current_config.hpp>
 
+#define MEMORY_BLOCK_COUNT 128
+#define MEMORY_BLOCK_SIZE (4 * 1024)
+
 class Memory : public Nucleon<Memory_quark>
 {
 public:
@@ -30,7 +33,7 @@ public:
 
 private:
   uintptr_t current_heap_offset;
-  Memory_table_entry *first_memory_table_entry;
+  Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
 };
 
 #endif
