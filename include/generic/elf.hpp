@@ -14,7 +14,6 @@
 #define ELFMAG ("\177ELF")
 
 #include <generic/process_quark.hpp>
-
 #include <generic/filesystem_file.hpp>
 
 extern "C" {
