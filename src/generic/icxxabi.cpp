@@ -109,6 +109,11 @@ extern "C"
     return __cxa_atexit(func, arg, d);
   }
 
+  void __aeabi_memcpy(void *dest, const void *src, size_t n)
+  {
+    memcpy(dest, src, n);
+  }
+
 #endif
 
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)

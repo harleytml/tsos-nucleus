@@ -37,6 +37,7 @@ extern "C"
 #ifdef __ARM_EABI__
 
 	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
+	void __aeabi_memcpy(void *dest, const void *src, size_t n);
 
 #endif
 
