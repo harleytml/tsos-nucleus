@@ -32,8 +32,6 @@ extern "C"
 		void *dso_handle;
 	};
 
-	int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
-
 #ifdef __ARM_EABI__
 
 	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
@@ -44,6 +42,7 @@ extern "C"
 
 #endif
 
+	int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
 	void __cxa_finalize(void *f);
 	void __cxa_pure_virtual();
 	void *memcpy(void *dstptr, const void *srcptr, size_t size);
@@ -53,6 +52,8 @@ extern "C"
 	int strcmp(const char *p1, const char *p2);
 	size_t strlen(const char *str);
 	size_t oct2bin(char *str, size_t size);
+	char *itoa(int value, char *str, int base);
+	int abs(int i);
 }
 
 namespace __cxxabiv1
