@@ -13,13 +13,13 @@
 .long CHECKSUM
 
 # Reserve a stack for the initial thread.
-.section .bss, "aw"
+.section .bss, "aw", @nobits
 .align 16
 stack_bottom:
 .skip 16384 # 16 KiB
 stack_top:
 
-.section .heap, "aw"
+.section .heap, "aw", @nobits
 .align 16
 heap_bottom:
 .skip 16384 # 16 KiB
