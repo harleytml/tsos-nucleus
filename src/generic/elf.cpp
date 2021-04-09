@@ -19,7 +19,6 @@ void ELF_quark::reset(void)
 
 bool ELF_quark::isvalidexecutable(String &path)
 {
-  uint8_t signature_length = 4;
   Elf32_header header=Elf32_header();
   File file = tsos->filesystem.open(path);
   uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
