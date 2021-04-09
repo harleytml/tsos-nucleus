@@ -28,15 +28,15 @@ bool ELF_quark::isvalidexecutable(String &path)
 
 // A i386 elf file
 #ifdef __i386__
-    return header.e_machine == EM_386;
+    return header.e_machine == e_machine::EM_386;
 #endif
 
 #ifdef __arm__
-    return header.e_machine == EM_ARM;
+    return header.e_machine == e_machine::EM_ARM;
 #endif
 
 #ifdef __aarch64__
-    return header.e_machine == EM_AARCH64;
+    return header.e_machine == e_machine::EM_AARCH64;
 #endif
     return false;
   }

@@ -31,46 +31,6 @@ public:
   bool isvalidexecutable(String &path) final;
 
 private:
-  class Elf64_header
-  {
-  public:
-    uint8_t e_ident[16];  /* Magic number and other info */
-    uint16_t e_type;      /* Object file type */
-    uint16_t e_machine;   /* Architecture */
-    uint32_t e_version;   /* Object file version */
-    uint64_t e_entry;     /* Entry point virtual address */
-    uint64_t e_phoff;     /* Program header table file offset */
-    uint64_t e_shoff;     /* Section header table file offset */
-    uint32_t e_flags;     /* Processor-specific flags */
-    uint16_t e_ehsize;    /* ELF header size in bytes */
-    uint16_t e_phentsize; /* Program header table entry size */
-    uint16_t e_phnum;     /* Program header table entry count */
-    uint16_t e_shentsize; /* Section header table entry size */
-    uint16_t e_shnum;     /* Section header table entry count */
-    uint16_t e_shstrndx;  /* Section header string table index */
-  }
-  __attribute__((packed));
-
-  class Elf32_header
-  {
-  public:
-    uint8_t e_ident[16];  /* Magic number and other info */
-    uint16_t e_type;      /* Object file type */
-    uint16_t e_machine;   /* Architecture */
-    uint32_t e_version;   /* Object file version */
-    uint32_t e_entry;     /* Entry point virtual address */
-    uint32_t e_phoff;     /* Program header table file offset */
-    uint32_t e_shoff;     /* Section header table file offset */
-    uint32_t e_flags;     /* Processor-specific flags */
-    uint16_t e_ehsize;    /* ELF header size in bytes */
-    uint16_t e_phentsize; /* Program header table entry size */
-    uint16_t e_phnum;     /* Program header table entry count */
-    uint16_t e_shentsize; /* Section header table entry size */
-    uint16_t e_shnum;     /* Section header table entry count */
-    uint16_t e_shstrndx;  /* Section header string table index */
-  }
-  __attribute__((packed));
-
   enum e_type
   {
     ET_NONE = 0,
@@ -85,7 +45,7 @@ private:
   };
 
   // https://code.woboq.org/linux/include/elf.h.html
-  enum e_machine
+  enum class e_machine : uint16_t
   {
     EM_NONE = 0,         /* No machine */
     EM_M32 = 1,          /* AT&T WE 32100 */
@@ -275,6 +235,46 @@ private:
     EM_RISCV = 243, /* RISC-V */
     EM_BPF = 247    /* Linux BPF -- in-kernel virtual machine */
   };
+
+  class Elf64_header
+  {
+  public:
+    uint8_t e_ident[16];  /* Magic number and other info */
+    uint16_t e_type;      /* Object file type */
+    e_machine e_machine;  /* Architecture */
+    uint32_t e_version;   /* Object file version */
+    uint64_t e_entry;     /* Entry point virtual address */
+    uint64_t e_phoff;     /* Program header table file offset */
+    uint64_t e_shoff;     /* Section header table file offset */
+    uint32_t e_flags;     /* Processor-specific flags */
+    uint16_t e_ehsize;    /* ELF header size in bytes */
+    uint16_t e_phentsize; /* Program header table entry size */
+    uint16_t e_phnum;     /* Program header table entry count */
+    uint16_t e_shentsize; /* Section header table entry size */
+    uint16_t e_shnum;     /* Section header table entry count */
+    uint16_t e_shstrndx;  /* Section header string table index */
+  }
+  __attribute__((packed));
+
+  class Elf32_header
+  {
+  public:
+    uint8_t e_ident[16];  /* Magic number and other info */
+    uint16_t e_type;      /* Object file type */
+    e_machine e_machine;  /* Architecture */
+    uint32_t e_version;   /* Object file version */
+    uint32_t e_entry;     /* Entry point virtual address */
+    uint32_t e_phoff;     /* Program header table file offset */
+    uint32_t e_shoff;     /* Section header table file offset */
+    uint32_t e_flags;     /* Processor-specific flags */
+    uint16_t e_ehsize;    /* ELF header size in bytes */
+    uint16_t e_phentsize; /* Program header table entry size */
+    uint16_t e_phnum;     /* Program header table entry count */
+    uint16_t e_shentsize; /* Section header table entry size */
+    uint16_t e_shnum;     /* Section header table entry count */
+    uint16_t e_shstrndx;  /* Section header string table index */
+  }
+  __attribute__((packed));
 };
 
 #endif

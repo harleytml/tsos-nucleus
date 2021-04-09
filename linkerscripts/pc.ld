@@ -18,6 +18,11 @@ SECTIONS
 		*(.init)
 		*(.fini)
 	}
+
+	.note.gnu.build-id ALIGN(4K) : 
+	{
+		*(.note.gnu.build-id)
+	}
  
 	/* 
    * Read-only data.
@@ -61,7 +66,6 @@ SECTIONS
   { 
       *(.comment) 
       *(.gnu*) 
-      *(.note*) 
       *(.eh_frame*)
   }
 }
