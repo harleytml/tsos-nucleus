@@ -16,13 +16,29 @@ Memory::~Memory(void)
 
 void *Memory::allocatememory(uint32_t len)
 {
-  Memory_table_entry *possible_entry;
+  Memory_table_entry *possible_entry = nullptr;
+  uintptr_t possible_address = LINKER_kernel_heap;
+  uint32_t ispossiblecount = 0;
   for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
   {
-    if (memory_table[x].isactive)
+    if (!memory_table[x].isactive)
+    {
+      possible_entry = &memory_table[x];
+      return (void *)possible_entry->memory_start;
+      break;
+    }
+  }
+  if (possible_entry == nullptr)
+  {
+    return nullptr;
+  }
+  while (ispossiblecount < MEMORY_BLOCK_COUNT)
+  {
+    for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
     }
   }
+  return nullptr;
 }
 
 void Memory::freememory(void *mem)
