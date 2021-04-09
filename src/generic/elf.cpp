@@ -20,7 +20,17 @@ void ELF_quark::reset(void)
 bool ELF_quark::isvalidexecutable(String &path)
 {
   uint8_t signature_length = 4;
+  Elf32_header header=Elf32_header();
   File file = tsos->filesystem.open(path);
-  uint8_t *exec = tsos->filesystem.read(file, signature_length);
-  return memcmp(exec, ELFMAG, signature_length) == 0;
+  uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
+  memcpy(&header, exec, sizeof(Elf32_header));
+  if(memcpy(&header.e_ident, ELFMAG, 4)==0)
+  {
+    #ifdef __i686__
+      return header.e_machine == EM_386;
+    #endif
+    return false;
+  }else{
+    return false;
+  }
 }
