@@ -119,6 +119,16 @@ extern "C"
     memset(dest, 0, n);
   }
 
+  void __aeabi_memmove(void *dest, const void *src, size_t n)
+  {
+    memmove(dest, src, n);
+  }
+
+  void __aeabi_memset(void *dest, size_t n, int c)
+  {
+    memset(dest, c, n);
+  }
+
 #endif
 
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)
