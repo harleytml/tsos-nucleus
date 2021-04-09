@@ -4,11 +4,11 @@
 
 #include <generic/serial_quark.hpp>
 
-#define BAUD_115200 0x01
-#define COM1 0x3F8
-#define COM2 0x2F8
-#define COM3 0x3E8
-#define COM4 0x2E8
+#define BAUD_115200 (0x01)
+#define COM1 (0x3F8)
+#define COM2 (0x2F8)
+#define COM3 (0x3E8)
+#define COM4 (0x2E8)
 
 class PC_UART_quark : public Serial_quark
 {

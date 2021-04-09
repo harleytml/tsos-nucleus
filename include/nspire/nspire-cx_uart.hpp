@@ -4,7 +4,7 @@
 
 #include <generic/serial_quark.hpp>
 
-#define MMIO_BASE 0x90020000
+#define MMIO_BASE (0x90020000)
 
 class NSPIRE_CX_UART_quark : public Serial_quark
 {

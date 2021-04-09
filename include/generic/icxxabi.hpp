@@ -13,7 +13,7 @@
 
 #include <generic/types.hpp>
 
-#define ATEXIT_MAX_FUNCS 128
+#define ATEXIT_MAX_FUNCS (128)
 
 extern "C"
 {

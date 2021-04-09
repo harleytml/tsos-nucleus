@@ -18,10 +18,10 @@
 #include <generic/array.hpp>
 #include <generic/string.hpp>
 
-#define FIRST_CLUSTER_INDEX_IN_FAT (3)
-#define MAX_BYTES_PER_CLUSTER (32768LU)
-#define VFAT_DIR_ENTRY (0x0F)
-#define AVAILABLE_DIR_ENTRY (0xE5)
+#define FIRST_CLUSTER_INDEX_IN_FAT ((3))
+#define MAX_BYTES_PER_CLUSTER ((32768LU))
+#define VFAT_DIR_ENTRY ((0x0F))
+#define AVAILABLE_DIR_ENTRY ((0xE5))
 
 extern "C"
 {

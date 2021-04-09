@@ -4,9 +4,9 @@
 
 #include <generic/serial_quark.hpp>
 
-#define CANON_A1100_TX 0xc0800000
-#define CANON_A1100_RX 0xc0800004
-#define CANON_A1100_UART_STATUS 0xc0800014
+#define CANON_A1100_TX (0xc0800000)
+#define CANON_A1100_RX (0xc0800004)
+#define CANON_A1100_UART_STATUS (0xc0800014)
 
 class CANON_A1100_UART_quark : public Serial_quark
 {

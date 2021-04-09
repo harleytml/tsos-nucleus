@@ -10,8 +10,8 @@
 #ifndef __TSOS_ELF_QUARK__
 #define __TSOS_ELF_QUARK__
 
-#define EI_NIDENT 16
-#define ELFMAG "\177ELF"
+#define EI_NIDENT (16)
+#define ELFMAG ("\177ELF")
 
 #include <generic/process_quark.hpp>
 #include <generic/filesystem_file.hpp>
