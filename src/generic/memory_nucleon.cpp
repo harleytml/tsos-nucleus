@@ -16,37 +16,49 @@ Memory::~Memory(void)
 
 void *Memory::allocatememory(uint32_t len)
 {
+  // The memory table entry for the table
   Memory_table_entry *possible_entry = nullptr;
+
+  // The start address of the heap
   uintptr_t start_address = quark->getstartofheap();
+
+  // The possible address for the memory address
   uintptr_t possible_address = start_address;
 
-  uint32_t ispossiblecount = 0;
-  size_t maxlength = quark->getlengthofheap();
+  // A counter to make sure the new allocated space is not conflicting with the other entries
+  uint32_t is_possible_to_allocate_count = 0;
+
+  // The size of the heap
+  size_t max_length = quark->getlengthofheap();
 
   // I am not even going to check for a block bigger than the free memory
-  if (len > maxlength)
+  if (len > max_length)
   {
     return nullptr;
   }
+
+  // Find a free point
   for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
   {
-    if (!memory_table[x].isactive)
+    if (!memory_table[x].is_active)
     {
       possible_entry = &memory_table[x];
-      possible_address = possible_entry->memory_start;
       break;
     }
   }
+
+  // Make sure a entry was actually found
   if (possible_entry == nullptr)
   {
     // A free entry was not found
     return nullptr;
   }
-  while (ispossiblecount < MEMORY_BLOCK_COUNT)
+
+  while (is_possible_to_allocate_count < MEMORY_BLOCK_COUNT)
   {
     for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
-      if (possible_address > (start_address + maxlength))
+      if (possible_address > (start_address + max_length))
       {
         return nullptr;
       }
@@ -62,9 +74,9 @@ void Memory::freememory(void *mem)
 {
   for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
   {
-    if (memory_table[x].memory_start == (uintptr_t)mem && memory_table->isactive)
+    if (memory_table[x].memory_start == (uintptr_t)mem && memory_table->is_active)
     {
-      memory_table->isactive = false;
+      memory_table->is_active = false;
     }
   }
 }

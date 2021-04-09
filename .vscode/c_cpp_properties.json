@@ -6,7 +6,7 @@
       "defines": ["__PERSONAL_COMPUTER__"],
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c99",
-      "cppStandard": "c++11",
+      "cppStandard": "c++14",
       "intelliSenseMode": "clang-x86",
       "compilerArgs": [],
       "browse": {
@@ -20,7 +20,7 @@
       "defines": ["__NSPIRE__"],
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c99",
-      "cppStandard": "c++11",
+      "cppStandard": "c++14",
       "compilerArgs": [],
       "browse": {
         "path": ["${workspaceFolder}/**"],
@@ -34,7 +34,7 @@
       "defines": ["__CANON_A1100__"],
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c99",
-      "cppStandard": "c++11",
+      "cppStandard": "c++14",
       "compilerArgs": [],
       "browse": {
         "path": ["${workspaceFolder}/**"],
@@ -48,7 +48,7 @@
       "defines": ["__RASPBERRY_PI_3__"],
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c99",
-      "cppStandard": "c++11",
+      "cppStandard": "c++14",
       "compilerArgs": [],
       "browse": {
         "path": ["${workspaceFolder}/**"],
@@ -62,7 +62,7 @@
       "defines": ["__CUBIEBOARD_1__"],
       "compilerPath": "/usr/bin/clang++",
       "cStandard": "c99",
-      "cppStandard": "c++11",
+      "cppStandard": "c++14",
       "intelliSenseMode": "linux-clang-x64",
       "browse": {
         "limitSymbolsToIncludedHeaders": true

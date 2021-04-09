@@ -8,7 +8,7 @@ set(linkerscriptdir ../linkerscripts)
 project("TS/OS Nucleus" VERSION 0.0)
 
 enable_language(CXX C ASM)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_C_STANDARD 99)
 
 option(PLATFORM "Set the target platform of TS/OS" PC)
@@ -16,7 +16,7 @@ message(STATUS "Platform ${PLATFORM}")
 
 if(PLATFORM STREQUAL "PC")
   set(platform_options -D__PERSONAL_COMPUTER__ -mtune=i686 -mno-red-zone -m32
-                       --target=i686-pc-none-elf -mcmodel=kernel)
+                       --target=i686-pc-none-elf)
   set(linker_script_command -T${linkerscriptdir}/pc.ld)
   file(GLOB platform_specific_files "src/pc/*" "src/x86/*" "startup/pc/*"
        "startup/x86/*")
@@ -60,15 +60,14 @@ file(GLOB source_files "src/generic/*")
 
 set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 add_compile_options(
-  -Og
   -ggdb
   -Wall
   -Wextra
   -Werror
+  -Wabi
   -Wno-unused-private-field
   -Wno-unused-parameter
   -Wno-write-strings
-  -Wno-unused-command-line-argument
   -Wno-deprecated-copy
   -Wno-unused-variable
   -fno-threadsafe-statics
@@ -76,6 +75,7 @@ add_compile_options(
   -fno-builtin
   -fno-rtti
   -fno-unwind-tables
+  -funsigned-char
   -nostdlib
   -nodefaultlibs
   -nostdinc++
@@ -84,10 +84,11 @@ add_compile_options(
   -ffunction-sections
   -fdata-sections
   -ffreestanding
+  -integrated-as
+  -Qunused-arguments
   ${platform_options})
 
 add_link_options(
-  -Og
   -ggdb
   -fuse-ld=lld
   -static
@@ -96,6 +97,7 @@ add_link_options(
   -ffunction-sections
   -fdata-sections
   -ffreestanding
+  -Qunused-arguments
   ${platform_options}
   ${linker_script_command})
 

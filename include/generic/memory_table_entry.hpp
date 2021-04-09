@@ -22,7 +22,7 @@ public:
   size_t block_length;
 
   // Check if the block is active
-  bool isactive;
+  bool is_active;
 };
 
 #endif

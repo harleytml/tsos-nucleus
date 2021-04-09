@@ -29,14 +29,14 @@ if shutil.which("cmake") is None:
 
 # Make sure the script has the correct number of arguments, and if not, display help
 if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
-    cprint("Official TS/OS buildscript (C) Tsuki Superior. Licensed under the same license as TS/OS (see LICENSE file)\n", "yellow")
-    print(sys.argv[0], "<system> <action>")
+    cprint("\nOfficial TS/OS buildscript (C) Tsuki Superior. Licensed under the same license as TS/OS (see LICENSE file)\n", "yellow")
+    cprint(sys.argv[0] + " <system> <action>", "green")
     print("Supported systems:\n")
 
     for x in build_settings:
         print(x, "-", build_settings[x]["description"])
     cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
-    print("Look in buildscript directory to find the buildscripts pertaining to the systems")
+    cprint("Look in buildscript directory to find the buildscripts pertaining to the systems\n", "yellow")
     sys.exit(1)
 
 # Get the platform

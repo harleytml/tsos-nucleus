@@ -14,12 +14,8 @@ shutil.copyfile("nucleus.elf", "nucleus")
 if os.system("grub-file --is-x86-multiboot nucleus") != 0:
     cprint("The Nucleus is malformed (not multiboot complaint)", "red")
     sys.exit(1)
-else:
-    cprint("The Nucleus is well formed", "green")
 
 # Make sure that grub script is valid
 if os.system("grub-script-check ../misc/grub.cfg") != 0:
     cprint("The grub config file is not valid", "red")
     sys.exit(1)
-else:
-    cprint("The Grub Script is valid", "green")
