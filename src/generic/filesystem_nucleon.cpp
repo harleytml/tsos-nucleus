@@ -30,7 +30,7 @@ Array<String &> &Filesystem::readdir(String &path)
   {
     return quark->readdir(path);
   }
-  Array<String &> *tmp = (Array<String &> *)nullptr;
+  Array<String &> *tmp = nullptr;
   return *tmp;
 }
 
