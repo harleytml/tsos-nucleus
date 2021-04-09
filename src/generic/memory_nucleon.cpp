@@ -31,6 +31,8 @@ void *Memory::allocatememory(uint32_t len)
   // The size of the heap
   size_t max_length = quark->getlengthofheap();
 
+  uintptr_t end_address = start_address + max_length;
+
   // I am not even going to check for a block bigger than the free memory
   if (len > max_length)
   {
