@@ -18,7 +18,9 @@ public:
 
   ~Memory_quark();
 
-  virtual uintptr_t getstartoffreemem(void) = 0;
+  virtual uintptr_t getstartofheap(void) = 0;
+
+  virtual size_t getlengthofheap(void) = 0;
 };
 
 #endif

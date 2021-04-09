@@ -17,7 +17,8 @@ public:
   PC_MEM_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  uintptr_t getstartoffreemem(void) final;
+  uintptr_t getstartofheap(void) final;
+  size_t getlengthofheap(void) final;
 };
 
 #endif

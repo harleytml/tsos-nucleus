@@ -15,7 +15,12 @@ void PC_MEM_quark::reset(void)
 {
 }
 
-uintptr_t PC_MEM_quark::getstartoffreemem(void)
+uintptr_t PC_MEM_quark::getstartofheap(void)
 {
   return LINKER_kernel_heap;
+}
+
+size_t PC_MEM_quark::getlengthofheap(void)
+{
+  return 1024 * 4;
 }

@@ -17,8 +17,17 @@ Memory::~Memory(void)
 void *Memory::allocatememory(uint32_t len)
 {
   Memory_table_entry *possible_entry = nullptr;
-  uintptr_t possible_address = LINKER_kernel_heap;
+  uintptr_t start_address = quark->getstartofheap();
+  uintptr_t possible_address = start_address;
+
   uint32_t ispossiblecount = 0;
+  size_t maxlength = quark->getlengthofheap();
+
+  // I am not even going to check for a block bigger than the free memory
+  if (len > maxlength)
+  {
+    return nullptr;
+  }
   for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
   {
     if (!memory_table[x].isactive)
@@ -37,7 +46,12 @@ void *Memory::allocatememory(uint32_t len)
   {
     for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
+      if (possible_address > (start_address + maxlength))
+      {
+        return nullptr;
+      }
     }
+    possible_address++;
   }
 
   // This should never make it here, but if it does, return nullptr
