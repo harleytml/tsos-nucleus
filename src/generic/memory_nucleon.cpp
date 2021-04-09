@@ -24,12 +24,13 @@ void *Memory::allocatememory(uint32_t len)
     if (!memory_table[x].isactive)
     {
       possible_entry = &memory_table[x];
-      return (void *)possible_entry->memory_start;
+      possible_address = possible_entry->memory_start;
       break;
     }
   }
   if (possible_entry == nullptr)
   {
+    // A free entry was not found
     return nullptr;
   }
   while (ispossiblecount < MEMORY_BLOCK_COUNT)
@@ -38,6 +39,8 @@ void *Memory::allocatememory(uint32_t len)
     {
     }
   }
+
+  // This should never make it here, but if it does, return nullptr
   return nullptr;
 }
 
