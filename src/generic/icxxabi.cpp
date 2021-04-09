@@ -114,6 +114,11 @@ extern "C"
     memcpy(dest, src, n);
   }
 
+  void __aeabi_memclr(void *dest, size_t n)
+  {
+    memset(dest, 0, n);
+  }
+
 #endif
 
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)
