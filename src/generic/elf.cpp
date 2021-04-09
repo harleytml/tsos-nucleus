@@ -19,17 +19,29 @@ void ELF_quark::reset(void)
 
 bool ELF_quark::isvalidexecutable(String &path)
 {
-  Elf32_header header=Elf32_header();
+  Elf32_header header = Elf32_header();
   File file = tsos->filesystem.open(path);
   uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
   memcpy(&header, exec, sizeof(Elf32_header));
-  if(memcpy(&header.e_ident, ELFMAG, 4)==0)
+  if (memcpy(&header.e_ident, ELFMAG, 4) == 0)
   {
-    #ifdef __i686__
-      return header.e_machine == EM_386;
-    #endif
+
+// A i386 elf file
+#ifdef __i386__
+    return header.e_machine == EM_386;
+#endif
+
+#ifdef __arm__
+    return header.e_machine == EM_ARM;
+#endif
+
+#ifdef __aarch64__
+    return header.e_machine == EM_AARCH64;
+#endif
     return false;
-  }else{
+  }
+  else
+  {
     return false;
   }
 }

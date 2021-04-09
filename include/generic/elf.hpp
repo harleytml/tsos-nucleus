@@ -84,7 +84,7 @@ private:
     ET_HIPROC = 0xffff
   };
 
-  // From the linux kernel source
+  // https://code.woboq.org/linux/include/elf.h.html
   enum e_machine
   {
     EM_NONE = 0,         /* No machine */
