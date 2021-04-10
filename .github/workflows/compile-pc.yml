@@ -16,14 +16,21 @@ jobs:
       - name: Compile Test
         run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py pc
 
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYYMMDD-HH
+          utcOffset: "+08:00"
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: GITHUB_RUN_ID
-          release_name: Release PC
+          tag_name: "${{ steps.current-time.outputs.time }}"
+          release_name: Release PC-"${{ steps.current-time.outputs.time }}"
           draft: false
           prerelease: true
 
