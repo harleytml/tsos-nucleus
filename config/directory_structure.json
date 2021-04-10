@@ -1,13 +1,14 @@
 {
-  "usr": {},
-  "tmp": {},
-  "sys": {
+    "usr": {},
     "tmp": {},
-    "headers": {},
-    "info": {},
-    "trash": {}
-  },
-  "lib": {},
-  "bin": {},
-  "cfg": {}
+    "sys": {
+        "tmp": {},
+        "headers": {},
+        "info": {},
+        "trash": {}
+    },
+    "lib": {},
+    "bin": {},
+    "cfg": {},
+    "boot": {}
 }
