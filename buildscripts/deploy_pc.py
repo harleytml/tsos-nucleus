@@ -8,11 +8,6 @@ import json
 
 from termcolor import cprint
 
-# Open that config file and read from it
-tmp_file = open("config/directory_structure.json")
-build_settings = json.loads(tmp_file.read())
-tmp_file.close()
-
 # No conversion has to be done
 shutil.copyfile("nucleus.elf", "nucleus")
 
