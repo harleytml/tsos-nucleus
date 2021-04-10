@@ -1,20 +1,19 @@
 {
-  "editor.formatOnSave": true,
-  "editor.wrappingStrategy": "simple",
-  "python.linting.lintOnSave": true,
-  "C_Cpp.errorSquiggles": "Enabled",
-  "editor.tabSize": 2,
-  "files.associations": {
-    "*.json": "json",
-    "*.inc": "makefile",
-    "*.ipp": "cpp",
-    "array": "cpp",
-    "string_view": "cpp",
-    "typeindex": "cpp",
-    "typeinfo": "cpp",
-    "*.tcc": "cpp",
-    "fstream": "cpp"
-  },
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true
+    "editor.formatOnSave": true,
+    "python.linting.lintOnSave": true,
+    "C_Cpp.errorSquiggles": "Enabled",
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.json": "json",
+        "*.inc": "makefile",
+        "*.ipp": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp"
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true
 }

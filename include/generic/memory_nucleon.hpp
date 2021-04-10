@@ -37,7 +37,6 @@ public:
   void freememory(void *mem);
 
 private:
-  uintptr_t current_heap_offset;
   Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
 };
 
