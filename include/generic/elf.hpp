@@ -31,7 +31,7 @@ public:
   bool isvalidexecutable(String &path) final;
 
 private:
-  enum e_type
+  enum class e_type : uint16_t
   {
     ET_NONE = 0,
     ET_REL = 1,
@@ -240,7 +240,7 @@ private:
   {
   public:
     uint8_t e_ident[16];  /* Magic number and other info */
-    uint16_t e_type;      /* Object file type */
+    e_type e_type;        /* Object file type */
     e_machine e_machine;  /* Architecture */
     uint32_t e_version;   /* Object file version */
     uint64_t e_entry;     /* Entry point virtual address */
@@ -260,7 +260,7 @@ private:
   {
   public:
     uint8_t e_ident[16];  /* Magic number and other info */
-    uint16_t e_type;      /* Object file type */
+    e_type e_type;        /* Object file type */
     e_machine e_machine;  /* Architecture */
     uint32_t e_version;   /* Object file version */
     uint32_t e_entry;     /* Entry point virtual address */
