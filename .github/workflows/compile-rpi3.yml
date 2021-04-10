@@ -1,6 +1,10 @@
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 name: RPI3 Compile test
 

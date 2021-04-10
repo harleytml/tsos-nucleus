@@ -1,6 +1,10 @@
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 name: CANON-A1100 Compile test
 
