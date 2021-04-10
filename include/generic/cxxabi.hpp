@@ -46,10 +46,6 @@ extern "C"
 	int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
 	void __cxa_finalize(void *f);
 	void __cxa_pure_virtual();
-	int __udivmodsi4(unsigned int num, unsigned int den, unsigned int *rem_p);
-	unsigned int __udivsi3(unsigned int a, unsigned int b);
-	int __divmodsi4(int a, int b, int *rem);
-	unsigned int __divsi3(unsigned int a, unsigned int b);
 	void *memcpy(void *dstptr, const void *srcptr, size_t size);
 	void *memset(void *bufptr, int value, size_t size);
 	int memcmp(const void *aptr, const void *bptr, size_t size);
@@ -57,7 +53,6 @@ extern "C"
 	int strcmp(const char *p1, const char *p2);
 	size_t strlen(const char *str);
 	size_t oct2bin(char *str, size_t size);
-	char *itoa(int value, char *str, int base);
 	int abs(int i);
 }
 
