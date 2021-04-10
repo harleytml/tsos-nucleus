@@ -30,7 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 0.0.${{ steps.buildnumber.outputs.build_number }}
+          tag_name: 0.0.${{ steps.buildnumber.outputs.build_number }}-pc
           release_name: Release PC
           draft: false
           prerelease: true
