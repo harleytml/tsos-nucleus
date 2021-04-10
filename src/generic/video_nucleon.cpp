@@ -53,7 +53,7 @@ void Video::putstring(uint16_t posx, uint16_t posy, const char *str) const
   uint16_t pos = 0;
   uint16_t x = posx;
   uint16_t y = posy;
-  while (str[pos] != NULL)
+  while (str[pos] != 0)
   {
     char c = str[pos];
     switch (c)
