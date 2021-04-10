@@ -44,7 +44,9 @@ if os.system("grub-script-check ../misc/grub.cfg") != 0:
     cprint("The grub config file is not valid", "red")
     sys.exit(1)
 
-shutil.copy("../misc/grub.cfg", "./filesystem/boot/")
+os.mkdir("./filesystem/boot/grub/")
+shutil.copy("../misc/grub.cfg", "./filesystem/boot/grub/")
+shutil.copy("./nucleus", "./filesystem/")
 
 if os.system("grub-mkrescue -o nucleus.iso filesystem") != 0:
     cprint("Grub Rescue Failed", "red")

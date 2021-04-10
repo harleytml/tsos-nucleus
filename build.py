@@ -9,8 +9,8 @@ import json
 from termcolor import cprint
 
 # Create build folder if it doesn't exist
-if os.path.isdir("/tmp/tsos-filesystem"):
-    shutil.rmtree("/tmp/tsos-filesystem")
+if os.path.isdir("build/filesystem"):
+    shutil.rmtree("build/filesystem")
 
 # Open that config file and read from it
 tmp_file = open("config/system_config.json")
