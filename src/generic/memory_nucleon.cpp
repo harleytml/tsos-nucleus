@@ -58,6 +58,7 @@ void *Memory::allocatememory(uint32_t len)
 
   while (is_possible_to_allocate_count <= MEMORY_BLOCK_COUNT)
   {
+    is_possible_to_allocate_count = 0;
     for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
       if (&memory_table[x] == possible_entry)
@@ -76,16 +77,16 @@ void *Memory::allocatememory(uint32_t len)
       {
 
         // See if the block starts before the start address
-        is_conflicting[0] = possible_address <= memory_table[x].memory_start;
+        is_conflicting[0] = possible_address < memory_table[x].memory_start;
 
         // See if block starts after start address
-        is_conflicting[1] = possible_address >= (memory_table[x].memory_start + memory_table[x].block_length);
+        is_conflicting[1] = possible_address > (memory_table[x].memory_start + memory_table[x].block_length);
 
         // Make sure start address isnt inside block
-        is_conflicting[2] = memory_table[x].memory_start <= possible_address;
+        is_conflicting[2] = memory_table[x].memory_start < possible_address;
 
         // Same as last
-        is_conflicting[3] = memory_table[x].memory_start >= (possible_address + len);
+        is_conflicting[3] = memory_table[x].memory_start > (possible_address + len);
 
         // Make sure the memory blocks are not conflicting
         if ((is_conflicting[0] || is_conflicting[1]) && (is_conflicting[2] || is_conflicting[3]))
