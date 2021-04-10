@@ -16,21 +16,13 @@ jobs:
       - name: Compile Test
         run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py pc
 
-      - name: Generate build number
-        uses: einaregilsson/build-number@v3
-        id: buildnumber
-        with:
-          token: ${{secrets.github_token}}
-      - name: Print new build number
-        run: echo "Build number is $BUILD_NUMBER"
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.buildnumber.outputs.build_number }}
+          tag_name: ${{ github.run_number }}
           release_name: Release PC
           draft: false
           prerelease: true
