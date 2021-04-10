@@ -30,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 0.0.${{ steps.buildnumber.outputs.build_number }}-nspire
-          release_name: Release nspire
+          tag_name: ${{ steps.buildnumber.outputs.build_number }}
+          release_name: Release NSPIRE
           draft: false
           prerelease: true
           body: |

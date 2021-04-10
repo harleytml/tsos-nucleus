@@ -30,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 0.0.${{ steps.buildnumber.outputs.build_number }}-rpi3
-          release_name: Release rpi3
+          tag_name: ${{ steps.buildnumber.outputs.build_number }}
+          release_name: Release RPI3
           draft: false
           prerelease: true
           body: |
