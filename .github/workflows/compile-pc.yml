@@ -18,6 +18,7 @@ jobs:
 
       - name: Generate build number
         uses: einaregilsson/build-number@v3
+        id: build_number
         with:
           token: ${{secrets.github_token}}
       - name: Print new build number
