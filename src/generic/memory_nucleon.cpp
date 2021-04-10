@@ -31,8 +31,6 @@ void *Memory::allocatememory(uint32_t len)
   // The size of the heap
   size_t max_length = quark->getlengthofheap();
 
-  bool is_conflicting[4] = {false};
-
   // I am not even going to check for a block bigger than the free memory
   if (len > max_length)
   {
@@ -61,52 +59,38 @@ void *Memory::allocatememory(uint32_t len)
     is_possible_to_allocate_count = 0;
     for (uint32_t x = 0; x < MEMORY_BLOCK_COUNT; x++)
     {
-      if (&memory_table[x] == possible_entry)
-      {
-        x++;
-      }
-
-      // Address is now outside the heap
-      if (possible_address > (start_address + max_length))
-      {
-        return nullptr;
-      }
-
-      // We only need to check the addresses if the memory location is active
-      if (memory_table->is_active)
+      if (&memory_table[x] != possible_entry)
       {
 
-        // See if the block starts before the start address
-        is_conflicting[0] = possible_address < memory_table[x].memory_start;
-
-        // See if block starts after start address
-        is_conflicting[1] = possible_address > (memory_table[x].memory_start + memory_table[x].block_length);
-
-        // Make sure start address isnt inside block
-        is_conflicting[2] = memory_table[x].memory_start < possible_address;
-
-        // Same as last
-        is_conflicting[3] = memory_table[x].memory_start > (possible_address + len);
-
-        // Make sure the memory blocks are not conflicting
-        if ((is_conflicting[0] || is_conflicting[1]) && (is_conflicting[2] || is_conflicting[3]))
+        // Address is now outside the heap
+        if (possible_address > (start_address + max_length))
         {
-          is_possible_to_allocate_count++;
+          return nullptr;
+        }
+
+        // We only need to check the addresses if the memory location is active
+        if (memory_table->is_active)
+        {
+
+          // Make sure the memory blocks are not conflicting
+          if ((possible_address <= memory_table[x].memory_start + memory_table[x].block_length) && (memory_table[x].memory_start <= possible_address + len))
+          {
+            is_possible_to_allocate_count++;
+          }
+          else
+          {
+            // The check failed, and there is a conflict in memory
+            possible_address = 0;
+          }
         }
         else
         {
-          // The check failed, and there is a conflict in memory
-          possible_address = 0;
+
+          // The check passed, so we may continues
+          is_possible_to_allocate_count++;
         }
       }
-      else
-      {
-
-        // The check passed, so we may continues
-        is_possible_to_allocate_count++;
-      }
     }
-
     // Jump forward by the memory block size
     possible_address++;
   }
