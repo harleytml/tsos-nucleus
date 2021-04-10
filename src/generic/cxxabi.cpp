@@ -104,6 +104,13 @@ extern "C"
 
 #ifdef __ARM_EABI__
 
+  struct qr
+  {
+  public:
+    int quot;
+    int rem;
+  };
+
   int __aeabi_atexit(void *arg, void (*func)(void *), void *d)
   {
     return __cxa_atexit(func, arg, d);
@@ -150,6 +157,13 @@ extern "C"
       v = -v;
 
     return v;
+  }
+
+  qr __aeabi_idivmod(int numerator, int denominator)
+  {
+    int rem, quot;
+    quot = __divmodsi4(numerator, denominator, &rem);
+    return {quot, rem};
   }
 
 #endif
@@ -274,6 +288,107 @@ extern "C"
     }
     r0 = r1 | (r0 - 1 & a);
     return r0;
+  }
+
+  int __divmodsi4(int a, int b, int *rem)
+  {
+    int d = __divsi3(a, b);
+    *rem = a - (d * b);
+    return d;
+  }
+
+  unsigned int __divsi3(unsigned int a, unsigned int b)
+  {
+    typedef union
+    {
+      unsigned int i;
+      float f;
+    } fu;
+
+    unsigned int sign = (int)(a ^ b) >> 31;
+    unsigned int d, t, s0, s1, s2, r0, r1;
+    fu u0, u1, u2, u1b, u2b;
+    a = abs(a);
+    b = abs(b);
+    if (b > a)
+      return 0;
+    /* Compute difference in number of bits in S0.  */
+    u0.i = 0x40000000;
+    u1b.i = u2b.i = u0.i;
+    u1.i = a;
+    u2.i = b;
+    u1.i = a | u0.i;
+    t = 0x4b800000 | ((a >> 23) & 0xffff);
+    if (a >> 23)
+    {
+      u1.i = t;
+      u1b.i = 0x4b800000;
+    }
+    u2.i = b | u0.i;
+    t = 0x4b800000 | ((b >> 23) & 0xffff);
+    if (b >> 23)
+    {
+      u2.i = t;
+      u2b.i = 0x4b800000;
+    }
+    u1.f = u1.f - u1b.f;
+    u2.f = u2.f - u2b.f;
+    s1 = u1.i >> 23;
+    s2 = u2.i >> 23;
+    s0 = s1 - s2;
+    b <<= s0;
+    d = b - 1;
+    r0 = 1 << s0;
+    r1 = 0;
+    t = a - b;
+    if (t <= a)
+    {
+      a = t;
+      r1 = r0;
+    }
+#define STEP(n) \
+  case n:       \
+    a += a;     \
+    t = a - d;  \
+    if (t <= a) \
+      a = t;
+    switch (s0)
+    {
+      STEP(31)
+      STEP(30)
+      STEP(29)
+      STEP(28)
+      STEP(27)
+      STEP(26)
+      STEP(25)
+      STEP(24)
+      STEP(23)
+      STEP(22)
+      STEP(21)
+      STEP(20)
+      STEP(19)
+      STEP(18)
+      STEP(17)
+      STEP(16)
+      STEP(15)
+      STEP(14)
+      STEP(13)
+      STEP(12)
+      STEP(11)
+      STEP(10)
+      STEP(9)
+      STEP(8)
+      STEP(7)
+      STEP(6)
+      STEP(5)
+      STEP(4)
+      STEP(3)
+      STEP(2)
+      STEP(1)
+    case 0:;
+    }
+    r0 = r1 | (r0 - 1 & a);
+    return (r0 ^ sign) - sign;
   }
 
   void *memcpy(void *dstptr, const void *srcptr, size_t size)

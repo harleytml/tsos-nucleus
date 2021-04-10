@@ -97,7 +97,6 @@ add_link_options(
   -fdata-sections
   -ffreestanding
   -Qunused-arguments
-  -lgcc
   ${platform_options}
   ${linker_script_command})
 

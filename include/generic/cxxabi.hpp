@@ -48,6 +48,8 @@ extern "C"
 	void __cxa_pure_virtual();
 	int __udivmodsi4(unsigned int num, unsigned int den, unsigned int *rem_p);
 	unsigned int __udivsi3(unsigned int a, unsigned int b);
+	int __divmodsi4(int a, int b, int *rem);
+	unsigned int __divsi3(unsigned int a, unsigned int b);
 	void *memcpy(void *dstptr, const void *srcptr, size_t size);
 	void *memset(void *bufptr, int value, size_t size);
 	int memcmp(const void *aptr, const void *bptr, size_t size);
