@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  *
- * Itanium CXX Application Binary Interface
+ * CXX Application Binary Interface
  * 
  * This file is being used as basically a small Libc
  * It implements memory allocation, and defines some basic functions
@@ -8,8 +8,8 @@
  * 
  */
 
-#ifndef __TSOS_ICXXABI__
-#define __TSOS_ICXXABI__
+#ifndef __TSOS_CXXABI__
+#define __TSOS_CXXABI__
 
 #include <generic/types.hpp>
 
@@ -39,12 +39,15 @@ extern "C"
 	void __aeabi_memclr(void *dest, size_t n);
 	void __aeabi_memmove(void *dest, const void *src, size_t n);
 	void __aeabi_memset(void *dest, size_t n, int c);
+	signed int __aeabi_idiv(signed int num, signed int den);
 
 #endif
 
 	int __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
 	void __cxa_finalize(void *f);
 	void __cxa_pure_virtual();
+	int __udivmodsi4(unsigned int num, unsigned int den, unsigned int *rem_p);
+	unsigned int __udivsi3(unsigned int a, unsigned int b);
 	void *memcpy(void *dstptr, const void *srcptr, size_t size);
 	void *memset(void *bufptr, int value, size_t size);
 	int memcmp(const void *aptr, const void *bptr, size_t size);

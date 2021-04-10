@@ -1,4 +1,4 @@
-#include <generic/icxxabi.hpp>
+#include <generic/cxxabi.hpp>
 #include <generic/nucleus_instance.hpp>
 
 extern "C"
@@ -129,6 +129,29 @@ extern "C"
     memset(dest, c, n);
   }
 
+  signed int __aeabi_idiv(signed int num, signed int den)
+  {
+    signed int minus = 0;
+    signed int v;
+
+    if (num < 0)
+    {
+      num = -num;
+      minus = 1;
+    }
+    if (den < 0)
+    {
+      den = -den;
+      minus ^= 1;
+    }
+
+    v = __udivmodsi4(num, den, 0);
+    if (minus)
+      v = -v;
+
+    return v;
+  }
+
 #endif
 
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)
@@ -148,6 +171,109 @@ extern "C"
   void __cxa_pure_virtual()
   {
     tsos->boot.fission("PURE VIRTUAL FUNCTION CALLED");
+  }
+
+  int __udivmodsi4(unsigned int a, unsigned int b, unsigned int *rem)
+  {
+    int d = __udivsi3(a, b);
+    *rem = a - (d * b);
+    return d;
+  }
+
+  unsigned int __udivsi3(unsigned int a, unsigned int b)
+  {
+    typedef union
+    {
+      unsigned int i;
+      float f;
+    } fu;
+
+    unsigned int d, t, s0, s1, s2, r0, r1;
+    fu u0, u1, u2, u1b, u2b;
+
+    if (b > a)
+      return 0;
+
+    // Compute difference in number of bits in S0.
+    u0.i = 0x40000000;
+    u1b.i = u2b.i = u0.i;
+    u1.i = a;
+    u2.i = b;
+    u1.i = a | u0.i;
+    t = 0x4b800000 | ((a >> 23) & 0xffff);
+    if (a >> 23)
+    {
+      u1.i = t;
+      u1b.i = 0x4b800000;
+    }
+    u2.i = b | u0.i;
+    t = 0x4b800000 | ((b >> 23) & 0xffff);
+    if (b >> 23)
+    {
+      u2.i = t;
+      u2b.i = 0x4b800000;
+    }
+    u1.f = u1.f - u1b.f;
+    u2.f = u2.f - u2b.f;
+    s1 = u1.i >> 23;
+    s2 = u2.i >> 23;
+    s0 = s1 - s2;
+
+    b <<= s0;
+    d = b - 1;
+
+    r0 = 1 << s0;
+    r1 = 0;
+    t = a - b;
+    if (t <= a)
+    {
+      a = t;
+      r1 = r0;
+    }
+
+#define STEP(n) \
+  case n:       \
+    a += a;     \
+    t = a - d;  \
+    if (t <= a) \
+      a = t;
+    switch (s0)
+    {
+      STEP(31)
+      STEP(30)
+      STEP(29)
+      STEP(28)
+      STEP(27)
+      STEP(26)
+      STEP(25)
+      STEP(24)
+      STEP(23)
+      STEP(22)
+      STEP(21)
+      STEP(20)
+      STEP(19)
+      STEP(18)
+      STEP(17)
+      STEP(16)
+      STEP(15)
+      STEP(14)
+      STEP(13)
+      STEP(12)
+      STEP(11)
+      STEP(10)
+      STEP(9)
+      STEP(8)
+      STEP(7)
+      STEP(6)
+      STEP(5)
+      STEP(4)
+      STEP(3)
+      STEP(2)
+      STEP(1)
+    case 0:;
+    }
+    r0 = r1 | (r0 - 1 & a);
+    return r0;
   }
 
   void *memcpy(void *dstptr, const void *srcptr, size_t size)
@@ -288,6 +414,7 @@ extern "C"
     }
     return rc;
   }
+
   int abs(int i)
   {
     return i < 0 ? -i : i;

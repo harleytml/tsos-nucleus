@@ -75,7 +75,6 @@ add_compile_options(
   -fno-builtin
   -fno-rtti
   -fno-unwind-tables
-  -funsigned-char
   -nostdlib
   -nodefaultlibs
   -nostdinc++
@@ -98,6 +97,7 @@ add_link_options(
   -fdata-sections
   -ffreestanding
   -Qunused-arguments
+  -lgcc
   ${platform_options}
   ${linker_script_command})
 
