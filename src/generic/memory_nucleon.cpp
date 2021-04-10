@@ -91,7 +91,8 @@ void *Memory::allocatememory(uint32_t len)
         }
       }
     }
-    // Jump forward by the memory block size
+
+    // Jump forward
     possible_address++;
   }
   possible_entry->block_length = len;
@@ -109,4 +110,14 @@ void Memory::freememory(void *mem)
       memory_table->is_active = false;
     }
   }
+}
+
+Memory::Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr)
+{
+  block_length = 0;
+  is_active = false;
+}
+
+Memory::Memory_table_entry::~Memory_table_entry()
+{
 }

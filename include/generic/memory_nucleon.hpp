@@ -13,7 +13,6 @@
 #define __TSOS_NUCLEUS_MEMORY_NUCLEON__
 
 #include <generic/memory_quark.hpp>
-#include <generic/memory_table_entry.hpp>
 #include <generic/nucleon.hpp>
 #include <generic/types.hpp>
 #include <generic/current_config.hpp>
@@ -36,6 +35,22 @@ public:
   void freememory(void *mem);
 
 private:
+  class Memory_table_entry
+  {
+  public:
+    Memory_table_entry(void);
+    ~Memory_table_entry();
+
+    // The start of the memory segment
+    uintptr_t memory_start;
+
+    // Length of the memory block
+    size_t block_length;
+
+    // Check if the block is active
+    bool is_active;
+  };
+
   Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
 };
 
