@@ -29,8 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.buildnumber.outputs.build_number }}
-          release_name: Release PC-${{ steps.buildnumber.outputs.build_number }}
+          tag_name: ${{needs.pc-test.outputs.build_number}}
+          release_name: Release PC-${{needs.pc-test.outputs.build_number}}
           draft: false
           prerelease: true
 
