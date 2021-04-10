@@ -133,6 +133,7 @@ if action in ["debug", "test"]:
         cprint("Cannot " + action + " this system with this script yet.", "yellow")
         sys.exit(0)
 
+
 else:
     cprint("Invalid action", "red")
     sys.exit(1)
