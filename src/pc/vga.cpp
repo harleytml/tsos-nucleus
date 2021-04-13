@@ -102,11 +102,11 @@ void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
     return;
   case GRAPHIC:
 
-	  for(cy=0;cy<16;cy++)
+	  for(cy=0; cy<16; cy++)
     {
-		  for(cx=0;cx<8;cx++)
+		  for(cx=0; cx<8; cx++)
       {
-			  drawpx(posx+cx,posy+cy-12,glyph[cy]&mask[cx]?fc:bc);
+			  drawpx(posx + cx ,posy + cy - 12, glyph[cy] & mask[cx] ? fc : bc);
 		  }
 	  }
   
