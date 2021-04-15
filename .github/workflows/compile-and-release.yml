@@ -22,7 +22,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}-${{ github.run_id }}
+          tag_name: canon-a1100-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release CANON-A1100
           draft: false
           prerelease: true
@@ -63,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}-${{ github.run_id }}
+          tag_name: cubieboard1-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release CUBIEBOARD 1
           draft: false
           prerelease: true
@@ -104,7 +104,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}-${{ github.run_id }}
+          tag_name: nspire-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release NSPIRE
           draft: false
           prerelease: true
@@ -145,7 +145,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}-${{ github.run_id }}
+          tag_name: pc-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release PC
           draft: false
           prerelease: true
@@ -196,7 +196,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}-${{ github.run_id }}
+          tag_name: rpi3-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release RPI3
           draft: false
           prerelease: true
