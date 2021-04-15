@@ -9,6 +9,8 @@
 
 ## Build Tests
 
+[![Compile And Release](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml)
+
 ## Contributors
 
 ![Contributers](https://contrib.rocks/image?repo=tsuki-superior/tsos-nucleus)
