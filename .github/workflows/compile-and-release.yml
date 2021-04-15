@@ -17,7 +17,7 @@ jobs:
           keep_latest: 0
           repo: ""
           delete_tags: true
-          delete_tag_pattern: ""
+          delete_tag_pattern: "tsos"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   canon-a1100-test:
@@ -36,7 +36,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: canon-a1100-${{ github.run_number }}-${{ github.run_id }}
+          tag_name: tsos-canon-a1100-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release CANON-A1100
           draft: false
           prerelease: true
@@ -78,7 +78,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: cubieboard1-${{ github.run_number }}-${{ github.run_id }}
+          tag_name: tsos-cubieboard1-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release CUBIEBOARD 1
           draft: false
           prerelease: true
@@ -120,7 +120,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: nspire-${{ github.run_number }}-${{ github.run_id }}
+          tag_name: tsos-nspire-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release NSPIRE
           draft: false
           prerelease: true
@@ -162,7 +162,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: pc-${{ github.run_number }}-${{ github.run_id }}
+          tag_name: tsos-pc-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release PC
           draft: false
           prerelease: true
@@ -214,7 +214,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: rpi3-${{ github.run_number }}-${{ github.run_id }}
+          tag_name: tsos-rpi3-${{ github.run_number }}-${{ github.run_id }}
           release_name: Release RPI3
           draft: false
           prerelease: true
