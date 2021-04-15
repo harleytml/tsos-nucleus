@@ -20,6 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   canon-a1100-test:
+    needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
@@ -61,6 +62,7 @@ jobs:
           asset_name: nucleus.elf
           asset_content_type: application/zip
   cubieboard1-test:
+    needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
@@ -102,6 +104,7 @@ jobs:
           asset_name: nucleus.elf
           asset_content_type: application/zip
   nspire-test:
+    needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
@@ -143,6 +146,7 @@ jobs:
           asset_name: nucleus.elf
           asset_content_type: application/zip
   pc-test:
+    needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
@@ -194,6 +198,7 @@ jobs:
           asset_name: nucleus.iso
           asset_content_type: application/zip
   rpi3-test:
+    needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
       image: tsukisuperior/tsos-build:latest
