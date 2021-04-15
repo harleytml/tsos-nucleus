@@ -16,9 +16,10 @@ jobs:
           keep_latest: 0
           repo: ""
           delete_tags: true
-          delete_tag_pattern: "tsos"
+          delete_tag_pattern: "tsos*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   canon-a1100-test:
     needs: [clean-releases]
     runs-on: ubuntu-latest
