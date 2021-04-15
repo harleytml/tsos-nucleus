@@ -17,6 +17,8 @@ jobs:
           repo: ""
           delete_tags: true
           delete_tag_pattern: ""
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   canon-a1100-test:
     runs-on: ubuntu-latest
     container:
