@@ -17,7 +17,7 @@ jobs:
           keep_latest: 0
           repo: ""
           delete_tags: true
-          delete_tag_pattern: a
+          delete_tag_pattern: "*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   canon-a1100-test:
