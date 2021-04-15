@@ -7,6 +7,22 @@ on:
 name: Compile And Release
 
 jobs:
+  clean-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dev-drprasad/delete-older-releases@v0.2.0
+      - name: Delete Older Releases
+    # You may pin to the exact commit or the version.
+    # uses: dev-drprasad/delete-older-releases@e3510b26d17114d63269aa02d3ebb592936d0981
+        with:
+    # how many latest releases to keep
+          keep_latest: 0
+    # repo name in the form of <owner>/<repoName>
+          repo: ""
+    # whether to delete tags associated to older releases or not
+          delete_tags: true
+      # part of the tag name. Example, if you want to delete 0.0.1-beta and 0.0.2-beta but not 0.0.1 then set this to just "beta". If not set then it will target all releases.
+          delete_tag_pattern: ""
   canon-a1100-test:
     runs-on: ubuntu-latest
     container:
