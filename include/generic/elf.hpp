@@ -11,7 +11,7 @@
 #define __TSOS_ELF_QUARK__
 
 #define EI_NIDENT (16)
-#define ELFMAG ("\177ELF")
+#define EI_MAG ("\177ELF")
 
 #include <generic/process_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -239,7 +239,13 @@ private:
   class Elf64_header
   {
   public:
-    uint8_t e_ident[16];  /* Magic number and other info */
+    uint8_t ei_magic[4];
+    uint8_t ei_class;
+    uint8_t ei_data;
+    uint8_t ei_version;
+    uint8_t ei_osabi;
+    uint8_t ei_osabiversion;
+    uint8_t ei_pad[7];
     e_type e_type;        /* Object file type */
     e_machine e_machine;  /* Architecture */
     uint32_t e_version;   /* Object file version */
@@ -259,7 +265,13 @@ private:
   class Elf32_header
   {
   public:
-    uint8_t e_ident[16];  /* Magic number and other info */
+    uint8_t ei_magic[4];
+    uint8_t ei_class;
+    uint8_t ei_data;
+    uint8_t ei_version;
+    uint8_t ei_osabi;
+    uint8_t ei_osabiversion;
+    uint8_t ei_pad[7];
     e_type e_type;        /* Object file type */
     e_machine e_machine;  /* Architecture */
     uint32_t e_version;   /* Object file version */

@@ -23,7 +23,7 @@ bool ELF_quark::isvalidexecutable(String &path)
   File file = tsos->filesystem.open(path);
   uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
   memcpy(&header, exec, sizeof(Elf32_header));
-  if (memcpy(&header.e_ident, ELFMAG, 4) == 0)
+  if (memcpy(&header.ei_magic, EI_MAG, 4) == 0)
   {
 
 // A i386 elf file
