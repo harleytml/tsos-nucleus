@@ -31,10 +31,12 @@ bool ELF_quark::isvalidexecutable(String &path)
     return header.e_machine == e_machine::EM_386;
 #endif
 
+// A generic ARM elf file
 #ifdef __arm__
     return header.e_machine == e_machine::EM_ARM;
 #endif
 
+// A generic ARM64 elf file
 #ifdef __aarch64__
     return header.e_machine == e_machine::EM_AARCH64;
 #endif

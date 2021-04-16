@@ -1,7 +1,6 @@
 {
     "version": "2.0.0",
-    "tasks": [
-        {
+    "tasks": [{
             "label": "pc",
             "type": "shell",
             "command": "./build.py pc test"
@@ -20,7 +19,8 @@
             "label": "cubieboard1",
             "type": "shell",
             "command": "./build.py cubieboard1 test"
-        }, {
+        },
+        {
             "label": "canon-a1100",
             "type": "shell",
             "command": "./build.py canon-a1100 test"

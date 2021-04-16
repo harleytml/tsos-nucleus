@@ -1,21 +1,17 @@
 {
-  "configurations": [
-    {
-      "name": "(gdb) Launch",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/build/nucleus",
-      "miDebuggerServerAddress": "localhost:1234",
-      "MIMode": "gdb",
-      "cwd": "${workspaceFolder}",
+    "configurations": [{
+        "name": "(gdb) Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/nucleus",
+        "miDebuggerServerAddress": "localhost:1234",
+        "MIMode": "gdb",
+        "cwd": "${workspaceFolder}",
 
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
-    }
-  ]
+        "setupCommands": [{
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+        }]
+    }]
 }
