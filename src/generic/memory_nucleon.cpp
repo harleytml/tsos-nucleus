@@ -14,6 +14,7 @@ Memory::~Memory(void)
 {
 }
 
+// This memory allocation function is sketchy, but its sorta working
 void *Memory::allocatememory(uint32_t len)
 {
   // The memory table entry for the table
@@ -81,6 +82,7 @@ void *Memory::allocatememory(uint32_t len)
           {
             // The check failed, and there is a conflict in memory
             possible_address = 0;
+            is_possible_to_allocate_count = 0;
           }
         }
         else
@@ -112,10 +114,8 @@ void Memory::freememory(void *mem)
   }
 }
 
-Memory::Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr)
+Memory::Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr), block_length(0), is_active(false)
 {
-  block_length = 0;
-  is_active = false;
 }
 
 Memory::Memory_table_entry::~Memory_table_entry()

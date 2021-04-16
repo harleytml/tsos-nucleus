@@ -4,7 +4,7 @@
  * To make a new Video quark, simply have it inherit from this class
  * 
  * The TS/OS video quarks do not have to do much, because most of the functionality is
- * kept in the wrapper nucleon, to ease the load on making consistant quarks
+ * kept in the nucleon, to ease the load on making consistant quarks
  */
 
 #ifndef __TSOS_NUCLEUS_VIDEO_QUARK__
