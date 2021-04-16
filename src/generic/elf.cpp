@@ -23,11 +23,11 @@ bool ELF_quark::isvalidexecutable(String &path)
   File file = tsos->filesystem.open(path);
   uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
   memcpy(&header, exec, sizeof(Elf32_header));
-  if(header.ei_version != 1)
+  if (header.ei_version != 1)
   {
     return false;
   }
-  
+
   if (memcpy(&header.ei_magic, EI_MAG, 4) == 0)
   {
 
