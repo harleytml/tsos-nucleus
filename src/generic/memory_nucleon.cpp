@@ -114,7 +114,9 @@ void Memory::freememory(void *mem)
   }
 }
 
-Memory::Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr), block_length(0), is_active(false)
+Memory::Memory_table_entry::Memory_table_entry() : memory_start((uintptr_t) nullptr),
+                                                   block_length(0),
+                                                   is_active(false)
 {
 }
 

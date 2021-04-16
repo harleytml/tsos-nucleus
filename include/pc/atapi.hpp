@@ -103,6 +103,7 @@ private:
   struct IDEChannelRegisters
   {
   public:
+    IDEChannelRegisters();
     uint16_t base;  // I/O Base.
     uint16_t ctrl;  // Control Base
     uint16_t bmide; // Bus Master IDE
@@ -112,6 +113,7 @@ private:
   struct IDE_device
   {
   public:
+    IDE_device();
     uint8_t Reserved;      // 0 (Empty) or 1 (This Drive really exists).
     uint8_t Channel;       // 0 (Primary Channel) or 1 (Secondary Channel).
     uint8_t Drive;         // 0 (Master Drive) or 1 (Slave Drive).

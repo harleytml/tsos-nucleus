@@ -5,12 +5,6 @@
 ATAPI_quark::ATAPI_quark(void)
 {
   name = "AT Attachment Packet Interface";
-  channels[0] = IDEChannelRegisters();
-  channels[1] = IDEChannelRegisters();
-  ide_devices[0] = IDE_device();
-  ide_devices[1] = IDE_device();
-  ide_devices[2] = IDE_device();
-  ide_devices[3] = IDE_device();
 }
 
 ATAPI_quark::~ATAPI_quark()
@@ -177,4 +171,26 @@ uint8_t ATAPI_quark::ide_polling(uint8_t channel, uint32_t advanced_check)
   }
 
   return 0; // No Error.
+}
+
+ATAPI_quark::IDEChannelRegisters::IDEChannelRegisters() : base(0),
+                                                          ctrl(0),
+                                                          bmide(0),
+                                                          nIEN(0)
+{
+}
+
+ATAPI_quark::IDE_device::IDE_device() : Reserved(0),
+                                        Channel(0),
+                                        Drive(0),
+                                        Type(0),
+                                        Signature(0),
+                                        Capabilities(0),
+                                        CommandSets(0),
+                                        Size(0)
+{
+  for (uint_fast8_t x = 0; x < 41; x++)
+  {
+    Model[x] = 0;
+  }
 }
