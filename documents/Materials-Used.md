@@ -35,3 +35,5 @@
 [Digic UART Reference](https://www.digi.com/resources/documentation/digidocs/embedded/dey/3.0/cc6ul/bsp_r_uart_6ul.html)
 
 [Digic UART Driver Linux](https://github.com/digi-embedded/linux/blob/v5.4/dey-3.0/maint/drivers/tty/serial/imx.c)
+
+[RPI3 UART](https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html)

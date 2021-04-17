@@ -17,19 +17,20 @@ void RPI3_UART_quark::reset(void)
 
 bool RPI3_UART_quark::isdevicereadytotransmit(void)
 {
-  return false;
+  return (mmio_read((uint32_t)registers::AUX_MU_LSR_REG) & (1 << 4)) == 1;
 }
 
 bool RPI3_UART_quark::isdevicereadytoreceive(void)
 {
-  return false;
+  return (mmio_read((uint32_t)registers::AUX_MU_LSR_REG) & (1 << 5)) == 1;
 }
 
 void RPI3_UART_quark::sendbyte(uint8_t byte)
 {
+  mmio_write((uint32_t)registers::AUX_MU_IO_REG, byte);
 }
 
 uint8_t RPI3_UART_quark::getbyte(void)
 {
-  return 0;
+  return mmio_read(((uint32_t)registers::AUX_MU_IO_REG) & 0xFF);
 }
