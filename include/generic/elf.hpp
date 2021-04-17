@@ -44,6 +44,28 @@ private:
     ET_HIPROC = 0xffff
   };
 
+  enum class ei_osabi : uint8_t
+  {
+    EIO_SYSV = 0x0,
+    EIO_HPUX = 0x1,
+    EIO_NETBSD = 0x2,
+    EIO_LINUX = 0x3,
+    EIO_GNU_HURD = 0x4,
+    EIO_SOLARIS = 0x5,
+    EIO_AIX = 0x6,
+    EIO_IRIX = 0x7,
+    EIO_FREEDSD = 0x8,
+    EIO_TRU64 = 0x9,
+    EIO_NOVELL_MODESTO = 0xa,
+    EIO_OPENBSD = 0xb,
+    EIO_OPENVMS = 0xc,
+    EIO_NONSTOP_KERNEL = 0xd,
+    EIO_AROS = 0xe,
+    EIO_FENIX_OS = 0xf,
+    EIO_CLOUDABI = 0x10,
+    EIO_OPENVOS = 0x11
+  };
+
   // https://code.woboq.org/linux/include/elf.h.html
   enum class e_machine : uint16_t
   {
@@ -243,7 +265,7 @@ private:
     uint8_t ei_class;
     uint8_t ei_data;
     uint8_t ei_version;
-    uint8_t ei_osabi;
+    ei_osabi ei_osabi;
     uint8_t ei_osabiversion;
     uint8_t ei_pad[7];
     e_type e_type;        // Object file type
@@ -269,7 +291,7 @@ private:
     uint8_t ei_class;
     uint8_t ei_data;
     uint8_t ei_version;
-    uint8_t ei_osabi;
+    ei_osabi ei_osabi;
     uint8_t ei_osabiversion;
     uint8_t ei_pad[7];
     e_type e_type;        // Object file type

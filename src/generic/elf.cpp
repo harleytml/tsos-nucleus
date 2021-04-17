@@ -28,6 +28,11 @@ bool ELF_quark::isvalidexecutable(String &path)
     return false;
   }
 
+  if (header.ei_osabi != ei_osabi::EIO_SYSV)
+  {
+    return false;
+  }
+
   if (memcpy(&header.ei_magic, EI_MAG, 4) == 0)
   {
 
