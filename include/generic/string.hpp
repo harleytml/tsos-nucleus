@@ -12,7 +12,7 @@
 
 extern "C"
 {
-  size_t strlen(const char *str);
+  size_t strnlen(const char *s, size_t maxlen);
   void *memcpy(void *dstptr, const void *srcptr, size_t size);
 }
 
@@ -20,7 +20,6 @@ class String : public Array<char>
 {
 public:
   String(void);
-  String(char *str);
   String(const char *str);
 };
 

@@ -52,6 +52,7 @@ extern "C"
 	void *memmove(void *dstptr, const void *srcptr, size_t size);
 	int strcmp(const char *p1, const char *p2);
 	size_t strlen(const char *str);
+	size_t strnlen(const char *s, size_t maxlen);
 	size_t oct2bin(char *str, size_t size);
 	int abs(int i);
 }

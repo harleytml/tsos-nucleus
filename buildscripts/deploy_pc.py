@@ -8,29 +8,6 @@ import json
 
 from termcolor import cprint
 
-# Open that config file and read from it
-tmp_file = open("../config/directory_structure.json")
-fileystem_dict = json.loads(tmp_file.read())
-tmp_file.close()
-
-root_dir = os.getcwd()
-if not(os.path.exists("filesystem")):
-    os.mkdir("filesystem")
-
-
-def recurse(dic):
-    def one_directory(dic, path):
-        for name, info in dic.items():
-            next_path = path + "/" + name
-            if isinstance(info, dict):
-                if not(os.path.exists(next_path)):
-                    os.mkdir(next_path)
-                one_directory(info, next_path)
-    one_directory(dic, "filesystem")
-
-
-recurse(fileystem_dict)
-
 # No conversion has to be done
 shutil.copyfile("nucleus.elf", "nucleus")
 
@@ -44,7 +21,7 @@ if os.system("grub-script-check ../misc/grub.cfg") != 0:
     cprint("The grub config file is not valid", "red")
     sys.exit(1)
 
-os.mkdir("./filesystem/boot/grub/")
+os.makedirs("./filesystem/boot/grub/", exist_ok=True)
 shutil.copy("../misc/grub.cfg", "./filesystem/boot/grub/")
 shutil.copy("./nucleus", "./filesystem/")
 

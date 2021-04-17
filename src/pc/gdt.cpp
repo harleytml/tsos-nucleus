@@ -1,11 +1,10 @@
 // By AptRock
 #include <pc/gdt.hpp>
 
-GlobalDescriptorTable::GlobalDescriptorTable()
-    : nullSegmentSelector(0, 0, 0),
-      unusedSegmentSelector(0, 0, 0),
-      codeSegmentSelector(0, 64 * 1024 * 1024, 0x9A),
-      dataSegmentSelector(0, 64 * 1024 * 1024, 0x92)
+GlobalDescriptorTable::GlobalDescriptorTable() : nullSegmentSelector(0, 0, 0),
+                                                 unusedSegmentSelector(0, 0, 0),
+                                                 codeSegmentSelector(0, 64 * 1024 * 1024, 0x9A),
+                                                 dataSegmentSelector(0, 64 * 1024 * 1024, 0x92)
 {
   uint32_t i[2];
   i[1] = (uint32_t)this;
@@ -80,7 +79,7 @@ uint32_t GlobalDescriptorTable::SegmentDescriptor::Limit()
 {
   uint8_t *target = (uint8_t *)this;
 
-  uint32_t result = target[6] & 0xF;
+  uint32_t result = target[6] & 0xf;
   result = (result << 8) + target[1];
   result = (result << 8) + target[0];
 

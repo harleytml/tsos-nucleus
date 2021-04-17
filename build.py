@@ -8,6 +8,18 @@ import json
 
 from termcolor import cprint
 
+
+def recurse(dic):
+    def one_directory(dic, path):
+        for name, info in dic.items():
+            next_path = path + "/" + name
+            if isinstance(info, dict):
+                if not(os.path.exists(next_path)):
+                    os.mkdir(next_path)
+                one_directory(info, next_path)
+    one_directory(dic, "filesystem")
+
+
 # Create build folder if it doesn't exist
 if os.path.isdir("build/filesystem"):
     shutil.rmtree("build/filesystem")
@@ -16,6 +28,15 @@ if os.path.isdir("build/filesystem"):
 tmp_file = open("config/system_config.json")
 build_settings = json.loads(tmp_file.read())
 tmp_file.close()
+
+# Open that config file and read from it
+tmp_file = open("config/directory_structure.json")
+fileystem_dict = json.loads(tmp_file.read())
+tmp_file.close()
+
+if not(os.path.exists("build/filesystem")):
+    os.mkdir("build/filesystem")
+
 
 # This only works on unix like systems right now
 if os.name != "posix":
@@ -55,17 +76,19 @@ if platform in build_settings:
     # Change to build dir
     os.chdir("build")
 
+    recurse(fileystem_dict)
+
     if os.path.exists("nucleus"):
         os.remove("nucleus")
 
     if os.path.exists("nucleus.elf"):
         os.remove("nucleus.elf")
 
-    if os.path.exists("tsos.iso"):
-        os.remove("tsos.iso")
+    if os.path.exists("nucleus.iso"):
+        os.remove("nucleus.iso")
 
-    if os.path.exists("tsos.img"):
-        os.remove("tsos.img")
+    if os.path.exists("nucleus.img"):
+        os.remove("nucleus.img")
 
     # Run cmake
     os.system("cmake .. -DPLATFORM=" + platform.upper())
