@@ -64,14 +64,17 @@ public:
   // The nucleon being used to control sound
   Sound sound;
 
-  // The version of TS/OS being used here
-  const float version;
+  // The release of TS/OS being used here
+  const float release;
 
   // The code name to TS/OS being used here
   const char *code_name;
 
   // The 1-2 letter code name of TS/OS being used here
   const char *short_code_name;
+
+  // The version of TS/OS being used here
+  const uint8_t version;
 };
 
 static bool nucleuslock = false;

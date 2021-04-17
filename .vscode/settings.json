@@ -4,5 +4,11 @@
     "C_Cpp.errorSquiggles": "Enabled",
     "editor.tabSize": 2,
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "files.associations": {
+        "*.json": "json",
+        "*.inc": "makefile",
+        "*.anim": "yaml",
+        "cstdint": "cpp"
+    }
 }

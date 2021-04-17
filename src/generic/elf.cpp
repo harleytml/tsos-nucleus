@@ -23,12 +23,21 @@ bool ELF_quark::isvalidexecutable(String &path)
   File file = tsos->filesystem.open(path);
   uint8_t *exec = tsos->filesystem.read(file, sizeof(Elf32_header));
   memcpy(&header, exec, sizeof(Elf32_header));
+
+  // Make sure this is a verison 1 elf file
   if (header.ei_version != 1)
   {
     return false;
   }
 
+  // Make sure the elf file is marked as the default value, sysv
   if (header.ei_osabi != ei_osabi::EIO_SYSV)
+  {
+    return false;
+  }
+
+  // Make sure the executable is of a version lower or equal to the kernel
+  if (header.ei_osabiversion > tsos->version)
   {
     return false;
   }

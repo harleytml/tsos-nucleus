@@ -3,7 +3,7 @@
 
 Tsos *tsos;
 
-Tsos::Tsos(void) : version(0.0), code_name("Neutronium"), short_code_name("n")
+Tsos::Tsos(void) : release(0.0), code_name("Neutronium"), short_code_name("n"), version(0)
 {
   static Font font = get_default_font();
   if (nucleuslock)
