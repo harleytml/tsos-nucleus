@@ -143,9 +143,13 @@ sendbyte:
 
 Gey a byte from the other device
 
-isdeviceready:
+isdevicereadytoreceive:
 
-Check if a device is connected to this device
+Checks if the connected device is ready to receive
+
+isdevicereadytotransmit:
+
+Checks if the connected device is ready to transmit
 ```
 
 SOUND SYSCALLS:
