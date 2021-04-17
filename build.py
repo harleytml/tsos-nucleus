@@ -21,6 +21,10 @@ def recurse(dic):
 
 
 # Create build folder if it doesn't exist
+if not os.path.isdir("build"):
+    os.mkdir("build")
+
+# Create build folder if it doesn't exist
 if os.path.isdir("build/filesystem"):
     shutil.rmtree("build/filesystem")
 
@@ -36,7 +40,6 @@ tmp_file.close()
 
 if not(os.path.exists("build/filesystem")):
     os.mkdir("build/filesystem")
-
 
 # This only works on unix like systems right now
 if os.name != "posix":
@@ -68,10 +71,6 @@ else:
     action = ""
 
 if platform in build_settings:
-
-    # Create build folder if it doesn't exist
-    if not os.path.isdir("build"):
-        os.mkdir("build")
 
     # Change to build dir
     os.chdir("build")
