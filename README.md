@@ -76,9 +76,10 @@ Debian/Ubuntu :
 
 ```sh
 sudo apt-get update
-sudo apt-get install clang lld llvm make cmake python3 python3-pip dosfstools
+sudo apt-get install clang lld llvm make cmake python3 python3-pip dosfstools grub-pc-bin xorriso grub2
 pip3 install -r requirements.txt
 ```
+
 Please note that if your repo doesn't support llvm-10 or up, that you should look at the llvm website for more info.
 
 ## Building
