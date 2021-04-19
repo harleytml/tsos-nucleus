@@ -26,11 +26,11 @@ bool NSPIRE_CM_UART_quark::isdevicereadytoreceive(void)
   return false;
 }
 
-void NSPIRE_CM_UART_quark::sendbyte(uint8_t byte)
+void NSPIRE_CM_UART_quark::inbyte(uint8_t byte)
 {
 }
 
-uint8_t NSPIRE_CM_UART_quark::getbyte(void)
+uint8_t NSPIRE_CM_UART_quark::outbyte(void)
 {
   return 0;
 }

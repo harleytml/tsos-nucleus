@@ -27,10 +27,10 @@ public:
   void reset(void);
 
   // Send a byte
-  void sendbyte(uint8_t byte) const;
+  void inbyte(uint8_t byte) const;
 
   // Get a byte
-  uint8_t getbyte(void) const;
+  uint8_t outbyte(void) const;
 
   // Is device ready to take a byte
   bool isdevicereadytoreceive(void) const;

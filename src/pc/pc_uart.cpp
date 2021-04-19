@@ -35,12 +35,12 @@ bool PC_UART_quark::isdevicereadytoreceive(void)
   return (tsos->io.in8(COM1 + 5) & 0x20) != 0;
 }
 
-void PC_UART_quark::sendbyte(uint8_t byte)
+void PC_UART_quark::inbyte(uint8_t byte)
 {
   tsos->io.out8(COM1, byte);
 }
 
-uint8_t PC_UART_quark::getbyte(void)
+uint8_t PC_UART_quark::outbyte(void)
 {
   return tsos->io.in8(COM1);
 }

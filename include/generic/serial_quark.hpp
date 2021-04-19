@@ -27,10 +27,10 @@ public:
   virtual bool isdevicereadytoreceive(void) = 0;
 
   // Send a byte
-  virtual void sendbyte(uint8_t byte) = 0;
+  virtual void inbyte(uint8_t byte) = 0;
 
   // Send a byte
-  virtual uint8_t getbyte(void) = 0;
+  virtual uint8_t outbyte(void) = 0;
 };
 
 #endif

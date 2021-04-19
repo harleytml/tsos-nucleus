@@ -16,8 +16,8 @@ public:
   void reset(void) final;
   bool isdevicereadytotransmit(void) final;
   bool isdevicereadytoreceive(void) final;
-  void sendbyte(uint8_t byte) final;
-  uint8_t getbyte(void) final;
+  void inbyte(uint8_t byte) final;
+  uint8_t outbyte(void) final;
 };
 
 #endif

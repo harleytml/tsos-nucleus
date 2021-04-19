@@ -35,6 +35,88 @@ extern "C"
     case syscall_t::commitall:
       tsos->disk.commitall();
 
+    case syscall_t::readdir:
+      break;
+    case syscall_t::rename:
+      break;
+    case syscall_t::open:
+      break;
+    case syscall_t::close:
+      break;
+    case syscall_t::read:
+      break;
+    case syscall_t::write:
+      break;
+    case syscall_t::readfile:
+      break;
+    case syscall_t::writefile:
+      break;
+    case syscall_t::appendfile:
+      break;
+    case syscall_t::exists:
+      break;
+    case syscall_t::mkdir:
+      break;
+    case syscall_t::rmdir:
+      break;
+    case syscall_t::access:
+      break;
+    case syscall_t::getkey:
+      break;
+    case syscall_t::waitkey:
+      break;
+    case syscall_t::spawn:
+      break;
+    case syscall_t::kill:
+      break;
+    case syscall_t::killall:
+      break;
+    case syscall_t::allocatememory:
+      break;
+    case syscall_t::freememory:
+      break;
+    case syscall_t::outbyte:
+      break;
+    case syscall_t::inbyte:
+      break;
+    case syscall_t::isdevicereadytoreceive:
+      break;
+    case syscall_t::isdevicereadytotransmit:
+      break;
+    case syscall_t::playtone:
+      break;
+    case syscall_t::killsound:
+      break;
+    case syscall_t::reset:
+      break;
+    case syscall_t::putchar:
+      break;
+    case syscall_t::putstring:
+      break;
+    case syscall_t::getscreenwidth:
+      break;
+    case syscall_t::getscreenheight:
+      break;
+    case syscall_t::setfont:
+      break;
+    case syscall_t::clear:
+      break;
+    case syscall_t::settextbackgroundcolor:
+      break;
+    case syscall_t::settextforegroundcolor:
+      break;
+    case syscall_t::in8:
+      break;
+    case syscall_t::out8:
+      break;
+    case syscall_t::in16:
+      break;
+    case syscall_t::out16:
+      break;
+    case syscall_t::in32:
+      break;
+    case syscall_t::out32:
+      break;
     default:
       break;
     }
