@@ -121,7 +121,8 @@ if platform in build_settings:
         sys.exit(1)
 
 else:
-    cprint("Cannot yet deploy this system", "yellow")
+    cprint("System does not exist!", "red")
+    exit(1)
 
 
 # Building was succesful if it made it to here
