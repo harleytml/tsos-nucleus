@@ -16,6 +16,18 @@ Boot::Boot(void)
 
   attachquark(rpi3_boot_quark);
 #endif
+
+#ifdef __NSPIRE__
+  static NSPIRE_CM_BOOT_quark nspire_cm_boot_quark = NSPIRE_CM_BOOT_quark();
+  static NSPIRE_CX_BOOT_quark nspire_cx_boot_quark = NSPIRE_CX_BOOT_quark();
+
+  if (attachquark(nspire_cm_boot_quark) ||
+      attachquark(nspire_cx_boot_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Boot::~Boot()

@@ -15,6 +15,18 @@ Sound::Sound(void)
 
   attachquark(rpi3_sound_quark);
 #endif
+
+#ifdef __NSPIRE__
+  static NSPIRE_CM_SOUND_quark nspire_cm_sound_quark = NSPIRE_CM_SOUND_quark();
+  static NSPIRE_CX_SOUND_quark nspire_cx_sound_quark = NSPIRE_CX_SOUND_quark();
+
+  if (attachquark(nspire_cm_sound_quark) ||
+      attachquark(nspire_cx_sound_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Sound::~Sound(void)

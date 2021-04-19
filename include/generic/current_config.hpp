@@ -35,6 +35,19 @@
 
 #ifdef __NSPIRE__
 
+#include <nspire/nspire-cm_boot.hpp>
+#include <nspire/nspire-cm_disk.hpp>
+#include <nspire/nspire-cm_keyboard.hpp>
+#include <nspire/nspire-cm_screen.hpp>
+#include <nspire/nspire-cm_sound.hpp>
+#include <nspire/nspire-cm_uart.hpp>
+#include <nspire/nspire-cx_boot.hpp>
+#include <nspire/nspire-cx_disk.hpp>
+#include <nspire/nspire-cx_keyboard.hpp>
+#include <nspire/nspire-cx_screen.hpp>
+#include <nspire/nspire-cx_sound.hpp>
+#include <nspire/nspire-cx_uart.hpp>
+
 #endif
 
 #ifdef __RASPBERRY_PI_3__

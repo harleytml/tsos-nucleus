@@ -20,6 +20,19 @@ Input::Input(void)
 
   attachquark(rpi3_keyboard_quark);
 #endif
+
+#ifdef __NSPIRE__
+
+  static NSPIRE_CM_KEYBOARD_quark nspire_cm_keyboard_quark = NSPIRE_CM_KEYBOARD_quark();
+  static NSPIRE_CX_KEYBOARD_quark nspire_cx_keyboard_quark = NSPIRE_CX_KEYBOARD_quark();
+
+  if (attachquark(nspire_cm_keyboard_quark) ||
+      attachquark(nspire_cx_keyboard_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Input::~Input(void)

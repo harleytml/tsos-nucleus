@@ -26,6 +26,18 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 
   attachquark(rpi3_screen_quark);
 #endif
+
+#ifdef __NSPIRE__
+  static NSPIRE_CM_SCREEN_quark nspire_cm_screen_quark = NSPIRE_CM_SCREEN_quark();
+  static NSPIRE_CX_SCREEN_quark nspire_cx_screen_quark = NSPIRE_CX_SCREEN_quark();
+
+  if (attachquark(nspire_cm_screen_quark) ||
+      attachquark(nspire_cx_screen_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Video::~Video()

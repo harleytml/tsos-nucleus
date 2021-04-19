@@ -15,6 +15,18 @@ Disk::Disk(void)
 
   attachquark(rpi3_sd_card_quark);
 #endif
+
+#ifdef __NSPIRE__
+  static NSPIRE_CM_DISK_quark nspire_cm_disk_quark = NSPIRE_CM_DISK_quark();
+  static NSPIRE_CX_DISK_quark nspire_cx_disk_quark = NSPIRE_CX_DISK_quark();
+
+  if (attachquark(nspire_cm_disk_quark) ||
+      attachquark(nspire_cx_disk_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Disk::~Disk()

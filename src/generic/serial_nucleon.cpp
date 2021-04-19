@@ -15,6 +15,18 @@ Serial::Serial(void)
 
   attachquark(rpi3_uart_quark);
 #endif
+
+#ifdef __NSPIRE__
+  static NSPIRE_CM_UART_quark nspire_cm_uart_quark = NSPIRE_CM_UART_quark();
+  static NSPIRE_CX_UART_quark nspire_cx_uart_quark = NSPIRE_CX_UART_quark();
+
+  if (attachquark(nspire_cm_uart_quark) ||
+      attachquark(nspire_cx_uart_quark))
+  {
+    return;
+  }
+
+#endif
 }
 
 Serial::~Serial()
