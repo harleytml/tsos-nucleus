@@ -11,6 +11,7 @@
         "foxundermoon.shell-format",
         "redhat.vscode-yaml",
         "jeff-hykin.better-cpp-syntax",
-        "webfreak.debug"
+        "webfreak.debug",
+        "2gua.rainbow-brackets"
     ]
 }
