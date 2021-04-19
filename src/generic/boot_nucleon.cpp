@@ -49,7 +49,6 @@ void Boot::shutdown(void) const
   tsos->video.putstring(0, tsos->video.scroll++, "Do not touch the power button.\n");
   tsos->process.killall();
   tsos->disk.commitall();
-  tsos->boot.reboot();
   tsos->video.putstring(0, tsos->video.scroll++, "You may now touch the power button.\n");
 
   // Destroy tsos, to trigger the kernel destruction

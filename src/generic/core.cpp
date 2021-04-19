@@ -27,6 +27,5 @@ Tsos::~Tsos()
   video.putstring(0, video.scroll++, "Do not touch the power button.\n");
   process.killall();
   disk.commitall();
-  boot.reboot();
-  video.putstring(0, video.scroll++, "You may now touch the power button.\n");
+  boot.shutdown();
 }
