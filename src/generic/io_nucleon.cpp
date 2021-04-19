@@ -11,12 +11,7 @@ IO::IO(void)
   }
 #endif
 
-#ifdef __GAMEBOY_ADVANCED__
-
-#endif
-
 #ifdef __RASPBERRY_PI_3__
-
 #endif
 }
 

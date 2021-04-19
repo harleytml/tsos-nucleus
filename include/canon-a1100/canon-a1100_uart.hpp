@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_UART_QUARK__
-#define __TSOS_CANON_A1100_UART_QUARK__
+#pragma once
 
 #include <generic/serial_quark.hpp>
 
@@ -19,5 +18,3 @@ public:
   void outbyte(uint8_t byte) final;
   uint8_t inbyte(void) final;
 };
-
-#endif

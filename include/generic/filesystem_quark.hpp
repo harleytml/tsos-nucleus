@@ -5,8 +5,7 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_QUARK__
-#define __TSOS_NUCLEUS_FILESYSTEM_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -55,5 +54,3 @@ public:
 
   virtual bool isfilenamevalid(char *name) = 0;
 };
-
-#endif

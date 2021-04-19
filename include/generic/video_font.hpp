@@ -6,8 +6,7 @@
  * its own font format
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_FONT__
-#define __TSOS_NUCLEUS_VIDEO_FONT__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -33,5 +32,3 @@ public:
   // The actual data for the font
   uint8_t *data;
 };
-
-#endif

@@ -7,8 +7,7 @@
  * The only other class would be COFF or maybe some windows format
  */
 
-#ifndef __TSOS_NUCLEUS_PROCESS_QUARK__
-#define __TSOS_NUCLEUS_PROCESS_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -24,5 +23,3 @@ public:
 
   virtual bool isvalidexecutable(char *path) = 0;
 };
-
-#endif

@@ -4,8 +4,7 @@
  * To make a new IO quark, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_IO_QUARK__
-#define __TSOS_NUCLEUS_IO_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -37,5 +36,3 @@ public:
   // Send a uint32_t through the io ports
   virtual void out32(uint16_t port, uint32_t value) = 0;
 };
-
-#endif

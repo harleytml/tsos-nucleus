@@ -7,8 +7,7 @@
  * Reference: https://stackoverflow.com/questions/34960383/how-read-elf-header-in-c, and the linux code
  */
 
-#ifndef __TSOS_ELF_QUARK__
-#define __TSOS_ELF_QUARK__
+#pragma once
 
 #define EI_NIDENT (16)
 #define EI_MAG ("\177ELF")
@@ -310,5 +309,3 @@ private:
   }
   __attribute__((packed));
 };
-
-#endif

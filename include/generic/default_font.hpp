@@ -1,6 +1,5 @@
 
-#ifndef __TSOS_DEFAULT_FONT__
-#define __TSOS_DEFAULT_FONT__
+#pragma once
 
 #include <generic/types.hpp>
 #include <generic/video_font.hpp>
@@ -4108,13 +4107,10 @@ static uint8_t fontdata[] = {
 		0x3c,
 };
 
-#endif
-
 static const uint16_t char_width = 8;
 static const uint16_t char_height = 16;
+#endif
 
 #ifdef __RASPBERRY_PI_3__
-
-#endif
 
 #endif

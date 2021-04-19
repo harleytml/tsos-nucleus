@@ -4,8 +4,7 @@
  * This is the wrapper nucleon for the quarks.
  */
 
-#ifndef __TSOS_NUCLEUS_DISK_NUCLEON__
-#define __TSOS_NUCLEUS_DISK_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -35,5 +34,3 @@ public:
   // Do not return till the disk is idle (for when you need to shutdown, reboot, or remove the disk)
   void commitall(void) const;
 };
-
-#endif

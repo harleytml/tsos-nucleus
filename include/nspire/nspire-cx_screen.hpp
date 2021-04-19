@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NSPIRE_CX_SCREEN_QUARK__
-#define __TSOS_NSPIRE_CX_SCREEN_QUARK__
+#pragma once
 
 #include <generic/video_quark.hpp>
 #include <generic/video_modes.hpp>
@@ -26,5 +25,3 @@ private:
 
   Font font;
 };
-
-#endif

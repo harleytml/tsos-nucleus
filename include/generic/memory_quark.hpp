@@ -5,8 +5,7 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_MEMORY_QUARK__
-#define __TSOS_NUCLEUS_MEMORY_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -22,5 +21,3 @@ public:
 
   virtual size_t getlengthofheap(void) = 0;
 };
-
-#endif

@@ -4,8 +4,7 @@
  * The wrapper nucleon for the process quarks
  */
 
-#ifndef __TSOS_NUCLEUS_PROCESS_NUCLEON__
-#define __TSOS_NUCLEUS_PROCESS_NUCLEON__
+#pragma once
 
 #include <generic/nucleon.hpp>
 #include <generic/types.hpp>
@@ -37,5 +36,3 @@ private:
   // The table of processes
   Process_info processes[16];
 };
-
-#endif

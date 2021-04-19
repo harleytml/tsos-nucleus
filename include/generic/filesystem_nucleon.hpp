@@ -5,8 +5,7 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
-#define __TSOS_NUCLEUS_FILESYSTEM_NUCLEON__
+#pragma once
 
 #include <generic/nucleon.hpp>
 #include <generic/types.hpp>
@@ -73,5 +72,3 @@ private:
   //The files currently opened
   File open_files[16];
 };
-
-#endif

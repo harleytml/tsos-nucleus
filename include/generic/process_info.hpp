@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_PROCESS_INFO__
-#define __TSOS_NUCLEUS_PROCESS_INFO__
+#pragma once
 
 #include <generic/types.hpp>
 #include <generic/process_state.hpp>
@@ -21,5 +20,3 @@ protected:
   // The state of a process
   process_state state;
 };
-
-#endif

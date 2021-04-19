@@ -7,8 +7,7 @@
  * and this is most likely to happen on PC for UDF, because its used on Disks
  */
 
-#ifndef __TSOS_UDF_QUARK__
-#define __TSOS_UDF_QUARK__
+#pragma once
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -80,5 +79,3 @@ private:
     char *directory_identifier;
   } __attribute__((packed));
 };
-
-#endif

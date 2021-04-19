@@ -4,8 +4,7 @@
  * To make a new Input quark, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_QUARK__
-#define __TSOS_NUCLEUS_INPUT_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -35,5 +34,3 @@ public:
   // Is ctrl pressed
   virtual bool isctrlpressed(void) = 0;
 };
-
-#endif

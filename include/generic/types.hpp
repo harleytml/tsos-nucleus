@@ -4,8 +4,7 @@
  * This is the types that TS/OS uses interally
  */
 
-#ifndef __TSOS_INTERNAL_TYPES__
-#define __TSOS_INTERNAL_TYPES__
+#pragma once
 
 #define uint8_t __UINT8_TYPE__
 #define uint16_t __UINT16_TYPE__
@@ -31,5 +30,3 @@
 #define size_t __SIZE_TYPE__
 
 #define NULL __null
-
-#endif

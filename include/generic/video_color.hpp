@@ -7,8 +7,7 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_COLOR__
-#define __TSOS_NUCLEUS_VIDEO_COLOR__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -36,5 +35,3 @@ public:
   //Blue
   uint8_t blue;
 };
-
-#endif

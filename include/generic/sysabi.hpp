@@ -3,8 +3,7 @@
  * This header file defines how syscalls are made
  */
 
-#ifndef __TSOS_SYSABI__
-#define __TSOS_SYSABI__
+#pragma once
 
 #include <generic/nucleus_instance.hpp>
 #include <generic/types.hpp>
@@ -82,5 +81,3 @@ extern "C"
   // Call a syscall
   void callsyscall(Syscall_info &syscall_info);
 }
-
-#endif

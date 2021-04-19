@@ -13,7 +13,6 @@ Input::Input(void)
   {
     return;
   }
-
 #endif
 
 #ifdef __RASPBERRY_PI_3__

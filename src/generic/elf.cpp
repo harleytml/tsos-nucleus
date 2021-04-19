@@ -59,6 +59,7 @@ bool ELF_quark::isvalidexecutable(char *path)
 #ifdef __aarch64__
     return header.e_machine == e_machine::EM_AARCH64;
 #endif
+
     return false;
   }
   else

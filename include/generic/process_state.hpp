@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_PROCESS_STATE__
-#define __TSOS_NUCLEUS_PROCESS_STATE__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -19,5 +18,3 @@ enum process_state
   // An idle process
   IDLE
 };
-
-#endif

@@ -6,8 +6,7 @@
  * This is the nucleon that is most thought out (as of version 0.0)
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_NUCLEON__
-#define __TSOS_NUCLEUS_VIDEO_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -71,5 +70,3 @@ private:
   // The current text foreground color
   Color foregroundcolor;
 };
-
-#endif

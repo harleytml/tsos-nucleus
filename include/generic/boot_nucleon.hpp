@@ -6,8 +6,7 @@
  * Windows, or the Kernel Panic of the *nix operating systems
  */
 
-#ifndef __TSOS_NUCLEUS_BOOT_NUCLEON__
-#define __TSOS_NUCLEUS_BOOT_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -34,5 +33,3 @@ public:
   // The equivelent kernel panic, or bsod,
   void fission(const char *errormsg) const;
 };
-
-#endif

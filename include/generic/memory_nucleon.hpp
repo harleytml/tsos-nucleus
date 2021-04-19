@@ -9,8 +9,7 @@
  * It simply just returns nullptr
  */
 
-#ifndef __TSOS_NUCLEUS_MEMORY_NUCLEON__
-#define __TSOS_NUCLEUS_MEMORY_NUCLEON__
+#pragma once
 
 #include <generic/memory_quark.hpp>
 #include <generic/nucleon.hpp>
@@ -53,5 +52,3 @@ private:
 
   Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
 };
-
-#endif

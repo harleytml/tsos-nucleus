@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_XT_KEYBOARD_QUARK__
-#define __TSOS_XT_KEYBOARD_QUARK__
+#pragma once
 
 #include <generic/input_quark.hpp>
 
@@ -35,5 +34,3 @@ public:
 
 private:
 };
-
-#endif

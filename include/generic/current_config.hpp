@@ -5,8 +5,7 @@
  * quarks should actually be included
  */
 
-#ifndef __TSOS_CURRENT_CONFIG__
-#define __TSOS_CURRENT_CONFIG__
+#pragma once
 
 #include <generic/fat12.hpp>
 #include <generic/fat16.hpp>
@@ -50,7 +49,5 @@
 #endif
 
 #ifdef __NINTENDO_DUAL_SCREEN__
-
-#endif
 
 #endif

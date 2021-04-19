@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_ATAPI_QUARK__
-#define __TSOS_ATAPI_QUARK__
+#pragma once
 
 #include <generic/disk_quark.hpp>
 
@@ -131,5 +130,3 @@ private:
   IDEChannelRegisters channels[2];
   IDE_device ide_devices[4];
 };
-
-#endif

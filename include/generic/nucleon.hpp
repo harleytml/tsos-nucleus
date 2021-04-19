@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEON_CORE__
-#define __TSOS_NUCLEON_CORE__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -45,5 +44,3 @@ public:
 protected:
   T *quark;
 };
-
-#endif

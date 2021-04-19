@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef __TSOS_PC_MEM_QUARK__
-#define __TSOS_PC_MEM_QUARK__
+#pragma once
 
 #include <generic/memory_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -20,5 +19,3 @@ public:
   uintptr_t getstartofheap(void) final;
   size_t getlengthofheap(void) final;
 };
-
-#endif

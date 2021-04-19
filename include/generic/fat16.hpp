@@ -10,8 +10,7 @@
  * https://github.com/francois-berder/fat16
  */
 
-#ifndef __TSOS_FAT16_QUARK__
-#define __TSOS_FAT16_QUARK__
+#pragma once
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -129,5 +128,3 @@ private:
 
   //*/
 };
-
-#endif

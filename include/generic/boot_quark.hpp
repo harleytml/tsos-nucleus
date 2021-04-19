@@ -4,8 +4,7 @@
  * To make a new Boot quark, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_BOOT_QUARK__
-#define __TSOS_NUCLEUS_BOOT_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 
@@ -24,5 +23,3 @@ public:
   // Shutdown the system
   virtual void shutdown(void) = 0;
 };
-
-#endif

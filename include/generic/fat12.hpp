@@ -4,8 +4,7 @@
  * The FAT12 will be used rarely these days, but you might see it on a floppy disk
  */
 
-#ifndef __TSOS_FAT12_QUARK__
-#define __TSOS_FAT12_QUARK__
+#pragma once
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -33,5 +32,3 @@ private:
   char *currentdirectory;
   File openfiles[128];
 };
-
-#endif

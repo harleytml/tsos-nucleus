@@ -1,5 +1,4 @@
-#ifndef __TSOS_NUCLEUS_PC_IO_QUARK__
-#define __TSOS_NUCLEUS_PC_IO_QUARK__
+#pragma once
 
 #include <generic/types.hpp>
 #include <generic/io_quark.hpp>
@@ -33,5 +32,3 @@ public:
   // Send a uint32_t through the io ports
   void out32(uint16_t port, uint32_t value) final;
 };
-
-#endif

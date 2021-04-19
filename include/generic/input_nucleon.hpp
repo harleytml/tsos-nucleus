@@ -4,8 +4,7 @@
  * The wrapper nucleon for the input quarks
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_NUCLEON__
-#define __TSOS_NUCLEUS_INPUT_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -37,5 +36,3 @@ enum key_position
   LEFT,
   MIDDLE
 };
-
-#endif

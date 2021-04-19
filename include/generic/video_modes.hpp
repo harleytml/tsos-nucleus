@@ -4,8 +4,7 @@
  * The possible modes for video in TS/OS
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_MODES__
-#define __TSOS_NUCLEUS_VIDEO_MODES__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -14,5 +13,3 @@ enum video_mode
   TEXT,
   GRAPHIC
 };
-
-#endif

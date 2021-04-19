@@ -6,8 +6,7 @@
  * Not sure how useful serial is (other than debugging), but I'll write quarks for it anyway
  */
 
-#ifndef __TSOS_NUCLEUS_SERIAL_QUARK__
-#define __TSOS_NUCLEUS_SERIAL_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -32,5 +31,3 @@ public:
   // Send a byte
   virtual uint8_t inbyte(void) = 0;
 };
-
-#endif

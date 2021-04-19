@@ -8,8 +8,7 @@
  * 
  */
 
-#ifndef __TSOS_CXXABI__
-#define __TSOS_CXXABI__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -72,5 +71,3 @@ namespace __cxxabiv1
 	}
 
 }
-
-#endif

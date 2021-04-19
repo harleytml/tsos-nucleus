@@ -7,8 +7,7 @@
  * kept in the nucleon, to ease the load on making consistant quarks
  */
 
-#ifndef __TSOS_NUCLEUS_VIDEO_QUARK__
-#define __TSOS_NUCLEUS_VIDEO_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -36,5 +35,3 @@ public:
   // Get the height of the screen
   virtual uint16_t getscreenheight(void) = 0;
 };
-
-#endif

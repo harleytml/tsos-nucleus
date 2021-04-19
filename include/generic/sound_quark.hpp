@@ -6,8 +6,7 @@
  * The TS/OS sound api is pretty slim right now (as of version 0.0)
  */
 
-#ifndef __TSOS_NUCLEUS_SOUND_QUARK__
-#define __TSOS_NUCLEUS_SOUND_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -25,5 +24,3 @@ public:
 
   virtual void killsound(void) = 0;
 };
-
-#endif

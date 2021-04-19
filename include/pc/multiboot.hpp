@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_MULTIBOOT_QUARK__
-#define __TSOS_MULTIBOOT_QUARK__
+#pragma once
 
 #include <generic/boot_quark.hpp>
 
@@ -24,4 +23,3 @@ public:
   // Shutdown the system
   void shutdown(void) final;
 };
-#endif

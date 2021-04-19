@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_IO_NUCLEON__
-#define __TSOS_NUCLEUS_IO_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -39,5 +38,3 @@ public:
   // Send a uint32_t through the io ports
   void out32(uint16_t port, uint32_t value);
 };
-
-#endif

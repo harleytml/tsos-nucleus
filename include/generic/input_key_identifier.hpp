@@ -4,8 +4,7 @@
  * The definitions of the keys
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
-#define __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
+#pragma once
 
 enum key_identifier
 {
@@ -113,5 +112,3 @@ enum key_identifier
     KEY_TAB
 
 };
-
-#endif

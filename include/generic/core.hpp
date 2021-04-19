@@ -9,8 +9,7 @@
  * There may only be ONE instance of the TS/OS class.
  */
 
-#ifndef __TSOS_NUCLEUS_CORE__
-#define __TSOS_NUCLEUS_CORE__
+#pragma once
 
 #include <generic/boot_nucleon.hpp>
 #include <generic/disk_nucleon.hpp>
@@ -78,4 +77,3 @@ public:
 };
 
 static bool nucleuslock = false;
-#endif

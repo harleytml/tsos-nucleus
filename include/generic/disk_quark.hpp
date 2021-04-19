@@ -4,8 +4,7 @@
  * To make a new Disk quark, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_DISK_QUARK__
-#define __TSOS_NUCLEUS_DISK_QUARK__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -25,5 +24,3 @@ public:
   // Get the sector size
   virtual uint16_t getsectorsize(void) = 0;
 };
-
-#endif

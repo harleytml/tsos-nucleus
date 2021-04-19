@@ -5,8 +5,7 @@
  * file permissions internally
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
-#define __TSOS_NUCLEUS_FILESYSTEM_PERMISSIONS__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -28,5 +27,3 @@ public:
   //Execute permission
   bool execute;
 };
-
-#endif

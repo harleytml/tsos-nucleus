@@ -1,6 +1,5 @@
 // By AptRock
-#ifndef __TSOS_NUCLEUS_GDT__
-#define __TSOS_NUCLEUS_GDT__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -36,5 +35,3 @@ public:
   uint16_t CodeSegmentSelector();
   uint16_t DataSegmentSelector();
 };
-
-#endif

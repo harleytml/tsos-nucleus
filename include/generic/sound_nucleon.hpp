@@ -4,8 +4,7 @@
  * The wrapper nucleon for the sound quarks
  */
 
-#ifndef __TSOS_NUCLEUS_SOUND_NUCLEON__
-#define __TSOS_NUCLEUS_SOUND_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -28,5 +27,3 @@ public:
 
   void killsound(void);
 };
-
-#endif

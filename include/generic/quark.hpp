@@ -6,8 +6,7 @@
  *  
  */
 
-#ifndef __TSOS_QUARK_CORE__
-#define __TSOS_QUARK_CORE__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -29,5 +28,3 @@ public:
   // The name of said quark
   char *name;
 };
-
-#endif

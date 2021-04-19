@@ -7,8 +7,7 @@
  * 
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
-#define __TSOS_NUCLEUS_FILESYSTEM_FILE__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
@@ -37,5 +36,3 @@ public:
   //The permissions the file was opened in
   Permissions permissions;
 };
-
-#endif

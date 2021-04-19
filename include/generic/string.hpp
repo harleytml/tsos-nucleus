@@ -5,8 +5,7 @@
  * This is a version of the String& class made for TS/OS 
  */
 
-#ifndef __TSOS_STRING_TYPE__
-#define __TSOS_STRING_TYPE__
+#pragma once
 
 #include <generic/array.hpp>
 
@@ -22,5 +21,3 @@ public:
   String(void);
   String(const char *str);
 };
-
-#endif

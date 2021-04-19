@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_CANON_A1100_KEYPAD_QUARK__
-#define __TSOS_CANON_A1100_KEYPAD_QUARK__
+#pragma once
 
 #include <generic/input_quark.hpp>
 
@@ -34,5 +33,3 @@ public:
 
 private:
 };
-
-#endif

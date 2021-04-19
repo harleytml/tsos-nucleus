@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_UART_QUARK__
-#define __TSOS_RPI3_UART_QUARK__
+#pragma once
 
 #include <generic/serial_quark.hpp>
 
@@ -45,5 +44,3 @@ private:
     return *regi;
   }
 };
-
-#endif

@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_MDA_QUARK__
-#define __TSOS_MDA_QUARK__
+#pragma once
 
 #include <generic/video_quark.hpp>
 #include <generic/video_modes.hpp>
@@ -25,5 +24,3 @@ private:
 
   Font font;
 };
-
-#endif

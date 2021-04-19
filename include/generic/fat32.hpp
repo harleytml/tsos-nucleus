@@ -5,8 +5,7 @@
  * 
  */
 
-#ifndef __TSOS_FAT32_QUARK__
-#define __TSOS_FAT32_QUARK__
+#pragma once
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
@@ -34,5 +33,3 @@ private:
   char *currentdirectory;
   File openfiles[128];
 };
-
-#endif

@@ -4,8 +4,7 @@
  * The wrapper nucleon for the serial quarks
  */
 
-#ifndef __TSOS_NUCLEUS_SERIAL_NUCLEON__
-#define __TSOS_NUCLEUS_SERIAL_NUCLEON__
+#pragma once
 
 #include <generic/quark.hpp>
 #include <generic/nucleon.hpp>
@@ -41,5 +40,3 @@ public:
   // Send a array of bytes
   void sendbytearray(Array<uint8_t> array) const;
 };
-
-#endif

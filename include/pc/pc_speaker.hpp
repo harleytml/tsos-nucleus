@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_PC_SPEAKER_QUARK__
-#define __TSOS_PC_SPEAKER_QUARK__
+#pragma once
 
 #include <generic/sound_quark.hpp>
 #include <generic/types.hpp>
@@ -14,5 +13,3 @@ public:
   void playtone(uint32_t tone) final;
   void killsound(void) final;
 };
-
-#endif

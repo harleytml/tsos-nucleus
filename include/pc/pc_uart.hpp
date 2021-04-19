@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_PC_UART_QUARK__
-#define __TSOS_PC_UART_QUARK__
+#pragma once
 
 #include <generic/serial_quark.hpp>
 
@@ -24,5 +23,3 @@ public:
 private:
   void set_baud(uint16_t port, uint8_t baud_rate);
 };
-
-#endif

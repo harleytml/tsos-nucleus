@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_NSPIRE_CX_DISK_QUARK__
-#define __TSOS_NSPIRE_CX_DISK_QUARK__
+#pragma once
 
 #include <generic/disk_quark.hpp>
 
@@ -22,5 +21,3 @@ public:
   // Get the sector size
   uint16_t getsectorsize(void) final;
 };
-
-#endif

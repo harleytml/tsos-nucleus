@@ -1,6 +1,5 @@
 //By Tsuki Superior
-#ifndef __TSOS_RPI3_SOUND_QUARK__
-#define __TSOS_RPI3_SOUND_QUARK__
+#pragma once
 
 #include <generic/sound_quark.hpp>
 
@@ -13,5 +12,3 @@ public:
   void playtone(uint32_t tone) final;
   void killsound(void) final;
 };
-
-#endif

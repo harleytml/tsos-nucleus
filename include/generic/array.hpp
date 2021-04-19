@@ -5,8 +5,7 @@
  * This is a version of the Array class made for TS/OS 
  */
 
-#ifndef __TSOS_ARRAY_TYPE__
-#define __TSOS_ARRAY_TYPE__
+#pragma once
 
 #include <generic/types.hpp>
 
@@ -115,5 +114,3 @@ protected:
   T *internaldata;
   uint16_t internaldatalength;
 };
-
-#endif
