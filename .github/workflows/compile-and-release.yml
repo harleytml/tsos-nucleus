@@ -68,7 +68,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/nucleus_dump.asm
-          asset_name: nucleus.elf
+          asset_name: nucleus_dump.asm
           asset_content_type: application/zip
 
   cubieboard1-test:
@@ -121,7 +121,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/nucleus_dump.asm
-          asset_name: nucleus.elf
+          asset_name: nucleus_dump.asm
           asset_content_type: application/zip
 
   nspire-test:
@@ -174,7 +174,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/nucleus_dump.asm
-          asset_name: nucleus.elf
+          asset_name: nucleus_dump.asm
           asset_content_type: application/zip
 
   pc-test:
@@ -237,7 +237,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/nucleus_dump.asm
-          asset_name: nucleus.elf
+          asset_name: nucleus_dump.asm
           asset_content_type: application/zip
 
   rpi3-test:
@@ -290,5 +290,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/nucleus_dump.asm
-          asset_name: nucleus.elf
+          asset_name: nucleus_dump.asm
           asset_content_type: application/zip
