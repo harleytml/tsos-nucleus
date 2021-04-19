@@ -6,9 +6,9 @@
 Boot::Boot(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static GRUB2_quark grub2_quark = GRUB2_quark();
+  static MULTIBOOT_quark multiboot_quark = MULTIBOOT_quark();
 
-  attachquark(grub2_quark);
+  attachquark(multiboot_quark);
 #endif
 
 #ifdef __RASPBERRY_PI_3__

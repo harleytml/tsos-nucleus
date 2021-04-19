@@ -1,17 +1,17 @@
 //By Tsuki Superior
-#ifndef __TSOS_GRUB2_QUARK__
-#define __TSOS_GRUB2_QUARK__
+#ifndef __TSOS_MULTIBOOT_QUARK__
+#define __TSOS_MULTIBOOT_QUARK__
 
 #include <generic/boot_quark.hpp>
 
-class GRUB2_quark : public Boot_quark
+class MULTIBOOT_quark : public Boot_quark
 {
 public:
   //Constructor
-  GRUB2_quark(void);
+  MULTIBOOT_quark(void);
 
   //Destructor
-  ~GRUB2_quark();
+  ~MULTIBOOT_quark();
 
   //Detect the type of system its running on
   bool detectsystem(void) final;

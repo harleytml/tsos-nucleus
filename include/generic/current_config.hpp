@@ -18,7 +18,7 @@
 
 #ifdef __PERSONAL_COMPUTER__
 
-#include <pc/grub2.hpp>
+#include <pc/multiboot.hpp>
 #include <pc/atapi.hpp>
 #include <pc/at_keyboard.hpp>
 #include <pc/xt_keyboard.hpp>
