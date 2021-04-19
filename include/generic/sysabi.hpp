@@ -73,6 +73,8 @@ public:
 
   // A array of pointer to be carried out
   void **output_data;
+
+  bool inkernelmode;
 } __attribute__((packed));
 
 extern "C"

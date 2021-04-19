@@ -4,6 +4,11 @@ extern "C"
 {
   void callsyscall(Syscall_info &syscall_info)
   {
+    if (syscall_info.inkernelmode)
+    {
+      return;
+    }
+    syscall_info.inkernelmode = true;
     switch (syscall_info.syscall)
     {
     case syscall_t::reboot:
@@ -33,6 +38,8 @@ extern "C"
     default:
       break;
     }
+    syscall_info.inkernelmode = false;
+
     return;
   }
 }
