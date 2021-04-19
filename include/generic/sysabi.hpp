@@ -1,10 +1,15 @@
-//By Tsuki Superior
+/* By Tsuki Superior
+ *
+ * This header file defines how syscalls are made
+ */
+
 #ifndef __TSOS_SYSABI__
 #define __TSOS_SYSABI__
 
 #include <generic/nucleus_instance.hpp>
 #include <generic/types.hpp>
 
+// The type defining syscalls
 enum class syscall_t : uint16_t
 {
   reboot = 0,
@@ -57,9 +62,23 @@ enum class syscall_t : uint16_t
   out32 = 47
 };
 
+class Syscall_info
+{
+public:
+  // The syscall that is going to be called
+  syscall_t syscall;
+
+  // A array of pointers to the data to be passed into the syscall
+  void **input_data;
+
+  // A array of pointer to be carried out
+  void **output_data;
+} __attribute__((packed));
+
 extern "C"
 {
-  void callsyscall(syscall_t syscall);
+  // Call a syscall
+  void callsyscall(Syscall_info &syscall_info);
 }
 
 #endif

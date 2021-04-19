@@ -125,6 +125,9 @@ else:
 
 
 # Building was succesful if it made it to here
+if os.system("llvm-objdump -d --source --demangle --debug-vars nucleus.elf > nucleus_dump.asm") != 0:
+    cprint("Dumping ELF file failed!", "yellow")
+
 cprint("Compiling and deploying completed.", "green")
 cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
 

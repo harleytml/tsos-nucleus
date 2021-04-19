@@ -17,7 +17,8 @@ void NSPIRE_CM_UART_quark::reset(void)
 
 bool NSPIRE_CM_UART_quark::isdevicereadytotransmit(void)
 {
-  return false;
+  volatile uint32_t *line_status_reg = reinterpret_cast<volatile uint32_t *>(0x90020014);
+  return static_cast<bool>(*line_status_reg & 0x1);
 }
 
 bool NSPIRE_CM_UART_quark::isdevicereadytoreceive(void)
