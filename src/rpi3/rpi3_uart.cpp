@@ -25,12 +25,12 @@ bool RPI3_UART_quark::isdevicereadytoreceive(void)
   return (mmio_read((uint32_t)registers::AUX_MU_LSR_REG) & (1 << 5)) == 1;
 }
 
-void RPI3_UART_quark::inbyte(uint8_t byte)
+void RPI3_UART_quark::outbyte(uint8_t byte)
 {
   mmio_write((uint32_t)registers::AUX_MU_IO_REG, byte);
 }
 
-uint8_t RPI3_UART_quark::outbyte(void)
+uint8_t RPI3_UART_quark::inbyte(void)
 {
   return mmio_read(((uint32_t)registers::AUX_MU_IO_REG) & 0xFF);
 }

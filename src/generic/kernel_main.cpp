@@ -38,7 +38,7 @@ void kernel_main(void)
 
   while (pos < serialmessage->len())
   {
-    tsos->serial.inbyte((uint8_t)(*serialmessage)[pos++]);
+    tsos->serial.outbyte((uint8_t)(*serialmessage)[pos++]);
   }
 
   while (true)

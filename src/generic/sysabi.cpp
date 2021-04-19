@@ -75,9 +75,9 @@ extern "C"
       break;
     case syscall_t::freememory:
       break;
-    case syscall_t::outbyte:
-      break;
     case syscall_t::inbyte:
+      break;
+    case syscall_t::outbyte:
       break;
     case syscall_t::isdevicereadytoreceive:
       break;

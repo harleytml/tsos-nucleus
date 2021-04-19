@@ -135,11 +135,11 @@ Free memory
 SERIAL SYSCALLS:
 
 ```text
-outbyte:
+inbyte:
 
 Send a byte to the other device
 
-inbyte:
+outbyte:
 
 Gey a byte from the other device
 

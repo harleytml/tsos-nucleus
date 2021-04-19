@@ -18,8 +18,8 @@ public:
   bool detectsystem(void) final;
   bool isdevicereadytotransmit(void) final;
   bool isdevicereadytoreceive(void) final;
-  void inbyte(uint8_t byte) final;
-  uint8_t outbyte(void) final;
+  void outbyte(uint8_t byte) final;
+  uint8_t inbyte(void) final;
 
 private:
   void set_baud(uint16_t port, uint8_t baud_rate);
