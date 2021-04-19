@@ -3,7 +3,7 @@
 
 Font::Font(void)
 {
-  data = (uint8_t *)"";
+  data = (uint8_t *)nullptr;
 }
 
 Font::Font(uint8_t *d, uint8_t char_width, uint8_t char_height)

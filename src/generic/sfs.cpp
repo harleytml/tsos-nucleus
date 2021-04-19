@@ -25,17 +25,16 @@ void SFS_quark::reset(void)
 {
 }
 
-Array<String &> &SFS_quark::readdir(String &path)
+char **SFS_quark::readdir(char *path)
 {
-  Array<String &> *tmp = (Array<String &> *)nullptr;
-  return *tmp;
+  return nullptr;
 }
 
-void SFS_quark::rename(String &path, char *newPath)
+void SFS_quark::rename(char *path, char *newPath)
 {
 }
 
-File SFS_quark::open(String &path)
+File SFS_quark::open(char *path)
 {
   File tmp;
   return tmp;
@@ -47,27 +46,27 @@ void SFS_quark::close(File file)
 
 char *SFS_quark::read(File file)
 {
-  return "";
+  return nullptr;
 }
 
 void SFS_quark::write(File file, char *data)
 {
 }
 
-char *SFS_quark::readfile(String &path)
+char *SFS_quark::readfile(char *path)
 {
-  return "";
+  return nullptr;
 }
 
-void SFS_quark::writefile(String &path, char *data)
-{
-}
-
-void SFS_quark::appendfile(String &path, char *data)
+void SFS_quark::writefile(char *path, char *data)
 {
 }
 
-bool SFS_quark::exists(String &path)
+void SFS_quark::appendfile(char *path, char *data)
+{
+}
+
+bool SFS_quark::exists(char *path)
 {
   return false;
 }

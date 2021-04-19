@@ -28,13 +28,13 @@ public:
   ~Filesystem();
 
   //Read the contents of a directory
-  Array<String &> &readdir(String &path);
+  char **readdir(char *path);
 
   //Rename a file or folder
-  void rename(String &path, String &newPath);
+  void rename(char *path, char *newPath);
 
   //Open a file
-  File open(String &path);
+  File open(char *path);
 
   //Close a file
   void close(File file);
@@ -46,25 +46,25 @@ public:
   void write(File file, uint8_t data[]);
 
   //Read all from a file
-  uint8_t *readfile(String &path);
+  uint8_t *readfile(char *path);
 
   //Write all to a file
-  void writefile(String &path, uint8_t data[]);
+  void writefile(char *path, uint8_t data[]);
 
   //Append to a file
-  void appendfile(String &path, uint8_t data[]);
+  void appendfile(char *path, uint8_t data[]);
 
   //Detect if a file or folder exists
-  bool exists(String &path);
+  bool exists(char *path);
 
   //Create a directory
-  void mkdir(String &path, Permissions f);
+  void mkdir(char *path, Permissions f);
 
   //Remove a directory
-  void rmdir(String &path);
+  void rmdir(char *path);
 
   //Checks if the user has permissions for the file
-  void access(String &path);
+  void access(char *path);
 
 private:
   //The current directory

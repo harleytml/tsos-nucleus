@@ -24,25 +24,24 @@ Filesystem::~Filesystem()
 {
 }
 
-Array<String &> &Filesystem::readdir(String &path)
+char **Filesystem::readdir(char *path)
 {
   if (exists(path))
   {
     return quark->readdir(path);
   }
-  Array<String &> *tmp = nullptr;
-  return *tmp;
+  return nullptr;
 }
 
-void Filesystem::rename(String &path, String &newPath)
+void Filesystem::rename(char *path, char *newPath)
 {
   if (!exists(newPath) && exists(path))
   {
-    quark->rename(path, newPath.raw());
+    quark->rename(path, newPath);
   }
 }
 
-File Filesystem::open(String &path)
+File Filesystem::open(char *path)
 {
   if (exists(path))
   {
@@ -60,48 +59,48 @@ void Filesystem::close(File file)
 
 uint8_t *Filesystem::read(File file, uint32_t length)
 {
-  return (uint8_t *)"";
+  return (uint8_t *)nullptr;
 }
 
 void Filesystem::write(File file, uint8_t data[])
 {
 }
 
-uint8_t *Filesystem::readfile(String &path)
+uint8_t *Filesystem::readfile(char *path)
 {
   if (exists(path))
   {
   }
-  return (uint8_t *)"";
+  return (uint8_t *)nullptr;
 }
 
-void Filesystem::writefile(String &path, uint8_t *data)
-{
-  if (exists(path))
-  {
-  }
-}
-
-void Filesystem::appendfile(String &path, uint8_t *data)
+void Filesystem::writefile(char *path, uint8_t *data)
 {
   if (exists(path))
   {
   }
 }
 
-bool Filesystem::exists(String &path)
+void Filesystem::appendfile(char *path, uint8_t *data)
+{
+  if (exists(path))
+  {
+  }
+}
+
+bool Filesystem::exists(char *path)
 {
   return quark->exists(path);
 }
 
-void Filesystem::mkdir(String &path, Permissions f)
+void Filesystem::mkdir(char *path, Permissions f)
 {
 }
 
-void Filesystem::rmdir(String &path)
+void Filesystem::rmdir(char *path)
 {
 }
 
-void Filesystem::access(String &path)
+void Filesystem::access(char *path)
 {
 }

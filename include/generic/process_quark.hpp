@@ -22,7 +22,7 @@ public:
 
   ~Process_quark();
 
-  virtual bool isvalidexecutable(String &path) = 0;
+  virtual bool isvalidexecutable(char *path) = 0;
 };
 
 #endif

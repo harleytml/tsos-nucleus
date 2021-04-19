@@ -26,7 +26,7 @@ public:
   File(const File &file);
 
   //Constructor
-  File(String &pa, Permissions &per);
+  File(char *pa, Permissions &per);
 
   //Destructor
   ~File();

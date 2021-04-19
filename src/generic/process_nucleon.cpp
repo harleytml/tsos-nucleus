@@ -14,7 +14,7 @@ Process::~Process(void)
   killall();
 }
 
-uint8_t Process::spawn(String &path)
+uint8_t Process::spawn(char *path)
 {
   return 0;
 }

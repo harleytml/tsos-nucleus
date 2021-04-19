@@ -6,7 +6,7 @@ File::File(void)
   permissions = Permissions(false, false, false);
 }
 
-File::File(String &pa, Permissions &per)
+File::File(char *pa, Permissions &per)
 {
   path = pa;
   permissions = per;

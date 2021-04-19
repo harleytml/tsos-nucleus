@@ -17,7 +17,7 @@ void ELF_quark::reset(void)
 {
 }
 
-bool ELF_quark::isvalidexecutable(String &path)
+bool ELF_quark::isvalidexecutable(char *path)
 {
   Elf32_header header = Elf32_header();
   File file = tsos->filesystem.open(path);

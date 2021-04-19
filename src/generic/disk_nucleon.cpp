@@ -23,7 +23,7 @@ Disk::~Disk()
 
 uint8_t *Disk::getbytes(uint32_t offset, uint16_t len) const
 {
-  uint8_t *buffer = (uint8_t *)"";
+  uint8_t *buffer = (uint8_t *)nullptr;
   quark->getbytes(buffer, offset, len);
   return buffer;
 }

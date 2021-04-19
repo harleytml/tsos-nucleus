@@ -26,17 +26,16 @@ void FAT16_quark::reset(void)
 {
 }
 
-Array<String &> &FAT16_quark::readdir(String &path)
+char **FAT16_quark::readdir(char *path)
 {
-  Array<String &> *tmp = (Array<String &> *)nullptr;
-  return *tmp;
+  return nullptr;
 }
 
-void FAT16_quark::rename(String &path, char *newPath)
+void FAT16_quark::rename(char *path, char *newPath)
 {
 }
 
-File FAT16_quark::open(String &path)
+File FAT16_quark::open(char *path)
 {
   File tmp;
   return tmp;
@@ -48,27 +47,27 @@ void FAT16_quark::close(File file)
 
 char *FAT16_quark::read(File file)
 {
-  return "";
+  return nullptr;
 }
 
 void FAT16_quark::write(File file, char *data)
 {
 }
 
-char *FAT16_quark::readfile(String &path)
+char *FAT16_quark::readfile(char *path)
 {
-  return "";
+  return nullptr;
 }
 
-void FAT16_quark::writefile(String &path, char *data)
-{
-}
-
-void FAT16_quark::appendfile(String &path, char *data)
+void FAT16_quark::writefile(char *path, char *data)
 {
 }
 
-bool FAT16_quark::exists(String &path)
+void FAT16_quark::appendfile(char *path, char *data)
+{
+}
+
+bool FAT16_quark::exists(char *path)
 {
   return true;
 }
@@ -137,7 +136,7 @@ uint32_t FAT16_quark::movetofatregion(uint16_t cluster)
   return pos;
 }
 
-int32_t FAT16_quark::getsubdir(char *subdir_name, uint16_t *index, String &path)
+int32_t FAT16_quark::getsubdir(char *subdir_name, uint16_t *index, char *path)
 {
   const uint16_t beg = *index;
   uint32_t len = 0;
@@ -170,14 +169,14 @@ int32_t FAT16_quark::getsubdir(char *subdir_name, uint16_t *index, String &path)
     return -1;
   }
 
-  memcpy(subdir_name, &path.raw()[beg], len);
+  memcpy(subdir_name, path, len);
   subdir_name[len] = '\0';
 
   *index = beg + len;
   return 0;
 }
 
-bool FAT16_quark::isinroot(String &path)
+bool FAT16_quark::isinroot(char *path)
 {
   char subdir_name[13];
   uint16_t index = 0;

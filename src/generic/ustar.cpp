@@ -25,17 +25,16 @@ void USTAR_quark::reset(void)
 {
 }
 
-Array<String &> &USTAR_quark::readdir(String &path)
+char **USTAR_quark::readdir(char *path)
 {
-  Array<String &> *tmp = (Array<String &> *)nullptr;
-  return *tmp;
+  return nullptr;
 }
 
-void USTAR_quark::rename(String &path, char *newPath)
+void USTAR_quark::rename(char *path, char *newPath)
 {
 }
 
-File USTAR_quark::open(String &path)
+File USTAR_quark::open(char *path)
 {
   File tmp;
   return tmp;
@@ -47,27 +46,27 @@ void USTAR_quark::close(File file)
 
 char *USTAR_quark::read(File file)
 {
-  return "";
+  return nullptr;
 }
 
 void USTAR_quark::write(File file, char *data)
 {
 }
 
-char *USTAR_quark::readfile(String &path)
+char *USTAR_quark::readfile(char *path)
 {
-  return "";
+  return nullptr;
 }
 
-void USTAR_quark::writefile(String &path, char *data)
-{
-}
-
-void USTAR_quark::appendfile(String &path, char *data)
+void USTAR_quark::writefile(char *path, char *data)
 {
 }
 
-bool USTAR_quark::exists(String &path)
+void USTAR_quark::appendfile(char *path, char *data)
+{
+}
+
+bool USTAR_quark::exists(char *path)
 {
   return false;
 }

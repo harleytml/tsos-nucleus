@@ -28,7 +28,7 @@ public:
   ELF_quark(void);
   bool detectsystem(void) final;
   void reset(void) final;
-  bool isvalidexecutable(String &path) final;
+  bool isvalidexecutable(char *path) final;
 
 private:
   enum class e_type : uint16_t

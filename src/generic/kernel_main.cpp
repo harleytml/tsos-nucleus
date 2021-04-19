@@ -5,8 +5,8 @@ void kernel_main(void)
   static Tsos os_instance = Tsos();
   uint_fast8_t pos = 0;
   tsos = &os_instance;
-  String *init_file_path = new String("/bin/init");
-  String *serialmessage = new String("Welcome to TS/OS");
+  char *init_file_path = "/bin/init";
+  char *serialmessage = "Welcome to TS/OS";
 
 #ifdef __PERSONAL_COMPUTER__
   GlobalDescriptorTable gdt;
@@ -35,23 +35,23 @@ void kernel_main(void)
   // tsos->sound.playtone(100);
 
   tsos->video.drawpx(0, 0);
-
-  while (pos < serialmessage->len())
+  uint8_t slen = strnlen(serialmessage, 100);
+  while (pos < slen)
   {
-    tsos->serial.outbyte((uint8_t)(*serialmessage)[pos++]);
+    tsos->serial.outbyte(serialmessage[pos++]);
   }
 
   while (true)
   {
   }
 
-  if (!tsos->filesystem.exists(*init_file_path))
+  if (!tsos->filesystem.exists(init_file_path))
   {
     tsos->boot.fission("INIT EXECUTABLE NOT FOUND");
   }
   else
   {
-    File init_executable = tsos->filesystem.open(*init_file_path);
+    File init_executable = tsos->filesystem.open(init_file_path);
     if (!init_executable.permissions.execute)
     {
       tsos->boot.fission("INIT EXECUTABLE INVALID");
