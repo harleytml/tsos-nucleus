@@ -21,6 +21,7 @@
 #include <generic/video_nucleon.hpp>
 #include <generic/io_nucleon.hpp>
 #include <generic/memory_nucleon.hpp>
+#include <generic/time_nucleon.hpp>
 #include <generic/types.hpp>
 
 // The main class collecting the TS/OS nucleus api
@@ -62,6 +63,9 @@ public:
 
   // The nucleon being used to control sound
   Sound sound;
+
+  // The nucleon being used to control time
+  Time time;
 
   // The release of TS/OS being used here
   const float release;
