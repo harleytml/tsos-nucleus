@@ -18,4 +18,7 @@ public:
   Time_quark(void);
 
   ~Time_quark();
+
+  // Get the current time in seconds
+  virtual uint64_t gettime(void) = 0;
 };

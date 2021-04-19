@@ -1,4 +1,5 @@
 // By Tsuki Superior
+// Reference was skiftos
 #pragma once
 
 #include <generic/time_quark.hpp>
@@ -15,4 +16,36 @@ public:
   bool detectsystem(void) final;
 
   void reset() final;
+
+  uint64_t gettime() final;
+
+private:
+  const uint8_t CMOS_ADDRESS = 0x70;
+  const uint8_t CMOS_DATA = 0x71;
+
+  size_t bcd_to_int(size_t bcd);
+
+  enum class time_register_t : uint8_t
+  {
+    second = 0x0,
+    minute = 0x2,
+    hour = 0x4,
+    day = 0x7,
+    month = 0x8,
+    year = 0x9,
+  };
+
+  class Date
+  {
+  public:
+    size_t second;
+    size_t minute;
+    size_t hour;
+    size_t day;
+    size_t month;
+    size_t year;
+  };
+
+  uint8_t get_realtime_reg(time_register_t reg);
+  bool is_cmos_update();
 };
