@@ -1,0 +1,3 @@
+[submodule "contrib/rpi-firmware"]
+	path = contrib/rpi-firmware
+	url = https://github.com/raspberrypi/firmware.git
