@@ -31,6 +31,16 @@ if os.system("mcopy -i nucleus.img ../misc/config.txt ::") != 0:
     cprint("mcopy failed!", "red")
     sys.exit(1)
 
+# Copy the bootcode.bin into the drive image
+if os.system("mcopy -i nucleus.img ../contrib/rpi-firmware/boot/bootcode.bin ::") != 0:
+    cprint("mcopy failed!", "red")
+    sys.exit(1)
+
+# Copy the start.elf into the drive image
+if os.system("mcopy -i nucleus.img ../contrib/rpi-firmware/boot/start.elf ::") != 0:
+    cprint("mcopy failed!", "red")
+    sys.exit(1)
+
 with os.scandir("filesystem") as it:
     for entry in it:
         # Copy the filesystem directory into the drive image

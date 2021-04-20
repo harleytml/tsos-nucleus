@@ -37,3 +37,5 @@
 [Digic UART Driver Linux](https://github.com/digi-embedded/linux/blob/v5.4/dey-3.0/maint/drivers/tty/serial/imx.c)
 
 [RPI3 UART](https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html)
+
+[RPI3 Boot Process](https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-030-boot-process.html)
