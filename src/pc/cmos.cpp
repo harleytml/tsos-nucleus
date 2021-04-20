@@ -34,6 +34,14 @@ uint64_t CMOS_quark::gettime()
   date.month = bcd_to_int(get_realtime_reg(time_register_t::month));
   date.year = bcd_to_int(get_realtime_reg(time_register_t::year));
 
+  // This is only a rough calculation
+  time += date.second;
+  time += date.minute * 60;
+  time += date.hour * 3600;
+  time += date.day * 86400;
+  time += date.month * 2628000;
+  time += date.year * 31536000;
+
   return time;
 }
 

@@ -232,3 +232,10 @@ out32:
 Send a uint32t through the port io
 
 ```
+
+TIME SYSCALLS:
+
+```text
+
+
+```
