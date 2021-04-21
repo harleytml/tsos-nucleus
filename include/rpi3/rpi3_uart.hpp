@@ -17,8 +17,6 @@ public:
 private:
   enum class registers : uintptr_t
   {
-
-    MMIO_BASE = 0x3F000000,
     // The offsets for reach register.
     GPIO_BASE = 0x200000,
 

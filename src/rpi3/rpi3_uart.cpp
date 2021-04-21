@@ -15,7 +15,8 @@ bool RPI3_UART_quark::detectsystem(void)
 void RPI3_UART_quark::reset(void)
 {
 	// Disable UART0.
-	mmio_write((uint32_t)registers::UART0_CR, 0x00000000);
+	tsos->io.out32(static_cast<uint32_t>(registers::UART0_CR), 0x00000000);
+
 	// Setup the GPIO pin 14 && 15.
 
 	// Disable pull up/down for all GPIO pins & delay for 150 cycles.
@@ -89,10 +90,8 @@ uint8_t RPI3_UART_quark::inbyte(void)
 
 void RPI3_UART_quark::mmio_write(uint32_t reg, uint32_t data)
 {
-	*(volatile uint32_t *)((uintptr_t)registers::MMIO_BASE + reg) = data;
 }
-
 uint32_t RPI3_UART_quark::mmio_read(uint32_t reg)
 {
-	return *(volatile uint32_t *)((uintptr_t)registers::MMIO_BASE + reg);
+	return 0;
 }
