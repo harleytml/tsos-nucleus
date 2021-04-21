@@ -25,7 +25,7 @@ if os.system("dd if=/dev/zero of=nucleus.img count=1 bs=50M") != 0:
     sys.exit(1)
 
 # Make the image into a vfat drive
-if os.system("mkfs.vfat -s1 -F32 -nTSOS \"nucleus.img\"") != 0:
+if os.system("mkfs.fat -s1 -F32 -nTSOS \"nucleus.img\"") != 0:
     cprint("mkfs failed!", "red")
     sys.exit(1)
 
