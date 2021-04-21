@@ -15,6 +15,9 @@ if os.system("llvm-objcopy -O binary nucleus") != 0:
     sys.exit(1)
 
 shutil.copy("./nucleus", "./filesystem/")
+shutil.copy("../contrib/rpi-firmware/boot/bootcode.bin", "./filesystem/")
+shutil.copy("../contrib/rpi-firmware/boot/start.elf", "./filesystem/")
+shutil.copy("../misc/config.txt", "./filesystem/")
 
 # Make a file to make into a drive image
 if os.system("dd if=/dev/zero of=nucleus.img count=1 bs=50M") != 0:
@@ -24,21 +27,6 @@ if os.system("dd if=/dev/zero of=nucleus.img count=1 bs=50M") != 0:
 # Make the image into a vfat drive
 if os.system("mkfs.vfat -s1 -F32 -nTSOS \"nucleus.img\"") != 0:
     cprint("mkfs failed!", "red")
-    sys.exit(1)
-
-# Copy the config.txt into the drive image
-if os.system("mcopy -i nucleus.img ../misc/config.txt ::") != 0:
-    cprint("mcopy failed!", "red")
-    sys.exit(1)
-
-# Copy the bootcode.bin into the drive image
-if os.system("mcopy -i nucleus.img ../contrib/rpi-firmware/boot/bootcode.bin ::") != 0:
-    cprint("mcopy failed!", "red")
-    sys.exit(1)
-
-# Copy the start.elf into the drive image
-if os.system("mcopy -i nucleus.img ../contrib/rpi-firmware/boot/start.elf ::") != 0:
-    cprint("mcopy failed!", "red")
     sys.exit(1)
 
 with os.scandir("filesystem") as it:
