@@ -36,8 +36,8 @@
     },
     "vexpress-a15": {
         "description": "ARM Versatile Express for Cortex-A15",
-        "test_command": "qemu-system-arm -M vexpress-a15 -cpu cortex-a15 -kernel kernel.elf -nographic",
-        "debug_command": "qemu-system-arm -M vexpress-a15 -cpu cortex-a15 -kernel kernel.elf -nographic -s -S",
+        "test_command": "qemu-system-arm -M vexpress-a15 -cpu cortex-a15 -kernel nucleus",
+        "debug_command": "qemu-system-arm -M vexpress-a15 -cpu cortex-a15 -kernel nucleus -s -S",
         "required_test_tools": ["qemu-system-arm"],
         "required_tools": ["llvm-objcopy"]
     }
