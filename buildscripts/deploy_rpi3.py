@@ -20,11 +20,11 @@ shutil.copy("../contrib/rpi-firmware/boot/start.elf", "./filesystem/")
 shutil.copy("../contrib/rpi-firmware/boot/LICENCE.broadcom", "./filesystem/")
 shutil.copy("../misc/config.txt", "./filesystem/")
 
-# Make a file to make into a drive image
-if os.system("dd if=/dev/zero of=nucleus.img count=1 bs=50M") != 0:
-    cprint("dd failed!", "red")
-    sys.exit(1)
-
+with open("nucleus.img", "wb") as f:
+    f.seek(1024 * 1024 * 50) # One GB
+    f.write(0x00)
+    f.close()
+    
 # Make the image into a vfat drive
 if os.system("mkfs.fat -s1 -F32 -nTSOS \"nucleus.img\"") != 0:
     cprint("mkfs failed!", "red")
