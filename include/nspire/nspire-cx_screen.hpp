@@ -4,6 +4,8 @@
 #include <generic/video_quark.hpp>
 #include <generic/video_modes.hpp>
 
+#define HARDWARE_REVISION_W false
+
 class NSPIRE_CX_SCREEN_quark : public Video_quark
 {
 public:
@@ -24,4 +26,6 @@ private:
   video_mode mode;
 
   Font font;
+
+  uint16_t rgbto565(const Color &c);
 };

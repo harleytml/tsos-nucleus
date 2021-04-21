@@ -27,6 +27,7 @@ bool NSPIRE_CX_UART_quark::isdevicereadytoreceive(void)
 
 void NSPIRE_CX_UART_quark::outbyte(uint8_t byte)
 {
+  *((volatile uint8_t *)MMIO_BASE) = byte;
 }
 
 uint8_t NSPIRE_CX_UART_quark::inbyte(void)
