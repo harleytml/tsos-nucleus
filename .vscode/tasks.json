@@ -24,6 +24,11 @@
             "label": "canon-a1100",
             "type": "shell",
             "command": "./build.py canon-a1100 test"
+        },
+        {
+            "label": "vexpress-a15",
+            "type": "shell",
+            "command": "./build.py vexpress-a15 test"
         }
     ]
 }

@@ -313,3 +313,58 @@ jobs:
           asset_path: ./build/nucleus_dump.asm
           asset_name: nucleus_dump.asm
           asset_content_type: text/plain
+
+  vexpress-a15-test:
+    needs: [clean-releases]
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py vexpress-a15
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: tsos-vexpress-a15
+          release_name: Release VEXPRESS-A15
+          draft: false
+          prerelease: true
+          body: |
+            Check commits for changes
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/nucleus
+          asset_name: nucleus
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/nucleus.elf
+          asset_name: nucleus.elf
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/nucleus_dump.asm
+          asset_name: nucleus_dump.asm
+          asset_content_type: text/plain

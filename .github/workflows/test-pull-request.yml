@@ -60,3 +60,14 @@ jobs:
           submodules: "recursive"
       - name: Compile Test
         run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py rpi3
+
+  vexpress-a15-test:
+    runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/tsos-build:latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+      - name: Compile Test
+        run: PATH=$PATH:/usr/tsos-toolchain/bin && cd $GITHUB_WORKSPACE && python3 ./build.py vexpress-a15
