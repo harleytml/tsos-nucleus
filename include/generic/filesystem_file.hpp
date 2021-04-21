@@ -12,7 +12,7 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 #include <generic/filesystem_permissions.hpp>
-#include <generic/array.hpp>
+
 #include <generic/string.hpp>
 
 class File

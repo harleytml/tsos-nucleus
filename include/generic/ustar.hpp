@@ -11,7 +11,6 @@
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
-#include <generic/array.hpp>
 
 extern "C"
 {

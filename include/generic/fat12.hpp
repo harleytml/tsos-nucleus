@@ -8,7 +8,6 @@
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
-#include <generic/array.hpp>
 
 class FAT12_quark : public Filesystem_quark
 {

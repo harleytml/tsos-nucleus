@@ -11,7 +11,7 @@
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
-#include <generic/array.hpp>
+
 #include <generic/string.hpp>
 
 class Process_quark : public Quark

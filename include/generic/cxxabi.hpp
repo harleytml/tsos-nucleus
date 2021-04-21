@@ -31,6 +31,13 @@ extern "C"
 		void *dso_handle;
 	};
 
+// Only works on x86 right now
+#ifdef __i386__
+
+	char *itoa(int value, char *str, int base);
+
+#endif
+
 #ifdef __ARM_EABI__
 
 	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
@@ -48,12 +55,18 @@ extern "C"
 	void *memcpy(void *dstptr, const void *srcptr, size_t size);
 	void *memset(void *bufptr, int value, size_t size);
 	int memcmp(const void *aptr, const void *bptr, size_t size);
+	void *memshift(char *mem, int shift, size_t n);
 	void *memmove(void *dstptr, const void *srcptr, size_t size);
+	void *memchr(const void *str, int c, size_t n);
 	int strcmp(const char *p1, const char *p2);
 	size_t strlen(const char *str);
 	size_t strnlen(const char *s, size_t maxlen);
 	size_t oct2bin(char *str, size_t size);
 	int abs(int i);
+	int atoi(const char *str);
+	int isspace(int c);
+	int isdigit(int c);
+	int isprint(int c);
 }
 
 namespace __cxxabiv1

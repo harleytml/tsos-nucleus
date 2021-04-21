@@ -15,3 +15,8 @@ Time::Time(void)
 Time::~Time(void)
 {
 }
+
+uint64_t Time::gettimestamp(void)
+{
+  return quark->gettimestamp();
+}

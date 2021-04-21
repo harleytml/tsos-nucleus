@@ -17,13 +17,11 @@ public:
 
   void reset() final;
 
-  uint64_t gettime() final;
+  uint64_t gettimestamp() final;
 
 private:
-  const uint8_t CMOS_ADDRESS = 0x70;
-  const uint8_t CMOS_DATA = 0x71;
-
-  size_t bcd_to_int(size_t bcd);
+  const static uint8_t CMOS_ADDRESS = 0x70;
+  const static uint8_t CMOS_DATA = 0x71;
 
   enum class time_register_t : uint8_t
   {
@@ -44,8 +42,13 @@ private:
     size_t day;
     size_t month;
     size_t year;
+    uint64_t totimestamp();
   };
 
+  size_t bcd_to_int(size_t bcd);
+  static bool is_leap_year(uint32_t year);
   uint8_t get_realtime_reg(time_register_t reg);
   bool is_cmos_update();
+
+  friend Date;
 };

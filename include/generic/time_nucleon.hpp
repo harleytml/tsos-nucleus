@@ -21,4 +21,7 @@ public:
 
   // Destructor
   ~Time();
+
+  // Get the current time stamp
+  uint64_t gettimestamp(void);
 };

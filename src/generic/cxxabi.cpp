@@ -131,6 +131,49 @@ extern "C"
 
 #endif
 
+// Only works on x86 right now
+#ifdef __i386__
+
+  char *itoa(int value, char *str, int base)
+  {
+    char *rc;
+    char *ptr;
+    char *low;
+    // Check for supported base.
+    if (base < 2 || base > 36)
+    {
+      *str = '\0';
+      return str;
+    }
+    rc = ptr = str;
+    // Set '-' for negative decimals.
+    if (value < 0 && base == 10)
+    {
+      *ptr++ = '-';
+    }
+    // Remember where the numbers start.
+    low = ptr;
+    // The actual conversion.
+    do
+    {
+      // Modulo is negative for negative value. This trick makes abs() unnecessary.
+      *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"[35 + value % base];
+      value /= base;
+    } while (value);
+    // Terminating the string.
+    *ptr-- = '\0';
+    // Invert the numbers.
+    while (low < ptr)
+    {
+      char tmp = *low;
+      *low++ = *ptr;
+      *ptr-- = tmp;
+    }
+    return rc;
+  }
+
+#endif
+
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)
   {
     return !*(char *)(g);
@@ -191,6 +234,29 @@ extern "C"
     }
     return 0;
   }
+
+  void *memshift(char *mem, int shift, size_t n)
+  {
+    void *dest = mem + shift;
+    memmove(dest, mem, n);
+    return dest;
+  }
+
+  void *memchr(const void *str, int c, size_t n)
+  {
+    uint8_t *s = (uint8_t *)str;
+
+    for (size_t i = 0; i < n; i++)
+    {
+      if (*(s + i) == c)
+      {
+        return (s + i);
+      }
+    }
+
+    return nullptr;
+  }
+
   void *memmove(void *dstptr, const void *srcptr, size_t size)
   {
     uint8_t *dst = reinterpret_cast<uint8_t *>(dstptr);
@@ -266,6 +332,61 @@ extern "C"
   {
     return (i < 0) ? -i : i;
   }
+
+  int atoi(const char *str)
+  {
+    int n = 0;
+    int neg = 0;
+    while (isspace(*str))
+    {
+      str++;
+    }
+    switch (*str)
+    {
+    case '-':
+      neg = 1;
+      break;
+    case '+':
+      str++;
+      break;
+    }
+    /* Compute n as a negative number to avoid overflow on INT_MIN */
+    while (isdigit(*str))
+    {
+      n = 10 * n - (*str++ - '0');
+    }
+    return neg ? n : -n;
+  }
+}
+
+int isspace(int c)
+{
+  return (c == '\f' ||
+          c == '\n' ||
+          c == '\r' ||
+          c == '\t' ||
+          c == '\v' ||
+          c == ' ');
+}
+
+int isdigit(int c)
+{
+  if (c >= '0' && c <= '9')
+  {
+    return 1;
+  }
+
+  return 0;
+}
+
+int isprint(int c)
+{
+  if (c >= 0x20 && c <= 0x7e)
+  {
+    return 1;
+  }
+
+  return 0;
 }
 
 void *operator new(size_t size)

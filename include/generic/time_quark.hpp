@@ -20,5 +20,5 @@ public:
   ~Time_quark();
 
   // Get the current time in seconds
-  virtual uint64_t gettime(void) = 0;
+  virtual uint64_t gettimestamp(void) = 0;
 };

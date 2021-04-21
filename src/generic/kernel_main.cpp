@@ -7,6 +7,8 @@ void kernel_main(void)
   tsos = &os_instance;
   char *init_file_path = "/bin/init";
   char *serialmessage = "Welcome to TS/OS";
+  char *timemessage = new char[20];
+  volatile uint64_t time;
 
 #ifdef __PERSONAL_COMPUTER__
   GlobalDescriptorTable gdt;
@@ -30,6 +32,7 @@ void kernel_main(void)
   tsos->video.putstring(0, tsos->video.scroll++, tsos->serial.name);
   tsos->video.putstring(0, tsos->video.scroll++, tsos->sound.name);
   tsos->video.putstring(0, tsos->video.scroll++, tsos->video.name);
+  tsos->video.putstring(0, tsos->video.scroll++, tsos->time.name);
 
   // This is quite annoying, so I'll comment it out
   // tsos->sound.playtone(100);
@@ -40,9 +43,15 @@ void kernel_main(void)
   {
     tsos->serial.outbyte(serialmessage[pos++]);
   }
+  tsos->serial.outbyte('\n');
 
   while (true)
   {
+    time = tsos->time.gettimestamp();
+#ifdef __i386__
+    timemessage = itoa(time, timemessage, 10);
+    tsos->video.putstring(0, tsos->video.scroll, timemessage);
+#endif
   }
 
   if (!tsos->filesystem.exists(init_file_path))

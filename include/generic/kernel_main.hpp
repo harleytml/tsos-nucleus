@@ -7,6 +7,13 @@
 #pragma once
 
 #include <generic/nucleus_instance.hpp>
-#include <generic/array.hpp>
 
-extern "C" void kernel_main(void);
+extern "C"
+{
+#ifdef __i386__
+
+  char *itoa(int value, char *str, int base);
+
+#endif
+  void kernel_main(void);
+}

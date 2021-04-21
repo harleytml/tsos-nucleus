@@ -237,5 +237,8 @@ TIME SYSCALLS:
 
 ```text
 
+gettimestamp:
+
+Get seconds since EPOCH
 
 ```

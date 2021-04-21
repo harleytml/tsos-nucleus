@@ -14,7 +14,7 @@
 
 #include <generic/filesystem_quark.hpp>
 #include <generic/filesystem_file.hpp>
-#include <generic/array.hpp>
+
 #include <generic/string.hpp>
 
 #define FIRST_CLUSTER_INDEX_IN_FAT ((3))
