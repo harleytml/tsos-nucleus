@@ -1,5 +1,11 @@
 // AArch64 mode
- 
+
+// Reserve a stack for the initial thread.
+.section .bss, "aw", @nobits
+stack_bottom:
+.skip 16384 // 16 KiB
+stack_top:
+
 // To keep this in the first portion of the binary.
 .section ".text.boot"
  
