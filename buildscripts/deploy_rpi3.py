@@ -17,6 +17,7 @@ if os.system("llvm-objcopy -O binary nucleus") != 0:
 shutil.copy("./nucleus", "./filesystem/")
 shutil.copy("../contrib/rpi-firmware/boot/bootcode.bin", "./filesystem/")
 shutil.copy("../contrib/rpi-firmware/boot/start.elf", "./filesystem/")
+shutil.copy("../contrib/rpi-firmware/boot/LICENCE.broadcom", "./filesystem/")
 shutil.copy("../misc/config.txt", "./filesystem/")
 
 # Make a file to make into a drive image
