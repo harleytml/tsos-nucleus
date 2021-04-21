@@ -15,8 +15,8 @@
     },
     "rpi3": {
         "description": "Raspberry Pi 3",
-        "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
-        "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
+        "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -display none -serial stdio",
+        "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -display none -serial stdio -s -S",
         "required_test_tools": ["qemu-system-aarch64"],
         "required_tools": ["llvm-objcopy"]
     },

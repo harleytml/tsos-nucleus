@@ -20,6 +20,7 @@ stack_top:
 // x3 -> 0
 // x4 -> 32 bit kernel entry point, _start location
 _start:
+
     // set stack before our code
     ldr     x5, =_start
     mov     sp, x5
