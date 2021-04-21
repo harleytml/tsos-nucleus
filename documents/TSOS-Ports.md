@@ -35,3 +35,7 @@ This is the Apple Mac99 based PowerMAC, with a ppc processor
 cubieboard
 
 This is the cubietech cubieboard, with a Cortex-A8 processor
+
+vexpress-a15
+
+ARM Versatile Express for Cortex-A15
