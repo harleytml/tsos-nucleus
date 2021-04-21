@@ -58,7 +58,7 @@ if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
     print("Supported systems:\n")
 
     for x in build_settings:
-        print((x, "-", build_settings[x]["description"]))
+        print(x, "-", build_settings[x]["description"])
     cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
     cprint("Look in buildscript directory to find the buildscripts pertaining to the systems\n", "yellow")
     sys.exit(1)

@@ -54,6 +54,14 @@ if(PLATFORM STREQUAL "CUBIEBOARD1")
        "startup/cubieboard1/*" "startup/arm/*")
 endif(PLATFORM STREQUAL "CUBIEBOARD1")
 
+if(PLATFORM STREQUAL "VEXPRESS-A15")
+  set(platform_options -D__VEXPRESS_A15__ -mtune=cortex-a15
+                       --target=armv7a-unknown-none-eabi -mgeneral-regs-only)
+  set(linker_script_command -T${linkerscriptdir}/cubieboard1.ld)
+  file(GLOB platform_specific_files "src/vexpress-a15/*" "src/arm/*"
+       "startup/vexpress-a15/*" "startup/arm/*")
+endif(PLATFORM STREQUAL "VEXPRESS-A15")
+
 include_directories("include")
 
 file(GLOB source_files "src/generic/*")
