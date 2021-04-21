@@ -58,6 +58,7 @@ private:
     uint32_t version_major;
     uint16_t superuser;
     uint16_t supergroup;
+
     // The following fields are valid iff version_major >= 1
     uint32_t first_inode;
     uint16_t inode_size;
@@ -134,7 +135,7 @@ private:
     char *name;
     uint32_t inode;
     uint32_t type;
-  };
+  } __attribute__((packed));
 
   class ext2_directory_entry_t
   {
@@ -144,7 +145,7 @@ private:
     uint8_t name_len_low;
     uint8_t type;
     char name[];
-  };
+  } __attribute__((packed));
 
   enum class Directory_entry : uint8_t
   {
