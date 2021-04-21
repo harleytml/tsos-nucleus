@@ -71,7 +71,7 @@ uint64_t CMOS_quark::Date::totimestamp()
   const uint32_t MONTH_PER_YEAR = 12;
   const static uint16_t DAYS_PER_YEAR[2] = {365, 366};
 
-  const uint8_t DAYS_PER_MONTH[2][MONTH_PER_YEAR] = {
+  const static uint8_t DAYS_PER_MONTH[2][MONTH_PER_YEAR] = {
       {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
       {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
   };
