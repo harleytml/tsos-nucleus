@@ -59,6 +59,7 @@
 #include <rpi3/rpi3_sd_card.hpp>
 #include <rpi3/rpi3_sound.hpp>
 #include <rpi3/rpi3_uart.hpp>
+#include <rpi3/rpi3_io.hpp>
 
 #endif
 
