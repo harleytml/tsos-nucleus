@@ -11,7 +11,7 @@ from termcolor import cprint
 
 def recurse(dic):
     def one_directory(dic, path):
-        for name, info in dic.items():
+        for name, info in list(dic.items()):
             next_path = path + "/" + name
             if isinstance(info, dict):
                 if not(os.path.exists(next_path)):
@@ -58,7 +58,7 @@ if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
     print("Supported systems:\n")
 
     for x in build_settings:
-        print(x, "-", build_settings[x]["description"])
+        print((x, "-", build_settings[x]["description"]))
     cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
     cprint("Look in buildscript directory to find the buildscripts pertaining to the systems\n", "yellow")
     sys.exit(1)
