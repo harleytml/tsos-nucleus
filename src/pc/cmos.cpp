@@ -3,7 +3,7 @@
 
 CMOS_quark::CMOS_quark()
 {
-  name = "CMOS";
+  name = "Complementary Metal Oxide Semiconductor";
 }
 
 CMOS_quark::~CMOS_quark()
