@@ -1,4 +1,5 @@
 /* By Tsuki Superior
+ * Copyright (C) 2017  Francois Berder <fberder@outlook.fr>
  * Generic FAT16 Quark
  *
  * The FAT16 will be used rarely these days, but you might see it on a floppy disk
@@ -125,6 +126,9 @@ private:
   void markrootentryasavailable(uint16_t entry_index);
   bool lastentryinrootdirectory(uint16_t entry_index);
   void freeclusterchain(uint16_t cluster);
+  uint32_t readfromhandle(class entry_handle *handle, void *buffer, uint32_t count);
+  uint32_t getnextcluster(uint16_t *next_cluster, uint16_t cluster);
+  uint32_t movetodataregion(uint16_t cluster, uint16_t offset);
 
   //*/
 };
