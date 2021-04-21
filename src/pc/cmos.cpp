@@ -3,7 +3,7 @@
 
 CMOS_quark::CMOS_quark()
 {
-  name = "Complementary Metal Oxide Semiconductor";
+  name = "Complementary Metal Oxide Semiconductor Real Time Clock";
 }
 
 CMOS_quark::~CMOS_quark()
