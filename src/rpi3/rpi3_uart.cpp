@@ -34,3 +34,13 @@ uint8_t RPI3_UART_quark::inbyte(void)
 {
     return mmio_read((uint32_t)registers::UART0_DR);
 }
+
+void RPI3_UART_quark::mmio_write(uint32_t reg, uint32_t data)
+{
+	*(volatile uint32_t *)((uintptr_t)registers::MMIO_BASE + reg) = data;
+}
+
+uint32_t RPI3_UART_quark::mmio_read(uint32_t reg)
+{
+	return *(volatile uint32_t*)((uintptr_t)registers::MMIO_BASE + reg);
+}
