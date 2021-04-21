@@ -14,6 +14,10 @@ void kernel_main(void)
   GlobalDescriptorTable gdt;
 #endif
 
+#ifdef __RASPBERRY_PI_3__
+  tsos->serial.reset();
+#endif
+
   tsos->video.settextforegroundcolor(0xff, 0xff, 0xff);
   tsos->video.settextbackgroundcolor(0x00, 0x00, 0x00);
   tsos->video.reset();

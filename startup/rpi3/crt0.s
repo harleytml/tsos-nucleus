@@ -4,7 +4,7 @@
 .section ".text.boot"
  
 // Make _start global.
-.globl _start
+.global _start
  
 .org 0x80000
 // Entry point for the kernel. Registers:
