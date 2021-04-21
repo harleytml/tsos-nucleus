@@ -21,8 +21,8 @@ shutil.copy("../contrib/rpi-firmware/boot/LICENCE.broadcom", "./filesystem/")
 shutil.copy("../misc/config.txt", "./filesystem/")
 
 with open("nucleus.img", "wb") as f:
-    f.seek(1024 * 1024 * 50) # One GB
-    f.write('\x00')
+    f.seek(1024 * 1024 * 50) # 50 MB
+    f.write(bytes('\x00'))
     f.close()
     
 # Make the image into a vfat drive
