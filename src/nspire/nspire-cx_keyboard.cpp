@@ -21,7 +21,7 @@ void NSPIRE_CX_KEYBOARD_quark::reset(void)
 
 key_identifier NSPIRE_CX_KEYBOARD_quark::getkey(void)
 {
-  return KEY_NULL;
+  return key_identifier::KEY_NULL;
 }
 
 void NSPIRE_CX_KEYBOARD_quark::waitkey(void)

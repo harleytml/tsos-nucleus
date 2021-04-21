@@ -30,7 +30,7 @@ key_identifier AT_KEYBOARD_quark::getkey(void)
   switch (*((uint8_t *)0x496))
   {
   default:
-    return KEY_NULL;
+    return key_identifier::KEY_NULL;
   }
 }
 

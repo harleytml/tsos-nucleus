@@ -6,7 +6,7 @@
 
 #pragma once
 
-enum key_identifier
+enum class key_identifier : uint8_t
 {
     KEY_NULL,
     KEY_0,

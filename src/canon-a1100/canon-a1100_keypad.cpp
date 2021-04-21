@@ -21,7 +21,7 @@ void CANON_A1100_KEYPAD_quark::reset(void)
 
 key_identifier CANON_A1100_KEYPAD_quark::getkey(void)
 {
-  return KEY_NULL;
+  return key_identifier::KEY_NULL;
 }
 
 void CANON_A1100_KEYPAD_quark::waitkey(void)
