@@ -1,5 +1,6 @@
 /* By Tsuki Superior
  * Copyright (C) 2017  Francois Berder <fberder@outlook.fr>
+ *
  * Generic FAT16 Quark
  *
  * The FAT16 will be used rarely these days, but you might see it on a floppy disk
@@ -73,7 +74,7 @@ private:
     uint32_t size;
   } __attribute__((packed));
 
-  enum FILE_ATTRIBUTE
+  enum class FILE_ATTRIBUTE : uint8_t
   {
     READ_ONLY = 0x01,
     HIDDEN = 0x02,

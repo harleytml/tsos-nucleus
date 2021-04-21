@@ -217,11 +217,11 @@ bool FAT16_quark::deleteentryinroot(char *name, bool is_file)
   //dev.read(&entry, sizeof(entry));
 
   // Check that we are deleting an entry of the right type
-  if (entry.attribute & VOLUME)
+  if (entry.attribute & static_cast<uint8_t>(FILE_ATTRIBUTE::VOLUME))
   {
     return -1;
   }
-  if ((is_file && (entry.attribute & SUBDIR)) || (!is_file && !(entry.attribute & SUBDIR)))
+  if ((is_file && (entry.attribute & static_cast<uint8_t>(FILE_ATTRIBUTE::SUBDIR))) || (!is_file && !(entry.attribute & static_cast<uint8_t>(FILE_ATTRIBUTE::SUBDIR))))
   {
     return -1;
   }
@@ -288,7 +288,7 @@ void FAT16_quark::markrootentryasavailable(uint16_t entry_index)
   }
 
   movetorootdirectoryregion(entry_index);
-  //dev.write(&entry, sizeof(entry));
+  tsos->disk.setbytes(seekpoint, sizeof(entry), reinterpret_cast<uint8_t *>(&entry));
 }
 
 bool FAT16_quark::lastentryinrootdirectory(uint16_t entry_index)
@@ -302,20 +302,22 @@ bool FAT16_quark::lastentryinrootdirectory(uint16_t entry_index)
      * root directory list.
      */
   movetorootdirectoryregion(entry_index + 1);
-  //dev.read(&tmp, sizeof(tmp));
+  tmp = tsos->disk.getbytes(seekpoint, sizeof(tmp))[0];
   return tmp == 0;
 }
 
 void FAT16_quark::freeclusterchain(uint16_t cluster)
 {
   /*
-     * If the file is empty, the starting cluster variable is equal to 0.
-     * No need to iterate through the FAT.
-     */
+   * If the file is empty, the starting cluster variable is equal to 0.
+   * No need to iterate through the FAT.
+   */
   if (cluster == 0)
+  {
     return;
+  }
 
-  /* Mark all clusters in the FAT as available */
+  // Mark all clusters in the FAT as available
   do
   {
     uint16_t free_cluster = 0;
@@ -339,13 +341,13 @@ uint32_t FAT16_quark::readfromhandle(class entry_handle *handle, void *buffer, u
   uint32_t bytes_read_count = 0;
   uint8_t *bytes = (uint8_t *)buffer;
 
-  /* Check if we reach end of file */
+  // Check if we reach end of file
   if (handle->remaining_bytes == 0)
   {
     return 0;
   }
 
-  /* Check that cluster is valid */
+  // Check that cluster is valid
   if (handle->cluster == 0)
   {
     return 0;
@@ -353,26 +355,26 @@ uint32_t FAT16_quark::readfromhandle(class entry_handle *handle, void *buffer, u
 
   movetodataregion(handle->cluster, handle->offset);
 
-  /* Read in chunk until count is 0 or end of file is reached */
+  // Read in chunk until count is 0 or end of file is reached
   while (count > 0)
   {
     uint32_t chunk_length = count;
     uint32_t bytes_remaining_in_cluster = 0;
 
-    /* Check if we reach end of file */
+    // Check if we reach end of file
     if (handle->remaining_bytes == 0)
     {
       return bytes_read_count;
     }
 
-    /* Check that we read within the boundary of the current cluster */
+    // Check that we read within the boundary of the current cluster
     bytes_remaining_in_cluster = bpb.sectors_per_cluster * bpb.bytes_per_sector - handle->offset;
     if (chunk_length > bytes_remaining_in_cluster)
     {
       chunk_length = bytes_remaining_in_cluster;
     }
 
-    /* Check that we do not read past the end of file */
+    // Check that we do not read past the end of file
     if (chunk_length > handle->remaining_bytes)
     {
       chunk_length = handle->remaining_bytes;
@@ -385,7 +387,7 @@ uint32_t FAT16_quark::readfromhandle(class entry_handle *handle, void *buffer, u
     {
       handle->offset = 0;
 
-      /* Look for the next cluster in the FAT, unless we are already reading the last one */
+      // Look for the next cluster in the FAT, unless we are already reading the last one
       if (handle->remaining_bytes != 0)
       {
         uint16_t next_cluster;

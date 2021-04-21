@@ -1,6 +1,8 @@
 /* By Tsuki Superior
  * Generic EXT2 Quark
  *
+ * This was modeled after Snowflake OS's ext2 driver
+ *
  */
 
 #pragma once
