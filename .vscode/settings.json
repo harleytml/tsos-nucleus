@@ -9,6 +9,9 @@
         "*.json": "json",
         "*.inc": "makefile",
         "*.anim": "yaml",
-        "cstdint": "cpp"
+        "*.asm": "lldb.disassembly",
+        "*.s": "arm",
+        "cstdint": "cpp",
+        "random": "cpp"
     }
 }

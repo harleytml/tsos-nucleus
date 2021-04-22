@@ -17,8 +17,8 @@ void kernel_main(void)
   tsos->serial.reset();
 #endif
 
-  tsos->video.settextforegroundcolor(0xff, 0xff, 0xff);
-  tsos->video.settextbackgroundcolor(0x00, 0x00, 0x00);
+  tsos->video.settextforegroundcolor(0xff, 0xff, 0x00);
+  tsos->video.settextbackgroundcolor(0x00, 0x00, 0xff);
   tsos->video.reset();
   tsos->video.clear();
   tsos->video.scroll++;

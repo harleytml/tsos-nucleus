@@ -39,11 +39,11 @@ void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
   uint8_t a = 0;
   uint16_t screenwidth = getscreenwidth();
   uint16_t intendedposition = ((posy * screenwidth) + posx) * 2;
-	uint16_t cx;
+  uint16_t cx;
   uint16_t cy;
-	uint8_t mask[8]={1,2,4,8,16,32,64,128};
-	uint8_t *glyph=font.data+(int)c*16;
- 
+  uint8_t mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+  uint8_t *glyph = font.data + (int)c * font.width;
+
   switch (mode)
   {
   case TEXT:
@@ -102,14 +102,14 @@ void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, c
     return;
   case GRAPHIC:
 
-	  for(cy=0; cy<16; cy++)
+    for (cy = 0; cy < font.height; cy++)
     {
-		  for(cx=0; cx<8; cx++)
+      for (cx = 0; cx < font.width; cx++)
       {
-			  drawpx(posx + cx ,posy + cy - 12, glyph[cy] & mask[cx] ? fc : bc);
-		  }
-	  }
-  
+        drawpx(posx + cx, posy + cy - 12, glyph[cy] & mask[cx] ? fc : bc);
+      }
+    }
+
     return;
   default:
     return;
