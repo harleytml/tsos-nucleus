@@ -17,9 +17,9 @@
 
 ## Platforms
 
-- `PC` - Personal Computer - Boots, most promising port
+- `PC` - Personal Computer - Boots on real hardware, most promising port
 - `NSPIRE` - TI-Nspire - Quark model in place, research being done
-- `RPI3` - Raspberry Pi 3 - Serial Works
+- `RPI3` - Raspberry Pi 3 - Boots on QEMU, Serial Works on QEMU
 - `CANON-A1100` - Canon PowerShot A1100IS - Primitive and experimental quarks in place, and being modeled
 - `CUBIEBOARD1` - CubieTech Cubieboard 1 - Planning being done
 - `VEXPRESS-A15` - ARM Versatile Express for Cortex-A15 - Planning being done
