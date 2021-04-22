@@ -7,8 +7,18 @@ Time::Time(void)
 
 #ifdef __PERSONAL_COMPUTER__
 
-  static CMOS_quark cmos_quark = CMOS_quark();
+  static CMOS_quark cmos_quark;
+
   attachquark(cmos_quark);
+
+#endif
+
+#ifdef __RASPBERRY_PI_3__
+
+  static RPI3_TIME_quark rpi3_time_quark;
+
+  attachquark(rpi3_time_quark);
+
 #endif
 }
 

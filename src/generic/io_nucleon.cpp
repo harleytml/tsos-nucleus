@@ -5,14 +5,14 @@
 IO::IO(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static PC_IO_quark pc_io_quark = PC_IO_quark();
+  static PC_IO_quark pc_io_quark;
   if (attachquark(pc_io_quark))
   {
   }
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-  static RPI3_IO_quark rpi3_io_quark = RPI3_IO_quark();
+  static RPI3_IO_quark rpi3_io_quark;
   if (attachquark(rpi3_io_quark))
   {
   }

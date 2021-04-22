@@ -9,12 +9,14 @@ Filesystem::Filesystem(void)
   static FAT32_quark fat32_quark;
   static SFS_quark sfs_quark;
   static UDF_quark udf_quark;
+  static EXT2_quark ext2_quark;
 
   if (attachquark(fat32_quark) ||
       attachquark(fat16_quark) ||
       attachquark(fat12_quark) ||
       attachquark(sfs_quark) ||
-      attachquark(udf_quark))
+      attachquark(udf_quark) ||
+      attachquark(ext2_quark))
   {
     return;
   }

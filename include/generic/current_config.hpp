@@ -10,6 +10,7 @@
 #include <generic/fat12.hpp>
 #include <generic/fat16.hpp>
 #include <generic/fat32.hpp>
+#include <generic/ext2.hpp>
 #include <generic/sfs.hpp>
 #include <generic/udf.hpp>
 #include <generic/elf.hpp>
@@ -60,9 +61,21 @@
 #include <rpi3/rpi3_sound.hpp>
 #include <rpi3/rpi3_uart.hpp>
 #include <rpi3/rpi3_io.hpp>
+#include <rpi3/rpi3_time.hpp>
 
 #endif
 
-#ifdef __NINTENDO_DUAL_SCREEN__
+#ifdef __CANON_A1100__
+
+#include <canon-a1100/canon-a1100_boot.hpp>
+#include <canon-a1100/canon-a1100_keypad.hpp>
+#include <canon-a1100/canon-a1100_screen.hpp>
+#include <canon-a1100/canon-a1100_sd_card.hpp>
+#include <canon-a1100/canon-a1100_sound.hpp>
+#include <canon-a1100/canon-a1100_uart.hpp>
+
+#endif
+
+#ifdef __VEXPRESS_A15__
 
 #endif

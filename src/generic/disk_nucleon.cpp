@@ -5,26 +5,34 @@
 Disk::Disk(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static ATAPI_quark cd_quark = ATAPI_quark();
+  static ATAPI_quark cd_quark;
 
   attachquark(cd_quark);
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-  static RPI3_SD_CARD_quark rpi3_sd_card_quark = RPI3_SD_CARD_quark();
+  static RPI3_SD_CARD_quark rpi3_sd_card_quark;
 
   attachquark(rpi3_sd_card_quark);
 #endif
 
 #ifdef __NSPIRE__
-  static NSPIRE_CM_DISK_quark nspire_cm_disk_quark = NSPIRE_CM_DISK_quark();
-  static NSPIRE_CX_DISK_quark nspire_cx_disk_quark = NSPIRE_CX_DISK_quark();
+  static NSPIRE_CM_DISK_quark nspire_cm_disk_quark;
+  static NSPIRE_CX_DISK_quark nspire_cx_disk_quark;
 
   if (attachquark(nspire_cm_disk_quark) ||
       attachquark(nspire_cx_disk_quark))
   {
     return;
   }
+
+#endif
+
+#ifdef __CANON_A1100__
+
+  static CANON_A1100_SD_CARD_quark canon_a1100_sd_card_quark;
+
+  attachquark(canon_a1100_sd_card_quark);
 
 #endif
 }

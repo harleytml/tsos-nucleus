@@ -4,7 +4,7 @@
 
 Process::Process(void)
 {
-  static ELF_quark elf_quark = ELF_quark();
+  static ELF_quark elf_quark;
 
   attachquark(elf_quark);
 }

@@ -5,20 +5,20 @@
 Serial::Serial(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  static PC_UART_quark pc_uart_quark = PC_UART_quark();
+  static PC_UART_quark pc_uart_quark;
 
   attachquark(pc_uart_quark);
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-  static RPI3_UART_quark rpi3_uart_quark = RPI3_UART_quark();
+  static RPI3_UART_quark rpi3_uart_quark;
 
   attachquark(rpi3_uart_quark);
 #endif
 
 #ifdef __NSPIRE__
-  static NSPIRE_CM_UART_quark nspire_cm_uart_quark = NSPIRE_CM_UART_quark();
-  static NSPIRE_CX_UART_quark nspire_cx_uart_quark = NSPIRE_CX_UART_quark();
+  static NSPIRE_CM_UART_quark nspire_cm_uart_quark;
+  static NSPIRE_CX_UART_quark nspire_cx_uart_quark;
 
   if (attachquark(nspire_cm_uart_quark) ||
       attachquark(nspire_cx_uart_quark))

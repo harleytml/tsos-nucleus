@@ -7,10 +7,10 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
   scroll = 0;
 
 #ifdef __PERSONAL_COMPUTER__
-  static EGA_quark ega_quark = EGA_quark();
-  static VGA_quark vga_quark = VGA_quark();
-  static CGA_quark cga_quark = CGA_quark();
-  static MDA_quark mda_quark = MDA_quark();
+  static EGA_quark ega_quark;
+  static VGA_quark vga_quark;
+  static CGA_quark cga_quark;
+  static MDA_quark mda_quark;
 
   if (attachquark(vga_quark) ||
       attachquark(ega_quark) ||
@@ -22,14 +22,14 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
 #endif
 
 #ifdef __RASPBERRY_PI_3__
-  static RPI3_SCREEN_quark rpi3_screen_quark = RPI3_SCREEN_quark();
+  static RPI3_SCREEN_quark rpi3_screen_quark;
 
   attachquark(rpi3_screen_quark);
 #endif
 
 #ifdef __NSPIRE__
-  static NSPIRE_CM_SCREEN_quark nspire_cm_screen_quark = NSPIRE_CM_SCREEN_quark();
-  static NSPIRE_CX_SCREEN_quark nspire_cx_screen_quark = NSPIRE_CX_SCREEN_quark();
+  static NSPIRE_CM_SCREEN_quark nspire_cm_screen_quark;
+  static NSPIRE_CX_SCREEN_quark nspire_cx_screen_quark;
 
   if (attachquark(nspire_cm_screen_quark) ||
       attachquark(nspire_cx_screen_quark))
