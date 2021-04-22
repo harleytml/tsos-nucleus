@@ -16,4 +16,5 @@ extern "C"
 
 #endif
   void kernel_main(void);
+  void debug_msg(char *str);
 }
