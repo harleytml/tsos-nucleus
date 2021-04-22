@@ -77,7 +77,7 @@ Debian/Ubuntu :
 
 ```sh
 sudo apt-get update
-sudo apt-get install clang lld llvm make cmake python3 python3-pip dosfstools grub-pc-bin xorriso grub2
+sudo apt-get install clang lld llvm make cmake python3 python3-pip dosfstools grub-pc-bin xorriso grub2 gdb-multiarch
 pip3 install -r requirements.txt
 ```
 

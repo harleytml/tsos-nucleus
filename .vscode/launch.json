@@ -3,11 +3,11 @@
         "name": "(gdb) Launch",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/build/nucleus",
+        "program": "${workspaceFolder}/build/nucleus.elf",
         "miDebuggerServerAddress": "localhost:1234",
         "MIMode": "gdb",
         "cwd": "${workspaceFolder}",
-
+        "miDebuggerPath": "/usr/bin/gdb-multiarch",
         "setupCommands": [{
             "description": "Enable pretty-printing for gdb",
             "text": "-enable-pretty-printing",
