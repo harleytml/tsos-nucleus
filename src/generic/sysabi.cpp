@@ -21,8 +21,9 @@ extern "C"
       tsos->boot.fission((static_cast<char *>(syscall_info.input_data[0])));
       break;
     case syscall_t::getbytes:
-      syscall_info.output_data[0] = static_cast<void *>(tsos->disk.getbytes(*(static_cast<uint32_t *>(syscall_info.input_data[0])),
-                                                                            *(static_cast<uint16_t *>(syscall_info.input_data[1]))));
+      tsos->disk.getbytes(*(static_cast<uint32_t *>(syscall_info.input_data[0])),
+                          *(static_cast<uint16_t *>(syscall_info.input_data[1])),
+                          *(static_cast<uint8_t **>(syscall_info.input_data[2])));
       break;
     case syscall_t::setbytes:
       tsos->disk.setbytes(*(static_cast<uint32_t *>(syscall_info.input_data[0])),

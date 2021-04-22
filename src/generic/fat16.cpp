@@ -11,7 +11,8 @@ FAT16_quark::FAT16_quark(void)
 bool FAT16_quark::detectsystem(void)
 {
   return true;
-  uint8_t *diskfsname = tsos->disk.getbytes(0x4f, 0x05);
+  uint8_t diskfsname[5];
+  tsos->disk.getbytes(0x4f, 0x05, diskfsname);
   const char *fsname = "FAT16";
   for (uint8_t x = 0; x < 0x5; x++)
   {
@@ -212,10 +213,9 @@ bool FAT16_quark::deleteentryinroot(char *name, bool is_file)
   }
 
   movetorootdirectoryregion(entry_index);
-  memcpy((void *)&entry, tsos->disk.getbytes(seekpoint, sizeof(entry)), sizeof(entry));
+  tsos->disk.getbytes(seekpoint, sizeof(entry), (uint8_t *)&entry);
 
   //dev.read(&entry, sizeof(entry));
-
   // Check that we are deleting an entry of the right type
   if (entry.attribute & static_cast<uint8_t>(FILE_ATTRIBUTE::VOLUME))
   {
@@ -302,7 +302,7 @@ bool FAT16_quark::lastentryinrootdirectory(uint16_t entry_index)
      * root directory list.
      */
   movetorootdirectoryregion(entry_index + 1);
-  tmp = tsos->disk.getbytes(seekpoint, sizeof(tmp))[0];
+  tsos->disk.getbytes(seekpoint, sizeof(tmp), &tmp);
   return tmp == 0;
 }
 
@@ -409,7 +409,7 @@ uint32_t FAT16_quark::readfromhandle(class entry_handle *handle, void *buffer, u
 uint32_t FAT16_quark::getnextcluster(uint16_t *next_cluster, uint16_t cluster)
 {
   movetofatregion(cluster);
-  next_cluster = reinterpret_cast<uint16_t *>(tsos->disk.getbytes(seekpoint, sizeof(cluster)));
+  (tsos->disk.getbytes(seekpoint, sizeof(cluster), reinterpret_cast<uint8_t *>(&next_cluster)));
 
   return 0;
 }

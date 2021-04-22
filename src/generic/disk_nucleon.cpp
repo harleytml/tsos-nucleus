@@ -33,11 +33,9 @@ Disk::~Disk()
 {
 }
 
-uint8_t *Disk::getbytes(uint32_t offset, uint16_t len) const
+void Disk::getbytes(uint32_t offset, uint16_t len, uint8_t *data) const
 {
-  uint8_t *buffer = (uint8_t *)nullptr;
-  quark->getbytes(buffer, offset, len);
-  return buffer;
+  quark->getbytes(data, offset, len);
 }
 
 uint16_t Disk::getsectorsize(void) const

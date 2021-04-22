@@ -10,7 +10,8 @@ EXT2_quark::EXT2_quark(void)
 bool EXT2_quark::detectsystem(void)
 {
   return true;
-  uint8_t *diskfsname = tsos->disk.getbytes(0x4f, 0x04);
+  uint8_t diskfsname[4];
+  tsos->disk.getbytes(0x4f, 0x04, diskfsname);
   const char *fsname = "EXT2";
   for (uint8_t x = 0; x < 0x4; x++)
   {

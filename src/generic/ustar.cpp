@@ -10,15 +10,6 @@ USTAR_quark::USTAR_quark(void)
 bool USTAR_quark::detectsystem(void)
 {
   return true;
-  uint8_t *diskfsname = tsos->disk.getbytes(0x4f, 0x05);
-  const char *fsname = "FAT32";
-  for (uint8_t x = 0; x < 0x5; x++)
-  {
-    if ((uint8_t)fsname[x] != diskfsname[x])
-    {
-      return false;
-    }
-  }
 }
 
 void USTAR_quark::reset(void)

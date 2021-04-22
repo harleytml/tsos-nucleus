@@ -23,7 +23,7 @@ public:
   ~Disk();
 
   // Get an amount of bytes from the disk
-  uint8_t *getbytes(uint32_t offset, uint16_t len) const;
+  void getbytes(uint32_t offset, uint16_t len, uint8_t *data) const;
 
   // Get an amount of bytes from the disk
   void setbytes(uint32_t offset, uint16_t len, uint8_t *data) const;
