@@ -43,6 +43,7 @@ extern "C"
 	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
 	void __aeabi_memcpy(void *dest, const void *src, size_t n);
 	void __aeabi_memclr(void *dest, size_t n);
+	void __aeabi_memclr4(void *dest, size_t n);
 	void __aeabi_memmove(void *dest, const void *src, size_t n);
 	void __aeabi_memset(void *dest, size_t n, int c);
 	signed int __aeabi_idiv(signed int num, signed int den);

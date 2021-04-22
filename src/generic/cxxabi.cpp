@@ -119,6 +119,11 @@ extern "C"
     memset(dest, 0, n);
   }
 
+  void __aeabi_memclr4(void *dest, size_t n)
+  {
+    memset(dest, 0, n);
+  }
+
   void __aeabi_memmove(void *dest, const void *src, size_t n)
   {
     memmove(dest, src, n);
