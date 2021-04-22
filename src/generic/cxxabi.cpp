@@ -134,6 +134,16 @@ extern "C"
     memmove(dest, src, n);
   }
 
+  void *__aeabi_memmove4(void *dest, const void *src, size_t n)
+  {
+    return memmove(dest, src, n);
+  }
+
+  void *__aeabi_memmove8(void *dest, const void *src, size_t n)
+  {
+    return memmove(dest, src, n);
+  }
+
   void __aeabi_memset(void *dest, size_t n, int c)
   {
     memset(dest, c, n);
