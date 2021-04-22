@@ -124,6 +124,11 @@ extern "C"
     memset(dest, 0, n);
   }
 
+  void __aeabi_memclr8(void *dest, size_t n)
+  {
+    memset(dest, 0, n);
+  }
+
   void __aeabi_memmove(void *dest, const void *src, size_t n)
   {
     memmove(dest, src, n);
@@ -134,10 +139,63 @@ extern "C"
     memset(dest, c, n);
   }
 
-#endif
+  signed int __aeabi_idiv(int numerator, int denominator)
+  {
+    uint32_t num;
+    uint32_t den;
+    uidiv_t ret;
 
-// Only works on x86 right now
-#ifdef __i386__
+    if (numerator >= 0)
+    {
+      num = numerator;
+    }
+    else
+    {
+      num = 0 - numerator;
+    }
+    if (denominator >= 0)
+    {
+      den = denominator;
+    }
+    else
+    {
+      den = 0 - denominator;
+    }
+    ret = aeabi_uidivmod(num, den);
+    if ((numerator & __INT_MIN__) != (denominator & __INT_MIN__))
+    {
+      ret.quot *= -1;
+    }
+    return ret.quot;
+  }
+
+  void __aeabi_uidivmod(uint32_t num, uint32_t den)
+  {
+    uidiv_t_return(aeabi_uidivmod(num, den));
+  }
+
+  uidiv_t aeabi_uidivmod(uint32_t num, uint32_t den)
+  {
+    uidiv_t ret;
+    uint32_t quot = 0;
+    while (num >= den)
+    {
+      uint32_t q = 1;
+      while ((q << 1) * den <= num && q * den <= __UINT32_MAX__ / 2)
+      {
+        q <<= 1;
+      }
+      num -= q * den;
+      quot += q;
+    }
+    ret.quot = quot;
+    ret.rem = num;
+    return ret;
+  }
+
+  void uidiv_t_return(uidiv_t ret) {}
+
+#endif
 
   char *itoa(int value, char *str, int base)
   {
@@ -176,8 +234,6 @@ extern "C"
     }
     return rc;
   }
-
-#endif
 
   int __cxa_guard_acquire(__cxxabiv1::__guard *g)
   {

@@ -13,6 +13,7 @@
 #include <generic/types.hpp>
 
 #define ATEXIT_MAX_FUNCS (128)
+#define __INT_MIN__ (-__INT_MAX__ - 1)
 
 extern "C"
 {
@@ -31,22 +32,26 @@ extern "C"
 		void *dso_handle;
 	};
 
-// Only works on x86 right now
-#ifdef __i386__
-
-	char *itoa(int value, char *str, int base);
-
-#endif
-
 #ifdef __ARM_EABI__
+
+	class uidiv_t
+	{
+	public:
+		uint32_t quot;
+		uint32_t rem;
+	};
 
 	int __aeabi_atexit(void *arg, void (*func)(void *), void *d);
 	void __aeabi_memcpy(void *dest, const void *src, size_t n);
 	void __aeabi_memclr(void *dest, size_t n);
 	void __aeabi_memclr4(void *dest, size_t n);
+	void __aeabi_memclr8(void *dest, size_t n);
 	void __aeabi_memmove(void *dest, const void *src, size_t n);
 	void __aeabi_memset(void *dest, size_t n, int c);
 	signed int __aeabi_idiv(signed int num, signed int den);
+	void __aeabi_uidivmod(uint32_t num, uint32_t den);
+	uidiv_t aeabi_uidivmod(uint32_t num, uint32_t den);
+	void uidiv_t_return(uidiv_t ret);
 
 #endif
 
@@ -60,6 +65,7 @@ extern "C"
 	void *memmove(void *dstptr, const void *srcptr, size_t size);
 	void *memchr(const void *str, int c, size_t n);
 	int strcmp(const char *p1, const char *p2);
+	char *itoa(int value, char *str, int base);
 	size_t strlen(const char *str);
 	size_t strnlen(const char *s, size_t maxlen);
 	size_t oct2bin(char *str, size_t size);
