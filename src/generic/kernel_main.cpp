@@ -44,8 +44,8 @@ void kernel_main(void)
 
   while (true)
   {
+#ifdef __PERSONAL_COMPUTER__
     time = tsos->time.gettimestamp();
-#ifdef __i386__
     char *timemessage = new char[20];
     timemessage = itoa(time, timemessage, 10);
     tsos->video.putstring(0, tsos->video.scroll, timemessage);
