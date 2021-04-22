@@ -9,11 +9,6 @@ from termcolor import cprint
 
 shutil.copyfile("nucleus.elf", "nucleus")
 
-# Convert to binary
-if os.system("llvm-objcopy -O binary nucleus") != 0:
-    cprint("objcopy failed on given nucleus image!", "red")
-    sys.exit(1)
-
 shutil.copy("./nucleus", "./filesystem/")
 shutil.copy("../contrib/rpi-firmware/boot/bootcode.bin", "./filesystem/")
 shutil.copy("../contrib/rpi-firmware/boot/start.elf", "./filesystem/")

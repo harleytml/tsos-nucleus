@@ -84,12 +84,12 @@ void RPI3_UART_quark::reset(void)
 
 bool RPI3_UART_quark::isdevicereadytotransmit(void)
 {
-	return tsos->io.in32(static_cast<uint32_t>(registers::UART0_FR)) & (1 << 4);
+	return !(tsos->io.in32(static_cast<uint32_t>(registers::UART0_FR)) & (1 << 4));
 }
 
 bool RPI3_UART_quark::isdevicereadytoreceive(void)
 {
-	return tsos->io.in32(static_cast<uint32_t>(registers::UART0_FR)) & (1 << 5);
+	return !(tsos->io.in32(static_cast<uint32_t>(registers::UART0_FR)) & (1 << 5));
 }
 
 void RPI3_UART_quark::outbyte(uint8_t byte)

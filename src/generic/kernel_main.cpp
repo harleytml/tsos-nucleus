@@ -7,7 +7,7 @@ void kernel_main(void)
   tsos = &os_instance;
   char *init_file_path = "/bin/init";
   char *serialmessage = "Welcome to TS/OS";
-  char *timemessage = new char[20];
+  //char *timemessage = new char[20];
   volatile uint64_t time;
 
 #ifdef __PERSONAL_COMPUTER__
