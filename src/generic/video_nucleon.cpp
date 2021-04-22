@@ -76,6 +76,9 @@ void Video::putstring(uint16_t posx, uint16_t posy, const char *str) const
     case '\b':
       x--;
       break;
+    case '\t':
+      x += 3;
+      break;
 
       //Just a normal character
     default:
