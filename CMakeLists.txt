@@ -29,8 +29,9 @@ if(PLATFORM STREQUAL "PC")
 endif(PLATFORM STREQUAL "PC")
 
 if(PLATFORM STREQUAL "NSPIRE")
-  set(platform_options -D__NSPIRE__ -mtune=arm926ej-s
-                       --target=armv5tej-unknown-none-eabi -mgeneral-regs-only)
+  set(platform_options
+      -D__NSPIRE__ -mtune=arm926ej-s --target=armv5tej-unknown-none-eabi
+      -mgeneral-regs-only -fno-threadsafe-statics)
   set(linker_script_command -T${linkerscriptdir}/nspire.ld)
   file(
     GLOB
@@ -57,8 +58,9 @@ if(PLATFORM STREQUAL "RPI3")
 endif(PLATFORM STREQUAL "RPI3")
 
 if(PLATFORM STREQUAL "CANON-A1100")
-  set(platform_options -D__CANON_A1100__ -mtune=arm926ej-s
-                       --target=armv5tej-unknown-none-eabi -mgeneral-regs-only)
+  set(platform_options
+      -D__CANON_A1100__ -mtune=arm926ej-s --target=armv5tej-unknown-none-eabi
+      -mgeneral-regs-only -fno-threadsafe-statics)
   set(linker_script_command -T${linkerscriptdir}/canon-a1100.ld)
   file(
     GLOB
@@ -115,7 +117,6 @@ add_compile_options(
   -Wno-write-strings
   -Wno-deprecated-copy
   -Wno-unused-variable
-  -fno-threadsafe-statics
   -fno-exceptions
   -fno-builtin
   -fno-rtti
