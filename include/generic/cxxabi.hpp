@@ -49,8 +49,8 @@ extern "C"
 	void __aeabi_memmove(void *dest, const void *src, size_t n);
 	void __aeabi_memset(void *dest, size_t n, int c);
 	signed int __aeabi_idiv(signed int num, signed int den);
-	void __aeabi_uidivmod(uint32_t num, uint32_t den);
-	uidiv_t aeabi_uidivmod(uint32_t num, uint32_t den);
+	void __aeabi_uidivmod(unsigned int num, unsigned int den);
+	uidiv_t aeabi_uidivmod(unsigned int num, unsigned int den);
 	void uidiv_t_return(uidiv_t ret);
 
 #endif
