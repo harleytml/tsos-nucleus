@@ -47,8 +47,6 @@ extern "C"
 	void __aeabi_memclr4(void *dest, size_t n);
 	void __aeabi_memclr8(void *dest, size_t n);
 	void __aeabi_memmove(void *dest, const void *src, size_t n);
-	void __aeabi_memmove4(void *dest, const void *src, size_t n);
-	void __aeabi_memmove8(void *dest, const void *src, size_t n);
 	void __aeabi_memset(void *dest, size_t n, int c);
 	signed int __aeabi_idiv(signed int num, signed int den);
 	void __aeabi_uidivmod(uint32_t num, uint32_t den);
