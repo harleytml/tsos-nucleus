@@ -1,5 +1,5 @@
 	.global	__aeabi_uidivmod
-	.align	4
+	.align
 
 __aeabi_uidivmod:
 	stmfd	sp!, {r0, r1, ip, lr}

@@ -29,4 +29,4 @@
 #define uintptr_t __UINTPTR_TYPE__
 #define size_t __SIZE_TYPE__
 
-#define NULL __null
+#define NULL 0
