@@ -11,7 +11,7 @@ ldr     sp, =0x1900
 ldr     r3, =0xc022007c
 mov     r2, #0x44
 str     r2, [r3]
-	
+  
 // looks like idle cycle is required for proper shutdown
 mov     r3, #0x8000
 1:
@@ -21,6 +21,6 @@ bne	1b
 
 // ordinary startup...
 
-	mov     sp, #0x1900
-	mov     r11, #0
-	b	kernel_main
+  mov     sp, #0x1900
+  mov     r11, #0
+  b	kernel_main

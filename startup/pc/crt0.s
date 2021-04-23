@@ -31,21 +31,21 @@ heap_top:
 .global _start
 .type _start, @function
 _start:
-	movl $stack_top, %esp
+  movl $stack_top, %esp
 
-	# Call the global constructors.
-	# The init function doesn't appear to work with clang right now
-	# So i will skip
-	# call _init
+  # Call the global constructors.
+  # The init function doesn't appear to work with clang right now
+  # So i will skip
+  # call _init
 
-	# Transfer control to the main kernel.
-	call kernel_main
+  # Transfer control to the main kernel.
+  call kernel_main
 
-	# Hang if kernel_main unexpectedly returns.
-	cli
+  # Hang if kernel_main unexpectedly returns.
+  cli
 
 _stop:	
   hlt
-	jmp _stop
+  jmp _stop
 
 .size _start, . - _start
