@@ -5,9 +5,9 @@ SECTIONS {
      * memory map provided in the CoreTile TRM (see below).
      */
     
-    . = 0x80010000;
+  . = 0x80010000;
 
-	.text ALIGN(4) : 
+	.text : 
 	{
 		KEEP(*(.text.boot))
 		KEEP(*(.init))
@@ -17,14 +17,14 @@ SECTIONS {
 	}
  
 	/* Read-only data. */
-	.rodata ALIGN(16) :
+	.rodata :
 	{
 		*(.rodata)
 		*.(.rodata.*)
 	}
  
 	/* Read-write data (initialized) */
-	.data ALIGN(16) : 
+	.data : 
 	{
 		*(.data)
 		*(.data.*)
@@ -32,14 +32,10 @@ SECTIONS {
 	}
  
 	/* Read-write data (uninitialized) and stack */
-	.bss ALIGN(16) : 
+	.bss : 
 	{
 		*(COMMON)
 		*(.bss)
 		*(.bss.*)
 	}
-
-    STACK_BASE = .;
-    . += 0x10000;
-    STACK_TOP = .;
 }

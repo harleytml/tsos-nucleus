@@ -39,6 +39,14 @@ SECTIONS
     *(.bss.*)
   }
 
+  .heap :
+  {
+    LINKER_kernel_heap =  ADDR(.heap);
+    *(.heap)
+    *(.heap.*)
+    LONG(0)
+  }
+
   /DISCARD/ :
   { 
     *(.comment) 
