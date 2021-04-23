@@ -1,4 +1,5 @@
   .global	__aeabi_idivmod
+	.type	__aeabi_memmove, %function
   .align
 
 __aeabi_idivmod:

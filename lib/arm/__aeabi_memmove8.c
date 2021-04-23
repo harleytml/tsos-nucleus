@@ -1,8 +1,8 @@
 #include <generic/types.hpp>
 
-extern void *memmove(void *dstptr, const void *srcptr, size_t size);
+extern void *__aeabi_memmove(void *dest, const void *src, size_t n);
 
 void *__aeabi_memmove8(void *dest, const void *src, size_t n)
 {
-  return memmove(dest, src, n);
+  return __aeabi_memmove(dest, src, n);
 }

@@ -1,4 +1,5 @@
   .global	__aeabi_uidivmod
+	.type	__aeabi_uidivmod, %function
   .align
 
 __aeabi_uidivmod:
