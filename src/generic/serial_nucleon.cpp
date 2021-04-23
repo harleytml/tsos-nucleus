@@ -27,6 +27,14 @@ Serial::Serial(void)
   }
 
 #endif
+
+#ifdef __VEXPRESS_A15__
+
+  static VEXPRESS_A15_UART_quark vexpress_a15_uart_quark;
+
+  attachquark(vexpress_a15_uart_quark);
+
+#endif
 }
 
 Serial::~Serial()

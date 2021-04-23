@@ -6,18 +6,23 @@
 Boot::Boot(void)
 {
 #ifdef __PERSONAL_COMPUTER__
+
   static MULTIBOOT_quark multiboot_quark;
 
   attachquark(multiboot_quark);
+
 #endif
 
 #ifdef __RASPBERRY_PI_3__
+
   static RPI3_BOOT_quark rpi3_boot_quark;
 
   attachquark(rpi3_boot_quark);
+
 #endif
 
 #ifdef __NSPIRE__
+
   static NSPIRE_CM_BOOT_quark nspire_cm_boot_quark;
   static NSPIRE_CX_BOOT_quark nspire_cx_boot_quark;
 
@@ -26,12 +31,21 @@ Boot::Boot(void)
   {
     return;
   }
+
 #endif
 
 #ifdef __CANON_A1100__
   static CANON_A1100_BOOT_quark canon_a1100_boot_quark;
 
   attachquark(canon_a1100_boot_quark);
+#endif
+
+#ifdef __VEXPRESS_A15__
+
+  static VEXPRESS_A15_BOOT_quark vexpress_a15_boot_quark;
+
+  attachquark(vexpress_a15_boot_quark);
+
 #endif
 }
 

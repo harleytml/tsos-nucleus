@@ -38,6 +38,14 @@ Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(C
   }
 
 #endif
+
+#ifdef __VEXPRESS_A15__
+
+  static VEXPRESS_A15_SCREEN_quark vexpress_a15_screen_quark;
+
+  attachquark(vexpress_a15_screen_quark);
+
+#endif
 }
 
 Video::~Video()

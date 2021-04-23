@@ -27,6 +27,14 @@ Sound::Sound(void)
   }
 
 #endif
+
+#ifdef __VEXPRESS_A15__
+
+  static VEXPRESS_A15_SOUND_quark vexpress_a15_sound_quark;
+
+  attachquark(vexpress_a15_sound_quark);
+
+#endif
 }
 
 Sound::~Sound(void)

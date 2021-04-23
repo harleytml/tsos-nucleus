@@ -1,5 +1,6 @@
 //By Tsuki Superior
 #pragma once
+#define UART0_BASE 0x1c090000
 
 #include <generic/serial_quark.hpp>
 
