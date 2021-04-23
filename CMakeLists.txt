@@ -108,7 +108,6 @@ file(GLOB source_files "src/generic/*" "lib/generic/*")
 set(CMAKE_ASM-ATT_FLAGS "${platform-target}")
 
 add_compile_options(
-  -Og
   -ggdb
   -Wall
   -Wextra
