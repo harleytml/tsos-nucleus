@@ -78,4 +78,10 @@
 
 #ifdef __VEXPRESS_A15__
 
+#include <vexpress-a15/vexpress-a15_boot.hpp>
+#include <vexpress-a15/vexpress-a15_keyboard.hpp>
+#include <vexpress-a15/vexpress-a15_screen.hpp>
+#include <vexpress-a15/vexpress-a15_sound.hpp>
+#include <vexpress-a15/vexpress-a15_uart.hpp>
+
 #endif

@@ -58,6 +58,7 @@ public:
   // Set text foreground color
   void settextforegroundcolor(uint8_t red, uint8_t green, uint8_t blue);
 
+  // The current scroll on the screen
   uint_fast16_t scroll;
 
 private:
