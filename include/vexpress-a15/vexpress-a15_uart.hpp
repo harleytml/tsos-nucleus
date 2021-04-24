@@ -1,6 +1,5 @@
 //By Tsuki Superior
 #pragma once
-#define UART0_BASE 0x1c090000
 
 #include <generic/serial_quark.hpp>
 
@@ -14,4 +13,10 @@ public:
   bool isdevicereadytoreceive(void) final;
   void outbyte(uint8_t byte) final;
   uint8_t inbyte(void) final;
+
+private:
+  enum class registers : uint32_t
+  {
+    UART0DR = 0x101f1000
+  };
 };

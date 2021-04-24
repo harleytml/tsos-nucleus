@@ -71,6 +71,7 @@ cmake        # 3.13 or above is recommended, I use 3.13
 python3
 pip3
 dosfstools
+gdb-multiarch
 ```
 
 Debian/Ubuntu :

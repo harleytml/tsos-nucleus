@@ -3,7 +3,7 @@
 
 VEXPRESS_A15_SOUND_quark::VEXPRESS_A15_SOUND_quark(void)
 {
-  name = "";
+  name = "Versatile Express A15";
 }
 
 bool VEXPRESS_A15_SOUND_quark::detectsystem(void)

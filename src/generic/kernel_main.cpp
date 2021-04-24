@@ -65,7 +65,7 @@ void kernel_main(void)
   }
 }
 
-void debug_msg(char *str)
+void debug_msg(const char *str)
 {
   uint_fast8_t pos = 0;
 

@@ -3,7 +3,7 @@
 
 VEXPRESS_A15_BOOT_quark::VEXPRESS_A15_BOOT_quark(void)
 {
-  name = "";
+  name = "Versatile Express A15";
 }
 
 VEXPRESS_A15_BOOT_quark::~VEXPRESS_A15_BOOT_quark(void)

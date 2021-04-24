@@ -3,7 +3,7 @@
 
 VEXPRESS_A15_SCREEN_quark::VEXPRESS_A15_SCREEN_quark(void)
 {
-  name = "";
+  name = "Versatile Express A15";
   font = Font();
 }
 
