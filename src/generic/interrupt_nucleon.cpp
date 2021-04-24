@@ -8,6 +8,7 @@ Interrupt::~Interrupt()
 {
 }
 
-void Interrupt::registerinterrupt()
+void Interrupt::registerinterrupt(func_ptr func, uint16_t id)
 {
+  quark->registerinterrupt(func, id);
 }

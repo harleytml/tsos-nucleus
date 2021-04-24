@@ -30,3 +30,5 @@
 #define size_t __SIZE_TYPE__
 
 #define NULL 0
+
+typedef void (*func_ptr)(void);

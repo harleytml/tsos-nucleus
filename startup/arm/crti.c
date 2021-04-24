@@ -1,4 +1,4 @@
-typedef void (*func_ptr)(void);
+#include <generic/types.hpp>
 
 extern func_ptr _init_array_start[0];
 extern func_ptr _init_array_end[0];

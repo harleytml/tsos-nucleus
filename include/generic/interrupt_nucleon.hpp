@@ -24,5 +24,5 @@ public:
   // Constructor
   ~Interrupt();
 
-  void registerinterrupt();
+  void registerinterrupt(func_ptr func, uint16_t id);
 };

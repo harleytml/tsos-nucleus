@@ -18,4 +18,6 @@ public:
 
   //Destructor
   ~Interrupt_quark();
+
+  void registerinterrupt(func_ptr func, uint16_t id);
 };

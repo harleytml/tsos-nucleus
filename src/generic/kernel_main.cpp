@@ -26,7 +26,7 @@ void kernel_main(void)
   debug_msg("Tsuki Superior/Operating System\n");
   debug_msg("TS/OS Copyright (C) 2021 TSDEV Team\n");
   debug_msg("This OS wouldn't be possible without the help of the many that worked on it.\n");
-  debug_msg("Umiko is adorable\n");
+  debug_msg("Umiko is adorable!\n");
   tsos->video.scroll++;
   debug_msg(tsos->boot.name);
   debug_msg(tsos->disk.name);
@@ -39,6 +39,7 @@ void kernel_main(void)
   debug_msg(tsos->sound.name);
   debug_msg(tsos->video.name);
   debug_msg(tsos->time.name);
+  debug_msg(tsos->interrupt.name);
 
   // This is quite annoying, so I'll comment it out
   // tsos->sound.playtone(100);

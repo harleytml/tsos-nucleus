@@ -22,6 +22,7 @@
 #include <generic/io_nucleon.hpp>
 #include <generic/memory_nucleon.hpp>
 #include <generic/time_nucleon.hpp>
+#include <generic/interrupt_nucleon.hpp>
 #include <generic/types.hpp>
 
 // The main class collecting the TS/OS nucleus api
@@ -39,6 +40,9 @@ public:
 
   // The nucleon being used to control memory
   Memory memory;
+
+  // The nucleon being used to control interrupt
+  Interrupt interrupt;
 
   // The nucleon being used to control video
   Video video;
