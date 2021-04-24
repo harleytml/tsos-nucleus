@@ -26,6 +26,7 @@ void kernel_main(void)
   debug_msg("Tsuki Superior/Operating System\n");
   debug_msg("TS/OS Copyright (C) 2021 TSDEV Team\n");
   debug_msg("This OS wouldn't be possible without the help of the many that worked on it.\n");
+  debug_msg("Umiko is adorable\n");
   tsos->video.scroll++;
   debug_msg(tsos->boot.name);
   debug_msg(tsos->disk.name);
