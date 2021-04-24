@@ -19,5 +19,5 @@ public:
   //Destructor
   ~Interrupt_quark();
 
-  void registerinterrupt(func_ptr func, uint16_t id);
+  virtual void registerinterrupt(func_ptr func, uint16_t id) = 0;
 };

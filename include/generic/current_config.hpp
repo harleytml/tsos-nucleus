@@ -32,6 +32,7 @@
 #include <pc/pc_io.hpp>
 #include <pc/pc_mem.hpp>
 #include <pc/cmos.hpp>
+#include <pc/idt.hpp>
 
 #endif
 
