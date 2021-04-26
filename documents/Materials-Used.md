@@ -43,3 +43,5 @@
 [Baremetal Arm](https://balau82.wordpress.com/2010/02/28/hello-world-for-bare-metal-arm-using-qemu/)
 
 [BCM2837 Docs](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md)
+
+[Broadcom BCM2837-ARM Docs](https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf)
