@@ -41,3 +41,5 @@
 [RPI3 Boot Process](https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-030-boot-process.html)
 
 [Baremetal Arm](https://balau82.wordpress.com/2010/02/28/hello-world-for-bare-metal-arm-using-qemu/)
+
+[BCM2837 Docs](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md)
