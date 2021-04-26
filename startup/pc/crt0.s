@@ -37,6 +37,8 @@ _start:
   # The init function doesn't appear to work with clang right now
   # So i will skip
   # call _init
+  and $-16, %esp
+
 
   # Transfer control to the main kernel.
   call kernel_main
