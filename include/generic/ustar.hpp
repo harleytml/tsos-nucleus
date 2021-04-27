@@ -14,7 +14,7 @@
 
 extern "C"
 {
-  size_t oct2bin(char *str, size_t size);
+  size_t oct2int(char *str, size_t size);
 }
 
 class USTAR_quark : public Filesystem_quark

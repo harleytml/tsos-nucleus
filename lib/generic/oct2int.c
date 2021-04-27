@@ -1,6 +1,6 @@
 #include <generic/types.hpp>
 
-size_t oct2bin(char *str, size_t size)
+size_t oct2int(char *str, size_t size)
 {
   int n = 0;
   char *c = str;
