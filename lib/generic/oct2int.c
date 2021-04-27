@@ -2,7 +2,7 @@
 
 size_t oct2int(char *str, size_t size)
 {
-  int n = 0;
+  size_t n = 0;
   char *c = str;
   while (size-- > 0)
   {
