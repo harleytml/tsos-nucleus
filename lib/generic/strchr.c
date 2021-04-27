@@ -1,3 +1,5 @@
+#include <generic/types.hpp>
+
 char *strchr(const char *s, int c)
 {
   do
@@ -7,5 +9,5 @@ char *strchr(const char *s, int c)
       return (char *)s;
     }
   } while (*s++);
-  return (0);
+  return NULL;
 }
