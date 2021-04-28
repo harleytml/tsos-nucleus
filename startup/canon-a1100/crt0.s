@@ -15,12 +15,12 @@ str     r2, [r3]
 // looks like idle cycle is required for proper shutdown
 mov     r3, #0x8000
 1:
-sub	r3, r3, #1
-cmp	r3, #0
-bne	1b
+  sub	r3, r3, #1
+  cmp	r3, #0
+  bne	1b
 
 // ordinary startup...
 
-  mov     sp, #0x1900
-  mov     r11, #0
-  b	kernel_main
+ mov     sp, #0x1900
+ mov     r11, #0
+ b kernel_main
