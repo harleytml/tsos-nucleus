@@ -105,3 +105,7 @@ In the `config` directory, some json config files exist. I plan to make them con
 
 Look in the `documents` directory for some more information on TS/OS, and also the C++ header files have more information
 on TS/OS, and how it is interacting with hardware.
+
+## Docker
+
+There is a Docker Container used to compile TS/OS. You can also use it to compile TS/OS if you so please.
