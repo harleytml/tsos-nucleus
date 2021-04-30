@@ -12,6 +12,7 @@
 
 [![Compile And Release](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml)
 [![Build Docker Image](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/docker-image.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/docker-image.yml)
+[![Test Pull Requests](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/test-pull-request.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/test-pull-request.yml)
 
 ## Contributors
 
