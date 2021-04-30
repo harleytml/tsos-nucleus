@@ -6,6 +6,7 @@
 ![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
 [![LICENSE](https://img.shields.io/github/license/tsuki-superior/tsos-nucleus)](https://github.com/tsuki-superior/tsos-nucleus/blob/master/LICENSE)
 ![DOWNLOADS](https://img.shields.io/github/downloads/tsuki-superior/tsos-nucleus/total)
+[![Docker Hub](https://badgen.net/docker/pulls/tsukisuperior/tsos-build)](https://hub.docker.com/r/tsukisuperior/tsos-build)
 
 ## Build Tests
 
