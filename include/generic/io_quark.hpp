@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Abstract IO quark
- * 
+ *
  * To make a new IO quark, simply have it inherit from this class
  */
 
@@ -9,12 +9,13 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class IO_quark : public Quark {
-public:
+class IO_quark : public Quark
+{
+  public:
     // Constructor
     IO_quark(void);
 
-    //Default constructor
+    // Default constructor
     ~IO_quark();
 
     // Get a uint8_t from the io ports

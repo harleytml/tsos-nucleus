@@ -10,29 +10,31 @@
 #include <generic/filesystem_file.hpp>
 #include <generic/filesystem_quark.hpp>
 
-class EXT2_quark : public Filesystem_quark {
-public:
+class EXT2_quark : public Filesystem_quark
+{
+  public:
     EXT2_quark(void);
     bool detectsystem(void) final;
     void reset(void) final;
-    char** readdir(char* path) final;
-    void rename(char* path, char* newPath) final;
-    File open(char* path) final;
+    char **readdir(char *path) final;
+    void rename(char *path, char *newPath) final;
+    File open(char *path) final;
     void close(File file) final;
-    char* read(File file) final;
-    void write(File file, char* data) final;
-    char* readfile(char* path) final;
-    void writefile(char* path, char* data) final;
-    void appendfile(char* path, char* data) final;
-    bool exists(char* path) final;
-    bool isfilenamevalid(char* name) final;
+    char *read(File file) final;
+    void write(File file, char *data) final;
+    char *readfile(char *path) final;
+    void writefile(char *path, char *data) final;
+    void appendfile(char *path, char *data) final;
+    bool exists(char *path) final;
+    bool isfilenamevalid(char *name) final;
 
-private:
-    char* currentdirectory;
+  private:
+    char *currentdirectory;
     File openfiles[128];
 
-    class superblock_t {
-    public:
+    class superblock_t
+    {
+      public:
         uint32_t inodes_count;
         uint32_t blocks_count;
         uint32_t blocks_superuser;
@@ -79,8 +81,9 @@ private:
         uint32_t orphans_inode;
     } __attribute__((packed));
 
-    class group_descriptor_t {
-    public:
+    class group_descriptor_t
+    {
+      public:
         uint32_t block_bitmap;
         uint32_t inode_bitmap;
         uint32_t inode_table;
@@ -91,18 +94,20 @@ private:
         uint32_t unused[3];
     } __attribute__((packed));
 
-    class ext2_fs_t {
-    public:
-        superblock_t* sb;
-        group_descriptor_t* group_descriptors;
-        uint8_t* device;
+    class ext2_fs_t
+    {
+      public:
+        superblock_t *sb;
+        group_descriptor_t *group_descriptors;
+        uint8_t *device;
         uint32_t block_size;
         uint32_t inode_size;
         uint32_t num_block_groups;
     } __attribute__((packed));
 
-    class ext2_inode_t {
-    public:
+    class ext2_inode_t
+    {
+      public:
         uint16_t type_perms;
         uint16_t uid;
         uint32_t size_lower;
@@ -126,15 +131,17 @@ private:
         uint32_t os_specific2[3];
     } __attribute__((packed));
 
-    class dentry_t {
-    public:
-        char* name;
+    class dentry_t
+    {
+      public:
+        char *name;
         uint32_t inode;
         uint32_t type;
     } __attribute__((packed));
 
-    class ext2_directory_entry_t {
-    public:
+    class ext2_directory_entry_t
+    {
+      public:
         uint32_t inode;
         uint16_t entry_size;
         uint8_t name_len_low;
@@ -142,7 +149,8 @@ private:
         char name[];
     } __attribute__((packed));
 
-    enum class Directory_entry : uint8_t {
+    enum class Directory_entry : uint8_t
+    {
         ENT_INVALID = 0,
         ENT_FILE = 1,
         ENT_DIRECTORY = 2

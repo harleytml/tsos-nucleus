@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/types.hpp>
 
 // The possible state of processes
-enum process_state {
+enum process_state
+{
     // A running process
     RUNNING,
 

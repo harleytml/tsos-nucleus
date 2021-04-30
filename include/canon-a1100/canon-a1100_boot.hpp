@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/boot_quark.hpp>
 
-class CANON_A1100_BOOT_quark : public Boot_quark {
-public:
+class CANON_A1100_BOOT_quark : public Boot_quark
+{
+  public:
     // Constructor
     CANON_A1100_BOOT_quark(void);
 

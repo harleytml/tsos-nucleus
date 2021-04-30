@@ -26,7 +26,8 @@ Boot::Boot(void)
     static NSPIRE_CM_BOOT_quark nspire_cm_boot_quark;
     static NSPIRE_CX_BOOT_quark nspire_cx_boot_quark;
 
-    if (attachquark(nspire_cm_boot_quark) || attachquark(nspire_cx_boot_quark)) {
+    if (attachquark(nspire_cm_boot_quark) || attachquark(nspire_cx_boot_quark))
+    {
         return;
     }
 
@@ -47,9 +48,14 @@ Boot::Boot(void)
 #endif
 }
 
-Boot::~Boot() { }
+Boot::~Boot()
+{
+}
 
-void Boot::reboot(void) const { quark->reboot(); }
+void Boot::reboot(void) const
+{
+    quark->reboot();
+}
 
 void Boot::shutdown(void) const
 {
@@ -58,18 +64,16 @@ void Boot::shutdown(void) const
     tsos->video.reset();
     tsos->video.clear();
     tsos->video.putstring(0, tsos->video.scroll++, "Shutting down... \n");
-    tsos->video.putstring(0, tsos->video.scroll++,
-        "Do not touch the power button.\n");
+    tsos->video.putstring(0, tsos->video.scroll++, "Do not touch the power button.\n");
     tsos->process.killall();
     tsos->disk.commitall();
-    tsos->video.putstring(0, tsos->video.scroll++,
-        "You may now touch the power button.\n");
+    tsos->video.putstring(0, tsos->video.scroll++, "You may now touch the power button.\n");
 
     // Destroy tsos, to trigger the kernel destruction
     quark->shutdown();
 }
 
-void Boot::fission(const char* errormsg) const
+void Boot::fission(const char *errormsg) const
 {
     tsos->video.settextbackgroundcolor(0xff, 0x00, 0x00);
     tsos->video.reset();

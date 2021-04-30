@@ -9,7 +9,8 @@
 #include <generic/types.hpp>
 
 // The type defining syscalls
-enum class syscall_t : uint16_t {
+enum class syscall_t : uint16_t
+{
     reboot = 0,
     shutdown = 1,
     fission = 2,
@@ -60,21 +61,23 @@ enum class syscall_t : uint16_t {
     out32 = 47
 };
 
-class Syscall_info {
-public:
+class Syscall_info
+{
+  public:
     // The syscall that is going to be called
     syscall_t syscall;
 
     // A array of pointers to the data to be passed into the syscall
-    void** input_data;
+    void **input_data;
 
     // A array of pointer to be carried out
-    void** output_data;
+    void **output_data;
 
     bool inkernelmode;
 } __attribute__((packed));
 
-extern "C" {
-// Call a syscall
-void callsyscall(Syscall_info& syscall_info);
+extern "C"
+{
+    // Call a syscall
+    void callsyscall(Syscall_info &syscall_info);
 }

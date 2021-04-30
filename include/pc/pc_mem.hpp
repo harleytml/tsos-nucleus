@@ -10,8 +10,9 @@
 
 extern uintptr_t LINKER_kernel_heap;
 
-class PC_MEM_quark : public Memory_quark {
-public:
+class PC_MEM_quark : public Memory_quark
+{
+  public:
     PC_MEM_quark(void);
     bool detectsystem(void) final;
     void reset(void) final;

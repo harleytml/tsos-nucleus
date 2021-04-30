@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/boot_quark.hpp>
 
-class NSPIRE_CX_BOOT_quark : public Boot_quark {
-public:
+class NSPIRE_CX_BOOT_quark : public Boot_quark
+{
+  public:
     // Constructor
     NSPIRE_CX_BOOT_quark(void);
 

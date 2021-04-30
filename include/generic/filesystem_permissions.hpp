@@ -1,7 +1,7 @@
 /* By Tsuki Superior
  * Generic Filesystem permissions
- * 
- * The permissions class is how the nucleus represents the 
+ *
+ * The permissions class is how the nucleus represents the
  * file permissions internally
  */
 
@@ -10,19 +10,20 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Permissions {
-public:
+class Permissions
+{
+  public:
     Permissions();
 
-    //Constructor
+    // Constructor
     Permissions(bool r, bool w, bool e);
 
-    //Read permission
+    // Read permission
     bool read;
 
-    //Write permission
+    // Write permission
     bool write;
 
-    //Execute permission
+    // Execute permission
     bool execute;
 };

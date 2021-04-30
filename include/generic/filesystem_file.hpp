@@ -4,7 +4,7 @@
  *
  * This is the file type that the nucleus uses internally
  * to represent files
- * 
+ *
  */
 
 #pragma once
@@ -15,23 +15,24 @@
 
 #include <generic/string.hpp>
 
-class File {
-public:
-    //Constructor of a file
+class File
+{
+  public:
+    // Constructor of a file
     File(void);
 
     // Copy Constructor
-    File(const File& file);
+    File(const File &file);
 
-    //Constructor
-    File(char* pa, Permissions& per);
+    // Constructor
+    File(char *pa, Permissions &per);
 
-    //Destructor
+    // Destructor
     ~File();
 
-    //The path of the file
+    // The path of the file
     String path;
 
-    //The permissions the file was opened in
+    // The permissions the file was opened in
     Permissions permissions;
 };

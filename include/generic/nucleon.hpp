@@ -1,13 +1,13 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
 // The base class of TS/OS nucleons
-template <class T>
-class Nucleon {
-public:
+template <class T> class Nucleon
+{
+  public:
     // Constructor
     Nucleon(void)
     {
@@ -16,16 +16,17 @@ public:
     };
 
     // Destructor
-    ~Nucleon() {};
+    ~Nucleon(){};
 
     // The full name of the nucleons's target
-    char* name;
+    char *name;
 
     // Attach a quark
-    bool attachquark(T& d)
+    bool attachquark(T &d)
     {
         // The quark has to be for the right machine and run on that machine's configuration
-        if (d.detectsystem()) {
+        if (d.detectsystem())
+        {
             quark = &d;
             name = quark->name;
             return true;
@@ -39,6 +40,6 @@ public:
         return quark != nullptr;
     }
 
-protected:
-    T* quark;
+  protected:
+    T *quark;
 };

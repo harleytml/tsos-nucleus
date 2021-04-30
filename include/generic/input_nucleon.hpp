@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Input Nucleon
- * 
+ *
  * The wrapper nucleon for the input quarks
  */
 
@@ -14,8 +14,9 @@
 #include <generic/types.hpp>
 
 // The main class controlling input
-class Input : public Nucleon<Input_quark> {
-public:
+class Input : public Nucleon<Input_quark>
+{
+  public:
     // Constructor
     Input(void);
 
@@ -29,7 +30,8 @@ public:
     void waitkey(void);
 };
 
-enum key_position {
+enum key_position
+{
     RIGHT,
     LEFT,
     MIDDLE

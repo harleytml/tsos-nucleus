@@ -9,7 +9,10 @@ PC_UART_quark::PC_UART_quark(void)
     name = "Personal Computer Universal Asynchronous Receiver-Transmitter";
 }
 
-bool PC_UART_quark::detectsystem(void) { return true; }
+bool PC_UART_quark::detectsystem(void)
+{
+    return true;
+}
 
 void PC_UART_quark::reset(void)
 {
@@ -33,8 +36,16 @@ bool PC_UART_quark::isdevicereadytoreceive(void)
     return (tsos->io.in8(COM1 + 5) & 0x20) != 0;
 }
 
-void PC_UART_quark::outbyte(uint8_t byte) { tsos->io.out8(COM1, byte); }
+void PC_UART_quark::outbyte(uint8_t byte)
+{
+    tsos->io.out8(COM1, byte);
+}
 
-uint8_t PC_UART_quark::inbyte(void) { return tsos->io.in8(COM1); }
+uint8_t PC_UART_quark::inbyte(void)
+{
+    return tsos->io.in8(COM1);
+}
 
-void PC_UART_quark::set_baud(uint16_t port, uint8_t baud_rate) { }
+void PC_UART_quark::set_baud(uint16_t port, uint8_t baud_rate)
+{
+}

@@ -2,11 +2,19 @@
 #include <generic/nucleus_instance.hpp>
 #include <pc/pc_speaker.hpp>
 
-PC_SPEAKER_quark::PC_SPEAKER_quark(void) { name = "PC Speaker"; }
+PC_SPEAKER_quark::PC_SPEAKER_quark(void)
+{
+    name = "PC Speaker";
+}
 
-bool PC_SPEAKER_quark::detectsystem(void) { return true; }
+bool PC_SPEAKER_quark::detectsystem(void)
+{
+    return true;
+}
 
-void PC_SPEAKER_quark::reset(void) { }
+void PC_SPEAKER_quark::reset(void)
+{
+}
 
 void PC_SPEAKER_quark::playtone(uint32_t tone)
 {
@@ -21,7 +29,8 @@ void PC_SPEAKER_quark::playtone(uint32_t tone)
 
     // And play the sound using the PC speaker
     tmp = tsos->io.in8(0x61);
-    if (tmp != (tmp | 3)) {
+    if (tmp != (tmp | 3))
+    {
         tsos->io.out8(0x61, tmp | 3);
     }
 }

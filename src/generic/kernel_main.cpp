@@ -5,8 +5,8 @@ void kernel_main(void)
     static Tsos os_instance = Tsos();
     uint_fast8_t pos = 0;
     tsos = &os_instance;
-    char* init_file_path = "/bin/init";
-    char* str = "Welcome to TS/OS";
+    char *init_file_path = "/bin/init";
+    char *str = "Welcome to TS/OS";
     volatile uint64_t time;
 
 #ifdef __PERSONAL_COMPUTER__
@@ -45,30 +45,36 @@ void kernel_main(void)
     // This is quite annoying, so I'll comment it out
     // tsos->sound.playtone(100);
 
-    while (true) {
+    while (true)
+    {
         time = tsos->time.gettimestamp();
-        char* timemessage = new char[20];
+        char *timemessage = new char[20];
         timemessage = itoa(time, timemessage, 10);
         tsos->video.putstring(0, tsos->video.scroll, timemessage);
         tsos->sound.playtone(1 + ((time & 0b1) * 100));
     }
 
-    if (!tsos->filesystem.exists(init_file_path)) {
+    if (!tsos->filesystem.exists(init_file_path))
+    {
         tsos->boot.fission("INIT EXECUTABLE NOT FOUND");
-    } else {
+    }
+    else
+    {
         File init_executable = tsos->filesystem.open(init_file_path);
-        if (!init_executable.permissions.execute) {
+        if (!init_executable.permissions.execute)
+        {
             tsos->boot.fission("INIT EXECUTABLE INVALID");
         }
     }
 }
 
-void debug_msg(const char* str)
+void debug_msg(const char *str)
 {
     uint_fast8_t pos = 0;
 
     uint8_t slen = strnlen(str, 100);
-    while (pos < slen) {
+    while (pos < slen)
+    {
         tsos->serial.outbyte(str[pos++]);
     }
     tsos->serial.outbyte('\n');

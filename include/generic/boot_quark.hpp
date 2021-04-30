@@ -8,8 +8,9 @@
 
 #include <generic/quark.hpp>
 
-class Boot_quark : public Quark {
-public:
+class Boot_quark : public Quark
+{
+  public:
     // Constructor
     Boot_quark(void);
 

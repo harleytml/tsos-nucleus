@@ -3,8 +3,9 @@
 #include <generic/io_quark.hpp>
 #include <generic/types.hpp>
 
-class PC_IO_quark : public IO_quark {
-public:
+class PC_IO_quark : public IO_quark
+{
+  public:
     PC_IO_quark(void);
 
     ~PC_IO_quark();

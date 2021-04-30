@@ -9,10 +9,20 @@ Process::Process(void)
     attachquark(elf_quark);
 }
 
-Process::~Process(void) { killall(); }
+Process::~Process(void)
+{
+    killall();
+}
 
-uint8_t Process::spawn(char* path) { return 0; }
+uint8_t Process::spawn(char *path)
+{
+    return 0;
+}
 
-void Process::kill(uint8_t pid) { }
+void Process::kill(uint8_t pid)
+{
+}
 
-void Process::killall(void) { }
+void Process::killall(void)
+{
+}

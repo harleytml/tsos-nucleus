@@ -13,34 +13,36 @@ bool EGA_quark::detectsystem(void)
     // WARNING: This also passes for VGA
     // Address is 0040:0087
 
-    return *((uint8_t*)0x487) != 0;
+    return *((uint8_t *)0x487) != 0;
 }
 
 void EGA_quark::reset(void)
 {
-    switch (*((uint16_t*)0x410) & 0x30) {
+    switch (*((uint16_t *)0x410) & 0x30)
+    {
     case 0x20:
-        screen_buffer = (char*)(*((uint16_t*)0x44e) + 0xb8000);
+        screen_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
         return;
     default:
-        screen_buffer = (char*)0xb0000;
+        screen_buffer = (char *)0xb0000;
         return;
     }
 }
 
-void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
-    const Color& fc)
+void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
     uint8_t a = 0;
     uint16_t screenwidth = getscreenwidth();
     uint16_t intendedposition = (posy * screenwidth) + posx;
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // Lets check if the video system has made it in a mode different than when
         // the quark was initialized We are checking the video controller 6845 port
         // number for the color type
-        switch (*((uint16_t*)0x410) & 0x30) {
+        switch (*((uint16_t *)0x410) & 0x30)
+        {
 
         // Monochrome
         case 0x30:
@@ -113,10 +115,10 @@ void EGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
     }
 }
 
-void EGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color& c)
+void EGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
     uint16_t color = 0;
-    volatile uint8_t* location = (uint8_t*)0xA0000 + getscreenwidth() * pos_y + pos_x;
+    volatile uint8_t *location = (uint8_t *)0xA0000 + getscreenwidth() * pos_y + pos_x;
 
     color |= (c.blue & 0x1f) << 10;
     color |= (c.green & 0x1f) << 5;
@@ -130,12 +132,13 @@ uint16_t EGA_quark::getscreenwidth(void)
 
     // Read the width from a BIOS field
     // Address is 0040:44a
-    return *((uint16_t*)0x44a);
+    return *((uint16_t *)0x44a);
 }
 
 uint16_t EGA_quark::getscreenheight(void)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // The height of text modes is always 25
@@ -149,7 +152,8 @@ uint16_t EGA_quark::getscreenheight(void)
 
 void EGA_quark::setfont(Font f)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // I believe you have to go into real mode to do this

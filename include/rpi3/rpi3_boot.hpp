@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/boot_quark.hpp>
 
-class RPI3_BOOT_quark : public Boot_quark {
-public:
+class RPI3_BOOT_quark : public Boot_quark
+{
+  public:
     // Constructor
     RPI3_BOOT_quark(void);
 

@@ -6,11 +6,18 @@ CANON_A1100_BOOT_quark::CANON_A1100_BOOT_quark(void)
     name = "Canon Powershot A1100 IS Boot";
 }
 
-CANON_A1100_BOOT_quark::~CANON_A1100_BOOT_quark(void) { }
+CANON_A1100_BOOT_quark::~CANON_A1100_BOOT_quark(void)
+{
+}
 
-bool CANON_A1100_BOOT_quark::detectsystem(void) { return true; }
+bool CANON_A1100_BOOT_quark::detectsystem(void)
+{
+    return true;
+}
 
-void CANON_A1100_BOOT_quark::reset(void) { }
+void CANON_A1100_BOOT_quark::reset(void)
+{
+}
 
 void CANON_A1100_BOOT_quark::reboot(void)
 {
@@ -22,7 +29,7 @@ void CANON_A1100_BOOT_quark::reboot(void)
 // From the chdk project
 void CANON_A1100_BOOT_quark::shutdown(void)
 {
-    volatile uint32_t* p = (uint32_t*)0xc022001c;
+    volatile uint32_t *p = (uint32_t *)0xc022001c;
 
     __asm__ volatile("mrs     r1, cpsr        \n"
                      "and     r0, r1, #0x80   \n"
@@ -33,6 +40,7 @@ void CANON_A1100_BOOT_quark::shutdown(void)
     *p = 0x44; // power off.
 
     // Just sit here idle
-    while (true) {
+    while (true)
+    {
     }
 }

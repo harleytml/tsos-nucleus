@@ -1,8 +1,8 @@
 /* By Tsuki Superior
  * Memory Nucleon
- * 
+ *
  * The wrapper nucleon for the memory quarks
- * 
+ *
  * The allocation stratagy is to keep a statically sized table,
  * and every entry represents a single allocated piece of memory
  * The OS looks for free memory in the table, and if it cannot find any
@@ -18,8 +18,9 @@
 
 #define MEMORY_BLOCK_COUNT (10)
 
-class Memory : public Nucleon<Memory_quark> {
-public:
+class Memory : public Nucleon<Memory_quark>
+{
+  public:
     // Constructor
     Memory(void);
 
@@ -27,14 +28,15 @@ public:
     ~Memory();
 
     // Allocate memory
-    void* allocatememory(uint32_t len);
+    void *allocatememory(uint32_t len);
 
     // Free Memory
-    void freememory(void* mem);
+    void freememory(void *mem);
 
-private:
-    class Memory_table_entry {
-    public:
+  private:
+    class Memory_table_entry
+    {
+      public:
         Memory_table_entry(void);
         ~Memory_table_entry();
 

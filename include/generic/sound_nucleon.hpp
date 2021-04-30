@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Sound Nucleon
- * 
+ *
  * The wrapper nucleon for the sound quarks
  */
 
@@ -12,9 +12,10 @@
 #include <generic/sound_quark.hpp>
 #include <generic/types.hpp>
 
-//The main class controlling sound
-class Sound : public Nucleon<Sound_quark> {
-public:
+// The main class controlling sound
+class Sound : public Nucleon<Sound_quark>
+{
+  public:
     // Constructor
     Sound(void);
 

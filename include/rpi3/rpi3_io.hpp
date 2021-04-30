@@ -3,8 +3,9 @@
 #include <generic/io_quark.hpp>
 #include <generic/types.hpp>
 
-class RPI3_IO_quark : public IO_quark {
-public:
+class RPI3_IO_quark : public IO_quark
+{
+  public:
     RPI3_IO_quark(void);
 
     ~RPI3_IO_quark();
@@ -31,6 +32,6 @@ public:
     // Send a uint32_t through the io ports
     void out32(size_t port, uint32_t value) final;
 
-private:
+  private:
     const uintptr_t MMIO_BASE = 0x3F000000;
 };

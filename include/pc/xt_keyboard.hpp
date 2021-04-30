@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/input_quark.hpp>
 
-class XT_KEYBOARD_quark : public Input_quark {
-public:
+class XT_KEYBOARD_quark : public Input_quark
+{
+  public:
     // Constructor
     XT_KEYBOARD_quark(void);
 
@@ -19,7 +20,7 @@ public:
     // Get the key currently pressed
     key_identifier getkey(void) final;
 
-    //Wait for a key
+    // Wait for a key
     void waitkey(void) final;
 
     // Is shift pressed
@@ -31,5 +32,5 @@ public:
     // Is ctrl pressed
     bool isctrlpressed(void) final;
 
-private:
+  private:
 };

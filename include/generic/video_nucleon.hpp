@@ -1,8 +1,8 @@
 /* By Tsuki Superior
  * Video Nucleon
- * 
+ *
  * The wrapper nucleon for the video quarks
- * 
+ *
  * This is the nucleon that is most thought out (as of version 0.0)
  */
 
@@ -19,8 +19,9 @@
 #include <generic/video_quark.hpp>
 
 // The main class controlling video
-class Video : public Nucleon<Video_quark> {
-public:
+class Video : public Nucleon<Video_quark>
+{
+  public:
     // Constructor
     Video(void);
 
@@ -34,7 +35,7 @@ public:
     void putchar(uint16_t posx, uint16_t posy, char c) const;
 
     // Put a string on the screen
-    void putstring(uint16_t posx, uint16_t posy, const char* str) const;
+    void putstring(uint16_t posx, uint16_t posy, const char *str) const;
 
     // Draw a pixel
     void drawpx(uint16_t posx, uint16_t posy) const;
@@ -46,7 +47,7 @@ public:
     uint16_t getscreenheight(void) const;
 
     // Set the font to be used in the screen
-    void setfont(Font& f);
+    void setfont(Font &f);
 
     // Clear the screen
     void clear(void);
@@ -60,7 +61,7 @@ public:
     // The current scroll on the screen
     uint_fast16_t scroll;
 
-private:
+  private:
     // Current font
     Font font;
 

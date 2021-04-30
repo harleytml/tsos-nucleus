@@ -1,18 +1,17 @@
 // By Tsuki Superior
 #include <generic/core.hpp>
 
-Tsos* tsos;
+Tsos *tsos;
 
-Tsos::Tsos(void)
-    : release(0.0)
-    , code_name("Neutronium")
-    , short_code_name("n")
-    , version(0)
+Tsos::Tsos(void) : release(0.0), code_name("Neutronium"), short_code_name("n"), version(0)
 {
     static Font font = get_default_font();
-    if (nucleuslock) {
+    if (nucleuslock)
+    {
         boot.fission("NUCLEUS LOCK VIOLATED");
-    } else {
+    }
+    else
+    {
         nucleuslock = true;
     }
     video.setfont(font);

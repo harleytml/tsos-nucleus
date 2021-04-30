@@ -2,7 +2,7 @@
  * Abstract Sound Quark
  *
  * To make a new Sound quark, simply have it inherit from this class
- * 
+ *
  * The TS/OS sound api is pretty slim right now (as of version 0.0)
  */
 
@@ -11,8 +11,9 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Sound_quark : public Quark {
-public:
+class Sound_quark : public Quark
+{
+  public:
     // Constructor
     Sound_quark(void);
 

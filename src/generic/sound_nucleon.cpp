@@ -20,7 +20,8 @@ Sound::Sound(void)
     static NSPIRE_CM_SOUND_quark nspire_cm_sound_quark;
     static NSPIRE_CX_SOUND_quark nspire_cx_sound_quark;
 
-    if (attachquark(nspire_cm_sound_quark) || attachquark(nspire_cx_sound_quark)) {
+    if (attachquark(nspire_cm_sound_quark) || attachquark(nspire_cx_sound_quark))
+    {
         return;
     }
 
@@ -35,8 +36,16 @@ Sound::Sound(void)
 #endif
 }
 
-Sound::~Sound(void) { }
+Sound::~Sound(void)
+{
+}
 
-void Sound::playtone(uint32_t tone) { quark->playtone(tone); }
+void Sound::playtone(uint32_t tone)
+{
+    quark->playtone(tone);
+}
 
-void Sound::killsound(void) { quark->killsound(); }
+void Sound::killsound(void)
+{
+    quark->killsound();
+}

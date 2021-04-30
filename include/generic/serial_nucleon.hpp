@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Serial Nucleon
- * 
+ *
  * The wrapper nucleon for the serial quarks
  */
 
@@ -14,8 +14,9 @@
 #include <generic/types.hpp>
 
 // The main class controlling serial
-class Serial : public Nucleon<Serial_quark> {
-public:
+class Serial : public Nucleon<Serial_quark>
+{
+  public:
     // Constructor
     Serial(void);
 

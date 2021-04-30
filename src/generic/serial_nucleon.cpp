@@ -20,7 +20,8 @@ Serial::Serial(void)
     static NSPIRE_CM_UART_quark nspire_cm_uart_quark;
     static NSPIRE_CX_UART_quark nspire_cx_uart_quark;
 
-    if (attachquark(nspire_cm_uart_quark) || attachquark(nspire_cx_uart_quark)) {
+    if (attachquark(nspire_cm_uart_quark) || attachquark(nspire_cx_uart_quark))
+    {
         return;
     }
 
@@ -35,20 +36,27 @@ Serial::Serial(void)
 #endif
 }
 
-Serial::~Serial() { }
+Serial::~Serial()
+{
+}
 
-void Serial::reset(void) { quark->reset(); }
+void Serial::reset(void)
+{
+    quark->reset();
+}
 
 void Serial::outbyte(uint8_t b) const
 {
-    while (!isdevicereadytoreceive()) {
+    while (!isdevicereadytoreceive())
+    {
     }
     quark->outbyte(b);
 }
 
 uint8_t Serial::inbyte(void) const
 {
-    while (!isdevicereadytotransmit()) {
+    while (!isdevicereadytotransmit())
+    {
     }
     return quark->inbyte();
 }
@@ -57,7 +65,8 @@ void Serial::sendbytearray(Array<uint8_t> array) const
 {
     uint_fast16_t array_len = array.len();
     uint_fast16_t x = 0;
-    for (x = 0; x < array_len; x++) {
+    for (x = 0; x < array_len; x++)
+    {
         outbyte(array[x]);
     }
 }

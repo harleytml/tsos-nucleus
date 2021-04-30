@@ -3,7 +3,7 @@
  *
  * This is the abstract class that all the subclasses of
  * quarks inherit from.
- *  
+ *
  */
 
 #pragma once
@@ -11,8 +11,9 @@
 #include <generic/types.hpp>
 
 // The class for quarks
-class Quark {
-public:
+class Quark
+{
+  public:
     // Constructor
     Quark(void);
 
@@ -25,5 +26,5 @@ public:
     virtual void reset(void) = 0;
 
     // The name of said quark
-    char* name;
+    char *name;
 };

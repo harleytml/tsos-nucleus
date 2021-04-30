@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Video Modes
- * 
+ *
  * The possible modes for video in TS/OS
  */
 
@@ -8,7 +8,8 @@
 
 #include <generic/types.hpp>
 
-enum video_mode {
+enum video_mode
+{
     TEXT,
     GRAPHIC
 };

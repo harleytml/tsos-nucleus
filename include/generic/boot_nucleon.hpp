@@ -15,8 +15,9 @@
 #include <generic/types.hpp>
 
 // The main class controlling the system runtime
-class Boot : public Nucleon<Boot_quark> {
-public:
+class Boot : public Nucleon<Boot_quark>
+{
+  public:
     // Constructor
     Boot(void);
 
@@ -30,5 +31,5 @@ public:
     void shutdown(void) const;
 
     // The equivelent kernel panic, or bsod,
-    void fission(const char* errormsg) const;
+    void fission(const char *errormsg) const;
 };

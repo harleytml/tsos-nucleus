@@ -15,8 +15,9 @@
 #include <generic/types.hpp>
 
 // The main class controlling the system runtime
-class Interrupt : public Nucleon<Interrupt_quark> {
-public:
+class Interrupt : public Nucleon<Interrupt_quark>
+{
+  public:
     // Constructor
     Interrupt(void);
 

@@ -1,8 +1,8 @@
 /* By Tsuki Superior
  * Abstract Serial Quark
- * 
+ *
  * To make a new Serial quark, simply have it inherit from this class
- * 
+ *
  * Not sure how useful serial is (other than debugging), but I'll write quarks for it anyway
  */
 
@@ -11,8 +11,9 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Serial_quark : public Quark {
-public:
+class Serial_quark : public Quark
+{
+  public:
     // Constructor
     Serial_quark(void);
 

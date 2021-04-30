@@ -6,24 +6,42 @@ VEXPRESS_A15_KEYBOARD_quark::VEXPRESS_A15_KEYBOARD_quark(void)
     name = "Versatile Express A15";
 }
 
-VEXPRESS_A15_KEYBOARD_quark::~VEXPRESS_A15_KEYBOARD_quark() { }
+VEXPRESS_A15_KEYBOARD_quark::~VEXPRESS_A15_KEYBOARD_quark()
+{
+}
 
-bool VEXPRESS_A15_KEYBOARD_quark::detectsystem(void) { return true; }
+bool VEXPRESS_A15_KEYBOARD_quark::detectsystem(void)
+{
+    return true;
+}
 
-void VEXPRESS_A15_KEYBOARD_quark::reset(void) { }
+void VEXPRESS_A15_KEYBOARD_quark::reset(void)
+{
+}
 
 key_identifier VEXPRESS_A15_KEYBOARD_quark::getkey(void)
 {
     return key_identifier::KEY_NULL;
 }
 
-void VEXPRESS_A15_KEYBOARD_quark::waitkey(void) { }
+void VEXPRESS_A15_KEYBOARD_quark::waitkey(void)
+{
+}
 
 // Is shift pressed
-bool VEXPRESS_A15_KEYBOARD_quark::isshiftpressed(void) { return false; }
+bool VEXPRESS_A15_KEYBOARD_quark::isshiftpressed(void)
+{
+    return false;
+}
 
 // Is alt pressed
-bool VEXPRESS_A15_KEYBOARD_quark::isaltpressed(void) { return false; }
+bool VEXPRESS_A15_KEYBOARD_quark::isaltpressed(void)
+{
+    return false;
+}
 
 // Is ctrl pressed
-bool VEXPRESS_A15_KEYBOARD_quark::isctrlpressed(void) { return false; }
+bool VEXPRESS_A15_KEYBOARD_quark::isctrlpressed(void)
+{
+    return false;
+}

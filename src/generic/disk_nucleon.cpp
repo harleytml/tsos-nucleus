@@ -20,7 +20,8 @@ Disk::Disk(void)
     static NSPIRE_CM_DISK_quark nspire_cm_disk_quark;
     static NSPIRE_CX_DISK_quark nspire_cx_disk_quark;
 
-    if (attachquark(nspire_cm_disk_quark) || attachquark(nspire_cx_disk_quark)) {
+    if (attachquark(nspire_cm_disk_quark) || attachquark(nspire_cx_disk_quark))
+    {
         return;
     }
 
@@ -35,15 +36,24 @@ Disk::Disk(void)
 #endif
 }
 
-Disk::~Disk() { }
+Disk::~Disk()
+{
+}
 
-void Disk::getbytes(uint32_t offset, uint16_t len, uint8_t* data) const
+void Disk::getbytes(uint32_t offset, uint16_t len, uint8_t *data) const
 {
     quark->getbytes(data, offset, len);
 }
 
-uint16_t Disk::getsectorsize(void) const { return quark->getsectorsize(); }
+uint16_t Disk::getsectorsize(void) const
+{
+    return quark->getsectorsize();
+}
 
-void Disk::commitall(void) const { }
+void Disk::commitall(void) const
+{
+}
 
-void Disk::setbytes(uint32_t offset, uint16_t len, uint8_t* data) const { }
+void Disk::setbytes(uint32_t offset, uint16_t len, uint8_t *data) const
+{
+}

@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Time Nucleon
- * 
+ *
  * The wrapper nucleon for the time quarks
  */
 
@@ -12,9 +12,10 @@
 #include <generic/time_quark.hpp>
 #include <generic/types.hpp>
 
-//The main class controlling Time
-class Time : public Nucleon<Time_quark> {
-public:
+// The main class controlling Time
+class Time : public Nucleon<Time_quark>
+{
+  public:
     // Constructor
     Time(void);
 

@@ -6,7 +6,7 @@ String::String(void)
     internaldatalength = 0;
 }
 
-String::String(const char* str)
+String::String(const char *str)
 {
     uint32_t len = strnlen(str, 0xff);
     internaldata = new char[len];

@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/serial_quark.hpp>
 
-class RPI3_UART_quark : public Serial_quark {
-public:
+class RPI3_UART_quark : public Serial_quark
+{
+  public:
     RPI3_UART_quark(void);
     bool detectsystem(void) final;
     void reset(void) final;
@@ -13,8 +14,9 @@ public:
     void outbyte(uint8_t byte) final;
     uint8_t inbyte(void) final;
 
-private:
-    enum class registers : uintptr_t {
+  private:
+    enum class registers : uintptr_t
+    {
         // The offsets for reach register.
         GPIO_BASE = 0x200000,
 
@@ -54,9 +56,7 @@ private:
         MBOX_WRITE = (MBOX_BASE + 0x20)
     };
 
-    volatile uint32_t __attribute__((aligned(16))) mbox[9] = {
-        9 * 4, 0, 0x38002, 12, 8, 2, 3000000, 0, 0
-    };
+    volatile uint32_t __attribute__((aligned(16))) mbox[9] = {9 * 4, 0, 0x38002, 12, 8, 2, 3000000, 0, 0};
 
     static inline void delay(int32_t count)
     {

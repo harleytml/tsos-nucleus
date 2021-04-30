@@ -1,10 +1,11 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/boot_quark.hpp>
 
-class VEXPRESS_A15_BOOT_quark : public Boot_quark {
-public:
+class VEXPRESS_A15_BOOT_quark : public Boot_quark
+{
+  public:
     // Constructor
     VEXPRESS_A15_BOOT_quark(void);
 

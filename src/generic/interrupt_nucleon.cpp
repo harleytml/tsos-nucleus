@@ -10,7 +10,9 @@ Interrupt::Interrupt(void)
 #endif
 }
 
-Interrupt::~Interrupt() { }
+Interrupt::~Interrupt()
+{
+}
 
 void Interrupt::registerinterrupt(func_ptr func, uint16_t id)
 {

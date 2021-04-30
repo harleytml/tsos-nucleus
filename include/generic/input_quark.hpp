@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Abstract Input Quark
- * 
+ *
  * To make a new Input quark, simply have it inherit from this class
  */
 
@@ -10,12 +10,13 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Input_quark : public Quark {
-public:
+class Input_quark : public Quark
+{
+  public:
     // Constructor
     Input_quark(void);
 
-    //Deconstructor
+    // Deconstructor
     ~Input_quark();
 
     // Read a key, and convert its scancode
@@ -24,7 +25,7 @@ public:
     // Is shift pressed
     virtual bool isshiftpressed(void) = 0;
 
-    //Wait key
+    // Wait key
     virtual void waitkey(void) = 0;
 
     // Is alt pressed

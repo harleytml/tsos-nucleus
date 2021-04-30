@@ -12,7 +12,8 @@ bool VGA_quark::detectsystem(void)
 
     // Check to see if VGA or EGA is installed
     // Address is 0040:0087
-    if (*((uint8_t*)0x487) != 0) {
+    if (*((uint8_t *)0x487) != 0)
+    {
 
         // WARNING: This also passes for EGA
         return true;
@@ -22,34 +23,36 @@ bool VGA_quark::detectsystem(void)
 
 void VGA_quark::reset(void)
 {
-    switch (*((uint16_t*)0x410) & 0x30) {
+    switch (*((uint16_t *)0x410) & 0x30)
+    {
     case 0x20:
-        screen_buffer = (char*)(*((uint16_t*)0x44e) + 0xb8000);
+        screen_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
         return;
     default:
-        screen_buffer = (char*)0xb0000;
+        screen_buffer = (char *)0xb0000;
         return;
     }
 }
 
-void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
-    const Color& fc)
+void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
     uint8_t a = 0;
     uint16_t screenwidth = getscreenwidth();
     uint16_t intendedposition = ((posy * screenwidth) + posx) * 2;
     uint16_t cx;
     uint16_t cy;
-    uint8_t mask[8] = { 1, 2, 4, 8, 16, 32, 64, 128 };
-    uint8_t* glyph = font.data + (int)c * font.width;
+    uint8_t mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+    uint8_t *glyph = font.data + (int)c * font.width;
 
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // Lets check if the video system has made it in a mode different than when
         // the quark was initialized We are checking the video controller 6845 port
         // number for the color type
-        switch (*((uint16_t*)0x410) & 0x30) {
+        switch (*((uint16_t *)0x410) & 0x30)
+        {
 
         // Monochrome
         case 0x30:
@@ -100,8 +103,10 @@ void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
         return;
     case GRAPHIC:
 
-        for (cy = 0; cy < font.height; cy++) {
-            for (cx = 0; cx < font.width; cx++) {
+        for (cy = 0; cy < font.height; cy++)
+        {
+            for (cx = 0; cx < font.width; cx++)
+            {
                 drawpx(posx + cx, posy + cy - 12, glyph[cy] & mask[cx] ? fc : bc);
             }
         }
@@ -112,10 +117,10 @@ void VGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
     }
 }
 
-void VGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color& c)
+void VGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
 {
     uint16_t color = 0;
-    volatile uint8_t* location = (uint8_t*)0xa0000 + getscreenwidth() * pos_y + pos_x;
+    volatile uint8_t *location = (uint8_t *)0xa0000 + getscreenwidth() * pos_y + pos_x;
 
     color |= (c.blue & 0x1f) << 10;
     color |= (c.green & 0x1f) << 5;
@@ -129,12 +134,13 @@ uint16_t VGA_quark::getscreenwidth(void)
 
     // Read the width from a BIOS field
     // Address is 0040:44a
-    return *((uint16_t*)0x44a);
+    return *((uint16_t *)0x44a);
 }
 
 uint16_t VGA_quark::getscreenheight(void)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // The height of text modes is always 25
@@ -148,7 +154,8 @@ uint16_t VGA_quark::getscreenheight(void)
 
 void VGA_quark::setfont(Font f)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // I believe you have to go into real mode to do this

@@ -7,7 +7,10 @@ RPI3_UART_quark::RPI3_UART_quark(void)
     name = "Raspberry Pi 3 Universal Asynchronous Receiver-Transmitter";
 }
 
-bool RPI3_UART_quark::detectsystem(void) { return true; }
+bool RPI3_UART_quark::detectsystem(void)
+{
+    return true;
+}
 
 void RPI3_UART_quark::reset(void)
 {
@@ -21,8 +24,7 @@ void RPI3_UART_quark::reset(void)
     delay(150);
 
     // Disable pull up/down for pin 14,15 & delay for 150 cycles.
-    tsos->io.out32(static_cast<uint32_t>(registers::GPPUDCLK0),
-        (1 << 14) | (1 << 15));
+    tsos->io.out32(static_cast<uint32_t>(registers::GPPUDCLK0), (1 << 14) | (1 << 15));
     delay(150);
 
     // Write 0 to GPPUDCLK0 to make it take effect.
@@ -39,15 +41,18 @@ void RPI3_UART_quark::reset(void)
     // For Raspi3 and 4 the UART_CLOCK is system-clock dependent by default.
     // Set it to 3Mhz so that we can consistently set the baud rate
     // UART_CLOCK = 30000000;
-    uint32_t r = ((*(uint32_t*)(&mbox) & ~0xF) | 8);
+    uint32_t r = ((*(uint32_t *)(&mbox) & ~0xF) | 8);
 
     // wait until we can talk to the VC
-    while (tsos->io.in32(static_cast<uint32_t>(registers::MBOX_STATUS)) & 0x80000000) {
+    while (tsos->io.in32(static_cast<uint32_t>(registers::MBOX_STATUS)) & 0x80000000)
+    {
     }
     // send our message to property channel and wait for the response
     tsos->io.out32(static_cast<uint32_t>(registers::MBOX_WRITE), r);
 
-    while ((tsos->io.in32(static_cast<uint32_t>(registers::MBOX_STATUS)) & 0x40000000) || tsos->io.in32(static_cast<uint32_t>(registers::MBOX_READ)) != r) {
+    while ((tsos->io.in32(static_cast<uint32_t>(registers::MBOX_STATUS)) & 0x40000000) ||
+           tsos->io.in32(static_cast<uint32_t>(registers::MBOX_READ)) != r)
+    {
     }
 
     // Divider = 3000000 / (16 * 115200) = 1.627 = ~1.
@@ -57,16 +62,14 @@ void RPI3_UART_quark::reset(void)
     tsos->io.out32(static_cast<uint32_t>(registers::UART0_FBRD), 40);
 
     // Enable FIFO & 8 bit data transmission (1 stop bit, no parity).
-    tsos->io.out32(static_cast<uint32_t>(registers::UART0_LCRH),
-        (1 << 4) | (1 << 5) | (1 << 6));
+    tsos->io.out32(static_cast<uint32_t>(registers::UART0_LCRH), (1 << 4) | (1 << 5) | (1 << 6));
 
     // Mask all interrupts.
     tsos->io.out32(static_cast<uint32_t>(registers::UART0_IMSC),
-        (1 << 1) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8) | (1 << 9) | (1 << 10));
+                   (1 << 1) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7) | (1 << 8) | (1 << 9) | (1 << 10));
 
     // Enable UART0, receive & transfer part of UART.
-    tsos->io.out32(static_cast<uint32_t>(registers::UART0_CR),
-        (1 << 0) | (1 << 8) | (1 << 9));
+    tsos->io.out32(static_cast<uint32_t>(registers::UART0_CR), (1 << 0) | (1 << 8) | (1 << 9));
 }
 
 bool RPI3_UART_quark::isdevicereadytotransmit(void)

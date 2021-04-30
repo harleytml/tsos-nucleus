@@ -1,4 +1,4 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/current_config.hpp>
@@ -8,8 +8,9 @@
 #include <generic/types.hpp>
 
 // The main class controlling video
-class IO : public Nucleon<IO_quark> {
-public:
+class IO : public Nucleon<IO_quark>
+{
+  public:
     // Constructor
     IO(void);
 

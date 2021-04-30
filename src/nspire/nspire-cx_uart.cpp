@@ -6,17 +6,31 @@ NSPIRE_CX_UART_quark::NSPIRE_CX_UART_quark(void)
     name = "Texas Instruments Nspire CX Universal Asynchronous Receiver-Transmitter";
 }
 
-bool NSPIRE_CX_UART_quark::detectsystem(void) { return true; }
+bool NSPIRE_CX_UART_quark::detectsystem(void)
+{
+    return true;
+}
 
-void NSPIRE_CX_UART_quark::reset(void) { }
+void NSPIRE_CX_UART_quark::reset(void)
+{
+}
 
-bool NSPIRE_CX_UART_quark::isdevicereadytotransmit(void) { return false; }
+bool NSPIRE_CX_UART_quark::isdevicereadytotransmit(void)
+{
+    return false;
+}
 
-bool NSPIRE_CX_UART_quark::isdevicereadytoreceive(void) { return false; }
+bool NSPIRE_CX_UART_quark::isdevicereadytoreceive(void)
+{
+    return false;
+}
 
 void NSPIRE_CX_UART_quark::outbyte(uint8_t byte)
 {
-    *((volatile uint8_t*)MMIO_BASE) = byte;
+    *((volatile uint8_t *)MMIO_BASE) = byte;
 }
 
-uint8_t NSPIRE_CX_UART_quark::inbyte(void) { return 0; }
+uint8_t NSPIRE_CX_UART_quark::inbyte(void)
+{
+    return 0;
+}

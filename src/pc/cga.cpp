@@ -13,11 +13,13 @@ bool CGA_quark::detectsystem(void)
     // Check to make sure EGA and VGA is not installed
     // Address is 0040:0087
 
-    if (*((uint8_t*)0x487) == 0) {
+    if (*((uint8_t *)0x487) == 0)
+    {
 
         // Check if display is monochrome, or MDA
         // Address is 0040:0080
-        if ((*((uint8_t*)0x480) & 0x30) != 0x30) {
+        if ((*((uint8_t *)0x480) & 0x30) != 0x30)
+        {
 
             // Display is probably CGA, or a card in CGA emulation mode
             return true;
@@ -28,31 +30,35 @@ bool CGA_quark::detectsystem(void)
 
 void CGA_quark::reset(void)
 {
-    switch (*((uint16_t*)0x410) & 0x30) {
+    switch (*((uint16_t *)0x410) & 0x30)
+    {
     case 0x20:
-        screen_buffer = (char*)(*((uint16_t*)0x44e) + 0xb8000);
+        screen_buffer = (char *)(*((uint16_t *)0x44e) + 0xb8000);
         return;
     default:
-        screen_buffer = (char*)0xb0000;
+        screen_buffer = (char *)0xb0000;
         return;
     }
 }
 
-void CGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color& c) { }
+void CGA_quark::drawpx(uint16_t pos_x, uint16_t pos_y, const Color &c)
+{
+}
 
-void CGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color& bc,
-    const Color& fc)
+void CGA_quark::putchar(uint16_t posx, uint16_t posy, char c, const Color &bc, const Color &fc)
 {
     uint8_t a = 0;
     uint16_t screenwidth = getscreenwidth();
     uint16_t intendedposition = (posy * screenwidth) + posx;
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // Lets check if the video system has made it in a mode different than when
         // the quark was initialized We are checking the video controller 6845 port
         // number for the color type
-        switch (*((uint16_t*)0x410) & 0x30) {
+        switch (*((uint16_t *)0x410) & 0x30)
+        {
 
         // Monochrome
         case 0x30:
@@ -130,12 +136,13 @@ uint16_t CGA_quark::getscreenwidth(void)
 
     // Read the width from a BIOS field
     // Address is 0040:44a
-    return *((uint16_t*)0x44a);
+    return *((uint16_t *)0x44a);
 }
 
 uint16_t CGA_quark::getscreenheight(void)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
 
         // The height of text modes is always 25
@@ -149,7 +156,8 @@ uint16_t CGA_quark::getscreenheight(void)
 
 void CGA_quark::setfont(Font f)
 {
-    switch (mode) {
+    switch (mode)
+    {
     case TEXT:
         // You have to manipulate the hardware to change the font on CGA in text
         // mode

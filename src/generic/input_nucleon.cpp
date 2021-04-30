@@ -8,7 +8,8 @@ Input::Input(void)
     static AT_KEYBOARD_quark at_keyboard_quark = AT_KEYBOARD_quark();
     static XT_KEYBOARD_quark xt_keyboard_quark = XT_KEYBOARD_quark();
 
-    if (attachquark(at_keyboard_quark) || attachquark(xt_keyboard_quark)) {
+    if (attachquark(at_keyboard_quark) || attachquark(xt_keyboard_quark))
+    {
         return;
     }
 #endif
@@ -24,15 +25,23 @@ Input::Input(void)
     static NSPIRE_CM_KEYBOARD_quark nspire_cm_keyboard_quark = NSPIRE_CM_KEYBOARD_quark();
     static NSPIRE_CX_KEYBOARD_quark nspire_cx_keyboard_quark = NSPIRE_CX_KEYBOARD_quark();
 
-    if (attachquark(nspire_cm_keyboard_quark) || attachquark(nspire_cx_keyboard_quark)) {
+    if (attachquark(nspire_cm_keyboard_quark) || attachquark(nspire_cx_keyboard_quark))
+    {
         return;
     }
 
 #endif
 }
 
-Input::~Input(void) { }
+Input::~Input(void)
+{
+}
 
-key_identifier Input::getkey(void) { return quark->getkey(); }
+key_identifier Input::getkey(void)
+{
+    return quark->getkey();
+}
 
-void Input::waitkey(void) { }
+void Input::waitkey(void)
+{
+}

@@ -3,9 +3,9 @@
  *
  * This is the main file of the TS/OS source code, and its purpose is to
  * collect all the API into one class.
- * 
+ *
  * All the nucleons are instaited as members of the Tsos class.
- * 
+ *
  * There may only be ONE instance of the TS/OS class.
  */
 
@@ -26,8 +26,9 @@
 #include <generic/video_nucleon.hpp>
 
 // The main class collecting the TS/OS nucleus api
-class Tsos {
-public:
+class Tsos
+{
+  public:
     // Constructor
     Tsos(void);
 
@@ -74,10 +75,10 @@ public:
     const float release;
 
     // The code name to TS/OS being used here
-    const char* code_name;
+    const char *code_name;
 
     // The 1-2 letter code name of TS/OS being used here
-    const char* short_code_name;
+    const char *short_code_name;
 
     // The version of TS/OS being used here
     const uint8_t version;

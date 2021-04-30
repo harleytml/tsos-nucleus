@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Process Nucleon
- * 
+ *
  * The wrapper nucleon for the process quarks
  */
 
@@ -14,8 +14,9 @@
 #include <generic/types.hpp>
 
 // The main classes to control processes
-class Process : public Nucleon<Process_quark> {
-public:
+class Process : public Nucleon<Process_quark>
+{
+  public:
     // Constructor
     Process(void);
 
@@ -23,7 +24,7 @@ public:
     ~Process();
 
     // Spawn a process
-    uint8_t spawn(char* path);
+    uint8_t spawn(char *path);
 
     // Kill a process
     void kill(uint8_t pid);
@@ -31,7 +32,7 @@ public:
     // Kill all processes
     void killall(void);
 
-private:
+  private:
     // The table of processes
     Process_info processes[16];
 };

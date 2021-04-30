@@ -6,18 +6,26 @@ CMOS_quark::CMOS_quark()
     name = "Complementary Metal Oxide Semiconductor Real Time Clock";
 }
 
-CMOS_quark::~CMOS_quark() { }
+CMOS_quark::~CMOS_quark()
+{
+}
 
-void CMOS_quark::reset() { }
+void CMOS_quark::reset()
+{
+}
 
-bool CMOS_quark::detectsystem() { return true; }
+bool CMOS_quark::detectsystem()
+{
+    return true;
+}
 
 uint64_t CMOS_quark::gettimestamp()
 {
     uint64_t time = 0;
     Date date = Date();
 
-    while (is_cmos_update()) {
+    while (is_cmos_update())
+    {
     }
 
     date.second = bcd_to_int(get_realtime_reg(time_register_t::second));
@@ -61,18 +69,20 @@ uint64_t CMOS_quark::Date::totimestamp()
     const uint32_t SECONDS_PER_HOURS = SECONDS_PER_MINUTE * 60;
     const uint32_t SECONDS_PER_DAY = SECONDS_PER_HOURS * 24;
     const uint32_t MONTH_PER_YEAR = 12;
-    const static uint16_t DAYS_PER_YEAR[2] = { 365, 366 };
+    const static uint16_t DAYS_PER_YEAR[2] = {365, 366};
 
     const static uint8_t DAYS_PER_MONTH[2][MONTH_PER_YEAR] = {
-        { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 },
-        { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 },
+        {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+        {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
     };
 
-    for (uint32_t x = EPOCH_YEAR; x < year; x++) {
+    for (uint32_t x = EPOCH_YEAR; x < year; x++)
+    {
         timestamp += DAYS_PER_YEAR[CMOS_quark::is_leap_year(year)] * SECONDS_PER_DAY;
     }
 
-    for (uint32_t y = 0; y < month - 1; y++) {
+    for (uint32_t y = 0; y < month - 1; y++)
+    {
         timestamp += DAYS_PER_MONTH[CMOS_quark::is_leap_year(year)][month] * SECONDS_PER_DAY;
     }
 

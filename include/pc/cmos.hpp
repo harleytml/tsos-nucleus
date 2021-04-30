@@ -4,12 +4,13 @@
 
 #include <generic/time_quark.hpp>
 
-class CMOS_quark : public Time_quark {
-public:
-    //Constructor
+class CMOS_quark : public Time_quark
+{
+  public:
+    // Constructor
     CMOS_quark();
 
-    //Destructor
+    // Destructor
     ~CMOS_quark();
 
     bool detectsystem(void) final;
@@ -18,11 +19,12 @@ public:
 
     uint64_t gettimestamp() final;
 
-private:
+  private:
     const static uint8_t CMOS_ADDRESS = 0x70;
     const static uint8_t CMOS_DATA = 0x71;
 
-    enum class time_register_t : uint8_t {
+    enum class time_register_t : uint8_t
+    {
         second = 0x0,
         minute = 0x2,
         hour = 0x4,
@@ -31,8 +33,9 @@ private:
         year = 0x9,
     };
 
-    class Date {
-    public:
+    class Date
+    {
+      public:
         size_t second;
         size_t minute;
         size_t hour;

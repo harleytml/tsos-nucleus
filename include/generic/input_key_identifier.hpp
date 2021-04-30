@@ -1,6 +1,6 @@
 /* By Tsuki Superior
  * Input Key Definitions
- * 
+ *
  * The definitions of the keys
  */
 
@@ -8,7 +8,8 @@
 
 #include <generic/types.hpp>
 
-enum class key_identifier : uint8_t {
+enum class key_identifier : uint8_t
+{
     KEY_NULL,
     KEY_0,
     KEY_1,
@@ -111,5 +112,4 @@ enum class key_identifier : uint8_t {
     KEY_DASH,
     KEY_PLUS,
     KEY_TAB
-
 };

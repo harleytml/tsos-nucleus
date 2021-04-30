@@ -1,22 +1,23 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #pragma once
 
 #include <generic/boot_quark.hpp>
 
-class MULTIBOOT_quark : public Boot_quark {
-public:
-    //Constructor
+class MULTIBOOT_quark : public Boot_quark
+{
+  public:
+    // Constructor
     MULTIBOOT_quark(void);
 
-    //Destructor
+    // Destructor
     ~MULTIBOOT_quark();
 
-    //Detect the type of system its running on
+    // Detect the type of system its running on
     bool detectsystem(void) final;
 
     void reset(void) final;
 
-    //Reboot the system
+    // Reboot the system
     void reboot(void) final;
 
     // Shutdown the system

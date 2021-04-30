@@ -2,9 +2,7 @@
 #include <generic/nucleus_instance.hpp>
 #include <generic/video_nucleon.hpp>
 
-Video::Video(void)
-    : backgroundcolor(Color(0x00, 0x00, 0x00))
-    , foregroundcolor(Color(0xff, 0xff, 0xff))
+Video::Video(void) : backgroundcolor(Color(0x00, 0x00, 0x00)), foregroundcolor(Color(0xff, 0xff, 0xff))
 {
     scroll = 0;
 
@@ -14,7 +12,8 @@ Video::Video(void)
     static CGA_quark cga_quark;
     static MDA_quark mda_quark;
 
-    if (attachquark(vga_quark) || attachquark(ega_quark) || attachquark(cga_quark) || attachquark(mda_quark)) {
+    if (attachquark(vga_quark) || attachquark(ega_quark) || attachquark(cga_quark) || attachquark(mda_quark))
+    {
         return;
     }
 #endif
@@ -29,7 +28,8 @@ Video::Video(void)
     static NSPIRE_CM_SCREEN_quark nspire_cm_screen_quark;
     static NSPIRE_CX_SCREEN_quark nspire_cx_screen_quark;
 
-    if (attachquark(nspire_cm_screen_quark) || attachquark(nspire_cx_screen_quark)) {
+    if (attachquark(nspire_cm_screen_quark) || attachquark(nspire_cx_screen_quark))
+    {
         return;
     }
 
@@ -44,7 +44,9 @@ Video::Video(void)
 #endif
 }
 
-Video::~Video() { }
+Video::~Video()
+{
+}
 
 void Video::reset(void)
 {
@@ -62,14 +64,16 @@ void Video::drawpx(uint16_t posx, uint16_t posy) const
     quark->drawpx(posx, posy, foregroundcolor);
 }
 
-void Video::putstring(uint16_t posx, uint16_t posy, const char* str) const
+void Video::putstring(uint16_t posx, uint16_t posy, const char *str) const
 {
     uint16_t pos = 0;
     uint16_t x = posx;
     uint16_t y = posy;
-    while (str[pos] != 0) {
+    while (str[pos] != 0)
+    {
         char c = str[pos];
-        switch (c) {
+        switch (c)
+        {
         case '\n':
             y++;
             break;
@@ -90,16 +94,27 @@ void Video::putstring(uint16_t posx, uint16_t posy, const char* str) const
     }
 }
 
-uint16_t Video::getscreenwidth(void) const { return quark->getscreenwidth(); }
+uint16_t Video::getscreenwidth(void) const
+{
+    return quark->getscreenwidth();
+}
 
-uint16_t Video::getscreenheight(void) const { return quark->getscreenheight(); }
+uint16_t Video::getscreenheight(void) const
+{
+    return quark->getscreenheight();
+}
 
-void Video::setfont(Font& f) { font = f; }
+void Video::setfont(Font &f)
+{
+    font = f;
+}
 
 void Video::clear(void)
 {
-    for (uint16_t x = 0, lenx = getscreenwidth(); x < lenx; x++) {
-        for (uint16_t y = 0, leny = getscreenheight(); y < leny; y++) {
+    for (uint16_t x = 0, lenx = getscreenwidth(); x < lenx; x++)
+    {
+        for (uint16_t y = 0, leny = getscreenheight(); y < leny; y++)
+        {
             putchar(x, y, ' ');
         }
     }
