@@ -2,7 +2,11 @@
 #include <generic/fat32.hpp>
 #include <generic/nucleus_instance.hpp>
 
-FAT32_quark::FAT32_quark(void) { name = "File Allocation Table 32"; }
+FAT32_quark::FAT32_quark(void)
+    : maxclustercount(0xFF5)
+{
+    name = "File Allocation Table 32";
+}
 
 bool FAT32_quark::detectsystem(void)
 {

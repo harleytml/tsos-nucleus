@@ -7,6 +7,8 @@ THIS_DIR="$(dirname "$THIS_PATH")"
 # in the regular expression just below
 FILE_LIST="$(find "$THIS_DIR/src" | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")"
 FILE_LIST+="$(find "$THIS_DIR/include" | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")"
+FILE_LIST+="$(find "$THIS_DIR/startup" | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")"
+FILE_LIST+="$(find "$THIS_DIR/lib" | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)$")"
 
 echo -e "Files found to format = \n\"\"\"\n$FILE_LIST\n\"\"\""
 

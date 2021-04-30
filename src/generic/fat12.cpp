@@ -2,7 +2,11 @@
 #include <generic/fat12.hpp>
 #include <generic/nucleus_instance.hpp>
 
-FAT12_quark::FAT12_quark(void) { name = "File Allocation Table 12"; }
+FAT12_quark::FAT12_quark(void)
+    : maxclustercount(0xFF5)
+{
+    name = "File Allocation Table 12";
+}
 
 bool FAT12_quark::detectsystem(void)
 {

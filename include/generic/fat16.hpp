@@ -49,7 +49,7 @@ public:
 private:
     char* currentdirectory;
     File openfiles[128];
-    const uint8_t maxclustercount = 0xFFF5;
+    const uint16_t maxclustercount = 0xFFF5;
 
     class entry_handle {
     public:

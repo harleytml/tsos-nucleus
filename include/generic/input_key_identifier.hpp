@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <generic/types.hpp>
+
 enum class key_identifier : uint8_t {
     KEY_NULL,
     KEY_0,
