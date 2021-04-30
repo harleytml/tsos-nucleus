@@ -30,5 +30,5 @@ public:
 private:
   char *currentdirectory;
   File openfiles[128];
-  const uint8_t cluster_count = 0xFF5;
+  const uint8_t maxclustercount = 0xFF5;
 };
