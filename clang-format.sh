@@ -12,8 +12,5 @@ FILE_LIST+="$(find "$THIS_DIR/lib" | grep -E ".*(\.ino|\.cpp|\.c|\.h|\.hpp|\.hh)
 
 echo -e "Files found to format = \n\"\"\"\n$FILE_LIST\n\"\"\""
 
-# Format each file.
-# - NB: do NOT put quotes around `$FILE_LIST` below or else the `clang-format` command will
-#   mistakenly see the entire blob of newline-separated file names as a SINGLE file name instead
-#   of as a new-line separated list of *many* file names!
+dos2unix $FILE_LIST
 clang-format-12 --verbose -i --style=file $FILE_LIST
