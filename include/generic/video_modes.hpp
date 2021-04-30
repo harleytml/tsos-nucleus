@@ -8,8 +8,7 @@
 
 #include <generic/types.hpp>
 
-enum video_mode
-{
-  TEXT,
-  GRAPHIC
+enum video_mode {
+    TEXT,
+    GRAPHIC
 };

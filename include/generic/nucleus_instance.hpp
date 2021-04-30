@@ -3,4 +3,4 @@
 
 #include <generic/core.hpp>
 
-extern Tsos *tsos;
+extern Tsos* tsos;

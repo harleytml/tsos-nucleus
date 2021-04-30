@@ -8,18 +8,17 @@
 
 #include <generic/quark.hpp>
 
-class Boot_quark : public Quark
-{
+class Boot_quark : public Quark {
 public:
-  // Constructor
-  Boot_quark(void);
+    // Constructor
+    Boot_quark(void);
 
-  // Destructor
-  ~Boot_quark();
+    // Destructor
+    ~Boot_quark();
 
-  // Reboot the system
-  virtual void reboot(void) = 0;
+    // Reboot the system
+    virtual void reboot(void) = 0;
 
-  // Shutdown the system
-  virtual void shutdown(void) = 0;
+    // Shutdown the system
+    virtual void shutdown(void) = 0;
 };

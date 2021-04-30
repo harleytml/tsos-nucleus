@@ -8,21 +8,20 @@
 
 #pragma once
 
-#include <generic/quark.hpp>
-#include <generic/nucleon.hpp>
-#include <generic/types.hpp>
-#include <generic/interrupt_quark.hpp>
 #include <generic/current_config.hpp>
+#include <generic/interrupt_quark.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 // The main class controlling the system runtime
-class Interrupt : public Nucleon<Interrupt_quark>
-{
+class Interrupt : public Nucleon<Interrupt_quark> {
 public:
-  // Constructor
-  Interrupt(void);
+    // Constructor
+    Interrupt(void);
 
-  // Constructor
-  ~Interrupt();
+    // Constructor
+    ~Interrupt();
 
-  void registerinterrupt(func_ptr func, uint16_t id);
+    void registerinterrupt(func_ptr func, uint16_t id);
 };

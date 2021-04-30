@@ -9,108 +9,98 @@
 
 #include <generic/types.hpp>
 
-extern "C"
-{
-  void *memcpy(void *dstptr, const void *srcptr, size_t size);
+extern "C" {
+void* memcpy(void* dstptr, const void* srcptr, size_t size);
 }
 
 template <class T>
-class Array
-{
+class Array {
 public:
-  Array(void)
-  {
-    internaldata = (T *)nullptr;
-    internaldatalength = 0;
-  }
-
-  Array(const uint16_t length)
-  {
-    internaldata = new T[length];
-  };
-
-  Array(T *data, const uint16_t length)
-  {
-    internaldata = data;
-    internaldatalength = length;
-  };
-
-  Array(Array<T> &array)
-  {
-    internaldata = new T[array.len()];
-    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+    Array(void)
     {
-      internaldata[x] = array[x];
+        internaldata = (T*)nullptr;
+        internaldatalength = 0;
     }
-  }
 
-  T &operator[](const uint16_t index)
-  {
-    if (index > internaldatalength)
+    Array(const uint16_t length)
     {
-      while (true)
-      {
-      }
-    }
-    return internaldata[index];
-  }
+        internaldata = new T[length];
+    };
 
-  T operator[](const uint16_t index) const
-  {
-    if (index > internaldatalength)
+    Array(T* data, const uint16_t length)
     {
-      return 0;
-    }
-    return internaldata[index];
-  }
+        internaldata = data;
+        internaldatalength = length;
+    };
 
-  bool operator==(Array<T> &array) const
-  {
-    for (uint_fast16_t x = 0, length = len(); x < length; x++)
+    Array(Array<T>& array)
     {
-      if (internaldata[x] != array[x])
-      {
-        return false;
-      }
+        internaldata = new T[array.len()];
+        for (uint_fast16_t x = 0, len = array.len(); x < len; x++) {
+            internaldata[x] = array[x];
+        }
     }
-    return true;
-  }
 
-  Array<T> operator+(const Array<T> &array)
-  {
-    uint_fast32_t x = 0;
-    uint_fast32_t y = 0;
-    uint_fast32_t l = 0;
-    uint32_t total_length = internaldatalength + array.len();
-    Array<T> newarray = new Array<T>(total_length);
-    for (x = 0, l = internaldatalength; x < l; x++)
+    T& operator[](const uint16_t index)
     {
-      newarray[x] = array[x];
+        if (index > internaldatalength) {
+            while (true) {
+            }
+        }
+        return internaldata[index];
     }
-    for (y = 0, l = array.len(); x < l; x++, y++)
+
+    T operator[](const uint16_t index) const
     {
-      newarray[x] = array[y];
+        if (index > internaldatalength) {
+            return 0;
+        }
+        return internaldata[index];
     }
-    return array;
-  }
 
-  void operator=(const Array<T> &array)
-  {
-    internaldata = array.raw();
-    internaldatalength = array.len();
-  }
+    bool operator==(Array<T>& array) const
+    {
+        for (uint_fast16_t x = 0, length = len(); x < length; x++) {
+            if (internaldata[x] != array[x]) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-  uint16_t len(void) const
-  {
-    return internaldatalength;
-  }
+    Array<T> operator+(const Array<T>& array)
+    {
+        uint_fast32_t x = 0;
+        uint_fast32_t y = 0;
+        uint_fast32_t l = 0;
+        uint32_t total_length = internaldatalength + array.len();
+        Array<T> newarray = new Array<T>(total_length);
+        for (x = 0, l = internaldatalength; x < l; x++) {
+            newarray[x] = array[x];
+        }
+        for (y = 0, l = array.len(); x < l; x++, y++) {
+            newarray[x] = array[y];
+        }
+        return array;
+    }
 
-  T *raw(void) const
-  {
-    return internaldata;
-  }
+    void operator=(const Array<T>& array)
+    {
+        internaldata = array.raw();
+        internaldatalength = array.len();
+    }
+
+    uint16_t len(void) const
+    {
+        return internaldatalength;
+    }
+
+    T* raw(void) const
+    {
+        return internaldata;
+    }
 
 protected:
-  T *internaldata;
-  uint16_t internaldatalength;
+    T* internaldata;
+    uint16_t internaldatalength;
 };

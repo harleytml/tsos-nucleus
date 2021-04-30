@@ -3,33 +3,32 @@
 
 #include <generic/input_quark.hpp>
 
-class VEXPRESS_A15_KEYBOARD_quark : public Input_quark
-{
+class VEXPRESS_A15_KEYBOARD_quark : public Input_quark {
 public:
-  // Constructor
-  VEXPRESS_A15_KEYBOARD_quark(void);
+    // Constructor
+    VEXPRESS_A15_KEYBOARD_quark(void);
 
-  ~VEXPRESS_A15_KEYBOARD_quark();
+    ~VEXPRESS_A15_KEYBOARD_quark();
 
-  // Detects if the nucleon should be used
-  bool detectsystem(void) final;
+    // Detects if the nucleon should be used
+    bool detectsystem(void) final;
 
-  void reset(void) final;
+    void reset(void) final;
 
-  // Get the key currently pressed
-  key_identifier getkey(void) final;
+    // Get the key currently pressed
+    key_identifier getkey(void) final;
 
-  //Wait for a key
-  void waitkey(void) final;
+    //Wait for a key
+    void waitkey(void) final;
 
-  // Is shift pressed
-  bool isshiftpressed(void) final;
+    // Is shift pressed
+    bool isshiftpressed(void) final;
 
-  // Is alt pressed
-  bool isaltpressed(void) final;
+    // Is alt pressed
+    bool isaltpressed(void) final;
 
-  // Is ctrl pressed
-  bool isctrlpressed(void) final;
+    // Is ctrl pressed
+    bool isctrlpressed(void) final;
 
 private:
 };

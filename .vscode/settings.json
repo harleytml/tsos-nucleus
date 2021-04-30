@@ -1,5 +1,4 @@
 {
-    "editor.formatOnSave": true,
     "python.linting.lintOnSave": true,
     "C_Cpp.errorSquiggles": "Enabled",
     "editor.tabSize": 2,

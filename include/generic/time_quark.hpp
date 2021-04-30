@@ -11,14 +11,13 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Time_quark : public Quark
-{
+class Time_quark : public Quark {
 public:
-  // Constructor
-  Time_quark(void);
+    // Constructor
+    Time_quark(void);
 
-  ~Time_quark();
+    ~Time_quark();
 
-  // Get the current time in seconds
-  virtual uint64_t gettimestamp(void) = 0;
+    // Get the current time in seconds
+    virtual uint64_t gettimestamp(void) = 0;
 };

@@ -10,14 +10,13 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Interrupt_quark : public Quark
-{
+class Interrupt_quark : public Quark {
 public:
-  //Constructor
-  Interrupt_quark(void);
+    //Constructor
+    Interrupt_quark(void);
 
-  //Destructor
-  ~Interrupt_quark();
+    //Destructor
+    ~Interrupt_quark();
 
-  virtual void registerinterrupt(func_ptr func, uint16_t id) = 0;
+    virtual void registerinterrupt(func_ptr func, uint16_t id) = 0;
 };

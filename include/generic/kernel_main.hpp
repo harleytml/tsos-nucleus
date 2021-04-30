@@ -8,9 +8,8 @@
 
 #include <generic/nucleus_instance.hpp>
 
-extern "C"
-{
-  char *itoa(int value, char *str, int base);
-  void kernel_main(void);
-  void debug_msg(const char *str);
+extern "C" {
+char* itoa(int value, char* str, int base);
+void kernel_main(void);
+void debug_msg(const char* str);
 }

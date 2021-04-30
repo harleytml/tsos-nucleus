@@ -3,23 +3,23 @@
 
 #include <generic/disk_quark.hpp>
 
-#define ATA_SR_BSY (0x80)  // Busy
+#define ATA_SR_BSY (0x80) // Busy
 #define ATA_SR_DRDY (0x40) // Drive ready
-#define ATA_SR_DF (0x20)   // Drive write fault
-#define ATA_SR_DSC (0x10)  // Drive seek complete
-#define ATA_SR_DRQ (0x08)  // Data request ready
+#define ATA_SR_DF (0x20) // Drive write fault
+#define ATA_SR_DSC (0x10) // Drive seek complete
+#define ATA_SR_DRQ (0x08) // Data request ready
 #define ATA_SR_CORR (0x04) // Corrected data
-#define ATA_SR_IDX (0x02)  // Index
-#define ATA_SR_ERR (0x01)  // Error
+#define ATA_SR_IDX (0x02) // Index
+#define ATA_SR_ERR (0x01) // Error
 
-#define ATA_ER_BBK (0x80)   // Bad block
-#define ATA_ER_UNC (0x40)   // Uncorrectable data
-#define ATA_ER_MC (0x20)    // Media changed
-#define ATA_ER_IDNF (0x10)  // ID mark not found
-#define ATA_ER_MCR (0x08)   // Media change request
-#define ATA_ER_ABRT (0x04)  // Command aborted
+#define ATA_ER_BBK (0x80) // Bad block
+#define ATA_ER_UNC (0x40) // Uncorrectable data
+#define ATA_ER_MC (0x20) // Media changed
+#define ATA_ER_IDNF (0x10) // ID mark not found
+#define ATA_ER_MCR (0x08) // Media change request
+#define ATA_ER_ABRT (0x04) // Command aborted
 #define ATA_ER_TK0NF (0x02) // Track 0 not found
-#define ATA_ER_AMNF (0x01)  // No address mark
+#define ATA_ER_AMNF (0x01) // No address mark
 
 #define ATA_CMD_READ_PIO (0x20)
 #define ATA_CMD_READ_PIO_EXT (0x24)
@@ -74,59 +74,56 @@
 #define ATA_REG_ALTSTATUS (0x0C)
 #define ATA_REG_DEVADDRESS (0x0D)
 
-class ATAPI_quark : public Disk_quark
-{
+class ATAPI_quark : public Disk_quark {
 public:
-  // Constructor
-  ATAPI_quark(void);
+    // Constructor
+    ATAPI_quark(void);
 
-  ~ATAPI_quark();
+    ~ATAPI_quark();
 
-  bool detectsystem(void) final;
+    bool detectsystem(void) final;
 
-  void reset(void) final;
+    void reset(void) final;
 
-  // Get an amount of bytes from the disk
-  void getbytes(uint8_t *buffer, uint16_t offset, uint8_t len) final;
+    // Get an amount of bytes from the disk
+    void getbytes(uint8_t* buffer, uint16_t offset, uint8_t len) final;
 
-  // Get the sector size
-  uint16_t getsectorsize(void) final;
+    // Get the sector size
+    uint16_t getsectorsize(void) final;
 
 private:
-  void ide_write(uint8_t channel, uint8_t reg, uint8_t data);
-  uint8_t ide_read(uint8_t channel, uint8_t reg);
-  void ide_read_buffer(uint8_t channel, uint8_t reg, void *buffer, uint32_t quads);
-  uint8_t ide_polling(uint8_t channel, uint32_t advanced_check);
-  void insl(uint32_t port, void *addr, uint32_t cnt);
+    void ide_write(uint8_t channel, uint8_t reg, uint8_t data);
+    uint8_t ide_read(uint8_t channel, uint8_t reg);
+    void ide_read_buffer(uint8_t channel, uint8_t reg, void* buffer, uint32_t quads);
+    uint8_t ide_polling(uint8_t channel, uint32_t advanced_check);
+    void insl(uint32_t port, void* addr, uint32_t cnt);
 
-  struct IDEChannelRegisters
-  {
-  public:
-    IDEChannelRegisters();
-    uint16_t base;  // I/O Base.
-    uint16_t ctrl;  // Control Base
-    uint16_t bmide; // Bus Master IDE
-    uint8_t nIEN;   // nIEN (No Interrupt);
-  } __attribute__((packed));
+    struct IDEChannelRegisters {
+    public:
+        IDEChannelRegisters();
+        uint16_t base; // I/O Base.
+        uint16_t ctrl; // Control Base
+        uint16_t bmide; // Bus Master IDE
+        uint8_t nIEN; // nIEN (No Interrupt);
+    } __attribute__((packed));
 
-  struct IDE_device
-  {
-  public:
-    IDE_device();
-    uint8_t Reserved;      // 0 (Empty) or 1 (This Drive really exists).
-    uint8_t Channel;       // 0 (Primary Channel) or 1 (Secondary Channel).
-    uint8_t Drive;         // 0 (Master Drive) or 1 (Slave Drive).
-    uint16_t Type;         // 0: ATA, 1:ATAPI.
-    uint16_t Signature;    // Drive Signature
-    uint16_t Capabilities; // Features.
-    uint32_t CommandSets;  // Command Sets Supported.
-    uint32_t Size;         // Size in Sectors.
-    uint8_t Model[41];     // Model in string.
-  } __attribute__((packed));
+    struct IDE_device {
+    public:
+        IDE_device();
+        uint8_t Reserved; // 0 (Empty) or 1 (This Drive really exists).
+        uint8_t Channel; // 0 (Primary Channel) or 1 (Secondary Channel).
+        uint8_t Drive; // 0 (Master Drive) or 1 (Slave Drive).
+        uint16_t Type; // 0: ATA, 1:ATAPI.
+        uint16_t Signature; // Drive Signature
+        uint16_t Capabilities; // Features.
+        uint32_t CommandSets; // Command Sets Supported.
+        uint32_t Size; // Size in Sectors.
+        uint8_t Model[41]; // Model in string.
+    } __attribute__((packed));
 
-  uint8_t ide_buf[2048] = {0};
-  uint8_t ide_irq_invoked = 0;
-  uint8_t atapi_packet[12] = {0xa8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-  IDEChannelRegisters channels[2];
-  IDE_device ide_devices[4];
+    uint8_t ide_buf[2048] = { 0 };
+    uint8_t ide_irq_invoked = 0;
+    uint8_t atapi_packet[12] = { 0xa8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    IDEChannelRegisters channels[2];
+    IDE_device ide_devices[4];
 };

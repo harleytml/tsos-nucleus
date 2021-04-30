@@ -11,20 +11,19 @@
 #include <generic/types.hpp>
 
 // The class for quarks
-class Quark
-{
+class Quark {
 public:
-  // Constructor
-  Quark(void);
+    // Constructor
+    Quark(void);
 
-  // Destructor
-  ~Quark();
+    // Destructor
+    ~Quark();
 
-  // A function called to determine if a quark should be used.
-  virtual bool detectsystem(void) = 0;
+    // A function called to determine if a quark should be used.
+    virtual bool detectsystem(void) = 0;
 
-  virtual void reset(void) = 0;
+    virtual void reset(void) = 0;
 
-  // The name of said quark
-  char *name;
+    // The name of said quark
+    char* name;
 };

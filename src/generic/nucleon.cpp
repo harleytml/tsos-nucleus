@@ -1,2 +1,2 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #include <generic/nucleon.hpp>

@@ -1,128 +1,125 @@
 #include <generic/sysabi.hpp>
 
-extern "C"
+extern "C" {
+void callsyscall(Syscall_info& syscall_info)
 {
-  void callsyscall(Syscall_info &syscall_info)
-  {
-    if (syscall_info.inkernelmode)
-    {
-      return;
+    if (syscall_info.inkernelmode) {
+        return;
     }
     syscall_info.inkernelmode = true;
-    switch (syscall_info.syscall)
-    {
+    switch (syscall_info.syscall) {
     case syscall_t::reboot:
-      tsos->boot.reboot();
-      break;
+        tsos->boot.reboot();
+        break;
     case syscall_t::shutdown:
-      tsos->boot.shutdown();
-      break;
+        tsos->boot.shutdown();
+        break;
     case syscall_t::fission:
-      tsos->boot.fission((static_cast<char *>(syscall_info.input_data[0])));
-      break;
+        tsos->boot.fission((static_cast<char*>(syscall_info.input_data[0])));
+        break;
     case syscall_t::getbytes:
-      tsos->disk.getbytes(*(static_cast<uint32_t *>(syscall_info.input_data[0])),
-                          *(static_cast<uint16_t *>(syscall_info.input_data[1])),
-                          *(static_cast<uint8_t **>(syscall_info.input_data[2])));
-      break;
+        tsos->disk.getbytes(*(static_cast<uint32_t*>(syscall_info.input_data[0])),
+            *(static_cast<uint16_t*>(syscall_info.input_data[1])),
+            *(static_cast<uint8_t**>(syscall_info.input_data[2])));
+        break;
     case syscall_t::setbytes:
-      tsos->disk.setbytes(*(static_cast<uint32_t *>(syscall_info.input_data[0])),
-                          *(static_cast<uint16_t *>(syscall_info.input_data[1])),
-                          (static_cast<uint8_t *>(syscall_info.input_data[2])));
-      break;
+        tsos->disk.setbytes(*(static_cast<uint32_t*>(syscall_info.input_data[0])),
+            *(static_cast<uint16_t*>(syscall_info.input_data[1])),
+            (static_cast<uint8_t*>(syscall_info.input_data[2])));
+        break;
     case syscall_t::getsectorsize:
-      //return static_cast<void *>(tsos->disk.getsectorsize());
-      break;
+        // return static_cast<void *>(tsos->disk.getsectorsize());
+        break;
     case syscall_t::commitall:
-      tsos->disk.commitall();
+        tsos->disk.commitall();
 
     case syscall_t::readdir:
-      break;
+        break;
     case syscall_t::rename:
-      break;
+        break;
     case syscall_t::open:
-      break;
+        break;
     case syscall_t::close:
-      break;
+        break;
     case syscall_t::read:
-      break;
+        break;
     case syscall_t::write:
-      break;
+        break;
     case syscall_t::readfile:
-      break;
+        break;
     case syscall_t::writefile:
-      break;
+        break;
     case syscall_t::appendfile:
-      break;
+        break;
     case syscall_t::exists:
-      break;
+        break;
     case syscall_t::mkdir:
-      break;
+        break;
     case syscall_t::rmdir:
-      break;
+        break;
     case syscall_t::access:
-      break;
+        break;
     case syscall_t::getkey:
-      break;
+        break;
     case syscall_t::waitkey:
-      break;
+        break;
     case syscall_t::spawn:
-      break;
+        break;
     case syscall_t::kill:
-      break;
+        break;
     case syscall_t::killall:
-      break;
+        break;
     case syscall_t::allocatememory:
-      break;
+        break;
     case syscall_t::freememory:
-      break;
+        break;
     case syscall_t::inbyte:
-      break;
+        break;
     case syscall_t::outbyte:
-      break;
+        break;
     case syscall_t::isdevicereadytoreceive:
-      break;
+        break;
     case syscall_t::isdevicereadytotransmit:
-      break;
+        break;
     case syscall_t::playtone:
-      break;
+        break;
     case syscall_t::killsound:
-      break;
+        break;
     case syscall_t::reset:
-      break;
+        break;
     case syscall_t::putchar:
-      break;
+        break;
     case syscall_t::putstring:
-      break;
+        break;
     case syscall_t::getscreenwidth:
-      break;
+        break;
     case syscall_t::getscreenheight:
-      break;
+        break;
     case syscall_t::setfont:
-      break;
+        break;
     case syscall_t::clear:
-      break;
+        break;
     case syscall_t::settextbackgroundcolor:
-      break;
+        break;
     case syscall_t::settextforegroundcolor:
-      break;
+        break;
     case syscall_t::in8:
-      break;
+        break;
     case syscall_t::out8:
-      break;
+        break;
     case syscall_t::in16:
-      break;
+        break;
     case syscall_t::out16:
-      break;
+        break;
     case syscall_t::in32:
-      break;
+        break;
     case syscall_t::out32:
-      break;
+        break;
     default:
-      break;
+        break;
     }
     syscall_info.inkernelmode = false;
 
     return;
-  }
+}
 }

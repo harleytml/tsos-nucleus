@@ -11,23 +11,22 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Serial_quark : public Quark
-{
+class Serial_quark : public Quark {
 public:
-  // Constructor
-  Serial_quark(void);
+    // Constructor
+    Serial_quark(void);
 
-  ~Serial_quark();
+    ~Serial_quark();
 
-  // Is device there
-  virtual bool isdevicereadytotransmit(void) = 0;
+    // Is device there
+    virtual bool isdevicereadytotransmit(void) = 0;
 
-  // Is device there
-  virtual bool isdevicereadytoreceive(void) = 0;
+    // Is device there
+    virtual bool isdevicereadytoreceive(void) = 0;
 
-  // Send a byte
-  virtual void outbyte(uint8_t byte) = 0;
+    // Send a byte
+    virtual void outbyte(uint8_t byte) = 0;
 
-  // Send a byte
-  virtual uint8_t inbyte(void) = 0;
+    // Send a byte
+    virtual uint8_t inbyte(void) = 0;
 };

@@ -9,30 +9,29 @@
 
 #pragma once
 
+#include <generic/filesystem_permissions.hpp>
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
-#include <generic/filesystem_permissions.hpp>
 
 #include <generic/string.hpp>
 
-class File
-{
+class File {
 public:
-  //Constructor of a file
-  File(void);
+    //Constructor of a file
+    File(void);
 
-  // Copy Constructor
-  File(const File &file);
+    // Copy Constructor
+    File(const File& file);
 
-  //Constructor
-  File(char *pa, Permissions &per);
+    //Constructor
+    File(char* pa, Permissions& per);
 
-  //Destructor
-  ~File();
+    //Destructor
+    ~File();
 
-  //The path of the file
-  String path;
+    //The path of the file
+    String path;
 
-  //The permissions the file was opened in
-  Permissions permissions;
+    //The permissions the file was opened in
+    Permissions permissions;
 };

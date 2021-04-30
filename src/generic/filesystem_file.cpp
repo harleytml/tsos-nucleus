@@ -1,23 +1,18 @@
-//By Tsuki Superior
+// By Tsuki Superior
 #include <generic/filesystem_file.hpp>
 
-File::File(void)
+File::File(void) { permissions = Permissions(false, false, false); }
+
+File::File(char* pa, Permissions& per)
 {
-  permissions = Permissions(false, false, false);
+    path = pa;
+    permissions = per;
 }
 
-File::File(char *pa, Permissions &per)
+File::File(const File& file)
 {
-  path = pa;
-  permissions = per;
+    path = file.path;
+    permissions = file.permissions;
 }
 
-File::File(const File &file)
-{
-  path = file.path;
-  permissions = file.permissions;
-}
-
-File::~File()
-{
-}
+File::~File() { }

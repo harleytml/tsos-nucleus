@@ -6,22 +6,21 @@
 
 #pragma once
 
-#include <generic/quark.hpp>
-#include <generic/nucleon.hpp>
-#include <generic/types.hpp>
-#include <generic/time_quark.hpp>
 #include <generic/current_config.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/quark.hpp>
+#include <generic/time_quark.hpp>
+#include <generic/types.hpp>
 
 //The main class controlling Time
-class Time : public Nucleon<Time_quark>
-{
+class Time : public Nucleon<Time_quark> {
 public:
-  // Constructor
-  Time(void);
+    // Constructor
+    Time(void);
 
-  // Destructor
-  ~Time();
+    // Destructor
+    ~Time();
 
-  // Get the current time stamp
-  uint64_t gettimestamp(void);
+    // Get the current time stamp
+    uint64_t gettimestamp(void);
 };

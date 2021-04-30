@@ -3,8 +3,7 @@
 
 #include <generic/input_quark.hpp>
 
-class XT_KEYBOARD_quark : public Input_quark
-{
+class XT_KEYBOARD_quark : public Input_quark {
 public:
     // Constructor
     XT_KEYBOARD_quark(void);

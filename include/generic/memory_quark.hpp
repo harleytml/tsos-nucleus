@@ -10,14 +10,13 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Memory_quark : public Quark
-{
+class Memory_quark : public Quark {
 public:
-  Memory_quark(void);
+    Memory_quark(void);
 
-  ~Memory_quark();
+    ~Memory_quark();
 
-  virtual uintptr_t getstartofheap(void) = 0;
+    virtual uintptr_t getstartofheap(void) = 0;
 
-  virtual size_t getlengthofheap(void) = 0;
+    virtual size_t getlengthofheap(void) = 0;
 };

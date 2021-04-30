@@ -3,23 +3,22 @@
 
 #include <generic/boot_quark.hpp>
 
-class CANON_A1100_BOOT_quark : public Boot_quark
-{
+class CANON_A1100_BOOT_quark : public Boot_quark {
 public:
-  // Constructor
-  CANON_A1100_BOOT_quark(void);
+    // Constructor
+    CANON_A1100_BOOT_quark(void);
 
-  // Destructor
-  ~CANON_A1100_BOOT_quark();
+    // Destructor
+    ~CANON_A1100_BOOT_quark();
 
-  // Detect the type of system its running on
-  bool detectsystem(void) final;
+    // Detect the type of system its running on
+    bool detectsystem(void) final;
 
-  void reset(void) final;
+    void reset(void) final;
 
-  // Reboot the system
-  void reboot(void) final;
+    // Reboot the system
+    void reboot(void) final;
 
-  // Shutdown the system
-  void shutdown(void) final;
+    // Shutdown the system
+    void shutdown(void) final;
 };

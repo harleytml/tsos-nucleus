@@ -9,17 +9,16 @@
 #define COM3 (0x3E8)
 #define COM4 (0x2E8)
 
-class PC_UART_quark : public Serial_quark
-{
+class PC_UART_quark : public Serial_quark {
 public:
-  PC_UART_quark(void);
-  void reset(void) final;
-  bool detectsystem(void) final;
-  bool isdevicereadytotransmit(void) final;
-  bool isdevicereadytoreceive(void) final;
-  void outbyte(uint8_t byte) final;
-  uint8_t inbyte(void) final;
+    PC_UART_quark(void);
+    void reset(void) final;
+    bool detectsystem(void) final;
+    bool isdevicereadytotransmit(void) final;
+    bool isdevicereadytoreceive(void) final;
+    void outbyte(uint8_t byte) final;
+    uint8_t inbyte(void) final;
 
 private:
-  void set_baud(uint16_t port, uint8_t baud_rate);
+    void set_baud(uint16_t port, uint8_t baud_rate);
 };

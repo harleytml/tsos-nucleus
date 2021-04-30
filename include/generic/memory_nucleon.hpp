@@ -11,44 +11,42 @@
 
 #pragma once
 
+#include <generic/current_config.hpp>
 #include <generic/memory_quark.hpp>
 #include <generic/nucleon.hpp>
 #include <generic/types.hpp>
-#include <generic/current_config.hpp>
 
 #define MEMORY_BLOCK_COUNT (10)
 
-class Memory : public Nucleon<Memory_quark>
-{
+class Memory : public Nucleon<Memory_quark> {
 public:
-  // Constructor
-  Memory(void);
+    // Constructor
+    Memory(void);
 
-  // Destructor
-  ~Memory();
+    // Destructor
+    ~Memory();
 
-  // Allocate memory
-  void *allocatememory(uint32_t len);
+    // Allocate memory
+    void* allocatememory(uint32_t len);
 
-  // Free Memory
-  void freememory(void *mem);
+    // Free Memory
+    void freememory(void* mem);
 
 private:
-  class Memory_table_entry
-  {
-  public:
-    Memory_table_entry(void);
-    ~Memory_table_entry();
+    class Memory_table_entry {
+    public:
+        Memory_table_entry(void);
+        ~Memory_table_entry();
 
-    // The start of the memory segment
-    uintptr_t memory_start;
+        // The start of the memory segment
+        uintptr_t memory_start;
 
-    // Length of the memory block
-    size_t block_length;
+        // Length of the memory block
+        size_t block_length;
 
-    // Check if the block is active
-    bool is_active;
-  };
+        // Check if the block is active
+        bool is_active;
+    };
 
-  Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
+    Memory_table_entry memory_table[MEMORY_BLOCK_COUNT];
 };

@@ -9,18 +9,17 @@
 #include <generic/quark.hpp>
 #include <generic/types.hpp>
 
-class Disk_quark : public Quark
-{
+class Disk_quark : public Quark {
 public:
-  // Constructor
-  Disk_quark(void);
+    // Constructor
+    Disk_quark(void);
 
-  // Destructor
-  ~Disk_quark();
+    // Destructor
+    ~Disk_quark();
 
-  // Get bytes from the disk
-  virtual void getbytes(uint8_t *buffer, uint16_t offset, uint8_t len) = 0;
+    // Get bytes from the disk
+    virtual void getbytes(uint8_t* buffer, uint16_t offset, uint8_t len) = 0;
 
-  // Get the sector size
-  virtual uint16_t getsectorsize(void) = 0;
+    // Get the sector size
+    virtual uint16_t getsectorsize(void) = 0;
 };

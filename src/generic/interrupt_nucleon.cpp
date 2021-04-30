@@ -4,17 +4,15 @@
 Interrupt::Interrupt(void)
 {
 #ifdef __PERSONAL_COMPUTER__
-  IDT_quark idt_quark;
+    IDT_quark idt_quark;
 
-  attachquark(idt_quark);
+    attachquark(idt_quark);
 #endif
 }
 
-Interrupt::~Interrupt()
-{
-}
+Interrupt::~Interrupt() { }
 
 void Interrupt::registerinterrupt(func_ptr func, uint16_t id)
 {
-  quark->registerinterrupt(func, id);
+    quark->registerinterrupt(func, id);
 }

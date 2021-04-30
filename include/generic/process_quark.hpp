@@ -14,12 +14,11 @@
 
 #include <generic/string.hpp>
 
-class Process_quark : public Quark
-{
+class Process_quark : public Quark {
 public:
-  Process_quark(void);
+    Process_quark(void);
 
-  ~Process_quark();
+    ~Process_quark();
 
-  virtual bool isvalidexecutable(char *path) = 0;
+    virtual bool isvalidexecutable(char* path) = 0;
 };
