@@ -1,4 +1,5 @@
 FROM debian:bullseye
+RUN apt-get -y remove tcsh w3m
 RUN dpkg --add-architecture i386
 RUN apt-get -y update
 RUN apt-get -y --no-install-recommends install software-properties-common apt-utils 
@@ -8,7 +9,10 @@ RUN apt-get -y --no-install-recommends install mtools g++ gcc make dos2unix pyth
 RUN pip3 install termcolor
 RUN apt-get -y update
 RUN apt-get -y --no-install-recommends install llvm clang lld
-RUN apt-get -y remove tcsh w3m
 RUN apt-get -y autoremove
 RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/
+RUN rm -rf /var/cache/apt/archives 
+RUN rm -rf /usr/share/doc/
+RUN rm -rf /usr/share/man/
+RUN rm -rf /usr/share/locale/
