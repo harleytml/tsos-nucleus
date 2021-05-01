@@ -4,7 +4,7 @@ RUN apt -y update
 RUN apt -y --no-install-recommends install software-properties-common apt-utils 
 RUN apt -y update
 RUN apt -y --no-install-recommends install libc6:i386 libstdc++6:i386
-RUN apt -y --no-install-recommends install mtools g++ gcc make dos2unix python3 libncurses-dev bison flex libssl-dev libelf-dev wget curl git libncurses5-dev libreadline-dev autoconf automake texinfo libisl-dev gcc-multilib g++-multilib xz-utils grub2 grub-pc-bin xorriso cmake python3-pip dosfstools qemu-system-i386 qemu-system-arm syslinux
+RUN apt -y --no-install-recommends install mtools dos2unix python3 wget xz-utils grub2 grub-pc-bin xorriso cmake python3-pip dosfstools qemu-system-i386 qemu-system-arm build-essential
 RUN pip3 install termcolor
 RUN apt -y update
 RUN apt -y --no-install-recommends install llvm clang lld
