@@ -111,3 +111,9 @@ on TS/OS, and how it is interacting with hardware.
 ## Docker
 
 There is a Docker Container used to compile TS/OS. You can also use it to compile TS/OS if you so please.
+
+## Cloning
+
+Please note that the repo for rpi firmware (contained in `contrib`) is extremely large (~10 gb)
+
+If you have no interest in the rpi3, you do not have to clone submodules recursively.
