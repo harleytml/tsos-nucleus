@@ -1,22 +1,22 @@
 # TS/OS Nucleus
 
 [![Discord](https://badgen.net/badge/Discord/join/purple?icon=discord)](https://discord.gg/UgXJwS5rup)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tsuki-superior/tsos-nucleus)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/tsuki-superior/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tsuki-superior/tsos-nucleus&utm_campaign=Badge_Grade)
-![LoC](https://raw.githubusercontent.com/tsuki-superior/tsos-nucleus/loc/badge.svg)
-[![LICENSE](https://img.shields.io/github/license/tsuki-superior/tsos-nucleus)](https://github.com/tsuki-superior/tsos-nucleus/blob/master/LICENSE)
-![DOWNLOADS](https://img.shields.io/github/downloads/tsuki-superior/tsos-nucleus/total)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/TS-OS/tsos-nucleus)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/TS-OS/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=TS-OS/tsos-nucleus&utm_campaign=Badge_Grade)
+![LoC](https://raw.githubusercontent.com/TS-OS/tsos-nucleus/loc/badge.svg)
+[![LICENSE](https://img.shields.io/github/license/TS-OS/tsos-nucleus)](https://github.com/TS-OS/tsos-nucleus/blob/master/LICENSE)
+![DOWNLOADS](https://img.shields.io/github/downloads/TS-OS/tsos-nucleus/total)
 [![Docker Hub](https://badgen.net/docker/pulls/tsukisuperior/tsos-build)](https://hub.docker.com/r/tsukisuperior/tsos-build)
 
 ## Build Tests
 
-[![Compile And Release](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/compile-and-release.yml)
-[![Build Docker Image](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/docker-image.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/docker-image.yml)
-[![Test Pull Requests](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/test-pull-request.yml/badge.svg)](https://github.com/tsuki-superior/tsos-nucleus/actions/workflows/test-pull-request.yml)
+[![Compile And Release](https://github.com/TS-OS/tsos-nucleus/actions/workflows/compile-and-release.yml/badge.svg)](https://github.com/TS-OS/tsos-nucleus/actions/workflows/compile-and-release.yml)
+[![Build Docker Image](https://github.com/TS-OS/tsos-nucleus/actions/workflows/docker-image.yml/badge.svg)](https://github.com/TS-OS/tsos-nucleus/actions/workflows/docker-image.yml)
+[![Test Pull Requests](https://github.com/TS-OS/tsos-nucleus/actions/workflows/test-pull-request.yml/badge.svg)](https://github.com/TS-OS/tsos-nucleus/actions/workflows/test-pull-request.yml)
 
 ## Contributors
 
-![Contributers](https://contrib.rocks/image?repo=tsuki-superior/tsos-nucleus)
+![Contributers](https://contrib.rocks/image?repo=TS-OS/tsos-nucleus)
 
 ## Platforms
 
