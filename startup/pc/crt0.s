@@ -36,7 +36,7 @@ _start:
   # Call the global constructors.
   # The init function doesn't appear to work with clang right now
   # So i will skip
-  # call _init
+  call _init
   and $-16, %esp
 
 
