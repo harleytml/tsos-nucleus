@@ -23,8 +23,8 @@ if(PLATFORM STREQUAL "PC")
     GLOB
     platform_specific_files
     "lib/x86/*"
-    "src/pc/*"
-    "src/x86/*"
+    "src/driver/pc/*"
+    "src/driver/x86/*"
     "startup/pc/*"
     "startup/x86/*")
 endif(PLATFORM STREQUAL "PC")
@@ -38,8 +38,8 @@ if(PLATFORM STREQUAL "NSPIRE")
     GLOB
     platform_specific_files
     "lib/arm/*"
-    "src/nspire/*"
-    "src/arm/*"
+    "src/driver/nspire/*"
+    "src/driver/arm/*"
     "startup/nspire/*"
     "startup/arm/*")
 endif(PLATFORM STREQUAL "NSPIRE")
@@ -52,8 +52,8 @@ if(PLATFORM STREQUAL "RPI3")
     GLOB
     platform_specific_files
     "lib/aarch64/*"
-    "src/rpi3/*"
-    "src/aarch64/*"
+    "src/driver/rpi3/*"
+    "src/driver/aarch64/*"
     "startup/rpi3/*"
     "startup/aarch64/*")
 endif(PLATFORM STREQUAL "RPI3")
@@ -67,8 +67,8 @@ if(PLATFORM STREQUAL "CANON-A1100")
     GLOB
     platform_specific_files
     "lib/arm/*"
-    "src/canon-a1100/*"
-    "src/arm/*"
+    "src/driver/canon-a1100/*"
+    "src/driver/arm/*"
     "startup/canon-a1100/*"
     "startup/arm/*")
 endif(PLATFORM STREQUAL "CANON-A1100")
@@ -81,8 +81,8 @@ if(PLATFORM STREQUAL "CUBIEBOARD1")
     GLOB
     platform_specific_files
     "lib/arm/*"
-    "src/cubieboard1/*"
-    "src/arm/*"
+    "src/driver/cubieboard1/*"
+    "src/driver/arm/*"
     "startup/cubieboard1/*"
     "startup/arm/*")
 endif(PLATFORM STREQUAL "CUBIEBOARD1")
@@ -95,8 +95,8 @@ if(PLATFORM STREQUAL "VEXPRESS-A15")
     GLOB
     platform_specific_files
     "lib/arm/*"
-    "src/vexpress-a15/*"
-    "src/arm/*"
+    "src/driver/vexpress-a15/*"
+    "src/driver/arm/*"
     "startup/vexpress-a15/*"
     "startup/arm/*")
 endif(PLATFORM STREQUAL "VEXPRESS-A15")
