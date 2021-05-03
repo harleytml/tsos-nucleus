@@ -2,7 +2,6 @@
 
 [![Discord](https://badgen.net/badge/Discord/join/purple?icon=discord)](https://discord.gg/UgXJwS5rup)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/TS-OS/tsos-nucleus)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7822fe3509d493e818a56e7ec8d53d6)](https://www.codacy.com/gh/TS-OS/tsos-nucleus/dashboard?utm_source=github.com&utm_medium=referral&utm_content=TS-OS/tsos-nucleus&utm_campaign=Badge_Grade)
 ![LoC](https://raw.githubusercontent.com/TS-OS/tsos-nucleus/loc/badge.svg)
 [![LICENSE](https://img.shields.io/github/license/TS-OS/tsos-nucleus)](https://github.com/TS-OS/tsos-nucleus/blob/master/LICENSE)
 ![DOWNLOADS](https://img.shields.io/github/downloads/TS-OS/tsos-nucleus/total)
