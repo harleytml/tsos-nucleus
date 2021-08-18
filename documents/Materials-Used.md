@@ -29,3 +29,19 @@
 [Firmware Image Maker](https://github.com/frantony/barebox/blob/master/scripts/canon-a1100-image)
 
 [IO Map for some cameras](https://magiclantern.fandom.com/wiki/Register_Map)
+
+[Qemu emulation file for the Canon-a1100](https://github.com/qemu/qemu/blob/master/hw/arm/digic_boards.c)
+
+[Digic UART Reference](https://www.digi.com/resources/documentation/digidocs/embedded/dey/3.0/cc6ul/bsp_r_uart_6ul.html)
+
+[Digic UART Driver Linux](https://github.com/digi-embedded/linux/blob/v5.4/dey-3.0/maint/drivers/tty/serial/imx.c)
+
+[RPI3 UART](https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html)
+
+[RPI3 Boot Process](https://www.nayab.xyz/rpi3b-elinux/embedded-linux-rpi3-030-boot-process.html)
+
+[Baremetal Arm](https://balau82.wordpress.com/2010/02/28/hello-world-for-bare-metal-arm-using-qemu/)
+
+[BCM2837 Docs](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md)
+
+[Broadcom BCM2837-ARM Docs](https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf)

@@ -1,30 +1,44 @@
 {
-  "pc": {
-    "description": "i686 or higher IBM Personal Computer",
-    "test_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3",
-    "debug_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -cpu pentium3 -s -S",
-    "required_test_tools": ["qemu-system-i386"],
-    "required_tools": ["grub-file", "grub-mkrescue"]
-  },
-  "nspire": {
-    "description": "Texas Instruments TI-Nspire",
-    "test_command": "",
-    "debug_command": "",
-    "required_test_tools": [],
-    "required_tools": ["llvm-objcopy"]
-  },
-  "rpi3": {
-    "description": "Raspberry Pi 3",
-    "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus",
-    "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -s -S",
-    "required_test_tools": ["qemu-system-aarch64"],
-    "required_tools": ["llvm-objcopy"]
-  },
-  "canon-a1100": {
-    "description": "Canon PowerShot A1100IS",
-    "test_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus",
-    "debug_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus -s -S",
-    "required_test_tools": ["qemu-system-arm"],
-    "required_tools": ["llvm-objcopy"]
-  }
+    "pc": {
+        "description": "i686 or higher IBM Personal Computer",
+        "test_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -serial stdio -cpu pentium3",
+        "debug_command": "qemu-system-i386 -kernel nucleus -soundhw pcspk -serial stdio -cpu pentium3 -s -S",
+        "required_test_tools": ["qemu-system-i386"],
+        "required_tools": ["grub-file", "grub-mkrescue"]
+    },
+    "nspire": {
+        "description": "Texas Instruments TI-Nspire, CX or CM",
+        "test_command": "",
+        "debug_command": "",
+        "required_test_tools": [],
+        "required_tools": ["llvm-objcopy"]
+    },
+    "rpi3": {
+        "description": "Raspberry Pi 3",
+        "test_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -display none -serial stdio",
+        "debug_command": "qemu-system-aarch64 -M raspi3 -kernel nucleus -display none -serial stdio -s -S",
+        "required_test_tools": ["qemu-system-aarch64"],
+        "required_tools": ["llvm-objcopy"]
+    },
+    "cubieboard1": {
+        "description": "CubieBoard 1",
+        "test_command": "qemu-system-arm -M cubieboard -serial stdio -display none -kernel nucleus",
+        "debug_command": "qemu-system-arm -M cubieboard -serial stdio -display none -kernel nucleus -s -S",
+        "required_test_tools": ["qemu-system-arm"],
+        "required_tools": ["llvm-objcopy"]
+    },
+    "canon-a1100": {
+        "description": "Canon PowerShot A1100IS",
+        "test_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus",
+        "debug_command": "qemu-system-arm -M canon-a1100 -serial stdio -display none --machine firmware=nucleus -s -S",
+        "required_test_tools": ["qemu-system-arm"],
+        "required_tools": ["llvm-objcopy"]
+    },
+    "vexpress-a15": {
+        "description": "ARM Versatile Express for Cortex-A15",
+        "test_command": "qemu-system-arm -M vexpress-a15 -serial stdio -kernel nucleus",
+        "debug_command": "qemu-system-arm -M vexpress-a15 -serial stdio -kernel nucleus -s -S",
+        "required_test_tools": ["qemu-system-arm"],
+        "required_tools": ["llvm-objcopy"]
+    }
 }

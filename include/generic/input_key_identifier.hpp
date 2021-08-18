@@ -1,13 +1,14 @@
 /* By Tsuki Superior
  * Input Key Definitions
- * 
+ *
  * The definitions of the keys
  */
 
-#ifndef __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
-#define __TSOS_NUCLEUS_INPUT_KEY_IDENTIFIER__
+#pragma once
 
-enum key_identifier
+#include <generic/types.hpp>
+
+enum class key_identifier : uint8_t
 {
     KEY_NULL,
     KEY_0,
@@ -111,7 +112,4 @@ enum key_identifier
     KEY_DASH,
     KEY_PLUS,
     KEY_TAB
-
 };
-
-#endif

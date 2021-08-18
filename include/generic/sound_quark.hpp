@@ -2,28 +2,25 @@
  * Abstract Sound Quark
  *
  * To make a new Sound quark, simply have it inherit from this class
- * 
+ *
  * The TS/OS sound api is pretty slim right now (as of version 0.0)
  */
 
-#ifndef __TSOS_NUCLEUS_SOUND_QUARK__
-#define __TSOS_NUCLEUS_SOUND_QUARK__
+#pragma once
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
 
 class Sound_quark : public Quark
 {
-public:
-  // Constructor
-  Sound_quark(void);
+  public:
+    // Constructor
+    Sound_quark(void);
 
-  ~Sound_quark();
+    ~Sound_quark();
 
-  // Play a tone
-  virtual void playtone(uint32_t tone) = 0;
+    // Play a tone
+    virtual void playtone(uint32_t tone) = 0;
 
-  virtual void killsound(void) = 0;
+    virtual void killsound(void) = 0;
 };
-
-#endif

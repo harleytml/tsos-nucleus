@@ -23,6 +23,10 @@ getbytes:
 
 Get a length of bytes from a offset in the computer
 
+setbytes:
+
+Set a set off bytes at a offset in the computer
+
 getsectorsize:
 
 Get the sector size of the disk
@@ -131,17 +135,21 @@ Free memory
 SERIAL SYSCALLS:
 
 ```text
-getbyte:
+inbyte:
 
 Send a byte to the other device
 
-sendbyte:
+outbyte:
 
 Gey a byte from the other device
 
-isdeviceready:
+isdevicereadytoreceive:
 
-Check if a device is connected to this device
+Checks if the connected device is ready to receive
+
+isdevicereadytotransmit:
+
+Checks if the connected device is ready to transmit
 ```
 
 SOUND SYSCALLS:
@@ -222,5 +230,15 @@ Get a uint32_t from the port io
 out32:
 
 Send a uint32t through the port io
+
+```
+
+TIME SYSCALLS:
+
+```text
+
+gettimestamp:
+
+Get seconds since EPOCH
 
 ```

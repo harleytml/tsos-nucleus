@@ -1,9 +1,9 @@
-//By Tsuki Superior
-#include "canon-a1100/canon-a1100_keypad.hpp"
+// By Tsuki Superior
+#include <canon-a1100/canon-a1100_keypad.hpp>
 
 CANON_A1100_KEYPAD_quark::CANON_A1100_KEYPAD_quark(void)
 {
-  name = "Canon Powershot A1100 IS Keypad";
+    name = "Canon Powershot A1100 IS Keypad";
 }
 
 CANON_A1100_KEYPAD_quark::~CANON_A1100_KEYPAD_quark()
@@ -12,7 +12,7 @@ CANON_A1100_KEYPAD_quark::~CANON_A1100_KEYPAD_quark()
 
 bool CANON_A1100_KEYPAD_quark::detectsystem(void)
 {
-  return true;
+    return true;
 }
 
 void CANON_A1100_KEYPAD_quark::reset(void)
@@ -21,7 +21,7 @@ void CANON_A1100_KEYPAD_quark::reset(void)
 
 key_identifier CANON_A1100_KEYPAD_quark::getkey(void)
 {
-  return KEY_NULL;
+    return key_identifier::KEY_NULL;
 }
 
 void CANON_A1100_KEYPAD_quark::waitkey(void)
@@ -31,17 +31,17 @@ void CANON_A1100_KEYPAD_quark::waitkey(void)
 // Is shift pressed
 bool CANON_A1100_KEYPAD_quark::isshiftpressed(void)
 {
-  return false;
+    return false;
 }
 
 // Is alt pressed
 bool CANON_A1100_KEYPAD_quark::isaltpressed(void)
 {
-  return false;
+    return false;
 }
 
 // Is ctrl pressed
 bool CANON_A1100_KEYPAD_quark::isctrlpressed(void)
 {
-  return false;
+    return false;
 }

@@ -1,9 +1,6 @@
-//By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_INSTANCE__
-#define __TSOS_NUCLEUS_INSTANCE__
+// By Tsuki Superior
+#pragma once
 
-#include "generic/core.hpp"
+#include <generic/core.hpp>
 
 extern Tsos *tsos;
-
-#endif

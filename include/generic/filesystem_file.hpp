@@ -1,35 +1,38 @@
+
 /* By Tsuki Superior
  * Generic Filesystem File Quark
  *
  * This is the file type that the nucleus uses internally
  * to represent files
- * 
+ *
  */
 
-#ifndef __TSOS_NUCLEUS_FILESYSTEM_FILE__
-#define __TSOS_NUCLEUS_FILESYSTEM_FILE__
+#pragma once
 
-#include "generic/quark.hpp"
-#include "generic/types.hpp"
-#include "generic/filesystem_permissions.hpp"
+#include <generic/filesystem_permissions.hpp>
+#include <generic/quark.hpp>
+#include <generic/types.hpp>
+
+#include <generic/string.hpp>
 
 class File
 {
-public:
-  //Constructor of a file
-  File(void);
+  public:
+    // Constructor of a file
+    File(void);
 
-  //Constructor
-  File(char *pa, Permissions &per);
+    // Copy Constructor
+    File(const File &file);
 
-  //Destructor
-  ~File();
+    // Constructor
+    File(char *pa, Permissions &per);
 
-  //The path of the file
-  const char *path;
+    // Destructor
+    ~File();
 
-  //The permissions the file was opened in
-  Permissions permissions;
+    // The path of the file
+    String path;
+
+    // The permissions the file was opened in
+    Permissions permissions;
 };
-
-#endif

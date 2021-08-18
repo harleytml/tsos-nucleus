@@ -8,14 +8,38 @@ import json
 
 from termcolor import cprint
 
+
+def recurse(dic):
+    def one_directory(dic, path):
+        for name, info in list(dic.items()):
+            next_path = path + "/" + name
+            if isinstance(info, dict):
+                if not(os.path.exists(next_path)):
+                    os.mkdir(next_path)
+                one_directory(info, next_path)
+    one_directory(dic, "filesystem")
+
+
 # Create build folder if it doesn't exist
-if os.path.isdir("/tmp/tsos-filesystem"):
-    shutil.rmtree("/tmp/tsos-filesystem")
+if not os.path.isdir("build"):
+    os.mkdir("build")
+
+# Create build folder if it doesn't exist
+if os.path.isdir("build/filesystem"):
+    shutil.rmtree("build/filesystem")
 
 # Open that config file and read from it
 tmp_file = open("config/system_config.json")
 build_settings = json.loads(tmp_file.read())
 tmp_file.close()
+
+# Open that config file and read from it
+tmp_file = open("config/directory_structure.json")
+fileystem_dict = json.loads(tmp_file.read())
+tmp_file.close()
+
+if not(os.path.exists("build/filesystem")):
+    os.mkdir("build/filesystem")
 
 # This only works on unix like systems right now
 if os.name != "posix":
@@ -29,14 +53,14 @@ if shutil.which("cmake") is None:
 
 # Make sure the script has the correct number of arguments, and if not, display help
 if not(len(sys.argv) == 2 or len(sys.argv) == 3) or sys.argv[1] == "help":
-    cprint("Official TS/OS buildscript (C) Tsuki Superior. Licensed under the same license as TS/OS (see LICENSE file)\n", "yellow")
-    print(sys.argv[0], "<system> <action>")
+    cprint("\nOfficial TS/OS buildscript (C) Tsuki Superior. Licensed under the same license as TS/OS (see LICENSE file)\n", "yellow")
+    cprint(sys.argv[0] + " <system> <action>", "green")
     print("Supported systems:\n")
 
     for x in build_settings:
         print(x, "-", build_settings[x]["description"])
     cprint("\nSet the action to either debug or test, or you can leave it blank\n", "yellow")
-    print("Look in buildscript directory to find the buildscripts pertaining to the systems")
+    cprint("Look in buildscript directory to find the buildscripts pertaining to the systems\n", "yellow")
     sys.exit(1)
 
 # Get the platform
@@ -48,30 +72,28 @@ else:
 
 if platform in build_settings:
 
-    # Create build folder if it doesn't exist
-    if not os.path.isdir("build"):
-        os.mkdir("build")
-
     # Change to build dir
     os.chdir("build")
+
+    recurse(fileystem_dict)
 
     if os.path.exists("nucleus"):
         os.remove("nucleus")
 
-    if os.path.exists("tsos.iso"):
-        os.remove("tsos.iso")
+    if os.path.exists("nucleus.elf"):
+        os.remove("nucleus.elf")
 
-    if os.path.exists("tsos.img"):
-        os.remove("tsos.img")
+    if os.path.exists("nucleus.iso"):
+        os.remove("nucleus.iso")
 
-    if os.path.exists("tsos.gba"):
-        os.remove("tsos.gba")
+    if os.path.exists("nucleus.img"):
+        os.remove("nucleus.img")
 
     # Run cmake
     os.system("cmake .. -DPLATFORM=" + platform.upper())
 
     # Run make
-    os.system("make -j$(nproc)")
+    os.system("make")
 
     # Insure that the kernel was produced, and if not, fail
     if not os.path.exists("nucleus.elf"):
@@ -99,10 +121,14 @@ if platform in build_settings:
         sys.exit(1)
 
 else:
-    cprint("Cannot yet deploy this system", "yellow")
+    cprint("System does not exist!", "red")
+    exit(1)
 
 
 # Building was succesful if it made it to here
+if os.system("llvm-objdump -d --source --demangle --debug-vars nucleus.elf > nucleus_dump.asm") != 0:
+    cprint("Dumping ELF file failed!", "yellow")
+
 cprint("Compiling and deploying completed.", "green")
 cprint("Your copy of the TS/OS nucleus is at build/nucleus", "green")
 

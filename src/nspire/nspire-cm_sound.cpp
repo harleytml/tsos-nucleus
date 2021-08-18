@@ -1,14 +1,14 @@
-//By Tsuki Superior
-#include "nspire/nspire-cm_sound.hpp"
+// By Tsuki Superior
+#include <nspire/nspire-cm_sound.hpp>
 
 NSPIRE_CM_SOUND_quark::NSPIRE_CM_SOUND_quark(void)
 {
-  name = "Texas Instruments Nspire CM Sound";
+    name = "Texas Instruments Nspire CM Sound";
 }
 
 bool NSPIRE_CM_SOUND_quark::detectsystem(void)
 {
-  return true;
+    return true;
 }
 
 void NSPIRE_CM_SOUND_quark::reset(void)

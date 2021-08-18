@@ -1,14 +1,14 @@
-//By Tsuki Superior
-#include "nspire/nspire-cx_uart.hpp"
+// By Tsuki Superior
+#include <nspire/nspire-cx_uart.hpp>
 
 NSPIRE_CX_UART_quark::NSPIRE_CX_UART_quark(void)
 {
-  name = "Texas Instruments Nspire CX Universal Asynchronous Receiver-Transmitter";
+    name = "Texas Instruments Nspire CX Universal Asynchronous Receiver-Transmitter";
 }
 
 bool NSPIRE_CX_UART_quark::detectsystem(void)
 {
-  return true;
+    return true;
 }
 
 void NSPIRE_CX_UART_quark::reset(void)
@@ -17,19 +17,20 @@ void NSPIRE_CX_UART_quark::reset(void)
 
 bool NSPIRE_CX_UART_quark::isdevicereadytotransmit(void)
 {
-  return false;
+    return false;
 }
 
 bool NSPIRE_CX_UART_quark::isdevicereadytoreceive(void)
 {
-  return false;
+    return false;
 }
 
-void NSPIRE_CX_UART_quark::sendbyte(uint8_t byte)
+void NSPIRE_CX_UART_quark::outbyte(uint8_t byte)
 {
+    *((volatile uint8_t *)MMIO_BASE) = byte;
 }
 
-uint8_t NSPIRE_CX_UART_quark::getbyte(void)
+uint8_t NSPIRE_CX_UART_quark::inbyte(void)
 {
-  return 0;
+    return 0;
 }

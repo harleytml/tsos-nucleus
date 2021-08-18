@@ -1,102 +1,115 @@
-/* By Tsuki Superior 
+/* By Tsuki Superior
  *
- * Array 
- * 
- * This is a version of the Array class made for TS/OS 
+ * Array
+ *
+ * This is a version of the Array class made for TS/OS
  */
 
-#ifndef __TSOS_ARRAY_TYPE__
-#define __TSOS_ARRAY_TYPE__
+#pragma once
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 extern "C"
 {
-  void *memcpy(void *dstptr, const void *srcptr, size_t size);
+    void *memcpy(void *dstptr, const void *srcptr, size_t size);
 }
 
-template <class T>
-class Array
+template <class T> class Array
 {
-public:
-  Array(const uint16_t length)
-  {
-    internaldata = new T[length];
-  };
-
-  Array(const T *data, const uint16_t length)
-  {
-    internaldata = new T[length];
-    memcpy(internaldata, data, length);
-  };
-
-  Array(Array<T> &array)
-  {
-    internaldata = new T[array.len()];
-    for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+  public:
+    Array(void)
     {
-      internaldata[x] = array[x];
+        internaldata = (T *)nullptr;
+        internaldatalength = 0;
     }
-  }
 
-  T &operator[](const uint16_t index)
-  {
-    if (index < internaldatalength)
+    Array(const uint16_t length)
     {
-      while (true)
-      {
-      }
-    }
-    return internaldata[index];
-  }
+        internaldata = new T[length];
+    };
 
-  T operator[](const uint16_t index) const
-  {
-    if (index < internaldatalength)
+    Array(T *data, const uint16_t length)
     {
-      return 0;
-    }
-    return internaldata[index];
-  }
+        internaldata = data;
+        internaldatalength = length;
+    };
 
-  bool operator==(Array<T> &array) const
-  {
-    for (uint_fast16_t x = 0, length = len(); x < length; x++)
+    Array(Array<T> &array)
     {
-      if (internaldata[x] != array[x])
-      {
-        return false;
-      }
+        internaldata = new T[array.len()];
+        for (uint_fast16_t x = 0, len = array.len(); x < len; x++)
+        {
+            internaldata[x] = array[x];
+        }
     }
-    return true;
-  }
 
-  Array<T> operator+(const Array<T> &array)
-  {
-    uint_fast32_t x = 0;
-    uint_fast32_t y = 0;
-    uint_fast32_t l = 0;
-    uint32_t total_length = internaldatalength + array.len();
-    Array<T> newarray = new Array<T>(total_length);
-    for (x = 0, l = internaldatalength; x < l; x++)
+    T &operator[](const uint16_t index)
     {
-      newarray[x] = array[x];
+        if (index > internaldatalength)
+        {
+            while (true)
+            {
+            }
+        }
+        return internaldata[index];
     }
-    for (y = 0, l = array.len(); x < l; x++, y++)
+
+    T operator[](const uint16_t index) const
     {
-      newarray[x] = array[y];
+        if (index > internaldatalength)
+        {
+            return 0;
+        }
+        return internaldata[index];
     }
-    return array;
-  }
 
-  uint16_t len(void)
-  {
-    return internaldatalength;
-  }
+    bool operator==(Array<T> &array) const
+    {
+        for (uint_fast16_t x = 0, length = len(); x < length; x++)
+        {
+            if (internaldata[x] != array[x])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
-private:
-  T *internaldata;
-  uint16_t internaldatalength;
+    Array<T> operator+(const Array<T> &array)
+    {
+        uint_fast32_t x = 0;
+        uint_fast32_t y = 0;
+        uint_fast32_t l = 0;
+        uint32_t total_length = internaldatalength + array.len();
+        Array<T> newarray = new Array<T>(total_length);
+        for (x = 0, l = internaldatalength; x < l; x++)
+        {
+            newarray[x] = array[x];
+        }
+        for (y = 0, l = array.len(); x < l; x++, y++)
+        {
+            newarray[x] = array[y];
+        }
+        return array;
+    }
+
+    void operator=(const Array<T> &array)
+    {
+        internaldata = array.raw();
+        internaldatalength = array.len();
+    }
+
+    uint16_t len(void) const
+    {
+        return internaldatalength;
+    }
+
+    T *raw(void) const
+    {
+        return internaldata;
+    }
+
+  protected:
+    T *internaldata;
+    uint16_t internaldatalength;
 };
-
-#endif

@@ -1,17 +1,17 @@
 {
-  "editor.formatOnSave": true,
-  "editor.wrappingStrategy": "simple",
-  "python.linting.lintOnSave": true,
-  "C_Cpp.errorSquiggles": "Enabled",
-  "editor.tabSize": 2,
-  "files.associations": {
-    "*.json": "json",
-    "*.ipp": "cpp",
-    "array": "cpp",
-    "string_view": "cpp",
-    "typeindex": "cpp",
-    "typeinfo": "cpp"
-  },
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true
+    "python.linting.lintOnSave": true,
+    "C_Cpp.errorSquiggles": "Enabled",
+    "editor.tabSize": 2,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "files.associations": {
+        "*.json": "json",
+        "*.inc": "makefile",
+        "*.anim": "yaml",
+        "*.asm": "lldb.disassembly",
+        "*.s": "arm",
+        "cstdint": "cpp",
+        "random": "cpp"
+    },
+    "git.ignoreLimitWarning": true
 }

@@ -1,0 +1,4 @@
+arm_64bit=1
+kernel=nucleus
+start_file=start.elf
+init_uart_baud=115200

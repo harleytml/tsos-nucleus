@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+            "label": "pc",
+            "type": "shell",
+            "command": "./build.py pc test"
+        },
+        {
+            "label": "rpi3",
+            "type": "shell",
+            "command": "./build.py rpi3 test"
+        },
+        {
+            "label": "nspire",
+            "type": "shell",
+            "command": "./build.py nspire test"
+        },
+        {
+            "label": "cubieboard1",
+            "type": "shell",
+            "command": "./build.py cubieboard1 test"
+        },
+        {
+            "label": "canon-a1100",
+            "type": "shell",
+            "command": "./build.py canon-a1100 test"
+        },
+        {
+            "label": "vexpress-a15",
+            "type": "shell",
+            "command": "./build.py vexpress-a15 test"
+        }
+    ]
+}

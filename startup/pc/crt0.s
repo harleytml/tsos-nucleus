@@ -19,27 +19,35 @@ stack_bottom:
 .skip 16384 # 16 KiB
 stack_top:
 
+.section .heap, "aw", @nobits
+.align 16
+heap_bottom:
+.skip 16384 # 16 KiB
+heap_top:
+
 # The kernel entry point.
 .section .text, "ax"
 .align 16
 .global _start
 .type _start, @function
 _start:
-	movl $stack_top, %esp
+  movl $stack_top, %esp
 
-	# Call the global constructors.
-	# The init function doesn't appear to work with clang right now
-	# So i will skip
-	# call _init
+  # Call the global constructors.
+  # The init function doesn't appear to work with clang right now
+  # So i will skip
+  call _init
+  and $-16, %esp
 
-	# Transfer control to the main kernel.
-	call kernel_main
 
-	# Hang if kernel_main unexpectedly returns.
-	cli
+  # Transfer control to the main kernel.
+  call kernel_main
+
+  # Hang if kernel_main unexpectedly returns.
+  cli
 
 _stop:	
   hlt
-	jmp _stop
+  jmp _stop
 
 .size _start, . - _start

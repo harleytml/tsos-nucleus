@@ -4,25 +4,22 @@
  * To make a new Boot quark, simply have it inherit from this class
  */
 
-#ifndef __TSOS_NUCLEUS_BOOT_QUARK__
-#define __TSOS_NUCLEUS_BOOT_QUARK__
+#pragma once
 
-#include "generic/quark.hpp"
+#include <generic/quark.hpp>
 
 class Boot_quark : public Quark
 {
-public:
-  // Constructor
-  Boot_quark(void);
+  public:
+    // Constructor
+    Boot_quark(void);
 
-  // Destructor
-  ~Boot_quark();
+    // Destructor
+    ~Boot_quark();
 
-  // Reboot the system
-  virtual void reboot(void) = 0;
+    // Reboot the system
+    virtual void reboot(void) = 0;
 
-  // Shutdown the system
-  virtual void shutdown(void) = 0;
+    // Shutdown the system
+    virtual void shutdown(void) = 0;
 };
-
-#endif

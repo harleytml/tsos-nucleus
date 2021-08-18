@@ -1,23 +1,20 @@
-//By Tsuki Superior
-#ifndef __TSOS_NUCLEUS_PROCESS_STATE__
-#define __TSOS_NUCLEUS_PROCESS_STATE__
+// By Tsuki Superior
+#pragma once
 
-#include "generic/types.hpp"
+#include <generic/types.hpp>
 
 // The possible state of processes
 enum process_state
 {
-  // A running process
-  RUNNING,
+    // A running process
+    RUNNING,
 
-  // A halted process
-  HALTED,
+    // A halted process
+    HALTED,
 
-  // A hung process
-  HUNG,
+    // A hung process
+    HUNG,
 
-  // An idle process
-  IDLE
+    // An idle process
+    IDLE
 };
-
-#endif

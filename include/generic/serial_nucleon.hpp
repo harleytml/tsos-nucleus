@@ -1,45 +1,42 @@
 /* By Tsuki Superior
  * Serial Nucleon
- * 
+ *
  * The wrapper nucleon for the serial quarks
  */
 
-#ifndef __TSOS_NUCLEUS_SERIAL_NUCLEON__
-#define __TSOS_NUCLEUS_SERIAL_NUCLEON__
+#pragma once
 
-#include "generic/quark.hpp"
-#include "generic/nucleon.hpp"
-#include "generic/types.hpp"
-#include "generic/serial_quark.hpp"
-#include "generic/current_config.hpp"
-#include "generic/array.hpp"
+#include <generic/array.hpp>
+#include <generic/current_config.hpp>
+#include <generic/nucleon.hpp>
+#include <generic/quark.hpp>
+#include <generic/serial_quark.hpp>
+#include <generic/types.hpp>
 
 // The main class controlling serial
 class Serial : public Nucleon<Serial_quark>
 {
-public:
-  // Constructor
-  Serial(void);
+  public:
+    // Constructor
+    Serial(void);
 
-  // Destructor
-  ~Serial();
+    // Destructor
+    ~Serial();
 
-  void reset(void);
+    void reset(void);
 
-  // Send a byte
-  void sendbyte(uint8_t byte) const;
+    // Send a byte
+    void outbyte(uint8_t byte) const;
 
-  // Get a byte
-  uint8_t getbyte(void) const;
+    // Get a byte
+    uint8_t inbyte(void) const;
 
-  // Is device ready to take a byte
-  bool isdevicereadytoreceive(void) const;
+    // Is device ready to take a byte
+    bool isdevicereadytoreceive(void) const;
 
-  // Is device ready to send a byte
-  bool isdevicereadytotransmit(void) const;
+    // Is device ready to send a byte
+    bool isdevicereadytotransmit(void) const;
 
-  // Send a array of bytes
-  void sendbytearray(Array<uint8_t> array) const;
+    // Send a array of bytes
+    void sendbytearray(Array<uint8_t> array) const;
 };
-
-#endif
